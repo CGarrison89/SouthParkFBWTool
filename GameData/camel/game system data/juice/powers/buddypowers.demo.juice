@@ -1,0 +1,452 @@
+include "camel/game system data/fruit/powers/combatpowers.fruit"
+include "camel/game system data/juice/statuseffect/enraged.juice"
+
+CombatPowerTuningData demo_e3_supercraig_power1_demo_Tuning < uid=B9E930CA573DFF6C00000014FA767A5B >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 2
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=B9E930CA573DFF6C00000015FE886860 >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 3
+		myStartLength 1
+	}
+	myDamageAmount 300
+	myShielding 0
+	mySelfTeamDamage -1
+	mySelfTeamShielding -1
+	mySelfKnockbackAmount -1
+	myLocationEffect < uid=B9E930CA573DFF6C0000001656452614 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge TRUE
+		myPowerChargeLowRatio 0.7
+		myPowerChargeHighRatio 0.9
+		myPowerChargeDamageMultiplier 1.5
+		myPowerChargeTotalTime 1.2
+		myPowerChargeType Melee
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification Melee
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData demo_e3_supercraig_power2_demo_Tuning < uid=B9E930CA573DFF6C00000017ECB8A26A >
+{
+	myPowerCategory Debuff
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=B9E930CA573DFF6C00000018A555B904 >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 3
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding 200
+	mySelfTeamDamage -1
+	mySelfTeamShielding -1
+	mySelfKnockbackAmount -1
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=B9E930CA573DFF6C0000001918230EA6 > = Enraged
+	}
+	myLocationEffect < uid=B9E930CA573DFF6C0000001A6729FE30 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification Melee
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData demo_e3_supercraig_power3_demo_Tuning < uid=B9E930CA573DFF6C0000001B4EABAB4D >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 0
+	myMinRange 0
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource TRUE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Self
+	myFactionTargeting AllyOnly
+	myDamageArea < uid=B9E930CA573DFF6C0000001C463EA605 >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType CenteredRectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding 0
+	mySelfTeamDamage -1
+	mySelfTeamShielding -1
+	mySelfKnockbackAmount -1
+	myLocationEffect < uid=B9E930CA573DFF6C0000001D4668C65A > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification NonDamaging
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData demo_e3_supercraig_power4_demo_Tuning < uid=B9E930CA573DFF6C0000001E6E9868D9 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 0
+	myMinRange 0
+	myCooldown 2
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=B9E930CA573DFF6C0000001F7D7A5784 >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType CenteredCircle
+		myLength 5
+		myWidth 5
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 300
+	myShielding 0
+	mySelfTeamDamage -1
+	mySelfTeamShielding -1
+	mySelfKnockbackAmount -1
+	myLocationEffect < uid=B9E930CA573DFF6C00000020CEC7D8A0 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification Melee
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData demo_e3_humankite_power1_demo_Tuning < uid=B9E930CA573DFF6C00000021CE9D8D34 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=B9E930CA573DFF6C0000002263EEEA9E >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 3
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 300
+	myShielding 0
+	mySelfTeamDamage -1
+	mySelfTeamShielding -1
+	mySelfKnockbackAmount -1
+	myLocationEffect < uid=B9E930CA573DFF6C00000023CC875710 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification Ranged
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData demo_e3_humankite_power2_demo_Tuning < uid=B9E930CA573DFF6C000000243C7594F8 >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 3
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed TRUE
+	myBlocksObscurationShuffle TRUE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting AllyOnly
+	myDamageArea < uid=B9E930CA573DFF6C000000251EA34A6F >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding 0
+	mySelfTeamDamage -1
+	mySelfTeamShielding -1
+	mySelfKnockbackAmount -1
+	myLocationEffect < uid=B9E930CA573DFF6C000000260A0DE93F > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification NonDamaging
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData demo_e3_humankite_power3_demo_Tuning < uid=B9E930CA573DFF6C00000027FCC400B9 >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 3
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed TRUE
+	myBlocksObscurationShuffle TRUE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting AllyOnly
+	myDamageArea < uid=B9E930CA573DFF6C000000286C86998D >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount -300
+	myShielding 0
+	mySelfTeamDamage -1
+	mySelfTeamShielding -1
+	mySelfKnockbackAmount -1
+	myLocationEffect < uid=B9E930CA573DFF6C0000002968725640 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification NonDamaging
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData demo_e3_humankite_power4_demo_Tuning < uid=B9E930CA573DFF6C0000002A0D530E60 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 0
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=B9E930CA573DFF6C0000002BD14E06BB >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 5
+		myWidth 10
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 999900
+	myShielding 0
+	mySelfTeamDamage -1
+	mySelfTeamShielding -1
+	mySelfKnockbackAmount -1
+	myLocationEffect < uid=B9E930CA573DFF6C0000002C895CA7EE > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification Ranged
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+

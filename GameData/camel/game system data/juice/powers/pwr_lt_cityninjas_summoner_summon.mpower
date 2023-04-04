@@ -1,0 +1,43 @@
+include ./temp_pwr_enemy_archetype_basic_summoner1.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/pwr_lt_cityninjas_summoner_summon_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_smoke_bomb_mm33.mprojectile"
+
+CombatPower pwr_LT_cityninjas_summoner_summon < uid=86C9308257684D930000015B3A7CABFA > : temp_pwr_enemy_archetype_basic_summoner1
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/ninja_power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_ST_summon_no_min_range.dds"
+	myUIName "contextComment = \"\", description = \"temp_pwr_enemy_archetype_basic_summoner1 Name\", enabled = true, guid = #9D0E61965997727B000F07EB0E73B47F, lineVersion = 0, maxLength = 18, text = \"Shinobi Summon\""
+	myUseSkillScript < uid=86C93082576DBA4300000117211DF51C > = Camel_Simple_PlayAnim_Script
+	myAnimationState power3
+	myProjectile < uid=86C93082587EAB5F000289A6623A8908 > = projectile_smoke_bomb_mm33
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C93082576DC64C0000219F426EC9B3 >
+		{
+			myPriority 30
+			myMaximumNumberOfPets 3
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Charmed
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+				}
+			}
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C9308257684D930000015CFEE16523 > = pwr_LT_cityninjas_summoner_summon_Kevin_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

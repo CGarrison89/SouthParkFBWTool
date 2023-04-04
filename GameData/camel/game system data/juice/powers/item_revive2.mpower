@@ -1,0 +1,13 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_revive_script.mskillscriptjuice
+include camel/skillscript/camel_consumable_eat_script.mskillscriptjuice
+
+CombatPower item_revive2 < uid=C27CCFE357FC171A00000B4CEB86CF0D >
+{
+	myUIName "contextComment = \"\", description = \"\", enabled = false, guid = #C27CCFE357FC171A00000B4B032FEADA, lineVersion = 0, maxLength = 1, text = \"|empty|\""
+	myUseSkillScript < uid=C27CCFE357FC171A00000B4D188498A1 > = camel_consumable_eat_script
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myTuningData < uid=C27CCFE357FC171A00000B4EE1A494DF > = item_revive2_consumable_Tuning
+	myPowerDeathTargeting OnlyDead
+}
+

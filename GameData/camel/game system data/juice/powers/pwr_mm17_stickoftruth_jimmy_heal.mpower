@@ -1,0 +1,8 @@
+include ./enemy_pwr_archetype_priest_heal.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_mm17_stickoftruth_jimmy_heal < uid=86C9308257BB75C0000001946A1305B5 > : enemy_pwr_archetype_priest_heal
+{
+	myTuningData < uid=86C9308257BB75C0000001956F155C90 > = pwr_mm17_stickoftruth_jimmy_heal_Kevin_Tuning
+}
+

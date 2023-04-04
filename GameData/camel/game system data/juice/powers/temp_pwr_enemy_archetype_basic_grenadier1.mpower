@@ -1,0 +1,27 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower temp_pwr_enemy_archetype_basic_grenadier1 < uid=B9E930CA5740912E0000002C1A797647 >
+{
+	myUIName "contextComment = \"\", description = \"temp_pwr_enemy_archetype_basic_grenadier1 Name\", enabled = true, guid = #51C546C65774DC6F000001DD58F3F2DD, lineVersion = 0, maxLength = 49, text = \"ST Lob (Optional AoE) 2 DMG (1 if AoE)\""
+	myUseSkillScript < uid=B9E930CA5740912E0000002DF9846131 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA57409C62000001038236433F >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA574099C4000000AF1C4AA274 > = temp_pwr_enemy_archetype_basic_grenadier1_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

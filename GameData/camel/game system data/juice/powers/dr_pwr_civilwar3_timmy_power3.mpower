@@ -1,0 +1,72 @@
+include ./pwr_civilwar3_timmy_power3.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower dr_pwr_civilwar3_timmy_power3 < uid=86C930825A1385C20031FDAFE9460CD7 > : pwr_civilwar3_timmy_power3
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "1 target" < uid=86C930825A1385C20031FDB0CB5D37EF >
+		{
+			myPriority 10
+			myMinimumAffectedTargets 1
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not confused"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Confused
+					myFollowingCondition AND
+				}
+				StatusEffectConditionalEntry "not charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+				}
+			}
+		}
+		PowerEvaluationData "2 targets" < uid=86C930825A1385C20031FDB1AE70D1A2 >
+		{
+			myPriority 50
+			myMinimumAffectedTargets 2
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not confused"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Confused
+					myFollowingCondition AND
+				}
+				StatusEffectConditionalEntry "not charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+				}
+			}
+		}
+		PowerEvaluationData "3 targets" < uid=86C930825A1385C20031FDB2B7801D32 >
+		{
+			myPriority 80
+			myMinimumAffectedTargets 3
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not confused"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Confused
+					myFollowingCondition AND
+				}
+				StatusEffectConditionalEntry "not charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+				}
+			}
+		}
+		PowerEvaluationData "main target already charmed or confused" < uid=86C930825A1388E900008FD7D9E042D9 >
+		{
+			myMinimumAffectedTargets 1
+		}
+	}
+	myTuningData < uid=86C930825A1385C20031FDB36E799FA1 > = dr_pwr_civilwar3_timmy_power3_Tuning
+}
+

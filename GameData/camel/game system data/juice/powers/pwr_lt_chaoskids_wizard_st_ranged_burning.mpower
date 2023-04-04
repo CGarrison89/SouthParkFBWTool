@@ -1,0 +1,10 @@
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_LT_chaoskids_wizard_st_ranged_burning < uid=86C9308257684CC10000012E1223AF2E > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/chaoskid_power1.dds"
+	myUIName "contextComment = \"power name\", description = \"enemy_pwr_archetype_wizard_st_ranged Name\", enabled = true, guid = #9D0E61965997831E0000928BBB85813D, lineVersion = 0, maxLength = 17, text = \"Lava of Chaos\""
+	myTuningData < uid=86C9308257684CC10000012FEE5BA2AD > = pwr_LT_chaoskids_wizard_st_ranged_burning_Kevin_Tuning
+}
+

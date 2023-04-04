@@ -1,0 +1,38 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower enemy_pwr_archetype_warlock_lob_min_confuse < uid=86D640765744DCCC000000BFDE6B1E8A >
+{
+	myUIName "contextComment = \"Placeholder Enemy\", description = \"enemy_pwr_archetype_warlock_lob_min_confuse Name\", enabled = true, guid = #51C546C65774D9440000009EB9AAACE1, lineVersion = 1, maxLength = 25, text = \"Warlock Lob Confuse\""
+	myUseSkillScript < uid=86D640765744DCCC000000C08196A0B5 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D640765744DCCC000000C19AD25CDD >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86D640765756163A000001FC47E81524 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86D640765744DCCC000000C24F4D4717 > = enemy_pwr_archetype_warlock_lob_min_confuse_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

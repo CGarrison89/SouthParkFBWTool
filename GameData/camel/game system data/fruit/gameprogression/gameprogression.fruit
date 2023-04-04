@@ -1,0 +1,17 @@
+
+enum GameProgressionEnum
+{
+	Day_1
+	Day_2
+	Day_3	
+    	DEPRECATED_USE_POLICESTATE_INSTEAD_Day_4
+	NAMBLA
+	Police_State
+	Election
+	Post_Game
+	NONE
+	A1S1_LOTR
+	A1S2_SuperStart
+	A1S3_MetRandy
+	A1S4_DefeatMallRandy
+}

@@ -1,0 +1,47 @@
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_christmascritters.juice"
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower mm17_christmascritters_beary_power02 < uid=86C9308258CABA1D0002439A366635FF > : enemy_pwr_archetype_bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/beary_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_3_rows.dds"
+	myPreviewIconImage ""
+	myUIName "contextComment = \"\", description = \"\", enabled = true, guid = #86C9308258CABA1D000243999D78DC3E, lineVersion = 2, maxLength = 26, text = \"[ Wall Of Hellfire ]\""
+	myUseSkillScript < uid=86C9308258CABA1D0002439B9CE95D94 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=86C9308258CABA1D0002439C046F2AA2 >
+		{
+			myPriority 20
+			myMinimumAffectedTargets 1
+		}
+		PowerEvaluationData "2 targets" < uid=86C9308258CABA65000243B4EB616CAD >
+		{
+			myPriority 21
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData Enraged < uid=86C930825995DD9F00175701B829A30E >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C9308258CABA1D0002439E586390FA > = enemy_pwr_mm17_christmascritters_bruiser_power1_amcclay_Tuning
+	myCameraPreset < uid=B9E930CA599375BA000262681D9EE432 > = fireballs
+	myValidDirections
+	{
+		myLeft TRUE
+		myRight TRUE
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

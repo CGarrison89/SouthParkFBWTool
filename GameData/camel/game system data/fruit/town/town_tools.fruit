@@ -1,0 +1,73 @@
+include "camel/game system data/fruit/town/town_types.fruit"
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// TOOL - Script Binding
+//
+list TownToolBindingCompoundList
+{
+	string
+}
+
+class TownToolBindingTemplate
+{
+	string myIdentifier < tooltip="Template FileName using data folder as root" >
+	TownToolBindingCompoundList myCompounds
+}
+
+list TownToolBindingTemplateList
+{
+	TownToolBindingTemplate
+}
+
+class TownToolScriptNodeBindings
+{
+	TownToolBindingTemplateList myTemplates
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// TOOL - BUILDER
+//
+class TownToolBuilder
+{
+	TownBuilderPresetTypeEnum myPresetType NOTSET
+	file myGraphActorTemplate < bhv=asset assettype=Object tooltip="Character asset template" >
+	string myGraphActorFilenamePrefix  < tooltip="prefix to prepend to name" >
+	string myGraphActorFilenamePostfix < tooltip="postfix to append to name" >
+	file myAnimSystemTemplate < bhv=asset assettype="Animation system" tooltip="Animation system asset template" >
+	string myAnimSysFilenamePrefix < tooltip="prefix to prepend to name" >
+	string myAnimSysFilenamePostfix < tooltip="postfix to append to name" >
+	string myAnimTemplateName < tooltip="name subset to replace of the anim system" >
+	string myAnimTemplateFilter < tooltip="prefix to remove from the asset name" >
+	string myAnimTemplatePrefix < tooltip="prefix the template anim name" >
+	string myAnimSetupTemplateFormat < tooltip="default anim format to use with the setup node" >
+	file myEnvNPCTemplate < bhv=asset assettype=actor tooltip="NPC asset template" >
+	string myEnvNPCFilenamePrefix < tooltip="prefix to prepend to name" >
+	file myTownActionsTemplate < tooltip="Town Actions Template" >
+	string myTownActionsFilenamePrefix < tooltip="prefix to prepend to name" >
+	file myTownReactionsTemplate < tooltip="Town Actions Template" >
+	string myTownReactionsFilenamePrefix < tooltip="prefix to prepend to name" >
+	file myTownActorTemplate < tooltip="Town Character Template" >
+	string myTownActorFilenamePrefix < tooltip="prefix to prepend to name" >
+	string myTownActorInteractionsInstanceName < tooltip="Interactions instance name to reference in town actor" >
+	string myTownActorReactionsInstanceName < tooltip="Reactions instance name to reference in town actor" >
+	file myTownActors < tooltip="Depository of Characters" >
+	file myTownActorInstances < tooltip="Depository of Character Instances" >
+}
+
+class TownToolBuilderPreset : TownToolBuilder
+{
+}
+
+list TownToolBuilderPresetList
+{
+	TownToolBuilderPreset
+}
+
+class TownTools
+{
+	TownBuilderPresetTypeEnum myBuilderInitialPreset NOTSET
+	TownToolBuilderPresetList myBuilderPresets
+	TownToolScriptNodeBindings myScriptNodeBindings
+}

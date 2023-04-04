@@ -1,0 +1,63 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_mysterion.juice"
+
+CombatPower pwr_mysterion_power3 < uid=B9E930CA56D4B3C60000004A9AC0C5D6 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/mysterion_bloodcontract.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/4_Range_ST_LOS.dds"
+	myUIName "contextComment = \"Mysterion Power 3 Name\", description = \"pwr_mysterion_power3 Name\", enabled = true, guid = #51C546C65774DC3C00000160A50FDE88, lineVersion = 1, maxLength = 16, text = \"Dark Whisper\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_mysterion_power3 Description\", enabled = true, guid = #51C546C65774DC3C000001613F438E77, lineVersion = 0, maxLength = 110, text = \"Mysterion pulls an enemy to his side and shares knowledge man was not meant to have. \""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_mysterion_power3 Short Description\", enabled = true, guid = #9D0E6196579BCD30000044B06D97AA06, lineVersion = 0, maxLength = 34, text = \"Pull a foe and deal damage\""
+	myUseSkillScript < uid=B9E930CA56D4B3C60000004BB233D331 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308258A26C830000177CCB589445 >
+		{
+			myPriority 15
+			myMinimumDistanceToEnemies 2
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308258A26C830000177DE64A26AB >
+		{
+			myPriority 15
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumDistanceToEnemies 2
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA56D4B3C60000004CD6072588 > = pwr_mysterion_power3_Tuning
+	myCameraPreset < uid=8E1BC443594C7F59000C9E8443F1F852 > = Mysterion_Power03
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.0
+				myActionPlusEndTime 0.75
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

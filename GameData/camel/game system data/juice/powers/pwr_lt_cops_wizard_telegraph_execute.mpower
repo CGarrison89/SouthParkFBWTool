@@ -1,0 +1,51 @@
+include ./enemy_pwr_archetype_warlock_lob_min_gross.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/sm68_pedo_priest_charge_warlock02_telegraph_damage_delt.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/lt_cops_wizard_telegraph_execute.mskillscriptjuice
+include camel/skillscript/camel_simple_swappower_slot3.mskillscriptjuice
+include camel/skillscript/camel_simple_swappower_slot2.mskillscriptjuice
+include camel/skillscript/camel_simple_telegraph_targeting_script_v2.mskillscriptjuice
+
+CombatPower pwr_LT_cops_wizard_telegraph_execute < uid=8585E53F592DDF91000A554C5F75B9C6 > : enemy_pwr_archetype_warlock_lob_min_gross
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Cop_Power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/4_range.dds"
+	myUIName "contextComment = \"LT cop wizard telegraphed power name\", description = \"pwr_LT_cops_wizard_telegraph_execute power name\", enabled = true, guid = #9D0E61965994F94B00033E94C2F9420E, lineVersion = 0, maxLength = 14, text = \"Hot Pursuit\""
+	myUseSkillScript < uid=8585E53F592DDF91000A554D28D3B1F2 > = lt_cops_wizard_telegraph_execute
+	myTargetingSkillScript < uid=86C930825AA2D1CF0007674B6A15CDA8 > = Camel_Simple_Telegraph_Targeting_Script_v2
+	myLockedByDefault TRUE
+	myNumberOfAttackEvents 2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=8585E53F592DDF91000A554EFDD4B469 >
+		{
+			myPriority 1
+			myMinimumAffectedTargets 0
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=B642A89A598E58770027B5F3B23BA853 >
+		{
+			myPriority 1001
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 0
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=86C93082595421660001EA375E98FA13 > = Camel_Simple_SwapPower_Slot2
+	myTuningData < uid=8585E53F592DDF91000A554FF2A994DB > = pwr_LT_cops_wizard_telegraph_execute_Kevin_Tuning
+	myCameraPreset < uid=8585E53F592DDF91000A555000E0B8C1 > = Preset_Generic_Melee
+}
+

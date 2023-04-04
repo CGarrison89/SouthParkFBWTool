@@ -1,0 +1,20 @@
+include ./pwr_dlc1_vampkids_gorilla_crush_execute.mpower
+include camel/skillscript/dlc1_vampkids_generalmanager_persistent_skillscript.mskillscriptjuice
+include camel/skillscript/dlc1_vampkids_jokestercop_power01_skillscript.mskillscriptjuice
+include camel/skillscript/dlc1_vampkids_jokestercop_power01_targeting_skillscript.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_jokester.juice"
+include camel/skillscript/dlc1_jokestercop_swappowers.mskillscriptjuice
+
+CombatPower pwr_DLC1_VampKids_JokesterCop_Power01 < uid=86C9308259DFA0A1000091D0D87CC70B > : pwr_DLC1_VampKids_Gorilla_crush_execute
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/JokesterCop_Power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide.dds"
+	myUIName "contextComment = \"\", description = \"pwr_DLC1_VampKids_JokesterCop_Power01_name\", enabled = true, guid = #86C9308259EE5E7B0000907DCCFB804D, lineVersion = 2, maxLength = 16, text = \"Frosted Tips\""
+	myUseSkillScript < uid=86C9308259DFA0A1000091D1CCE9FFE6 > = DLC1_VampKids_JokesterCop_Power01_SkillScript
+	myTargetingSkillScript < uid=86C930825A5FF949000FF3803D2CC231 > = DLC1_VampKids_JokesterCop_Power01_targeting_SkillScript
+	myLockedByDefault FALSE
+	myOnCombatActionCompleteSkillScript < uid=86C9308259DFA0A1000091D23F986111 > = DLC1_JokesterCop_SwapPowers
+	myTuningData < uid=86C9308259DFA0A1000091D3B3A10F83 > = pwr_DLC1_VampKids_JokesterCop_Power01_Tuning
+	myCameraPreset < uid=86C930825A6915A70006B9B74186C1F5 > = Jokester_Power01
+}
+

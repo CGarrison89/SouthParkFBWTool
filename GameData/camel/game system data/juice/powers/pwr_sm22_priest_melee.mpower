@@ -1,0 +1,13 @@
+include ./pwr_lt_6thgraders_priest_melee.mpower
+include ./enemypowers.adrian.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_sm22_priest_melee < uid=8585E53F57A510F00004E69357D5C9F3 > : pwr_LT_6thgraders_priest_melee
+{
+	myUseSkillScript < uid=86C9308258798202000015DA1BF02B64 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myShouldRepositionBeforeExecution TRUE
+	myTuningData < uid=8585E53F57A510F00004E694C1511EB3 > = pwr_sm22_priest_melee_Adrian_Tuning
+	myCameraPreset < uid=86C9308259093035000F2B22E37AE156 > = NULLREFERENCE
+}
+

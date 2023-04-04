@@ -1,0 +1,8 @@
+include ./mm17_christmascritters_beavery_power1.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower dr_mm17_christmascritters_beavery_power1 < uid=C87888A05A06210000017671FFCF368A > : mm17_christmascritters_beavery_power1
+{
+	myTuningData < uid=C87888A05A06218200018896C5AC4E3D > = enemy_pwr_dr_archetype_swarmer_melee_Tuning
+}
+

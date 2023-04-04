@@ -1,0 +1,39 @@
+include ./enemy_pwr_archetype_priest_heal.mpower
+include ./dlc1_enemypowers.juice
+include camel/skillscript/dlc1_vampkids_michaeljackson_revive_skillscript.mskillscriptjuice
+include "camel/game system data/juice/camera/casabonita/uber_camera_powers_presets_michaeljackson.juice"
+include "camel/game system data/juice/ai/npc/dlc1_enemiestuning.juice"
+include camel/skillscript/camel_simple_swappower_slot3.mskillscriptjuice
+include camel/skillscript/dlc1_michaeljackson_dual_revive_swappower.mskillscriptjuice
+include camel/skillscript/dlc1_karen_revive_swappower.mskillscriptjuice
+include camel/skillscript/dlc1_vampkids_karen_revive_telegraph_execute.mskillscriptjuice
+include camel/skillscript/dlc1_vampkids_karen_revive_telegraph_execute_targeting.mskillscriptjuice
+
+CombatPower pwr_DLC1_VampKids_karen_revive_execute < uid=8585E53F5A590C8C0008490741E0099F > : enemy_pwr_archetype_priest_heal
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/Karen_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide_heal.dds"
+	myUIName "contextComment = \"\", description = \"pwr_DLC1_VampKids_MichaelJackson_revive_name\", enabled = true, guid = #8585E53F5A590C8C00084906A5C5A879, lineVersion = 0, maxLength = 13, text = \"Thriller\""
+	myUseSkillScript < uid=8585E53F5A590C8C00084908879BDAD2 > = DLC1_VampKids_Karen_Revive_Telegraph_Execute
+	myTargetingSkillScript < uid=8585E53F5A66586D003BB4B657731189 > = DLC1_VampKids_Karen_Revive_Telegraph_Execute_Targeting
+	myAnimationState telegraph_outro
+	myLockedByDefault TRUE
+	myIsADualEffectPower TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=8585E53F5A590C8C000849096A6757B1 >
+		{
+			myPriority 1000
+			myTargetHealthLessThanPercentage 80.0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=8585E53F5A590C8C0008490AE269BCE4 > = DLC1_Karen_Revive_SwapPower
+	myTuningData < uid=8585E53F5A590C8C0008490BA384FDC7 > = pwr_DLC1_VampKids_Karen_revive_execute_Tuning
+	myCameraPreset < uid=8585E53F5A590C8C0008490CFA90EE2F > = MichaelJackson_Power03
+}
+

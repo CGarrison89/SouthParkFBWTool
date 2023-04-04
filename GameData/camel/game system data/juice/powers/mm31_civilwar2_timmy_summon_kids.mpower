@@ -1,0 +1,40 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/pwr_placeholder_spawn_pet_player.mskillscriptjuice
+include camel/skillscript/camel_gadgeteer2_spawn_pet.mskillscriptjuice
+include camel/skillscript/mm31_civil_war2_timothy_kid_spawn.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_preset_mm31_civilwar2_timmy.juice"
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower MM31_civilwar2_timmy_summon_kids < uid=DB7C6D425755F8E300038B457A126E20 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/DoctorTimothy_SummonKindergarteners.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/self.dds"
+	myUIName "contextComment = \"\", description = \"mm31_civilwar2_timmy_summon_kids Name\", enabled = true, guid = #51C546C65774D952000000BEBE80CAAA, lineVersion = 3, maxLength = 34, text = \"When Kindergartners Attack\""
+	myUIDescription "contextComment = \"\", description = \"mm31_civilwar2_timmy_summon_kids Description\", enabled = true, guid = #51C546C65774D952000000BF92F08D3C, lineVersion = 0, maxLength = 20, text = \"kid description\""
+	myUseSkillScript < uid=DB7C6D425755F8E300038B4761E78BFE > = MM31_civil_war2_timothy_kid_spawn
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=DB7C6D425755F8E300038B48547CE361 >
+		{
+			myPriority 50
+			myTargetHealthLessThanPercentage 101.0
+			mySelfHealthLessThanPercentage 101.0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=DB7C6D425755F8E300038B49BDF6E4A0 > = MM31_civilwar2_timmy_summon_kids_MNguyen_Tuning
+	myCameraPreset < uid=86C93082596FE91C000335E3CBD192C8 > = Preset_Generic_Melee
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

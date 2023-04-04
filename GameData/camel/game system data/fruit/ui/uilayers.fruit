@@ -1,0 +1,39 @@
+enum UILayerType
+{
+	LoadingScreen
+	TutorialMessage
+	TutorialSphinctor
+	ButtonHints
+	MessageBox
+	DangerDeck
+	IngameMenu
+	CombatEntryFlash
+	CombatEntryScreen
+	CombatHUDScreen
+	CombatInspectionDetails
+	CombatHUDDamage
+	CombatHUDDamage_Shield
+	CombatHUDDamage_StatusEffect
+	CombatHUD
+	HUD
+	CombatUltPowerSlot
+	CombatPowerSelect
+	CombatTimeline
+	InspectionMode
+	CombatGrid_Projections
+	CombatGrid_CurrentActor
+	CombatGrid_FullGrid
+	CombatGrid_Movement
+	CombatGrid_Targeting
+	CombatGrid_TargetingRange
+	CombatGrid_ScriptedHighlight
+	CombatGrid_MouseCursor
+	TRCMessageBox
+	Timefart
+	Minigame
+}
+
+class UILayerTypeInfo
+{
+	int myUILayerValue
+}

@@ -1,0 +1,11 @@
+include "camel/game system data/fruit/powers/powers.fruit"
+include "camel/game system data/fruit/powers/combattimefartpowers.fruit"
+include ./playerpowers.juice
+include ./buddypowers.juice
+include ./enemypowers.juice
+include ./bosspowers.juice
+include ./buddypowers.macero.juice
+include ./enemypowers.macero.juice
+include ./enemypowers.mnguyen.juice
+include ./enemypowers.amcclay.juice
+

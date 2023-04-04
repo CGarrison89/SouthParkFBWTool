@@ -1,0 +1,75 @@
+include "camel\game system data\fruit\juiceObj.fruit"
+
+enum BonusTypeEnum
+{
+	None
+	MarketManipulation
+	InsiderTrading
+	BankruptcyAvoidance
+	BankruptcyAvoidance.75
+	BankruptcyAvoidance.5
+	SilverSpoon
+	ShortSell
+	AgileInvesting
+	Gold4Cash
+}
+
+class BankBetting_BonusTypeUI : JuiceObj
+{
+	BonusTypeEnum myBonusType
+	varmap myUIName < bhv="localization" >
+	varmap myUIDescription < bhv="localization" >
+}
+
+list BankBetting_BonusTypeUINames
+{
+	BankBetting_BonusTypeUI
+}
+
+list BankBetting_InvestmentNames
+{
+	varmap < bhv="localization" >
+}
+
+class BankBetting_Investment : JuiceObj
+{
+	int myNameIndex
+	int myCardCount
+	int myValue
+	BonusTypeEnum myBonusType
+	int myBonusRequirement
+}
+
+list BankBetting_Investments
+{
+	BankBetting_Investment
+}
+
+list BankBetting_WheelLayoutIndices
+{
+	int
+}
+
+class BankBetting_Level : JuiceObj
+{
+	BankBetting_Investments myInvestments
+
+	int myTotalBaseWorth
+	int myClassAdvancementGoal
+	int myBreakEvenGoal
+
+	varmap myLevelUIName < bhv="localization" >
+	BankBetting_WheelLayoutIndices myLayout
+}
+
+list BankBetting_LevelList
+{
+	BankBetting_Level
+}
+
+class BankBetting : JuiceObj
+{
+	BankBetting_InvestmentNames myInvestmentNames
+	BankBetting_LevelList myLevels
+	BankBetting_BonusTypeUINames myBonusTypes
+}

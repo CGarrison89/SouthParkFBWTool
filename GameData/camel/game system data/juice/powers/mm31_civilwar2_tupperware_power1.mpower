@@ -1,0 +1,18 @@
+include ./pwr_tupperware_power1.mpower
+
+CombatPower MM31_civilwar2_tupperware_power1 < uid=86D64076575A1DC70000B1A33571E1DD > : pwr_tupperware_power1
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D64076575A2335000118132D1B9182 >
+		{
+			myPriority 60
+		}
+		PowerEvaluationData enraged < uid=B642A89A598B762D0002FDE6AF0816AA >
+		{
+			myPriority 1060
+			myRequireAggroTarget TRUE
+		}
+	}
+}
+

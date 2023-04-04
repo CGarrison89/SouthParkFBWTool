@@ -1,0 +1,22 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_pet_damage_script_with_self_damage.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_pet_damage_script_with_suicide.mskillscriptjuice
+
+CombatPower pwr_mystic4_pet_power1 < uid=86D640765744868B00000F6EC67424ED >
+{
+	myUIName "contextComment = \"\", description = \"pwr_mystic4_pet_power1 Name\", enabled = true, guid = #51C546C65774DC3D00000164EE3C668C, lineVersion = 0, maxLength = 17, text = \"Turret Attack\""
+	myUseSkillScript < uid=86D640765744868B00000F6FF956AA4E > = Camel_Simple_Placeholder_Damage_Script
+	myAnimationState ""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "New PowerEvaluationData (0)" < uid=86D640765744868B00000F703B7C3D0F >
+		{
+			myPriority 10
+			myAggroPriority 0
+		}
+	}
+	myTuningData < uid=86D640765744868B00000F719FACA66B > = pwr_mystic4_pet_power1_Tuning
+	myPowerGroup Normal
+}
+

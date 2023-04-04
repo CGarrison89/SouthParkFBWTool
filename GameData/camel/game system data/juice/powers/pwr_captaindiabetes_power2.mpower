@@ -1,0 +1,112 @@
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include ./buddypowers.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_captaindiabetes.juice"
+include camel/skillscript/pwr_rush_onhit.mskillscriptjuice
+
+CombatPower pwr_captaindiabetes_power2 < uid=B9E930CA56C77175000001319AECA349 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/captaindiabetes_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/rush_3.dds"
+	myUIName "contextComment = \"power name\", description = \"pwr_captaindiabetes_power2 Name\", enabled = true, guid = #51C546C65774D962000000F5D865C947, lineVersion = 2, maxLength = 1, text = \"Sugar Rush\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_captaindiabetes_power2 Description\", enabled = true, guid = #51C546C65774D962000000F60B48D186, lineVersion = 1, maxLength = 166, text = 'The Captain puts the \"beat\" in diabetes as he goes hyperglycemic, dashing forward with a flurry of fists and gaining Protection.'"
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_captaindiabetes_power2 Short Description\", enabled = true, guid = #9D0E6196579AB39F0000019F4A3B6146, lineVersion = 0, maxLength = 51, text = \"Dash attack that also grants Protection\""
+	myTargetingSkillScript < uid=B9E930CA56C77175000001339846950F > = NULLREFERENCE
+	myAnimationState ""
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "1 target" < uid=B9E930CA56C77175000001340798A6AB >
+		{
+			myPriority 10
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "2 targets" < uid=86C930825A5692A8000194E01F24C482 >
+		{
+			myPriority 30
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "3 targets" < uid=86C930825A5692A8000194E10F401177 >
+		{
+			myPriority 40
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "1 target - kill" < uid=86C930825A5692A8000194E25D413518 >
+		{
+			myPriority 90
+			myMinimumKills 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "2 targets - kill" < uid=86C930825A5692A8000194E3DCD392D9 >
+		{
+			myPriority 110
+			myMinimumKills 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "3 targets - kill" < uid=86C930825A5692A8000194E4E5EA5D15 >
+		{
+			myPriority 120
+			myMinimumKills 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData enraged < uid=86C930825A5692A8000194E5EA2E2376 >
+		{
+			myPriority 900
+			myAggroPriority 900
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	mySecondarySkillScript < uid=B9E930CA56C7717500000135F891BBFA > = Simple_Rush_Damage_Script
+	myDialogueSkillScript < uid=326B24CD5913A78600014B1323303679 > = Camel_Simple_PlayDialogue_Script
+	myOnHitSkillScript < uid=CE7F09C058CB14750001DACE52FC005F > = pwr_rush_onHit
+	myTuningData < uid=B9E930CA56C771750000013611A369EB > = pwr_captaindiabetes_power2_Tuning
+	myCameraPreset < uid=8E1BC4435912CEA300319E467BF82525 > = CaptainDiabetes_Power02
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.0
+				myActionPlusEndTime 0.75
+				myActionPlusPresetEnum Mash_Normal
+			}
+		}
+	}
+}
+

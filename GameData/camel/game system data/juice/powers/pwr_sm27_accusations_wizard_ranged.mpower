@@ -1,0 +1,14 @@
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include ./enemypowers.adrian.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_sm27_accusations_wizard_ranged < uid=8585E53F57F28CED0004E8CBC18685A9 > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Accusations_Point.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_range.dds"
+	myUIName "contextComment = \"\", description = 'Attack from \"Accusations\" boy in SM28 counseling combat', enabled = true, guid = #EA0BC518599A7F900002A0244211D98A, lineVersion = 0, maxLength = 13, text = \"Harangue\""
+	myUseSkillScript < uid=86C930825876799A000015F428C3173D > = Camel_Simple_PlayAnim_Script
+	myAnimationState power4
+	myTuningData < uid=8585E53F57F28CED0004E8CC9E259F2C > = pwr_sm27_accusations_wizard_ranged_Adrian_Tuning
+}
+

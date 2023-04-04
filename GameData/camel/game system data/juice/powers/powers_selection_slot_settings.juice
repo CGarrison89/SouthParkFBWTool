@@ -1,0 +1,75 @@
+include "camel/game system data/fruit/powers/powersselectionslotsettings.fruit"
+
+PowersSelectSlotSetting PowersSelectSlotSetting
+{
+	myPowersSelectSlotList
+	{
+		PowersSelectSlot Power1 < uid=51BB7ACF553F32AC0000000B1852414C >
+		{
+			mySlotName Power2
+			myPosition 0.05;0.125
+			myCategoryList
+			{
+				PowerCategory "New PowerCategory (0)" Attack
+				PowerCategory "New PowerCategory (1)" Buff
+				PowerCategory "New PowerCategory (2)" Location
+				PowerCategory "New PowerCategory (3)" Summon
+				PowerCategory "New PowerCategory (4)" Debuff
+			}
+		}
+		PowersSelectSlot Power2 < uid=51BB7ACF553F34630000000CDDDF4C64 >
+		{
+			mySlotName Melee
+			myPosition 0.35;0.125
+			myCategoryList
+			{
+				PowerCategory "New PowerCategory (0)" Attack
+			}
+		}
+		PowersSelectSlot Power3 < uid=51BB7ACF553F34630000000D537A41A9 >
+		{
+			mySlotName Power4
+			myPosition 0.65;0.125
+			myCategoryList
+			{
+				PowerCategory "New PowerCategory (0)" Attack
+				PowerCategory "New PowerCategory (1)" Buff
+				PowerCategory "New PowerCategory (2)" Location
+				PowerCategory "New PowerCategory (3)" Summon
+				PowerCategory "New PowerCategory (4)" Debuff
+			}
+		}
+		PowersSelectSlot Power4 < uid=51BB7ACF553F34630000000EF8A3C099 >
+		{
+			mySlotName Power1
+			myPosition 0.95;0.125
+			myCategoryList
+			{
+				PowerCategory "New PowerCategory (0)" Attack
+				PowerCategory "New PowerCategory (1)" Buff
+				PowerCategory "New PowerCategory (2)" Location
+				PowerCategory "New PowerCategory (3)" Summon
+				PowerCategory "New PowerCategory (4)" Debuff
+			}
+		}
+		PowersSelectSlot Power5 < uid=51BB7ACF553F34630000000F7271A6E0 >
+		{
+			mySlotName Passive1
+			myPosition 0.125;0.875
+			myCategoryList
+			{
+				PowerCategory "New PowerCategory (0)" Attack
+			}
+		}
+		PowersSelectSlot Power6 < uid=51BB7ACF553F34630000001055EA78A6 >
+		{
+			mySlotName Passive2
+			myPosition 0.875;0.875
+			myCategoryList
+			{
+				PowerCategory "New PowerCategory (0)" Attack
+			}
+		}
+	}
+}
+

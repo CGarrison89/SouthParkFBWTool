@@ -1,0 +1,13 @@
+class BusStop < uid=auto >
+{
+	uid mySpawnPoint < bhv=entitypicker entitytype=CSpawnPoint >
+	uid myWalkableRegion < bhv=entitypicker entitytype=CHull >
+}
+
+class BusIG < uid=auto >
+{
+	BusStop* myDepartureLocation
+	BusStop* myArrivalLocation
+	uid myDepartureSequence < bhv=entitypicker entitytype=Sequence >
+	uid myArrivalSequence < bhv=entitypicker entitytype=Sequence >
+}

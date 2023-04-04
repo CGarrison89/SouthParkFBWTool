@@ -1,0 +1,16 @@
+enum ConditionType
+{
+	TempCondition0,
+	TempCondition1
+}
+
+class StatisticCondition
+{
+	ConditionType myType
+}
+
+list ConditionList
+{
+	StatisticCondition
+}
+

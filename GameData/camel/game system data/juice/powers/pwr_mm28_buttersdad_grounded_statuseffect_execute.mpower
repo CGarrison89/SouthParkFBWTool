@@ -1,0 +1,28 @@
+include ./pwr_lt_6thgraders_grenadier_telegraph_execute.mpower
+include camel/skillscript/mm28_buttersdad_grounded_statuseffect_script.mskillscriptjuice
+include camel/skillscript/camel_simple_swappower_slot2.mskillscriptjuice
+include camel/skillscript/mm28_buttersdad_grounded_swappower_afterexecute.mskillscriptjuice
+include camel/skillscript/pwr_mm28_buttersdad_grounded_statuseffect_execute_targeting_skillscript.mskillscriptjuice
+
+CombatPower pwr_MM28_ButtersDad_Grounded_StatusEffect_Execute < uid=86C93082593341F20000771C372E28D7 > : pwr_LT_6thgraders_grenadier_telegraph_execute
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/ButterDad_Power2_stage1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe.dds"
+	myUIName "contextComment = \"\", description = \"mm28_buttersdad_ground_power Name\", enabled = true, guid = #86C930825938B69A000558D9FCFC2A03, lineVersion = 0, maxLength = 10, text = \"Ground\""
+	myUseSkillScript < uid=86C93082593342C600007729640D61AF > = MM28_ButtersDad_Grounded_StatusEffect_Script
+	myTargetingSkillScript < uid=86C930825A789D0F0005D451B1ED90B7 > = pwr_MM28_ButtersDad_Grounded_StatusEffect_Execute_Targeting_SkillScript
+	myAnimationState execute
+	myIgnoreMintBerryInteraction TRUE
+	myProjectile < uid=86C93082593342C60000772A5FD421CE > = NULLREFERENCE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C93082593343770000773E9E5939D8 >
+		{
+			myPriority 1000
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=86C9308259542F530002FD88827D6173 > = MM28_ButtersDad_Grounded_SwapPower_AfterExecute
+	myTuningData < uid=86C93082593342C60000772B6EFDA913 > = pwr_mm28_buttersdad_grounded_execute_Kevin_Tuning
+	myCameraPreset < uid=86C93082593342C60000772C635A986B > = Preset_Generic_Ranged_ElementsOfInterest_MaxDistance
+}
+

@@ -1,0 +1,19 @@
+class NPCMovementData
+{
+	float myRunSpeed 5.5
+	float myWalkSpeed 1.0
+	float myKnockbackSpeed 6
+	float myRushSpeed 10
+	float myAccelerationFactor 10.0
+	float mySkidAccelerationFactor 3.0
+	float myDecelerationFactor 20.0
+	float myRunStickMagnitude 0.4
+	float myDecelerationMagnitude 0.08f
+	float myMinAccelerationMultiplier 1.0f
+}
+
+class ActorTuningData < uid=auto >
+{
+	float myTurnSpeed
+	NPCMovementData myMovementData
+}

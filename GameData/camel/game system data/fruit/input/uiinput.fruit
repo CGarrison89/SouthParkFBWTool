@@ -1,0 +1,14 @@
+enum UIAction
+{
+	None
+
+	Hover
+	Select
+	Deselect
+	Drag
+	PageDown
+	PageUp
+	ChangeView
+	ChangeState
+	Activate
+}

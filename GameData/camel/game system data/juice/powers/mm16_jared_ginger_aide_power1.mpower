@@ -1,0 +1,43 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/pwr_mm16_jared_aide02_heal.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_jared.juice"
+
+CombatPower mm16_jared_ginger_aide_power1 < uid=3267E0D05750EAC000001AA9B658C821 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/jaredaids_power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_buff.dds"
+	myUIName "contextComment = \"Jared's brunette aid eats a sandwich with jared to heal him\", description = \"enemy_pwr_mm16_jared_ginger_aide_power1\", enabled = true, guid = #EA0BC518599A83180003F69E66EDC465, lineVersion = 0, maxLength = 14, text = \"Meal Deal\"}"
+	myUseSkillScript < uid=3267E0D05750EAC000001AAAA4848481 > = pwr_mm16_jared_aide02_heal
+	myAnimationState power1
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData HealSelf < uid=3267E0D05750EAC000001AABDC9A6F25 >
+		{
+			myPriority 10
+			myAggroPriority 0
+			myTargetHealthLessThanPercentage 60.0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData HealJared < uid=3267E0D05849BC8400037A70691518B4 >
+		{
+			myPriority 30
+			myTargetHealthLessThanPercentage 70.0
+			myAIDesirableType VIP
+		}
+	}
+	myTuningData < uid=3267E0D05750EAC000001AAC371586C7 > = enemy_pwr_mm16_jared_ginger_aide_power1_amcclay_Tuning
+	myCameraPreset < uid=86C93082596688960002D2D8A11DB78F > = NULLREFERENCE
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

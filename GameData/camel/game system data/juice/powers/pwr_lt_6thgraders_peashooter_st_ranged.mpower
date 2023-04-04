@@ -1,0 +1,9 @@
+include ./enemy_pwr_archetype_peashooter_st_ranged.mpower
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+
+CombatPower pwr_LT_6thgraders_peashooter_st_ranged < uid=86C9308257683BF9000003F846CD95E5 > : enemy_pwr_archetype_peashooter_st_ranged
+{
+	myTuningData < uid=86C9308257683BF9000003F9414D4A68 > = pwr_LT_6thgraders_peashooter_st_ranged_Kevin_Tuning
+}
+

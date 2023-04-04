@@ -1,0 +1,64 @@
+include ./enemy_pwr_archetype_grenadier_aoe_lob_min.mpower
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/projectiles/projectile_sixthgraderpissballoon.mprojectile"
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+include camel/skillscript/camel_lobbed_power_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/lt_6thgraders_grenadier_telegraph.mskillscriptjuice
+include camel/skillscript/camel_simple_swappower_slot3.mskillscriptjuice
+include camel/skillscript/camel_simple_swappower_slot1.mskillscriptjuice
+
+CombatPower pwr_LT_6thgraders_grenadier_telegraph < uid=8585E53F5928AAEE00023E35AB9BCB55 > : enemy_pwr_archetype_grenadier_aoe_lob_min
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/6thGrader_PissBalloon.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_aoe_min_range.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_grenadier_aoe_lob_min Name\", enabled = true, guid = #8585E53F5928AAEE00023E34F9006FC5, lineVersion = 0, maxLength = 16, text = \"Piss Balloon\""
+	myUseSkillScript < uid=8585E53F5928AAEE00023E3697F88481 > = lt_6thgraders_grenadier_telegraph
+	myAnimationState ""
+	myProjectile < uid=8585E53F5928AAEE00023E370F9B88F3 > = projectile_sixthGraderPissBalloon
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "2 or more" < uid=8585E53F5928AAEE00023E38F51FB082 >
+		{
+			myPriority 30
+			myMinimumAffectedTargets 2
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 2
+			myNumTelegraphPowersAllowed 1
+		}
+		PowerEvaluationData default < uid=8585E53F5928AAEE00023E3980AB0C17 >
+		{
+			myPriority 15
+			myMinimumAffectedTargets 1
+			myPreferredRange -1
+			myNumTelegraphPowersAllowed 1
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "2 or more any range" < uid=8585E53F5928AAEE00023E3B002B9A88 >
+		{
+			myPriority 25
+			myMinimumAffectedTargets 2
+			myPreferredRange -1
+			myNumTelegraphPowersAllowed 1
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=86C930825954641C000086EC29EA2D41 > = Camel_Simple_SwapPower_Slot1
+	myTuningData < uid=8585E53F5928AAEE00023E3C08B8A1AF > = pwr_LT_6thgraders_grenadier_telegraph_Kevin_Tuning
+	myCameraPreset < uid=8585E53F5928AAEE00023E3DD0ABDF1B > = Preset_Generic_Ranged
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+	myTelegraphData
+	{
+		myTelegraphedPowerName pwr_LT_6thgraders_grenadier_telegraph_execute
+		myTelegraphingAnimationName locomotion
+	}
+}
+

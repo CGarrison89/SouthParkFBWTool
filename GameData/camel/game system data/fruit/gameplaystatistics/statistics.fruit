@@ -1,0 +1,12 @@
+include "camel/game system data/fruit/gameplaystatistics/statistic_conditions.fruit"
+include "camel/game system data/fruit/gameplaystatistics/statistic_client_handler.fruit"
+include "camel/game system data/fruit/gameplaystatistics/statistic_type.fruit"
+
+class GameplayStatistic < uid=auto >
+{
+	bool myIsCrossProfile FALSE
+	StatisticMajorType myType
+	ConditionList myConditions
+	ClientStatisticHandlerList myStatisticHandlers
+	bool myShouldOverrideValue FALSE
+}

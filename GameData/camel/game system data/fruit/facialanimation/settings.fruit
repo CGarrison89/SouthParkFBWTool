@@ -1,0 +1,47 @@
+include "camel/game system data/fruit/facialanimation/facial_types.fruit"
+
+class EyeTrackingSectorStartAngles
+{
+    // These are angles at which each pupil's sector begins
+    // The pupil will be chosen if the look at direction lies between
+    // the start angle and the start angle of the next sector
+    float myRight       337.5f  < bhv=degree_angle >
+    float myRightUp     22.5f   < bhv=degree_angle >
+    float myUp          67.5f   < bhv=degree_angle >
+    float myLeftUp      112.5f  < bhv=degree_angle >
+    float myLeft        157.5f  < bhv=degree_angle >
+    float myLeftDown    202.5f  < bhv=degree_angle >
+    float myDown        247.5f  < bhv=degree_angle >
+    float myRightDown   292.5f  < bhv=degree_angle >
+}
+
+class EyeTrackingSectorDeadZoneAngles
+{
+    float myRight       4.0f  < bhv=degree_angle >
+    float myRightUp     4.0f  < bhv=degree_angle >
+    float myUp          4.0f  < bhv=degree_angle >
+    float myLeftUp      4.0f  < bhv=degree_angle >
+    float myLeft        4.0f  < bhv=degree_angle >
+    float myLeftDown    4.0f  < bhv=degree_angle >
+    float myDown        4.0f  < bhv=degree_angle >
+    float myRightDown   4.0f  < bhv=degree_angle >
+}
+
+class EyeTrackingSettings
+{
+    EyeTrackingSectorStartAngles mySectorStartAngles
+    EyeTrackingSectorDeadZoneAngles myDeadZoneAngles
+    
+	float myDeadZoneAngle 4.0f	< bhv=degree_angle >
+}
+
+class HeadbobSettings // Global settings, for all characters
+{
+	HeadbobMode myMode			Disabled
+	float myPauseTimeThreshold	0.1666667f	// 4 24fps frames, ie. 4*(1.0f/24.0f)
+}
+
+class EyeBlinkSettings
+{
+	file myTicket < bhv=asset assettype=ticket >  
+}

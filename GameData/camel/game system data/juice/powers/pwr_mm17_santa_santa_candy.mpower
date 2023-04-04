@@ -1,0 +1,50 @@
+include ./enemy_pwr_archetype_warlock_lob_min_bleed.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/pwr_mm17_santa_santa_candy_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_mm17_santa_santa_candy < uid=86C9308257BC77F6000002ACBF0496C1 > : enemy_pwr_archetype_warlock_lob_min_bleed
+{
+	myIconImage "camel/baked/assets/ui/power selection/allies/santa_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_st_summon_no_min_range.dds"
+	myUIName "contextComment = \"\", description = \"\", enabled = true, guid = #3267E0D058F18846006D37D2459E8A6F, lineVersion = 1, maxLength = 20, text = \"Gingerbread Man\""
+	myUIShortDescription "contextComment = \"\", description = \"\", enabled = true, guid = #3267E0D059B777FF001E922A21DFCF87, lineVersion = 0, maxLength = 32, text = \"Critters hate Gingerbread\""
+	myUseSkillScript < uid=86C9308257BC77F6000002ADA61CDB19 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308257BC7A75000002F8002C132C >
+		{
+			myPriority 1000
+			myAggroPriority 0
+			myMinimumAffectedTargets 1
+			myAIDesirableType B
+			myStatusEffectConditionData
+			{
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData enraged < uid=86C9308257F28BDF00005AEE59740E63 >
+		{
+			myPriority 2000
+			myAggroPriority 1024
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+			myAIDesirableType B
+			myStatusEffectConditionData
+			{
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86C9308257BC77F6000002AE98A20344 > = pwr_mm17_santa_candy_Tuning
+}
+

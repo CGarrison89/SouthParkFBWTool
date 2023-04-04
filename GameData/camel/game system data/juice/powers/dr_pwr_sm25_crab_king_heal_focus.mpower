@@ -1,0 +1,9 @@
+include ./pwr_sm25_crab_king_heal_focus.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower pwr_dr_sm25_crab_king_heal_focus < uid=C87888A05A0A16920016C6AB720BE988 > : pwr_sm25_crab_king_heal_focus
+{
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe3_buff.dds"
+	myTuningData < uid=C87888A05A0A21AF000170F66BE9E415 > = pwr_dr_sm25_crab_king_heal_focus_execute_Tuning
+}
+

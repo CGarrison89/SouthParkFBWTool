@@ -1,0 +1,44 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_green_ball.mprojectile"
+
+CombatPower mm12_ambush_pwr_wizard_st_ranged < uid=6D7AC9B158128A890000CDEB69E6E049 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/chaosballtosser_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_range.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_wizard_st_ranged Name\", enabled = true, guid = #6D7AC9B158128A890000CDEAB268E2D0, lineVersion = 1, maxLength = 17, text = \"Sniper Ranged\""
+	myUseSkillScript < uid=6D7AC9B158128A890000CDEC7C6B058D > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myProjectile < uid=6D7AC9B15812B8FB0004AC83754220F4 > = projectile_green_ball
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B158128A890000CDED5484E808 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=6D7AC9B158128A890000CDEEA10FFE2A >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=6D7AC9B158128A890000CDEFFFB5A6EA > = enemy_pwr_archetype_wizard_st_ranged_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

@@ -1,0 +1,33 @@
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_brick.juice"
+include camel/skillscript/powersmenu_simpleplayanim.mskillscriptjuice
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+include ./mm16_shub_exploder_suicide.mpower
+
+CombatPower mm16_shub_exploder_power1 < uid=3267E0D0582E025B003CB04389F593CA > : MM16_shub_exploder_suicide
+{
+	myShouldUseLaunchReactions TRUE
+	myPowerGroup Normal
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData Game1
+			{
+				myActionPlusAdditionalTime 0.75
+				myActionPlusEndTime 1.25
+				myActionPlusPresetEnum Mash_Normal
+			}
+			ActionPlusMiniGameData 2
+			{
+				myActionPlusAdditionalTime 0.25
+				myActionPlusEndTime 1.9166
+				myActionPlusPositionOffsetLeft 0.0;-450.0
+				myActionPlusPositionOffsetRight 0.0;-450.0
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

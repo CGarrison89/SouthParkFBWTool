@@ -1,0 +1,35 @@
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+
+CombatPower sm19_shadyacres_wizard_power1 < uid=3267E0D057E035320005ED1233C09E30 > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_wizard_st_ranged Name\", enabled = true, guid = #3267E0D057E035320005ED11D359BBDB, lineVersion = 1, maxLength = 5, text = \"Lob\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D057E035320005ED141697EEE0 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D057E035320005ED15080E088A >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

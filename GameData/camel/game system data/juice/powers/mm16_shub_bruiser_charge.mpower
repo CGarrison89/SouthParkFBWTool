@@ -1,0 +1,47 @@
+include ./pwr_com_beerdrunkcharge.mpower
+include ./pwr_mm19_sheila_charge.mpower
+
+CombatPower MM16_shub_bruiser_charge < uid=86C9308258ADDAEC00001CF0A7CC37F1 > : pwr_mm19_sheila_charge
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/CultistCops_RushingDagger.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/4_range_ST_LOS_alt.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_3dmg_rush Name\", enabled = true, guid = #86C9308258ADDAFC00001CFC86568E5F, lineVersion = 0, maxLength = 23, text = \"Draw Down The Moon\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData ranged < uid=86C9308258ADDC5800001D334F25A6B1 >
+		{
+			myPriority 30
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 1
+			myValidDirections
+			{
+				myLeft FALSE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308258ADDC5800001D34299B82A0 >
+		{
+			myPriority 50
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 1
+			myValidDirections
+			{
+				myLeft FALSE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myDialogueSkillScript < uid=86C930825980B646001A4F471B99F82E > = Camel_Simple_PlayDialogue_Script
+	myTuningData < uid=86C9308258ADDB1200001D04B51D162E > = pwr_mm16_shub_bruiser_charge_Kevin_Tuning
+	myValidDirections
+	{
+		myLeft FALSE
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

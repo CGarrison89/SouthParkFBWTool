@@ -1,0 +1,6 @@
+include ./mm16_cokedcops_rogue_melee_shocked.mpower
+
+CombatPower MM16_blackcells_rogue_melee_shock < uid=86D64076574CD6BB0000016FE1A34900 > : MM16_cokedcops_rogue_melee_shocked
+{
+}
+

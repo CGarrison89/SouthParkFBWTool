@@ -1,0 +1,18 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_bomb.mprojectile"
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_blaster_fartbomb.mprojectile"
+
+CombatPower pwr_intro_power3 < uid=DB7C6D42571ABD680000253B2AA194A5 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/range_target_aoe.dds"
+	myUIName "contextComment = \"\", description = \"pwr_intro_power3 Name\", enabled = true, guid = #51C546C65774DC200000011F1DBD6C93, lineVersion = 1, maxLength = 16, text = \"Cannonball\""
+	myUIDescription "contextComment = \"\", description = \"pwr_intro_power3 Description\", enabled = true, guid = #51C546C65774DC20000001201514BD2E, lineVersion = 0, maxLength = 77, text = \"Throws a bomb that damages all enemies caught in the blast.\""
+	myUseSkillScript < uid=DB7C6D42571ABD680000253C076D3F7A > = Camel_Simple_PlayAnim_Script
+	myAnimationState king_power4
+	myTuningData < uid=DB7C6D42571ABD680000253EAE821368 > = pwr_intro_power3_Tuning
+	myCameraPreset < uid=DB7C6D42572D29E70000B5D32B473503 > = NULLREFERENCE
+	myPowerGroup Normal
+}
+

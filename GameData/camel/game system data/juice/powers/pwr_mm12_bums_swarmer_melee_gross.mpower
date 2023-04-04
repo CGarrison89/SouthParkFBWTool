@@ -1,0 +1,40 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_mm12_homelessbums.juice"
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_mm12_bums_swarmer_melee_gross < uid=86C93082579B860400004CBD516320DE > : enemy_pwr_archetype_swarmer_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/bumswarmer_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_swarmer_melee Name\", enabled = true, guid = #EA0BC518599A85580004E4AB8BD50F10, lineVersion = 0, maxLength = 8, text = \"Shank\""
+	myUseSkillScript < uid=6D7AC9B157D88F2C0000EE5FCA011111 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 3
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B157B3CC700006F017E439991C >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=6D7AC9B157B3CC700006F0181BDEBF38 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C93082579BBA7E0001B564EBC08809 > = pwr_mm12_bums_swarmer_melee_bleed_Kevin_Tuning
+}
+

@@ -1,0 +1,72 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include camel/skillscript/powersmenu_simpleplayanim.mskillscriptjuice
+include camel/skillscript/powersmenu_simplerushscript.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_brick.juice"
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+
+CombatPower pwr_brick_power2 < uid=B9E930CA56B2842C0000001D5F32FAC1 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/brick_RagingBull.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/charge4.dds"
+	myUIName "contextComment = \"power name\", description = \"pwr_brick_power2 Name\", enabled = true, guid = #51C546C65774D95E000000E5365C9CAF, lineVersion = 2, maxLength = 17, text = \"Wrecking Ball\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_brick_power2 Description\", enabled = true, guid = #51C546C65774D95E000000E6AD4A88C2, lineVersion = 1, maxLength = 113, text = \"The Brutalist targets enemies for demolition, then charges in for damage and knockback.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_brick_power2 Short Description\", enabled = true, guid = #9D0E6196579A59B50000015C156DA7CE, lineVersion = 0, maxLength = 36, text = \"Charge attack with knockback\""
+	myAnimationState ""
+	myShouldRepositionBeforeExecution FALSE
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Kill < uid=86C9308258E7C2CB0000412FDAC92CA9 >
+		{
+			myPriority 13000
+			myMinimumKills 1
+		}
+		PowerEvaluationData Blocking < uid=86C9308258E7C2CB00004130CC70A269 >
+		{
+			myPriority 8200
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Blocking
+				{
+					mySpecialEffect Block
+				}
+			}
+		}
+		PowerEvaluationData Default < uid=86C9308258E7C2CB0000413182CD3089 >
+		{
+			myPriority 4500
+		}
+	}
+	mySecondarySkillScript < uid=3267E0D0573BAA6F0000002272D87068 > = Simple_Rush_Damage_Script
+	myDialogueSkillScript < uid=326B24CD57EB02AF00000A26E3814BE3 > = Camel_Simple_PlayDialogue_Script
+	myTuningData < uid=B9E930CA56B2842C0000001F36F3D9F2 > = pwr_brick_power2_Tuning
+	myCameraPreset < uid=B9E930CA5793D79800003EC9B11F3F88 > = Brick_Power02
+	myPowerGroup Normal
+	myAnimationSetData
+	{
+		myIntroState brick_power2intro
+		myLoopState brick_power2loop
+		myOutroState brick_power2outro
+	}
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.0
+				myActionPlusEndTime 1.0417
+				myActionPlusPresetEnum Slow
+			}
+		}
+	}
+}
+

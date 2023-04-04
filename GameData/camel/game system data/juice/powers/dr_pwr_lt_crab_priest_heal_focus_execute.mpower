@@ -1,0 +1,8 @@
+include ./pwr_lt_crab_priest_heal_focus_execute.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower pwr_dr_lt_crab_priest_heal_focus_execute < uid=C87888A05A0A2FD80003E756DEF91BF0 > : pwr_lt_crab_priest_heal_focus_execute
+{
+	myTuningData < uid=C87888A05A0A30EE0005744FF06281AD > = pwr_dr_sm25_crab_priest_heal_focus_execute_Tuning
+}
+

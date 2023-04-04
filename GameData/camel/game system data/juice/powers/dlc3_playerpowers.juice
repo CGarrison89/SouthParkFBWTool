@@ -1,0 +1,549 @@
+include "camel/game system data/fruit/powers/combatpowers.fruit"
+include "camel/game system data/juice/statuseffect/bleeding.juice"
+include "camel/game system data/juice/statuseffect/focused.juice"
+include "camel/game system data/juice/statuseffect/hemorrhage.juice"
+include "camel/game system data/juice/statuseffect/marked.juice"
+
+CombatPowerTuningData dlc3_pwr_finalgirl_power01_Tuning < uid=86D640765A53F35300009A09ED785B2D >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 0
+	myKnockbackPullForwardAmount 2
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed FALSE
+	myIsDirectionSelectable FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=86D640765A53F35300009A0A209C58E6 >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 3
+		myWidth 1
+		myStartWidth 1
+		myStartLength 1
+	}
+	myDamageAmount 133
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=86D640765A94A29A00077620449C9553 > = Bleeding
+	}
+	myLocationEffect < uid=86D640765A53F35300009A0B78BA50D7 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn 0.0
+		myDexterity 0.0
+		mySpirit 0.0
+		mySpeed 0.0
+		myFortitude 0.0
+	}
+	myClassification Melee
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+	myNoRageUpdate FALSE
+}
+
+CombatPowerTuningData dlc3_pwr_finalgirl_damage_trap_Tuning < uid=86D640765A6FDB2C00009B8FF15090FD >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 3
+	myMinRange 0
+	myCooldown 3
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed TRUE
+	myIsDirectionSelectable FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Location
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=86D640765A6FDB2C00009B90B78FC652 >
+	{
+		myPiercingType All
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 3
+		myStartWidth 0
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=86D640765AA9A4AC0000A46AD2EEE02A > = Hemorrhage
+	}
+	myLocationEffect < uid=86D640765A6FDB2C00009B92588C609D > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn 0.0
+		myDexterity 0.0
+		mySpirit 0.0
+		mySpeed 0.0
+		myFortitude 0.0
+	}
+	myClassification Ranged
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+	myNoRageUpdate FALSE
+}
+
+CombatPowerTuningData dlc3_pwr_finalgirl_sticky_bomb_part1_Tuning < uid=86D640765A8F0B0300009BFB2FA665D3 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 2
+	myMinRange 1
+	myCooldown 0
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed TRUE
+	myIsDirectionSelectable FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Location
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=86D640765A8F0B0300009BFC78123E04 >
+	{
+		myPiercingType All
+		myDamageAreaType CenteredCircle
+		myLength 1
+		myWidth 1
+		myStartWidth 0
+		myStartLength 0
+	}
+	myDamageAmount 180
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=86D640765A8F67B40000A2ADB7EF221A > = Bleeding
+	}
+	myLocationEffect < uid=86D640765A8F0B0300009BFD205FF280 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn 0.0
+		myDexterity 0.0
+		mySpirit 0.0
+		mySpeed 0.0
+		myFortitude 0.0
+	}
+	myClassification NonDamaging
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+	myNoRageUpdate TRUE
+}
+
+CombatPowerTuningData dlc3_pwr_finalgirl_sticky_bomb_part2_Tuning < uid=86D640765A8F0B0300009BFE8D09FC7A >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 0
+	myCooldown 0
+	myKnockbackPullForwardAmount 2
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed FALSE
+	myIsDirectionSelectable TRUE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=86D640765A8F0B0300009BFF919D98F5 >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 1
+	}
+	myDamageAmount 180
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=86D640765A8F0B0300009C00789676DC > = Bleeding
+	}
+	myLocationEffect < uid=86D640765A8F0B0300009C01A78240BC > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn 0.0
+		myDexterity 0.0
+		mySpirit 0.0
+		mySpeed 0.0
+		myFortitude 0.0
+	}
+	myClassification NonDamaging
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+	myNoRageUpdate FALSE
+}
+
+CombatPowerTuningData dlc3_pwr_finalgirl_test_execute_all_Tuning < uid=86D640765A600409000096994606164B >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 0
+	myMinRange 0
+	myCooldown 0
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed FALSE
+	myIsDirectionSelectable FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=86D640765A6004090000969A47F560D3 >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 0
+		myStartLength 0
+	}
+	myDamageAmount 9999
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=86D640765A6004090000969B55265D21 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn 0.0
+		myDexterity 0.0
+		mySpirit 0.0
+		mySpeed 0.0
+		myFortitude 0.0
+	}
+	myClassification Consumable
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+	myNoRageUpdate FALSE
+}
+
+CombatPowerTuningData dlc3_item1_Tuning < uid=C27CCFE35A736F310000A2E1863F93CC >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 3
+	myMinRange 2
+	myCooldown 0
+	myKnockbackPullForwardAmount 1
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed TRUE
+	myIsDirectionSelectable FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=C27CCFE35A736F310000A2E2FB04D6C2 >
+	{
+		myPiercingType All
+		myDamageAreaType CardinalCross
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 1
+	}
+	myDamageAmount 0
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=C27CCFE35AB4109E00025E7E6D6DBED5 > = Marked
+	}
+	myLocationEffect < uid=C27CCFE35A736F310000A2E5D2AC9D11 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn 1.0
+		myDexterity 0.0
+		mySpirit 0.0
+		mySpeed 1.0
+		myFortitude 2.0
+	}
+	myClassification Consumable
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+	myNoRageUpdate FALSE
+}
+
+CombatPowerTuningData dlc3_item2_Tuning < uid=C27CCFE35A736F310000A2E60FC3F340 >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 4
+	myMinRange 0
+	myCooldown 0
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed TRUE
+	myIsDirectionSelectable FALSE
+	myBlocksObscurationShuffle TRUE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting AllyOnly
+	myDamageArea < uid=C27CCFE35A736F310000A2E786BB2786 >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType CenteredCircle
+		myLength 1
+		myWidth 1
+		myStartWidth 0
+		myStartLength 0
+	}
+	myDamageAmount -200
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+	}
+	myLocationEffect < uid=C27CCFE35A736F310000A2EA36B0A6C2 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn 1.0
+		myDexterity 0.0
+		mySpirit 0.0
+		mySpeed 1.0
+		myFortitude 2.0
+	}
+	myClassification Consumable
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+	myNoRageUpdate FALSE
+}
+
+CombatPowerTuningData dlc3_item3_Tuning < uid=C27CCFE35A736F310000A2EB69683085 >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 0
+	myCooldown 0
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed TRUE
+	myIsDirectionSelectable FALSE
+	myBlocksObscurationShuffle TRUE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting AllyOnly
+	myDamageArea < uid=C27CCFE35A736F310000A2ECA3F47810 >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType CenteredCircle
+		myLength 1
+		myWidth 1
+		myStartWidth 0
+		myStartLength 0
+	}
+	myDamageAmount -100
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+	}
+	myLocationEffect < uid=C27CCFE35A736F310000A2EEFE939178 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn 0.0
+		myDexterity 0.0
+		mySpirit 0.0
+		mySpeed 0.0
+		myFortitude 0.0
+	}
+	myClassification Consumable
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+	myNoRageUpdate FALSE
+}
+
+CombatPowerTuningData dlc3_item4_Tuning < uid=C27CCFE35AA2E32F0000A46373BFC1A7 >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 0
+	myCooldown 0
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed TRUE
+	myIsDirectionSelectable FALSE
+	myBlocksObscurationShuffle TRUE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting AllyOnly
+	myDamageArea < uid=C27CCFE35AA2E32F0000A46485F9EE0E >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType CenteredCircle
+		myLength 1
+		myWidth 1
+		myStartWidth 0
+		myStartLength 0
+	}
+	myDamageAmount -50
+	myShielding 200
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=C27CCFE35AB4109E00025E7FC5B5E863 > = Focused
+	}
+	myLocationEffect < uid=C27CCFE35AA2E32F0000A4651E3C6786 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn 0.0
+		myDexterity 0.0
+		mySpirit 0.0
+		mySpeed 0.0
+		myFortitude 0.0
+	}
+	myClassification Consumable
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+	myNoRageUpdate FALSE
+}
+

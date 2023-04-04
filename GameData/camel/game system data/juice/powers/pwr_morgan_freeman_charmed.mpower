@@ -1,0 +1,29 @@
+include ./enemy_pwr_archetype_warlock_lob_min_charm.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_morgan_freeman_charmed < uid=86C930825777299C000078A1C738CEB0 > : enemy_pwr_archetype_warlock_lob_min_charm
+{
+	myUIName "contextComment = \"morgan freeman charm\", description = \"enemy_pwr_archetype_warlock_lob_min_charm Name\", enabled = true, guid = #9D0E61965983A050000C8C4FBA516A74, lineVersion = 1, maxLength = 25, text = \"Glistening Freckles\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C930825787D15D0000016AE0A9EAF3 >
+		{
+			myPriority 10
+			myNumLiveEnemiesRequired 2
+			mySelfHealthLessThanPercentage 60.0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C930825777299C000078A2754D6DCE > = enemy_pwr_archetype_warlock_lob_min_charm_MNguyen_Tuning
+	myValidDirections
+	{
+		myRight TRUE
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

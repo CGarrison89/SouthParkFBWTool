@@ -1,0 +1,49 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_mm12_homelessbums.juice"
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_mm12_bums_bruiser_melee_gross < uid=86C9308257AA64A200000099CA2CFABA > : enemy_pwr_archetype_bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/bumbruiser_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_bruiser_melee Name\", enabled = true, guid = #EA0BC518599A853A0004D7D48309DE4C, lineVersion = 0, maxLength = 14, text = \"Bottle Bash\""
+	myUseSkillScript < uid=6D7AC9B157D88DE00000EE50F55B215D > = Camel_Simple_PlayAnim_Script
+	myAnimationState power3
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B157B3D1CC000711DFD62CAA44 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=6D7AC9B157B3D1CC000711E008A7499A >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData destruct < uid=6D7AC9B157B3D1CC000711E139EB2C51 >
+		{
+			myPriority 10
+			myAIDesirableType A
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C9308257AA64A20000009AFD16B64C > = pwr_mm12_bums_bruiser_melee_gross_Kevin_Tuning
+}
+

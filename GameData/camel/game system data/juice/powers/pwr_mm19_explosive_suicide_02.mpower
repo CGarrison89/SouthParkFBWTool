@@ -1,0 +1,8 @@
+include camel/skillscript/pwr_mm19_explosivemine_suicide_script_02.mskillscriptjuice
+include ./pwr_mm19_explosive_suicide.mpower
+
+CombatPower pwr_mm19_explosive_suicide_02 < uid=86C93082589BC6AE00142B0DF632E27E > : pwr_mm19_explosive_suicide
+{
+	myUseSkillScript < uid=86C93082589BC6AE00142B0E9D1AC27F > = pwr_mm19_explosivemine_suicide_script_02
+}
+

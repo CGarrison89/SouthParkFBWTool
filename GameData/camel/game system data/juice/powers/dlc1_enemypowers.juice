@@ -1,0 +1,1340 @@
+include "camel/game system data/fruit/powers/combatpowers.fruit"
+include "camel/game system data/juice/statuseffect/burning.juice"
+include "camel/game system data/juice/statuseffect/chilled.juice"
+include "camel/game system data/juice/statuseffect/focused.juice"
+
+CombatPowerTuningData pwr_DLC1_VampKids_Warlock_LobbedRange_Tuning < uid=86C9308259A5F74900072FA68D59684B >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 3
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed TRUE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=86C9308259A5F74900072FA78383EE24 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 175
+	myShielding 0
+	mySelfTeamDamage -125
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=86C9308259A5F74900072FA8982AA494 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification Ranged
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_DLC1_VampKids_Bruiser_melee_Tuning < uid=86C9308259A5F74900072FA9E6041F17 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 1
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=86C9308259A5F74900072FAAA05928AC >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 300
+	myShielding 0
+	mySelfTeamDamage -125
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=86C9308259A5F74900072FAB3C37004D > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification Melee
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_DLC1_VampKids_Bruiser_block_Tuning < uid=86C9308259A5F74900072FACF1F40D5B >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 0
+	myMinRange 0
+	myCooldown 2
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource TRUE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Self
+	myFactionTargeting AllyOnly
+	myDamageArea < uid=86C9308259A5F74900072FAD37CE48D5 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=86C9308259A5F74900072FAE5EBB1AC8 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification NonDamaging
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_DLC1_VampKids_Swarmer_melee_Tuning < uid=86C9308259A5F74900072FAFDA0A4C3A >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=86C9308259A5F74900072FB08BC51CF5 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 300
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=86C9308259A5F74900072FB1CE0865B8 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification Melee
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_DLC1_VampKids_Priest_buff_Tuning < uid=86C9308259A5F74900072FB248E34BEB >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 2
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed TRUE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting AllyOnlyExcludeSelf
+	myDamageArea < uid=86C9308259A5F74900072FB3C000B551 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding 200
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+	}
+	myLocationEffect < uid=86C9308259A5F74900072FB463813B10 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification NonDamaging
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_DLC1_VampKids_Priest_revive_Tuning < uid=86C9308259A5F74900072FB5EE29B77D >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 2
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed TRUE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Location
+	myFactionTargeting AllyOnlyExcludeSelf
+	myDamageArea < uid=86C9308259A5F74900072FB6BCC70540 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=86C9308259A5F74900072FB779A885B4 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification NonDamaging
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_DLC1_VampKids_Priest_revive_telegraph_Tuning < uid=86C9308259A626B0000E211165F4C07F >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Location
+	myFactionTargeting AllyOnlyExcludeSelf
+	myDamageArea < uid=86C9308259A626B0000E2112C799B446 >
+	{
+		myPiercingType All
+		myDamageAreaType Rectangle
+		myLength 3
+		myWidth 3
+		myStartWidth 0
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=86C9308259A626B0000E211302B94A2D > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification NonDamaging
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_DLC1_VampKids_Priest_revive_execute_Tuning < uid=86C9308259A63720002CCBA6C1D26D0C >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 0
+	myMinRange 0
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Self
+	myFactionTargeting AllyOnly
+	myDamageArea < uid=86C9308259A63720002CCBA70BE87889 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=86C9308259A63720002CCBA8C6599635 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification NonDamaging
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_DLC1_VampKids_Gorilla_crush_telegraph_Tuning < uid=86C9308259A9DB5000066146D2E96582 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 0
+	myMinRange 0
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Location
+	myFactionTargeting EnemyAndAlly
+	myDamageArea < uid=86C9308259A9DB50000661471A83006F >
+	{
+		myPiercingType All
+		myDamageAreaType CenteredRectangle
+		myLength 5
+		myWidth 7
+		myStartWidth 0
+		myStartLength 1
+	}
+	myDamageAmount 350
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=86C9308259A9DB50000661482FE9BDBC > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification Melee
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_DLC1_VampKids_Gorilla_crush_execute_Tuning < uid=86C9308259A9DB50000661495C87F790 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 0
+	myMinRange 0
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Location
+	myFactionTargeting EnemyAndAlly
+	myDamageArea < uid=86C9308259A9DB500006614AC5DB4CF7 >
+	{
+		myPiercingType All
+		myDamageAreaType CenteredRectangle
+		myLength 5
+		myWidth 7
+		myStartWidth 0
+		myStartLength 1
+	}
+	myDamageAmount 350
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=86C9308259A9DB500006614BC759AC5B > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification Melee
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_DLC1_VampKids_Mike_LobbedRange_Tuning < uid=86C9308259B040AA0000926FA899A7EB >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 4
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=86C9308259B040AA000092709E172F0C >
+	{
+		myPiercingType All
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 400
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=86C9308259B040AA000092714F042087 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification Ranged
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_DLC1_VampKids_MichaelJackson_melee_Tuning < uid=86C9308259B070FF00008B8AF6AA4F4B >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 2
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=86C9308259B070FF00008B8B64B935A6 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 300
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=86C9308259B070FF00008B8C4649905C > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification Melee
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_DLC1_VampKids_MichaelJackson_rush_Tuning < uid=86C9308259B0713B00008B8D2D29E631 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType Rush
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=86C9308259B0713B00008B8E895D24C8 >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 5
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 200
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=86C9308259B0713B00008B8F24E42440 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification Ranged
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_DLC1_VampKids_MichaelJackson_aoe_Tuning < uid=86C9308259B071AA00008B902E259BF0 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 0
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=86C9308259B071AA00008B914C5FE86B >
+	{
+		myPiercingType None
+		myDamageAreaType CardinalCross
+		myLength 1
+		myWidth 1
+		myStartWidth 0
+		myStartLength 0
+	}
+	myDamageAmount 100
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=86C9308259B071AA00008B922C44FE4C > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification Melee
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_DLC1_VampKids_MichaelJackson_revive_Tuning < uid=86C9308259B071CD00008B93298719A0 >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 4
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Location
+	myFactionTargeting AllyOnlyExcludeSelf
+	myDamageArea < uid=86C9308259B071CD00008B942B7FFD7B >
+	{
+		myPiercingType None
+		myDamageAreaType AllCombatants
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=86C9308259B071CD00008B9598D054CF > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification NonDamaging
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_DLC1_VampKids_GeneralManager_persistent_Tuning < uid=86C9308259BB22880006667EDA5CCF6D >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 0
+	myMinRange 0
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Location
+	myFactionTargeting EnemyAndAlly
+	myDamageArea < uid=86C9308259BB22880006667F97AB6E2C >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 0
+		myStartLength 0
+	}
+	myDamageAmount 9999
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=86C9308259BB22880006668001AC69ED > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification Consumable
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_DLC1_VampKids_JokesterCop_Power01_Tuning < uid=86C9308259DFA2FB00009216B9E37B72 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 0
+	myMinRange 0
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Location
+	myFactionTargeting EnemyAndAlly
+	myDamageArea < uid=86C9308259DFA2FB0000921769304074 >
+	{
+		myPiercingType All
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 0
+		myStartLength 0
+	}
+	myDamageAmount 400
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=86C930825A7F6CF500009BC39D96F7D3 > = Chilled
+	}
+	myLocationEffect < uid=86C9308259DFA2FB000092180DF60774 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification Consumable
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_DLC1_VampKids_JokesterCop_Power02_Tuning < uid=86C9308259DFA2FB00009219B4431D21 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 0
+	myMinRange 0
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Location
+	myFactionTargeting EnemyAndAlly
+	myDamageArea < uid=86C9308259DFA2FB0000921A16D9D830 >
+	{
+		myPiercingType All
+		myDamageAreaType CenteredCircle
+		myLength 9
+		myWidth 9
+		myStartWidth 2
+		myStartLength 2
+	}
+	myDamageAmount 550
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=86C930825A7F6CF500009BC4DC64ED7F > = Burning
+	}
+	myLocationEffect < uid=86C9308259DFA2FB0000921BFD01097F > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification Consumable
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_DLC1_VampKids_ClamatoFountain_telegraph_Tuning < uid=86C9308259EE259F000B8A3CBFF992DA >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 0
+	myMinRange 0
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Location
+	myFactionTargeting AllyOnly
+	myDamageArea < uid=86C9308259EE259F000B8A3DE7F4E61D >
+	{
+		myPiercingType All
+		myDamageAreaType CenteredRectangle
+		myLength 5
+		myWidth 7
+		myStartWidth 1
+		myStartLength 1
+	}
+	myDamageAmount -150
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=86C930825A626E22000F6D387E9E192B > = Focused
+	}
+	myLocationEffect < uid=86C9308259EE259F000B8A3F1E012E16 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification NonDamaging
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_DLC1_VampKids_BlackVamp_melee_Tuning < uid=B642A89A5A27404F00021B262AC2CCE3 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 1
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=B642A89A5A27404F00021B271697BA5A >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 400
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=B642A89A5A27404F00021B28F71D261F > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification Melee
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_DLC1_VampKids_MichaelJackson_dual_revive_telegraph_Tuning < uid=8585E53F5A31A5A00002D29796A5ECD7 >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 2
+	myRange 0
+	myMinRange 0
+	myCooldown 4
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Location
+	myFactionTargeting EnemyAndAlly
+	myDamageArea < uid=8585E53F5A31A5A00002D2986D8D5E5E >
+	{
+		myPiercingType All
+		myDamageAreaType CenteredRectangle
+		myLength 3
+		myWidth 8
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=8585E53F5A31A5A00002D29936F28558 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification NonDamaging
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_DLC1_VampKids_MichaelJackson_dual_revive_execute_Tuning < uid=8585E53F5A31A5A00002D29A6E37F8EF >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 4
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Self
+	myFactionTargeting EnemyAndAlly
+	myDamageArea < uid=8585E53F5A31A5A00002D29BD74D62AA >
+	{
+		myPiercingType None
+		myDamageAreaType CenteredRectangle
+		myLength 3
+		myWidth 8
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 400
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=8585E53F5A31A5A00002D29CD035A9B3 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification NonDamaging
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_DLC1_VampKids_Karen_revive_telegraph_Tuning < uid=8585E53F5A590BE4000848CBEFD682FE >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 2
+	myRange 99
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed TRUE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting AllyOnlyExcludeSelf
+	myDamageArea < uid=8585E53F5A590BE4000848CC5CDCCCE0 >
+	{
+		myPiercingType All
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=8585E53F5A590BE4000848CD8CDAA5E0 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification NonDamaging
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_DLC1_VampKids_Karen_revive_execute_Tuning < uid=8585E53F5A590BE4000848CE6B2CE8B7 >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 2
+	myRange 99
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed TRUE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting AllyOnlyExcludeSelf
+	myDamageArea < uid=8585E53F5A590BE4000848CF30B6565E >
+	{
+		myPiercingType All
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=8585E53F5A590BE4000848D08AB72764 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification NonDamaging
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+

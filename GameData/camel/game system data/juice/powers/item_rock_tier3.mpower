@@ -1,0 +1,14 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_revive_script.mskillscriptjuice
+include camel/skillscript/camel_simple_healing_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_bomb.mprojectile"
+
+CombatPower item_rock_tier3 < uid=86D6407657352A4C000000265FC91487 >
+{
+	myUIName "contextComment = \"\", description = \"\", enabled = false, guid = #86D6407657352A4C0000002510701077, lineVersion = 0, maxLength = 1, text = \"|empty|\""
+	myUseSkillScript < uid=86D6407657352A4C00000027F88F247C > = FireActivePowerProjectile
+	myNumberOfAttackEvents 1
+	myProjectile < uid=86D6407657352A4C00000028311DD488 > = projectile_bomb
+	myTuningData < uid=86D6407657352A4C00000029A17E8974 > = item_rock_tier3_Tuning
+}
+

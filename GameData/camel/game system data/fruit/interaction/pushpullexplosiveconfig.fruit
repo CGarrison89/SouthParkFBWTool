@@ -1,0 +1,90 @@
+include "camel/game system data/fruit/localization/HardcodedLocalizedStrings.fruit"
+
+enum PushPullExplosiveConfigType
+{
+    Debug_Only
+    MM12_LavaCombatEntrace
+    MM12_Guermo
+	MP59_InterrogationRoom
+    IP114_SPKennyBackyard
+	MP15_TrainTracks
+	TP74_DoNotSaveAnything
+	CanNotPushPull_AfterExplosive
+	MP64_PoliceStation_Stairwell2
+	MP26_NedsStorage
+	DP04_Arcade_NoReserveSaveOnComplete
+	DP05_Cliff_OilCan
+	DP03_BlackBart
+	DP16_NathanCabin_UpperCan
+	DP16_NathanCabin_LowerCan
+	Lake_Timer_Type01
+	Lake_Timer_Type02
+	Lake_No_Timer_Type01
+	Lake_No_Timer_Type02
+}
+
+list ParticleStopIdentifierList
+{
+	string
+}
+
+list StopSoundEventList
+{
+    uid < bhv=AudioID type=event >
+}
+
+class PushPullExplosiveConfig
+{
+    bool ClosedState_UseState True
+    bool ClosedState_ShouldReaction_ReactionPunch True
+    bool ClosedState_ShouldReaction_FireCracker True
+    bool ClosedState_ShouldReaction_RangedFart True
+    bool ClosedState_ShouldReaction_FartShatter True
+    bool ClosedState_ShouldReaction_ExplosionPushPull True
+    
+    bool NormalState_ShouldReaction_FireCracker True
+
+    
+    
+    float LitState_ToExplosionSec 5.0
+    file LitState_ParticleFile_NotWork "" < bhv=asset assettype=particles >
+    
+    float ExplodingState_ToExplodedSec 3.0
+    string ExplodingState_ShakeCameraPresetName ""
+    float ExplodingState_DelayStartDestroyReaction -1.0
+   
+    bool ExplodedState_CanPushPull True
+    
+    InteractionPromptType ActionTextType "Use"
+    float PushPull_MoveSpeed 3.0
+    bool AutoMovingDirection_CanMoveLeft false
+    bool AutoMovingDirection_CanMoveRight false    
+    bool AutoMovingDirection_CanMoveUp false
+    bool AutoMovingDirection_CanMoveDown false
+    
+    bool Stateful_Save_NormalState True
+    bool Stateful_Save_LitState False
+    bool Stateful_Save_Exploded True
+    
+    bool Stateful_CanBackClosedByGlitch false
+    bool Stateful_CanBackNormalByGlitch false
+    bool Stateful_CanBackLitByGlitch false
+    bool Stateful_CanBackExplodedByGlitch false
+    
+    bool Stateful_None true
+    
+    bool Stateful_ReserveSaveOnComplete True
+    bool Stateful_AutoSaveWhenStateChanges True
+    bool Stateful_PersistentPosition_notwork False
+    bool Stateful_LockWhenComplete True
+    bool Stateful_ShouldActivateGlitchListener False
+    
+    bool ClosedState_CanBeginNormalState_EvenWhen_TFPause False
+    bool NormalState_CanBeginLitState_EvenWhen_TFPause False
+    bool ShouldShowGlitchEffect True
+    
+    ParticleStopIdentifierList ParticleStopList
+    StopSoundEventList StopSoundList
+    
+    bool SpecialFlow false
+}

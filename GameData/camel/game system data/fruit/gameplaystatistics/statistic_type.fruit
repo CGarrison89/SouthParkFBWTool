@@ -1,0 +1,25 @@
+enum StatisticMajorType
+{
+	KillAgent
+	UseSkill
+	CompleteMission
+	LevelUpSkill
+	AgentLevelUp
+	EntityPulsed
+	AgentStatusEffectChanged
+	ExplosionCausedByAgent
+	UpgradeBOO
+	CraftItem
+	ReviveAgent
+	VendorInteraction
+	AgentLootItem
+	AgentSwitchItem
+	AgentInteractWithProp
+	AgentUnlockDiscovery
+	AgentChangeSkillMod
+	AgentCloseCarDoor
+	AgentJoinParty
+	AgentPurchaseBOOAbility
+	AgentExtractDZItem
+	WalletTransaction
+}

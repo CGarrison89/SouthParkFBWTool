@@ -1,0 +1,36 @@
+include ./pwr_com_mm12_megamexican_phase3_rush.mpower
+
+CombatPower dr_pwr_com_mm12_megamexican_Phase3_Rush < uid=86C930825A137FC60031F1801BE8B4C2 > : pwr_com_mm12_megamexican_Phase3_Rush
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C930825A137FD60031F18432C260C7 >
+		{
+			myPriority 300
+			myAggroPriority 0
+			myMinimumAffectedTargets 2
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Minimum < uid=86C930825A137FD60031F18592C54ABC >
+		{
+			myPriority 150
+			myAggroPriority 0
+			myMinimumAffectedTargets 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData enrage < uid=86C930825A137FD60031F1868E83E120 >
+		{
+			myAggroPriority 2000
+			myMinimumAffectedTargets 1
+		}
+	}
+}
+

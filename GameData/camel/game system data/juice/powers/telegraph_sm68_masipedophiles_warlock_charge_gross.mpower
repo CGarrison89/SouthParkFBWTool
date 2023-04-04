@@ -1,0 +1,90 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_telegraph_on.mskillscriptjuice
+include camel/skillscript/sm68_pedo_priest_charge_warlock01_telegraph.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/camel_simple_swappower_slot1.mskillscriptjuice
+
+CombatPower telegraph_sm68_masipedophiles_warlock_charge_gross < uid=8585E53F57B363B400003DD1F78F092C >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/PedophilePriest_Whip.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/4_range.dds"
+	myUIName "contextComment = \"Power Name\", description = \"telegraph_sm68_masipedophiles_warlock_charge_gross_Name\", enabled = true, guid = #F0F6DDB7596A9BA100008A735A4226AA, lineVersion = 1, maxLength = 25, text = \"Mutual Flagellation\""
+	myUseSkillScript < uid=8585E53F57B363B400003DD20D24A85E > = sm68_pedo_priest_charge_warlock01_telegraph
+	myAnimationState ""
+	myLockedByDefault FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "Range 4" < uid=8585E53F57B3AFF40000400DC7FBD308 >
+		{
+			myPriority 39
+			myMinimumAffectedTargets 0
+			myPreferredRange 4
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "Range 3" < uid=B642A89A58CC4A390004C6AFE1C2BB75 >
+		{
+			myPriority 36
+			myMinimumAffectedTargets 0
+			myPreferredRange 3
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "Range 2" < uid=B642A89A58CC4A390004C6B08575DC6F >
+		{
+			myPriority 33
+			myMinimumAffectedTargets 0
+			myPreferredRange 2
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "Range 1" < uid=B642A89A58CC525A000A139E1F3B9DF1 >
+		{
+			myPriority 30
+			myMinimumAffectedTargets 0
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=B642A89A596D56FA0002835EF9A1B3E3 >
+		{
+			myPriority 1039
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 0
+			myPreferredRange 4
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=86C9308259541D4F000086BDE5CB414B > = Camel_Simple_SwapPower_Slot1
+	myTuningData < uid=8585E53F57B3754600003C3C76315A00 > = pwr_sm68_warlock_telegraph_charge_gross_Kevin_Tuning
+	myCameraPreset < uid=86C93082591B5DE2000071C44B5AA4CF > = Preset_Generic_Melee
+	myTelegraphData
+	{
+		myTelegraphedPowerName sm68_maxipedophiles_warlock_charge_gross
+		myTelegraphingAnimationName power3_idle
+	}
+}
+

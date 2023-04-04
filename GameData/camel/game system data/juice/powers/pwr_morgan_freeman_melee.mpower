@@ -1,0 +1,82 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_morgan_freeman_melee < uid=86C93082577729DA000078AD84E50DF1 > : enemy_pwr_archetype_bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/MorganFreeman_Power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_bruiser_melee Name\", enabled = true, guid = #86C9308258D993FC000606F3DD56D843, lineVersion = 0, maxLength = 31, text = \"Million Dollar Bitchslap\""
+	myUseSkillScript < uid=8E224C3D58F42CEA00004E6DF9EF5A88 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 3
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "Default charmed" < uid=86C9308258D04D3A0009B89F4A4ACB2B >
+		{
+			myPriority 25
+			myAIDesirableType VIP
+			myStatusEffectConditionData
+			{
+			}
+		}
+		PowerEvaluationData Default < uid=86C9308258D036B100025F121BF1EE67 >
+		{
+			myPriority 50
+			myStatusEffectConditionData
+			{
+			}
+		}
+		PowerEvaluationData "Target Kill" < uid=86C9308258D036B100025F1308DC3787 >
+		{
+			myPriority 400
+			myMinimumKills 1
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not chilled"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Chilled
+				}
+			}
+		}
+		PowerEvaluationData "Target not chilled" < uid=86C9308258D036B100025F143BAD1041 >
+		{
+			myPriority 300
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not chilled"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Chilled
+				}
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308258D0371000025F2B0D232A3F >
+		{
+			myPriority 1500
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myRequiresCover FALSE
+		}
+		PowerEvaluationData "Enraged charmed" < uid=86C9308258D04D3A0009B89ED7C07509 >
+		{
+			myPriority 25
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myRequiresCover FALSE
+			myAIDesirableType VIP
+		}
+	}
+	myMeleeOffset -1.0;0.0
+	myTuningData < uid=86C93082577729DA000078AE39C522C1 > = pwr_morgan_freeman_melee_Kevin_Tuning
+	myCameraPreset < uid=86C93082591B5B3100007152CE3B2268 > = Preset_Generic_Melee_KB
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

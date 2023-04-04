@@ -1,0 +1,44 @@
+include "camel/game system data/fruit/mission/mission.fruit"
+include "camel/game system data/fruit/player/player.fruit"
+include "camel/game system data/fruit/player/playerclass.fruit"
+
+enum UIMainMenuOptionType
+{
+	None
+	Play
+	Advert
+	Options
+	DLC
+	RedeemCode
+	UbiClub
+	Credits
+	Quit
+}
+
+class MainMenuItem
+{
+	string myMenuItemLabel
+	string myMenuItemMap
+	string myMenuItemSpawnPoint
+	string myMenuStartingInventory
+	TimeOfDay myTimeOfDay
+	Mission* myActiveMission
+	int myActiveObjectiveIndex
+	PlayerClassList myPlayerClasses
+	Powers myPowers
+}
+
+list MainMenuItemList
+{
+	MainMenuItem
+}
+
+list MainMenuList
+{
+	MainMenuItemList
+}
+
+class MainMenu
+{
+	MainMenuList myMainMenuList
+}

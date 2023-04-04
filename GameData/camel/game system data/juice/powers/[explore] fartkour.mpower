@@ -1,0 +1,13 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/buddypower_fartkour.mskillscriptjuice
+
+Power "[Explore] Fartkour" < uid=3A2CC02856CEC05F000008F7A9AA3753 >
+{
+	myUIName "contextComment = \"Name for Haywire during unlock presentation\", description = \"[Explore] Fartkour_name\", enabled = true, guid = #F0F6DDB759691AA500008AB2D66544C0, lineVersion = 0, maxLength = 13, text = \"Fartkour\""
+	myUseSkillScript < uid=3A2CC02856CEC05F000008F88448BD6A > = BuddyPower_Fartkour
+	myIsPassive FALSE
+	myUseActiveTargeting FALSE
+	myLockedByDefault TRUE
+	myIsBuddyPower TRUE
+}
+

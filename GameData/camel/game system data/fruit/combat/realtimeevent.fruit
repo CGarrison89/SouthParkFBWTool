@@ -1,0 +1,15 @@
+include "camel/skillscript/skillscript.fruit"
+
+class RealTimeEvent < uid=auto >
+{
+	float myEventTime
+	bool myCanInterrupt
+	bool myRepeats
+
+	file myUIIcon "" < types=*.png >
+	
+	SkillScript* myTimerEventSkillScript
+	SkillScript* myPreEventSkillScript
+	SkillScript* myEventSkillScript
+	SkillScript* myPostEventSkillScript
+}

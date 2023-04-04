@@ -1,0 +1,53 @@
+include ./pwr_dlc3_monsters_bruiser_melee.mpower
+
+CombatPower pwr_DLC3_Monsters_Nathan_melee < uid=86C930825A9DA1B700022C52D28EFE6B > : pwr_DLC3_Monsters_Bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/Nathan_Power1.dds"
+	myUIName "contextComment = \"\", description = \"pwr_DLC3_Monsters_Nathan_melee_name\", enabled = true, guid = #86C930825A9DA1B700022C5010AACD53, lineVersion = 0, maxLength = 16, text = \"Nathan Melee\""
+	myUIDescription "contextComment = \"\", description = \"pwr_DLC3_Monsters_Nathan_melee_description\", enabled = true, guid = #86C930825A9DA1B700022C513181ED01, lineVersion = 0, maxLength = 38, text = \"DLC3 Nathan Melee description\""
+	myUseSkillScript < uid=8585E53F5AAC08120016844B85DF7DD8 > = Camel_Simple_PlayAnim_Script
+	myNumberOfAttackEvents 1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=86C930825A9DA1B700022C53708A0C51 >
+		{
+			myPriority 20
+			myRequiresNonTelegraphedDamageCells TRUE
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enrage < uid=8585E53F5ACCE3A1000A04D88FB06391 >
+		{
+			myPriority 0
+			myAggroPriority 20
+			myRequireAggroTarget TRUE
+			myPreferNonTelegraphedAttackSourceCell FALSE
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Kill < uid=8585E53F5ACCE2C80009262594BDA6BE >
+		{
+			myPriority 21
+			myRequiresNonTelegraphedDamageCells TRUE
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myMinimumKills 1
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C930825A9DA1B700022C56AD0347B5 > = pwr_DLC3_Monsters_Nathan_Melee_Tuning
+}
+

@@ -1,0 +1,13 @@
+include "camel/game system data/fruit/cell/fasttravel.fruit"
+
+class MapRegion < uid=auto >
+{
+	string myName
+	varmap myUIName < bhv="localization" >
+	file myTexture "" < types=*.dds >
+	vec2f myPosition
+	FastTravel myFastTravel
+	vec2f myTextureSize
+	vec2f myNameOffsetFromCenter
+	bool myIsInAlternateMap
+}

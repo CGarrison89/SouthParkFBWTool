@@ -1,0 +1,79 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include ./enemypowers.adrian.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./dlc1_enemypowers.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_DLC1_VampKids_Swarmer_melee < uid=86C9308259A5EE2D00072F18250D3D80 > : enemy_pwr_archetype_swarmer_melee
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/Vampkid_Swarmer_Power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"power name\", description = \"pwr_DLC1_VampKids_Swarmer_melee_name\", enabled = true, guid = #86C9308259EE5FF4000090B97FC26C0B, lineVersion = 1, maxLength = 20, text = \"Baby Bat Attack\""
+	myUseSkillScript < uid=86C9308259A5EE2D00072F19425ABBD5 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308259A5EE2D00072F1A96557A76 >
+		{
+			myPriority 20
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData kill < uid=86C930825A80D14E000FEDDD607EF821 >
+		{
+			myPriority 30
+			myMinimumKills 1
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308259A5EE2D00072F1B8835DD06 >
+		{
+			myPriority 0
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData CanNotReach < uid=86C9308259A5EE2D00072F1CC49810BD >
+		{
+			myPriority 18
+		}
+		PowerEvaluationData swarmers < uid=86C930825A80D14E000FEDDEA058A55E >
+		{
+			myPriority 20
+			myAIDesirableType A
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "swarmers - kill" < uid=86C930825A80D14E000FEDDF977C5830 >
+		{
+			myPriority 30
+			myMinimumKills 1
+			myAIDesirableType A
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myMeleeOffset -1.0;0.0
+	myTuningData < uid=86C9308259A5EE2D00072F1D538B9FE8 > = pwr_DLC1_VampKids_Swarmer_melee_Tuning
+	myCameraPreset < uid=86C9308259A5F821000732F07BBBBAE7 > = Preset_Generic_Melee
+}
+

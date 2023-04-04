@@ -1,0 +1,47 @@
+
+enum MoodTypeEnum
+{
+	NOTSET
+	Neutral_a
+	Sad_a
+	Fear_a
+	Fear_infinite
+	Angry_a
+	Angry_b
+	Think_a
+	Pain_a
+	LT_Fart_01
+	LT_Fart_02
+	LT_Selfie_01
+	LT_Bump_01o
+	LT_Flee_01
+	Combat_Angry
+	Combat_Weak
+	Combat_Charmed
+	Combat_Worried
+	VO_Annoyed_610
+	VO_Angry_310
+	VO_Normal_110
+	Jimmy_Smile
+	Combat_Targeted_Positive
+	Combat_Targeted_Negative
+	HumanKite_Power2_Mood
+	Enchirito_Pain
+	Player_Fart
+	Selfie_Neutral
+	Selfie_Anger_A
+	Selfie_Sad
+	Selfie_Pain
+	Selfie_Anger_B
+	Selfie_Fear
+	Selfie_01
+	Selfie_02
+	Selfie_03
+	Selfie_04
+	Selfie_05
+	Selfie_06
+	Selfie_07
+	Selfie_08
+	MM12_LavaCombat
+	LTCopsAngry
+}

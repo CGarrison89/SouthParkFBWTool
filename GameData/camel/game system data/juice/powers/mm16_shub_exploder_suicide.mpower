@@ -1,0 +1,26 @@
+include ./enemy_pwr_suicide_explode.mpower
+include camel/skillscript/mm16_shub_egg_exploding_skillscript.mskillscriptjuice
+
+CombatPower MM16_shub_exploder_suicide < uid=86D64076574CD814000001733DDFA26D > : enemy_pwr_suicide_explode
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Shub_Egg.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/1_range_cross.dds"
+	myUseSkillScript < uid=86C930825886A24000109B2D500747DB > = MM16_Shub_Egg_Exploding_SkillScript
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D05760A92A00035C296D4E4804 >
+		{
+			myPriority 10
+			myTargetHealthLessThanPercentage 101.0
+			mySelfHealthLessThanPercentage 101.0
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=3267E0D0582D34090005E585D7339464 > = enemy_pwr_mm16_shub_egg_explode_amcclay_Tuning
+}
+

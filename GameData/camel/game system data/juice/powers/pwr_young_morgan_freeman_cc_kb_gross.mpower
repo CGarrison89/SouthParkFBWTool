@@ -1,0 +1,124 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_brick.juice"
+include camel/skillscript/powersmenu_simpleplayanim.mskillscriptjuice
+
+CombatPower pwr_young_morgan_freeman_CC_KB_Gross < uid=86C9308258E674D3000040C9668DEBAB >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/brick_MuscleFlex.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/1_range_cross.DDS"
+	myUIName "contextComment = \"power name\", description = \"pwr_brick_power3 Name\", enabled = true, guid = #86C9308258E674D3000040C6991AB104, lineVersion = 3, maxLength = 27, text = \"Controlled Demolition\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_brick_power3 Description\", enabled = true, guid = #86C9308258E674D3000040C743257192, lineVersion = 1, maxLength = 151, text = \"Clear the jobsite with an ass ground pound that Grosses Out and knocks all nearby enemies in the opposite direction.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_brick_power3 Short Description\", enabled = true, guid = #86C9308258E674D3000040C82D1742E6, lineVersion = 0, maxLength = 47, text = \"Knock back and Gross Out nearby foes\""
+	myUseSkillScript < uid=86C9308258E674D3000040CA2A53E4EF > = Camel_Simple_PlayAnim_Script
+	myAnimationState brick_power3
+	myShouldUseLaunchReactions TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "3 targets with kill" < uid=86C93082591A219400120F1C3BFF0979 >
+		{
+			myPriority 15000
+			myMinimumKills 1
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets with kill" < uid=86C93082591A219400120F1D6682D8B9 >
+		{
+			myPriority 13800
+			myMinimumKills 1
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "1 target with kill" < uid=86C93082591A219400120F1ED5CE001B >
+		{
+			myPriority 11600
+			myMinimumKills 1
+		}
+		PowerEvaluationData "3 targets blocking" < uid=86C93082591A219400120F1F05A5FD32 >
+		{
+			myPriority 10000
+			myMinimumAffectedTargets 3
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Blocking
+				{
+					mySpecialEffect Block
+				}
+			}
+		}
+		PowerEvaluationData "2 targets blocking" < uid=86C93082591A219400120F20C6D2883E >
+		{
+			myPriority 8500
+			myMinimumAffectedTargets 2
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Blocking
+				{
+					mySpecialEffect Block
+				}
+			}
+		}
+		PowerEvaluationData "3 targets" < uid=86C93082591A219400120F21B6E5C74D >
+		{
+			myPriority 7000
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets" < uid=86C93082591A219400120F22138EC752 >
+		{
+			myPriority 5800
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "Not grossed out" < uid=86C93082591A219400120F2339E8E47C >
+		{
+			myPriority 1900
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not grossed out"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect GrossedOut
+					myFollowingCondition AND
+				}
+				StatusEffectConditionalEntry "Not immune to grossed out"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect GrossedOutImmunity
+				}
+			}
+		}
+		PowerEvaluationData "Grossed out" < uid=86C93082591A219400120F246B290807 >
+		{
+			myPriority 1800
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Grossed out"
+				{
+					mySpecialEffect GrossedOut
+				}
+			}
+		}
+	}
+	myTuningData < uid=86C9308258E674D3000040CB4292A9D6 > = pwr_brick_power3_Tuning
+	myCameraPreset < uid=86C9308258E674D3000040CCD505D310 > = Brick_Power03
+	myPowerGroup Normal
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData Game1
+			{
+				myActionPlusAdditionalTime 0.75
+				myActionPlusEndTime 1.25
+				myActionPlusPresetEnum Mash_Normal
+			}
+			ActionPlusMiniGameData 2
+			{
+				myActionPlusAdditionalTime 0.25
+				myActionPlusEndTime 1.9166
+				myActionPlusPositionOffsetLeft 0.0;-450.0
+				myActionPlusPositionOffsetRight 0.0;-450.0
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

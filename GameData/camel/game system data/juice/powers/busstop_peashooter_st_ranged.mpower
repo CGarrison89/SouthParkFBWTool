@@ -1,0 +1,8 @@
+include ./enemy_pwr_archetype_peashooter_st_ranged.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower busstop_peashooter_st_ranged < uid=86C93082576099370000018D18E53A97 > : enemy_pwr_archetype_peashooter_st_ranged
+{
+	myTuningData < uid=86C93082576099370000018E333CD98C > = pwr_busstop_peashooter_st_ranged_Kevin_Tuning
+}
+

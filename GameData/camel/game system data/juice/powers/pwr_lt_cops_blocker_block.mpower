@@ -1,0 +1,14 @@
+include ./enemy_pwr_archetype_blocker_block.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_LT_cops_blocker_block < uid=86C9308257684CE6000001368BDE7999 > : enemy_pwr_archetype_blocker_block
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/swatcop_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/self.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_blocker_block Name\", enabled = true, guid = #EA0BC518599A85070004C24536A63843, lineVersion = 0, maxLength = 14, text = \"Riot Shield\""
+	myUseSkillScript < uid=B9E930CA5849FD7600029E6FDB81BCF5 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myTuningData < uid=86C9308257684CE60000013718E8D548 > = pwr_LT_cops_blocker_block_Kevin_Tuning
+}
+

@@ -1,0 +1,41 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/powersmenu_simpleplayanim.mskillscriptjuice
+include camel/skillscript/pwr_king_power1_script.mskillscriptjuice
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./enemypowers.adrian.juice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+
+CombatPower pwr_sm22_bruiser_swapplaces < uid=B642A89A590A6391001FB3858EE7DA78 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/power_placeholder_basic.dds"
+	myRangeIconImage camel/baked/assets/ui/power_ranges/generic_powerplaceholder_range.dds
+	myUIName "contextComment = \"\", description = \"\", enabled = true, guid = #B642A89A590A6391001FB382519450A4, lineVersion = 3, maxLength = 16, text = \"Ho Shuffle\""
+	myUIDescription "contextComment = \"\", description = \"\", enabled = false, guid = #B642A89A590A6391001FB383427493EF, lineVersion = 2, maxLength = 0, text = \"|empty|\""
+	myUIShortDescription "contextComment = \"\", description = \"\", enabled = false, guid = #B642A89A590A6391001FB3847587458D, lineVersion = 0, maxLength = 0, text = \"|empty|\""
+	myAnimationState ""
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B642A89A590A64B0001FB39A3CACF42C >
+		{
+			myPriority 10
+			myAIDesirableType B
+		}
+	}
+	mySecondarySkillScript < uid=B642A89A590A686500226EE1C476D146 > = Simple_Rush_Damage_Script
+	myTuningData < uid=B642A89A590A6391001FB3879B08A5D4 > = pwr_sm22_bruiser_swapplaces_Adrian_Tuning
+	myAnimationSetData
+	{
+		myIntroState rushintro
+		myLoopState rushloop
+		myOutroState rushoutro
+	}
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

@@ -1,0 +1,10 @@
+include ./pwr_mm28_buttersdad_grounded_statuseffect_execute.mpower
+
+CombatPower pwr_MM28_ButtersDad_Grounded_StatusEffect_Execute3 < uid=86C9308259359AA60001A9B5596D40F8 > : pwr_MM28_ButtersDad_Grounded_StatusEffect_Execute
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/ButterDad_Power2_stage3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide.dds"
+	myUIName "contextComment = \"\", description = \"mm28_buttersdad_ground_power Name\", enabled = true, guid = #86C930825938B6A0000558E3550EBC18, lineVersion = 0, maxLength = 10, text = \"Ground\""
+	myAnimationState execute3
+}
+

@@ -1,0 +1,250 @@
+include "camel/game system data/fruit/Interaction/InteractionType.fruit"
+include "camel/game system data/fruit/interaction/DiabeticRage_ConfigTypes.fruit"
+include "camel/game system data/fruit/Interaction/DoorObjectType.fruit"
+include "camel/game system data/fruit/helpers/helpers_types.fruit"
+include "camel/game system data/fruit/buddy/PowerBuddyEntryExitSettings.fruit"
+
+// cautionary note
+// 1.If you want to add the member variables, please add them to the end.
+// 2. Deleting the member variables affects the already place node and Pin gets misplaced. Please don't delete if you can avoid it.
+//
+
+
+// Meta-data list of TempStorage
+// uid VariableName < TempStorage_ToCClientEntity="" > : This is the pin of CClientEntity Type.
+// uid VariableName < TempStorage_ToCoreEntity="" > : This is the pin of CoreEntity Type.
+
+list TempStorageVec3List
+{
+    vec3f
+}
+
+class InteractionShoveData
+{
+    uid ShoveProp < TempStorage_ToCClientEntity="" >
+    uid ShoveInteractionVolume < TempStorage_ToCClientEntity="" >
+    uid PromptMarker < TempStorage_ToCoreEntity="" >
+    float MaxVelocity 0.0
+    float AccelerationRate 0.0
+    int Heading
+    bool IsFastMode
+    vec3f UIOffsetPrompt
+    float UIFacing
+}
+
+class InteractionLiftData
+{
+    uid LiftProp < TempStorage_ToCClientEntity="" >
+    uid LiftInteractionVolume < TempStorage_ToCClientEntity="" >
+    uid PromptMarker < TempStorage_ToCoreEntity="" >
+    int Heading
+    vec3f UIOffsetPrompt
+    uid BuddyDestinationPosEntity < TempStorage_ToCoreEntity="" >
+    float UIFacing
+    float FartCoudDrain_1Sec
+    uid LiftCollisionVolume < TempStorage_ToCClientEntity="" >
+    bool IsFastMode
+    DiabeticPowerLiftAnimationType LiftType
+    TempStorageVec3List RoutePositions
+    DiabeticPowerLiftConfigType LiftConfigType
+    bool EnableEntranceCustomAnimation 
+    bool EnableExitCustomAnimation
+    PowerBuddyEntryExitAnimationSettingTypeEnum EntryExitAnimType
+    PowerBuddyEntryExitCameraSettingTypeEnum EntryExitCameraType
+    uid ExitMoveWaypoint < TempStorage_ToCoreEntity="" >
+    uid ExitNextInteractionEntity < TempStorage_ToCClientEntity="" >
+}
+
+class InteractionTipOverData
+{
+    uid TipOverProp < TempStorage_ToCClientEntity="" >
+    uid TipOverInteractionVolume < TempStorage_ToCClientEntity="" >
+    uid PromptMarker < TempStorage_ToCoreEntity="" >
+    int Heading
+    vec3f UIOffsetPrompt
+    uid BuddyDestinationPosEntity < TempStorage_ToCoreEntity="" >
+    float UIFacing
+    bool IsFastMode
+    DiabeticPowerTipOverAnimationType TipOverType
+    TempStorageVec3List RoutePositions
+    DiabeticPowerTipOverConfigType TipOverConfigType
+    uid TipOverCollisionVolume < TempStorage_ToCClientEntity="" >
+    bool EnableEntranceCustomAnimation 
+    bool EnableExitCustomAnimation
+    PowerBuddyEntryExitAnimationSettingTypeEnum EntryExitAnimType
+    PowerBuddyEntryExitCameraSettingTypeEnum EntryExitCameraType
+    uid ExitMoveWaypoint < TempStorage_ToCoreEntity="" >
+    uid ExitNextInteractionEntity < TempStorage_ToCClientEntity="" >
+}
+
+class InteractionTipOver_OverrideConfigData
+{
+    DiabeticPowerTipOverAnimationType AnimationType
+    DiabeticPowerTipOverConfigType ConfigType
+    PowerBuddyEntryExitAnimationSettingTypeEnum EntryExitAnimType
+    PowerBuddyEntryExitCameraSettingTypeEnum EntryExitCameraType
+}
+
+class InteractionLift_OverrideCofnigData
+{
+    DiabeticPowerLiftAnimationType AnimationType
+    DiabeticPowerLiftConfigType ConfigType
+    PowerBuddyEntryExitAnimationSettingTypeEnum EntryExitAnimType
+    PowerBuddyEntryExitCameraSettingTypeEnum EntryExitCameraType
+}
+
+class InteractionLift_DeterminateEventSender
+{
+    bool EnabledLiftTimer
+}
+
+class NotificationInteractionShoveData
+{
+    int NotificationType 0
+    uid BuddyActor < TempStorage_ToCClientEntity="" >
+}
+
+class InteractionDieabetesPowerInfo
+{
+    bool IsHolding false
+}
+
+class PlayerDeathDieabeticLiftData
+{
+    uid CaptainActor < TempStorage_ToCClientEntity="" >
+    uid InteractProp < TempStorage_ToCClientEntity="" >
+    DiabeticPowerLiftAnimationType LiftType
+}
+
+class BespokeInteractionInfo
+{
+    bool IsEndInteraction false
+    bool IsInteracting false
+}
+
+class GenericInteractionUpdate
+{
+    bool CanInteract false
+    bool LockedInteract false
+}
+
+class DoorInteractionUpdate
+{
+    DoorObjectType DoorObjectType Default
+    bool CanInteract false
+    bool LockedInteract false
+    bool IsInteracting false
+}
+
+class GarageDoorInitializeStatus
+{
+    bool IsCurrentOpen false
+}
+
+class PushPullInteractionInfo
+{
+    bool IsStartAttach
+    bool IsStartDetach
+    bool IsStartAttachAudio
+    bool SaveCurrentPosition
+    bool FinishedAutofitup
+    bool FaieldHold
+    bool FirstTimeStartMove
+    int autofitupIndex
+}
+
+class BuddySpawnNotificationInfo
+{
+	OptionalBool myShouldSpawn
+	OptionalBool myShouldShow
+	vec3f mySpawnPosition
+	string myActorConfig
+	CardinalDirection myHeading
+}
+
+class BuddySpawnCompleteNotificationInfo
+{
+	bool myHasSpawned
+	bool myIsVisible
+}
+
+class LootItemInteractionNotificationInfo
+{
+    int NotificationType
+}
+
+class GenericNotificationInfo
+{
+    int NotificationType
+}
+
+class LootInteractionInfo
+{
+    bool CanInteract false
+    bool LockedInteract false
+    bool IsInteracted
+}
+
+class FartkourInfo
+{
+    uid ParentUID
+	uid InteractProp < TempStorage_ToCClientEntity="" >
+	uid EndPathWaypoint < TempStorage_ToCClientEntity="" >
+	uid DepthScaleVolume < TempStorage_ToCClientEntity="" >
+	bool UseAltHumanKite
+}
+
+class SandblasterAnimationDirInfo
+{
+    vec2f Direction
+    bool isSuccess false
+}
+
+class ExplosionReactionInfo
+{
+	uid ReactionVolume < TempStorage_ToCClientEntity="" >
+}
+
+class TimefartPauseNotification
+{
+    bool PreFinishSignal
+}
+
+class PlayerTeleportInformation
+{
+    bool RequestPlayerTeleport
+}
+
+class ExplosiveExploadingInfo
+{
+    bool StartedDestroyAnim
+}
+
+class ScriptVariableTypes
+{
+    InteractionShoveData ShoveInteraction
+    NotificationInteractionShoveData ShoveNotification
+    InteractionLiftData LiftInteraction
+    InteractionTipOverData TipOverData
+    InteractionDieabetesPowerInfo DieabetesPowerInfo
+    PlayerDeathDieabeticLiftData DiabeticLiftDeathData
+    BespokeInteractionInfo BespokeInfo
+    GenericInteractionUpdate GenericInteractionUpdate
+    DoorInteractionUpdate DoorInteractionUpdate
+    GarageDoorInitializeStatus GarageDoorInitializedInfo
+    PushPullInteractionInfo PushPullInteractionInfo
+	BuddySpawnNotificationInfo BuddySpawnNotificationInfo
+	BuddySpawnCompleteNotificationInfo BuddySpawnCompleteNotificationInfo
+    LootItemInteractionNotificationInfo LootItemInteractionNotificationInfo
+    LootInteractionInfo LootInteractionInfo
+    GenericNotificationInfo GenericNotificationInfo
+	FartkourInfo FartkourInfo
+    SandblasterAnimationDirInfo SandblasterAnimationDirInfo
+    InteractionTipOver_OverrideConfigData TipOver_OverrideData
+    InteractionLift_OverrideCofnigData Lift_OverrideData
+    InteractionLift_DeterminateEventSender Lift_EventSender
+	ExplosionReactionInfo ExplosionReactionInfo
+    TimefartPauseNotification TimefartPauseNotification
+    PlayerTeleportInformation PlayerTeleport
+    ExplosiveExploadingInfo ExplosiveExploading
+}

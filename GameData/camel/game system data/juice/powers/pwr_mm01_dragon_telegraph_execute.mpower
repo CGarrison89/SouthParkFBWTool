@@ -1,0 +1,39 @@
+include ./enemy_pwr_archetype_warlock_lob_min_gross.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/sm68_pedo_priest_charge_warlock02_telegraph_damage_delt.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/lt_cops_wizard_telegraph_execute.mskillscriptjuice
+include camel/skillscript/mm01_dragon_telegraph_execute.mskillscriptjuice
+include ./enemypowers.adrian.juice
+include camel/skillscript/camel_simple_swappower_slot2.mskillscriptjuice
+include camel/skillscript/camel_simple_telegraph_targeting_script_v2.mskillscriptjuice
+
+CombatPower pwr_mm01_dragon_telegraph_execute < uid=8585E53F5944445A00048D6B2F65E515 > : enemy_pwr_archetype_warlock_lob_min_gross
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Dragon_Power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/large_cone.dds"
+	myUIName "contextComment = \"dragon fire breath name\", description = \"pwr_mm01_dragon_telegraph_execute name\", enabled = true, guid = #9D0E61965995D5A300008C4705BA49B5, lineVersion = 0, maxLength = 14, text = \"Fire Breath\""
+	myUseSkillScript < uid=8585E53F5944445A00048D6C828FBECC > = mm01_dragon_telegraph_execute
+	myTargetingSkillScript < uid=86C930825AA2DB940017B6C205EA3DD1 > = Camel_Simple_Telegraph_Targeting_Script_v2
+	myLockedByDefault TRUE
+	myNumberOfAttackEvents 1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=8585E53F5944445A00048D6DA38305D6 >
+		{
+			myPriority 40
+			myMinimumAffectedTargets 0
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=86C93082595422160001EA7613001A89 > = Camel_Simple_SwapPower_Slot2
+	myTuningData < uid=8585E53F5944445A00048D6ECB380305 > = pwr_mm01_dragon_telegraph_execute_Adrian_Tuning
+	myCameraPreset < uid=8585E53F5944445A00048D6FCB751A3A > = Preset_Generic_Melee
+}
+

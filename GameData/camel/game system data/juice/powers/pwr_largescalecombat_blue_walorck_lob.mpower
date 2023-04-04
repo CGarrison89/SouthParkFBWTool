@@ -1,0 +1,39 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_largescalecombat_blue_walorck_lob < uid=86C93082579534570004CBF3E6F5C972 >
+{
+	myUIName "contextComment = \"Placeholder Enemy\", description = \"enemy_pwr_archetype_warlock_lob_min_burning Name\", enabled = true, guid = #86C93082579534570004CBF2688746E3, lineVersion = 1, maxLength = 25, text = \"Warlock Lob Burning\""
+	myUseSkillScript < uid=86C93082579534570004CBF485761010 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C93082579534570004CBF53A371F14 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C93082579534570004CBF668D5F6EF >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86C93082579534570004CBF720231CDE > = pwr_largescalecombat_blue_warlock_lob_Kevin_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

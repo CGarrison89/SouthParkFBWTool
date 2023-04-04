@@ -1,0 +1,450 @@
+include "camel/game system data/fruit/powers/combatpowers.fruit"
+include "camel/game system data/juice/statuseffect/marked.juice"
+
+CombatPowerTuningData pwr_santa_power1_amcclay_Tuning < uid=3267E0D05748F2B200000030C36A3BC3 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 2
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=3267E0D05748F2B200000031A9A3F6B1 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 3
+		myStartWidth 0
+		myStartLength 0
+	}
+	myDamageAmount 300
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=3267E0D05748F2B200000032B60F6324 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn 0.0
+		myDexterity 0.0
+		mySpirit 0.0
+		mySpeed 0.0
+		myFortitude 0.0
+	}
+	myClassification Melee
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_santa_power2_amcclay_Tuning < uid=3267E0D058E597E40001398EC603718E >
+{
+	myPowerCategory Pet
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 3
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Location
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=3267E0D058E597E40001398F243DDC78 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=3267E0D058E597E4000139909DACC09E > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn 0.0
+		myDexterity 0.0
+		mySpirit 0.0
+		mySpeed 0.0
+		myFortitude 0.0
+	}
+	myClassification Melee
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_tupperware_power3_amcclay_Tuning < uid=3267E0D058E597E40001399104C2AC94 >
+{
+	myPowerCategory Pet
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 3
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Location
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=3267E0D058E597E400013992D9902283 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+	}
+	myLocationEffect < uid=3267E0D058E597E400013994E8D7610B > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn 0.0
+		myDexterity 0.0
+		mySpirit 0.0
+		mySpeed 0.0
+		myFortitude 0.0
+	}
+	myClassification Melee
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_supercraig_power1_reference_amcclay_Tuning < uid=3267E0D058F02664000C44B753B3AC5D >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 2
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=3267E0D058F02664000C44B820827A1A >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 0
+		myStartLength 0
+	}
+	myDamageAmount 200
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=3267E0D058F02664000C44B9E73E8022 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn 0.0
+		myDexterity 0.0
+		mySpirit 0.0
+		mySpeed 0.0
+		myFortitude 0.0
+	}
+	myClassification Melee
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_mm17_santa_santa_melee_referrence_amcclay_Tuning < uid=3267E0D058F02664000C44BAA0701BB4 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 1
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Location
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=3267E0D058F02664000C44BB6E6F9AA3 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 3
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 300
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=3267E0D058F02664000C44BC5D0E6FDE > = Marked
+	}
+	myLocationEffect < uid=3267E0D058F02664000C44BD4E22CBCD > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn 0.0
+		myDexterity 0.0
+		mySpirit 0.0
+		mySpeed 0.0
+		myFortitude 0.0
+	}
+	myClassification Melee
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_mm17_santa_santa_candy_reference_amcclay_Tuning < uid=3267E0D058F02664000C44BE6EAFD406 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 100
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed TRUE
+	myBlocksObscurationShuffle TRUE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=3267E0D058F02664000C44BF7C07E1F2 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding 0
+	mySelfTeamDamage -1
+	mySelfTeamShielding -1
+	mySelfKnockbackAmount -1
+	myLocationEffect < uid=3267E0D058F02664000C44C052590133 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn 0.0
+		myDexterity 0.0
+		mySpirit 0.0
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_survivor_test_pet_power_suicide_amcclay_Tuning < uid=8585E53F5A838C440002CED109D2C52A >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 0
+	myMinRange 0
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource TRUE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting AllyOnly
+	myDamageArea < uid=8585E53F5A838C440002CED2BAE033AB >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 0
+		myStartLength 0
+	}
+	myDamageAmount 100
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=8585E53F5A838C440002CED325C2113C > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification Ranged
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_survivor_test_power_death_amcclay_Tuning < uid=8585E53F5A838C440002CED4ABD6C681 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 0
+	myMinRange 0
+	myCooldown 1
+	myKnockbackPullForwardAmount 1
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=8585E53F5A838C440002CED534B2BD44 >
+	{
+		myPiercingType All
+		myDamageAreaType CenteredRectangle
+		myLength 3
+		myWidth 1
+		myStartWidth 0
+		myStartLength 0
+	}
+	myDamageAmount 1000
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=8585E53F5A838C440002CED68F74AD12 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification Ranged
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+

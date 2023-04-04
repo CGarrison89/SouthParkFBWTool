@@ -1,0 +1,22 @@
+include "camel/game system data/fruit/gameplaystatistics/statistic_handler_type.fruit"
+
+enum StatisticHandlerType
+{
+	String_Handler
+	Int_Handler
+	Percentage_Handler
+}
+
+class ClientStatisticHandler
+{
+	StatisticHandlerType myType
+	StatisticEventType myEvent	
+	string myValue
+	string myFirstPartyStatId
+	int myConditionalStatValue 1
+}
+
+list ClientStatisticHandlerList
+{
+	ClientStatisticHandler
+}

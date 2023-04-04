@@ -1,0 +1,34 @@
+include ./dlc3_enemypowers.juice
+include ./enemy_pwr_archetype_wizard_pierce_ranged.mpower
+include camel/skillscript/dlc3_monsters_wizard_swappower_afterexecute.mskillscriptjuice
+include camel/skillscript/dlc3_monsters_wizard_piercing_execute_skillscript.mskillscriptjuice
+include camel/skillscript/camel_simple_telegraph_targeting_script_v2.mskillscriptjuice
+
+CombatPower pwr_DLC3_Monsters_Wizard_piercing_execute < uid=86C930825A99C76200022FE31301D44F > : enemy_pwr_archetype_wizard_pierce_ranged
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/Monster_Ranged_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/4_range.dds"
+	myUIName "contextComment = \"\", description = \"pwr_DLC3_Monsters_Wizard_piercing_execute_name\", enabled = true, guid = #86C930825A99C76200022FE1269006AF, lineVersion = 0, maxLength = 14, text = \"Monster Exe\""
+	myUIDescription "contextComment = \"\", description = \"pwr_DLC3_Monsters_Wizard_piercing_execute_description\", enabled = true, guid = #86C930825A99C76200022FE2900380C6, lineVersion = 0, maxLength = 52, text = \"DLC3 Wizard Piercing Execute description\""
+	myUseSkillScript < uid=86C930825A99D09E00023533B0587AA8 > = DLC3_Monsters_Wizard_Piercing_Execute_SkillScript
+	myTargetingSkillScript < uid=B9E930CA5AF1E88B000F0829BDA3DF1E > = Camel_Simple_Telegraph_Targeting_Script_v2
+	myLockedByDefault TRUE
+	myRequiresValidTarget FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C930825A99C76200022FE458C4DDD7 >
+		{
+			myPriority 100
+			myRequiresNonTelegraphedDamageCells FALSE
+			myAIDesirableType None
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=86C930825A99CD1B0002306915298CD0 > = DLC3_monsters_wizard_SwapPower_AfterExecute
+	myTuningData < uid=86C930825A99C76200022FE5FEC70D1E > = pwr_DLC3_Monsters_Wizard_Piercing_Execute_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

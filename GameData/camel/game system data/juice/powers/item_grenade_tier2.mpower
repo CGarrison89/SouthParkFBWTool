@@ -1,0 +1,14 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_revive_script.mskillscriptjuice
+include camel/skillscript/camel_simple_healing_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/chaos_disc.mprojectile"
+include "camel/game system data/juice/projectiles/projectile_bomb.mprojectile"
+
+CombatPower item_grenade_tier2 < uid=86D6407656FD8E5C00000022C7D82065 >
+{
+	myUIName "contextComment = \"\", description = \"\", enabled = false, guid = #86D6407656FD8E5C00000021F844692A, lineVersion = 0, maxLength = 1, text = \"|empty|\""
+	myUseSkillScript < uid=86D6407656FD8E5C00000023ED101C61 > = FireActivePowerProjectile
+	myProjectile < uid=86D6407656FD8E5C0000002458D43A15 > = projectile_bomb
+	myTuningData < uid=86D6407656FD8E5C000000258302051C > = item_grenade_tier2_Tuning
+}
+

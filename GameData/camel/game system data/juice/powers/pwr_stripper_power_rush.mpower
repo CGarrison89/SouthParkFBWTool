@@ -1,0 +1,40 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include ./enemypowers.mvernon.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+
+CombatPower pwr_stripper_power_rush < uid=6D7AC9B1588148E50000DEBD35C8415E >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Stripper_Power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/4_range.dds"
+	myUIName "contextComment = \"\", description = \"temp_pwr_beerdrinkrandy_rush Name\", enabled = true, guid = #6D7AC9B1588148E50000DEBC016A3C37, lineVersion = 1, maxLength = 17, text = \"Stripper Rush\""
+	myUIDescription "contextComment = \"\", description = \"pwr_beerdrinkrandy_rush Description\", enabled = true, guid = #6D7AC9B1588148E50000DEBED550DB95, lineVersion = 1, maxLength = 51, text = \"Stripper Rushes to get in front of you.\""
+	myAnimationState ""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B1588148E50000DEBF7C03F3D3 >
+		{
+			myPriority 30
+			myValidDirections
+			{
+				myLeft FALSE
+				myRight TRUE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	mySecondarySkillScript < uid=6D7AC9B1588148E50000DEC02CD8F3E0 > = Simple_Rush_Damage_Script
+	myDialogueSkillScript < uid=326B24CD591CB2550001D771A2F7C567 > = Camel_Simple_PlayDialogue_Script
+	myTuningData < uid=6D7AC9B1588148E50000DEC15B6D8594 > = pwr_stripper_rush_power2_reverseKnockback_MVernon_Tuning
+	myCameraPreset < uid=6D7AC9B1588148E50000DEC208B2711F > = Preset_Generic_Ranged
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

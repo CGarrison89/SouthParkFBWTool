@@ -1,0 +1,44 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets.juice"
+include camel/skillscript/pwr_beerdrunkrandy_playanimwithtaunt_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_beerdrinkrandy_melee < uid=B9E930CA57C0BEBF0000038C6CACC0AC >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/randy_drunkenflurry.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/1_range_cross.dds"
+	myUIName "contextComment = \"\", description = \"temp_pwr_beerdrinkrandy_melee Name\", enabled = true, guid = #B9E930CA57C0BEBF0000038AE9B627FE, lineVersion = 1, maxLength = 23, text = \"Drunken Flurry L/R\""
+	myUIDescription "contextComment = \"\", description = \"pwr_beerdrinkrandy_melee Description\", enabled = true, guid = #B9E930CA57C0BEBF0000038B67675C6E, lineVersion = 1, maxLength = 52, text = \"Randy damages and knocks his enemy back.\""
+	myUseSkillScript < uid=B9E930CA57C0BEBF0000038DEE5FFA61 > = pwr_beerdrunkrandy_playanimwithtaunt_script
+	myAnimationState power1
+	myNumberOfAttackEvents 1
+	myShouldRepositionBeforeExecution FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "2 Targets" < uid=B9E930CA57C0BEBF0000038EB68EB983 >
+		{
+			myPriority 50
+			myNumLiveEnemiesRequired 0
+			myMinimumKills 0
+			myMinimumAffectedTargets 2
+			myMaximumDistanceToEnemies 10000
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA57C0BEBF0000038FEB570710 > = enemy_pwr_mm08_beerdrunkrandy_melee_amcclay_Tuning
+	myCameraPreset < uid=86C930825914A8DB0000766178666A93 > = Preset_Generic_Melee
+	myValidDirections
+	{
+		myLeft TRUE
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

@@ -1,0 +1,60 @@
+include ./enemy_pwr_archetype_wizard_pierce_ranged.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./enemypowers.kevin.juice
+include camel/skillscript/pwr_bikecreek_leader_power02_script.mskillscriptjuice
+include ./enemypowers.adrian.juice
+
+CombatPower pwr_mm34_6thgrader_leader_pierce_ranged < uid=8585E53F595E6D3C000370AC612E0F37 > : enemy_pwr_archetype_wizard_pierce_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/6thGraderLeader_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_range.dds"
+	myUIName "contextComment = \"sixth grader leader ranged power name\", description = \"enemy_pwr_archetype_wizard_pierce_ranged Name\", enabled = true, guid = #9D0E619659977C7E000F07F5E95FC7A0, lineVersion = 0, maxLength = 16, text = \"Roman Candle\""
+	myUseSkillScript < uid=8585E53F595E6D3C000370ADCA354F4F > = pwr_bikecreek_leader_power02_script
+	myAnimationState power2
+	myNumberOfAttackEvents 1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "1 target" < uid=8585E53F595E6D3C000370AEA6C42134 >
+		{
+			myPriority 10
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=8585E53F595E6D3C000370AF90DB9766 >
+		{
+			myPriority 900
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData kill < uid=8585E53F595E6D3C000370B0819D65FD >
+		{
+			myPriority 400
+			myMinimumKills 1
+		}
+		PowerEvaluationData "2 targets" < uid=8585E53F595E6D3C000370B1E1B20DB6 >
+		{
+			myPriority 30
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "3 targets" < uid=8585E53F595E6D3C000370B266F85D35 >
+		{
+			myPriority 40
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "4 targets" < uid=8585E53F595E6D3C000370B32AD4962B >
+		{
+			myPriority 50
+			myMinimumAffectedTargets 4
+		}
+	}
+	myTuningData < uid=8585E53F595E6D3C000370B4400CAC01 > = pwr_mm34_6thgrader_leader_pierce_ranged_Adrian_Tuning
+}
+

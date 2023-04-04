@@ -1,0 +1,15 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_LT_raisins_swarmer_melee < uid=86C930825768396A0000036A920DE0BC > : enemy_pwr_archetype_swarmer_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/raisingirl_melee.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_swarmer_melee Name\", enabled = true, guid = #9D0E6196599786C80000928D812F0707, lineVersion = 0, maxLength = 20, text = \"French Manicure\""
+	myUseSkillScript < uid=8585E53F58DEBEA0000F3C4659BEE630 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power4
+	myNumberOfAttackEvents 7
+	myShouldRepositionBeforeExecution TRUE
+	myTuningData < uid=86C930825768396A0000036B35897E60 > = pwr_LT_raisins_swarmer_melee_Kevin_Tuning
+}
+

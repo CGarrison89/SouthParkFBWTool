@@ -1,0 +1,54 @@
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_fastpass.juice"
+include ./buddypowers.juice
+include camel/skillscript/pwr_fastpass_power01_vfx_impact.mskillscriptjuice
+include "camel/game system data/juice/statuseffect/invisible.juice"
+
+CombatPower pwr_fastpass_power1 < uid=86D64076574874D9000000FFCBBF65CB >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/fastpass_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/rush_3.dds"
+	myUIName "contextComment = \"Fast Pass Power 1 Name\", description = \"pwr_fastpass_power1 Name\", enabled = true, guid = #51C546C65774DC0F000000F815A0139C, lineVersion = 2, maxLength = 16, text = \"Blind Side\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_fastpass_power1 Description\", enabled = true, guid = #51C546C65774DC0F000000F943C68F96, lineVersion = 1, maxLength = 142, text = \"FastPass is gone in .6 seconds as he blitzes past his foes, dealing damage and granting himself Invisibility.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_fastpass_power1 Short Description\", enabled = true, guid = #9D0E6196579BA369000044540B678958, lineVersion = 0, maxLength = 58, text = \"Damages foes and grants FastPass Invisibility\""
+	myTargetingSkillScript < uid=86D64076574874D900000101A79D9BF6 > = NULLREFERENCE
+	myAnimationState ""
+	myShouldRepositionBeforeExecution FALSE
+	myPowerEvaluationData
+	{
+	}
+	mySecondarySkillScript < uid=B9E930CA57AE35410000A5F2EE93A779 > = pwr_fastpass_power01_vfx_impact
+	myDialogueSkillScript < uid=326B24CD582CDD2200000DBE9AE4B76D > = Camel_Simple_PlayDialogue_Script
+	myTuningData < uid=86D64076574874D9000001042F2EA002 > = pwr_fastpass_power1_Tuning
+	myCameraPreset < uid=86D64076574874D9000001056427CC3A > = Fastpass_Power01
+	myPowerGroup Normal
+	mySelfStatusEffects
+	{
+		StatusEffect Invisible < uid=86D64076577D3C6F000000840B483455 > = Invisible
+	}
+	myAnimationSetData
+	{
+		myIntroState power1intro
+		myLoopState power1loop
+		myOutroState power1outro
+	}
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 1.5
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

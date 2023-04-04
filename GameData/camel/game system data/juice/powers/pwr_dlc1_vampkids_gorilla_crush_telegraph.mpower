@@ -1,0 +1,35 @@
+include ./pwr_dlc1_vampkids_priest_revive_telegraph.mpower
+include camel/skillscript/camel_simple_swappower_slot1.mskillscriptjuice
+include camel/skillscript/dlc1_vampkids_gorilla_crush_telegraph_skillscript.mskillscriptjuice
+
+CombatPower pwr_DLC1_VampKids_Gorilla_crush_telegraph < uid=86C9308259A9DC19000661720144A755 > : pwr_DLC1_VampKids_Priest_revive_telegraph
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/Chiquita_Power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_5x5.dds"
+	myUIName "contextComment = \"power name\", description = \"pwr_DLC1_VampKids_Gorilla_crush_telegraph_name\", enabled = true, guid = #86C9308259EE5E5F000090776863881E, lineVersion = 1, maxLength = 18, text = \"Chiquita Crush\""
+	myUseSkillScript < uid=86C9308259A9DCC1000661940575BD82 > = DLC1_VampKids_Gorilla_Crush_Telegraph_SkillScript
+	myLockedByDefault TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308259A9E87300008BB34361AE5D >
+		{
+			myPriority 100
+			myMinimumAffectedTargets 0
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=86C9308259A9DDD6000661B34F074115 > = Camel_Simple_SwapPower_Slot1
+	myTuningData < uid=86C9308259A9DC6100066188694F99CE > = pwr_DLC1_VampKids_Gorilla_crush_telegraph_Tuning
+	myPowerDeathTargeting None
+	myTelegraphData
+	{
+		myTelegraphedPowerName ""
+		myTelegraphingAnimationName ""
+	}
+}
+

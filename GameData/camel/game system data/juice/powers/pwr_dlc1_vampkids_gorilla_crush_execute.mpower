@@ -1,0 +1,23 @@
+include ./pwr_dlc1_vampkids_priest_revive_execute.mpower
+include camel/skillscript/camel_simple_swappower_slot1.mskillscriptjuice
+include camel/skillscript/dlc1_vampkids_gorilla_crush_skillscript.mskillscriptjuice
+
+CombatPower pwr_DLC1_VampKids_Gorilla_crush_execute < uid=86C9308259A9DC3E0006617C3CB9EE8B > : pwr_DLC1_VampKids_Priest_revive_execute
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/Chiquita_Power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_5x5.dds"
+	myUIName "contextComment = \"power name\", description = \"pwr_DLC1_VampKids_Gorilla_crush_execute_name\", enabled = true, guid = #86C9308259EE5E520000907128465BE0, lineVersion = 1, maxLength = 18, text = \"Chiquita Crush\""
+	myUseSkillScript < uid=86C9308259A9DC620006618925E2FE3B > = DLC1_VampKids_Gorilla_Crush_SkillScript
+	myLockedByDefault FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=86C9308259A9ED67000ABAF12C5D76E7 >
+		{
+			myPriority 200
+			myAIDesirableType None
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=86C9308259A9DDDF000661BF3971D27A > = Camel_Simple_SwapPower_Slot1
+	myTuningData < uid=86C9308259A9DC620006618AB62BB841 > = pwr_DLC1_VampKids_Gorilla_crush_execute_Tuning
+}
+

@@ -1,0 +1,72 @@
+enum LanguageName // This must be kept up-to-date with languages_names.juice
+{
+	english
+	french
+	italian
+	arabictest
+	debugworstcase
+	german
+	spanish
+	japanese
+	russian
+	mexican_spanish
+	brazilian_portuguese
+	arabic
+	danish
+	swedish
+	norwegian
+	finnish
+	dutch
+	polish
+	czech
+	hungarian
+	korean
+	traditionalchinese
+	simplifiedchinese
+}
+enum FontName
+{
+	Borda
+	"Liberation Sans"
+	TestTahomaBorda
+	KoreanFont
+	JapaneseFont
+	SimplifiedChineseFont
+	TraditionalChineseFont
+	ArabicFont
+	"SouthPark"
+	"SecretOriginsBB"
+	"ArialMTStd_Bold"
+	"ArialNarrowMTStd"
+	"TheCrewSans-Regular"
+	LiberationSans
+	"ArialWGLBold"
+	"ArialNarrow"
+}
+
+enum FontWeight
+{
+	Regular
+	Medium
+	Bold
+}
+class FontStyleLanguageEntry
+{
+	LanguageName myLanguageName english
+	FontName myFontName Borda
+	FontWeight myFontWeight Regular
+	bool myIsItalic FALSE
+}
+list FontStyleLanguageEntryList
+{
+	FontStyleLanguageEntry
+}
+class FontStyleEntry
+{
+	FontStyleLanguageEntryList myLanguageFontStyles
+}
+
+list FontStyleEntryList
+{
+	FontStyleEntry
+}

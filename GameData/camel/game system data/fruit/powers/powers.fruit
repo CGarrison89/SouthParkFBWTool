@@ -1,0 +1,19 @@
+include "camel/skillscript/skillscript.fruit"
+
+class Power < uid=auto >
+{
+	file myIconImage "camel/baked/assets/ui/power selection/power_placeholder_basic.dds" < types=*.dds >
+	file myRangeIconImage "camel/baked/assets/ui/power_ranges/generic_powerplaceholder_range.dds" < types=*.dds tooltip="This depicts the grid formation of this power." >
+	file myPreviewIconImage "" < types=*.dds tooltip="Icon shown on the grid (if applicable)" >
+	varmap myUIName < bhv="localization" >
+	varmap myUIDescription < bhv="localization" >
+	varmap myUIShortDescription < bhv="localization" >
+	SkillScript* myUseSkillScript
+	SkillScript* myTargetingSkillScript
+	SkillScript* myMenuSkillScript
+	string myAnimationState
+	bool myIsPassive
+	bool myUseActiveTargeting
+	bool myLockedByDefault false
+	bool myIsBuddyPower false
+}

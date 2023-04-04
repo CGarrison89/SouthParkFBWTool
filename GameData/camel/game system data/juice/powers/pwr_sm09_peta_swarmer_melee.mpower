@@ -1,0 +1,8 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include ./enemypowers.adrian.juice
+
+CombatPower pwr_sm09_peta_swarmer_melee < uid=8585E53F57E560750012EE8B6E151FBF > : enemy_pwr_archetype_swarmer_melee
+{
+	myTuningData < uid=8585E53F57E560750012EE8CB3AC8B83 > = pwr_sm09_peta_swarmer_melee_Adrian_Tuning
+}
+

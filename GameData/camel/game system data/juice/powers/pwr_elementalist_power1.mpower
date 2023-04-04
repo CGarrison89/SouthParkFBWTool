@@ -1,0 +1,70 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/powersmenu_simpleplayanim.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_lobbed_power_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_elementalist.juice"
+
+CombatPower pwr_elementalist_power1 < uid=B9E930CA56DA2267000000AA5BBCF231 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/elementalist_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_aoe_min_range.DDS"
+	myUIName "contextComment = \"Elementalist Power 1 Name\", description = \"pwr_elementalist_power1 Name\", enabled = true, guid = #51C546C65774DC0C000000F062FB1184, lineVersion = 2, maxLength = 20, text = \"Venus Dirt Trap\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_elementalist_power1 Description\", enabled = true, guid = #51C546C65774DC0C000000F1A977638C, lineVersion = 2, maxLength = 139, text = \"Via the underrated super power of Dirt Control, the Elementalist causes the very Earth to chomp on enemies.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_elementalist_power1 Short Description\", enabled = true, guid = #9D0E6196579A775E0000015F53E0201E, lineVersion = 2, maxLength = 36, text = \"The Earth gnaws on your foes\""
+	myUseSkillScript < uid=B9E930CA56DA2267000000AB84636569 > = Camel_Lobbed_Power_PlayAnim_Script
+	myAnimationState elementalist_power1
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "3 targets with kill" < uid=86C9308258E7C6BE000041437837F698 >
+		{
+			myPriority 15400
+			myMinimumKills 1
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets with kill" < uid=86C9308258E7C6BE000041445B575970 >
+		{
+			myPriority 14200
+			myMinimumKills 1
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "1 target with kill" < uid=86C9308258E7C6BE00004145489C2036 >
+		{
+			myPriority 12000
+			myMinimumKills 1
+		}
+		PowerEvaluationData "3 targets" < uid=86C9308258E7C6BE000041464E3FE6E6 >
+		{
+			myPriority 7400
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets" < uid=86C9308258E7C6BE00004147897B5A8F >
+		{
+			myPriority 6200
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "1 target" < uid=86C9308258E7C6BE0000414868060E09 >
+		{
+			myPriority 2600
+			myMinimumAffectedTargets 1
+		}
+	}
+	myTuningData < uid=B9E930CA56DA2267000000ACF00DD9EE > = pwr_elementalist_power1_Tuning
+	myCameraPreset < uid=8E1BC44359194CA60004238BBFEE7DA7 > = Elementalist_Power01
+	myPowerGroup Normal
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 1.0
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

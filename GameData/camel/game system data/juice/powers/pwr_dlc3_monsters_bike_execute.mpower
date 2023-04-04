@@ -1,0 +1,40 @@
+include ./dlc3_enemypowers.juice
+include ./enemy_pwr_archetype_wizard_pierce_ranged.mpower
+include camel/skillscript/dlc3_timmy_boss_execute.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_jared.juice"
+include camel/skillscript/camel_simple_telegraph_targeting_script.mskillscriptjuice
+include camel/skillscript/dlc3_monsters_timmy_boss_swappower_afterexecute.mskillscriptjuice
+include camel/skillscript/dlc3_timmy_boss_execute_damage_preview.mskillscriptjuice
+include camel/skillscript/dlc3_timmy_boss_targeting_skillscript.mskillscriptjuice
+include camel/skillscript/dlc3_timmy_boss_targeting_before_execute_skillscript.mskillscriptjuice
+include camel/skillscript/dlc3_bike_execute.mskillscriptjuice
+include camel/skillscript/dlc3_bike_targeting_before_execute_skillscript.mskillscriptjuice
+include camel/skillscript/dlc3_bike_swappower_aftertelegraph.mskillscriptjuice
+include camel/skillscript/dlc3_bike_swappower_afterexecute.mskillscriptjuice
+
+CombatPower pwr_dlc3_monsters_bike_execute < uid=C87888A05AB961EC00023A5A28D0393B > : enemy_pwr_archetype_wizard_pierce_ranged
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/GhostBiker_Power1.dds"
+	myUIName "contextComment = \"[ PLACEHOLDER - DO NOT LOCALIZE ]\", description = \"[ PLACEHOLDER - DO NOT LOCALIZE ]\", enabled = true, guid = #C87888A05AB961EC00023A589801F29C, lineVersion = 0, maxLength = 38, text = \"[TIMMY BOSS - EXECUTE ATTACK]\""
+	myUIDescription "contextComment = \"[ PLACEHOLDER - DO NOT LOCALIZE ]\", description = \"[ PLACEHOLDER - DO NOT LOCALIZE ]\", enabled = false, guid = #C87888A05AB961EC00023A59D0A86CF4, lineVersion = 0, maxLength = 43, text = \"[ PLACEHOLDER - DO NOT LOCALIZE ]\""
+	myUseSkillScript < uid=C87888A05AB961EC00023A5BF5BC735C > = DLC3_Bike_Execute
+	myTargetingSkillScript < uid=C87888A05AB961EC00023A5C62BEEA65 > = DLC3_Bike_Targeting_Before_Execute_SkillScript
+	myLockedByDefault TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=C87888A05AB961EC00023A5DF1E2E50A >
+		{
+			myPriority 100
+			myAIDesirableType None
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=C87888A05AB961EC00023A5E585203EC > = DLC3_Bike_SwapPower_AfterExecute
+	myTuningData < uid=C87888A05AB961EC00023A5F4E62BD29 > = pwr_DLC3_Monsters_Bike_Execute_Tuning
+	myCameraPreset < uid=C87888A05AB961EC00023A60DB1A9B42 > = Jared_Power02
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

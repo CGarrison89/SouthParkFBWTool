@@ -1,0 +1,8 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_sm01_bruiser_melee_wedgie < uid=8585E53F57B493AD00004A8F33602A94 > : enemy_pwr_archetype_bruiser_melee
+{
+	myTuningData < uid=8585E53F57B493AD00004A9018BFD28B > = pwr_sm01_bruiser_melee_wedgie_Kevin_Tuning
+}
+

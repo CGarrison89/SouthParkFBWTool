@@ -1,0 +1,28 @@
+include ./enemy_pwr_archetype_blocker_block.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower MM16_blackcells_bruiser_block < uid=86D64076574CD00800000140DE67BC5C > : enemy_pwr_archetype_blocker_block
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/swatcop_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/self.dds"
+	myUIName "contextComment = \"\", description = \"mm16_blackcells_bruiser_block Name\", enabled = true, guid = #51C546C65774D949000000AA02C17838, lineVersion = 1, maxLength = 22, text = \"Advance And Block\""
+	myUseSkillScript < uid=B9E930CA576CA08300000193BD168021 > = Camel_Simple_PlayAnim_Script
+	myAnimationState ""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D057AA74B70000AC8DAC2D0772 >
+		{
+			myPriority 50
+			myPreferredRange -1
+			myMaximumDistanceToEnemies 2
+			mySelfHealthLessThanPercentage 65.0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=3267E0D057AA5B980000009C1F6DE024 > = enemy_pwr_mm16_blocker_block_amcclay_Tuning
+}
+

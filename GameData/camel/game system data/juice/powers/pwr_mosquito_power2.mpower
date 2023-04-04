@@ -1,0 +1,86 @@
+include ./combatpowerincludes.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_mosquito.juice"
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_mosquito_power2 < uid=B9E930CA56D77B9C000000269F1ED327 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/mosquito_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_square_debuff.DDS"
+	myUIName "contextComment = \"Mosquito Power 2 Name\", description = \"pwr_mosquito_power2 Name\", enabled = true, guid = #51C546C65774DC340000014C80188260, lineVersion = 2, maxLength = 17, text = \"Skeeter Swarm\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_mosquito_power2 Description\", enabled = true, guid = #51C546C65774DC340000014D7849FBAE, lineVersion = 2, maxLength = 122, text = \"Mosquito gains Attack Up and Grosses Out all nearby enemies with a swarm of ravenous skeeters.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_mosquito_power2 Short Description\", enabled = true, guid = #9D0E6196579B942C0000015FB12EE962, lineVersion = 2, maxLength = 48, text = \"Gross Out nearby foes, gain Attack Up\""
+	myUseSkillScript < uid=86D6407657EC357900056ED0044E65D8 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "1 target" < uid=86C930825A569DB4000194F8F2B0C804 >
+		{
+			myPriority 10
+		}
+		PowerEvaluationData "2 targets" < uid=86C930825A569DB4000194F9AEA40BFB >
+		{
+			myPriority 30
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "3 targets" < uid=86C930825A569DB4000194FA92811541 >
+		{
+			myPriority 40
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "1 target - kill" < uid=86C930825A569DB4000194FB27A82380 >
+		{
+			myPriority 100
+			myMinimumKills 1
+			myMinimumAffectedTargets 1
+		}
+		PowerEvaluationData "2 targets - kill" < uid=86C930825A569DB4000194FC532C3F99 >
+		{
+			myPriority 200
+			myMinimumKills 1
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "3 targets - kill" < uid=86C930825A569DB4000194FDDD591DD4 >
+		{
+			myPriority 300
+			myMinimumKills 1
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData enraged < uid=86C930825A569DB4000194FE47E83023 >
+		{
+			myPriority 1000
+			myAggroPriority 1000
+			myRequireAggroTarget TRUE
+		}
+	}
+	myTuningData < uid=B9E930CA56D77B9C000000288420154B > = pwr_mosquito_power2_Tuning
+	myCameraPreset < uid=B9E930CA57BF2A1E000001744337F134 > = Mosquito_Power02
+	myPowerGroup Normal
+	mySelfStatusEffects
+	{
+		StatusEffect Focus < uid=86D6407657EC35BE00056ED1A8067D7C > = Focused
+	}
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.25
+				myActionPlusEndTime 1.416
+				myActionPlusPositionOffsetLeft 0.0;3.0
+				myActionPlusPositionOffsetRight 0.0;3.0
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

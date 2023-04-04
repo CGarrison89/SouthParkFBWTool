@@ -1,0 +1,29 @@
+include ./enemy_pwr_archetype_priest_shield.mpower
+include ./dlc1_enemypowers.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/camel_simple_swappower_slot2.mskillscriptjuice
+include camel/skillscript/dlc1_vampkids_priest_revive_telegraph_skillscript.mskillscriptjuice
+include camel/skillscript/dlc1_vampkids_priest_revive_skillscript.mskillscriptjuice
+include camel/skillscript/dlc1_vampkids_priest_revive_targeting_skillscript.mskillscriptjuice
+
+CombatPower pwr_DLC1_VampKids_Priest_revive_execute < uid=86C9308259A62750000FD468BB50F116 > : enemy_pwr_archetype_priest_shield
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/VampPriest_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_heal.dds"
+	myUIName "contextComment = \"power name\", description = \"pwr_DLC1_VampKids_Priest_revive_execute_name\", enabled = true, guid = #86C9308259EE5FA8000090AB64226F67, lineVersion = 1, maxLength = 16, text = \"Reraise Dead\""
+	myUseSkillScript < uid=86C9308259A62750000FD469D6443796 > = DLC1_VampKids_Priest_Revive_SkillScript
+	myTargetingSkillScript < uid=86C930825A67CC32000A54CB3C6D24F5 > = DLC1_VampKids_Priest_Revive_Targeting_SkillScript
+	myLockedByDefault TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=86C9308259A63812002FC26954DD8EF1 >
+		{
+			myPriority 200
+			myAIDesirableType None
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=86C9308259A62766000FDDF2974CAA1A > = Camel_Simple_SwapPower_Slot2
+	myTuningData < uid=86C9308259A62750000FD46AFCB9117E > = pwr_DLC1_VampKids_Priest_revive_execute_Tuning
+	myCameraPreset < uid=86C9308259A62750000FD46B72C419BA > = Preset_Generic_Ranged
+}
+

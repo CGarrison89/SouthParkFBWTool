@@ -1,0 +1,60 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+
+CombatPower pwr_mm17_santa_santa_melee_v2 < uid=86C9308257ED3C7B000052138ADEB8BE > : enemy_pwr_archetype_bruiser_melee
+{
+	myUseSkillScript < uid=86C9308258BF06BC00002184743C47CB > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myShouldRepositionBeforeExecution FALSE
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308257ED3C7B000052140AB31D56 >
+		{
+			myPriority 50
+			myMinimumAffectedTargets 0
+			myAIDesirableType A
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308257ED3C7B000052184D19C526 >
+		{
+			myPriority 500
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData marked < uid=86C9308257ED3CC90000531765E6AF93 >
+		{
+			myPriority 100
+			myMinimumAffectedTargets 1
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Marked
+				{
+					mySpecialEffect Marked
+				}
+			}
+		}
+		PowerEvaluationData 3targets < uid=3267E0D058E4654A000213E46203A458 >
+		{
+			myPriority 100
+			myMinimumAffectedTargets 0
+			myAIDesirableType A
+		}
+	}
+	myTuningData < uid=86C9308257ED3C7B00005219F44F6817 > = pwr_mm17_santa_santa_melee_Kevin_Tuning
+	myPowerGroup Basic
+}
+

@@ -1,0 +1,10 @@
+include ./enemy_pwr_archetype_rogue_melee_shocked.mpower
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+
+CombatPower pwr_lt_6thgraders_rogue_melee_grossed < uid=86C93082577977BE000001704BA00C70 > : enemy_pwr_archetype_rogue_melee_shocked
+{
+	myTuningData < uid=86C93082577977BE00000171A7D57DCD > = pwr_LT_6thgraders_rogue_melee_grossed_Kevin_Tuning
+	myCameraPreset < uid=6D7AC9B157BE6988000002497BE18E63 > = Rogue_Power02
+}
+

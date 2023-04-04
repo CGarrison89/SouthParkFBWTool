@@ -1,0 +1,42 @@
+include ./pwr_com_cousinkyle_eyelaser.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_mm19_altKite_LaserEyes < uid=86C93082578FD76C0000478C6BF06F3C > : pwr_com_cousinkyle_eyeLaser
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C930825791149000004371800B49BC >
+		{
+			myPriority 20
+			myMinimumAffectedTargets 1
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myLeft TRUE
+				myRight TRUE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308258C1CB860005E1E8F6EA5F9E >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myLeft TRUE
+				myRight TRUE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C93082578FD76C0000478DD1F41B7C > = pwr_mm19_altKite_LaserEyes_Kevin_Tuning
+	myCameraPreset < uid=86C93082596FEA420004FD8E2BCB7389 > = Preset_Generic_Ranged_VeryLong
+}
+

@@ -1,0 +1,31 @@
+include ./enemy_pwr_archetype_rogue_melee.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_LT_cityninjas_rogue_melee < uid=86C9308257683CC000000428C755BC58 > : enemy_pwr_archetype_rogue_melee
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C930825775C8E400000189DC4F997C >
+		{
+			myPriority 25
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C930825775C8E40000018A171AD1F3 >
+		{
+			myPriority 25
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C9308257683CC000000429BADA038F > = pwr_LT_cityninjas_rogue_melee_Kevin_Tuning
+}
+

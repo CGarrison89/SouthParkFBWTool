@@ -1,0 +1,35 @@
+include "camel/game system data/fruit/juiceObj.fruit"
+
+enum CurveScalingTypeEnum
+{
+    Multiplying
+    Additive
+}
+
+class PlayerMovementCurve : JuiceObj
+{
+	string myPositionCurve "{ defaultLeftSlope = 0, defaultRightSlope = 0, defaultValue = 0, interpolator = 0, isRefinedSampling = true, keys2 = { inTangents = { -0 0, -0.333333 0, }, outTangents = { 0.333333 0, 0 0, }, properties = { 3, 1027, }, values = { 0 0, 1 0, }, }, numKeys = 2, minValueBounds=0, }" < bhv=inputgraph >
+	string mySpeedCurve "{ defaultLeftSlope = 0, defaultRightSlope = 0, defaultValue = 0, interpolator = 0, isRefinedSampling = true, keys2 = { inTangents = { -0 0, -0.333333 0, }, outTangents = { 0.333333 0, 0 0, }, properties = { 3, 1027, }, values = { 0 1, 1 1, }, }, numKeys = 2, minValueBounds=0.01, }" < bhv=inputgraph >
+    float mySpeedCurveMultiplier 1.0
+    int myUpdateFPS 60
+    CurveScalingTypeEnum myCurveScalingType Multiplying
+}
+
+list PlayerMovementCurveList
+{
+	PlayerMovementCurve
+}
+
+class PlayerMovementCurveGroup : JuiceObj
+{
+	PlayerMovementCurveList myPlayerMovementCurves
+}
+
+class MovementSettings
+{
+	float myVerticalMovementSnapZoneAngle 20.0 < bhv=degree_angle min=0 max=90 >
+	float myHorizontalMovementSnapZoneAngle 25.0 < bhv=degree_angle min=0 max=90 >
+	float my1DAlternateMovementGamepadToleranceAngle 90.0 < bhv=degree_angle min=0 max=180 >
+	float mySprintMovementModifier 0.1
+}
+

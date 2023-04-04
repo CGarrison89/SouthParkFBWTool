@@ -1,0 +1,14 @@
+include "camel/game system data/fruit/Interaction/InteractionType.fruit"
+
+class Hologram < uid=auto >
+{
+	FieldInteractionType myInteractionType
+	file myVfxIcon "camel/baked/assets/vfx/ui/textures/haywire_icon.dds" < types=*.dds >
+    file myUIOutOfScreenIcon "" < types=*.dds >
+	varmap myUIName < bhv="localization" >
+}
+
+list Holograms
+{
+	Hologram
+}

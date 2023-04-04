@@ -1,0 +1,55 @@
+include ./pwr_com_kitchenthrow.mpower
+include "camel/game system data/juice/projectiles/projectile_cheesypoofs.mprojectile"
+include "camel/game system data/juice/camera/uber_camera_presets.juice"
+include camel/skillscript/pwr_headchef_heal_script.mskillscriptjuice
+
+CombatPower pwr_com_kitchenheal < uid=DB7C6D4256B96EB0000082B912CD987A > : pwr_com_kitchenthrow
+{
+	myIconImage "camel/baked/assets/ui/power selection/power - toolshed - healing ray.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_kitchenheal Name\", enabled = true, guid = #51C546C65774DBE5000000A89543CE3E, lineVersion = 1, maxLength = 10, text = \"Salute\""
+	myUseSkillScript < uid=B9E930CA5797F062000001EC65922BAA > = pwr_headchef_heal_script
+	myAnimationState ""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData heal_selfcritical < uid=DB7C6D4256FAE13F00001A43965F962B >
+		{
+			myPriority 50
+			mySelfHealthLessThanPercentage 35.0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData heal_self < uid=DB7C6D4256BD12BF00002CC7DD8335FB >
+		{
+			myPriority 26
+			myTargetHealthLessThanPercentage 101.0
+			mySelfHealthLessThanPercentage 65.0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData heal_ally < uid=DB7C6D4256C3FAEC00004868DCE109C5 >
+		{
+			myPriority 65
+			myTargetHealthLessThanPercentage 65.0
+			mySelfHealthLessThanPercentage 101.0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=DB7C6D4256B96ECF000082C19FD33A24 > = pwr_com_kitchenheal_MAcero_Tuning
+	myCameraPreset < uid=DB7C6D4257337CB90000978144DF1EDE > = NULLREFERENCE
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

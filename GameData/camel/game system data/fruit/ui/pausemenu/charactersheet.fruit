@@ -1,0 +1,107 @@
+include "camel/game system data/fruit/achievement/achievement.fruit"
+
+enum UICharacterSheetSpawnType
+{
+	PauseMenu
+	Class
+	Race
+	Gender
+	Religion
+	Kryptonite
+	Alignment
+	ArchEnemy
+	SkinTone
+}
+
+enum UICharacterSheetTitleReward
+{
+	None
+	Artifact
+	ArtifactMinor
+	ArtifactMajor
+	ArtifactEpic
+	Biohazard
+	CellPhone
+	Costume
+	Fabric
+	Food
+	HamRadio
+	Meds
+	Scrap
+	Tech
+}
+
+class CharacterSheetTitle < uid = auto >
+{
+	varmap myUIName < bhv="localization" >
+	int myAchievementValue
+	int myHeroRankPoints
+	UICharacterSheetTitleReward myReward None
+}
+
+list CharacherSheetTitles
+{
+	CharacterSheetTitle
+}
+
+class CharacterSheetTitleEntry < uid = auto > 
+{
+	varmap myUIName < bhv="localization" >
+	varmap myUIAction < bhv="localization" >
+	CharacterSheetAchievement* myAchievement
+	CharacherSheetTitles myTitles
+	bool myHideCounter false
+	bool myHidden false
+}
+
+class CharacterSheetHeroRankEntry < uid = auto > 
+{
+	varmap myUIName < bhv="localization" >
+	CharacherSheetTitles myTitles
+}
+
+class CharacterSheetEnumValue < uid = auto > 
+{
+	varmap myUIName < bhv="localization" >
+	bool myCrossedOut false
+	bool myHidden false
+}
+
+list CharacterSheetEnum
+{
+	CharacterSheetEnumValue
+}
+
+list CharacterSheetEnumReference
+{
+	CharacterSheetEnumValue*
+}
+
+enum CharacterSheetType
+{
+	Unspecified
+	Race
+	Gender
+	Religion
+	PowerSource
+	Kryptonite
+	HolyAlignment
+	ArchEnemy
+	EconomicLevel
+}
+
+class CharacterSheetEnumEntry < uid = auto > 
+{
+	varmap myUIName < bhv="localization" >
+	int myHeroRankPoints
+	bool myRevealedAtStart true
+	CharacterSheetType myCharacterSheetType Unspecified
+	CharacterSheetEnum myEnum
+	CharacterSheetEnumReference myEnumReference
+}
+
+class CharacterSheetSpecialEntry < uid = auto > 
+{
+	varmap myUIName < bhv="localization" >
+	int myHeroRankPoints
+}

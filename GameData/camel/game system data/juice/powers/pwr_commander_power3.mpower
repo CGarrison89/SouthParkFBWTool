@@ -1,0 +1,71 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/pwr_plantmancer_power03_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_plantmancer.juice"
+
+CombatPower pwr_commander_power3 < uid=B9E930CA56DA259300000101B37CB6F9 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/Plantmancer_Power3.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/thornwave.dds"
+	myUIName "contextComment = \"Commander Power 3 Name\", description = \"pwr_commander_power3 Name\", enabled = true, guid = #51C546C65774DBFF000000D3A6E62994, lineVersion = 3, maxLength = 16, text = \"Thorn Wave\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_commander_power3 Description\", enabled = true, guid = #51C546C65774DBFF000000D4FE9ADC4A, lineVersion = 1, maxLength = 125, text = \"The Plantmancer unleashes a wave of thorny vines that knock back and damage foes to either side.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_commander_power3 Short Description\", enabled = true, guid = #9D0E6196579BF25F000044E0898EBC69, lineVersion = 1, maxLength = 53, text = \"Damage and knock back foes to either side\""
+	myUseSkillScript < uid=B9E930CA56DA259300000102AA5D39EA > = pwr_plantmancer_power03_script
+	myAnimationState commander_power3
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "3 targets with kill" < uid=86C9308258E7DC4100004186304CC139 >
+		{
+			myPriority 14800
+			myMinimumKills 1
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets with kill" < uid=86C9308258E7DC41000041879388A12B >
+		{
+			myPriority 13600
+			myMinimumKills 1
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "1 target with kill" < uid=86C9308258E7DC41000041885E101DF7 >
+		{
+			myPriority 11400
+			myMinimumKills 1
+		}
+		PowerEvaluationData "3 targets" < uid=86C9308258E7DC410000418931A06687 >
+		{
+			myPriority 6800
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets" < uid=86C9308258E7DC410000418A67B32C83 >
+		{
+			myPriority 5600
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "1 target" < uid=86C9308258E7DC410000418BB1E458A7 >
+		{
+			myPriority 1500
+		}
+	}
+	myTuningData < uid=B9E930CA56DA25930000010398C48D70 > = pwr_commander_power3_Tuning
+	myCameraPreset < uid=B9E930CA597026B600014001944030DF > = Plantmancer_Power03
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.0
+				myActionPlusEndTime 1.583333
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

@@ -1,0 +1,19 @@
+include ./placeholder_enemy_power1.mpower
+include ./buddypowers.bbartram.juice
+
+CombatPower pwr_com_backstoryDog_bite < uid=B642A89A571A557200003E8AEE5294EF > : placeholder_enemy_power1
+{
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_backstorydog_bite Name\", enabled = true, guid = #51C546C65774D96B0000010D4E27679E, lineVersion = 0, maxLength = 14, text = \"Heroic Bite\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B642A89A57227F6E00006AB388CDF66C >
+		{
+			myPriority 10
+			myAggroPriority 80
+			myRequireAggroTarget FALSE
+		}
+	}
+	myTuningData < uid=B642A89A571A57E300003EA49B12CA63 > = pwr_com_backstoryDog_bite_BBartram_Tuning
+}
+

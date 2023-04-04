@@ -1,0 +1,42 @@
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include camel/skillscript/pwr_mm12_siege_pitcher_throwball_skillscript.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_mm12_siege_baseball.mprojectile"
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+include camel/skillscript/camel_simple_swappower_slot1.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_mm12_siege_pitcher_throwBall_telegraph < uid=86C93082581A68950002B615BDDFC7B0 > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/generics/generic_lobbed_telegraph.dds"
+	myUIName "contextComment = \"\", description = \"pwr_mm12_siege_pitcher_throwBall_telegraph_Name\", enabled = true, guid = #F0F6DDB7599745D3000EA4636C78C9C1, lineVersion = 0, maxLength = 16, text = \"Ball Barrage\""
+	myUseSkillScript < uid=86C93082581A68C90002B625985E357D > = pwr_mm12_siege_pitcher_throwBall_SkillScript
+	myBlocksObscurationMovement TRUE
+	myProjectile < uid=86C93082581A68C90002B62686D64460 > = projectile_mm12_siege_baseball
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C93082581AA13E00181B3909911D0B >
+		{
+			myPriority 30
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=86C93082595424120003512AC7F6872F > = Camel_Simple_SwapPower_Slot1
+	myTuningData < uid=86C93082581A68C90002B627DA08B5F9 > = pwr_mm12_siege_pitcher_throwBall_telegraph_amcclay_Tuning
+	myCameraPreset < uid=8585E53F581D343E0015936EBA0CC957 > = Preset_Generic_Ranged
+	myValidDirections
+	{
+		myRight FALSE
+		myUp FALSE
+		myDown FALSE
+	}
+	myTelegraphData
+	{
+		myTelegraphedPowerName pwr_mm12_siege_pitcher_throwBall
+	}
+}
+

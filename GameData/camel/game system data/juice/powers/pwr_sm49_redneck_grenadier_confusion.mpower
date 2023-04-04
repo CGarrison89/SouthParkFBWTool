@@ -1,0 +1,51 @@
+include ./enemy_pwr_archetype_grenadier_aoe_lob_min.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_mm22_shaken_beer_can.mprojectile"
+include camel/skillscript/camel_lobbed_power_playanim_script.mskillscriptjuice
+include ./enemypowers.adrian.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_sm49_redneck_grenadier_confusion < uid=8585E53F5967F343001E81E4ADD1B2CD > : enemy_pwr_archetype_grenadier_aoe_lob_min
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/RedneckC_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/CC_range_2_3.dds"
+	myUIName "contextComment = \"literally a bomb that is a beer can\", description = \"enemy_pwr_archetype_grenadier_aoe_lob_min Name\", enabled = true, guid = #EA0BC518599A83C000043E79F6D967A9, lineVersion = 0, maxLength = 14, text = \"Beer Bomb\""
+	myUseSkillScript < uid=8585E53F5967F343001E81E52F3F0ACE > = Camel_Lobbed_Power_PlayAnim_Script
+	myAnimationState power1
+	myProjectile < uid=8585E53F5967F343001E81E6C4E2F9B0 > = projectile_mm22_shaken_beer_can
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=8585E53F5967F343001E81E70F1AF09C >
+		{
+			myPriority 50
+			myMinimumAffectedTargets 2
+			myStatusEffectConditionData
+			{
+			}
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not Confused"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Confused
+					myFollowingCondition OR
+				}
+				StatusEffectConditionalEntry "Nor Charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+					myFollowingCondition None
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=8585E53F5967F343001E81EA2B3F33E2 > = pwr_sm49_redneck_grenadier_aoe_lob_min_confuse_Adrian_Tuning
+	myCameraPreset < uid=86C9308259B3331200024B6D08A3B462 > = Preset_Generic_Ranged
+}
+

@@ -1,0 +1,63 @@
+include ./enemy_pwr_archetype_wizard_pierce_ranged.mpower
+include camel/skillscript/sm64_vampkid_wizard_power2.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower sm64_vampkids_wizard_power2 < uid=3267E0D0579E795F00006188177AA27F > : enemy_pwr_archetype_wizard_pierce_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/VampKids_Wizard_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/4_range.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_wizard_pierce_ranged Name\", enabled = true, guid = #3267E0D0579E795F00006187A1DC91C9, lineVersion = 0, maxLength = 20, text = \"Attack, Per Se.\""
+	myUseSkillScript < uid=3267E0D0579FE2F100000169A0A2144D > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData range4 < uid=3267E0D0579E795F0000618AF410507A >
+		{
+			myPriority 40
+			myPreferredRange 3
+			myMinimumDistanceToEnemies -1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D0579E795F0000618BB107C5E8 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData NoDistance < uid=3267E0D0579FCAE100003A4648DD3267 >
+		{
+			myPriority 10
+			myMinimumDistanceToEnemies -1
+		}
+		PowerEvaluationData range3 < uid=8585E53F57C89256000955331AA828E1 >
+		{
+			myPriority 35
+			myPreferredRange 3
+			myMinimumDistanceToEnemies -1
+		}
+		PowerEvaluationData range2 < uid=8585E53F57C89256000955345D6A3175 >
+		{
+			myPriority 30
+			myPreferredRange 2
+			myMinimumDistanceToEnemies -1
+		}
+	}
+	myTuningData < uid=3267E0D0579E795F0000618C73ACE0ED > = enemy_pwr_sm64_vampkid_wizard_power2_amcclay_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

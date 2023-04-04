@@ -1,0 +1,22 @@
+include ./pwr_com_kitchenthrow.mpower
+
+CombatPower pwr_aideblonde3_encumbered < uid=DB7C6D4256EA19EE0000018BCF4C5176 > : pwr_com_kitchenthrow
+{
+	myUIName "contextComment = \"\", description = \"pwr_aideblonde3_encumbered Name\", enabled = true, guid = #51C546C65774D959000000D647AED017, lineVersion = 0, maxLength = 14, text = \"Fresh Fit\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData throw_kill < uid=DB7C6D4256FAEEEA00001AD8CD31F694 >
+		{
+			myPriority 36
+			myAggroPriority 74
+			myMinimumKills 1
+		}
+		PowerEvaluationData throw < uid=DB7C6D4256FAEEEA00001AD982006BF5 >
+		{
+			myPriority 29
+			myAggroPriority 54
+		}
+	}
+	myTuningData < uid=DB7C6D4256EA19EE0000018CE323E4A0 > = pwr_aideblonde3_freshfit_MAcero_Tuning
+}
+

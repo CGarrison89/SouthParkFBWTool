@@ -1,0 +1,94 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_cyborg.juice"
+include camel/skillscript/powersmenu_simpleplayanim.mskillscriptjuice
+include camel/skillscript/pwr_cyborg_power01_menu.mskillscriptjuice
+
+CombatPower pwr_cyborg_power1 < uid=B9E930CA56DA288D000002066639081E >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/cyborg_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_range_cross.DDS"
+	myUIName "contextComment = \"power name\", description = \"pwr_cyborg_power1 Name\", enabled = true, guid = #51C546C65774DC04000000DDABD2AF3B, lineVersion = 1, maxLength = 23, text = \"Centripetal Clutch\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_cyborg_power1 Description\", enabled = true, guid = #51C546C65774DC04000000DEEF9C0294, lineVersion = 0, maxLength = 179, text = \"Equally at home in a fighting pit or a physics classroom, the Cyborg pulls in nearby enemies for a painful lesson about centripetal force.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_cyborg_power1 Short Description\", enabled = true, guid = #9D0E6196579A7F7F0000016BA8AC63CE, lineVersion = 0, maxLength = 25, text = \"Pull enemies to you\""
+	myUseSkillScript < uid=B9E930CA56DA288D00000207B0FD3045 > = Camel_Simple_PlayAnim_Script
+	myMenuSkillScript < uid=DB82F53C5952A8140000864ADB9E1C7E > = pwr_cyborg_power01_menu
+	myAnimationState cyborg_power1
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "3 targets with kill" < uid=86C9308258E7C5660000413B8E960DD9 >
+		{
+			myPriority 15300
+			myMinimumKills 1
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets with kill" < uid=86C9308258E7C5660000413C235F188D >
+		{
+			myPriority 14100
+			myMinimumKills 1
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "1 target with kill" < uid=86C9308258E7C5660000413D0A5059F9 >
+		{
+			myPriority 11900
+			myMinimumKills 1
+		}
+		PowerEvaluationData "3 targets blocking" < uid=86C9308258E7C5660000413E1A9D5A34 >
+		{
+			myPriority 10100
+			myMinimumAffectedTargets 3
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Blocking
+				{
+					mySpecialEffect Block
+				}
+			}
+		}
+		PowerEvaluationData "2 targets blocking" < uid=86C9308258E7C5660000413F245B647B >
+		{
+			myPriority 8600
+			myMinimumAffectedTargets 2
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Blocking
+				{
+					mySpecialEffect Block
+				}
+			}
+		}
+		PowerEvaluationData "3 targets" < uid=86C9308258E7C56600004140FF1B8B0D >
+		{
+			myPriority 7300
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets" < uid=86C9308258E7C56600004141770C9A86 >
+		{
+			myPriority 6100
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "1 target" < uid=86C9308258E7C5660000414287B022A9 >
+		{
+			myPriority 2400
+		}
+	}
+	myTuningData < uid=B9E930CA56DA288D00000208B793D997 > = pwr_cyborg_power1_Tuning
+	myCameraPreset < uid=B9E930CA579BFD670000DEF64C4674C1 > = Cyborg_Power01
+	myPowerGroup Normal
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.0
+				myActionPlusEndTime 0.833333
+				myActionPlusPresetEnum Mash_Normal
+			}
+		}
+	}
+}
+

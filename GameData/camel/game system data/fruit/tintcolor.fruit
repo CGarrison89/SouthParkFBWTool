@@ -1,0 +1,16 @@
+include "camel/game system data/fruit/juiceObj.fruit"
+
+class TintColor : JuiceObj
+{
+	color myColor 0xFFFFFFFF
+}
+
+list TintColorList
+{
+	TintColor*
+}
+
+class TintColorGroup : JuiceObj
+{
+	TintColorList myColors
+}

@@ -1,0 +1,91 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_psychic.juice"
+include camel/skillscript/powersmenu_simpleplayanim.mskillscriptjuice
+
+CombatPower pwr_mentalist_power3 < uid=B9E930CA56DA2219000000921EA55D61 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/mentalist_power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_range_ordinal_cross.DDS"
+	myUIName "contextComment = \"power name\", description = \"pwr_mentalist_power3 Name\", enabled = true, guid = #51C546C65774DC2900000132859B207E, lineVersion = 2, maxLength = 13, text = \"Weapon X\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_mentalist_power3 Description\", enabled = true, guid = #51C546C65774DC290000013338A27990, lineVersion = 0, maxLength = 114, text = \"The Psychic unleashes a telepathic howl that damages and Marks all foes in an X pattern.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_mentalist_power3 Short Description\", enabled = true, guid = #9D0E6196579A87D10000017D65A80FB6, lineVersion = 0, maxLength = 49, text = \"Telepathic howl damages and Marks foes\""
+	myUseSkillScript < uid=B9E930CA56DA221900000093C841E7C3 > = Camel_Simple_PlayAnim_Script
+	myAnimationState psychic_power3
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "3 targets with kill" < uid=86C9308258E7DF4D00004194A08A9907 >
+		{
+			myPriority 15100
+			myMinimumKills 1
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets with kill" < uid=86C9308258E7DF4D000041958D76D2CF >
+		{
+			myPriority 11700
+			myMinimumKills 1
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "1 target with kill" < uid=86C9308258E7DF4D000041966BA0ADB4 >
+		{
+			myPriority 7100
+			myMinimumKills 1
+		}
+		PowerEvaluationData "3 targets" < uid=86C9308258E7DF4D00004197B694DBC2 >
+		{
+			myPriority 7100
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets" < uid=86C9308258E7DF4D0000419842222EB6 >
+		{
+			myPriority 5900
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "Not defense down" < uid=86C9308258E7DF4D0000419979F96C97 >
+		{
+			myPriority 2200
+			myMinimumAffectedTargets 1
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not defense down"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Marked
+					myFollowingCondition AND
+				}
+				StatusEffectConditionalEntry "Not immune to defense down"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect MarkedImmunity
+				}
+			}
+		}
+		PowerEvaluationData "Defense down" < uid=86C9308258E7DF4D0000419A175AA311 >
+		{
+			myPriority 2000
+			myMinimumAffectedTargets 1
+			myStatusEffectConditionData
+			{
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA56DA22190000009493C197E1 > = pwr_mentalist_power3_Tuning
+	myCameraPreset < uid=B9E930CA579BF1AE000000995AA644DA > = Psychic_Power03
+	myPowerGroup Normal
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.25
+				myActionPlusEndTime 2.08333
+				myActionPlusPresetEnum Mash_Normal
+			}
+		}
+	}
+}
+

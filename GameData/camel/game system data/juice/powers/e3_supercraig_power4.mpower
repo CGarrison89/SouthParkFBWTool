@@ -1,0 +1,15 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/pwr_creek_power4_script.mskillscriptjuice
+include ./buddypowers.demo.juice
+
+CombatPower e3_supercraig_power4 < uid=B9E930CA573A72F70000003103F01E46 >
+{
+	myUIName "contextComment = \"\", description = \"e3_supercraig_power4 Name\", enabled = true, guid = #51C546C65774D9370000008319666F08, lineVersion = 0, maxLength = 17, text = \"Craig X Tweek\""
+	myUseSkillScript < uid=B9E930CA573A72F700000032136D80E6 > = pwr_creek_power4_script
+	myAnimationState power4
+	myLockedByDefault TRUE
+	myTuningData < uid=B9E930CA573A72F70000003354E8439F > = demo_e3_supercraig_power4_demo_Tuning
+	myPowerGroup Ultimate
+}
+

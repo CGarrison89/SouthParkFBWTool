@@ -1,0 +1,11 @@
+
+list UIGraphFolderList
+{
+	string
+}
+
+class UIConfig
+{	
+	UIGraphFolderList myUIGraphFolders
+	UIGraphFolderList myUILocalizationFolders
+}

@@ -1,0 +1,18 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_revive_script.mskillscriptjuice
+include camel/skillscript/camel_simple_healing_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_bomb.mprojectile"
+include camel/skillscript/pwr_summon_randy.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_placeholder_summon_script.mskillscriptjuice
+include camel/skillscript/pwr_summon_gerald.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_summons.juice"
+
+CombatPower item_summon_1 < uid=86D64076579D31F50000009529F954B8 >
+{
+	myUIName "contextComment = \"\", description = \"\", enabled = false, guid = #86D64076579D31F50000009452D9E026, lineVersion = 0, maxLength = 1, text = \"|empty|\""
+	myUseSkillScript < uid=86D64076579D31F500000096E972CB97 > = pwr_summon_gerald
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myTuningData < uid=86D64076579D31F50000009706F5B415 > = item_summon_1_Tuning
+}
+

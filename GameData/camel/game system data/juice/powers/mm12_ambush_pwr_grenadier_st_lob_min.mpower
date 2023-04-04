@@ -1,0 +1,46 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_lobbed_power_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_green_ball.mprojectile"
+include "camel/game system data/juice/projectiles/projectile_sixthgraderpissballoon.mprojectile"
+include "camel/game system data/juice/projectiles/projectile_lava_lego.mprojectile"
+
+CombatPower mm12_ambush_pwr_grenadier_st_lob_min < uid=6D7AC9B158129456000106CC5BD4EEE8 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/generics/generic_lobbed.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/min_range.dds"
+	myUIName "contextComment = \"power name\", description = \"enemy_pwr_archetype_grenadier_st_lob_min Name\", enabled = true, guid = #6D7AC9B158129456000106CB4E9FA997, lineVersion = 2, maxLength = 17, text = \"Lava of Chaos\""
+	myUseSkillScript < uid=6D7AC9B158129456000106CD84196B5C > = Camel_Lobbed_Power_PlayAnim_Script
+	myAnimationState power3
+	myProjectile < uid=6D7AC9B15812952C000106E91F54B3BF > = projectile_lava_lego
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B158129456000106CE729B3FDA >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=6D7AC9B158129456000106CFC1FBF30F >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=6D7AC9B158129456000106D03DA4E676 > = enemy_pwr_archetype_grenadier_st_lob_min_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

@@ -1,0 +1,44 @@
+include ./enemy_pwr_archetype_bruiser_melee_knockback.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./enemypowers.adrian.juice
+
+CombatPower pwr_mm34_6thgrader_leader_melee_knockback < uid=8585E53F595E6CDF000364C1CB2B0808 > : enemy_pwr_archetype_bruiser_melee_knockback
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/6thGraderLeader_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"sixth grade leader melee power name\", description = \"enemy_pwr_archetype_bruiser_melee_knockback Name\", enabled = true, guid = #9D0E619659977C65000F07F3D06CAEA8, lineVersion = 1, maxLength = 18, text = \"Uppercut Combo\""
+	myUseSkillScript < uid=8585E53F595E6CDF000364C2BCDD9F19 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=8585E53F595E6CDF000364C3E7533DD3 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=8585E53F595E6CDF000364C48D4E8905 >
+		{
+			myPriority 1000
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData kill < uid=8585E53F595E6CDF000364C51EB6BBEC >
+		{
+			myPriority 500
+			myMinimumKills 1
+		}
+	}
+	myTuningData < uid=8585E53F595E6CDF000364C64EC3CA74 > = pwr_mm34_6thgrader_leader_melee_knockback_Adrian_Tuning
+}
+

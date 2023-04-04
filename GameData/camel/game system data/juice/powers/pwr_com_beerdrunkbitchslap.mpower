@@ -1,0 +1,44 @@
+include ./placeholder_enemy_power1.mpower
+include ./bosspowers.bbartram.juice
+include camel/skillscript/pwr_beerdrunkrandy_playanimwithtaunt_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_com_beerdrunkbitchslap < uid=B642A89A56C3A44200002467F5A76C94 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/RedWineRandy_GetKeysBack.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"\", enabled = true, guid = #C0F4A78659163123000076AB8523906C, lineVersion = 0, maxLength = 16, text = \"Fist Magic\""
+	myUseSkillScript < uid=B642A89A56C3A44200002468FA53DA05 > = pwr_beerdrunkrandy_playanimwithtaunt_script
+	myAnimationState power4
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D0588920C6000015102D4E39A0 >
+		{
+			myPriority 10
+			myNumLiveEnemiesRequired 0
+			myMinimumAffectedTargets 0
+			myValidDirections
+			{
+				myLeft TRUE
+				myRight TRUE
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D05913DBCD0003B17390A7D770 >
+		{
+			myPriority 10
+			myAggroPriority 1010
+			myRequireAggroTarget TRUE
+		}
+	}
+	myTuningData < uid=3267E0D0588920AA0000150C08F623C3 > = enemy_pwr_mm08_beerdrunkrandy_beerdrunkbitchslap_amcclay_Tuning
+	myCameraPreset < uid=86C930825914A8DA0000765E108DB6F6 > = Preset_Generic_Melee_KB
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

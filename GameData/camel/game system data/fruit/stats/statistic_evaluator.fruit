@@ -1,0 +1,12 @@
+include "camel/game system data/fruit/stats/statistic_types.fruit"
+include "camel/game system data/fruit/evaluator/condition.fruit"
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// Statistic Condition
+//
+
+class StatisticCondition : DialogCondition
+{
+	StatisticGenericTypeEnum myStat
+}

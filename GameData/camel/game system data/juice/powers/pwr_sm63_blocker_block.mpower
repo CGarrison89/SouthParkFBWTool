@@ -1,0 +1,8 @@
+include ./enemy_pwr_archetype_blocker_block.mpower
+include ./enemypowers.adrian.juice
+
+CombatPower pwr_sm63_blocker_block < uid=8585E53F57A277550000007B38EF0288 > : enemy_pwr_archetype_blocker_block
+{
+	myTuningData < uid=8585E53F57A277550000007C8F5DE7C9 > = pwr_sm63_blocker_block_Adrian_Tuning
+}
+

@@ -1,0 +1,75 @@
+include "camel/game system data/juice/camera/casabonita/uber_camera_powers_presets_henrietta.juice"
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/pwr_henrietta_power01_script.mskillscriptjuice
+include ./dlc1_buddypowers.juice
+
+CombatPower pwr_dlc1_henrietta_power01 < uid=B9E930CA599E2997000091C2DDD03D27 >
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/Henrietta_Power1.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_range.DDS"
+	myUIName "contextComment = \"pwr name\", description = \"pwr_dlc1_henrietta_power01 Name\", enabled = true, guid = #B9E930CA59EE5AA3002EC7974DBAF992, lineVersion = 1, maxLength = 18, text = \"Cigarette Burn\""
+	myUIDescription "contextComment = \"power desc pause ui\", description = \"pwr_dlc1_henrietta_power01 Description\", enabled = true, guid = #B9E930CA59EE5AA3002EC798EF0BFED7, lineVersion = 1, maxLength = 104, text = 'Henrietta performs a \"French exhale,\" damaging and Burning conformists in a row.'"
+	myUIShortDescription "contextComment = \"power desc combat ui\", description = \"pwr_dlc1_henrietta_power01 Short Description\", enabled = true, guid = #B9E930CA59EE5AA3002EC7995C79F0A7, lineVersion = 1, maxLength = 35, text = \"Damage and Burn conformists\""
+	myUseSkillScript < uid=B9E930CA599F1B7C00018DBB89931C38 > = pwr_henrietta_power01_script
+	myAnimationState power1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "1 target" < uid=86C930825A539F8D000093220E7B33D9 >
+		{
+			myMinimumAffectedTargets 1
+		}
+		PowerEvaluationData "2 targets" < uid=86C930825A569B8E000194F417B7F658 >
+		{
+			myPriority 150
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "3 targets" < uid=86C930825A569B8E000194F557E1753C >
+		{
+			myPriority 250
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "1 target - kill" < uid=86C930825A539F8D000093231B015B3C >
+		{
+			myPriority 500
+			myMinimumKills 1
+			myMinimumAffectedTargets 1
+		}
+		PowerEvaluationData "2 targets - kill" < uid=86C930825A569BC7000194F66B8AF27C >
+		{
+			myPriority 600
+			myMinimumKills 1
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "3 targets - kill" < uid=86C930825A569BC7000194F75A1DF029 >
+		{
+			myPriority 700
+			myMinimumKills 1
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData enraged < uid=86C930825A539F8D00009324F22B7056 >
+		{
+			myPriority 1000
+			myRequireAggroTarget TRUE
+		}
+	}
+	myTuningData < uid=B9E930CA599E2A06000091E592C5BEAD > = dlc1_pwr_henrietta_power01_Tuning
+	myCameraPreset < uid=B9E930CA59EE30EE0010C4A672CDC904 > = Henrietta_Power01
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusEndTime 1.25
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

@@ -1,0 +1,32 @@
+include ./placeholder_enemy_power1.mpower
+include ./bosspowers.bbartram.juice
+include ./enemypowers.mvernon.juice
+include camel/skillscript/camel_simple_playanim_altkitepower4.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_com_cousinkyle_damageFromAbove < uid=B642A89A571560BA0000382C0A54697B > : placeholder_enemy_power1
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/AltHumanKite_Ult.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_cousinkyle_damagefromabove Name\", enabled = true, guid = #51C546C65774DBD60000009027B76823, lineVersion = 0, maxLength = 22, text = \"Damage from Above\""
+	myUseSkillScript < uid=B642A89A571560BA0000382DE516B269 > = Camel_Simple_PlayAnim_AltKitePower4
+	myAnimationState power4_outro
+	myLockedByDefault TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B642A89A571560BA0000382E0F597B42 >
+		{
+			myPriority 80
+			mySelfHealthLessThanPercentage 101.0
+			myValidDirections
+			{
+				myRight FALSE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B642A89A571560BA0000382FAE7FB544 > = pwr_com_sm14_cousinKyle_DamageFromAbove_MVernon_Tuning
+	myCameraPreset < uid=86C93082591B5DE0000071BABE7D18F1 > = Preset_Generic_Melee
+}
+

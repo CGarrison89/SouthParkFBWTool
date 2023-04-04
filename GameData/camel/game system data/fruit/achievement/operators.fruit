@@ -1,0 +1,25 @@
+enum AchievementConditionOperator
+{
+	Equal
+	EqualOrGreaterThan
+	EqualOrLessThan
+	GreaterThan
+	LessThan
+	NotEqual
+}
+
+enum AchievementUpdateType
+{
+	Set
+	Add
+	Max
+	Inc
+}
+
+enum AchievementConditionType
+{
+	CClient_AchievementConditionType_Achievement
+	CClient_AchievementConditionType_CharacterSheet
+	CClient_AchievementConditionType_XP
+	CClient_AchievementConditionType_Stat
+}

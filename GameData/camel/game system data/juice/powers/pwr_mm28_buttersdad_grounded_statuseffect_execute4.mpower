@@ -1,0 +1,8 @@
+include ./pwr_mm28_buttersdad_grounded_statuseffect_execute.mpower
+
+CombatPower pwr_MM28_ButtersDad_Grounded_StatusEffect_Execute4 < uid=86C930825939DD440005C5BAF743767F > : pwr_MM28_ButtersDad_Grounded_StatusEffect_Execute
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/ButterDad_Power2_stage4.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide.dds"
+}
+

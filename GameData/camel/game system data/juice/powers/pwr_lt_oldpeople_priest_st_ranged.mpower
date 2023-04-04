@@ -1,0 +1,8 @@
+include ./enemy_pwr_archetype_priest_st_ranged.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_LT_oldpeople_priest_st_ranged < uid=86C9308257684D6500000151E4186A19 > : enemy_pwr_archetype_priest_st_ranged
+{
+	myTuningData < uid=86C9308257684D650000015227309C8E > = pwr_LT_oldpeople_priest_st_ranged_Kevin_Tuning
+}
+

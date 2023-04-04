@@ -1,0 +1,31 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_speedster.juice"
+include ./playerpowers.demo.juice
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+
+CombatPower e3_speedster_power3 < uid=B9E930CA5743909600000018C891B256 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/speedster_SpeedDash.dds"
+	myUIName "contextComment = \"\", description = \"e3_speedster_power3 Name\", enabled = true, guid = #51C546C65774D9AD00000070D92CB665, lineVersion = 1, maxLength = 21, text = \"Super Sonic Dash\""
+	myUIDescription "contextComment = \"\", description = \"e3_speedster_power3 Description\", enabled = true, guid = #51C546C65774D9AD00000071FEB2D67B, lineVersion = 0, maxLength = 110, text = \"Rushes through enemies, then knocks back the last enemy hit in the reverse direction.\""
+	myUseSkillScript < uid=B9E930CA57439096000000193FB66188 > = Camel_Simple_PlayDialogue_Script
+	myShouldRepositionBeforeExecution TRUE
+	mySecondarySkillScript < uid=B9E930CA574390960000001AF1C81691 > = Simple_Rush_Damage_Script
+	myTuningData < uid=B9E930CA574390960000001BF77CB9BB > = demo_e3_speedster_power3_demo_Tuning
+	myCameraPreset < uid=B9E930CA574390960000001CB23AA600 > = Speedster_Power03
+	myPowerGroup Normal
+	myAnimationSetData
+	{
+		myIntroState speedster_power3intro
+		myLoopState speedster_power3loop
+		myOutroState speedster_power3outro
+	}
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

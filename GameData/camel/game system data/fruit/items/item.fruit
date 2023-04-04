@@ -1,0 +1,35 @@
+include "camel/game system data/fruit/items/categories.fruit"
+include "camel/game system data/fruit/helpers/uidmanagedobject.fruit"
+
+enum ItemExclusivity
+{
+	None
+	UPlay
+}
+
+class Item : uidManagedObject
+{
+	varmap myUIName < bhv = "localization" >
+	varmap myUIDescription  < bhv = "localization" >
+	ItemCategory myCategory Component < hidden = 1 >
+	int	myMaxStackable 50000
+	file myIcon
+	bool myIsLegendaryItem	false
+	bool myIsHeroDNAExclusive	false
+	ItemExclusivity myItemExclusivity None
+	int myManualSortKey 0 < tooltip = "0 for none. Negatives ok" >
+}
+
+class ItemTuningData
+{
+    float mySellPrice 0.0
+    int myRarity 0
+	bool myKeyItem false
+    uid myItem < bhv="asset" assettype="Item" >
+	bool myIsSellable true
+}
+
+list ItemList
+{
+	Item*
+}

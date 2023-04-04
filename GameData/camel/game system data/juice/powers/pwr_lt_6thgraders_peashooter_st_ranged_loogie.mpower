@@ -1,0 +1,43 @@
+include ./enemy_pwr_archetype_peashooter_st_ranged.mpower
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/projectiles/projectile_sixthgrader_peashooter_loogie.mprojectile"
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_sixthgraderbartles.juice"
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_LT_6thgraders_peashooter_st_ranged_loogie < uid=B9E930CA57AE3FBA0001EF2BC475CA10 > : enemy_pwr_archetype_peashooter_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/6thGrader_Loogie.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_Range_ST_LOS.dds"
+	myUIName "contextComment = \"sixth grader loogie power name\", description = \"enemy_pwr_archetype_peashooter_st_ranged Name\", enabled = true, guid = #9D0E619659975E00000EB55B7241166B, lineVersion = 0, maxLength = 10, text = \"Loogie\""
+	myUseSkillScript < uid=B9E930CA57AE48530001EF98320F1DC7 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myProjectile < uid=B9E930CA57AE48530001EF9915114C90 > = projectile_sixthgrader_peashooter_loogie
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=DB7C6D4257B3B17800038E5EC81DB331 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=DB7C6D4257B3B17800038E5FD4D5519A >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA57AE3FBA0001EF2CE603361A > = pwr_LT_6thgraders_peashooter_st_ranged_Kevin_Tuning
+	myCameraPreset < uid=6D7AC9B157BE2D2100005659C2654F1B > = Preset_Generic_Ranged
+}
+

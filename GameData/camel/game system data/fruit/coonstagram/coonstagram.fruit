@@ -1,0 +1,45 @@
+include "camel/game system data/fruit/coonstagram/coonstagramuser.fruit"
+
+enum NotificationTypeEnum
+{
+	None
+	Shout
+	Confetti
+}
+
+enum CoonstagramLikeState
+{
+	None
+	Like
+	ForceLike
+}
+
+list CoonstagramLikes
+{
+	CoonstagramUser*
+}
+
+class CoonstagramPost  < uid=auto >
+{
+	CoonstagramUser*		myPoster
+	NotificationTypeEnum	myNotificationType	None
+    varmap 					myUIMessage < bhv="localization" tooltip="Localized Coonstagram message shown in the UI" >
+	file 					myUIImage "" < types=*.png >
+	CoonstagramLikes 		mylikes
+	int						myIndent
+	bool 					myUserGeneratedImage False
+	bool					mySilentPost false
+	bool					myRemovedWhenReused true < tooltip="This is relevant only if the data is a comment.">
+}
+
+list	CoonstagramPosts
+{
+	CoonstagramPost
+}
+
+class CoonstagramPostGroup < uid=auto >
+{
+	bool				myShowInEditorList true
+	bool				myReusable false
+	CoonstagramPosts	myPosts
+}

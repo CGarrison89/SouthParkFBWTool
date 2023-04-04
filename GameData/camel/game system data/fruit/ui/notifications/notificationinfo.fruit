@@ -1,0 +1,49 @@
+include "camel/game system data/fruit/juiceObj.fruit"
+
+enum UINotificationType
+{
+	Notif_Invalid
+	Notif_App_General
+	Notif_App_Inventory
+	Notif_App_Coonstagram_Feed
+	Notif_App_Coonstagram_Yaoi
+	Notif_App_Coonstagram_NewFollower
+	Notif_App_Character_BuddyUnlock
+	Notif_App_Character_TeamChange
+	Notif_App_CharacterSheet
+	Notif_Mission
+	Notif_Mission_Reminder
+	Notif_Post_Loot
+	Notif_LevelUp
+	Notif_TimeFart
+	Notif_FastTravel
+	Notif_BuddyPower
+	Notif_FireCracker
+	Notif_ClubAction
+	Notif_CombatNewObj
+	Notif_NewSummons
+	Notif_NewAppUnlocked
+	Notif_DangerDeck_Reward
+	Notif_ClassUnlock
+	Notif_ArcadeTicket
+	Notif_MeritBadge
+	Notif_LakeT_TallyItem
+}
+
+class UINotificationTypeValues : JuiceObj
+{	
+	UINotificationType myType
+	int myPriority 0
+	varmap myDefaultBody < bhv="localization" >
+	bool myShouldPauseGame false
+}
+
+list UINotificationTypeValuesList
+{
+	UINotificationTypeValues
+}
+
+class UINotificationInfo : JuiceObj
+{
+	UINotificationTypeValuesList myNotificationValuesList
+}

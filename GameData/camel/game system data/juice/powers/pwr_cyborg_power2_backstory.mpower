@@ -1,0 +1,8 @@
+include ./pwr_cyborg_power2.mpower
+include camel/skillscript/pwr_cyborg_power02_script_backstory.mskillscriptjuice
+
+CombatPower pwr_cyborg_power2_backstory < uid=86C930825962A97000130C198BAC8763 > : pwr_cyborg_power2
+{
+	myUseSkillScript < uid=86C930825962AA3300130C4A689AD223 > = pwr_cyborg_power02_script_backstory
+}
+

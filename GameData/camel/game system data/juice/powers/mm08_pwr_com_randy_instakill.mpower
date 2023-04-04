@@ -1,0 +1,83 @@
+include ./placeholder_enemy_power1.mpower
+include camel/skillscript/pwr_winedrunkrandy_power06_script.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_mm08_redwinerandy.juice"
+
+CombatPower MM08_pwr_com_Randy_Instakill < uid=6D7AC9B157C4C9B9000057945B9D215F > : placeholder_enemy_power1
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/RedWineRandy_WineDrunkBitchSlap.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"randy instakill power name\", description = \"InstaKill\", enabled = true, guid = #6D7AC9B157C4C9B90000579305A20CC7, lineVersion = 1, maxLength = 20, text = \"Wrath of Grapes\""
+	myUseSkillScript < uid=6D7AC9B157C4C9B9000057959CEB25D8 > = pwr_wineDrunkRandy_power06_script
+	myAnimationState ""
+	myNumberOfAttackEvents 3
+	myShouldRepositionBeforeExecution FALSE
+	myIgnoreMintBerryInteraction TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B157C4C9B9000057962DFDC360 >
+		{
+			myPriority 0
+			myAggroPriority 0
+			myMinimumAffectedTargets 1
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry NotMint
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Mint
+				}
+			}
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry NotBerry
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Berry
+				}
+			}
+			myValidDirections
+			{
+				myLeft FALSE
+				myRight FALSE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData VIP < uid=6D7AC9B157C4C9B900005797382C362C >
+		{
+			myPriority 1500
+			myAggroPriority 5000
+			myMinimumAffectedTargets 1
+			myAIDesirableType VIP
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry NotMint
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Mint
+				}
+			}
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry NotBerry
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Berry
+				}
+			}
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=6D7AC9B157C4C9B9000057988A097FAF > = MM08_pwr_WineRandy_InstaKill_power5_Tuning
+	myCameraPreset < uid=86C930825882469100003B15A95492A2 > = RedWineRandy_InstaKill
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

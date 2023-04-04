@@ -1,0 +1,8 @@
+include ./pwr_mm19_sheila_charge.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower pwr_dr_mm19_sheila_charge < uid=C87888A05A0CDCF3000192B313EFE29A > : pwr_mm19_sheila_charge
+{
+	myTuningData < uid=C87888A05A0CE17E00016390C113907D > = pwr_dr_mm19_sheila_charge_Tuning
+}
+

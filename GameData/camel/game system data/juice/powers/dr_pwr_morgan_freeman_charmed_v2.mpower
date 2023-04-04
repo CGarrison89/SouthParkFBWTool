@@ -1,0 +1,57 @@
+include ./pwr_morgan_freeman_charmed_v2.mpower
+include camel/skillscript/dr_pwr_morgan_freeman_charm.mskillscriptjuice
+
+CombatPower dr_pwr_morgan_freeman_charmed_v2 < uid=8585E53F5A0D0499001FCF8BAF2D027E > : pwr_morgan_freeman_charmed_v2
+{
+	myUseSkillScript < uid=8585E53F5A1DD12D0002F65549F4D39A > = dr_pwr_morgan_freeman_charm
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=8585E53F5A0D0499001FCF8C2748DDB3 >
+		{
+			myPriority 1250
+			myNumLiveEnemiesRequired 2
+			mySelfHealthLessThanPercentage 40.0
+			myAIDesirableType None
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+					myFollowingCondition OR
+				}
+				StatusEffectConditionalEntry "Not immune to charm"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect CharmedImmunity
+					myFollowingCondition None
+				}
+			}
+		}
+		PowerEvaluationData Enraged < uid=8585E53F5A0D0499001FCF8D1C11DC4F >
+		{
+			myPriority 1
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myNumLiveEnemiesRequired 0
+			mySelfHealthLessThanPercentage 101.0
+			myAIDesirableType None
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+					myFollowingCondition OR
+				}
+				StatusEffectConditionalEntry "Not immune to charm"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect CharmedImmunity
+					myFollowingCondition None
+				}
+			}
+		}
+	}
+}
+

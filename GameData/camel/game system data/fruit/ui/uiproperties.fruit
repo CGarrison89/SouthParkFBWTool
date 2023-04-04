@@ -1,0 +1,123 @@
+include "camel/game system data/fruit/items/categories.fruit"
+include "modules/core/audio/audio.fruit"
+
+enum TargetingBehaviorType
+{
+	Inspection
+	Haywire
+}
+
+class CInspectionModeProperties
+{
+	float myInspectionModeReticleSpeed 1
+	float myInspectionModeReticleAcceleration 1
+	float myInspectionModeReticleSpeedSnappedMode 1
+	float myInspectionModeReticleAccelerationSnappedMode 1
+	float myInspectionModeReticleSnappingTime 1
+	float myInspectionModeReticleSnappingPrecision 1
+	float myInspectionModeReticleForegroundScale 1
+	float myInspectionModeReticleBackgroundScale 1
+	float myInspectionModeReticleScrollingFactor 20
+	bool myCanInspectionModeUseSnapping true < tooltip="Whether the reticle snaps to the target's center" >
+	vec3f myInspectionModeReticlePositionOffset 0.0;0.0;0.0 < tooltip="Alters reticle position in world space before convert to screen space" >
+}
+
+list CInspectionModePropertiesList
+{
+	CInspectionModeProperties
+}
+
+class CurveProperties
+{
+	float myCurveLineThickness 0.07
+	float myCurveLineZValue 0
+	float myCurveScaleX 0
+	float myCurveScaleY 0
+}
+
+list CurveList
+{
+	CurveProperties
+}
+
+enum CombatActorHUDType
+{
+	None
+	ChangeHealthUpdate
+	ChangeShieldUpdate
+	StatusEffectUpdate
+	StatusEffectTickUpdate
+	StatusEffectImmunityUpdate
+	StatusEffectRemovedAll
+	ChangeRageUpdate
+	PostShieldUpdate
+	PostHealthUpdate
+}
+
+class CombatHudUpdateProperties
+{
+	CombatActorHUDType myCombatActorHUDType
+	float myUpdateTimer < tooltip="The duration of the timer that defines the lifespan of this update." >
+	float myUpdateDelayTimer < tooltip="Ratio of the timer where the update does not occur. Must be between 0 and 1." >
+	int myUpdatePriority 0 < tooltip="Priority in timer evaluation compared to other updates" >
+}
+
+list CombatHudUpdatePropertiesList
+{
+	CombatHudUpdateProperties
+}
+
+class CUICombatProperties
+{
+	int myTimelineSize 7
+	float myCombatMovementCurvePointOffset 0.1
+	float myCombatCurveTangentPercentage 1
+	float myCombatCharacterScreenTimer 3 < tooltip="Duration of Combat Entry Select Screen" >
+	float myFlashAnimationTimer 0.2 < tooltip="Combat Flash duration that occurs during Combat Entry" >
+	float myLightingAnimationTimer 0.2 < tooltip="Combat Lightning duration that occurs during Combat Entry for all the king combats (replaces the flash)" >
+	float myDamageAPHPTimer 3 < tooltip="Visibility timer for Character HUD when there is a health change" >
+	float myCombatTargetedTimer 1 < tooltip="Value that can be used by UI Graphs" >
+	CurveList myCurveList
+	CombatHudUpdatePropertiesList myCombatHudUpdatePropertiesList
+	bool myShowCombatPlayerGridSpace false
+	bool myShowCombatEnemyGridSpace false
+	bool myIncludeBlockedCellInMPPreview false
+}
+
+class ConsumableCategoryProperties
+{
+	varmap myUIName	< bhv = "localization" >
+	file myIcon "" < types=*.png >
+	ConsumableCategory myConsumableCategory
+}
+
+list ConsumableCategoryPropertiesList
+{
+	ConsumableCategoryProperties
+}
+
+class CUITooltipProperties
+{
+	float myTooltipDuration 4 < tooltip="Default tooltip duration in seconds." >
+}
+
+class CUITutorialEntryProperties
+{
+	float myTutorialEntryDuration 4 < tooltip="Default Tutorial Entry duration in seconds." >
+}
+
+class CUIMessageBoxProperties
+{
+	AudioEvent myValidateAudioEvent
+	AudioEvent myCancelAudioEvent
+}
+
+class CUIProperties
+{
+	CInspectionModePropertiesList myInspectionModePropertiesList
+	CUICombatProperties myCombatProperties
+	ConsumableCategoryPropertiesList myConsumableCategoryPropertiesList
+	CUITooltipProperties myTooltipProperties
+	CUITutorialEntryProperties myTutorialEntryProperties
+	CUIMessageBoxProperties myMessageBoxProperties
+}

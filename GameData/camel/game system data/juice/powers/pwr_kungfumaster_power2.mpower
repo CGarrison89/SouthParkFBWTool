@@ -1,0 +1,76 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_kungfumaster.juice"
+
+CombatPower pwr_kungfumaster_power2 < uid=B9E930CA56DA2777000001B2452CC641 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/kungfu_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_square_debuff.DDS"
+	myUIName "contextComment = \"Kung Fu Power 2 Name\", description = \"pwr_kungfumaster_power2 Name\", enabled = true, guid = #51C546C65774DC2300000126C5A07827, lineVersion = 3, maxLength = 29, text = \"Dragon Rides Lightning\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_kungfumaster_power2 Description\", enabled = true, guid = #51C546C65774DC230000012799284922, lineVersion = 1, maxLength = 118, text = \"Martial arts goes metal as The Karate Kid summons a dragon that damages all nearby enemies.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_kungfumaster_power2 Short Description\", enabled = true, guid = #9D0E6196579CFB820000016BD42F4144, lineVersion = 1, maxLength = 39, text = \"Dragon attacks all nearby foes\""
+	myUseSkillScript < uid=B9E930CA56DA2777000001B36A3C7FFB > = Camel_Simple_PlayAnim_Script
+	myAnimationState kungfumaster_power2
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "3 targets with kill" < uid=86C9308258E7CB050000415A55EB3F6F >
+		{
+			myPriority 15900
+			myMinimumKills 1
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets with kill" < uid=86C9308258E7CB050000415B41F8BA12 >
+		{
+			myPriority 14700
+			myMinimumKills 1
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "1 target with kill" < uid=86C9308258E7CB050000415C0BB9EEE9 >
+		{
+			myPriority 12400
+			myMinimumKills 1
+		}
+		PowerEvaluationData "3 targets" < uid=86C9308258E7CB050000415D74FC5E13 >
+		{
+			myPriority 7900
+			myMinimumKills 0
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets" < uid=86C9308258E7CB050000415E78E007A4 >
+		{
+			myPriority 6700
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "1 target" < uid=86C9308258E7CB050000415FFC4C0A80 >
+		{
+			myPriority 3200
+		}
+	}
+	myTuningData < uid=B9E930CA56DA2777000001B421B0E05B > = pwr_kungfumaster_power2_Tuning
+	myCameraPreset < uid=B9E930CA5970F7E300053284412CB190 > = KungFuMaster_Power02
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myBlockingData
+	{
+		myDamageThreshold 0
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 1.9583
+				myActionPlusPresetEnum Mash_Normal
+			}
+		}
+	}
+}
+

@@ -1,0 +1,17 @@
+class DamageRoundingValue
+{
+	int myLessThanValue 0
+	int myRoundToMultiple 0
+}
+
+list DamageRoundingValueList
+{
+	DamageRoundingValue
+}
+
+class DamageRounding
+{
+	int myDefaultRoundingMultiple 1
+	DamageRoundingValueList myDamageRoundingValueList
+	
+}

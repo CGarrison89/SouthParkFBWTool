@@ -1,0 +1,31 @@
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_LT_cityninajs_wizard_st_ranged < uid=86C9308257684BF000000114395363D9 > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C930825775C8E40000018B8A2EADD0 >
+		{
+			myPriority 25
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C930825775C8E40000018CE6846BAF >
+		{
+			myPriority 25
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C9308257684BF0000001151DF777F8 > = pwr_LT_cityninjas_wizard_st_ranged_Kevin_Tuning
+}
+

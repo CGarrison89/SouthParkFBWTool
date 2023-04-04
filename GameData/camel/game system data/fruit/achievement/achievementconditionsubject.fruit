@@ -1,0 +1,126 @@
+enum AchievementConditionSubject < useCategories=1 >
+{	
+	< startCategory="Collections" >
+		AchievedAnAchievement
+		ActivatedHeroDNA
+		BecameAMaster
+		CalledLootTower
+		CraftedARecipe
+		DancePerformance
+		NumberOfArtifactsCollected
+		NumberOfCostumePieces
+		NumberOfFollowers
+		NumberOfYaoiCollected
+		PuzzleSolved
+		UsedAToilet
+		VerifiedFollowersTitleCounter
+		SuperheroicDeedsTitleCounter
+		AcquiredItem
+		LootedBiohazard
+	< endCategory="" >
+
+	< startCategory="One-shots" >
+		Assemble
+		ChangedHeroDNA
+		CraftedALegendaryArtifact
+		DefetedMorganFreeman
+		EquippedAllLegendaryArtifacts
+		FoundAWayIntoUStoreOffice
+		LastOneStanding
+		MatchyMatchy
+		GlitchOfDeath
+		ThereIsAWay
+		UnfriendlyFire
+		UsedASummon
+		
+		< startCategory="Mission Completions" >
+			CompletedMM08Combat
+			CompletedMM15Combat
+			CompletedMM16Combat
+			CompletedMM17Combat
+			MissionUID
+			MissionStart
+		< endCategory="" >
+	
+	< endCategory="" >
+
+	< startCategory="Numbers/Counters" >
+		FartedOnNPC
+		FollowerSelfies
+		GameCompletionAsBlack
+		
+		NumberOfAnimalsSaved
+		NumberOfBumsDefeated
+		NumberOfChaosKidsDefeated.
+		NumberOfCombatTimefartsUsed
+		NumberOfCopsDefeated
+		NumberOfCrabPeopleDefeated
+		NumberOfDadsDefiled
+		NumberOfEquippedPowerClass
+		NumberOfFastTravelFound
+		NumberOfGayCatsFound
+		NumberOfItemsCrafted
+		NumberOfMasterRankInCharacterSheet
+		NumberOfMemberberriesFound
+		NumberOfMicroAggressionsCountered
+		NumberOfNinjaDefeated
+		NumberOfOldPeopleDefeated
+		NumberOfPedosDefeated
+		NumberOfPimpsNHoesDefeated
+		NumberOfRaisinsGirlsDefeated
+		NumberOfSixthGradersDefeated
+		NumberOfSummonsUsed
+		NumberOfTimefartsObtained
+		NumberOfVampKidsDefeated
+		
+		SuperDickTitleCounter
+		EconomicLevelTitleCounter
+		DamageSpongeValue
+	< endCategory="" >
+	
+	< startCategory="Hero Stats" >
+		HighestGearLevel
+		MonetaryValue
+		PlayerLevel
+		ShitsTaken
+		Might
+	< endCategory="" >
+
+	< startCategory="UPlay" >
+		BuddiesAcquired
+		Completionist
+		CoonAndFriends
+		CraftingLevel
+		FastTravelOpen
+		PlotCompletion
+	< endCategory="" >
+	
+	UsedUltimate
+	LootedLootTable
+	
+// --------------------------------------------------------------------------------
+//
+// DLC1
+//
+// --------------------------------------------------------------------------------
+	< startCategory="DLC1/Misc" >
+	< endCategory="" >
+
+// --------------------------------------------------------------------------------
+//
+// DLC2
+//
+// --------------------------------------------------------------------------------
+	< startCategory="DLC2/Danger Deck" >
+		DLC2_StageProgressRoom1
+		DLC2_StageProgressRoom1Ultra
+		DLC2_StageProgressRoom2
+		DLC2_StageProgressRoom2Ultra
+		DLC2_StageProgressRoom3
+		DLC2_StageProgressRoom3Ultra
+		DLC2_StageProgressRoom4
+		DLC2_StageProgressRoom4Ultra
+		DLC2_StageProgressRoom5
+		DLC2_StageProgressRoom5Ultra
+	< endCategory="" >
+}

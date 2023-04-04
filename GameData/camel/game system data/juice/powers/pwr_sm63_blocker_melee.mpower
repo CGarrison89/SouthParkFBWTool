@@ -1,0 +1,31 @@
+include ./enemy_pwr_archetype_blocker_basic_melee.mpower
+include ./enemypowers.adrian.juice
+
+CombatPower pwr_sm63_blocker_melee < uid=8585E53F57A278060000008226A83304 > : enemy_pwr_archetype_blocker_basic_melee
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=8585E53F57A279DC0000009EDC91A9C1 >
+		{
+			myPriority 30
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=8585E53F57A279DC0000009F9A957F13 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=8585E53F57A2780600000083D223D3CE > = pwr_sm63_blocker_melee_Adrian_Tuning
+}
+

@@ -1,0 +1,10 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower temp_pwr_enemy_archetype_basic_explosive_on_death < uid=B9E930CA574091FD0000006999F45608 >
+{
+	myUIName "contextComment = \"\", description = \"temp_pwr_enemy_archetype_basic_explosive_on_death Name\", enabled = true, guid = #51C546C65774DC6F000001DC39058E2E, lineVersion = 0, maxLength = 18, text = \"On Death 3 DMG\""
+	myUseSkillScript < uid=B9E930CA574091FD0000006AE13CF14F > = Camel_Simple_Placeholder_Damage_Script
+	myTuningData < uid=B9E930CA574099C3000000AE12256BA2 > = temp_pwr_enemy_archetype_basic_explosive_on_death_MNguyen_Tuning
+}
+

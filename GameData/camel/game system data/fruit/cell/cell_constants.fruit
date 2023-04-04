@@ -1,0 +1,7 @@
+class ResetTimeInterval
+{
+	int myHours
+	int myMinutes
+	int mySeconds
+}
+

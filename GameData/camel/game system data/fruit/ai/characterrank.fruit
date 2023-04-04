@@ -1,0 +1,11 @@
+
+enum CharacterRank
+{
+	None
+	Grunt
+	Elite
+	Boss
+	Ally
+	Miniboss
+}
+

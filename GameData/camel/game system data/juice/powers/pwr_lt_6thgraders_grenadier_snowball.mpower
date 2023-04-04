@@ -1,0 +1,49 @@
+include ./enemy_pwr_archetype_grenadier_aoe_lob_min.mpower
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/projectiles/projectile_sixthgraderpissballoon.mprojectile"
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_sixthgraderpisssnow.mprojectile"
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+include "camel/game system data/juice/projectiles/projectile_sixthgraderpissballoon_direct.mprojectile"
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_LT_6thgraders_grenadier_snowball < uid=B9E930CA57B798FB0000AA0918141203 > : enemy_pwr_archetype_grenadier_aoe_lob_min
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/6thGrader_Grenadier_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_Range_ST_LOS.dds"
+	myUIName "contextComment = \"sixth grader bomber ranged power name\", description = \"enemy_pwr_archetype_grenadier_aoe_lob_min Name\", enabled = true, guid = #9D0E619659975C73000EB555DEB47B23, lineVersion = 0, maxLength = 20, text = \"Yellow Snowball\""
+	myUseSkillScript < uid=B9E930CA57B798FB0000AA0AA6FCA612 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myProjectile < uid=B9E930CA57B798FB0000AA0BC38EED4C > = projectile_sixthGraderPissBalloon_direct
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA57B7BB3000092404B4413673 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=B9E930CA57B7BB30000924057DFE426B >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA57B798FB0000AA0C9C8F9A8F > = pwr_LT_6thgraders_grenadier_snowball_Kevin_Tuning
+	myCameraPreset < uid=6D7AC9B157BE68F8000001AD7AB6A73B > = Preset_Generic_Ranged
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

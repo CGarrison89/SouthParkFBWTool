@@ -1,0 +1,40 @@
+include ./enemy_pwr_archetype_priest_shield.mpower
+include ./dlc1_enemypowers.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/dlc1_vampkids_priest_revive_skillscript.mskillscriptjuice
+
+CombatPower pwr_DLC1_VampKids_Priest_revive < uid=86C9308259A5F0F300072F7491843C36 > : enemy_pwr_archetype_priest_shield
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/VampPriest_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_heal.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_priest_revive Name\", enabled = true, guid = #86C9308259A5F0F300072F73A54E472A, lineVersion = 0, maxLength = 17, text = \"Priest Revive\""
+	myUseSkillScript < uid=86C9308259A5F0F300072F755365C51C > = DLC1_VampKids_Priest_Revive_SkillScript
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308259A5F0F300072F76FCD135F3 >
+		{
+			myPriority 200
+			myMinimumAffectedTargets 1
+			myTargetHealthLessThanPercentage 1.0
+			myTargetHealthMoreThanPercentage -2.0
+			myAIDesirableType A
+			myStatusEffectConditionData
+			{
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86C9308259A5F0F300072F772B714A54 > = pwr_DLC1_VampKids_Priest_revive_Tuning
+	myCameraPreset < uid=86C9308259A6153F0002D4B555FE27FC > = Preset_Generic_Ranged
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+	myPowerDeathTargeting OnlyDead
+}
+

@@ -1,0 +1,336 @@
+
+enum TownInteractionTypeEnum < useCategories=1 >
+{
+	NOTSET
+	< startCategory="Sitting" >
+		sit
+		sit_ambient
+		sit_bath
+		sit_bench
+		sit_charmed
+		sit_couch
+		sit_computer
+		sit_eating
+		sit_drink
+		sit_drink_beer
+		sit_drink_wine
+		sit_hangover
+		sit_hiss
+		sit_kylesdad_cheese
+		sit_laydown
+		sit_passout
+		sit_hippo_patron
+		sit_reading
+		sit_sad
+		sit_smoke
+		sit_texting
+		sit_write
+		sit_playgame
+		sit_snowball
+		sit_coffee_sober
+		sit_coffee_hungover
+		sit_magic
+		sit_tortured
+		sit_ipad
+		sit_working
+		lounge
+		watch_tv
+				
+		
+		< startCategory="Sitting/Table" >
+			sit_table_01
+			sit_table_02
+			sit_table_03
+		< endCategory="" >
+	< endCategory="" >
+
+	< startCategory="Floor" >
+		floor_passedout
+	< endCategory="" >
+
+	< startCategory="Standing" >
+		idle_base
+		ambient
+		ambient_altar
+		ambient_phone
+		ambient_board
+		ambient_catching
+		ambient_bartending
+		ambient_heroic
+		ambient_base
+		ambient_climb_sign
+		ambient_distracted
+		ambient_puzzle
+		ambient_worried
+		ambient_watching
+		ambient_watching_fight_1
+		ambient_watching_fight_2
+		ambient_watching_fight_3
+		ambient_negative_1
+		ambient_negative_2
+		ambient_negative_3
+		ambient_pose
+		ambient_positive_1
+		ambient_positive_2
+		ambient_positive_3
+		ambient_talking
+		ash_cigarette
+		bank_teller
+		captain_diabetes_160
+		casa_bonita_133
+		casa_bonita_330
+		crooked_cops_218
+		crooked_cops_100
+		crooked_cops_106
+		crooked_cops_135
+		crooked_cops_150
+		crooked_cops_150_beatcop_a
+		crooked_cops_150_beatcop_b
+		crooked_cops_150_beatcop_c
+		crooked_cops_160
+		crooked_cops_220_beatcop_a
+		crooked_cops_220_beatcop_b
+		crooked_cops_275_beatcop_a
+		crooked_cops_275_beatcop_b
+		crying
+		cleaning
+		crowd_cheer
+		dishes
+		drinking
+		drinking01
+		drinking02
+		fixing_bike
+		fixing_glasses
+		flirt
+		food_prep
+		genetics111
+		genetics140
+		guarding
+		insert_change
+		jail
+		knock
+		laughing
+		listening
+		look_for_cat
+		mailbox_puzzle
+		waiting_selfie
+		merry_christmas_135
+		mm12_coon_271
+		mm12_coon_247
+		mm12_supercraig_247
+		mm12_toolshed_247
+		mm33_backIdle
+		pc_principal_165_ubi
+		peek
+		peppermint_hippo_240
+		pissing
+		ike_playing
+		praying
+		raisins_135
+		read_sign
+		sad_idle
+		semen_and_swallow_165_ubi
+		shopping
+		shoveling
+		stanbuddy220
+		stand
+		stand_phonecall
+		stare
+		talk
+		texting
+		throw_up
+		training
+		trenchcoat
+		use_crosswalk
+		mm12_captainDiabetes_245
+		mm12_generalDisarray_245
+	    mm12_mosquito_245
+		vacuum
+		waiting
+		waiting02
+		wash_window
+		watch_combat
+		withdraw_money
+		fastpass_search_truck
+		search
+		working
+
+		< startCategory="Standing/Dancer" >
+			pole_dance
+			stage_dance
+		< endCategory="" >
+		
+		< startCategory="Standing/Lean" >
+			lean
+			lean_drinking
+		< endCategory="" >
+		
+		< startCategory="Standing/Store" >
+			vendor
+		< endCategory="" >		
+		
+		< startCategory="Standing/ProfessorChaos" >
+			standing_in_awe
+		< endCategory="" >
+		
+		< startCategory="Standing/Tupperware" >
+			working_on_suit
+		< endCategory="" >
+	< endCategory="" >
+	
+	< startCategory="Pre-Placed" >
+		< startCategory="Pre-Placed/Crunchys" >
+			crunchys_sit_texting
+		< endCategory="" >
+		
+		< startCategory="Pre-Placed/SchoolExterior" >
+			school_stand_snowball
+			school_stand_texting
+		< endCategory="" >
+		
+		< startCategory="Pre-Placed/SchoolInterior" >
+			school_sit_texting
+		< endCategory="" >
+		
+		< startCategory="Pre-Placed/MainStreetExterior" >
+			main_stand_texting
+			main_stand_phonecall
+			main_sit_bench_texting
+		< endCategory="" >
+		
+		< startCategory="Pre-Placed/MainStreetInterior">
+			photodojo_stand_working
+			postoffice_stand_working
+			businessa_sit_working
+		< endCategory="" >
+		
+		< startCategory="Pre-Placed/BijouExterior" >
+			bijou_sit_coffee
+			bijou_stand_texting
+		< endCategory="" >
+		
+		< startCategory="Pre-Placed/StarksPond" >
+			starkssouth_sit_idle
+			starksnorth_sit_idle
+		< endCategory="" >
+		
+		< startCategory="Pre-Placed/CityHallExterior" >
+			cityhall_sit_read
+		< endCategory="" >
+		
+		< startCategory="Pre-Placed/ShiTPaTown" >
+			crunchys_sit_drinking
+			citywok_sit_reading
+			skeeters_stand_texting
+		< endCategory="" >
+		
+		< startCategory="Pre-Placed/TownSquare" >
+			townsquare_backbench_sit_reading
+			townsquare_frontbench_sit_texting
+			townsquare_stand_snowball
+		< endCategory="" >
+		
+		< startCategory="Pre-Placed/KidsPark" >
+			kidspark_sit_gaming
+			kidspark_sit_texting
+		< endCategory="" >
+		
+		< startCategory="Pre-Placed/BusStop" >
+			busstop_sit_reading
+			busstop_stand_texting
+		< endCategory="" >
+		
+		< startCategory="Pre-Placed/Tweeks" >
+			tweeks_sit_coffee_hungover
+			tweeks_sit_coffee_sober
+		< endCategory="" >
+		
+		< startCategory="Pre-Placed/Chaos Kid Water Tower" >
+			ambient_watertower_idle
+			ambient_watertower_dead
+		< endCategory="" >		
+	< endCategory="" >
+	
+	< startCategory="Unclassified" >
+		pair_tending_wounds
+		pair_tending_wounds_kiteon
+		selfie
+		franchise_plan
+		stair
+	< endCategory="" >
+		
+	< startCategory="Town Event" >
+		te_persuit
+		< startCategory="Town Event/Alerted" >
+			te_stand_alerted
+			te_stand_alerted_02
+			te_stand_alerted_03
+			te_stand_alerted_04
+			te_stand_alerted_05
+		< endCategory="" >
+		< startCategory="Town Event/Guardian" >
+			te_stand_guardian
+			te_stand_guardian_02
+			te_stand_guardian_03
+			te_stand_guardian_04
+			te_stand_guardian_05
+		< endCategory="" >
+		< startCategory="Town Event/Idle" >
+			te_stand_idle
+			te_stand_idle_02
+			te_stand_idle_03
+			te_stand_idle_04
+			te_stand_idle_05
+		< endCategory="" >
+		< startCategory="Town Event/Detected" >
+			te_stand_watcher
+			te_stand_watcher_02
+			te_stand_watcher_03
+			te_stand_watcher_04
+			te_stand_watcher_05
+		< endCategory="" >
+		< startCategory="Town Event/Taunt" >
+			te_stand_taunt
+			te_stand_taunt_02
+			te_stand_taunt_03
+			te_stand_taunt_04
+			te_stand_taunt_05
+		< endCategory="" >
+		< startCategory="Town Event/Distract" >
+			te_stand_distracted
+			te_stand_distracted_02
+			te_stand_distracted_03
+			te_stand_distracted_04
+			te_stand_distracted_05
+		< endCategory="" >
+		< startCategory="Town Event/Dead" >
+			dead
+			te_dead_02
+			te_dead_03
+			te_dead_04
+			te_dead_05
+		< endCategory="" >
+		
+		< startCategory="Town Event/## InDev on Request ##" >
+			te_patrol
+			te_use
+			te_withdraw
+		< endCategory="" >
+	< endCategory="" >
+	
+	< startCategory="## Internal ##" >
+		object_spawn
+		object_unspawn
+		conversation
+	< endCategory="" >
+	
+	< startCategory="## TO DELETE ##" >
+		te_antagonist_stand_idling
+		te_antagonist_stand_alerted
+		te_antagonist_patrolling
+		mugging_attacker_intro
+		mugging_attacker_alerted
+		mugging_victim_intro
+		mugging_victim_alerted
+	< endCategory="" >
+}

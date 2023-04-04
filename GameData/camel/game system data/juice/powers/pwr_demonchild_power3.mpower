@@ -1,0 +1,73 @@
+include ./combatpowerincludes.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_demonchild.juice"
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_demonchild_power3 < uid=B9E930CA56DA284A000001E2BF6EADC8 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/demonchild_power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/4_Range_ST_LOS.dds"
+	myUIName "contextComment = \"Demon Child Power 3 Name\", description = \"pwr_demonchild_power3 Name\", enabled = true, guid = #51C546C65774DC08000000E9182D924B, lineVersion = 3, maxLength = 22, text = \"Hands of the Hoar\""
+	myUIDescription "contextComment = \"long desc combat UI\", description = \"pwr_demonchild_power3 Short Description\", enabled = true, guid = #9D0E61965827723500000D9C89592F8A, lineVersion = 1, maxLength = 191, text = \"Call in a favor from the netherworld as unholy tendrils grasp and pull your enemy, dealing damage and inflicting Chilled. Now we're square, Pazuzu!\"}"
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_demonchild_power3 Short Description\", enabled = true, guid = #9D0E6196579CFFA30000017A1807B0BA, lineVersion = 1, maxLength = 51, text = \"Unholy tendrils pull and Chill your foe\""
+	myUseSkillScript < uid=B9E930CA56DA284A000001E3A4C84671 > = Camel_Simple_PlayAnim_Script
+	myAnimationState demonchild_power3
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Kill < uid=86C9308258E7D1A90000416E70CCF528 >
+		{
+			myPriority 12800
+			myMinimumKills 1
+		}
+		PowerEvaluationData "Not chilled" < uid=86C9308258E7D1A90000416F563FD7D9 >
+		{
+			myPriority 4700
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not chilled"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Chilled
+					myFollowingCondition AND
+				}
+				StatusEffectConditionalEntry "Not immune to chilled"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect ChilledImmunity
+				}
+			}
+		}
+		PowerEvaluationData Chilled < uid=86C9308258E7D1A9000041704C2D5726 >
+		{
+			myPriority 150
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Chilled
+				{
+					mySpecialEffect Chilled
+				}
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA56DA284A000001E4E02A5547 > = pwr_demonchild_power3_Tuning
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 1.0
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

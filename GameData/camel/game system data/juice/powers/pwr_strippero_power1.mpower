@@ -1,0 +1,46 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./enemypowers.mvernon.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_stripperO_power1 < uid=6D7AC9B1578FC68B0000463D22460F98 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/stripper_melee.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"pwr_stripper_power1 Name\", enabled = true, guid = #6D7AC9B1578FC68B0000463C861851EB, lineVersion = 1, maxLength = 17, text = \"Exotic Attack\""
+	myUseSkillScript < uid=6D7AC9B1578FC68B0000463ECA8B34AB > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B1578FC68B0000463F28FB91BA >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myRight FALSE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Destructible < uid=6D7AC9B15881B06F00113FADB3D8CAC7 >
+		{
+			myPriority 19
+			myAIDesirableType A
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=6D7AC9B1578FC68B000046406C280A47 > = pwr_stripper_power1_Knockback1_MVernon_Tuning
+	myCameraPreset < uid=86C930825913D7070004F97AF3CF162A > = Preset_Generic_Melee_KB
+	myValidDirections
+	{
+		myRight FALSE
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

@@ -1,0 +1,26 @@
+include ./combatpowerincludes.juice
+include "camel/game system data/juice/camera/tardicaca/uber_camera_powers_presets_finalgirl.juice"
+include camel/skillscript/dlc3_finalgirl_power04_execute.mskillscriptjuice
+include camel/skillscript/dlc3_finalgirl_ultimate_targeting.mskillscriptjuice
+include ./dlc3_playerpowers.juice
+
+CombatPower pwr_dlc3_finalgirl_power04_execute < uid=8E1BC4435AC1FCC0001F097E62851613 >
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/LastGirl_Power4B.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"This is the name that displays after the ultimate has been initiated\", description = \"pwr_dlc3_finalgirl_power04_execute_name\", enabled = true, guid = #F0F6DDB75AE24758000249BF5B72DB7E, lineVersion = 0, maxLength = 20, text = \"Final Vengeance\""
+	myUIShortDescription "contextComment = \"This is the name that displays after the ultimate has been initiated\", description = \"pwr_dlc3_finalgirl_power04_execute_desc_hort\", enabled = true, guid = #F0F6DDB75AE24758000249C1865D21A6, lineVersion = 0, maxLength = 27, text = \"Slay foes one by one.\""
+	myUseSkillScript < uid=8E1BC4435AC1FCC0001F097FEE4316F5 > = DLC3_FinalGirl_Power04_Execute
+	myTargetingSkillScript < uid=8E1BC4435AC1FE34001F09995E51F4AF > = DLC3_FinalGirl_Ultimate_Targeting
+	myAnimationState ""
+	myShouldRepositionBeforeExecution FALSE
+	myCanStopAnywhere TRUE
+	myTuningData < uid=8E1BC4435AC1FCC0001F098098E62205 > = dlc3_pwr_finalgirl_test_execute_all_Tuning
+	myCameraPreset < uid=B9E930CA5AEA234D0016B3702E21B045 > = FinalGirl_Power4_Execute
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

@@ -1,0 +1,93 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/powersmenu_simpleplayanim.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_assassin.juice"
+
+CombatPower pwr_ninjamanimal_power2 < uid=B9E930CA56DA26FB00000182DB915816 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/ninja_manimal_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_range_cross.DDS"
+	myUIName "contextComment = \"Assassin Power 2 Name\", description = \"pwr_ninjamanimal_power2 Name\", enabled = true, guid = #51C546C65774DC410000016FA0D2A675, lineVersion = 2, maxLength = 16, text = \"Killer Kunai\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_ninjamanimal_power2 Description\", enabled = true, guid = #51C546C65774DC41000001700B1518E0, lineVersion = 1, maxLength = 150, text = \"Introduce your enemies to genuine fucking ninja kunai, thrown in four cardinal directions, for damage and Bleeding.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_ninjamanimal_power2 Short Description\", enabled = true, guid = #9D0E6196579BDEF9000044D10B5C5ADE, lineVersion = 1, maxLength = 46, text = \"Chuck ninja kunai, inflict Bleeding\""
+	myUseSkillScript < uid=B9E930CA56DA26FB00000183D3B3FF57 > = Camel_Simple_PlayAnim_Script
+	myAnimationState assassin_power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "3 targets with kill" < uid=86C9308258E7BE7100004114A0980FEF >
+		{
+			myPriority 15200
+			myMinimumKills 1
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets with kill" < uid=86C9308258E7BE7100004115E34D723B >
+		{
+			myPriority 14000
+			myMinimumKills 1
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "1 target with kill" < uid=86C9308258E7BE71000041168434774E >
+		{
+			myPriority 11800
+			myMinimumKills 1
+		}
+		PowerEvaluationData "3 targets" < uid=86C9308258E7BE7100004117E8C242E1 >
+		{
+			myPriority 7200
+			myMinimumKills 0
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets" < uid=86C9308258E7BE71000041188845CF61 >
+		{
+			myPriority 6000
+			myMinimumKills 0
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "1 target not bleeding" < uid=86C9308258E7BE71000041190011A8F8 >
+		{
+			myPriority 2300
+			myMinimumKills 0
+			myMinimumAffectedTargets 0
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not bleeding"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Bleeding
+				}
+			}
+		}
+		PowerEvaluationData "1 target bleeding" < uid=86C9308258E7BE710000411A27B821B3 >
+		{
+			myPriority 2100
+			myMinimumKills 0
+			myMinimumAffectedTargets 0
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Bleeding
+				{
+					myPreCondition MustHave
+					mySpecialEffect Bleeding
+				}
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA56DA26FB00000184207EBD7A > = pwr_ninjamanimal_power2_Tuning
+	myCameraPreset < uid=8E1BC44359509F2F0015D238DCF8A16A > = Assassin_Power02
+	myPowerGroup Normal
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.0
+				myActionPlusEndTime 1.75
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

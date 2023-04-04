@@ -1,0 +1,8 @@
+class AnimationEvent < uid=auto >
+{
+}
+
+list AnimationEvents
+{
+	AnimationEvent
+}

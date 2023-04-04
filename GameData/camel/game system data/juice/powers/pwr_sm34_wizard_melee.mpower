@@ -1,0 +1,66 @@
+include ./pwr_com_kitchenattack.mpower
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_sm34_wizard_melee < uid=86C930825840F9230000ABA063C6AEBB > : pwr_com_kitchenattack
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/ChefC_Power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUseSkillScript < uid=8585E53F5846FDCD0005749E4DD7DF46 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData melee < uid=86C930825840F9230000ABA2A1CF7A5A >
+		{
+			myPriority 25
+			myAggroPriority 0
+			myRequireAggroTarget FALSE
+			myMinimumDistanceToEnemies 0
+			myStatusEffectConditionData
+			{
+			}
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData melee_enraged < uid=86C930825841CB87000B3979B4006BFC >
+		{
+			myPriority 25
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumDistanceToEnemies 0
+			myStatusEffectConditionData
+			{
+			}
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData melee_kill < uid=86C930825841CB87000B397A7D648C2E >
+		{
+			myPriority 50
+			myAggroPriority 0
+			myRequireAggroTarget FALSE
+			myNumLiveEnemiesRequired 0
+			myMinimumKills 1
+			myMinimumDistanceToEnemies 0
+			myStatusEffectConditionData
+			{
+			}
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myMeleeOffset -1.0;0.0
+	myTuningData < uid=86C930825840F9230000ABA30308B60C > = pwr_sm34_wizard_melee_Adrian_Tuning
+	myCameraPreset < uid=86C930825913D25F0000763C2D9C3A57 > = Preset_Generic_Melee
+}
+

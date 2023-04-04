@@ -1,0 +1,111 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/powersmenu_simpleremovestatuseffectscript.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_elementalist.juice"
+include camel/skillscript/camel_lobbed_power_playanim_script.mskillscriptjuice
+
+CombatPower pwr_elementalist_power3 < uid=B9E930CA56DA228C000000C2E853B779 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/elementalist_power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_ST_heal_no_min_range.DDS"
+	myUIName "contextComment = \"power name\", description = \"pwr_elementalist_power3 Name\", enabled = true, guid = #51C546C65774DC0D000000F445394E38, lineVersion = 2, maxLength = 16, text = \"Power Shower\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_elementalist_power3 Description\", enabled = true, guid = #51C546C65774DC0D000000F557402E10, lineVersion = 1, maxLength = 183, text = \"It's no time to be modest as the Elementalist cleanses and showers themself or a nearby ally, granting Attack Up and the scent of springtime.\"}"
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_elementalist_power3 Short Description\", enabled = true, guid = #9D0E6196579A776E0000016553F6A474, lineVersion = 1, maxLength = 56, text = \"Cleanse and grant Attack Up to self or ally\""
+	myUseSkillScript < uid=B9E930CA56DA228C000000C308850D34 > = Camel_Lobbed_Power_PlayAnim_Script
+	myAnimationState elementalist_power3
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myIsACleansePower TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "Critically damaged" < uid=86C9308258E7C8B70000414C7B597F24 >
+		{
+			myPriority 10800
+			myMinimumAffectedTargets 1
+			myTargetHealthLessThanPercentage 33.0
+			myStatusEffectConditionData
+			{
+			}
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not Charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+				}
+			}
+		}
+		PowerEvaluationData "Moderately damaged" < uid=86C9308258E7C8B70000414D2A4F4196 >
+		{
+			myPriority 3600
+			myMinimumAffectedTargets 1
+			myTargetHealthLessThanPercentage 66.0
+			myStatusEffectConditionData
+			{
+			}
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not Charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+				}
+			}
+		}
+		PowerEvaluationData Damaged < uid=86C9308258E7C8B70000414E04AF8A66 >
+		{
+			myPriority 1000
+			myMinimumAffectedTargets 1
+			myTargetHealthLessThanPercentage 100.0
+			myTargetShieldingLessThanPercentage 101.0
+			myStatusEffectConditionData
+			{
+			}
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not Charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+				}
+			}
+		}
+		PowerEvaluationData "Buff only" < uid=86C9308258E7C8B70000414F9D19C695 >
+		{
+			myPriority 400
+			myMinimumAffectedTargets 1
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not focused"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Focused
+				}
+			}
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not Charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+				}
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA56DA228C000000C431CBB1AD > = pwr_elementalist_power3_Tuning
+	myCameraPreset < uid=8E1BC443591955110006FD2FF3212C4E > = Elementalist_Power03
+	myPowerGroup Normal
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.25
+				myActionPlusEndTime 1.916667
+				myActionPlusPresetEnum Mash_Normal
+			}
+		}
+	}
+}
+

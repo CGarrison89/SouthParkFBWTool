@@ -1,0 +1,10 @@
+// Please keep this enum in sync with the Gfx_SkinToneType enum in Gfx_PrefabNodeMeshesCamel.h
+enum SkinToneType
+{
+	White
+	Asian
+	Hispanic
+	JerseyShore
+	Black
+	MorganFreeman
+}

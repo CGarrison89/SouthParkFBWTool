@@ -1,0 +1,54 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_MM28_ButtersDad_Melee < uid=86C93082592779FB0006B4696E75901B > : enemy_pwr_archetype_swarmer_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/ButterDad_Power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"mm28_buttersdad_melee Name\", enabled = true, guid = #86C930825938B74B0006A3627BEED261, lineVersion = 1, maxLength = 13, text = \"Sockeroo\""
+	myUseSkillScript < uid=86C93082592779FB0006B46AF1EDA452 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 1
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "not grounded" < uid=86C930825928D7E8003E0E4529B714FC >
+		{
+			myPriority 700
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "not grounded"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Grounded
+				}
+			}
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData grounded < uid=86C930825935B72600091A76E9393623 >
+		{
+			myPriority 650
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry grounded
+				{
+					mySpecialEffect Grounded
+				}
+			}
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C93082592779FB0006B46B80615AA8 > = pwr_mm28_buttersdad_melee_Kevin_Tuning
+	myCameraPreset < uid=86C93082592C5B300001BFC1CFEC804A > = Preset_Generic_Melee
+}
+

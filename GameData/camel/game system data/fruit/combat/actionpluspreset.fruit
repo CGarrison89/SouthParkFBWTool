@@ -1,0 +1,63 @@
+enum ActionPlusPresetEnum
+{
+	None
+	Slow
+	Normal
+	Fast
+	Mash_Short
+	Mash_Normal
+	Mash_Long
+}
+
+enum ActionPlusGameTypeEnum
+{
+	None
+	EliteBeat
+	Mash
+}
+
+enum ActionPlusDistributionEnum
+{
+	None
+	OneForOne
+	AllUnusedPriorToHit
+	AlwaysLastResult
+}
+
+class ActionPlusPreset
+{
+	ActionPlusPresetEnum myActionPlusPresetEnum
+	ActionPlusGameTypeEnum myActionPlusGameTypeEnum EliteBeat
+	float myActionPlusLowRatio 0.5
+	float myActionPlusHighRatio 0.8
+	float myActionPlusDamageMultiplier 1
+	float myActionPlusTotalTime 1.5
+	float myActionPlusResultTime 1
+	string myAccelerationCurve "{ defaultLeftSlope = 0, defaultRightSlope = 0, defaultValue = 0, interpolator = 0, isRefinedSampling = true, keys2 = { inTangents = { -0 0, 0 -0.490492, }, outTangents = { 0.333333 0, -0 0, }, properties = { 3, 1299, }, values = { 0 0, 1 1, }, }, numKeys = 2, }" < bhv=inputgraph >
+}
+
+list ActionPlusPresetList
+{
+	ActionPlusPreset
+}
+
+class ActionPlusMiniGameData
+{
+	float myActionPlusAdditionalTime 0.0
+	float myActionPlusEndTime 0.0
+	vec2f myActionPlusPositionOffsetLeft 0.0;0.0
+	vec2f myActionPlusPositionOffsetRight 0.0;0.0
+	ActionPlusPresetEnum myActionPlusPresetEnum
+}
+
+list ActionPlusMiniGameDataList
+{
+	ActionPlusMiniGameData
+}
+
+class ActionPlusData
+{
+	bool myUseActionPlus FALSE
+	ActionPlusDistributionEnum myActionPlusDistributionEnum OneForOne
+	ActionPlusMiniGameDataList myActionPlusMiniGameDataList
+}

@@ -1,0 +1,14 @@
+include camel/skillscript/explore_interact.mskillscriptjuice
+include camel/skillscript/explore_cursortargeting.mskillscriptjuice
+include camel/skillscript/explore_timefart.mskillscriptjuice
+include "camel/game system data/fruit/powers/powers.fruit"
+include camel/skillscript/timefart_mainscript.mskillscriptjuice
+
+Power "[Explore] Time Fart" < uid=6D91A59C549218CA0000000D21AB8BF1 >
+{
+	myUseSkillScript < uid=6D91A59C54921A30000000141EB55389 > = Explore_TimeFart
+	myTargetingSkillScript < uid=6D91A59C549218CA0000000E56A4C1A1 > = NULLREFERENCE
+	myIsPassive TRUE
+	myUseActiveTargeting FALSE
+}
+

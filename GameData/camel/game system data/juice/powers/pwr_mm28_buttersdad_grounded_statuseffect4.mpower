@@ -1,0 +1,13 @@
+include ./pwr_mm28_buttersdad_grounded_statuseffect.mpower
+include camel/skillscript/pwr_mm28_buttersdad_grounded_statuseffect_telegraph_targeting_skillscript.mskillscriptjuice
+
+CombatPower pwr_MM28_ButtersDad_Grounded_StatusEffect4 < uid=86C930825931C2D80002B1FC0B671F74 > : pwr_MM28_ButtersDad_Grounded_StatusEffect
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/ButterDad_Power2_stage4.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide.dds"
+	myTargetingSkillScript < uid=86C930825A789EC00005D4A60CA3AC00 > = pwr_MM28_ButtersDad_Grounded_StatusEffect_Telegraph_Targeting_SkillScript
+	myAnimationState 4
+	myLockedByDefault TRUE
+	myTuningData < uid=86C930825931C2D80002B1FD51EE371C > = pwr_mm28_buttersdad_grounded4_Kevin_Tuning
+}
+

@@ -1,0 +1,51 @@
+include ./dlc3_enemypowers.juice
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/dlc3_monster_warlock_pull.mskillscriptjuice
+include camel/skillscript/dlc3_monster_warlock_pull_fish.mskillscriptjuice
+
+CombatPower pwr_DLC3_Monsters_Swamp_Wizard_pull < uid=8585E53F5AE8BBF30002E839813CDF1D > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/Monster_Ranged_Power2_PufferPull.dds"
+	myUIName "contextComment = \"\", description = \"pwr_DLC3_Monsters_Wizard_pull_name\", enabled = true, guid = #8585E53F5AE8BBF30002E837BECCDD6F, lineVersion = 1, maxLength = 18, text = \"Pumpkin Snatch\""
+	myUIDescription "contextComment = \"\", description = \"pwr_DLC3_Monsters_Wizard_pull_description\", enabled = true, guid = #8585E53F5AE8BBF30002E83837D8F632, lineVersion = 0, maxLength = 36, text = \"DLC3 Wizard Pull description\""
+	myUseSkillScript < uid=8585E53F5AE8BBF30002E83AE158056D > = DLC3_Monster_Warlock_Pull_Fish
+	myAnimationState power4
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=8585E53F5AE8BBF30002E83B39A79B8C >
+		{
+			myPriority 50
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=8585E53F5AE8BBF30002E83CC93E93EC >
+		{
+			myPriority 2000
+			myAggroPriority 2000
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Kill < uid=8585E53F5AE8BBF30002E83DAE9D79E1 >
+		{
+			myPriority 1000
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myMinimumKills 1
+		}
+	}
+	myTuningData < uid=8585E53F5AE8BBF30002E83E8FCF7232 > = pwr_DLC3_Monsters_Wizard_Pull_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

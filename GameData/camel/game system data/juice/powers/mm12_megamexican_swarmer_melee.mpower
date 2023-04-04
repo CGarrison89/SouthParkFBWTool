@@ -1,0 +1,7 @@
+include ./mm12_lavacombat_swarmer_melee.mpower
+
+CombatPower MM12_megamexican_swarmer_melee < uid=86D64076574CCD47000001290A03C87C > : MM12_lavacombat_swarmer_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/generics/generic_melee.dds"
+}
+

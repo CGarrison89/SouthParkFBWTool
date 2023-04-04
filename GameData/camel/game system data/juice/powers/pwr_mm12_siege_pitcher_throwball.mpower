@@ -1,0 +1,26 @@
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include camel/skillscript/pwr_mm12_siege_pitcher_throwball_skillscript.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_mm12_siege_baseball.mprojectile"
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_swappower_slot1.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_mm12_siege_pitcher_throwBall < uid=86C93082581A707F0002B68024AC90ED > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/chaosturret_power1.dds"
+	myUIName "contextComment = \"\", description = \"pwr_mm12_siege_pitcher_throwBall_Name\", enabled = true, guid = #F0F6DDB7599745ED000EA4657BD38481, lineVersion = 0, maxLength = 16, text = \"Ball Barrage\""
+	myUseSkillScript < uid=86C93082581A707F0002B681FE8E220B > = pwr_mm12_siege_pitcher_throwBall_SkillScript
+	myAnimationState ""
+	myProjectile < uid=86C93082581A707F0002B68295A83636 > = projectile_mm12_siege_baseball
+	myOnCombatActionCompleteSkillScript < uid=86C93082595424130003512B99AB67E4 > = Camel_Simple_SwapPower_Slot1
+	myTuningData < uid=86C93082581A707F0002B683F8FAB45E > = pwr_mm12_siege_pitcher_throwBall_Kevin_Tuning
+	myCameraPreset < uid=86C9308259815B0D000A0514E6D8A4E2 > = Preset_Generic_Ranged
+	myValidDirections
+	{
+		myLeft TRUE
+		myRight FALSE
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

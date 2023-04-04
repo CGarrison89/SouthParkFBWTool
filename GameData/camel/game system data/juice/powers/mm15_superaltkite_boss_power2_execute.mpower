@@ -1,0 +1,36 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/mm15_superaltkite_boss_power2_execute_script.mskillscriptjuice
+
+CombatPower mm15_superaltkite_boss_power2_execute < uid=3267E0D0580DBAE80013041CFB1845FB >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Mutant_AltHumanKite_LaserEyes.dds"
+	myUIName "contextComment = \"\", description = \"\", enabled = true, guid = #3267E0D0580DBAE80013041B763FBC58, lineVersion = 1, maxLength = 34, text = \"Death From Above - Execute\""
+	myUseSkillScript < uid=3267E0D0580DBAE80013041DC0E32282 > = mm15_superaltkite_boss_power2_execute_script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D0580DBAE80013041E371C4F93 >
+		{
+			myPriority 10
+			myMinimumAffectedTargets 0
+			myPreferredRange -1
+			myValidDirections
+			{
+				myLeft TRUE
+				myRight TRUE
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myDialogueSkillScript < uid=3267E0D0580DBAE80013041FBC4AE854 > = NULLREFERENCE
+	myTuningData < uid=3267E0D0580DBAE800130420854455BB > = enemy_pwr_mm15_superaltkite_boss_power2_execute_amcclay_Tuning
+	myValidDirections
+	{
+		myLeft TRUE
+		myRight TRUE
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

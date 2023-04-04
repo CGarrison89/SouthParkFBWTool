@@ -1,0 +1,9 @@
+include ./mm12_ambush_pwr_wizard_st_ranged_2attack.mpower
+include "camel/game system data/juice/ai/npc/dlc2_enemiestuning.juice"
+include ./dlc2_enemypowers.juice
+
+CombatPower mm12_ambush_pwr_dr_wizard_st_ranged_2attack < uid=C87888A05A0A718F000772AF848B0B6C > : mm12_ambush_pwr_wizard_st_ranged_2attack
+{
+	myTuningData < uid=C87888A05A0A721700081824B5B9645B > = enemy_pwr_dr_archetype_wizard_st_ranged_Tuning
+}
+

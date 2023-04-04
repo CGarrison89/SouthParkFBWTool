@@ -1,0 +1,65 @@
+include ./enemy_pwr_archetype_peashooter_st_ranged.mpower
+include ./enemypowers.adrian.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_ninja_star_mm33_power05.mprojectile"
+
+CombatPower pwr_mm33_city_ninja_mrkim_ranged < uid=86C93082587EB9300000161119121A56 > : enemy_pwr_archetype_peashooter_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/ninja_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_range.dds"
+	myUIName "contextComment = \"mr kim ninja star power name\", description = \"enemy_pwr_archetype_peashooter_st_ranged Name\", enabled = true, guid = #9D0E619659977178000F07E93E5A7812, lineVersion = 0, maxLength = 26, text = \"Authentic Ninja Star\""
+	myUseSkillScript < uid=86C93082587EB930000016127FFAC6C5 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power5
+	myProjectile < uid=86C9308258AE3CDB00003DBBB8B296E9 > = projectile_ninja_star_mm33_power05
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Range3 < uid=8585E53F591496010005EE044D3B885B >
+		{
+			myPriority 25
+			myPreferredRange 3
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=8585E53F591496010005EE05270572EC >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData killPrioirty < uid=8585E53F591496010005EE06BC6780FC >
+		{
+			myPriority 26
+			myMinimumKills 1
+		}
+		PowerEvaluationData Range2 < uid=8585E53F5936D8FD0003078345B002E7 >
+		{
+			myPriority 24
+			myPreferredRange 2
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Range1 < uid=8585E53F5936D8FD0003078412B66420 >
+		{
+			myPriority 23
+			myPreferredRange 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C93082587EB930000016137FC67BD3 > = pwr_mm33_city_ninja_peashooter_ranged_Adrian_Tuning
+}
+

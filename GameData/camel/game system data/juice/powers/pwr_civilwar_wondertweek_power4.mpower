@@ -1,0 +1,35 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/pwr_creek_power4_script.mskillscriptjuice
+include ./enemypowers.demo.juice
+
+CombatPower pwr_civilwar_wondertweek_power4 < uid=B9E930CA5731403D000017B4DD1EE083 >
+{
+	myUIName "contextComment = \"\", description = \"pwr_civilwar_wondertweek_power4 Name\", enabled = true, guid = #51C546C65774D96A0000010AA893796F, lineVersion = 0, maxLength = 17, text = \"Tweek X Craig\""
+	myUseSkillScript < uid=B9E930CA5731403D000017B55F4759D3 > = pwr_creek_power4_script
+	myAnimationState power4
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA5731403D000017B6FD327EC6 >
+		{
+			myPriority 0
+			myMinimumAffectedTargets 5
+			myTargetHealthLessThanPercentage 1.0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA5731403D000017B7739A72B9 > = demo_e3_wondertweek_power4_demo_Tuning
+	myPowerGroup Ultimate
+	myValidDirections
+	{
+		myLeft FALSE
+		myRight FALSE
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

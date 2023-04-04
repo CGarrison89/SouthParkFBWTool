@@ -1,0 +1,23 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_revive_script.mskillscriptjuice
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_mm12_bums_swarmer_revive_v2 < uid=86C93082579BD42B0002B19F5F22DC85 >
+{
+	myUIName "contextComment = \"\", description = \"\", enabled = false, guid = #86C93082579BD42B0002B19E63A819CD, lineVersion = 0, maxLength = 1, text = \"|empty|\""
+	myUseSkillScript < uid=86C93082579BD42B0002B1A00B151B52 > = Camel_Simple_Revive_Script
+	myTargetingSkillScript < uid=86C93082579BF04D00018C6F0B70164F > = NULLREFERENCE
+	myUseActiveTargeting FALSE
+	myIsACleansePower TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C93082579BD82E00042A54F6381861 >
+		{
+			myPriority 100
+			myMinimumAffectedTargets 10
+		}
+	}
+	myTuningData < uid=86C93082579BD42B0002B1A15D87291E > = pwr_mm12_bums_swarmer_revive_Kevin_Tuning
+	myPowerDeathTargeting OnlyDead
+}
+

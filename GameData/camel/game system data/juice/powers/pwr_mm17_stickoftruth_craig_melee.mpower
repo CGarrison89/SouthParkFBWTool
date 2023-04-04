@@ -1,0 +1,15 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/pwr_mm17_stickoftruth_craig_melee_script.mskillscriptjuice
+
+CombatPower pwr_mm17_stickoftruth_craig_melee < uid=86C9308257BB7663000001B04CBF0113 > : enemy_pwr_archetype_bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/craig_power1.dds"
+	myUIName "contextComment = \"\", description = \"Staff Strike\", enabled = true, guid = #3267E0D059713F1D003BC98BF5F340AB, lineVersion = 0, maxLength = 16, text = \"Staff Strike\""
+	myUseSkillScript < uid=8E224C3D58EC2FFB000366BA97D67F26 > = pwr_mm17_stickoftruth_craig_melee_script
+	myAnimationState power1
+	myNumberOfAttackEvents 2
+	myTuningData < uid=86C9308257BB7663000001B104C2E095 > = pwr_mm17_stickoftruth_craig_melee_Kevin_Tuning
+}
+

@@ -1,0 +1,16 @@
+include ./enemy_pwr_archetype_explosive_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_LT_chaoskids_exploder_melee < uid=86C9308257684B8B000000F4B44FC824 > : enemy_pwr_archetype_explosive_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/chaoskid_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"exploder melee power name\", description = \"enemy_pwr_archetype_explosive_melee Name\", enabled = true, guid = #9D0E619659977BF6000F07F15FDBB1E2, lineVersion = 0, maxLength = 18, text = \"Combo of Chaos\""
+	myUseSkillScript < uid=8585E53F582BC1F0000A8D7C111A4F92 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myNumberOfAttackEvents 3
+	myShouldRepositionBeforeExecution TRUE
+	myTuningData < uid=86C9308257684B8B000000F51E878EF5 > = pwr_LT_chaoskids_exploder_melee_Kevin_Tuning
+}
+

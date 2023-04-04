@@ -1,0 +1,11 @@
+include ./mm15_5assed_rogue_power1.mpower
+
+CombatPower pwr_sm23_jimbo2_badger_rush < uid=86C93082580005DF001CE7D75B5B6391 > : mm15_5assed_rogue_power1
+{
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

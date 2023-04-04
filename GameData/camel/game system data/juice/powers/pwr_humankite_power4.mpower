@@ -1,0 +1,41 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./buddypowers.joh.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/pwr_humankite_power4_script.mskillscriptjuice
+
+CombatPower pwr_humankite_power4 < uid=B9E930CA56BA93700000231E9E417BCB >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/humankite_Ult_DeathFromAbove.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/mass.DDS"
+	myUIName "contextComment = \"Human Kite Power 4 Name\", description = \"pwr_humankite_power4 Name\", enabled = true, guid = #51C546C65774DC1E0000011992CE6E46, lineVersion = 1, maxLength = 17, text = \"Wrath of Kite\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_humankite_power4 Description\", enabled = true, guid = #51C546C65774DC1E0000011A3B2208AD, lineVersion = 1, maxLength = 142, text = \"Human Kite channels his rage at his persecutors and unleashes a blistering attack that also inflicts Burning.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_humankite_power4 Short Description\", enabled = true, guid = #9D0E6196579AB101000001991AECD3DF, lineVersion = 0, maxLength = 55, text = \"Inflict Burning on your enemies from space\""
+	myUseSkillScript < uid=B9E930CA56BA93700000231F81B93D1A > = pwr_humanKite_power4_script
+	myAnimationState power4
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+	}
+	myTuningData < uid=B9E930CA56C52E4A0000001E220B1699 > = pwr_humankite_power4_Tuning
+	myPowerGroup Ultimate
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus FALSE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 1.25
+				myActionPlusPresetEnum Slow
+			}
+		}
+	}
+}
+

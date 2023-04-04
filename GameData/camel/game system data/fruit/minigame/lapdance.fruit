@@ -1,0 +1,214 @@
+include "modules/core/audio/audio.fruit"
+include "camel/game system data/fruit/items/loot.fruit"
+include "camel/game system data/fruit/MiniGame/TimeFart.fruit"
+include "camel/game system data/fruit/minigame/lapdance2.fruit"
+
+enum LapDanceStageType
+{
+	None
+	Knee
+	Middle
+	Twerk
+	FaceFart
+	Brazillian
+}
+
+enum LapDanceGestureType
+{
+	None
+	CWCircle
+	CCWCircle
+	DownHalfCircle
+	Horizontal
+	LeftHalfCircle
+	RightHalfCircle
+	UpHalfCircle
+	Vertical
+}
+
+
+class LapDanceStickActionGroup < uid=auto >
+{
+	StickActionProperties myStickActionProperties
+}
+
+class LapDanceStickUI
+{
+	varmap myName < bhv = "localization" >
+	file myStickActionGroupIcon "" < types=*.png >
+	LapDanceStickActionGroup* myStickActionGroup
+}
+
+list LapDanceStickUIList
+{
+	LapDanceStickUI
+}
+
+class LapDanceActionNameMap < uid=auto >
+{
+	LapDanceStickUIList myKneeUI
+	LapDanceStickUIList myMiddleUI
+}
+
+
+
+class LapDanceStickUI2
+{
+	varmap myName < bhv = "localization" >
+	file myGestureIcon "" < types=*.png >
+	LapDanceGesture* myGesture
+	LapDanceGestureType myGestureType
+}
+
+list LapDanceStickUIList2
+{
+	LapDanceStickUI2
+}
+
+class LapDanceActionNameMap2 < uid=auto >
+{
+	LapDanceStickUIList2 myKneeUI
+	LapDanceStickUIList2 myMiddleUI
+}
+
+
+class LapDanceDanceScoring
+{
+	LapDanceStickActionGroup* myStickActionGroup
+	int myScore
+}
+
+
+list LapDanceDanceScoringList
+{
+	LapDanceDanceScoring
+}
+
+
+
+class LapDanceDanceScoring2
+{
+	LapDanceGesture* myGesture
+	int myScore
+}
+
+
+list LapDanceDanceScoringList2
+{
+	LapDanceDanceScoring2
+}
+
+
+class LapDanceCamera
+{
+	vec3f myCameraInfluence
+	float myPointsGainedInStage
+}
+
+list LapdanceCameraList
+{
+	LapDanceCamera
+}
+
+class LapDanceStage
+{
+	LapDanceStageType myType
+
+	LapdanceCameraList myCameraSettings
+}
+
+list LapDanceStageList
+{
+	LapDanceStage
+}
+
+
+class ComboNameUI
+{
+	varmap myName < bhv = "localization" >
+}
+
+list ComboNameList
+{
+	ComboNameUI
+}
+
+
+//
+// special stage data -----------------------------------------------------------------------------
+class LapDanceSpecialTiming
+{
+	float myStartTime
+	float myDuration
+}
+
+list LapDanceSpecialTimingList
+{
+	LapDanceSpecialTiming
+}
+
+
+//
+// rewards ----------------------------------------------------------------------------------------
+class LapDanceLoot
+{
+	float myThreshold
+	LootTable myLootTable
+}
+
+list LapDanceLootTableList
+{
+	LapDanceLoot
+}
+
+
+//
+// LapDance Data class ----------------------------------------------------------------------------
+class LapDance < uid=auto >
+{
+	varmap myUIName < bhv = "localization" >
+	AudioEvent mySongAudioEvent
+	AudioEvent mySongAudioEventStop
+	AudioEvent mySongAudioEventHigh
+	AudioEvent mySongAudioEventLow
+
+	float mySongDuration 120
+
+	LapDanceDanceScoringList myLapDanceScoringList
+	LapDanceDanceScoringList myTwerkScoringList
+	LapDanceDanceScoringList2 myLapDanceScoringList2
+	LapDanceDanceScoringList2 myTwerkScoringList2
+
+	ComboNameList myComboNameList
+
+	LapDanceStageList myStages
+	float myKneeToMiddleThreshold 30.0
+	LapDanceSpecialTimingList mySpecialTimeData
+
+	int myJohnHealth 3
+	int myJohnLoveThreshold 5
+	float myAutoFailTimeout 12.0
+	float myComboTimeout 2.0
+	int myComboBreakRepeatCount 2
+
+	LapDanceActionNameMap2 myActionNameMap
+
+	// rewards
+	LapDanceLootTableList myLootTable
+
+	int mySamplePointNumber 30
+
+	vec3f myCameraInfluenceKnee
+	vec3f myCameraInfluenceMiddle
+	vec3f myCameraInfluenceSpecial
+
+	float myTwerkDuration1
+	float myTwerkDuration2
+	float myTwerkDuration3
+
+	int myTwerkScoreStar1
+	int myTwerkScoreStar2
+	int myTwerkScoreStar3
+}
+
+

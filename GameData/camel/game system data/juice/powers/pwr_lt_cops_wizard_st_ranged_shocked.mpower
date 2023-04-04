@@ -1,0 +1,15 @@
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_LT_cops_wizard_st_ranged_shocked < uid=86C9308257684CAF0000012A203CE02A > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/beatcop_taser.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_Range_ST_LOS.dds"
+	myUIName "contextComment = \"power name\", description = \"pwr_LT_cop_wizard_st_ranged_shocked\", enabled = true, guid = #9D0E6196599B222000008CCB8B142E19, lineVersion = 0, maxLength = 8, text = \"Taser\""
+	myUseSkillScript < uid=8585E53F58F92F2F0002524E22AE07D9 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 7
+	myTuningData < uid=86C9308257684CAF0000012B4A7E903A > = pwr_LT_cops_wizard_st_ranged_shocked_Kevin_Tuning
+}
+

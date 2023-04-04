@@ -1,0 +1,59 @@
+include ./pwr_vipjohn2_power2.mpower
+include ./dlc1_enemypowers.juice
+include "camel/game system data/juice/camera/casabonita/uber_camera_powers_presets_michaeljackson.juice"
+
+CombatPower pwr_DLC1_VampKids_MichaelJackson_aoe < uid=86C9308259B06B27000EE434DEB19DFB > : pwr_vipJohn2_power2
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/MichaelJackson_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/1_range_cross.dds"
+	myUIName "contextComment = \"\", description = \"pwr_DLC1_VampKids_MichaelJackson_aoe_name\", enabled = true, guid = #86C9308259EE5F0000009089F9307F1B, lineVersion = 3, maxLength = 13, text = \"EO Blast\""
+	myUseSkillScript < uid=86C9308259B06B27000EE435F66FC1F2 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "1 target" < uid=86C9308259B0753F00008BA1E9B8F232 >
+		{
+			myPriority 99
+			myMinimumAffectedTargets 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "2 targets" < uid=86C9308259B0753F00008BA200FB8748 >
+		{
+			myPriority 200
+			myMinimumAffectedTargets 2
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "3 targets" < uid=86C9308259B0753F00008BA335A5950F >
+		{
+			myPriority 300
+			myMinimumAffectedTargets 3
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData enraged < uid=86C9308259B0759800008BB32981B351 >
+		{
+			myPriority 100
+			myAggroPriority 1100
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C9308259B06D25000EE470BEA0677A > = pwr_DLC1_VampKids_MichaelJackson_aoe_Tuning
+	myCameraPreset < uid=8E1BC4435A681E04000223D8E466910C > = MichaelJackson_Power02
+}
+

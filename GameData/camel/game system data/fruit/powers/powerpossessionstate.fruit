@@ -1,0 +1,12 @@
+enum PowerPossessionState
+{
+	Init
+	SpawnMysterion
+	SpawnGhost
+	ControlGhost
+	CancelGhost
+	PossessNPC
+	ControlNPC
+	CancelNPC
+	Finalize
+}

@@ -1,0 +1,65 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./enemypowers.mvernon.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_dlc3_spantaneous_bootay_power1 < uid=B9E930CA5AFDCD070000B75704C4405F >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/SpontaneousBootay_Smother.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_square_debuff.dds"
+	myUIName "contextComment = \"\", description = \"pwr_spantaneous_bootay_power1 Name\", enabled = true, guid = #B9E930CA5AFDCD070000B756B818C02F, lineVersion = 1, maxLength = 30, text = \"Spontaneous Destruction\""
+	myUseSkillScript < uid=B9E930CA5AFDCD070000B758B96747D5 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1_alt
+	myShouldRepositionBeforeExecution FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA5AFDCD070000B759739D894B >
+		{
+			myPriority 10
+			myMinimumAffectedTargets 2
+			myValidDirections
+			{
+				myLeft TRUE
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "3 targets (including self)" < uid=B9E930CA5AFDCD070000B75A0DFA26AF >
+		{
+			myPriority 20
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "4 targets (including self)" < uid=B9E930CA5AFDCD070000B75B2B1A59F7 >
+		{
+			myPriority 30
+			myAggroPriority 4
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "5 targets (including self)" < uid=B9E930CA5AFDCD070000B75CA8C0EAAE >
+		{
+			myPriority 40
+			myMinimumAffectedTargets 5
+		}
+		PowerEvaluationData UpDown < uid=B9E930CA5AFDCD070000B75D3788F92C >
+		{
+			myPriority 50
+			myAggroPriority 0
+			myMinimumAffectedTargets 2
+			myValidDirections
+			{
+				myLeft FALSE
+				myRight FALSE
+			}
+		}
+		PowerEvaluationData destructibleprops < uid=B9E930CA5AFDCD070000B75EEB9B6E2C >
+		{
+			myPriority 5
+			myMinimumAffectedTargets 2
+			myAIDesirableType A
+		}
+	}
+	myTuningData < uid=B9E930CA5AFDCD070000B75F12B74749 > = mm08_bootay_power01_MVernon_Tuning
+	myCameraPreset < uid=B9E930CA5AFDCD070000B760BD8D4A2B > = Preset_Generic_Melee
+}
+

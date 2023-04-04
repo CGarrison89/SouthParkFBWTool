@@ -1,0 +1,12 @@
+include "camel/game system data/fruit/damage/damageType.fruit"
+
+class DamageTableEntry
+{
+	DamageTypeEnum myDamageType
+	int myDamage
+}
+
+list DamageTable
+{
+	DamageTableEntry
+}

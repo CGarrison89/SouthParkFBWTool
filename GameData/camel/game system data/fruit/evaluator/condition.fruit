@@ -1,0 +1,185 @@
+include "camel/game system data/fruit/gameprogression/gameprogression.fruit"
+include "camel/game system data/fruit/timeofday.fruit"
+
+class DialogCondition < uid=auto >
+{
+	int myScore 10
+}
+
+list DialogConditions
+{
+	DialogCondition*
+}
+
+list DialogConditionNames
+{
+	string
+}
+
+class BooleanGlobalVariableDialogCondition : DialogCondition
+{
+	varmap myVariableId < bhv = "boolGlobalVar" >
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// Number Operator
+//
+class NumberDialogArgument < abstract = 1 >
+{
+}
+
+class NumberDialogPrimitive : NumberDialogArgument
+{
+	float myValue
+}
+
+class NumberDialogGlobalVariable : NumberDialogArgument
+{
+	varmap myVariableId < bhv = "numGlobalVar" >
+}
+
+enum BinaryNumberDialogResultOperator
+{
+	Add
+	Subtract
+	Multiply
+	Divide
+}
+
+class NumberDialogOperationResult : NumberDialogArgument
+{
+	NumberDialogArgument* myLHS
+	BinaryNumberDialogResultOperator myOperator
+	NumberDialogArgument* myRHS
+}
+
+enum BinaryNumberDialogOperator
+{
+	Less
+	Greater
+	Equal
+	NotEqual
+	LessThanOrEqual
+	GreaterThanOrEqual
+}
+
+class BinaryNumberDialogCondition : DialogCondition
+{
+	NumberDialogArgument* myLHS
+	BinaryNumberDialogOperator myOperator
+	NumberDialogArgument* myRHS
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// Enum Operator
+//
+
+class EnumDialogArgument < abstract = 1 >
+{
+}
+
+class EnumDialogGlobalVariable : EnumDialogArgument
+{
+	varmap myVariableId < bhv = "enumGlobalVar" >
+}
+
+// Game Progression Enum
+
+class GameProgressionEnumDialogArgument : EnumDialogArgument
+{
+	GameProgressionEnum myValue
+}
+
+// Tiem of Day Enum
+
+class TimeOfDayEnumDialogArgument : EnumDialogArgument
+{
+	TimeOfDayType myValue
+}
+
+class CurrentTimeOfDayEnumDialogArgument : EnumDialogArgument
+{
+}
+
+enum BinaryEnumDialogOperator
+{
+	Equal
+	NotEqual
+}
+
+class BinaryEnumDialogCondition : DialogCondition
+{
+	EnumDialogArgument* myLHS
+	BinaryEnumDialogOperator myOperator
+	EnumDialogArgument* myRHS
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// List Operator
+//
+enum ListDialogConditionOperator
+{
+	And
+	Or
+	Equal
+}
+
+class ListDialogCondition : DialogCondition
+{
+	ListDialogConditionOperator myOperator
+	DialogConditions myConditions
+	DialogConditionNames myConditionNames
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// TRUE Operator
+//
+class TrueDialogCondition : DialogCondition
+{
+}
+
+///// FALSE Operator
+//
+class FalseDialogCondition : DialogCondition
+{
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// Unary Operator
+//
+
+enum UnaryDialogOperator
+{
+	Not
+}
+
+class UnaryDialogCondition : DialogCondition
+{
+	UnaryDialogOperator myOperator
+	DialogCondition myCondition
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// Binary Operator Condition
+//
+
+enum BinaryDialogConditionOperator
+{
+	And
+	Or
+	Equal
+	NotEqual
+}
+
+class BinaryDialogCondition : DialogCondition
+{
+	DialogCondition myLHS
+	BinaryDialogConditionOperator myOperator
+	DialogCondition myRHS
+}

@@ -1,0 +1,28 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower enemy_pwr_archetype_priest_heal < uid=86D640765744DCC60000009B5259FE2B >
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_priest_heal Name\", enabled = true, guid = #51C546C65774D93E000000926BF5FA70, lineVersion = 0, maxLength = 14, text = \"Priest Heal\""
+	myUseSkillScript < uid=86D640765744DCC60000009CE353D512 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D640765744DCC60000009D3BB20800 >
+		{
+			myPriority 100
+			myTargetHealthLessThanPercentage 80.0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86D640765744DCC60000009E85E161CD > = enemy_pwr_archetype_priest_heal_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

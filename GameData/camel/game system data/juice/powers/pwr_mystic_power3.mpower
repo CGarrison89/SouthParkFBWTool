@@ -1,0 +1,34 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/gutjumper.mskillscriptjuice
+include camel/skillscript/pw_mystic_gut_jumper_placeholder.mskillscriptjuice
+include camel/skillscript/pw_mystic_gut_jumper_placeholder_menu.mskillscriptjuice
+include camel/skillscript/pwr_mystic_power03_script.mskillscriptjuice
+
+CombatPower pwr_mystic_power3 < uid=B9E930CA56DA262E000001224FAEF86A >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/mystic_power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide.DDS"
+	myUIName "contextComment = \"Mystic Power 3 Name\", description = \"pwr_mystic_power3 Name\", enabled = true, guid = #51C546C65774DC3F00000169CD168A6E, lineVersion = 1, maxLength = 21, text = \"Probiotic Portal\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_mystic_power3 Description\", enabled = true, guid = #51C546C65774DC3F0000016A7A3CB590, lineVersion = 0, maxLength = 176, text = \"Rip an anal fissure in fart-time and swap places with any target. Foes take damage and gain Gross Out. Allies are healed and cleansed. \""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_mystic_power3 Short Description\", enabled = true, guid = #9D0E6196579CF7C800000162DC34AC21, lineVersion = 0, maxLength = 40, text = \"Heal an ally or Gross Out a foe\""
+	myUseSkillScript < uid=B9E930CA56DA262E00000123902CCB13 > = pwr_mystic_power03_script
+	myAnimationState mystic_power3
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myIsACleansePower TRUE
+	myTuningData < uid=B9E930CA56DA262E000001246F72C84C > = pwr_mystic_power3_Tuning
+	myPowerGroup Normal
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 1.5
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

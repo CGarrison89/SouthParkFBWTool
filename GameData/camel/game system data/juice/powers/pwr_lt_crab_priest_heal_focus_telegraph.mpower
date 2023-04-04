@@ -1,0 +1,49 @@
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include camel/skillscript/pwr_mm12_siege_pitcher_throwball_skillscript.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_mm12_siege_baseball.mprojectile"
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+include ./enemypowers.adrian.juice
+include camel/skillscript/sm25_crab_king_heal_focus_telegraph.mskillscriptjuice
+include camel/skillscript/camel_simple_swappower_slot1.mskillscriptjuice
+
+CombatPower pwr_lt_crab_priest_heal_focus_telegraph < uid=8585E53F5963A89C0003AACFFDA67BD4 > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/CrabPriest_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_square_heal.dds"
+	myUIName "contextComment = \"\", description = \"crab priest power 1\", enabled = true, guid = #EA0BC518599A75BC00008CC41469FD04, lineVersion = 0, maxLength = 22, text = \"Claw Regeneration\""
+	myUseSkillScript < uid=8585E53F5963A89C0003AAD09735FB5B > = sm25_crab_king_heal_focus_telegraph
+	myBlocksObscurationMovement TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=8585E53F5963A89C0003AAD112750D49 >
+		{
+			myPriority 20
+			myAggroPriority 0
+			myRequireAggroTarget FALSE
+			myMinimumAffectedTargets 1
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 0
+			myNumTelegraphPowersAllowed 1
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=8585E53F5963A89C0003AAD2F453F459 > = Camel_Simple_SwapPower_Slot1
+	myTuningData < uid=8585E53F5963A89C0003AAD33AE549DC > = pwr_sm25_crab_king_heal_focus_telegraph_Adrian_Tuning
+	myValidDirections
+	{
+		myRight TRUE
+		myUp TRUE
+		myDown TRUE
+	}
+	myTelegraphData
+	{
+		myTelegraphedPowerName pwr_lt_crab_priest_heal_focus_execute
+		myTelegraphingAnimationName ""
+	}
+}
+

@@ -1,0 +1,90 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include camel/skillscript/mm17_mitch_connor_flee_script.mskillscriptjuice
+
+CombatPower mm17_mitchconner_coon_flee < uid=86D6407659544A1E000086AFACBE8F98 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/MitchCoon_Power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/select_roomwide.dds"
+	myUIName "contextComment = \"\", description = \"\", enabled = true, guid = #86D6407659544A1E000086AEF0226713, lineVersion = 1, maxLength = 14, text = \"Coon Flee\""
+	myUseSkillScript < uid=86D6407659544A1E000086B07BA07C95 > = mm17_mitch_connor_flee_script
+	myLockedByDefault TRUE
+	myRequiresValidTarget TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData 1space < uid=86D6407659544A1E000086B1F85CEB12 >
+		{
+			myPriority 921
+			myPreferredRange 1
+			myMinimumDistanceToEnemies 1
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData 2space < uid=86D6407659544A1E000086B21BA511F5 >
+		{
+			myPriority 922
+			myPreferredRange 2
+			myMinimumDistanceToEnemies 2
+		}
+		PowerEvaluationData 3space < uid=86D6407659544A1E000086B3433F9F56 >
+		{
+			myPriority 923
+			myMinimumKills 0
+			myPreferredRange 3
+			myMinimumDistanceToEnemies 3
+		}
+		PowerEvaluationData 4space < uid=86D6407659544A1E000086B43B030770 >
+		{
+			myPriority 924
+			myPreferredRange 4
+			myMinimumDistanceToEnemies 4
+		}
+		PowerEvaluationData 5space < uid=86D6407659544A1E000086B524187F79 >
+		{
+			myPriority 925
+			myPreferredRange 5
+			myMinimumDistanceToEnemies 5
+		}
+		PowerEvaluationData 6space < uid=86D6407659544A1E000086B61701E8B6 >
+		{
+			myPriority 926
+			myPreferredRange 6
+			myMinimumDistanceToEnemies 6
+		}
+		PowerEvaluationData 7space < uid=86D6407659544A1E000086B7A87B002F >
+		{
+			myPriority 927
+			myPreferredRange 7
+			myMinimumDistanceToEnemies 7
+		}
+		PowerEvaluationData 8space < uid=86D6407659544A1E000086B88B60AAD7 >
+		{
+			myPriority 928
+			myPreferredRange 8
+			myMinimumDistanceToEnemies 8
+		}
+		PowerEvaluationData 9space < uid=86D6407659544A1E000086B96C64EF75 >
+		{
+			myPriority 929
+			myPreferredRange 9
+			myMinimumDistanceToEnemies 9
+		}
+		PowerEvaluationData 10space < uid=86D6407659544A1E000086BA7438FE17 >
+		{
+			myPriority 930
+			myPreferredRange 10
+			myMinimumDistanceToEnemies 10
+		}
+	}
+	myTuningData < uid=86D6407659544A1E000086BB0432F2C7 > = enemy_pwr_mm34_mitchconner_coon_power1_amcclay_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

@@ -1,0 +1,17 @@
+include "camel/skillscript/skillscript.fruit"
+include "camel/game system data/fruit/powers/powerDamageArea.fruit"
+
+class DestructionState  < uid=auto >
+{
+	string myName
+	string myAnimation
+	SkillScript* mySkillScript
+	int myHealthAmount
+	bool myIsCollisionEnabled
+	bool myIsAIDesirableEnabled
+	string myHitReactionAnimation
+	bool myIsTransitionState
+	PowerDamageArea myDamageArea
+	int myDamageAmount 0
+	bool myIsVisible true
+}

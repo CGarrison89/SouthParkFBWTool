@@ -1,0 +1,44 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./enemypowers.mvernon.juice
+include camel/skillscript/camel_simple_random_splash_damage_telegraph_script_v3.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_mm12_chaossupreme.juice"
+include camel/skillscript/camel_simple_random_splash_damage_telegraph_targeting_script_v3.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_jared.juice"
+
+CombatPower pwr_mm12_megamexican_telegraph_missile < uid=6D7AC9B157DC9F7900169AECAE020D82 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/mexsupreme_phase2_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/chaos_missile.dds"
+	myUIName "contextComment = \"Human Kite Power 1 Name\", description = \"pwr_mm12_megamexican_missile Name\", enabled = true, guid = #6D7AC9B157DC9F7900169AEA3451871B, lineVersion = 1, maxLength = 31, text = \"Missile Launch Telegraph\""
+	myUIDescription "contextComment = \"Human Kite Power 1 Description\", description = \"pwr_mm12_megamexican_missile Description\", enabled = true, guid = #6D7AC9B157DC9F7900169AEBC39AE090, lineVersion = 1, maxLength = 48, text = \"Rake a target with Kite's laser eyes.\""
+	myUseSkillScript < uid=6D7AC9B157DC9F7900169AED687FE08A > = Camel_Simple_Random_Splash_Damage_Telegraph_Script_v3
+	myTargetingSkillScript < uid=86C930825A6BA20E000232C4D5604D4A > = Camel_Simple_Random_Splash_Damage_Telegraph_Targeting_Script_v3
+	myAnimationState ""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B157DC9F7900169AEED0AEDBC1 >
+		{
+			myPriority 400
+			myAggroPriority 4000
+			myValidDirections
+			{
+				myLeft FALSE
+				myRight FALSE
+				myUp FALSE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=6D7AC9B157DC9F7900169AEFC4243F24 > = pwr_com_mm12_megamexican_telegraph_missile_launch_MVernon_Tuning
+	myCameraPreset < uid=86C930825A6BA905000AB73AF684FA2F > = Jared_Power02
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myLeft FALSE
+		myRight FALSE
+		myUp FALSE
+		myDown TRUE
+	}
+}
+

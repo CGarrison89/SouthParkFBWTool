@@ -1,0 +1,19 @@
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./playerpowers.juice
+include camel/skillscript/pwr_mc_skipturn_script.mskillscriptjuice
+
+CombatPower pwr_MC_SkipTurn < uid=86C9308258E7F93B000047C0479969FA >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/King_Power6.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/self_heal.dds"
+	myUseSkillScript < uid=86C9308258E7F93B000047C1DCA2163A > = pwr_MC_SkipTurn_script
+	myAnimationState CombatSkipTurn
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=86C9308258E7F93B000047C29178A836 >
+		{
+		}
+	}
+	myTuningData < uid=86C9308258E7FB29000044CD1B56AA5E > = pwr_MC_SkipTurn_Tuning
+}
+

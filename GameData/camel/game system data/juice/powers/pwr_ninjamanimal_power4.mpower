@@ -1,0 +1,36 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/pwr_assassin_power4_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_assassin.juice"
+
+CombatPower pwr_ninjamanimal_power4 < uid=B9E930CA56DA26D70000016AE00CBB53 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/ninja_manimal_power4.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide_ST.DDS"
+	myUIName "contextComment = \"Assassin Power 4 Name\", description = \"pwr_ninjamanimal_power4 Name\", enabled = true, guid = #51C546C65774DC4300000173DC274195, lineVersion = 2, maxLength = 18, text = \"Full-Ass Creed\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_ninjamanimal_power4 Description\", enabled = true, guid = #51C546C65774DC43000001747F5690E9, lineVersion = 1, maxLength = 148, text = \"The Assassin takes a leap of faith, targeting any enemy for evisceration and Bleeding, and then becomes Invisible.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_ninjamanimal_power4 Short Description\", enabled = true, guid = #9D0E6196579BDF0D000044D7FCC1F514, lineVersion = 0, maxLength = 53, text = \"Inflict Bleeding on any foe, go Invisible\""
+	myUseSkillScript < uid=B9E930CA56DA26D70000016B565B8FD8 > = pwr_assassin_power4_script
+	myAnimationState ""
+	myShouldRepositionToCellCenterBeforeExecution FALSE
+	myRequiresValidTarget TRUE
+	myTuningData < uid=B9E930CA56DA26D70000016CC97536DC > = pwr_ninjamanimal_power4_Tuning
+	myCameraPreset < uid=B9E930CA597B9EBD0017C8FFC9D3BFAF > = Assassin_Power04
+	myPowerGroup Ultimate
+	mySelfStatusEffects
+	{
+		StatusEffect Invisible < uid=B9E930CA587FBE59000015E7BF9C42C2 > = Invisible
+	}
+	myActionPlusData
+	{
+		myUseActionPlus FALSE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 2.0
+				myActionPlusPresetEnum Slow
+			}
+		}
+	}
+}
+

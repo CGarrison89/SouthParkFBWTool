@@ -1,0 +1,36 @@
+include "camel/skillscript/skillscript.fruit"
+
+enum DeathType
+{
+	None
+	Fall_00
+	Gun_00
+	DiabeticRage_Lift
+	FallLava_00
+	Fartkour_00
+	PlayersDadStealth
+	ButtersDadStealth
+	Turret_00
+	Door_00
+	Door_01
+	Actor_Hit_React
+	IP61_burning_loop
+	GayFish_00
+	ShitYourself_00
+    FalingDown_CasaBonita
+}
+
+enum DeathScreenType
+{
+	YouAreDead
+	YouAreGrounded
+	YouShitYourself
+}
+
+class DeathData
+{
+	SkillScript* myDeathSkillScript
+	file myDeathUI "camel/ui/graphs/death_screen.muigraph" < types=*.muigraph >
+	DeathScreenType myDeathScreenType YouAreDead
+}
+

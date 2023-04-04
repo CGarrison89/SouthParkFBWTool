@@ -1,0 +1,74 @@
+include ./enemy_pwr_archetype_grenadier_aoe_lob_min.mpower
+include ./dlc1_enemypowers.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/dlc1_pwr_vampkidwarlock_power01.mskillscriptjuice
+
+CombatPower pwr_DLC1_VampKids_Warlock_LobbedRange < uid=86C9308259A5EF5100072F53EBEA9255 > : enemy_pwr_archetype_grenadier_aoe_lob_min
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/VampkidWarlock_Power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_ST_3_range_no_min.dds"
+	myUIName "contextComment = \"\", description = \"pwr_DLC1_VampKids_Warlock_LobbedRange_name\", enabled = true, guid = #86C9308259EE6011000090C10C568526, lineVersion = 1, maxLength = 14, text = \"Bat Swarm\""
+	myUseSkillScript < uid=86C9308259A5EF5100072F54E787243D > = DLC1_pwr_vampkidwarlock_power01
+	myNumberOfAttackEvents 3
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308259A5EF5100072F559F362571 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData kill < uid=86C930825A80D14E000FEDE0CB304AF6 >
+		{
+			myPriority 100
+			myMinimumKills 1
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308259A5EF5100072F568E739CB4 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData swarmers < uid=86C930825A80D14E000FEDE15C181C41 >
+		{
+			myPriority 20
+			myAIDesirableType A
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "swarmers - kill" < uid=86C930825A80D14E000FEDE2390F30C9 >
+		{
+			myPriority 100
+			myMinimumKills 1
+			myAIDesirableType A
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C9308259A5EF5100072F5731B4CF15 > = pwr_DLC1_VampKids_Warlock_LobbedRange_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

@@ -1,0 +1,44 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./enemypowers.demo.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_mysterion.juice"
+
+CombatPower pwr_civilwar_mysterion_power1 < uid=B9E930CA5731429D000017D3B7703C68 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/mysterion_MysteryPact.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"pwr_civilwar_mysterion_power1 Name\", enabled = true, guid = #51C546C65774D965000000FE7264EAC0, lineVersion = 0, maxLength = 16, text = \"Mystery Pact\""
+	myUseSkillScript < uid=B9E930CA5731429D000017D4C61210DA > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 4
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData AggroPriority < uid=B9E930CA575080C5000074B170A195C1 >
+		{
+			myPriority 70
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData default < uid=B9E930CA5731429D000017D5ADC88F56 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA5731429D000017D68F7CB82F > = demo_e3_mysterion_power1_demo_Tuning
+	myCameraPreset < uid=B9E930CA573F9F420000004EB4E6868F > = Mysterion_Power01
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

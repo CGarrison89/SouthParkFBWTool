@@ -1,0 +1,50 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_mm19_sheila_melee < uid=86C93082578FD6C600004762DA1EFE1F > : enemy_pwr_archetype_bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/sheila_power1.dds"
+	myUIName "contextComment = \"Sheila melee power name\", description = \"enemy_pwr_archetype_bruiser_melee Name\", enabled = true, guid = #9D0E61965997503F000EB54BEEBFA53C, lineVersion = 0, maxLength = 16, text = \"Psycho Slaps\""
+	myUseSkillScript < uid=86C930825873E81500006CBBD4D954D9 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 5
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308257980095000048370C6B4083 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308257A123C600004B39500118CF >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Kill < uid=86C930825979725B001375EEA5DAA612 >
+		{
+			myPriority 100
+			myMinimumKills 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C93082578FD6C600004763BC0E1B1D > = pwr_mm19_sheila_melee_Kevin_Tuning
+	myCameraPreset < uid=86C93082597972DA0013761E41374C82 > = Preset_Generic_Melee
+}
+

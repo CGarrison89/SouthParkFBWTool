@@ -1,0 +1,51 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./dlc3_enemypowers.juice
+include ./enemy_pwr_archetype_rusher_rush.mpower
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+
+CombatPower pwr_DLC3_Monsters_Rusher_rush < uid=86C930825A99A85800022E937AA3D657 > : enemy_pwr_archetype_rusher_rush
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/Monster_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/charge4.dds"
+	myUIName "contextComment = \"\", description = \"pwr_DLC3_Monsters_Rusher_rush_name\", enabled = true, guid = #86C930825A99AA3900022ECBA2716786, lineVersion = 1, maxLength = 17, text = \"Monster Crash\""
+	myUIDescription "contextComment = \"\", description = \"pwr_DLC3_Monsters_Rusher_rush_description\", enabled = true, guid = #86C930825A99BD2700022EF233AADE6F, lineVersion = 0, maxLength = 36, text = \"DLC3 Rusher Rush description\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "1 target" < uid=86C930825A99D4C70000A46B5DE71D9A >
+		{
+			myPriority 100
+			myMinimumAffectedTargets 1
+		}
+		PowerEvaluationData "2 targets" < uid=86C930825A99D4C70000A46CEEE5A902 >
+		{
+			myPriority 200
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "3 targets" < uid=86C930825A99D4C70000A46D996F0085 >
+		{
+			myPriority 300
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "4 targets" < uid=86C930825A99D4C70000A46E4E54DAB3 >
+		{
+			myPriority 400
+			myMinimumAffectedTargets 4
+		}
+		PowerEvaluationData Enraged < uid=86C930825A99D4C70000A46F2B3A152E >
+		{
+			myPriority 1000
+			myAggroPriority 1000
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+		}
+	}
+	myDialogueSkillScript < uid=326B24CD5ACD54BC0001CCBC906A2988 > = Camel_Simple_PlayDialogue_Script
+	myTuningData < uid=86C930825A99A85800022E94E4A7E0C8 > = pwr_DLC3_Monsters_Rusher_Rush_Tuning
+	myAnimationSetData
+	{
+		myIntroState power2intro
+		myLoopState power2loop
+		myOutroState power2outro
+	}
+}
+

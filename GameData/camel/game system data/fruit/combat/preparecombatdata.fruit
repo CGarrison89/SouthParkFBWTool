@@ -1,0 +1,8 @@
+
+// DataEnum - Designers can add to this as desired
+enum CombatWinCondtionEnum
+{
+	KillAllEnemies
+	GetToLocation
+	Other
+}

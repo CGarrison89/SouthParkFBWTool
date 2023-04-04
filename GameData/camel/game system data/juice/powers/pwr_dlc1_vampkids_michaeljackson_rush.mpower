@@ -1,0 +1,65 @@
+include ./enemy_pwr_archetype_rusher_rush.mpower
+include ./dlc1_enemypowers.juice
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+include "camel/game system data/juice/camera/casabonita/uber_camera_powers_presets_michaeljackson.juice"
+
+CombatPower pwr_DLC1_VampKids_MichaelJackson_rush < uid=86C9308259B06A6F000EE41EEB2ED83B > : enemy_pwr_archetype_rusher_rush
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/MichaelJackson_Power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/rush_3.dds"
+	myUIName "contextComment = \"\", description = \"pwr_DLC1_VampKids_MichaelJackson_rush_name\", enabled = true, guid = #86C9308259EE5F57000090959CAF5955, lineVersion = 2, maxLength = 13, text = \"Moonrush\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "1 target" < uid=86C9308259B0754100008BA8D98E52F2 >
+		{
+			myPriority 100
+			myMinimumAffectedTargets 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "2 targets" < uid=86C9308259B0754100008BA9A27C4D5C >
+		{
+			myPriority 200
+			myMinimumAffectedTargets 2
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "3 targets" < uid=86C9308259B0754100008BAAEDE0177F >
+		{
+			myPriority 300
+			myMinimumAffectedTargets 3
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData enraged < uid=86C9308259B0759900008BB43973BC0A >
+		{
+			myPriority 100
+			myAggroPriority 1100
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myDialogueSkillScript < uid=326B24CD5A5FD4B70003181D18903A7F > = Camel_Simple_PlayDialogue_Script
+	myTuningData < uid=86C9308259B06D24000EE46F6CD6D191 > = pwr_DLC1_VampKids_MichaelJackson_rush_Tuning
+	myCameraPreset < uid=8E1BC4435A681FE900022ACC3CF36054 > = MichaelJackson_Power01
+	myAnimationSetData
+	{
+		myIntroState "power1 intro"
+		myLoopState "power1 loop"
+		myOutroState "power1 outro"
+	}
+}
+

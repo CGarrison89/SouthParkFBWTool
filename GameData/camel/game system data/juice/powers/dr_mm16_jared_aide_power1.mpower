@@ -1,0 +1,71 @@
+include ./enemy_pwr_3dmg_rush.mpower
+include ./enemy_pwr_archetype_rusher_rush.mpower
+include ./mm16_jared_aide_power2.mpower
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+include ./dlc2_enemypowers.juice
+include camel/skillscript/dr_jared_aide_rush_damage_script.mskillscriptjuice
+
+CombatPower dr_mm16_jared_aide_power1 < uid=8585E53F5A0A42990002AAA3DD594116 > : enemy_pwr_archetype_rusher_rush
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/jaredaids_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/rush_3.dds"
+	myUIName "contextComment = \"\", description = \"mm16_jared_aide_power1 Name\", enabled = true, guid = #8585E53F5A0A42990002AAA23A656B03, lineVersion = 1, maxLength = 16, text = \"Step Aside\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=8585E53F5A0A42990002AAA48385AF02 >
+		{
+			myPriority 100
+			myMinimumAffectedTargets 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=8585E53F5A0A42990002AAA59A152109 >
+		{
+			myPriority 100
+			myAggroPriority 1100
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData default_VIP < uid=8585E53F5A0A42990002AAA68B397C3B >
+		{
+			myPriority 100
+			myMinimumAffectedTargets 1
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged_VIP < uid=8585E53F5A0A42990002AAA79C7FCDBB >
+		{
+			myPriority 100
+			myAggroPriority 1100
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	mySecondarySkillScript < uid=86C930825A15FA6500098B3809CF288D > = dr_Jared_Aide_Rush_Damage_Script
+	myDialogueSkillScript < uid=8585E53F5A0A42990002AAA90102EEAC > = Camel_Simple_PlayDialogue_Script
+	myTuningData < uid=8585E53F5A0A42990002AAAA419A9213 > = pwr_dr_mm16_jared_aide_power1_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

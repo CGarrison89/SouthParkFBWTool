@@ -1,0 +1,12 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/pwr_timefart_assemble.mskillscriptjuice
+include "camel/game system data/juice/items/timefart_assemble_keyitem.mitem"
+include "camel/game system data/juice/items/timefart_recall_keyitem.mitem"
+
+CombatTimeFartPower pwr_com_timefartassemble < uid=86C9308256A6E51C0000001268BE26C0 >
+{
+	myUseSkillScript < uid=86C9308256A6E614000000A99FEEEA41 > = pwr_timefart_assemble
+	myCooldown 4
+	myRequiredItem < uid=86D6407657F3E43C000078CCDD58D06C > = timefart_recall_keyitem
+}
+

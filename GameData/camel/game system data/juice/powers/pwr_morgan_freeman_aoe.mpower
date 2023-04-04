@@ -1,0 +1,53 @@
+include ./enemy_pwr_archetype_grenadier_aoe_lob_min.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_morgan_freeman_aoe < uid=86C9308257772A23000078B7F0597B22 > : enemy_pwr_archetype_grenadier_aoe_lob_min
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/MorganFreeman_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_damage.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_grenadier_aoe_lob_min Name\", enabled = true, guid = #B9E930CA57ABB82F0000F254F83960A4, lineVersion = 0, maxLength = 14, text = \"Fart Sensei\""
+	myUseSkillScript < uid=B9E930CA57ABB8560000FAE11D048074 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "1 target" < uid=86C9308258D06FA5000E55BB45CF93C3 >
+		{
+			myPriority 1
+			myMinimumAffectedTargets 1
+		}
+		PowerEvaluationData "2 targets" < uid=86C9308258D036DC00025F1D4C224C26 >
+		{
+			myPriority 600
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "3 targets" < uid=86C9308258D036DC00025F1E0F54CF40 >
+		{
+			myPriority 800
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "4 targets" < uid=86C9308258D036DC00025F1FFE6FCB50 >
+		{
+			myPriority 1000
+			myMinimumAffectedTargets 4
+		}
+		PowerEvaluationData Enraged < uid=86C9308258D94BD3000881938F3E0BC0 >
+		{
+			myPriority 2
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+		}
+	}
+	myTuningData < uid=86C9308257772A23000078B807CE3F03 > = pwr_morgan_freeman_aoe_Kevin_Tuning
+	myCameraPreset < uid=86C93082591B5B3000007151AFBA12F3 > = Preset_Generic_Ranged
+	myValidDirections
+	{
+		myLeft TRUE
+		myRight TRUE
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

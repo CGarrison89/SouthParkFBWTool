@@ -1,0 +1,51 @@
+include ./pwr_thecoon_power2.mpower
+include camel/skillscript/pwr_mm34_mitchconner_addrandomstatuseffect_script.mskillscriptjuice
+include ./enemypowers.kevin.juice
+
+CombatPower mm34_mitchconner_coon_power2 < uid=86C930825960614A000208C661BC0A24 > : pwr_theCoon_power2
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/MitchCoon_Power2.dds"
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=86C93082597D1D68000D4E7168DD536A >
+		{
+			myPriority 15
+		}
+		PowerEvaluationData Default_VIP < uid=86C93082597D1D68000D4E729A6A68CE >
+		{
+			myPriority 1015
+			myAIDesirableType VIP
+		}
+		PowerEvaluationData Enraged < uid=86C93082597D1D68000D4E7304AA5D75 >
+		{
+			myPriority 20
+			myAggroPriority 2000
+			myRequireAggroTarget TRUE
+			myRequiresCover FALSE
+		}
+		PowerEvaluationData "Multiple targets 2" < uid=86C93082597D1D68000D4E74ABD8478E >
+		{
+			myPriority 30
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "Multiple targets 2_VIP" < uid=86C93082597D1D68000D4E75291C179C >
+		{
+			myPriority 1030
+			myMinimumAffectedTargets 2
+			myAIDesirableType VIP
+		}
+		PowerEvaluationData "Multiple targets 3" < uid=86C93082597D1D68000D4E76E0F92669 >
+		{
+			myPriority 40
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "Multiple targets 3_VIP" < uid=86C93082597D1D68000D4E77B6EE8EF6 >
+		{
+			myPriority 1040
+			myMinimumAffectedTargets 3
+			myAIDesirableType VIP
+		}
+	}
+	myTuningData < uid=86C93082597D008F000A2C576D950CEE > = pwr_mm34_mitchconner_power2_Kevin_Tuning
+}
+

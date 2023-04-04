@@ -1,0 +1,39 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./dlc1_playerpowers.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_settargetvariable_and_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/casabonita/uber_camera_powers_presets_netherborn.juice"
+
+CombatPower pwr_netherbornUlt_power1 < uid=8E1BC4435A0A994800008E0EB048A89E >
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/Netherborn_Power1_super.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/wedge.dds"
+	myUIName "contextComment = \"power name. control name should be pwr_netherbornULT_power1 Name\", description = \"pwr_netherborn_power1 Name\", enabled = true, guid = #8E1BC4435A0A994800008E0BF6F9E39E, lineVersion = 2, maxLength = 17, text = \"Deathly Slash\""
+	myUIDescription "contextComment = \"long description pause screen. Control name should be pwr_netherbornULT_power1 Description\", description = \"pwr_netherborn_power1 Description\", enabled = true, guid = #8E1BC4435A0A994800008E0C9101F6CE, lineVersion = 3, maxLength = 118, text = \"The Grim  version of Soul Slash deals increased damage and knockback and also applies Slow.\""
+	myUIShortDescription "contextComment = \"short desc combat ui. Control name should be pwr_netherbornUlt_power1 short Description\", description = \"Damages and knocks back enemies\", enabled = true, guid = #8E1BC4435A0A994800008E0D0B514EB4, lineVersion = 1, maxLength = 43, text = \"Damage, knock back, and Slow foes\""
+	myUseSkillScript < uid=8E1BC4435A0A994800008E0F8994481A > = Camel_Simple_SetTargetVariable_And_PlayAnim_Script
+	myAnimationState "netherborn power1"
+	myTuningData < uid=8E1BC4435A0A994800008E1017BD6860 > = pwr_netherbornUlt_melee_aoe_Tuning
+	myCameraPreset < uid=8E1BC4435A74121C00009B92497C87A3 > = Netherborn_Power01
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusEndTime 0.833333
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

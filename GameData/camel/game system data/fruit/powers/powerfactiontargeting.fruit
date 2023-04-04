@@ -1,0 +1,7 @@
+enum PowerFactionTargeting
+{
+	EnemyOnly
+	AllyOnly
+	AllyOnlyExcludeSelf
+	EnemyAndAlly
+}

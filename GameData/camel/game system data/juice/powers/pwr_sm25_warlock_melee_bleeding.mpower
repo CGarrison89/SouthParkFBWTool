@@ -1,0 +1,12 @@
+include ./pwr_sm02_raisins_warlock_melee.mpower
+include ./enemypowers.adrian.juice
+
+CombatPower pwr_sm25_warlock_melee_bleeding < uid=8585E53F57AA5291000066A938AD223E > : pwr_sm02_raisins_warlock_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/CrabSwarmer_power1.dds"
+	myUIName "contextComment = \"crab person melee\", description = \"\", enabled = true, guid = #9D0E619659839DB7000C8C4BB3981675, lineVersion = 1, maxLength = 21, text = \"Vicious Snipping\""
+	myNumberOfAttackEvents 7
+	myShouldRepositionBeforeExecution TRUE
+	myTuningData < uid=8585E53F57AA5291000066AA832B1E9F > = pwr_sm25_warlock_melee_bleeding_Adrian_Tuning
+}
+

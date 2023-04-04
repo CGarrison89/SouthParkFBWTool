@@ -1,0 +1,21 @@
+list DistributionList
+{
+	float
+}
+class PrimaryStatTuningData < uid=auto >
+{
+	float myNonZeroMinimumStat 1 < tooltip = "minimum value of stat if it is non-zero" >
+	float myZeroStatDefaultValue 0 < tooltip = "default value of stat if it is zero" >
+	bool myShouldBoundWeightedValue true < tooltip = "use above values to bound the weighted value of stat" >
+	DistributionList myDistributionList
+}
+
+class PrimaryStatTuningDataList
+{
+	PrimaryStatTuningData myBrawnTuningData
+	PrimaryStatTuningData myDexterityTuningData
+	PrimaryStatTuningData mySpiritTuningData
+	PrimaryStatTuningData mySpeedTuningData
+	PrimaryStatTuningData myFortitudeTuningData
+}
+

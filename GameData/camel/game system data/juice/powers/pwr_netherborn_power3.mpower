@@ -1,0 +1,42 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./dlc1_playerpowers.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_settargetvariable_and_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/statuseffect/regenerationscaled.juice"
+include "camel/game system data/juice/camera/casabonita/uber_camera_powers_presets_netherborn.juice"
+
+CombatPower pwr_netherborn_power3 < uid=86C93082599E1A8A00008B9F56C52413 >
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/Netherborn_Power3.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/select_no_min_range3.dds"
+	myUIName "contextComment = \"power name\", description = \"pwr_netherborn_power3 Name\", enabled = true, guid = #86C9308259EE657300008CC6AEAD6080, lineVersion = 1, maxLength = 14, text = \"Dire Shroud\""
+	myUIDescription "contextComment = \"power description in pause menu\", description = \"pwr_netherborn_power3 Description\", enabled = true, guid = #86C9308259EE657300008CC70556F7B4, lineVersion = 4, maxLength = 144, text = \"An unholy power grants you or an ally Regen and Protection, or damages a foe and curses them with Defense Down.\""
+	myUIShortDescription "contextComment = \"power desc in combat ui\", description = \"pwr_netherborn_power3 short Description\", enabled = true, guid = #9D0E61965A0B3B79000094A369FC14BC, lineVersion = 0, maxLength = 48, text = \"Buff self or a friend, or haunt a foe\""
+	myUseSkillScript < uid=86C93082599E1B3A000091F133CEF059 > = Camel_Simple_SetTargetVariable_And_PlayAnim_Script
+	myAnimationState "netherborn power3"
+	myCanTargetProps TRUE
+	myIsADualEffectPower TRUE
+	myTuningData < uid=86C93082599E1DBB0000923136022BE4 > = pwr_netherborn_lob_ST_buff_Tuning
+	myCameraPreset < uid=B9E930CA5A4D9F1900288CB681DCD438 > = Netherborn_Power03
+	myPowerGroup Normal
+	myChainingType None
+	mySelfStatusEffects
+	{
+		StatusEffect Regen < uid=86D640765A32BFB9000092476FA66307 > = RegenerationScaled
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusEndTime 1.25
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

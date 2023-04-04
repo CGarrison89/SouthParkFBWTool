@@ -1,0 +1,73 @@
+include "camel/game system data/fruit/ai/primaryStats.fruit"
+
+class PerLevelStat
+{
+	int myHP 0
+	PrimaryStats myPrimaryStats
+}
+
+list StatList
+{
+	PerLevelStat
+}
+
+class CombatStatsLookup < uid=auto >
+{
+	StatList myStats
+}
+
+enum StatType
+{
+	HP
+	MP
+	AP
+	Resistance
+	DirectDamage
+	ShockDamage
+	BloodDamage
+	GrossDamage
+	FreezeDamage
+	FireDamage
+	TurnSpeed
+	Countering
+	PostActionMP
+	ChargePowerBonusMulitpiler
+	
+	Brawn
+	Dexterity
+	Spirit
+	Speed
+	Fortitude
+	Finesse
+	Reflex
+	Range
+	Precision
+	Guard
+	Calm
+	Zeal
+	Blitz
+	Regeneration
+	Durability
+	Power
+	PercentBrawn
+	PercentDexterity
+	PercentHealth
+	PercentSpunk
+}
+
+class StatValue
+{
+	StatType myType
+	int myValue
+}
+
+class StatTypeInfo
+{
+	StatType myType
+	varmap myUIName	< bhv = "localization" >
+}
+
+list StatValues
+{
+	StatValue
+}

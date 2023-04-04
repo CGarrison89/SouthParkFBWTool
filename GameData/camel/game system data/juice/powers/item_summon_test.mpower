@@ -1,0 +1,13 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_revive_script.mskillscriptjuice
+include camel/skillscript/camel_simple_healing_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_bomb.mprojectile"
+include camel/skillscript/pwr_summon_randy.mskillscriptjuice
+
+CombatPower item_summon_test < uid=B9E930CA56F580F40000000F24146280 >
+{
+	myUIName "contextComment = \"\", description = \"\", enabled = false, guid = #B9E930CA56F580F40000000E717134E7, lineVersion = 0, maxLength = 1, text = \"|empty|\""
+	myUseSkillScript < uid=B9E930CA56F580F400000010446CBF72 > = pwr_summon_randy
+	myTuningData < uid=B9E930CA56F580F400000012E0E2E01F > = item_summon_randy_placeholder_Tuning
+}
+

@@ -1,0 +1,32 @@
+class Role
+{
+    string myName < tooltip="Role name as defined in the source data that will fetch appropriate loc-string" >
+    varmap myLocString < bhv="localization" tooltip="Localization string shown in the UI" >
+    bool myIsHeader FALSE < tooltip="Whether this role is displayed as a header. Used for special cases or groups." >
+}
+
+list Roles
+{
+    Role
+}
+
+class Organization
+{
+    string myName
+    file myLogo
+    Roles myRoles
+    bool myIsSeenOnPC TRUE
+    bool myIsSeenOnPSN TRUE
+    bool myIsSeenOnXBOX TRUE
+}
+
+list Organizations
+{
+    Organization
+}
+
+class Credits
+{
+    file mySource
+    Organizations myOrganizations
+}

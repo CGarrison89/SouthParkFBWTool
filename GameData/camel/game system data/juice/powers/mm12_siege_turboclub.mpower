@@ -1,0 +1,43 @@
+include ./pwr_com_turboclub.mpower
+include ./enemypowers.adrian.juice
+
+CombatPower mm12_siege_turboClub < uid=86C93082581BB3000002A8F786DD7038 > : pwr_com_turboClub
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/chaosmextank_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUseSkillScript < uid=8585E53F581D4B2F0026BEA2F597FAE5 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C93082581BB3000002A8F8116E017C >
+		{
+			myPriority 25
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C93082581BB3000002A8F9C7BD40B9 >
+		{
+			myPriority 1020
+			myRequireAggroTarget TRUE
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData 2targets < uid=3267E0D05999224B0005BEBB85862BE7 >
+		{
+			myPriority 40
+			myMinimumAffectedTargets 2
+			myAIDesirableType None
+		}
+	}
+	myTuningData < uid=8585E53F581D434C00221C1904806408 > = pwr_mm12_siege_mexican_tank_melee_amcclay_Tuning
+}
+

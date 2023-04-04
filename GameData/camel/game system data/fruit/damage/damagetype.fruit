@@ -1,0 +1,10 @@
+
+enum DamageTypeEnum
+{
+	DirectDamage
+	Fire
+	Shock
+	Gross
+	Frost
+	Blood
+}

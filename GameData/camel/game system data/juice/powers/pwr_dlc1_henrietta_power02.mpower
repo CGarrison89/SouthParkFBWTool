@@ -1,0 +1,48 @@
+include "camel/game system data/juice/camera/casabonita/uber_camera_powers_presets_henrietta.juice"
+include camel/skillscript/pwr_henrietta_power02_script.mskillscriptjuice
+include ./dlc1_buddypowers.juice
+
+CombatPower pwr_dlc1_henrietta_power02 < uid=B9E930CA599E299D000091C62A742268 >
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/Henrietta_Power2.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/select_no_min_range3.dds"
+	myUIName "contextComment = \"\", description = \"pwr_dlc1_henrietta_power02 Name\", enabled = true, guid = #B9E930CA59EE5BBE0033BE6440ED60FA, lineVersion = 1, maxLength = 16, text = \"Satanic Seal\""
+	myUIDescription "contextComment = \"power desc in pause ui\", description = \"pwr_dlc1_henrietta_power02 Description\", enabled = true, guid = #B9E930CA59EE5BBE0033BE6504C94D94, lineVersion = 2, maxLength = 103, text = \"Henrietta shares the gift of goth, granting Attack Up, Protection, and Cleanse.\""
+	myUIShortDescription "contextComment = \"power desc in combat ui\", description = \"pwr_dlc1_henrietta_power02 Short Description\", enabled = true, guid = #B9E930CA59EE5BBE0033BE66E4A10E4E, lineVersion = 2, maxLength = 51, text = \"Give Attack Up, Protection, and Cleanse\""
+	myUseSkillScript < uid=B9E930CA599F1BA900018DC8178CE69F > = pwr_henrietta_power02_script
+	myCanTargetProps TRUE
+	myIsACleansePower TRUE
+	myUseRectangularLobbedArea FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C930825A53A00D00009325135D422F >
+		{
+			myPriority 100
+			myTargetShieldingLessThanPercentage 101.0
+		}
+		PowerEvaluationData "not shielded yet" < uid=86C930825A53A04900009327D5A6256C >
+		{
+			myPriority 200
+			myTargetShieldingLessThanPercentage 0.0
+		}
+	}
+	myTuningData < uid=B9E930CA599E2A07000091E618F1A4E2 > = dlc1_pwr_henrietta_power02_Tuning
+	myCameraPreset < uid=B9E930CA59EE329E0014EB8B1155613E > = Henrietta_Power02
+	myPowerGroup Normal
+	mySelfStatusEffects
+	{
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusEndTime 0.5
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

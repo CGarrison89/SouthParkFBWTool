@@ -1,0 +1,23 @@
+include ./pwr_coppatrol3_pepperspray_s.mpower
+
+CombatPower pwr_copriot3_pepperspray_l < uid=DB7C6D4256E3883A000003C92342184C > : pwr_coppatrol3_pepperspray_s
+{
+	myUIName "contextComment = \"\", description = \"pwr_copriot3_pepperspray_l Name\", enabled = true, guid = #51C546C65774DC02000000DA88598A67, lineVersion = 0, maxLength = 20, text = \"Pepper Spray XL\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=DB7C6D4256F4A0AD0000397E5997ED91 >
+		{
+			myPriority 20
+			myAggroPriority 20
+		}
+		PowerEvaluationData AoE < uid=DB7C6D4256F4A0AD0000397FD49CCA34 >
+		{
+			myPriority 50
+			myAggroPriority 55
+			myMinimumKills 1
+			myMinimumAffectedTargets 2
+		}
+	}
+	myTuningData < uid=DB7C6D4256E3883A000003CA24CD5D7A > = pwr_copriot3_pepperspray_l_MAcero_Tuning
+}
+

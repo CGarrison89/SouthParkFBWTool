@@ -1,0 +1,32 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_pet_damage_script_with_suicide.mskillscriptjuice
+include camel/skillscript/camel_spawn_ghost_mysterion.mskillscriptjuice
+include camel/skillscript/despawn_self.mskillscriptjuice
+
+CombatPower pwr_tuppermech_on_death < uid=86D640765772BEFE00005439A1FBE147 >
+{
+	myUIName "contextComment = \"\", description = \"\", enabled = false, guid = #86D640765772BEFE00005438D08CF9CF, lineVersion = 0, maxLength = 0, text = \"\""
+	myUseSkillScript < uid=86D640765772BEFE0000543A7F2ED003 > = Despawn_self
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D640765772BEFE0000543BD41EAE3C >
+		{
+			myPriority 0
+			myTargetHealthLessThanPercentage 1.0
+			mySelfHealthLessThanPercentage 1.0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86D640765772BEFE0000543C63EB77F1 > = pwr_tupperware_power4_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

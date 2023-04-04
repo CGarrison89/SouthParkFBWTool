@@ -1,0 +1,25 @@
+include ./enemypowers.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_com_chaosBarrageKid < uid=B642A89A55C0E9D2000003E26D6FE06B >
+{
+	myIconImage "camel/baked/assets/ui/power selection/power_enemy_fistsofchaos.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_chaosbarragekid Name\", enabled = true, guid = #51C546C65774DBD30000008C29EF5839, lineVersion = 0, maxLength = 1, text = \"Fist of Chaos\""
+	myUseSkillScript < uid=B642A89A55C0E9D2000003E31660F957 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData aggrotarget < uid=B642A89A55C0E9D2000003E44AD13C51 >
+		{
+			myPriority 20
+			myRequireAggroTarget TRUE
+		}
+		PowerEvaluationData default < uid=B642A89A55C0E9D2000003E5BA4103F7 >
+		{
+			myPriority 10
+		}
+	}
+	myTuningData < uid=B642A89A55C0E9D2000003E6A83FC06C > = pwr_com_chaosBarrageKid_Tuning
+}
+

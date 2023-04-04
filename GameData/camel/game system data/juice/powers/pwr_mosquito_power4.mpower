@@ -1,0 +1,32 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/pwr_mosquito_power4_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_mosquito.juice"
+
+CombatPower pwr_mosquito_power4 < uid=B9E930CA56D77BE00000003BE8AA2FA6 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/mosquito_power4.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_5x5.dds"
+	myUIName "contextComment = \"Mosquito Power 4 Name\", description = \"pwr_mosquito_power4 Name\", enabled = true, guid = #51C546C65774DC36000001505284EDAE, lineVersion = 2, maxLength = 14, text = \"The Bug Jar\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_mosquito_power4 Description\", enabled = true, guid = #51C546C65774DC36000001516527F8DB, lineVersion = 0, maxLength = 156, text = \"When Bugs Attack: Mosquito unleashes a squadron of ravenous insects, dealing damage and Gross Out to all nearby enemies.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_mosquito_power4 Short Description\", enabled = true, guid = #9D0E6196579B94440000016522FE1369, lineVersion = 0, maxLength = 47, text = \"Revolting bug horde Grosses Out foes\""
+	myUseSkillScript < uid=B9E930CA56D77BE00000003CB08F3978 > = pwr_mosquito_power4_script
+	myAnimationState ""
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myTuningData < uid=B9E930CA56D77BE00000003DC05C283C > = pwr_mosquito_power4_Tuning
+	myCameraPreset < uid=B9E930CA5960503C0075F292159434F1 > = Mosquito_Power04
+	myPowerGroup Ultimate
+	myActionPlusData
+	{
+		myUseActionPlus FALSE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 2.0
+				myActionPlusPresetEnum Slow
+			}
+		}
+	}
+}
+

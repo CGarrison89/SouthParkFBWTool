@@ -1,0 +1,112 @@
+include "camel/game system data/fruit/powers/combatpowers.fruit"
+
+CombatPowerTuningData pwr_com_melee_template_BBartram_Tuning < uid=B642A89A56BBE99E00000E19B57CC4CF >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 0
+	myCooldown 0
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=B642A89A56BBE99E00000E1ADF31A49C >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 3
+		myWidth 3
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 10
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=B642A89A56BBE99E00000E1B0E4C5979 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+
+CombatPowerTuningData pwr_com_backstoryDog_bite_BBartram_Tuning < uid=B642A89A571A574300003E97D00EE97B >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 0
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=B642A89A571A574300003E98E9864F79 >
+	{
+		myPiercingType None
+		myDamageAreaType RectangleCone
+		myLength 3
+		myWidth 3
+		myStartWidth 3
+		myStartLength 1
+	}
+	myDamageAmount 150
+	myShielding 0
+	mySelfTeamDamage -1
+	mySelfTeamShielding -1
+	mySelfKnockbackAmount -1
+	myLocationEffect < uid=B642A89A571A574300003E99CE1C4978 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+

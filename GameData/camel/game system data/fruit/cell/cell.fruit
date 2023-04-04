@@ -1,0 +1,64 @@
+include "camel/game system data/fruit/cell/cell_condition.fruit"
+include "camel/game system data/fruit/gameprogression/gameprogression.fruit"
+include "camel/game system data/fruit/dlc/dlc_types.fruit"
+
+
+list CellList
+{
+	varmap myCell < bhv = "cell" >	
+}
+
+class CellConditions 
+{
+	CellList myDayCells
+	CellList myNightCells
+	Conditions myConditions
+}
+
+list CellConditionsList
+{
+	CellConditions
+}
+
+list CellLogicLinks
+{
+	CellLogicLink
+}
+
+class CellLogic < uid=auto >
+{
+	string myName
+	varmap mySuperCell < bhv = "cell" >
+	bool myLoadAllByDefault false
+	bool myEnterByDefault false
+	CellConditionsList myCellConditions
+	CellLogicLinks myLinks
+	CellConditionsList myTownEvents
+	bool myIsFirstInstallPackage false
+	PackageType myPackageType main
+	Conditions myIsDayNightTransition
+	bool myIsLocation
+}
+
+class CellLogicLink
+{
+	CellLogic* myCellLogic
+	Conditions myConditions
+	bool myDoNotUnload false < tooltip = "Only for use with sequences like Towelie" >
+}
+
+list CellLogicList
+{
+	CellLogic*
+}
+
+list GlobalCellLogicList
+{
+	CellLogicList
+}
+
+class ActiveCellCondition : Condition
+{
+	CellLogic* myCellLogic
+}
+

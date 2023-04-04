@@ -1,0 +1,32 @@
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_alien_raygun.mprojectile"
+include ./dlc3_enemypowers.juice
+include camel/skillscript/dlc3_alien_reset_power2_cooldown_after_power1.mskillscriptjuice
+include camel/skillscript/dlc3_alien_summon.mskillscriptjuice
+include camel/skillscript/dlc3_alien_summon_targeting.mskillscriptjuice
+
+CombatPower pwr_dlc3_monsters_alien_summon < uid=3267E0D05AC286F70018F58A1F7D0D20 > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/Alien_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide.dds"
+	myUIName "contextComment = \"[PLACEHOLDER - DO NOT LOCALIZE]\", description = \"[PLACEHOLDER - DO NOT LOCALIZE]\", enabled = true, guid = #3267E0D05AC286F70018F589C2AFB87C, lineVersion = 0, maxLength = 18, text = \"[ALIEN SUMMON]\""
+	myUseSkillScript < uid=3267E0D05AC286F70018F58BFCB539A2 > = DLC3_Alien_Summon
+	myAnimationState ""
+	myLockedByDefault TRUE
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D05AC2A1870041C73722D025DC >
+		{
+		}
+	}
+	myTuningData < uid=3267E0D05AC286F70018F58F52CC0CFF > = pwr_DLC3_Monsters_Alien_Summon_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

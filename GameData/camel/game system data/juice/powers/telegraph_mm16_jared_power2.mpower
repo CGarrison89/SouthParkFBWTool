@@ -1,0 +1,84 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include ./enemypowers.kevin.juice
+include camel/skillscript/pwr_jared_power03_pull.mskillscriptjuice
+include camel/skillscript/pwr_jared_power03_pull_telegraph.mskillscriptjuice
+include camel/skillscript/camel_simple_swappower_slot1.mskillscriptjuice
+include camel/skillscript/mm28_buttersdad_grounded_swappower_aftertelegraph.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_jared.juice"
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/mm16_jared_swappower_aftertelegraph.mskillscriptjuice
+
+CombatPower telegraph_mm16_jared_power2 < uid=B642A89A59762B6900048434DE4D9380 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/jared_candyenticement.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/ST_range_1_5_aligned.dds"
+	myUIName "contextComment = \"\", description = \"mm16_jared_power2 Name\", enabled = true, guid = #B642A89A59762B69000484336DDC5574, lineVersion = 0, maxLength = 21, text = \"Candy Enticement\""
+	myUseSkillScript < uid=B642A89A59762B6900048435E72E0330 > = pwr_jared_power03_pull_telegraph
+	myAnimationState ""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Range4 < uid=B642A89A59762B6900048436F86C0CDE >
+		{
+			myPriority 20
+			myPreferredRange 4
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Range3 < uid=B642A89A597698790020F563520C9693 >
+		{
+			myPriority 19
+			myPreferredRange 3
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Range2 < uid=B642A89A597698790020F564D3C9ED0F >
+		{
+			myPriority 18
+			myPreferredRange 2
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Range1 < uid=B642A89A597698790020F56576145F74 >
+		{
+			myPriority 17
+			myPreferredRange 1
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	mySecondarySkillScript < uid=B642A89A59762B6900048438C5F7DDB3 > = NULLREFERENCE
+	myOnKillSkillScript < uid=B642A89A59762B6900048439525771BE > = NULLREFERENCE
+	myOnCombatActionCompleteSkillScript < uid=B642A89A59762DE40004846C7FB1D552 > = mm16_Jared_SwapPower_AfterTelegraph
+	myTuningData < uid=B642A89A59762B690004843ACAC58DD6 > = enemy_pwr_mm16_jared_power2_amcclay_Tuning
+	myCameraPreset < uid=86C930825A629B1E003A0A84CF4CB608 > = Jared_Power02
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myTelegraphData
+	{
+		myTelegraphedPowerName mm16_jared_power2
+		myTelegraphingAnimationName locomotion
+	}
+}
+

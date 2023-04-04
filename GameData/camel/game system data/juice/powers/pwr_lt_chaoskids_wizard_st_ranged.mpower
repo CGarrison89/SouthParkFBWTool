@@ -1,0 +1,40 @@
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/chaos_disc.mprojectile"
+
+CombatPower pwr_LT_chaoskids_wizard_st_ranged < uid=86C9308257684BBA000000FED52BF760 > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/chaoskid_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_range.dds"
+	myUIName "contextComment = \"wizard power name\", description = \"enemy_pwr_archetype_wizard_st_ranged Name\", enabled = true, guid = #9D0E619659977F9C000F07F9C5B5576F, lineVersion = 0, maxLength = 18, text = \"Disks of Chaos\""
+	myUseSkillScript < uid=8585E53F582BC11800091FE0EC110D46 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 2
+	myProjectile < uid=8585E53F582BC11800091FE113887569 > = chaos_disc
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C930825775C8E40000018716D16F17 >
+		{
+			myPriority 25
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C930825775C8E400000188168F492B >
+		{
+			myPriority 25
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C9308257684BBA000000FFE446F7F6 > = pwr_LT_chaoskids_wizard_st_ranged_Kevin_Tuning
+}
+

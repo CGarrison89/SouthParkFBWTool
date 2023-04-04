@@ -1,0 +1,15 @@
+include ./pwr_com_kitchenshield.mpower
+
+CombatPower pwr_shub3_immune < uid=DB7C6D4256EA25F00000027AB5DC5402 > : pwr_com_kitchenshield
+{
+	myUIName "contextComment = \"\", description = \"pwr_shub3_immune Name\", enabled = true, guid = #51C546C65774DC480000018065B112F2, lineVersion = 0, maxLength = 14, text = \"Dark Caress\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData immune < uid=DB7C6D4256FB274300001FC355549E6F >
+		{
+			myPriority 10
+		}
+	}
+	myTuningData < uid=DB7C6D4256EA25F00000027B71A8DF04 > = pwr_shub3_immune_MAcero_Tuning
+}
+

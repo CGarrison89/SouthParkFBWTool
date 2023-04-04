@@ -1,0 +1,72 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./dlc1_playerpowers.juice
+include camel/skillscript/pwr_netherborn_chain_attack_script.mskillscriptjuice
+include "camel/game system data/juice/camera/casabonita/uber_camera_powers_presets_netherborn.juice"
+
+CombatPower pwr_netherborn_power2 < uid=86C93082599E1A7D00008B9ED25B47F0 >
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/Netherborn_Power2.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_Range_ST_LOS.DDS"
+	myUIName "contextComment = \"pwr name\", description = \"pwr_netherborn_power2 Name\", enabled = true, guid = #86C9308259EE657000008CBF8263735E, lineVersion = 1, maxLength = 17, text = \"Ghastly Grasp\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_netherborn_power2 Description\", enabled = true, guid = #86C9308259EE657000008CC033E6C25C, lineVersion = 1, maxLength = 125, text = \"Boney hands claw at the Netherborn's foe, then attack adjacent enemies, and so on into eternity.\"}"
+	myUIShortDescription "contextComment = \"short desc combat ui\", description = \"pwr_netherborn_power2 short Description\", enabled = true, guid = #9D0E61965A0A4465000094A57B6F7085, lineVersion = 0, maxLength = 52, text = \"Ranged attack that chains to nearby foes\""
+	myUseSkillScript < uid=86C93082599E1B39000091F002339CF9 > = pwr_netherborn_chain_attack_script
+	myCanTargetProps FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Kill < uid=86C930825A1331A800020F0522E47B0C >
+		{
+			myPriority 13450
+			myMinimumKills 1
+		}
+		PowerEvaluationData "Not already Defense Down" < uid=86C930825A1331A800020F06C68AF26F >
+		{
+			myPriority 5560
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not already Defense Down"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Marked
+				}
+			}
+		}
+		PowerEvaluationData "Already Defense Down" < uid=86C930825A1331A800020F073714D553 >
+		{
+			myPriority 5530
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Already defense down"
+				{
+					myPreCondition MustHave
+					mySpecialEffect Marked
+				}
+			}
+		}
+	}
+	myTuningData < uid=86C93082599E1DB900009230ADC4D44B > = pwr_netherborn_lob_aoe_Tuning
+	myCameraPreset < uid=B9E930CA5A4D9F1900288CB53610BC66 > = Netherborn_Power02
+	myPowerGroup Normal
+	myChainingType Any
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusDistributionEnum AlwaysLastResult
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusEndTime 0.5
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

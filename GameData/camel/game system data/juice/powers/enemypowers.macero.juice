@@ -1,0 +1,2997 @@
+include "camel/game system data/fruit/powers/combatpowers.fruit"
+include "camel/game system data/juice/statuseffect/bleeding.juice"
+include "camel/game system data/juice/statuseffect/burning.juice"
+include "camel/game system data/juice/statuseffect/charmed.juice"
+include "camel/game system data/juice/statuseffect/chilled.juice"
+include "camel/game system data/juice/statuseffect/encumbered.juice"
+include "camel/game system data/juice/statuseffect/enraged.juice"
+include "camel/game system data/juice/statuseffect/focused.juice"
+include "camel/game system data/juice/statuseffect/grossedout.juice"
+include "camel/game system data/juice/statuseffect/marked.juice"
+include "camel/game system data/juice/statuseffect/shocked.juice"
+
+CombatPowerTuningData pwr_com_kitchenattack_MAcero_Tuning < uid=DB7C6D4256BA351E00000122E242C80C >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 2
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256BA351E000001232D8575EA >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 200
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=DB7C6D4256BA351E0000012463674DFE > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_com_kitchenthrow_MAcero_Tuning < uid=DB7C6D4256BA351E00000125776EEFAE >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 5
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256BA351E0000012683984BE7 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 100
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004C86538EA841 > = Bleeding
+	}
+	myLocationEffect < uid=DB7C6D4256BA351E0000012785B4545B > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_com_kitchenheal_MAcero_Tuning < uid=DB7C6D4256BA351E00000128DCE5F1AE >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 3
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting AllyOnlyExcludeSelf
+	myDamageArea < uid=DB7C6D4256BA351E00000129DCF66603 >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount -300
+	myShielding 0
+	mySelfTeamDamage -300
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=DB7C6D4256BA351E0000012A9D70C909 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_com_kitchenfocus_MAcero_Tuning < uid=DB7C6D4256BA351E0000012BBA414070 >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 2
+	myMinRange 1
+	myCooldown 3
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Self
+	myFactionTargeting AllyOnly
+	myDamageArea < uid=DB7C6D4256BA351E0000012C49DABE17 >
+	{
+		myPiercingType None
+		myDamageAreaType CenteredCircle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004C871EEABE34 > = Focused
+	}
+	myLocationEffect < uid=DB7C6D4256BA351E0000012D26730F51 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_com_bouncerpunch_MAcero_Tuning < uid=DB7C6D4256BA351E0000012E3D50B217 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256BA351E0000012F8DA2370D >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 3
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 300
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+	}
+	myLocationEffect < uid=DB7C6D4256BA351E0000013011140AA8 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_com_bouncerpunt_MAcero_Tuning < uid=DB7C6D4256BA351E00000131AFA3865C >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 3
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256BA351E0000013217DB59B5 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 300
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+	}
+	myLocationEffect < uid=DB7C6D4256BA351E000001338B5D1E1C > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_com_bouncerthreaten_MAcero_Tuning < uid=DB7C6D4256BA351E000001343AAD0495 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 2
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 2
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256BA351E00000135898FF4FA >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 3
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 200
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D425740DD07000035886CD6BB12 > = Marked
+	}
+	myLocationEffect < uid=DB7C6D4256BA351E000001364454028F > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_com_doublebackhand_MAcero_Tuning < uid=DB7C6D4256BA351E00000137279A59E7 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 2
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256BA351E000001387541782D >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType CenteredRectangle
+		myLength 5
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 200
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=DB7C6D4256BA351E00000139839F7A5B > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_com_kitchenshield_MAcero_Tuning < uid=DB7C6D4256BA39F6000000AF1DEED2B0 >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 4
+	myMinRange 1
+	myCooldown 3
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting AllyOnlyExcludeSelf
+	myDamageArea < uid=DB7C6D4256BA39F6000000B0F5F5F74F >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding 100
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=DB7C6D4256BA39F6000000B1BD545435 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_filmore_selfenrage_MAcero_Tuning < uid=DB7C6D4256E377580000017BD2CD70D8 >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 0
+	myMinRange 1
+	myCooldown 3
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Self
+	myFactionTargeting AllyOnly
+	myDamageArea < uid=DB7C6D4256E377580000017C32DD5690 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004C8B4A045326 > = Enraged
+	}
+	myLocationEffect < uid=DB7C6D4256E377580000017D6B4D2AB0 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_fildad1_headbuttt_MAcero_Tuning < uid=DB7C6D4256E377580000017EA95A76E2 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 1
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E377580000017F10A898A1 >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 100
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=DB7C6D4256E3775800000180C81925F2 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_fildad2_headram_MAcero_Tuning < uid=DB7C6D4256E3775800000181CA038EEB >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 3
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType Charge
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E3775800000182B0941C2F >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 5
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 150
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004C8C44F727E8 > = Marked
+	}
+	myLocationEffect < uid=DB7C6D4256E3775800000183E4ADF70C > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_filmom1_bottlebash_MAcero_Tuning < uid=DB7C6D4256E3775800000184E59A68DE >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 1
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E37758000001853338D650 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 100
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004C8D926EDEF8 > = Marked
+	}
+	myLocationEffect < uid=DB7C6D4256E3775800000186235DC17C > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_filmom2_drunkencourage_MAcero_Tuning < uid=DB7C6D4256E3775800000187A8C3478C >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 4
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting AllyOnly
+	myDamageArea < uid=DB7C6D4256E37758000001889E2916D2 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding 50
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=DB7C6D4256E37758000001896B56D911 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_cat1_swipe_MAcero_Tuning < uid=DB7C6D4256E377580000018AA6CDA326 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E377580000018B14806F54 >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 90
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004C8E31284FF5 > = Bleeding
+	}
+	myLocationEffect < uid=DB7C6D4256E377580000018CC2C97490 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_cat2_pounce_MAcero_Tuning < uid=DB7C6D4256E377580000018D1F8AA389 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 2
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType Charge
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E377580000018ED495E7CD >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 3
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 100
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004C8F59DDB795 > = Encumbered
+	}
+	myLocationEffect < uid=DB7C6D4256E377580000018FC378C8C4 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_cat3_hackhairball_MAcero_Tuning < uid=DB7C6D4256E37758000001904A9C49CF >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 3
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E377580000019100403DFE >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 3
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 75
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004C90A4E81321 > = GrossedOut
+	}
+	myLocationEffect < uid=DB7C6D4256E37758000001927B9019B4 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_swat1_baton_MAcero_Tuning < uid=DB7C6D4256E37758000001937EABC0EA >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 2
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E3775800000194D6D12CC1 >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 3
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 100
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=DB7C6D4256E3775800000195D77F5428 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_swat2_shieldram_MAcero_Tuning < uid=DB7C6D4256E37758000001962CD9AACA >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 3
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType Charge
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E37758000001970C55932B >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 3
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 150
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=DB7C6D4256E377580000019853BD0144 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_cop_rubbershot_MAcero_Tuning < uid=DB7C6D4256E37758000001997E4EC10F >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 5
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 2
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E377580000019A9F20BBF6 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 3
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 75
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D42570FF9A500008FEB134088A2 > = Marked
+	}
+	myLocationEffect < uid=DB7C6D4256E377580000019B3F4CAFF2 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_cop_cokeline_MAcero_Tuning < uid=DB7C6D4256E377580000019C84403E7E >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Self
+	myFactionTargeting AllyOnly
+	myDamageArea < uid=DB7C6D4256E377580000019D8C0ED140 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding 100
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004C914095805A > = Enraged
+	}
+	myLocationEffect < uid=DB7C6D4256E377580000019E166B343C > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_coptraffic1_tazer_MAcero_Tuning < uid=DB7C6D4256E377580000019F4C023A3C >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E37758000001A0C9344E0C >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 100
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004C9233B1385A > = Shocked
+	}
+	myLocationEffect < uid=DB7C6D4256E37758000001A1334A02BB > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_coptraffic3_whistle_MAcero_Tuning < uid=DB7C6D4256E37758000001A27CCF1A3A >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 1
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E37758000001A321411C45 >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType CenteredCircle
+		myLength 2
+		myWidth 2
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 75
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004C93876440A6 > = NULLREFERENCE
+	}
+	myLocationEffect < uid=DB7C6D4256E37758000001A44A6E724F > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_coppatrol1_doorbreaker_MAcero_Tuning < uid=DB7C6D4256E37758000001A52952FE63 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 2
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E37758000001A62D482FB9 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 125
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=DB7C6D4256E37758000001A704C2BD61 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_coppatrol3_pepperspray_s_MAcero_Tuning < uid=DB7C6D4256E37758000001A83D074BBC >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E37758000001A983180B99 >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Cone
+		myLength 2
+		myWidth 3
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 90
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004C9463F13A70 > = GrossedOut
+	}
+	myLocationEffect < uid=DB7C6D4256E37758000001AAEF41C9A4 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_copriot3_pepperspray_l_MAcero_Tuning < uid=DB7C6D4256E37758000001ABFE794898 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E37758000001ACF924A640 >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Cone
+		myLength 3
+		myWidth 3
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 90
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004C958F8AF104 > = GrossedOut
+	}
+	myLocationEffect < uid=DB7C6D4256E37758000001ADBA233E3E > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_jared1_confession_MAcero_Tuning < uid=DB7C6D4256E37758000001AE5BCECC37 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 5
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 1
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E37758000001AF6FC7725E >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 100
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004C9635437B47 > = NULLREFERENCE
+	}
+	myLocationEffect < uid=DB7C6D4256E37758000001B0B30DCF40 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_jared2_shoulderrub_MAcero_Tuning < uid=DB7C6D4256E37758000001B1107CC5D1 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E37758000001B23DFE1C9D >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 500
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004C9790876C39 > = GrossedOut
+	}
+	myLocationEffect < uid=DB7C6D4256E37758000001B369FFCCFE > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_jared3_candythrow_MAcero_Tuning < uid=DB7C6D4256E37758000001B4B455794E >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 5
+	myMinRange 1
+	myCooldown 3
+	myKnockbackPullForwardAmount -2
+	myIsReverseKnockback TRUE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E37758000001B542F17058 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 5
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 75
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+	}
+	myLocationEffect < uid=DB7C6D4256E37758000001B68F26966F > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_aidered1_footlong_MAcero_Tuning < uid=DB7C6D4256E37758000001B718292349 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 1
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E37758000001B807A9B60B >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 100
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=DB7C6D4256E37758000001B9CE137516 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_aidered2_pullout_MAcero_Tuning < uid=DB7C6D4256E37758000001BA753D1755 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E37758000001BB245F41D0 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 75
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D42570FE11A00008F2211667E5E > = Encumbered
+	}
+	myLocationEffect < uid=DB7C6D4256E37758000001BC6E0CB2BE > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_aidered3_blownaway_MAcero_Tuning < uid=DB7C6D4256E37758000001BD3BE2C1AC >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 2
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E37758000001BEA6F8FE3A >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 2
+		myWidth 2
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 90
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=DB7C6D4256E37758000001BF78777AF4 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_aideblonde1_6inch_MAcero_Tuning < uid=DB7C6D4256E37758000001C073E5AE06 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 1
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E37758000001C15E27EE77 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 75
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=DB7C6D4256E37758000001C23F4FC2A7 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_aideblonde2_eatfresh_MAcero_Tuning < uid=DB7C6D4256E37758000001C3FC2CBF60 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting AllyOnly
+	myDamageArea < uid=DB7C6D4256E37758000001C4A2E7AB7D >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount -300
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=DB7C6D4256E37758000001C5C3D2BD00 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_aideblonde3_freshfit_MAcero_Tuning < uid=DB7C6D4256E37758000001C682C90527 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E37758000001C71B877DA1 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 75
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004C99A2953A7F > = Encumbered
+	}
+	myLocationEffect < uid=DB7C6D4256E37758000001C884A481EF > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_drone1_shooting_MAcero_Tuning < uid=DB7C6D4256E37758000001C9D2C816C6 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 5
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E37758000001CA18E2D185 >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 75
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=DB7C6D4256E37758000001CB38A8CD4D > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_drone2_hitandrun_MAcero_Tuning < uid=DB7C6D4256E37758000001CC98A3984E >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType Rush
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E37758000001CD0A4FD3BA >
+	{
+		myPiercingType All
+		myDamageAreaType Rectangle
+		myLength 5
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 100
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004C9A8C22F429 > = Bleeding
+	}
+	myLocationEffect < uid=DB7C6D4256E37758000001CE042F458F > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_drone3_murder_MAcero_Tuning < uid=DB7C6D4256E37758000001CF7A9322E2 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 4
+	myMinRange 1
+	myCooldown 3
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256E37758000001D0FE76A416 >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 150
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004C9B276FA730 > = Burning
+	}
+	myLocationEffect < uid=DB7C6D4256E37758000001D18AD06A61 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_aide1_knockback_MAcero_Tuning < uid=DB7C6D4256EA08B6000000BF69A523A3 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 1
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256EA08B6000000C00916E015 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 100
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=DB7C6D4256EA08B6000000C1927623B8 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_aide2_flurry_MAcero_Tuning < uid=DB7C6D4256EA08B6000000C29628DD21 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256EA08B6000000C3D6D04C7C >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 125
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=DB7C6D4256EA08B6000000C4687808FB > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_mitch1_knockback_MAcero_Tuning < uid=DB7C6D4256EA08B6000000C54B308DAF >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 3
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 2
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256EA08B6000000C69B21903D >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 100
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=DB7C6D4256EA08B6000000C7CFC69C89 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_mitch2_charmed_MAcero_Tuning < uid=DB7C6D4256EA08B6000000C867516A5A >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 3
+	myMinRange 1
+	myCooldown 4
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256EA08B6000000C9A8C3CEEA >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 75
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004C9C221225C0 > = Charmed
+	}
+	myLocationEffect < uid=DB7C6D4256EA08B6000000CA3FF403B7 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_mitch3_marked_MAcero_Tuning < uid=DB7C6D4256EA08B6000000CBC42DF214 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 5
+	myMinRange 1
+	myCooldown 3
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256EA08B6000000CC28C25371 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 75
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004C9D295FA53F > = Marked
+	}
+	myLocationEffect < uid=DB7C6D4256EA08B6000000CD9EC07C1D > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_mitch4_burning_MAcero_Tuning < uid=DB7C6D4256EA08B6000000CE01B63DC9 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 2
+	myMinRange 1
+	myCooldown 3
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256EA08B6000000CFAAA0D2B9 >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Cone
+		myLength 2
+		myWidth 3
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 100
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004C9EB2479F81 > = Burning
+	}
+	myLocationEffect < uid=DB7C6D4256EA08B6000000D090C34547 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_shub1_knockback_MAcero_Tuning < uid=DB7C6D4256EA08B6000000D10D7EE3D6 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 3
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256EA08B6000000D2BD96CFC5 >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 100
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004C9FE84BF8DE > = Bleeding
+	}
+	myLocationEffect < uid=DB7C6D4256EA08B6000000D3110FF7D4 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_shub2_chilled_MAcero_Tuning < uid=DB7C6D4256EA08B6000000D49B6C61CF >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 5
+	myMinRange 1
+	myCooldown 3
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256EA08B6000000D561F64127 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 100
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004CA05BC4FC32 > = Chilled
+	}
+	myLocationEffect < uid=DB7C6D4256EA08B6000000D66A15423B > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_shub3_immune_MAcero_Tuning < uid=DB7C6D4256EA08B6000000D704CAA9FA >
+{
+	myPowerCategory Buff
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 4
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting AllyOnly
+	myDamageArea < uid=DB7C6D4256EA08B6000000D8FC50D2B5 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding 100
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004CA18F66DC28 > = Focused
+	}
+	myLocationEffect < uid=DB7C6D4256EA08B6000000D92F7C4B61 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_shub4_summon_MAcero_Tuning < uid=DB7C6D4256EA08B6000000DAEFB8D02F >
+{
+	myPowerCategory Summon
+	myIsPassive FALSE
+	myActionPoints 0
+	myRange 5
+	myMinRange 1
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Location
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256EA08B6000000DBBE6C315B >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=DB7C6D4256EA08B6000000DCC4D39959 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_goat1_charge_MAcero_Tuning < uid=DB7C6D4256EA08B6000000DD0939E5E1 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 2
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType Charge
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256EA08B6000000DE20297541 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 3
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 125
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=DB7C6D4256EA08B6000000DFFF107EF6 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_goat2_bleeding_MAcero_Tuning < uid=DB7C6D4256EA08B6000000E0A751291C >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256EA08B6000000E16181C6FA >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 75
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D4256FEE7A000004CA20153E1D2 > = Bleeding
+	}
+	myLocationEffect < uid=DB7C6D4256EA08B6000000E20A6934F6 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_com_kitchenattack_alt_MAcero_Tuning < uid=DB7C6D42573405370000295DA9FD34F6 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 1
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 2
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D42573405370000295E18C6271A >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 300
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=DB7C6D42573405370000295F4DAFBC29 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+
+CombatPowerTuningData pwr_com_kitchenthrow_alt_MAcero_Tuning < uid=DB7C6D425734053700002960DF088037 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 5
+	myMinRange 1
+	myCooldown 2
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4257340537000029619F1245A4 >
+	{
+		myPiercingType None
+		myDamageAreaType Rectangle
+		myLength 1
+		myWidth 1
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 100
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myStatusEffects
+	{
+		StatusEffect StatusEffect < uid=DB7C6D425734053700002962B6C55FAB > = Bleeding
+	}
+	myLocationEffect < uid=DB7C6D42573405370000296386BBF3AE > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.0
+		myDexterity -1.0
+		mySpirit -1.0
+		mySpeed -1.0
+		myFortitude -1.0
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.0
+		myAccelerationFactor -1.0
+		myDecelerationFactor -1.0
+	}
+}
+

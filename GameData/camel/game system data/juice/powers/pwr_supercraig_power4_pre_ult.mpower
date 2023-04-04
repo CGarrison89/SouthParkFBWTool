@@ -1,0 +1,37 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/pwr_creek_power4_script.mskillscriptjuice
+include camel/skillscript/pwr_supercraig_power05_script.mskillscriptjuice
+
+CombatPower pwr_supercraig_power4_pre_ult < uid=86D6407658AF237B000019452A972E5B >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/SuperCraig_ULT_solo.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.DDS"
+	myUIName "contextComment = \"pwr_supercraig_power4 Pre-Ult Name\", description = \"pwr_supercraig_power4 Pre-Ult Name\", enabled = true, guid = #86D6407658AF240E000019508A2F7CB9, lineVersion = 3, maxLength = 26, text = \"Trammalian Trampling\""
+	myUIDescription "contextComment = \"pwr_supercraig_power4 Pre-Ult Description\", description = \"pwr_supercraig_power4 Pre-Ult Description\", enabled = true, guid = #86D6407658AF240D0000194F36CC26F4, lineVersion = 1, maxLength = 96, text = \"SuperCraig uncages his sidekick, the murderous Trammalian known as Stripe.\""
+	myUIShortDescription "contextComment = \"pwr_supercraig_power4 Pre-Ult Short Description\", description = \"pwr_supercraig_power4 Pre-Ult Short Description\", enabled = true, guid = #86D6407658AF240C0000194E15AEED99, lineVersion = 1, maxLength = 31, text = \"Stripe goes on a rampage\""
+	myUseSkillScript < uid=86D6407658AF237B000019463CAFE653 > = pwr_superCraig_power05_script
+	myAnimationState ""
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myTuningData < uid=86D6407658AF237B000019473022D0AF > = pwr_supercraig_power4_pre_ult_Tuning
+	myPowerGroup Ultimate
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus FALSE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 2.0
+				myActionPlusEndTime 0.0
+				myActionPlusPresetEnum Slow
+			}
+		}
+	}
+}
+

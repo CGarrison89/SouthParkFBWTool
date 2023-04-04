@@ -1,0 +1,43 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower mm12_ambush_pwr_swarmer_melee < uid=6D7AC9B158128F0A0000D076C9EFED81 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/chaosdog_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_swarmer_melee Name\", enabled = true, guid = #6D7AC9B158128F0A0000D0753D87AB8B, lineVersion = 1, maxLength = 18, text = \"Chomp of Chaos\""
+	myUseSkillScript < uid=6D7AC9B158128F0A0000D077A617033F > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B158128F0A0000D0780E18F8A3 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=6D7AC9B158128F0A0000D0790EC3D118 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=6D7AC9B158128F0A0000D07AB8F6B6A4 > = enemy_pwr_archetype_swarmer_melee_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

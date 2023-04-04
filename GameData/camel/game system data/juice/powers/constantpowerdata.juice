@@ -1,0 +1,8 @@
+include "camel/game system data/fruit/powers/constantpowerdata.fruit"
+
+ConstantPowerData ConstantPowerData
+{
+	myTimeFartRewindPlaybackDuration 2.8
+	myTimeFartPauseDuration 5.15
+}
+

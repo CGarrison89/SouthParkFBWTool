@@ -1,0 +1,33 @@
+include ./enemy_pwr_archetype_rogue_melee.mpower
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+
+CombatPower pwr_LT_6thgraders_rogue_melee < uid=86C9308257683C4B00000412B291D75C > : enemy_pwr_archetype_rogue_melee
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=DB7C6D425775BC0300003E7C34FB89C5 >
+		{
+			myPriority 25
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=DB7C6D425775BC0300003E7D61197C76 >
+		{
+			myPriority 25
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C9308257683C4B00000413FD2FF030 > = pwr_LT_6thgraders_rogue_melee_Kevin_Tuning
+	myCameraPreset < uid=6D7AC9B157BE698800000248D2F36DF8 > = Rogue_Power01
+}
+

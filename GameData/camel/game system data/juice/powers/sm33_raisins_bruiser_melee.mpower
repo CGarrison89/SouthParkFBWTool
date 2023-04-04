@@ -1,0 +1,52 @@
+include ./sm66_raisins_bruiser_melee.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower sm33_raisins_bruiser_melee < uid=86C9308258A34CB40005D674268E3A52 > : sm66_raisins_bruiser_melee
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308258A379F9000C5219C44EC013 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "default VIP" < uid=86C9308258A379F9000C521A0DA95D1C >
+		{
+			myPriority 20
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308258A379F9000C521B68F09B05 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "Enraged VIP" < uid=86C9308258A379F9000C521C02D6B7C3 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+}
+

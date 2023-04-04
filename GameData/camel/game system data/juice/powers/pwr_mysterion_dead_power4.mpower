@@ -1,0 +1,27 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/pwr_deadmysterion_power04_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_deadmysterion.juice"
+
+CombatPower pwr_mysterion_dead_power4 < uid=86D640765769CBA3000001224A2496A4 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/MysterionDead_Power4.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_square_heal.dds"
+	myUIName "contextComment = \"Mysterion Dead Power r Name\", description = \"pwr_mysterion_dead_power4 Name\", enabled = true, guid = #51C546C65774DC3900000159FBA60A94, lineVersion = 1, maxLength = 36, text = \"Mysterion, This is Your Life\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_mysterion_dead_power4 Description\", enabled = true, guid = #51C546C65774DC390000015A97956EE4, lineVersion = 0, maxLength = 135, text = \"Mysterion is re-reborn in corporeal form! In addition, all adjacent allies benefit from a powerful heal.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_mysterion_dead_power4 Short Description\", enabled = true, guid = #9D0E6196579BD0C8000044BFC433E87D, lineVersion = 0, maxLength = 47, text = \"Return to life, heal adjacent allies\""
+	myUseSkillScript < uid=86D640765769CBA300000123A5E52382 > = pwr_deadMysterion_power04_script
+	myAnimationState ""
+	myNumberOfAttackEvents 1
+	myShouldRepositionBeforeExecution FALSE
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myRequiresValidTarget FALSE
+	myTuningData < uid=86D640765769CBA300000124EF1E323E > = pwr_mysterion_dead_power4_Tuning
+	myCameraPreset < uid=B9E930CA59656E020012A5FCAA2791EF > = DeadMysterion_Power04
+	myPowerGroup Ultimate
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

@@ -1,0 +1,16 @@
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include "camel/game system data/juice/projectiles/projectile_thermos.mprojectile"
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./enemypowers.adrian.juice
+
+CombatPower pwr_sm24_butters_upgrade_wizard_coffee < uid=86C9308258A5EAA80002D8C7840416D0 > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/generics/Generic_Ranged_Burning.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/ST_range_2_3_aligned.dds"
+	myUIName "contextComment = \"power name\", description = \"pwr_sm24_butters_upgrade_wizard_coffee power name\", enabled = true, guid = #9D0E6196599B1FBF00008CC9F2D60ADD, lineVersion = 0, maxLength = 16, text = \"Hot Coffee\""
+	myUseSkillScript < uid=8E224C3D58F9721E00061F49B9FA5A23 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myProjectile < uid=86C9308258A5EABA0002D8CFB6580407 > = projectile_thermos
+	myTuningData < uid=86C9308258D937CA00002082D0D8919A > = pwr_sm24_wizard_ranged_Adrian_Tuning
+}
+

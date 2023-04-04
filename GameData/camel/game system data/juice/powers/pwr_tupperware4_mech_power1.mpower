@@ -1,0 +1,19 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_tupperware.juice"
+include camel/skillscript/pwr_tupperware_power05_script.mskillscriptjuice
+
+CombatPower pwr_tupperware4_mech_power1 < uid=86D64076575B67150000001EF9C20925 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/Tupperware_TupperMechMissiles.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/select_roomwide.dds"
+	myUIName "contextComment = \"Tupper MEch's Power 1 Name\", description = \"pwr_tupperware4_mech_power1 Name\", enabled = true, guid = #51C546C65774DC5B000001ACF1C06FA9, lineVersion = 2, maxLength = 21, text = \"[Rocket Barrage]\""
+	myUIDescription "contextComment = \"Tupper MEch's Power 1Description\", description = \"pwr_tupperware4_mech_power1 Description\", enabled = true, guid = #51C546C65774DC5B000001AD4EEF74E0, lineVersion = 0, maxLength = 47, text = \"[Lobbed AoE with Shock and Encumber]\""
+	myUseSkillScript < uid=86D64076575B67150000001F2EBDA82B > = pwr_tupperware_power05_script
+	myAnimationState power1
+	myTuningData < uid=86D64076575B671500000020CBF12BBA > = pwr_tupperware_mech_power1_Tuning
+	myCameraPreset < uid=86C9308258E2D294000F6F8A8E576CE7 > = Tupperware_Power05
+	myPowerGroup Normal
+}
+

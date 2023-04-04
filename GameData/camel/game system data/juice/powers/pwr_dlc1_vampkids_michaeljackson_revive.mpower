@@ -1,0 +1,39 @@
+include ./enemy_pwr_archetype_priest_heal.mpower
+include ./dlc1_enemypowers.juice
+include camel/skillscript/dlc1_vampkids_michaeljackson_revive_skillscript.mskillscriptjuice
+include "camel/game system data/juice/camera/casabonita/uber_camera_powers_presets_michaeljackson.juice"
+
+CombatPower pwr_DLC1_VampKids_MichaelJackson_revive < uid=86C9308259B06CC6000EE44D66143950 > : enemy_pwr_archetype_priest_heal
+{
+	myUIName "contextComment = \"\", description = \"pwr_DLC1_VampKids_MichaelJackson_revive_name\", enabled = true, guid = #86C9308259EE5F380000908F2C6E4103, lineVersion = 1, maxLength = 20, text = \"Thrilling Touch\""
+	myUseSkillScript < uid=86C9308259B06CC6000EE44E762408FB > = DLC1_VampKids_MichaelJackson_Revive_SkillScript
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308259B0754000008BA6AF7C15F1 >
+		{
+			myPriority 350
+			myMinimumAffectedTargets 0
+			myTargetHealthLessThanPercentage 101.0
+			myTargetHealthMoreThanPercentage 0.0
+			myAIDesirableType A
+			myStatusEffectConditionData
+			{
+			}
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "New StatusEffectConditionalEntry (0)"
+				{
+					mySpecialEffect DazedImmunity
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86C9308259B06D26000EE471ACB6CED3 > = pwr_DLC1_VampKids_MichaelJackson_revive_Tuning
+	myCameraPreset < uid=8E1BC4435A02B94A000FAEBEF70FEB8D > = MichaelJackson_Power03
+}
+

@@ -1,0 +1,67 @@
+include ./pwr_modoktimmy_power3.mpower
+
+CombatPower pwr_civilwar3_timmy_power3 < uid=86C9308257CA039100006301B0E17934 > : pwr_modoktimmy_power3
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "1 target" < uid=86C930825848C9EA002CCB1B9EBF4448 >
+		{
+			myPriority 0
+			myMinimumAffectedTargets 1
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not confused"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Confused
+					myFollowingCondition AND
+				}
+				StatusEffectConditionalEntry "not charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+				}
+			}
+		}
+		PowerEvaluationData "2 targets" < uid=86C9308257D302E40005272C1EDF4437 >
+		{
+			myPriority 50
+			myMinimumAffectedTargets 2
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not confused"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Confused
+					myFollowingCondition AND
+				}
+				StatusEffectConditionalEntry "not charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+				}
+			}
+		}
+		PowerEvaluationData "3 targets" < uid=86C9308257D302E40005272D77F0B649 >
+		{
+			myPriority 80
+			myMinimumAffectedTargets 3
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not confused"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Confused
+					myFollowingCondition AND
+				}
+				StatusEffectConditionalEntry "not charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+				}
+			}
+		}
+	}
+	myTuningData < uid=86C9308257CA08EE0000636235AF518C > = pwr_modoktimmy_power3_Tuning
+}
+

@@ -1,0 +1,43 @@
+include ./enemy_pwr_archetype_bruiser_melee_knockback.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower sm19_shadyacres_bruiser_power1 < uid=3267E0D057E034570005ECF998242C58 > : enemy_pwr_archetype_bruiser_melee_knockback
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/OldFolk_Bruiser_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"power name\", description = \"enemy_pwr_archetype_bruiser_melee Name\", enabled = true, guid = #3267E0D057E034570005ECF8D745B8C4, lineVersion = 2, maxLength = 21, text = \"Punch Some Sense\""
+	myUseSkillScript < uid=3267E0D057E034570005ECFA416C49F4 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D057E034570005ECFB61B661AC >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D057E034570005ECFC9BCF76C6 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myDialogueSkillScript < uid=3267E0D057E034570005ECFD2230CF0B > = NULLREFERENCE
+	myCameraPreset < uid=86C930825972A70A000C6A07DB0B3FAB > = Preset_Generic_Melee_KB
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

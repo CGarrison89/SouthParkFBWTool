@@ -1,0 +1,20 @@
+include ./pwr_dlc1_vampkids_gorilla_crush_execute.mpower
+include camel/skillscript/dlc1_vampkids_generalmanager_persistent_skillscript.mskillscriptjuice
+include camel/skillscript/dlc1_vampkids_jokestercop_power01_skillscript.mskillscriptjuice
+include camel/skillscript/dlc1_pwr_jokestercopvamp_power02.mskillscriptjuice
+include camel/skillscript/dlc1_pwr_jokestercopvamp_power02_targeting.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_jokester.juice"
+
+CombatPower pwr_DLC1_VampKids_JokesterCop_Power02 < uid=86C9308259DFA1A4000091E4816F319E > : pwr_DLC1_VampKids_Gorilla_crush_execute
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/JokesterCop_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_5x5.dds"
+	myUIName "contextComment = \"\", description = \"pwr_DLC1_VampKids_JokesterCop_Power02_name\", enabled = true, guid = #86C9308259EE5E93000090838FB20219, lineVersion = 2, maxLength = 14, text = \"Fire Breath\""
+	myUseSkillScript < uid=86C9308259DFA1A4000091E5E841636E > = DLC1_pwr_jokesterCopVamp_power02
+	myTargetingSkillScript < uid=86C930825A5FF3270005444B3217336D > = DLC1_pwr_jokesterCopVamp_power02_targeting
+	myLockedByDefault TRUE
+	myOnCombatActionCompleteSkillScript < uid=86C9308259DFA1A4000091E66198EA5F > = NULLREFERENCE
+	myTuningData < uid=86C9308259DFA1A4000091E705DE875B > = pwr_DLC1_VampKids_JokesterCop_Power02_Tuning
+	myCameraPreset < uid=86C930825A6915A60006B9B62DC883BA > = Jokester_Power01
+}
+

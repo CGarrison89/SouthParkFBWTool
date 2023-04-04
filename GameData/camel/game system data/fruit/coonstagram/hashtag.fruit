@@ -1,0 +1,24 @@
+include "camel/game system data/fruit/cell/cell_condition.fruit"
+include "camel/game system data/fruit/cell/cell.fruit"
+
+class Hashtag < uid = auto >
+{
+    varmap myHashtag < bhv="localization" tooltip="Hashtag text" >
+	Conditions myConditions
+	bool myIsGeneric false
+	int myPriority -1 < tooltip = "0 is highest priority, like for mood, location. -1 means no priority" >
+}
+
+list Hashtags 
+{
+	Hashtag
+}
+
+class HashtagGroup 
+{
+	Hashtags myHashtags
+	Conditions myConditions
+	int myPriority -1 < tooltip = "0 is highest priority, like for mood, location. -1 means no priority">
+	bool myIsGeneric false
+	int myMaxCount -1 < tooltip = "How many of these should appear in Coonstagram. -1 means ALL">
+}

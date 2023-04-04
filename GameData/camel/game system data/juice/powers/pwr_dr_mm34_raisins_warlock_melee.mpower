@@ -1,0 +1,8 @@
+include ./pwr_mm34_raisins_warlock_melee.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower pwr_dr_mm34_raisins_warlock_melee < uid=C87888A05A160A72000C43CAD42A439D > : pwr_mm34_raisins_warlock_melee
+{
+	myTuningData < uid=C87888A05A160B0A00008FECD39216D7 > = pwr_dr_mm34_raisins_warlock_melee_Tuning
+}
+

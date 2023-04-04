@@ -1,0 +1,35 @@
+include ./mm12_lavacombat_rogue_melee.mpower
+
+CombatPower MM12_siege_rogue_melee < uid=86C93082581BB0D90002A8CC3C69684D > : MM12_lavacombat_rogue_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/chaoskid_power5.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myPreviewIconImage ""
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_rogue_melee Name\", enabled = true, guid = #C0F4A786582F831B00000F7BBE75EB37, lineVersion = 0, maxLength = 16, text = \"Ninja Star\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C93082581BB0D90002A8CDDF376EDB >
+		{
+			myPriority 20
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C93082581BB0D90002A8CE044A10BE >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+}
+

@@ -1,0 +1,39 @@
+include "camel/game system data/juice/camera/tardicaca/uber_camera_powers_presets_finalgirl.juice"
+include camel/skillscript/dlc3_target_low_health_limited_range.mskillscriptjuice
+include camel/skillscript/dlc3_finalgirl_power04.mskillscriptjuice
+include ./dlc3_playerpowers.juice
+include camel/skillscript/dlc3_finalgirl_power04_preview.mskillscriptjuice
+
+CombatPower pwr_dlc3_finalgirl_power04 < uid=86D640765A53B172000093407393DB25 >
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/LastGirl_Power4A.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_5x5.dds"
+	myUIName "contextComment = \"Final Girl's power 04 Name\", description = \"pwr_dlc3_finalgirl_power04 Name\", enabled = true, guid = #86D640765A53B1720000933EFD585235, lineVersion = 2, maxLength = 20, text = \"Final Vengeance\"}"
+	myUIDescription "contextComment = \"Final Girl's power 04 Long Description\", description = \"pwr_dlc3_finalgirl_power04 Long Description\", enabled = true, guid = #9D0E61965AA9C2FA0000A48842A2FF97, lineVersion = 0, maxLength = 142, text = \"The Final Girl exacts Final Vengeance, executing normal enemies under 50% Health and bosses under 33% Health.\"}"
+	myUIShortDescription "contextComment = \"Final Girl's power 04 Short Description\", description = \"pwr_dlc3_finalgirl_power04 Short Description\", enabled = true, guid = #86D640765A53B1720000933F2EF3C22B, lineVersion = 3, maxLength = 42, text = \"Instakill most foes under 50% HP\"}"
+	myUseSkillScript < uid=86D640765A53B172000093415C662E3A > = DLC3_FinalGirl_Power04
+	myTargetingSkillScript < uid=86D640765A6004610000969E4AF63659 > = DLC3_Target_Low_Health_Limited_Range
+	myMenuSkillScript < uid=B9E930CA5B0877D60000BD0E2D08C952 > = DLC3_FinalGirl_Power04_Preview
+	myAnimationState power1
+	myTuningData < uid=86D640765A53B1720000934263901679 > = dlc3_pwr_finalgirl_test_execute_all_Tuning
+	myCameraPreset < uid=B9E930CA5AD7C13E000455FB28772E51 > = FinalGirl_Power4
+	myPowerGroup Ultimate
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus FALSE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusEndTime 1.25
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

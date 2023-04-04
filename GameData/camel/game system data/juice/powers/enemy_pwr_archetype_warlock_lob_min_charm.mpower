@@ -1,0 +1,42 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower enemy_pwr_archetype_warlock_lob_min_charm < uid=86D640765744DCCB000000BB151F08B3 >
+{
+	myUIName "contextComment = \"Placeholder Enemy\", description = \"enemy_pwr_archetype_warlock_lob_min_charm Name\", enabled = true, guid = #51C546C65774D9430000009C5D59055E, lineVersion = 1, maxLength = 22, text = \"Warlock Lob Charm\""
+	myUseSkillScript < uid=86D640765744DCCB000000BCB2DDAFF5 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D640765744DCCB000000BD1C80FBE9 >
+		{
+			myPriority 20
+			myNumLiveEnemiesRequired 2
+			myMinimumKills 0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86D6407657561639000001FA6BEF17D3 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myNumLiveEnemiesRequired 2
+			myMinimumKills 0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86D640765744DCCB000000BE33DCD2D2 > = enemy_pwr_archetype_warlock_lob_min_charm_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

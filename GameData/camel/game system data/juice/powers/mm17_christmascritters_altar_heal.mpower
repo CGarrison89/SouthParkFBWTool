@@ -1,0 +1,27 @@
+include ./enemy_pwr_archetype_priest_heal.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_damage_single_target_script.mskillscriptjuice
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_supercraig.juice"
+
+CombatPower mm17_christmascritters_altar_heal < uid=3267E0D058F7CDB70003B082336715BD > : enemy_pwr_archetype_priest_heal
+{
+	myUseSkillScript < uid=3267E0D058F7CDB70003B0839C5E2BB9 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D058F7CFA2000594CEA71FC528 >
+		{
+			myPriority 100
+			myTargetHealthLessThanPercentage 101.0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=3267E0D058F7CEF400052F0AC3D23521 > = enemy_mm17_critters_altar_heal_amcclay_Tuning
+	myCameraPreset < uid=3267E0D058FAAE7D000E27BA98C1C42A > = SuperCraig_Power01
+}
+

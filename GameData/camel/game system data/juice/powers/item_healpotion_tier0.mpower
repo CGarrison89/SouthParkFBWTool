@@ -1,0 +1,17 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_revive_script.mskillscriptjuice
+include camel/skillscript/camel_simple_healing_script.mskillscriptjuice
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+include camel/skillscript/camel_consumable_eat_script.mskillscriptjuice
+
+CombatPower item_healpotion_tier0 < uid=86D6407657B7C6D900000A1D8E596BEF >
+{
+	myUIName "contextComment = \"\", description = \"\", enabled = false, guid = #86D6407657B7C6D900000A1C2F6BFE8C, lineVersion = 0, maxLength = 1, text = \"|empty|\""
+	myUseSkillScript < uid=86D6407657B7C6D900000A1E3CCF3FBB > = camel_consumable_eat_script
+	myNumberOfAttackEvents 1
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myConsumablePowerType HPAdd
+	myTargetConsumableHealthLevel 0.99
+	myTuningData < uid=86D6407657B7C6D900000A1F69EB99DC > = item_healpotion_tier0_Tuning
+}
+

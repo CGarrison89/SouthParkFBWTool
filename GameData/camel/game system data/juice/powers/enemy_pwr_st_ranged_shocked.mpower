@@ -1,0 +1,38 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower enemy_pwr_st_ranged_shocked < uid=3267E0D05748FEC900000156A2A97419 >
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_st_ranged_shocked Name\", enabled = true, guid = #51C546C65774D949000000A81089C837, lineVersion = 0, maxLength = 31, text = \"Wizard ST Ranged Shocked\""
+	myUseSkillScript < uid=3267E0D05748FEC90000015754A8D5AD > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D05748FEC900000158AB40CC91 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86D64076575616DD00000221499D3F84 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=3267E0D05748FEC90000015965C8650D > = enemy_pwr_st_ranged_shocked_amcclay_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

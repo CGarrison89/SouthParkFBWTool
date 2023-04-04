@@ -1,0 +1,34 @@
+include ./pwr_young_morgan_freeman_melee.mpower
+
+CombatPower dr_pwr_young_morgan_freeman_melee < uid=86C930825A1469560000968CADF21966 > : pwr_young_morgan_freeman_melee
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Kill < uid=86C930825A1469560000968DE1A35898 >
+		{
+			myPriority 13300
+			myMinimumKills 1
+		}
+		PowerEvaluationData Blocking < uid=86C930825A1469560000968E4DFBB5CA >
+		{
+			myPriority 8300
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Blocking
+				{
+					mySpecialEffect Block
+				}
+			}
+		}
+		PowerEvaluationData Default < uid=86C930825A1469560000968F5C6B2FD2 >
+		{
+			myPriority 5300
+		}
+		PowerEvaluationData Enraged < uid=86C930825A14695600009690616F3410 >
+		{
+			myPriority 20000
+			myRequireAggroTarget TRUE
+		}
+	}
+}
+

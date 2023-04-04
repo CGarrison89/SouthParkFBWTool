@@ -1,0 +1,40 @@
+include ./dlc3_buddypowers.juice
+include camel/skillscript/dlc3_mintberrycrunch_power01_flyup.mskillscriptjuice
+include "camel/game system data/juice/camera/tardicaca/uber_camera_powers_presets_mintberry.juice"
+include camel/skillscript/dlc3_mintberrycrunch_flyup.mskillscriptjuice
+
+CombatPower pwr_dlc3_mintberrycrunch_power01a < uid=86D640765A99A43900009DB0D32694A0 >
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/MintBerryCrunch_Power1A.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_square_heal.dds"
+	myUIName "contextComment = \"MintBerry Crunch Power01 Name\", description = \"pwr_dlc3_mintberrycrunch_power01a Name\", enabled = true, guid = #86D640765A99A43900009DAEA5A8113D, lineVersion = 0, maxLength = 14, text = \"Mint Launch\""
+	myUIDescription "contextComment = \"MintBerry Crunch Power01 Long Description\", description = \"pwr_dlc3_mintberrycrunch_power01a Long Description\", enabled = true, guid = #9D0E61965AA9C3A20000A48B573F4BEB, lineVersion = 0, maxLength = 172, text = \"Mintberry Crunch takes flight, cleansing and Minting adjacent allies and setting up Berry Land on the next turn. Cannot be targeted.\""
+	myUIShortDescription "contextComment = \"MintBerry Crunch Power01 Short Description\", description = \"pwr_dlc3_mintberrycrunch_power01a Short Description\", enabled = true, guid = #86D640765A99A43900009DAFBF425AD8, lineVersion = 1, maxLength = 52, text = \"Cleanse & Mint allies, set up Berry Land\""
+	myUseSkillScript < uid=86D640765A99A43900009DB162E94479 > = DLC3_MintBerryCrunch_Power01_FlyUp
+	myAnimationState power1
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myIsACleansePower TRUE
+	myTuningData < uid=86D640765A99A43900009DB2872D90E0 > = dlc3_pwr_mintberrycrunch_flyup_Tuning
+	myCameraPreset < uid=86D640765A99A43900009DB32A148E47 > = MintBerry_Power01A
+	mySelfStatusEffects
+	{
+	}
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus FALSE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusEndTime 0.0
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

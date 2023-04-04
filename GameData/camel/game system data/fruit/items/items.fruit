@@ -1,0 +1,384 @@
+include "camel/game system data/fruit/items/item.fruit"
+include "camel/game system data/fruit/items/recipe.fruit"
+include "camel/game system data/fruit/items/CostumeType.fruit"
+include "camel/game system data/fruit/items/CostumeColor.fruit"
+include "camel/game system data/fruit/damage/damage.fruit"
+include "camel/game system data/fruit/powers/combatpowers.fruit"
+include "camel/game system data/fruit/stats/characterstats.fruit"
+include "camel/game system data/fruit/tintColor.fruit"
+
+enum ItemSort
+{
+	None
+	CategoryAscending
+	NameAscending
+	NewItemFirst
+	ArtifactLevelDescending
+	KeyItem
+	KeyItemForActiveMission
+	ArtifactPowerDescending
+	ComponentTierAscending
+	Sellable
+	Buyable
+	Manual
+}
+
+list ArticfactEffectValueList
+{
+	int
+}
+
+class ArticfactEffectDescription
+{
+	varmap myDescription < bhv = "localization" >
+	ArticfactEffectValueList myValues
+}
+
+enum ArtifactType
+{
+	None
+	One
+	Two
+	Three
+	ClassEssence
+}
+class ArtifactItem : Item
+{
+	ItemCategory myCategory Artifact < hidden = 1 >
+	ArticfactEffectDescription myEffectDescription
+}
+
+class ArtifactItemTuningData : ItemTuningData
+{
+    ArtifactType myType
+    int myLevel
+    DamageTable myDamageTable
+    StatValues myStatValues
+}
+
+class ArtifactSlotType < uid=auto >
+{
+    ArtifactType myType
+    int myCount
+	int myBonusCount 0
+    int myDefaultUnlockedCount
+}
+list ArtifactSlotTypeList
+{
+    ArtifactSlotType
+}
+class ArtifactSlotSetting
+{
+    ArtifactSlotTypeList myArtifactSlotTypeList
+}
+
+class CostumeItemTuningData : ItemTuningData
+{
+	float mySellPrice 500.0
+}
+
+list CostumeItemList
+{
+	CostumeItemBase*
+}
+
+
+class GearItem : Item < abstract = 1 >
+{
+	int myMaxStackable 1
+    varmap myModel < bhv=modelPatch >
+    file myCustomGraphObject < types=*.mgraphobject >
+    uid myDefaultTint1
+    uid myDefaultTint2
+	bool myHidesFeet false
+    ItemCategory myHideSlot1 None < hidden = 1 >
+    ItemCategory myHideSlot2 None < hidden = 1 >
+    ItemCategory myHideSlot3 None < hidden = 1 >
+    ItemCategory myHideSlot4 None < hidden = 1 >	
+	ItemCategory myHideSlot5 None < hidden = 1 >	
+	ItemCategory myHideSlot6 None < hidden = 1 >	
+	ItemCategory myHideSlot7 None < hidden = 1 >	
+	ItemCategory myHideSlot8 None < hidden = 1 >	
+	ItemCategory myHideSlot9 None < hidden = 1 >	
+	ItemCategory myHideSlot10 None < hidden = 1 >	
+    int myIconHeight 256 < hidden = 1 >
+    int myIconWidth 256 < hidden = 1 >
+    file myIconGraphTemplate "camel/graph objects/gear/eqp_template_icon.mgraphobject" < hidden = 1 >
+}
+
+class CostumeItemBase : GearItem < abstract = 1 >
+{
+    file myIcon < tooltip="Leave blank to have it auto generated" >
+    CostumeType myCostumeType Hero < hidden = 1 >
+    CostumeColor myCostumePrimaryColor Unspecified
+    CostumeColor myCostumeSecondaryColor Unspecified
+    CostumeColor myCostumeOtherColor Unspecified
+    bool myCostumePrimaryColorWillBeTinted true
+    bool myCostumeSecondaryColorWillBeTinted true
+    ItemCategory myHideSlot1 None < hidden = 0 >
+    ItemCategory myHideSlot2 None < hidden = 0 >
+    ItemCategory myHideSlot3 None < hidden = 0 >
+    ItemCategory myHideSlot4 None < hidden = 0 >
+	ItemCategory myHideSlot5 None < hidden = 0 >	
+	ItemCategory myHideSlot6 None < hidden = 0 >	
+	ItemCategory myHideSlot7 None < hidden = 0 >	
+	ItemCategory myHideSlot8 None < hidden = 0 >	
+	ItemCategory myHideSlot9 None < hidden = 0 >	
+	ItemCategory myHideSlot10 None < hidden = 0 >		
+	CostumeItemList myExtraPieces < hidden = 0 >
+}
+class CostumeItemHead : CostumeItemBase
+{
+    ItemCategory myCategory CostumeHead < hidden = 1 >
+    CostumeType myCostumeType Hero < hidden = 1 >
+    ItemCategory myHideSlot1 StreetHair
+	ItemCategory myHideSlot2 StreetHairBangs
+	ItemCategory myHideSlot3 StreetHairFull
+	ItemCategory myHideSlot4 StreetHairHigh
+	ItemCategory myHideSlot5 StreetHairLow
+	ItemCategory myHideSlot6 StreetHairSkull
+	ItemCategory myHideSlot7 StreetHairTop
+    ItemCategory myHideSlot8 StreetEyewear
+    ItemCategory myHideSlot9 StreetFacialHair
+	file myIconGraphTemplate "camel/graph objects/actor/eqp_template_icon_hair.mgraphobject" < hidden = 1 >
+}
+class CostumeItemBody : CostumeItemBase
+{
+    ItemCategory myCategory CostumeBody < hidden = 1 >
+    CostumeType myCostumeType Hero < hidden = 1 >
+	file myIconGraphTemplate "camel/graph objects/actor/eqp_template_icon_body.mgraphobject" < hidden = 1 >
+}
+class CostumeItemHands : CostumeItemBase
+{
+    ItemCategory myCategory CostumeHands < hidden = 1 >
+    CostumeType myCostumeType Hero < hidden = 1 >
+	file myIconGraphTemplate "camel/graph objects/actor/eqp_template_icon_hands.mgraphobject" < hidden = 1 >
+}
+
+class CostumeItemBackstoryHead : CostumeItemBase
+{
+    ItemCategory myCategory BackstoryHead < hidden = 1 >
+    CostumeType myCostumeType Backstory < hidden = 1 >
+    ItemCategory myHideSlot1 StreetHair
+	ItemCategory myHideSlot2 StreetHairBangs
+	ItemCategory myHideSlot3 StreetHairFull
+	ItemCategory myHideSlot4 StreetHairHigh
+	ItemCategory myHideSlot5 StreetHairLow
+	ItemCategory myHideSlot6 StreetHairSkull
+	ItemCategory myHideSlot7 StreetHairTop
+    ItemCategory myHideSlot8 StreetEyewear
+    ItemCategory myHideSlot9 StreetFacialHair
+	file myIconGraphTemplate "camel/graph objects/actor/eqp_template_icon_hair.mgraphobject" < hidden = 1 >
+}
+class CostumeItemBackstoryBody : CostumeItemBase
+{
+    ItemCategory myCategory BackstoryBody < hidden = 1 >
+    CostumeType myCostumeType Backstory < hidden = 1 >
+	file myIconGraphTemplate "camel/graph objects/actor/eqp_template_icon_body.mgraphobject" < hidden = 1 >
+}
+class CostumeItemBackstoryHands : CostumeItemBase
+{
+    ItemCategory myCategory BackstoryHands < hidden = 1 >
+    CostumeType myCostumeType Backstory < hidden = 1 >
+	file myIconGraphTemplate "camel/graph objects/actor/eqp_template_icon_hands.mgraphobject" < hidden = 1 >
+}
+class CostumeItemStreetBody : CostumeItemBase
+{
+    ItemCategory myCategory StreetBody < hidden = 1 >
+    CostumeType myCostumeType Street < hidden = 1 >
+	file myIconGraphTemplate "camel/graph objects/actor/eqp_template_icon_body.mgraphobject" < hidden = 1 >
+}
+class CostumeItemStreetHands : CostumeItemBase
+{
+    ItemCategory myCategory StreetHands < hidden = 1 >
+    CostumeType myCostumeType Street < hidden = 1 >
+	file myIconGraphTemplate "camel/graph objects/actor/eqp_template_icon_hands.mgraphobject" < hidden = 1 >
+}
+class CostumeItemStreetHead : CostumeItemBase
+{
+    ItemCategory myCategory StreetHead < hidden = 1 >
+    CostumeType myCostumeType Street < hidden = 1 >
+	file myIconGraphTemplate "camel/graph objects/actor/eqp_template_icon_hair.mgraphobject" < hidden = 1 >
+}
+class CostumeItemStreetEyewear : CostumeItemBase
+{
+    ItemCategory myCategory StreetEyewear < hidden = 1 >
+    CostumeType myCostumeType All < hidden = 0 >
+    file myIconGraphTemplate "camel/graph objects/actor/eqp_template_icon_hair.mgraphobject" < hidden = 1 >
+}
+class CostumeItemStreetHair : CostumeItemBase
+{
+    ItemCategory myCategory StreetHair < hidden = 1 >
+    CostumeType myCostumeType All < hidden = 1 >
+    float myIconCamDistMult 0.65 < hidden = 1 >
+    varmap myModel < hidden = 1 >
+    file myCustomGraphObject < hidden = 1 >
+    file myIconGraphTemplate "camel/graph objects/actor/eqp_template_icon_hair.mgraphobject" < hidden = 1 >
+}
+class CostumeItemStreetHairBangs : CostumeItemBase
+{
+    ItemCategory myCategory StreetHairBangs < hidden = 1 >
+	ItemCategory myHideSlot1 StreetHair
+}
+class CostumeItemStreetHairFull : CostumeItemBase
+{
+    ItemCategory myCategory StreetHairFull < hidden = 1 >
+	ItemCategory myHideSlot1 StreetHair
+}
+class CostumeItemStreetHairHigh : CostumeItemBase
+{
+    ItemCategory myCategory StreetHairHigh < hidden = 1 >
+	ItemCategory myHideSlot1 StreetHair
+}
+class CostumeItemStreetHairLow : CostumeItemBase
+{
+    ItemCategory myCategory StreetHairLow < hidden = 1 >
+	ItemCategory myHideSlot1 StreetHair
+}
+class CostumeItemStreetHairSkull : CostumeItemBase
+{
+    ItemCategory myCategory StreetHairSkull < hidden = 1 >
+	ItemCategory myHideSlot1 StreetHair
+}
+class CostumeItemStreetHairTop : CostumeItemBase
+{
+    ItemCategory myCategory StreetHairTop < hidden = 1 >
+	ItemCategory myHideSlot1 StreetHair
+}
+class CostumeItemStreetFacialHair : CostumeItemBase
+{
+    ItemCategory myCategory StreetFacialHair < hidden = 1 >
+	ItemCategory myHideSlot1 StreetFacialHairUpper
+	ItemCategory myHideSlot2 StreetFacialHairLower
+    CostumeType myCostumeType All < hidden = 1 >
+    file myIconGraphTemplate "camel/graph objects/actor/eqp_template_icon_hair.mgraphobject" < hidden = 1 >
+}
+class CostumeItemStreetFacialHairUpper : CostumeItemBase
+{
+    ItemCategory myCategory StreetFacialHairUpper < hidden = 1 >
+	ItemCategory myHideSlot1 StreetFacialHair
+	ItemCategory myHideSlot2 StreetFacialHairLower	
+    CostumeType myCostumeType All < hidden = 1 >
+    file myIconGraphTemplate "camel/graph objects/actor/eqp_template_icon_hair.mgraphobject" < hidden = 1 >
+}
+class CostumeItemStreetFacialHairLower : CostumeItemBase
+{
+    ItemCategory myCategory StreetFacialHairLower < hidden = 1 >
+	ItemCategory myHideSlot1 StreetFacialHairUpper
+	ItemCategory myHideSlot2 StreetFacialHair
+    CostumeType myCostumeType All < hidden = 1 >
+    file myIconGraphTemplate "camel/graph objects/actor/eqp_template_icon_hair.mgraphobject" < hidden = 1 >
+}
+class CostumeItemStreetMakeup : CostumeItemBase
+{
+    ItemCategory myCategory StreetMakeup < hidden = 1 >
+    CostumeType myCostumeType All < hidden = 0 >
+    file myIconGraphTemplate "camel/graph objects/actor/eqp_template_icon_hair.mgraphobject" < hidden = 1 >
+}
+class CostumeItemStreetMakeup2 : CostumeItemBase
+{
+    ItemCategory myCategory StreetMakeup2 < hidden = 1 >
+    CostumeType myCostumeType All < hidden = 0 >
+    file myIconGraphTemplate "camel/graph objects/actor/eqp_template_icon_hair.mgraphobject" < hidden = 1 >
+}
+
+class CurrencyItem : Item
+{
+    ItemCategory myCategory Currency < hidden = 1 >
+	bool	myIsLegendaryItem	false	< hidden = 1 >
+	bool	myIsHeroDNAExclusive	false	< hidden = 1 >
+	int myMaxStackable 999999
+}
+
+class CurrencyItemTuningData : ItemTuningData
+{
+	PointBasedItemCategory myPointBasedItemCategory None
+}
+
+class ComponentItem : Item
+{
+    ItemCategory myCategory Component < hidden = 1 >
+	bool	myIsLegendaryItem	false	< hidden = 1 >
+	bool	myIsHeroDNAExclusive	false	< hidden = 1 >
+	varmap  myLocation < bhv = "localization" >
+}
+
+class ComponentItemTuningData : ItemTuningData
+{
+	ItemComponentType* myComponentType
+}
+
+class ConsumableItem : GearItem
+{
+	int myMaxStackable 99
+    ItemCategory myCategory Consumable < hidden = 1 >
+	bool	myIsLegendaryItem	false	< hidden = 1 >
+	bool	myIsHeroDNAExclusive	false	< hidden = 1 >
+	CombatPower* myCombatPower
+	ConsumableCategory myConsumableCategory
+}
+
+class ComsumableItemTuningData : ItemTuningData
+{
+}
+
+class StartingItemSetting
+{
+    uid myItem < bhv="asset" assettype="Item" >
+    int myCount
+	bool myEquippedByDefault false
+}
+
+list StartingItemSettingList
+{
+    StartingItemSetting
+}
+
+class StartingArtifactSetting
+{
+    uid myItem < bhv="asset" assettype="Item" >
+    int myIndex
+}
+
+list StartingArtifactSettingList
+{
+    StartingArtifactSetting
+}
+
+class StartingInventorySetting
+{
+	StartingItemSettingList myItemList
+	StartingArtifactSettingList myArtifactList
+}
+
+list StartingInventorySettings
+{
+	StartingInventorySetting
+}
+
+class StartingInventory
+{
+	StartingInventorySettings myStartingInventorySettings
+}
+
+class CollectableItemBase : Item < abstract = 1 >
+{
+	bool	myIsLegendaryItem	false	< hidden = 1 >
+	bool	myIsHeroDNAExclusive	false	< hidden = 1 >
+	int myMaxStackable 1
+    file myBitmap
+}
+
+class CollectableItemTuningData : ItemTuningData
+{
+}
+
+class CollectableItemYaoi : CollectableItemBase
+{
+	ItemCategory myCategory CollectableYaoi < hidden = 1 >
+}
+
+class CollectableItemCharacterSheet : CollectableItemBase
+{
+	ItemCategory myCategory CollectableCharacterSheet < hidden = 1 >
+}

@@ -1,0 +1,14 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+
+CombatPower pwr_LT_6thgraders_swarmer_melee < uid=86C9308257683986000003703859F283 > : enemy_pwr_archetype_swarmer_melee
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_swarmer_melee Name\", enabled = true, guid = #B9E930CA57B521860000023E5BD73E13, lineVersion = 0, maxLength = 16, text = \"Wet Willy\n\""
+	myUseSkillScript < uid=B9E930CA57B521CA000002437FBB732E > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myShouldRepositionBeforeExecution TRUE
+	myTuningData < uid=86C930825768398600000371465DF196 > = pwr_LT_6thgraders_swarmer_melee_Kevin_Tuning
+}
+

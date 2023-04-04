@@ -1,0 +1,28 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower SM14_altkyle_shield < uid=86D640765744F8B7000022D30151E43D >
+{
+	myUIName "contextComment = \"\", description = \"sm14_altkyle_shield Name\", enabled = true, guid = #51C546C65774DC61000001BEFDC10E9A, lineVersion = 0, maxLength = 20, text = \"Shield of David\""
+	myUseSkillScript < uid=86D640765744F8B7000022D459B8580B > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D640765744F8B7000022D5506784AF >
+		{
+			myPriority 100
+			myTargetHealthLessThanPercentage 101.0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86D640765744F8B7000022D6E1678355 > = SM14_altkyle_shield_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

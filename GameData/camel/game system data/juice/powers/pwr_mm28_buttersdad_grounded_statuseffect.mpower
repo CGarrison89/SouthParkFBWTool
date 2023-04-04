@@ -1,0 +1,71 @@
+include ./pwr_lt_raisins_warlock_st_ranged.mpower
+include ./enemy_pwr_archetype_warlock_lob_min_encumber.mpower
+include camel/skillscript/mm28_buttersdad_grounded_on_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/mm28_buttersdad_grounded_statuseffect_script.mskillscriptjuice
+include camel/skillscript/camel_simple_swappower_slot2.mskillscriptjuice
+include camel/skillscript/mm28_buttersdad_grounded_swappower_aftertelegraph.mskillscriptjuice
+include camel/skillscript/pwr_mm28_buttersdad_grounded_statuseffect_telegraph_targeting_skillscript.mskillscriptjuice
+
+CombatPower pwr_MM28_ButtersDad_Grounded_StatusEffect < uid=86C93082592C5F8D0001C011CAFD7272 > : enemy_pwr_archetype_warlock_lob_min_encumber
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/ButterDad_Power2_stage1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_damage.dds"
+	myUIName "contextComment = \"\", description = \"mm28_buttersdad_ground_power Name\", enabled = true, guid = #86C930825938B66900054A2DDC4A9A85, lineVersion = 0, maxLength = 10, text = \"Ground\""
+	myUseSkillScript < uid=86C93082592C5F8D0001C0127B7B6AA5 > = MM28_ButtersDad_Grounded_StatusEffect_Script
+	myTargetingSkillScript < uid=86C930825A789EEB0005D4BE8AED71D3 > = pwr_MM28_ButtersDad_Grounded_StatusEffect_Telegraph_Targeting_SkillScript
+	myAnimationState 1
+	myIgnoreMintBerryInteraction TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "No target" < uid=86C9308259375730001F5E2DE27A8F72 >
+		{
+			myPriority 0
+			myMinimumAffectedTargets 0
+			myStatusEffectConditionData
+			{
+			}
+		}
+		PowerEvaluationData "1 target" < uid=86C93082593744F4000F68D3B5EC6838 >
+		{
+			myPriority 100
+			myMinimumAffectedTargets 1
+			myStatusEffectConditionData
+			{
+			}
+		}
+		PowerEvaluationData "2 targets" < uid=86C93082593756C8001F5E1F13B3017E >
+		{
+			myPriority 200
+			myMinimumAffectedTargets 2
+			myStatusEffectConditionData
+			{
+			}
+		}
+		PowerEvaluationData "3 targets" < uid=86C93082593756C8001F5E200745E8E7 >
+		{
+			myPriority 300
+			myMinimumAffectedTargets 3
+			myStatusEffectConditionData
+			{
+			}
+		}
+		PowerEvaluationData "4 targets" < uid=86C93082593756C8001F5E21229DB630 >
+		{
+			myPriority 400
+			myMinimumAffectedTargets 4
+			myStatusEffectConditionData
+			{
+			}
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=86C93082597BB666000B8F992E222F31 > = MM28_ButtersDad_Grounded_SwapPower_AfterTelegraph
+	myTuningData < uid=86C93082592C5F8D0001C0148E1F1ACD > = pwr_mm28_buttersdad_grounded_Kevin_Tuning
+	myCameraPreset < uid=86C93082592C5F8D0001C015AF50879E > = Preset_Generic_Ranged
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

@@ -1,0 +1,105 @@
+include "modules/core/input/input.fruit"
+
+// This enum should be kept in sync with the one in CClient_PlayerCameraData.h
+enum CameraMode
+{
+    Default
+}
+
+class CameraPreset < uid=auto >
+{
+	CameraMode myMode
+
+	float myFoV	90.0
+	float myDistance 3.0
+	
+	float myMinPitch -90.0
+	float myMaxPitch  90.0
+	
+	float myDefaultPitch 0.0
+	
+	float myMaxYawAcceleration 0.07
+	float myMaxYawVelocity 0.1
+	
+	float myMaxPitchAcceleration 0.03
+	float myMaxPitchVelocity 0.05
+	
+	float myDecelerationTime 0.25
+	string myDecelerationCurve "{ defaultLeftSlope = 0, defaultRightSlope = 0, defaultValue = 0, interpolator = 0, isRefinedSampling = true, keys2 = { inTangents = { -0 -0, -0.270235 -0.002532, }, outTangents = { 0.420993 0.814721, 0 0, }, properties = { 275, 1299, }, values = { 0 0, 1 1, }, }, numKeys = 2, }" < bhv=inputgraph >
+		
+	vec3f myPivot 1.0;1.75;0.0
+	bool myCanRaiseWhenCloseToTarget TRUE < tooltip="Set this to false to prevent the camera from raising up when the camera is close to the target." >
+		
+	InputAxisSensitivity mySensitivityX
+	InputAxisSensitivity mySensitivityY	
+}
+
+list CameraPresetList
+{
+	CameraPreset
+}
+
+list CameraModeList
+{
+	CameraMode
+}
+
+class CameraTransition
+{
+	CameraModeList myFrom
+	CameraModeList myTo
+	float myDuration
+	string myCurve "{ defaultLeftSlope = 0, defaultRightSlope = 0, defaultValue = 0, interpolator = 0, keys = { inTangents = { -0 -0, -0.602639 -0.038683, }, outTangents = { 0.307335 0.942354, 0 0, }, properties = { -749, -749, }, values = { 0 0, 1 1, }, }, numKeys = 2, }" < bhv=inputgraph >
+	int myMaxActiveBlends -1
+}
+
+list CameraTransitionOverrides
+{
+	CameraTransition
+}
+
+class CameraShakeBlock
+{
+	bool myIsCyclic FALSE
+	float myBlendInTime 0.0
+	float myBlendOutTime 0.0
+	float myDuration 0.0
+	float myStartOffset 0.0
+
+	string myPitchMoveCurve "" < bhv=inputgraph >
+	string myPitchRotateCurve "" < bhv=inputgraph >
+	string myYawMoveCurve "" < bhv=inputgraph >
+	string myYawRotateCurve "" < bhv=inputgraph >
+	string myDistanceCurve "" < bhv=inputgraph >
+	string myRollCurve "" < bhv=inputgraph >
+	string myFovCurve "" < bhv=inputgraph >
+
+	float myPitchMoveAmplitude 0.0
+	float myPitchRotateAmplitude 0.0
+	float myYawMoveAmplitude 0.0
+	float myYawRotateAmplitude 0.0
+	float myDistanceAmplitude 0.0
+	float myRollAmplitude 0.0	
+	float myFovAmplitude 0.0 < tooltip="Angle added to the camera's field of vision in degrees." >
+}
+
+list CameraShakeBlockList
+{	
+	CameraShakeBlock
+}
+
+class CameraShake
+{
+	string myName ""
+	CameraShakeBlockList myBlocks
+}
+
+list CameraShakeList
+{
+	CameraShake
+}
+
+class Camera
+{
+	CameraTransitionOverrides myTransitionOverrides	
+}

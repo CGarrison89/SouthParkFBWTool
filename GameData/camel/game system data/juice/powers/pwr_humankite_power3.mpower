@@ -1,0 +1,55 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./buddypowers.joh.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_humankite.juice"
+include camel/skillscript/pwr_humankite_power3_script.mskillscriptjuice
+
+CombatPower pwr_humankite_power3 < uid=B9E930CA56BA9369000023178F3A298F >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/humankite_Cover.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_ST_heal_no_min_range.DDS"
+	myUIName "contextComment = \"Human Kite Power 3 Name\", description = \"pwr_humankite_power3 Name\", enabled = true, guid = #51C546C65774DC1D00000117E146B59D, lineVersion = 2, maxLength = 21, text = \"Galvanizing Gust\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_humankite_power3 Description\", enabled = true, guid = #51C546C65774DC1D00000118264282D9, lineVersion = 2, maxLength = 151, text = \"Calling on the power of the mighty Nor'easter and Ripstop Nylon, Human Kite fortifies a nearby ally with Protection.\"}"
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_humankite_power3 Short Description\", enabled = true, guid = #9D0E6196579AB0E7000001969D01BF9D, lineVersion = 0, maxLength = 48, text = \"Grant Protection to a nearby teammate\""
+	myUseSkillScript < uid=B9E930CA56BA93690000231835744F47 > = pwr_humankite_power3_script
+	myAnimationState power3
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308257A51BE500019785E1866159 >
+		{
+			myPriority 20
+			myTargetHealthLessThanPercentage 101.0
+			myTargetShieldingLessThanPercentage 70.0
+		}
+		PowerEvaluationData "critically damaged" < uid=86C9308257A51BE50001978739B222DA >
+		{
+			myPriority 60
+			myTargetHealthLessThanPercentage 40.0
+			mySelfHealthLessThanPercentage 101.0
+			myTargetShieldingLessThanPercentage 70.0
+		}
+	}
+	myTuningData < uid=B9E930CA56C52E110000000FAA9A6DF9 > = pwr_humankite_power3_Tuning
+	myCameraPreset < uid=86D64076574F8E8C000036CB4F475C4C > = HumanKite_Power03
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 1.16667
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

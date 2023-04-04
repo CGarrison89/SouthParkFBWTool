@@ -1,0 +1,33 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_modoktimmy_power3 < uid=B9E930CA56D0E98D00000021AEE03987 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/doctortimothy_power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/forward_cross.DDS"
+	myUIName "contextComment = \"Doctor Timothy Power 3 Name\", description = \"pwr_modoktimmy_power3 Name\", enabled = true, guid = #51C546C65774DC32000001469294950D, lineVersion = 3, maxLength = 16, text = \"Brain Bomb\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_modoktimmy_power3 Description\", enabled = true, guid = #51C546C65774DC32000001475C786B2E, lineVersion = 1, maxLength = 100, text = \"The Doctor stupifies his enemies. All foes in the affected zone are Confused.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_modoktimmy_power3 Short Description\", enabled = true, guid = #9D0E6196579BD5EF000044C827F34103, lineVersion = 0, maxLength = 35, text = \"Confuse one or more enemies\""
+	myUseSkillScript < uid=B9E930CA56D0E98D0000002233160FEB > = Camel_Simple_PlayAnim_Script
+	myAnimationState power3
+	myTuningData < uid=B9E930CA56D0E98D00000023974B9961 > = pwr_modoktimmy_power3_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus FALSE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 1.5
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

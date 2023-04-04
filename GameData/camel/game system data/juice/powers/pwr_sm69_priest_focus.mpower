@@ -1,0 +1,26 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_remove_statuseffect_script.mskillscriptjuice
+include ./enemypowers.adrian.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_statuseffect_application_script.mskillscriptjuice
+
+CombatPower pwr_sm69_priest_focus < uid=8585E53F57A912FC000548D2601E8E06 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/commander_power1.dds"
+	myUIName "contextComment = \"\", description = \"\", enabled = true, guid = #8585E53F57A913B100056ED66A1B0B21, lineVersion = 1, maxLength = 8, text = \"Focus\""
+	myUIDescription "contextComment = \"\", description = \"\", enabled = true, guid = #8585E53F57A913B400056F3BC946C4B1, lineVersion = 0, maxLength = 8, text = \"Focus\""
+	myUIShortDescription "contextComment = \"\", description = \"\", enabled = true, guid = #8585E53F57A913B700056FB669CCFFB4, lineVersion = 0, maxLength = 8, text = \"Focus\""
+	myUseSkillScript < uid=8585E53F57A912FC000548D39314C069 > = Camel_Simple_StatusEffect_Application_Script
+	myIsACleansePower TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "New PowerEvaluationData (0)" < uid=8585E53F57A912FC000548D44199A380 >
+		{
+			myPriority 150
+		}
+	}
+	myTuningData < uid=8585E53F57A912FC000548D575CBAA04 > = pwr_sm69_priest_focused_Adrian_Tuning
+	myPowerGroup Normal
+}
+

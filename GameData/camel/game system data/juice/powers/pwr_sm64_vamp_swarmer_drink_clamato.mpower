@@ -1,0 +1,32 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include ./enemypowers.adrian.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_sm64_vamp_clamato_karen.mskillscriptjuice
+
+CombatPower pwr_sm64_vamp_swarmer_drink_clamato < uid=B642A89A58AF37DE0013DF676403C09B > : enemy_pwr_archetype_swarmer_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/VampKids_Swarmer_Power1.dds"
+	myUIName "contextComment = \"\", description = \"\", enabled = true, guid = #B642A89A58AF3CC20013DF8B10045F99, lineVersion = 0, maxLength = 17, text = \"Drink Clamato\""
+	myUseSkillScript < uid=B642A89A58AF37DE0013DF688BAE429E > = Camel_SM64_Vamp_Clamato_Karen
+	myAnimationState ""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B642A89A58AF37DE0013DF69A70B1055 >
+		{
+			myPriority 30
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=B642A89A58AF37DE0013DF6C33208670 > = pwr_sm64_vamp_swarmer_drink_clamato_Adrian_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

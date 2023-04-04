@@ -1,0 +1,8 @@
+include ./enemy_pwr_archetype_priest_heal.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_LT_oldpeople_priest_heal < uid=86C9308257684D4100000147C8C86676 > : enemy_pwr_archetype_priest_heal
+{
+	myTuningData < uid=86C9308257684D4100000148A91BDBE7 > = pwr_LT_oldpeople_priest_heal_Kevin_Tuning
+}
+

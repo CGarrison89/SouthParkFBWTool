@@ -1,0 +1,19 @@
+enum Button
+{
+	None
+	Button_A
+	Button_B
+	Button_X
+	Button_Y
+}
+
+class ButtonInfo
+{
+	string myIcon
+	vec2f myMinUV 0.0;0.0
+	vec2f myMaxUV 1.0;1.0
+	vec2f mySize 32.0;32.0
+	float myHoldDiscStartAngle 0.0
+	vec2f myHoldDiscSize 34.0;34.0
+	color myHoldDiscColor
+}

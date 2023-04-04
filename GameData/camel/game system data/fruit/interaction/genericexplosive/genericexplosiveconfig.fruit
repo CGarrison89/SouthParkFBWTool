@@ -1,0 +1,78 @@
+include "camel/game system data/fruit/localization/HardcodedLocalizedStrings.fruit"
+
+enum GenericExplosiveConfigType
+{
+    Debug_Only
+    MM08_HippoKitchen
+	TP74_NotCloseState_Reservesave_when_Setcomplete
+	TP79_Glitch_NoTimer
+	TP97_TownSquareSoftening_TP98_BusStopSoftening
+	MP77_SaveLit_NoTimer
+	MP66_StartInCloseState_NoGlitch
+	MP78_TorchOnWall_NotReserveSave
+	NoCloseState_NotReserveSave
+	SM01SP01_CraigBasement_FireBox
+	MP53_AutoGlitch_Timer
+    TP98_BusStopSoftening
+    SP_School_Campfire
+	DLC_LT_DP11_AutoGlitch_NoTimer
+	Lake_Timer_Type01
+	Lake_Timer_Type02
+	Lake_No_Timer_Type01
+	Lake_No_Timer_Type02
+	DLC_LT_DP16_AutoGlitch_NoTimer
+}
+
+list ParticleStopIdentifierList
+{
+	string
+}
+
+list StopSoundEventList
+{
+    uid < bhv=AudioID type=event >
+}
+
+class GenericExplosiveConfig
+{
+    bool ClosedState_UseState False
+    bool ClosedState_ShouldReaction_ReactionPunch True
+    bool ClosedState_ShouldReaction_FireCracker True
+    bool ClosedState_ShouldReaction_RangedFart True
+    bool ClosedState_ShouldReaction_FartShatter True
+    bool ClosedState_ShouldReaction_ExplosionPushPull True
+    
+    bool NormalState_ShouldReaction_FireCracker True
+
+    
+    
+    float LitState_ToExplosionSec 5.0
+    
+    float ExplodingState_DelayStartDestroyReaction -1.0
+    string ExplodingState_ShakeCameraPresetName ""
+   
+    
+    bool ReserveParameter True
+    
+    bool Stateful_Save_NormalState True
+    bool Stateful_Save_LitState False
+    bool Stateful_Save_Exploded True
+    
+    bool Stateful_CanBackClosedByGlitch false
+    bool Stateful_CanBackNormalByGlitch false
+    bool Stateful_CanBackLitByGlitch false
+    bool Stateful_CanBackExplodedByGlitch false
+    
+    bool Stateful_ReserveSaveOnComplete True
+    bool Stateful_AutoSaveWhenStateChanges True
+    bool Stateful_LockWhenComplete True
+    bool Stateful_ShouldActivateGlitchListener False
+    
+    bool ClosedState_CanBeginNormalState_EvenWhen_TFPause False
+    bool NormalState_CanBeginLitState_EvenWhen_TFPause False
+    
+    ParticleStopIdentifierList ParticleStopList
+    StopSoundEventList StopSoundList
+    
+    bool SpecialFlow false
+}

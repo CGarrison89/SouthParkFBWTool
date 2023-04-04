@@ -1,0 +1,9 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_LT_cityninajs_swarmer_melee < uid=86C93082576839BA00000380CD8EFE15 > : enemy_pwr_archetype_swarmer_melee
+{
+	myUIName "contextComment = \"ninja melee lt power\", description = \"enemy_pwr_archetype_swarmer_melee Name\", enabled = true, guid = #9D0E61965997737C000F07EDE850521C, lineVersion = 0, maxLength = 14, text = \"Whirlwind\""
+	myTuningData < uid=86C93082576839BA00000381286F218A > = pwr_LT_cityninjas_swarmer_melee_Kevin_Tuning
+}
+

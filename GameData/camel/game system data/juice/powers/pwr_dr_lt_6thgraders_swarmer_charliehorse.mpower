@@ -1,0 +1,8 @@
+include ./pwr_lt_6thgraders_swarmer_charliehorse.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower pwr_dr_LT_6thgraders_swarmer_charliehorse < uid=C87888A05A0CA530000C44C505817E79 > : pwr_LT_6thgraders_swarmer_charliehorse
+{
+	myTuningData < uid=C87888A05A0CA659000D038D26A879E7 > = pwr_dr_LT_6thgraders_swarmer_charliehorse_Tuning
+}
+

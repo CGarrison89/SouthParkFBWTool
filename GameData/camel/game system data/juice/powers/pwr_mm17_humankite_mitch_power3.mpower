@@ -1,0 +1,35 @@
+include ./pwr_humankite_power3.mpower
+include camel/skillscript/pwr_humankitemitch_power3_script.mskillscriptjuice
+include ./enemypowers.mvernon.juice
+
+CombatPower pwr_mm17_humankite_mitch_power3 < uid=86C930825952F311000086B33ADD987D > : pwr_humankite_power3
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/MitchKite_Power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_ST_no_min_range.dds"
+	myUseSkillScript < uid=86C930825952F437000086D4D916792B > = pwr_humanKiteMitch_power3_script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B15953164D0004DE36D64C7692 >
+		{
+			myPriority 10
+			myMinimumDistanceToEnemies 1
+			myTargetHealthLessThanPercentage 101.0
+		}
+		PowerEvaluationData damaged < uid=6D7AC9B15953164D0004DE37882226EC >
+		{
+			myPriority 7
+			myTargetHealthLessThanPercentage 50.0
+		}
+		PowerEvaluationData "critically damaged" < uid=6D7AC9B15953164D0004DE38EF157BC0 >
+		{
+			myPriority 9
+			myTargetHealthLessThanPercentage 20.0
+		}
+		PowerEvaluationData "Nothing else to do" < uid=6D7AC9B15953164D0004DE392FE80DEA >
+		{
+			myTargetShieldingLessThanPercentage 99.0
+		}
+	}
+	myTuningData < uid=86C930825952F311000086B4A290401D > = pwr_mm17_humankite_mitch_power3_MVernon_Tuning
+}
+

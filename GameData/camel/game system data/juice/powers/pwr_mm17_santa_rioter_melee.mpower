@@ -1,0 +1,30 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+
+CombatPower pwr_mm17_santa_rioter_melee < uid=86C9308257E1DDA70001D8BFE40549D7 > : enemy_pwr_archetype_swarmer_melee
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308257E1E0B20000C70D5EE874E0 >
+		{
+			myPriority 20
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308257E1E0B20000C70E9A57C0EE >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+}
+

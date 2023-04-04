@@ -1,0 +1,24 @@
+include ./juiceObj.fruit
+
+class RichPresence : JuiceObj < abstract=1 >
+{
+	varmap myPSNString < bhv="localization" >
+	string myXBLStringName
+}
+
+class RichPresenceIdle : RichPresence
+{
+}
+
+class RichPresenceInMainMenu : RichPresence
+{
+}
+
+class RichPresenceInMission : RichPresence
+{
+}
+
+class RichPresenceInGameMenu : RichPresence
+{
+}
+

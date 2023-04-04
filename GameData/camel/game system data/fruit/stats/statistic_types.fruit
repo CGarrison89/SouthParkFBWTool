@@ -1,0 +1,7 @@
+include "camel/game system data/fruit/stats/statistic_dataenum_types.fruit"
+
+enum StatisticDictionaryType
+{
+	Player
+	World
+}

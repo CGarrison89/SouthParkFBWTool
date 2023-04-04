@@ -1,0 +1,7 @@
+
+enum TimeOfDayType
+{
+	None
+	Day
+	Night
+}

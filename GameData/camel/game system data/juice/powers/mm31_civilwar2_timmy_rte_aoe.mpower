@@ -1,0 +1,10 @@
+include ./mm31_civilwar2_tupperware_power1.mpower
+
+CombatPower MM31_civilwar2_timmy_rte_aoe < uid=8585E53F57C76CB90018B057D9EAE762 > : MM31_civilwar2_tupperware_power1
+{
+	myPowerEvaluationData
+	{
+	}
+	myTuningData < uid=8585E53F57C76CB90018B058ECF4BC4D > = MM31_civilwar2_timmy_rte_aoe_MNguyen_Tuning
+}
+

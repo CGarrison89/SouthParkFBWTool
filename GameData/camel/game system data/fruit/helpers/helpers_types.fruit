@@ -1,0 +1,15 @@
+enum OptionalBool
+{
+	Undefined
+	True
+	False
+}
+
+enum CardinalDirection
+{
+    Front
+    Back
+    Right
+    Left
+    None
+}

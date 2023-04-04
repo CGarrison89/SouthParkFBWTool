@@ -1,0 +1,6 @@
+include ./mm16_cokedcops_wizard01_shocked.mpower
+
+CombatPower MM16_blackcells_wizard_st_ranged_shock < uid=86D64076574CCF2F00000136DA62820E > : mm16_cokedcops_wizard01_shocked
+{
+}
+

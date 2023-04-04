@@ -1,0 +1,55 @@
+include ./placeholder_enemy_power1.mpower
+include ./bosspowers.bbartram.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_com_cousinkyle_eyeLaser < uid=B642A89A571560550000381A6F1F59A8 > : placeholder_enemy_power1
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/althumankite_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/2_range_ST.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_cousinkyle_eyelaser Name\", enabled = true, guid = #51C546C65774DBD700000091E144E613, lineVersion = 0, maxLength = 14, text = \"Eye Laser\""
+	myUseSkillScript < uid=B642A89A571560550000381BBD27B85C > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B642A89A571560550000381CBA4243B1 >
+		{
+			myPriority 20
+			myPreferredRange 2
+			myMinimumDistanceToEnemies 2
+			myValidDirections
+			{
+				myLeft TRUE
+				myRight TRUE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Left < uid=6D7AC9B1578709A70000AEDD40D378DA >
+		{
+			myPriority 19
+			myPreferredRange -1
+			myValidDirections
+			{
+				myLeft TRUE
+				myRight FALSE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Right < uid=6D7AC9B1578716150001496CD32E438E >
+		{
+			myPriority 19
+			myPreferredRange -1
+			myValidDirections
+			{
+				myLeft TRUE
+				myRight TRUE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B642A89A571560550000381DB6101374 > = pwr_com_ayinhara_Left_BBartram_Tuning
+	myCameraPreset < uid=86C93082591B5DE0000071BB61E4C032 > = Preset_Generic_Ranged
+}
+

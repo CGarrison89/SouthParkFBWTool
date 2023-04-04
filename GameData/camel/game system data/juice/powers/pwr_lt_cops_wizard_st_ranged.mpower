@@ -1,0 +1,32 @@
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_LT_cops_wizard_st_ranged < uid=86C9308257684BC900000104449D9F2D > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_wizard_st_ranged Name\", enabled = true, guid = #EA0BC518599A851F0004CC43C566B711, lineVersion = 0, maxLength = 8, text = \"Taser\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C930825775C8E40000018F784B2317 >
+		{
+			myPriority 25
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C930825775C8E400000190BD57E6A2 >
+		{
+			myPriority 25
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C9308257684BC90000010597B7290F > = pwr_LT_cops_wizard_st_ranged_Kevin_Tuning
+}
+

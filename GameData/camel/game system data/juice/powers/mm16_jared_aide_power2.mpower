@@ -1,0 +1,65 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_jared.juice"
+
+CombatPower mm16_jared_aide_power2 < uid=3267E0D05750E8FF00001A8D2C23FE60 > : enemy_pwr_archetype_bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/jaredaids_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"mm16_jared_aide_power2 Name\", enabled = true, guid = #51C546C65774D94D000000B18DE2EF63, lineVersion = 0, maxLength = 8, text = \"Punch\""
+	myUseSkillScript < uid=3267E0D058477E890012D9F3FED29100 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C93082583F946B00015160AA679785 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C93082583F946B00015161A99E3C63 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData default_VIP < uid=86C93082583F946B00015162DAA6DBE1 >
+		{
+			myPriority 20
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged_VIP < uid=86C93082583F946B0001516333D6254D >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myCameraPreset < uid=86C93082596683FE0002D2554D3EACC9 > = Preset_Generic_Melee
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

@@ -1,0 +1,44 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_pet_damage_script_with_suicide.mskillscriptjuice
+
+CombatPower mm15_explodingpigs_pig_power2 < uid=3267E0D057F703E5000F355224C4DBE8 >
+{
+	myUIName "contextComment = \"\", description = \"\", enabled = true, guid = #3267E0D057F703E5000F3551763B1266, lineVersion = 0, maxLength = 34, text = \"MM15 Exploding Pig Power 2\""
+	myUseSkillScript < uid=3267E0D057F703E5000F3553DCC63905 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D057F703E5000F3554FCD3CBB4 >
+		{
+			myPriority 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D057F703E5000F355552D55E6A >
+		{
+			myPriority 1
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Destructible < uid=3267E0D057F703E5000F355650CCD443 >
+		{
+			myPriority 50
+			myAIDesirableType A
+		}
+	}
+	myTuningData < uid=3267E0D057F703E5000F3557BD2FC14E > = enemy_pwr_mm15_explodingpigs_pig_power2_amcclay_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

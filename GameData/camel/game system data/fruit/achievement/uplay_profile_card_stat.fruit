@@ -1,0 +1,7 @@
+include "camel/game system data/fruit/juiceObj.fruit"
+
+class UplayProfileCardStat : JuiceObj
+{
+	string myTGOName
+	varmap myNameSource < bhv="localization" >
+}

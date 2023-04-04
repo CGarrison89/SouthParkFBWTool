@@ -1,0 +1,57 @@
+include ./combatpowerincludes.juice
+include ./buddypowers.amcclay.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./playerpowers.amcclay.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_summons.juice"
+
+CombatPower pwr_santa_power1 < uid=3267E0D058E598F600022FC8E0D1602F >
+{
+	myIconImage "camel/baked/assets/ui/power selection/allies/santa_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/multilane.dds"
+	myUIName "contextComment = \"\", description = \"\", enabled = true, guid = #3267E0D058E598F600022FC5211AA7D0, lineVersion = 3, maxLength = 14, text = \"Santa's Bat\"}"
+	myUIDescription ""
+	myUIShortDescription "contextComment = \"\", description = \"\", enabled = true, guid = #3267E0D059B777D1001E9210C11D6DB4, lineVersion = 0, maxLength = 42, text = \"Damage and knockback the naughty\""
+	myUseSkillScript < uid=3267E0D058E598F600022FC914017FC2 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myShouldRepositionBeforeExecution FALSE
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D058E598F600022FCA476502C5 >
+		{
+			myPriority 20
+		}
+		PowerEvaluationData Enraged < uid=3267E0D058E598F600022FCBAE20D842 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+		}
+		PowerEvaluationData kill < uid=3267E0D058E598F600022FCCC59B05B1 >
+		{
+			myPriority 100
+			myMinimumKills 1
+		}
+	}
+	myTuningData < uid=3267E0D058E598F600022FCDDA7B8DAF > = pwr_santa_power1_amcclay_Tuning
+	myCameraPreset < uid=B9E930CA5994AC02000B3E943934339D > = Santa_Ally
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 0.58333
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

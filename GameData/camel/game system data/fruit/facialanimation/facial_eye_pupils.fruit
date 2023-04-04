@@ -1,0 +1,49 @@
+include "camel/game system data/fruit/mood/mood_types.fruit"
+include "camel/game system data/fruit/facialanimation/facial_types.fruit"
+					   
+///////////////////////////////////////////////////////////////////////////
+//
+///// Pupil Preset
+//
+class FacialEyePupil
+{
+	FacialEyePupilPosition myLeft
+	FacialEyePupilPosition myRight
+	FacialEyePupilPosition myFront
+	FacialEyePupilPosition myBack
+	float myDuration
+}
+
+list FacialEyePupilPattern
+{
+	FacialEyePupil
+}
+
+list FacialEyePupilPatternList
+{
+	FacialEyePupilPattern
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// Pupil Preset
+//
+class FacialEyePupilPreset
+{
+	FacialEyeTrackingPOIType myType Normal
+	FacialEyePupilPatternList myPatterns
+}
+
+list FacialEyePupilPresetList
+{
+	FacialEyePupilPreset
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// Config
+//
+class FacialEyePupilConfig
+{
+	FacialEyePupilPresetList myPresets
+}

@@ -1,0 +1,9 @@
+enum CostumeType
+{
+	Hero
+	Street
+	Backstory
+	Preview
+	None
+	All
+}

@@ -1,0 +1,77 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/powersmenu_simpleplayanim.mskillscriptjuice
+include camel/skillscript/pwr_king_power1_script.mskillscriptjuice
+
+CombatPower pwr_intro_power1 < uid=DB7C6D42571ABCAA00002515F033FED8 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/King_Power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_damage.dds"
+	myUIName "contextComment = \"badass king power 1 name\", description = \"\", enabled = true, guid = #DB7C6D42571ABCAA000025139440895C, lineVersion = 3, maxLength = 14, text = \"Pyroclasm\""
+	myUIDescription "contextComment = \"\", description = \"\", enabled = true, guid = #DB7C6D42571ABCAA000025147B145FFE, lineVersion = 2, maxLength = 34, text = \"The King’s tactical nuke\""
+	myUIShortDescription "contextComment = \"\", description = \"\", enabled = true, guid = #9D0E619657AB70D90000020D7C9520ED, lineVersion = 0, maxLength = 34, text = \"The King’s tactical nuke\""
+	myUseSkillScript < uid=DB7C6D42571ABCAA00002516EF03A466 > = pwr_king_power1_script
+	myAnimationState king_power1
+	myShouldRepositionBeforeExecution FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308257E0940A000009EB9977D523 >
+		{
+			myPriority 5
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData 2_targets < uid=86C9308257C87A650007580BF209835F >
+		{
+			myPriority 20
+			myMinimumAffectedTargets 2
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData 3_targets < uid=86C93082584B2B000000B0ED498D00C4 >
+		{
+			myPriority 30
+			myMinimumAffectedTargets 3
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData 4_targets < uid=86C93082584B2B000000B0EEF5A9F76C >
+		{
+			myPriority 40
+			myMinimumAffectedTargets 4
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308257C87A650007580C73E26BEB >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumKills 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=DB7C6D42571ABCAA000025177F99DAB3 > = pwr_intro_power1_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

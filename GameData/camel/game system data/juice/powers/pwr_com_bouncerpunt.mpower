@@ -1,0 +1,19 @@
+include ./pwr_com_bouncerpunch.mpower
+
+CombatPower pwr_com_bouncerpunt < uid=DB7C6D4256BA447900000F196EEC9003 > : pwr_com_bouncerpunch
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/bouncer_Punt.DDS"
+	myUIName "contextComment = \"\", description = \"pwr_com_bouncerpunt Name\", enabled = true, guid = #51C546C65774DBCF000000867E70CAA1, lineVersion = 0, maxLength = 14, text = \"Punt Kick\""
+	myUseSkillScript < uid=B9E930CA56C6B400000000D11150A90B > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData punt < uid=DB7C6D4256BAC4E70000871AC5289A09 >
+		{
+			myPriority 20
+			myAggroPriority 20
+		}
+	}
+	myTuningData < uid=DB7C6D4256BA447900000F1A99348C2C > = pwr_com_bouncerpunt_MAcero_Tuning
+}
+

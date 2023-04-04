@@ -1,0 +1,173 @@
+include "camel/game system data/fruit/town/town_dataenum_role.fruit"
+include "camel/game system data/fruit/coonstagram/coonstagram.fruit"
+include "camel/game system data/fruit/mood/mood_dataenum_mood.fruit"
+include "camel/game system data/fruit/animation/actorTrackedBone.fruit"
+
+enum SelfieAppStatus
+{
+	SelfieAppStatus_None,
+	SelfieAppStatus_RequestedToOpen,
+	SelfieAppStatus_StatingUp,
+	SelfieAppStatus_On,
+	SelfieAppStatus_Closing,
+}
+
+enum SelfieMode
+{
+	Environment
+	Pose
+	Vista
+}
+
+class SelfieViewFrameSetting
+{
+	float myLeftRightOrigin	0.0
+	float myLeftOffset	0.0
+	float myRightOffset	0.0
+
+	float myUpDownOrigin	0.0		
+	float myUpOffset	0.0
+	float myDownOffset	0.0
+
+	float myStartingZoom	0.0
+	float myWideSetting	0.0
+	float myTeleSetting	0.0
+}
+
+class SelfieCharacterpositionSetting
+{
+	float myLeftRightOrigin	0.0
+	float myLeftOffset	0.0
+	float myRightOffset	0.0
+
+	float myUpDownOrigin	0.0		
+	float myUpOffset	0.0
+	float myDownOffset	0.0
+
+	float myWideSetting	0.0
+	float myTeleSetting	0.0
+}
+
+
+class SelfieCameraSetting < uid = auto >
+{
+	string					myUberCameraPresetInfoName
+	
+	SelfieViewFrameSetting			myViewFrameSetting
+	SelfieCharacterpositionSetting	mySelfieCharacterPositionSetting
+	
+	float 					myFrameMovementInitialSpeed
+	float 					myFrameMovementAcceleration
+	bool					myUseObjectHidingFeature
+	bool					myMCStickToCamera
+	float					myMCOffsetWhenSticksToCamera 0.01
+	bool					myElementsActiveCharacter
+	bool					myAutoCloseAfterShot
+	float					myIntroTime	1.0
+	float					myOutroTime 1.0
+	float					myCooldownTime 3.0
+	SelfieMode				mySelfieMode
+	CoonstagramPostGroup*	myCoonstagramPostGroup
+}
+
+list SelfieFollowerAssetList
+{
+	file < bhv=asset assettype=actor tooltip="Reference the Actor asset" >
+}
+
+class SelfieFollower
+{
+	TownRoleTypeEnum 			myIdentifier < tooltip="Represent the follower" >
+	SelfieFollowerAssetList 	myAssets < tooltip="Different asset [Actor] representing the follower" >
+	bool						myIsInitialFollower
+	CoonstagramUser*			myPoster
+}
+
+list SelfieFollowerList
+{
+	SelfieFollower
+}
+
+class SelfieFollowersSettings
+{
+	SelfieFollowerList myFollowers
+}
+
+list SelfieMoods
+{
+	MoodTypeEnum
+}
+
+class SelfieCameraSettings
+{
+	SelfieCameraSetting	myEnvironmentalMode
+	SelfieCameraSetting	myPoseMode
+	SelfieCameraSetting	myVistaMode
+}
+
+class SelfieCameraDrift
+{
+	float myRadius
+	float myAngularVelocity
+}
+
+list SelfieCameraDriftList
+{
+	SelfieCameraDrift
+}
+
+class SelfieCameraDriftSettings
+{
+	SelfieCameraDriftList mySelfieCameraDrifts
+	float myCameraDriftScaleFactor 0.1
+}
+
+
+
+class FaceRecognitionHelperPosition
+{
+	float myX
+	float myY
+	float myZ
+}
+
+class FaceRecognitionHelperArea
+{
+	float myX
+	float myY
+	float myZ
+	float myWidth
+	float myHeight
+}
+
+class FaceRecognitionHelperData
+{
+	ActorTrackedBone				myBoneName HeadCenter
+	FaceRecognitionHelperArea		myArea
+	FaceRecognitionHelperPosition	myLeftEye
+	FaceRecognitionHelperPosition	myRightEye
+	FaceRecognitionHelperPosition	myNose
+	FaceRecognitionHelperPosition	myMouth
+}
+
+list FaceRecognitionHelperDataList
+{
+	FaceRecognitionHelperData
+}
+
+class FaceRecognitionHelperSettings
+{
+	FaceRecognitionHelperDataList myFaceRecognitionData
+}
+
+list SelfieCameraSettingList 
+{
+	SelfieCameraSetting
+}
+
+class SelfieConfigData
+{
+	float					myIntroTime	1.0
+	float					myOutroTime 1.0
+	float					myCooldownTime 0.5
+}

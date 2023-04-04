@@ -1,0 +1,34 @@
+include ./pwr_com_kitchenattack.mpower
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_sm34_priest_melee_knockback < uid=86C930825840FBAE0000ACC4032A8506 > : pwr_com_kitchenattack
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/ChefHead_Power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myNumberOfAttackEvents 3
+	myPowerEvaluationData
+	{
+		PowerEvaluationData melee < uid=86C930825840FBAE0000ACC6F1292AFD >
+		{
+			myPriority 25
+			myAggroPriority 0
+			myRequireAggroTarget FALSE
+		}
+		PowerEvaluationData melee_enraged < uid=86C930825840FBAE0000ACC7AFFAA972 >
+		{
+			myPriority 25
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+		}
+		PowerEvaluationData melee_kill < uid=86C930825840FBAE0000ACC5F59EF2D9 >
+		{
+			myPriority 50
+			myAggroPriority 1020
+			myRequireAggroTarget FALSE
+			myMinimumKills 1
+		}
+	}
+	myTuningData < uid=86C930825840FBAE0000ACC8F8AF0B3E > = pwr_sm34_priest_melee_knockback_Adrian_Tuning
+	myCameraPreset < uid=86C930825913D2600000763F94252F74 > = Preset_Generic_Melee_KB
+}
+

@@ -1,0 +1,45 @@
+include ./mm31_civilwar2_mysterion_power2.mpower
+
+CombatPower pwr_civilwar3_mysterion_power2 < uid=86C9308257C9FF63000064F7A4D0AD2E > : MM31_civilwar2_mysterion_power2
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C930825848B3D90021BA4F19AADF21 >
+		{
+			myPriority 10
+			myMinimumAffectedTargets 1
+		}
+		PowerEvaluationData default_2_targets < uid=86C930825848B3D90021BA50BD09BD6F >
+		{
+			myPriority 30
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData default_3_targets < uid=86C930825848B3D90021BA51609B47E6 >
+		{
+			myPriority 40
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData enraged < uid=86C930825848B3D90021BA52D596E356 >
+		{
+			myPriority 10
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+		}
+		PowerEvaluationData enraged_2_targets < uid=86C930825848B3D90021BA539A8A7D12 >
+		{
+			myPriority 30
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData enraged_3_targets < uid=86C930825848B3D90021BA546A9849E9 >
+		{
+			myPriority 40
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 3
+		}
+	}
+}
+

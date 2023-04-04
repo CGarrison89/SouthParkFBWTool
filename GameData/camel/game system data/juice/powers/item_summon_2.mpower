@@ -1,0 +1,23 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_revive_script.mskillscriptjuice
+include camel/skillscript/camel_simple_healing_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_bomb.mprojectile"
+include camel/skillscript/pwr_summon_randy.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_placeholder_summon_script.mskillscriptjuice
+include camel/skillscript/pwr_summon_jimbo.mskillscriptjuice
+
+CombatPower item_summon_2 < uid=86D64076579D32010000009DB1D811F8 >
+{
+	myUIName "contextComment = \"\", description = \"\", enabled = false, guid = #86D64076579D32010000009CB2EF6C9D, lineVersion = 0, maxLength = 1, text = \"|empty|\""
+	myUseSkillScript < uid=86D64076579D32010000009E47DCD064 > = pwr_summon_jimbo
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myShouldUseLaunchReactions TRUE
+	myTuningData < uid=86D64076579D32010000009FE830E783 > = item_summon_2_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

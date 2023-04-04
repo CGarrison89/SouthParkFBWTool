@@ -1,0 +1,15 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_mm17_stickoftruth_swarmer_melee < uid=6D7AC9B158F92E5600019B2C228675F6 > : enemy_pwr_archetype_swarmer_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/KidSwarmer_Melee.dds"
+	myUIName "contextComment = \"\", description = \"Blade Flurry\", enabled = true, guid = #3267E0D059713B110036BD1114552EBA, lineVersion = 0, maxLength = 16, text = \"Blade Flurry\""
+	myUseSkillScript < uid=6D7AC9B158F92E5600019B2DB38DF69E > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 3
+	myShouldRepositionBeforeExecution TRUE
+	myTuningData < uid=6D7AC9B158F92E5600019B2E920FA14B > = pwr_mm17_stickoftruth_swarmer_melee_Kevin_Tuning
+}
+

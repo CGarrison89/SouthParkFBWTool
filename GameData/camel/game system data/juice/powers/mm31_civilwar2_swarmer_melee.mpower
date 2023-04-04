@@ -1,0 +1,13 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower MM31_civilwar2_swarmer_melee < uid=86D64076574CD85F0000017EE3C94DB3 > : enemy_pwr_archetype_swarmer_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/generics/generic_melee.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_swarmer_melee Name\", enabled = true, guid = #EA0BC518599A84120004617D9FD3D74A, lineVersion = 0, maxLength = 16, text = \"Patty Cake\""
+	myUseSkillScript < uid=86C930825890CCCB000017B2A6CC6075 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 5
+	myShouldRepositionBeforeExecution TRUE
+}
+

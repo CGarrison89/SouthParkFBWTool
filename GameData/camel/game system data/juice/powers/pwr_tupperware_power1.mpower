@@ -1,0 +1,67 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_tupperware.juice"
+
+CombatPower pwr_tupperware_power1 < uid=B9E930CA56D4B7BB000000DDF6805261 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/tupperware_TupperSpin.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/1_range_cross.DDS"
+	myUIName "contextComment = \"Camel_Simple_PlayAnim_Script\", description = \"pwr_tupperware_power1 Name\", enabled = true, guid = #51C546C65774DC5C000001AE76F4ED1F, lineVersion = 2, maxLength = 18, text = \"Tupper Tornado\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_tupperware_power1 Description\", enabled = true, guid = #51C546C65774DC5C000001AF55EDD6CA, lineVersion = 0, maxLength = 146, text = \"Like an out-of-control salad spinner, Tupperware twirls in place, smacking nearby foes for damage and knockback.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_tupperware_power1 Short Description\", enabled = true, guid = #9D0E6196579BC8AD000044925A019B50, lineVersion = 0, maxLength = 47, text = \"Smack and knock back all nearby foes\""
+	myUseSkillScript < uid=B9E930CA56D4B7BB000000DEA9C8A50D > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308258A2682E001409CF2D6BA580 >
+		{
+			myPriority 20
+			myAggroPriority 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData kill < uid=86C9308258A26A3C000017687235D691 >
+		{
+			myPriority 100
+			myAggroPriority 0
+			myMinimumKills 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308258A2682E001409D0EFB14140 >
+		{
+			myPriority 1020
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA56D4B7BB000000DF783D0E94 > = pwr_tupperware_power1_Tuning
+	myCameraPreset < uid=86D64076575094F900000015F834615A > = Tupperware_Power01
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 0.9167
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

@@ -1,0 +1,38 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower mm15_explodingpigs_pig_power1 < uid=3267E0D057F702D5000F35419ACBF4FD >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/AssedPig_Power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"\", enabled = true, guid = #3267E0D05803FC6B0009D6DD5830983B, lineVersion = 1, maxLength = 6, text = \"Bite\""
+	myUseSkillScript < uid=3267E0D057FE80A00009270C63BD24D7 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D057F702D5000F3542B13C7223 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData destructible < uid=3267E0D057F703FD000F355EDFC33334 >
+		{
+		}
+	}
+	myTuningData < uid=3267E0D057F702D5000F3544B39274F5 > = enemy_pwr_mm15_explodingpigs_pig_power1_amcclay_Tuning
+	myCameraPreset < uid=86C93082592F88D00016C13049601A08 > = Preset_Generic_Melee
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

@@ -1,0 +1,57 @@
+include "camel/game system data/fruit/powers/combatpowers.fruit"
+
+CombatPowerTuningData pwr_mc_joh_melee_JOh_Tuning < uid=86D64076574E1FC1000000193B47C1CB >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 1
+	myRange 0
+	myMinRange 0
+	myCooldown 0
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=86D64076574E1FC10000001ADA6D35C9 >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType MeleeCircle
+		myLength 15
+		myWidth 15
+		myStartWidth 1
+		myStartLength 1
+	}
+	myDamageAmount 60
+	myShielding -1
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=86D64076574E1FC10000001B445B1EF3 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+

@@ -1,0 +1,32 @@
+include ./pwr_dlc3_monsters_bruiser_melee.mpower
+include camel/skillscript/dlc3_monster_nathan_wave_spawn.mskillscriptjuice
+
+CombatPower pwr_DLC3_Monsters_Nathan_Wave_Spawn < uid=8585E53F5AABFB5A000F0C8315846BD2 > : pwr_DLC3_Monsters_Bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/Nathan_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/self_target.dds"
+	myUIName "contextComment = \"\", description = \"pwr_DLC3_Monsters_Nathan_melee_name\", enabled = true, guid = #8585E53F5AABFB5A000F0C81C30EF3B4, lineVersion = 0, maxLength = 16, text = \"Nathan Melee\""
+	myUIDescription "contextComment = \"\", description = \"pwr_DLC3_Monsters_Nathan_melee_description\", enabled = true, guid = #8585E53F5AABFB5A000F0C828389ACDD, lineVersion = 0, maxLength = 38, text = \"DLC3 Nathan Melee description\""
+	myUseSkillScript < uid=8585E53F5AABFCB3000F0CC821E62741 > = DLC3_Monster_Nathan_Wave_Spawn
+	myAnimationState power2
+	myLockedByDefault TRUE
+	myNumberOfAttackEvents 1
+	myShouldRepositionBeforeExecution FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=8585E53F5AABFB5A000F0C848945E955 >
+		{
+			myPriority 25
+			myRequiresNonTelegraphedDamageCells TRUE
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=8585E53F5AABFB5A000F0C853D62389A > = pwr_DLC3_Monsters_Nathan_Wave_Spawn_Tuning
+}
+

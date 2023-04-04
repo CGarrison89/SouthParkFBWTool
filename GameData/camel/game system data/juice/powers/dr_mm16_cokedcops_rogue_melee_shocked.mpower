@@ -1,0 +1,8 @@
+include ./mm16_cokedcops_rogue_melee_shocked.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower dr_MM16_cokedcops_rogue_melee_shocked < uid=C87888A05A0CDBCA00015898162FFF10 > : MM16_cokedcops_rogue_melee_shocked
+{
+	myTuningData < uid=C87888A05A0CE149000157F4C5101C7E > = enemy_pwr_dr_archetype_rogue_melee_shocked_Tuning
+}
+

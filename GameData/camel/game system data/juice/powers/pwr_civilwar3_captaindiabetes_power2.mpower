@@ -1,0 +1,27 @@
+include ./combatpowerincludes.juice
+include ./pwr_captaindiabetes_power2.mpower
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower pwr_civilwar3_captaindiabetes_power2 < uid=86C9308257CA0DE3000063A3852D998E > : pwr_captaindiabetes_power2
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308257DB0157001C6B040775E35C >
+		{
+			myPriority 10
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "3 targets" < uid=86C9308257DB0157001C6B05171E9E49 >
+		{
+			myPriority 30
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "4 targets" < uid=86C9308257DB0157001C6B069CC53F1D >
+		{
+			myPriority 40
+			myMinimumAffectedTargets 4
+		}
+	}
+	myTuningData < uid=86C9308257CA0DE3000063A434739CF6 > = pwr_captaindiabetes_power2_Tuning
+}
+

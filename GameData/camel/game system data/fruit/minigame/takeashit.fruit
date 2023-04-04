@@ -1,0 +1,66 @@
+include "camel\game system data\fruit\juiceObj.fruit"
+include "camel/game system data/fruit/minigame/lapdance2.fruit"
+include "camel/game system data/fruit/input/gameinput.fruit"
+
+
+enum TakeAShitStage_StageType
+{
+	None
+	FindThePoop
+	MatchThePoop
+	Pressurize
+	FinishPoop
+}
+
+enum TakeAShit_AnalogStick
+{
+	LeftStick
+	RightStick
+}
+
+
+// --------------------------------------------------------------------------
+// InputActions
+class TakeAShit_Action : JuiceObj < abstract = 1 > 
+{
+	int myMatchCount -1
+	string myDebugName
+}
+
+class TakeAShit_Action_Gesture : TakeAShit_Action < uid = auto > 
+{
+	TakeAShit_AnalogStick myAnalogStick
+	LapDanceGesture* myGesture
+}
+
+class TakeAShit_Action_Mash : TakeAShit_Action < uid = auto > 
+{
+	GameAction myGameAction
+}
+
+class TakeAShit_Action_Position : TakeAShit_Action < uid = auto > 
+{
+	vec3f myPosition
+	vec3f myPositionPC
+	float mySuccessAngle
+	TakeAShit_AnalogStick myAnalogStick
+}
+
+list TakeAShit_Action_List 
+{
+	TakeAShit_Action*
+}
+
+class TakeAShit_ActionGroup : JuiceObj < uid = auto > 
+{
+	TakeAShit_Action_List myActions
+	varmap myUIName < bhv = "localization" >
+}
+
+list TakeAShit_ActionGroups
+{
+	TakeAShit_ActionGroup*
+}
+
+
+

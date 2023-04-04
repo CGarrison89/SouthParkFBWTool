@@ -1,0 +1,9 @@
+include "camel/game system data/fruit/facialanimation/facial_types.fruit"
+include "camel/game system data/fruit/facialanimation/facial_eye_pupils.fruit"
+
+///// Config
+//
+class FacialConfig
+{
+	
+}

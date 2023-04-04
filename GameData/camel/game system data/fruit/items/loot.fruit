@@ -1,0 +1,43 @@
+include "camel/game system data/fruit/items/items.fruit"
+include "camel/game system data/fruit/helpers/uidmanagedobject.fruit"
+
+enum LootExclusionGroup
+{
+	None
+	A
+	B
+	C
+	D
+}
+
+class LootTableBase : uidManagedObject < abstract = 1 >
+{
+}
+
+class LootEntry
+{
+	LootExclusionGroup myExclusionGroup
+	int myWeight
+	float myChance
+	int myQuantityMin
+	int myQuantityMax
+
+	// Condition?
+
+	uid myItem < bhv="asset" assettype="Item" >
+	LootTableBase* myLootTable
+}
+
+list LootEntries
+{
+	LootEntry
+}
+
+class LootTable : LootTableBase < uid=auto >
+{
+	LootEntries myLootEntries
+	string myTimefart1
+	string myTimefart2
+	string myInfiniteTimefart
+	string myUbiClubID
+}

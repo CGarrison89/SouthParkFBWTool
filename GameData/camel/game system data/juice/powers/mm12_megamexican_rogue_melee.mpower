@@ -1,0 +1,7 @@
+include ./enemy_pwr_archetype_rogue_melee.mpower
+
+CombatPower MM12_megamexican_rogue_melee < uid=86D64076574CCE19000001322C6A156B > : enemy_pwr_archetype_rogue_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/generics/generic_melee.dds"
+}
+

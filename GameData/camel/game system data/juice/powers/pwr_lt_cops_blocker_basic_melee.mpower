@@ -1,0 +1,14 @@
+include ./enemy_pwr_archetype_blocker_basic_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_LT_cops_blocker_basic_melee < uid=86C9308257684D0B0000013E4A7424FD > : enemy_pwr_archetype_blocker_basic_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/swatcop_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_blocker_basic_melee Name\", enabled = true, guid = #EA0BC518599A8470000485288B96B5C9, lineVersion = 0, maxLength = 16, text = \"Brutal Baton\""
+	myUseSkillScript < uid=8585E53F58F93024000272DAF01C7ED0 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myTuningData < uid=86C9308257684D0B0000013F059BCFD8 > = pwr_LT_cops_blocker_basic_melee_Kevin_Tuning
+}
+

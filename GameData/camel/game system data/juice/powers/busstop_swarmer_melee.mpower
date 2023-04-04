@@ -1,0 +1,8 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower busstop_swarmer_melee < uid=86C93082576096CD0000012F92D97C48 > : enemy_pwr_archetype_swarmer_melee
+{
+	myTuningData < uid=86C93082576096CD00000130276D9DEB > = pwr_busstop_swarmer_melee_Kevin_Tuning
+}
+

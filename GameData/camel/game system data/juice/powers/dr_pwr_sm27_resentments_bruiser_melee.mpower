@@ -1,0 +1,8 @@
+include ./pwr_sm27_resentments_bruiser_melee.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower dr_pwr_sm27_resentments_bruiser_melee < uid=8585E53F5A0CBCAE001174A38FEE1042 > : pwr_sm27_resentments_bruiser_melee
+{
+	myTuningData < uid=8585E53F5A0CC2810002AB3686F9436E > = pwr_dr_sm27_resentments_bruiser_melee_Tuning
+}
+

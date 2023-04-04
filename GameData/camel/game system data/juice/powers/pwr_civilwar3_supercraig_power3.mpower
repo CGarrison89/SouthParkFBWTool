@@ -1,0 +1,7 @@
+include ./pwr_supercraig_power3.mpower
+
+CombatPower pwr_civilwar3_supercraig_power3 < uid=86C9308257CA0D600000639F725DBBDC > : pwr_supercraig_power3
+{
+	myTuningData < uid=86C9308257CA0D60000063A047FEC227 > = pwr_civilwar3_supercraig_power3_Tuning
+}
+

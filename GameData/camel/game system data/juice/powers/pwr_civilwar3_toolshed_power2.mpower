@@ -1,0 +1,7 @@
+include ./mm31_civilwar2_toolshed_power2.mpower
+include ./pwr_toolshed_power3.mpower
+
+CombatPower pwr_civilwar3_toolshed_power2 < uid=86C9308257CA02DC00005F8C2EEC3AD9 > : pwr_toolshed_power2
+{
+}
+

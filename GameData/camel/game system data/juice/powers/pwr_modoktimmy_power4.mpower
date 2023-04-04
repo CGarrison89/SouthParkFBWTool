@@ -1,0 +1,30 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_remove_statuseffect_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_pounce_damage_script.mskillscriptjuice
+
+CombatPower pwr_modoktimmy_power4 < uid=B9E930CA56D0E9990000002D7EE962EF >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/doctortimothy_power4.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/select_no_min_range_wide.DDS"
+	myUIName "contextComment = \"Doctor Timothy Power 4 Name\", description = \"pwr_modoktimmy_power4 Name\", enabled = true, guid = #51C546C65774DC33000001482F7675EF, lineVersion = 3, maxLength = 25, text = \"The Timmy Whisperer\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_modoktimmy_power4 Description\", enabled = true, guid = #51C546C65774DC3300000149B5E9A80D, lineVersion = 1, maxLength = 112, text = \"Doctor Timothy, in full recruitment mode, damages and Charms multiple foes from range.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_modoktimmy_power4 Short Description\", enabled = true, guid = #9D0E6196579BD5F8000044CBC7E56447, lineVersion = 1, maxLength = 36, text = \"Charm multiple foes at range\""
+	myUseSkillScript < uid=B9E930CA56D0E9990000002E8F65C455 > = Camel_Simple_Placeholder_Damage_Script
+	myAnimationState power4
+	myTuningData < uid=B9E930CA56D0E9990000002FAD19C43A > = pwr_modoktimmy_power4_Tuning
+	myPowerGroup Ultimate
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 2.0
+				myActionPlusPresetEnum Slow
+			}
+		}
+	}
+}
+

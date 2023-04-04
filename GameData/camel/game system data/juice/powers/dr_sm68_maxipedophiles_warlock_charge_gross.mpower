@@ -1,0 +1,10 @@
+include ./sm68_maxipedophiles_warlock_charge_gross.mpower
+include ./dlc2_enemypowers.juice
+include camel/skillscript/dr_sm68_pedo_priest_charge_warlock02_telegraph_damage_delt.mskillscriptjuice
+
+CombatPower dr_sm68_maxipedophiles_warlock_charge_gross < uid=C87888A05A0637AD001C0CAB3A832A49 > : sm68_maxipedophiles_warlock_charge_gross
+{
+	myUseSkillScript < uid=86C930825A15B28400021400E3BEB7EF > = dr_sm68_pedo_priest_charge_warlock02_telegraph_damage_delt
+	myTuningData < uid=C87888A05A0637BD001C0CB052A9460D > = pwr_dr_sm68_warlock_telegraph_charge_gross_execute_Tuning
+}
+

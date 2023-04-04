@@ -1,0 +1,8 @@
+include ./pwr_civilwar3_timmy_power1.mpower
+include ./dlc2_buddypowers.juice
+
+CombatPower pwr_dr_civilwar3_timmy_power1 < uid=C87888A05A162B6A000C5A3CBF0A431F > : pwr_civilwar3_timmy_power1
+{
+	myTuningData < uid=C87888A05A16300A00170B9E2107B297 > = pwr_dr_modoktimmy_power1_Tuning
+}
+

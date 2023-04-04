@@ -1,0 +1,37 @@
+include ./enemy_pwr_archetype_priest_heal.mpower
+include camel/skillscript/sm64_vampkid_lifedrain_power1.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower sm64_vampkids_priest_power2 < uid=3267E0D0579FD1BE00007122E9258AF8 > : enemy_pwr_archetype_priest_heal
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/VampKids_Priest_Power2.dds"
+	myUseSkillScript < uid=86C9308258520B260000640C2E3DA387 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D0579FD1BE00007124A79ACF8B >
+		{
+			myPriority 20
+			myPreferredRange 5
+			myMinimumDistanceToEnemies 5
+			myTargetHealthLessThanPercentage 80.0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData NoDistance < uid=3267E0D0579FD68E0000D29BE6C76F0A >
+		{
+			myPriority 10
+			myTargetHealthLessThanPercentage 80.0
+		}
+	}
+	myTuningData < uid=3267E0D0579FD1BE0000712528014C4E > = enemy_pwr_sm64_vampkid_priest_power2_amcclay_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

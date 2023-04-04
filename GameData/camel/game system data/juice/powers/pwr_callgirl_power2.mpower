@@ -1,0 +1,78 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_callgirl.juice"
+include camel/skillscript/pwr_callgirl_power02_script.mskillscriptjuice
+
+CombatPower pwr_callgirl_power2 < uid=B9E930CA56D0A1A0000000C611848699 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/callgirl_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide_ST.DDS"
+	myUIName "contextComment = \"Call Girl Power 2 Name\", description = \"pwr_callgirl_power2 Name\", enabled = true, guid = #51C546C65774D960000000ED0D80A0E4, lineVersion = 3, maxLength = 17, text = \"unf0ll0wd.tar\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_callgirl_power2 Description\", enabled = true, guid = #51C546C65774D960000000EE7CE9FBDD, lineVersion = 1, maxLength = 116, text = \"Call Girl ruins an enemy's online reputation, dealing damage and inflicting Defense Down.\"}"
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_callgirl_power2 Short Description\", enabled = true, guid = #9D0E6196579BAEEE0000446FAB4F7046, lineVersion = 1, maxLength = 51, text = \"Mass unfollow a foe, apply Defense Down\""
+	myUseSkillScript < uid=B9E930CA56D0A1A0000000C709D42A11 > = pwr_callgirl_power02_script
+	myAnimationState power2
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308258A26AA200001769B960DF66 >
+		{
+			myPriority 10
+			myMinimumAffectedTargets 1
+			myStatusEffectConditionData
+			{
+			}
+		}
+		PowerEvaluationData "not marked" < uid=86C9308258A26AC90000176A3BACFCE2 >
+		{
+			myPriority 20
+			myMinimumAffectedTargets 1
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not marked"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Marked
+					myFollowingCondition None
+				}
+			}
+		}
+		PowerEvaluationData kill < uid=86C9308258A26AC90000176BE3D3224F >
+		{
+			myPriority 100
+			myMinimumKills 1
+			myStatusEffectConditionData
+			{
+			}
+		}
+		PowerEvaluationData enraged < uid=86C930825A5690C7000194DD19A13AB3 >
+		{
+			myPriority 10
+			myAggroPriority 1010
+			myRequireAggroTarget TRUE
+			myMinimumKills 0
+			myStatusEffectConditionData
+			{
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA56D0A1A0000000C85C31AD05 > = pwr_callgirl_power2_Tuning
+	myCameraPreset < uid=B9E930CA5823B81400005FB16F2C5F25 > = CallGirl_Power02
+	myPowerGroup Normal
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusDistributionEnum AllUnusedPriorToHit
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.0
+				myActionPlusEndTime 0.416667
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

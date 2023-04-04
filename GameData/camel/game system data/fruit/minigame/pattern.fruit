@@ -1,0 +1,90 @@
+include "camel/game system data/fruit/MiniGame/PatternDataEnum.fruit"
+
+enum Operator
+{
+	AND
+	OR
+}
+
+enum SynchronizationType
+{
+	None
+	Synchronized
+	Asynchronized
+}
+
+enum RepeatType
+{
+	None
+	Looping
+	BackAndForth
+	HoldPosition
+}
+
+enum AngleType
+{
+	None
+	Positive
+	Negative
+	ChangeSign
+}
+
+enum GamePadStick
+{
+	LeftStick
+	RightStick
+}
+
+class AngleProperties
+{
+	bool myDoSmallSteps
+	float mySmallStepMaxValue
+	float myTimelineFactor 1
+	AngleType myAngleType
+}
+
+class Vector
+{
+	float myX
+	float myY
+}
+
+class ExcludedPosition
+{
+	bool myIsExcludingValue
+	Operator myOperator
+	Vector myTopLeftPosition
+	Vector myBottomRightPosition
+}
+
+class CurveProperties
+{
+	string myStickActionXAxisCurve "{ defaultLeftSlope = 0, defaultRightSlope = 0, defaultValue = 0, interpolator = 0, isRefinedSampling = true, keys2 = { inTangents = { -0 0, -0.213896 -0.213896, -0.119437 0, }, outTangents = { 0.213896 0, 0.119437 0.119437, 0 0, }, properties = { 3, 2051, 1027, }, values = { 0 0, 0.641688 0.585567, 1 1, }, }, numKeys = 3, }" < bhv=inputgraph >
+	bool myUseXCurveAsRange
+	string myStickActionYAxisCurve "{ defaultLeftSlope = 0, defaultRightSlope = 0, defaultValue = 0, interpolator = 0, isRefinedSampling = true, keys2 = { inTangents = { -0 0, -0.213896 -0.213896, -0.119437 0, }, outTangents = { 0.213896 0, 0.119437 0.119437, 0 0, }, properties = { 3, 2051, 1027, }, values = { 0 0, 0.641688 0.585567, 1 1, }, }, numKeys = 3, }" < bhv=inputgraph >
+	bool myUseYCurveAsRange
+}
+
+class StickPattern
+{
+	UIPatternType myPatternType
+	RepeatType myRepeatType
+	AngleProperties myAngleProperties
+	ExcludedPosition myExcludedPosition
+	CurveProperties myCurveProperties
+}
+
+list StickPatternList
+{
+	StickPattern
+}
+
+class Patterns
+{
+	int myMaxAuthorizedError
+	float myTimelineHotspot
+	float mySynchronizationThreshold
+	float myChangingDirectionThreshold
+	float myHoldTime
+	StickPatternList myStickPatternList
+}

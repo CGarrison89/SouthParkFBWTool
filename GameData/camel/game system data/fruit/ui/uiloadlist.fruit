@@ -1,0 +1,16 @@
+list UIGraphList
+{
+	file < bhv=asset assettype=gui >
+}
+
+list UIGraphs
+{
+	UIGraphList
+}
+
+class UILoadList
+{	
+	UIGraphList myUIStartupGraphs
+	UIGraphs myUINormalGraphs
+	UIGraphs myUIGameplayGraphs
+}

@@ -1,0 +1,8 @@
+include ./pwr_humankite_power3.mpower
+include ./dlc2_buddypowers.juice
+
+CombatPower pwr_dr_humankite_power3 < uid=C87888A05A1F2CB80010ECB73A40D1E5 > : pwr_humankite_power3
+{
+	myTuningData < uid=C87888A05A1F30120003F117D458EAA8 > = pwr_dr_humankite_power3_Tuning
+}
+

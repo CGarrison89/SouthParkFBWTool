@@ -1,0 +1,72 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./enemypowers.adrian.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include ./dlc1_enemypowers.juice
+
+CombatPower pwr_DLC1_VampKids_BlackGuy_melee < uid=86C9308259A5ECFF000713A2DDF3942A > : enemy_pwr_archetype_bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/BlackVamp_Power1.dds"
+	myUIName "contextComment = \"power name\", description = \"pwr_DLC1_VampKids_BlackGuy_melee_name\", enabled = true, guid = #86C9308259EE5D980000905006F14315, lineVersion = 1, maxLength = 18, text = \"Fuckin' You Up\"}"
+	myUseSkillScript < uid=86C9308259A5ECFF000713A3067431D5 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 4
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308259A71E510005E9F7B54113FF >
+		{
+			myPriority 100
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308259A71E510005E9F8C0701725 >
+		{
+			myPriority 100
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData kill < uid=86C9308259A71E510005E9F952A04600 >
+		{
+			myPriority 150
+			myMinimumKills 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData swarmers < uid=86C930825A80D06E000FEDD36B1E9C67 >
+		{
+			myPriority 100
+			myAIDesirableType A
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "swarmers - kill" < uid=86C930825A80D080000FEDD640B8D806 >
+		{
+			myPriority 150
+			myMinimumKills 1
+			myAIDesirableType A
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C9308259A5ECFF000713A43A2AB755 > = pwr_DLC1_VampKids_BlackVamp_melee_Tuning
+	myCameraPreset < uid=86C9308259A6153D0002D4B4C25AB14A > = Preset_Generic_Melee
+}
+

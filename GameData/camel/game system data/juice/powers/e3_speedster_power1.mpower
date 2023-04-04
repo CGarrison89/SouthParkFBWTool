@@ -1,0 +1,23 @@
+include ./combatpowerincludes.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_speedster.juice"
+include camel/skillscript/power_teleport_punch.mskillscriptjuice
+include ./playerpowers.demo.juice
+
+CombatPower e3_speedster_power1 < uid=B9E930CA5743904F0000000DC7526A24 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/speedster_TeleportPunch.dds"
+	myUIName "contextComment = \"\", description = \"e3_speedster_power1 Name\", enabled = true, guid = #51C546C65774D9AC0000006CE736BADA, lineVersion = 2, maxLength = 17, text = \"Quantum Punch\""
+	myUIDescription "contextComment = \"\", description = \"e3_speedster_power1 Description\", enabled = true, guid = #51C546C65774D9AC0000006D57EE0AF9, lineVersion = 1, maxLength = 72, text = \"Teleports to an enemy, does damage, and teleports back.\""
+	myUseSkillScript < uid=B9E930CA5743904F0000000F8AF42116 > = power_teleport_punch
+	myAnimationState ""
+	myNumberOfAttackEvents 2
+	myTuningData < uid=B9E930CA5743904F00000010734D6CE5 > = demo_e3_speedster_power1_demo_Tuning
+	myCameraPreset < uid=B9E930CA574770C0000114D257124E0A > = Speedster_Power01
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

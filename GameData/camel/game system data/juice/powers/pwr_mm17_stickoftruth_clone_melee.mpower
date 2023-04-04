@@ -1,0 +1,7 @@
+include ./pwr_mm17_stickoftruth_craig_melee.mpower
+
+CombatPower pwr_mm17_stickoftruth_clone_melee < uid=86C9308257BB7670000001B6588ADE4D > : pwr_mm17_stickoftruth_craig_melee
+{
+	myTuningData < uid=86C9308257BB7670000001B7F61AF930 > = pwr_mm17_stickoftruth_clone_melee_Kevin_Tuning
+}
+

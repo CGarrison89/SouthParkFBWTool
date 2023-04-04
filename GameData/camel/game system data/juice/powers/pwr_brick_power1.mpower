@@ -1,0 +1,64 @@
+include ./combatpowerincludes.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_brick.juice"
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/powersmenu_simpleplayanim.mskillscriptjuice
+
+CombatPower pwr_brick_power1 < uid=B9E930CA56B27FB70000003B48AA3555 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/brick_KnuckleSandwich.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.DDS"
+	myUIName "contextComment = \"power name\", description = \"pwr_brick_power1 Name\", enabled = true, guid = #51C546C65774D95E000000E34ACEB730, lineVersion = 1, maxLength = 16, text = \"Brick Bash\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_brick_power1 Description\", enabled = true, guid = #51C546C65774D95E000000E4FA485457, lineVersion = 0, maxLength = 170, text = \"The Brutalist clocks in, then clocks out a foe with a knockback punch so hard it spontaneously reverses all orthodontic procedures.\""
+	myUIShortDescription "contextComment = \"short desc in combat UI\", description = \"pwr_brick_power1 Short Description\", enabled = true, guid = #9D0E6196579A3D4C0000007CF356D57E, lineVersion = 0, maxLength = 53, text = \"Haymaker delivering justice and knockback\""
+	myUseSkillScript < uid=B9E930CA56B27FB70000003CD7B28D17 > = Camel_Simple_PlayAnim_Script
+	myAnimationState brick_power1
+	myNumberOfAttackEvents 1
+	myCanUseDuringRTE TRUE
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Kill < uid=86C9308258E7C2350000412CC7BA22A3 >
+		{
+			myPriority 13300
+			myMinimumKills 1
+		}
+		PowerEvaluationData Blocking < uid=86C9308258E7C2350000412DD0B3C816 >
+		{
+			myPriority 8300
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Blocking
+				{
+					mySpecialEffect Block
+				}
+			}
+		}
+		PowerEvaluationData Default < uid=86C9308258E7C2350000412EED619BCC >
+		{
+			myPriority 5300
+		}
+	}
+	myMeleeOffset -1.0;0.0
+	myTuningData < uid=B9E930CA56B283DD00000012F42B3D66 > = pwr_brick_power1_Tuning
+	myCameraPreset < uid=B9E930CA5731604400000C973887E588 > = Brick_Power01
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData Game1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 1.8333
+				myActionPlusPresetEnum Slow
+			}
+		}
+	}
+}
+

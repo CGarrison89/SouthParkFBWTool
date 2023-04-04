@@ -1,0 +1,74 @@
+include "camel/game system data/fruit/mission/mission.fruit"
+include "modules/core/audio/audio.fruit"
+include "camel/game system data/fruit/ui/presetfontstyles.fruit"
+
+class Tip
+{
+	varmap myLocString < bhv="localization" tooltip="Text for the tip that will be shown in the UI" >
+	Mission* myMissionToUnlock < tooltip="Mission at which tip can be seen. Leave blank for always available." >
+	bool myIsSeenOnComplete false
+}
+
+list TipList
+{
+    Tip
+}
+
+enum TipVideoID
+{
+	None
+	Royal
+	Combat1
+	Combat2
+	Combat3
+	Combat4
+	Combat5
+	Combat6
+	Puzzle1
+	Puzzle2
+	Puzzle3
+	Puzzle4
+	Puzzle5
+}
+
+enum TipType
+{
+	None
+	Text
+	Image
+	Video
+}
+
+class LangVideo
+{
+	LanguageName myLanguageName < tooltip="Language. Pick a supported one.">
+	file myVideo "" < types=*.bk2 tooltip="Bink per language" >
+}
+
+list LangVideoList
+{
+	LangVideo
+}
+
+class SPCTip < uid=auto >
+{
+	TipType myType
+	varmap myText < bhv="localization" tooltip="Text to display. Can be a hero item or a small descriptor">
+	file myImageThumbnail "" < types=*.png,*.dds tooltip="Separate image from the hero image" >
+	file myImage "" < types=*.png,*.dds tooltip="Hero image with the tip information" >
+	file myVideo "" < types=*.bk2 tooltip="Baked video asset or bink to play" >
+	LangVideoList myLangVideos
+	AudioEvent myVideoAudioEvent < tooltip="Audio that goes with above video" >
+	TipVideoID myVideoId < tooltip="Data sent to Services for mobile operations" >
+}
+
+class OneSPCTipsSetting
+{
+	int myCount
+	SPCTip* myTips
+}
+
+list SPCTipsList
+{
+	OneSPCTipsSetting
+}

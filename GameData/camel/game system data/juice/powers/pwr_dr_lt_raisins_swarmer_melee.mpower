@@ -1,0 +1,8 @@
+include ./pwr_lt_raisins_swarmer_melee.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower pwr_dr_LT_raisins_swarmer_melee < uid=C87888A05A160151000162F9FC676B89 > : pwr_LT_raisins_swarmer_melee
+{
+	myTuningData < uid=C87888A05A1602C300013419E275D212 > = pwr_dr_LT_raisins_swarmer_melee_Tuning
+}
+

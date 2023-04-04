@@ -1,0 +1,13 @@
+include "camel/game system data/fruit/DestructionState/DestructionState.fruit"
+include "camel/game system data/fruit/Props/PropTagType.fruit"
+
+list DestructionStateList
+{
+	DestructionState
+}
+
+class DestructionStateConfig  < uid=auto >
+{
+	DestructionStateList myDestructionStateList
+  	EntityPropTagTypeList myPropTagTypeList
+}

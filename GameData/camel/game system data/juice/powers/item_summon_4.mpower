@@ -1,0 +1,12 @@
+include ./combatpowerincludes.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_summons.juice"
+include camel/skillscript/pwr_summon_classi.mskillscriptjuice
+
+CombatPower item_summon_4 < uid=86D64076579D3214000000AD96AEA39C >
+{
+	myUIName "contextComment = \"\", description = \"\", enabled = false, guid = #86D64076579D3214000000AC16432D03, lineVersion = 0, maxLength = 1, text = \"|empty|\""
+	myUseSkillScript < uid=86D64076579D3214000000AEF9D8E584 > = pwr_summon_classi
+	myTuningData < uid=86D64076579D3214000000AFECF1FC8D > = item_summon_4_Tuning
+	myCameraPreset < uid=8E1BC44359536D6C000A2C512E3DFF18 > = Summon_Classi
+}
+

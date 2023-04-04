@@ -1,0 +1,27 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower temp_pwr_enemy_archetype_basic_rogue1 < uid=B9E930CA5740913900000033496B177A >
+{
+	myUIName "contextComment = \"\", description = \"temp_pwr_enemy_archetype_basic_rogue1 Name\", enabled = true, guid = #51C546C65774DC73000001E292447B2D, lineVersion = 0, maxLength = 27, text = \"ST Melee Attack 3 DMG\""
+	myUseSkillScript < uid=B9E930CA574091390000003474842448 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA57409D35000001113EEC20AF >
+		{
+			myPriority 10
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA574099C6000000B3245D2715 > = temp_pwr_enemy_archetype_basic_rogue1_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

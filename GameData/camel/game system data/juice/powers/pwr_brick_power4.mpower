@@ -1,0 +1,39 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/pwr_brutalist_power4_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_brick.juice"
+include camel/skillscript/pwr_brutalist_power4_script_menu.mskillscriptjuice
+
+CombatPower pwr_brick_power4 < uid=B9E930CA56B2852B00000033DCA67A9D >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/brick_UnstoppableForce.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.DDS"
+	myUIName "contextComment = \"power name\", description = \"pwr_brick_power4 Name\", enabled = true, guid = #51C546C65774D95F000000E9F83B9196, lineVersion = 2, maxLength = 21, text = \"Jack Hammer Head\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_brick_power4 Description\", enabled = true, guid = #51C546C65774D95F000000EA01CE1ACB, lineVersion = 1, maxLength = 156, text = \"Tear down an enemy with repeated punches and headbutts, dealing major damage and knockback. Hearing protection required.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_brick_power4 Short Description\", enabled = true, guid = #9D0E6196579A59C9000001621A2B36B9, lineVersion = 1, maxLength = 51, text = \"Devastating beating with mega knockback\""
+	myUseSkillScript < uid=B9E930CA56B2852B00000034F9EC356F > = pwr_brutalist_power4_script
+	myAnimationState brick_power4
+	myShouldRepositionBeforeExecution FALSE
+	myTuningData < uid=B9E930CA56B2852B000000351E44FECB > = pwr_brick_power4_Tuning
+	myCameraPreset < uid=B9E930CA577FE59A00007058327ADE33 > = Brick_Power04
+	myPowerGroup Ultimate
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus FALSE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 2.0
+				myActionPlusPresetEnum Slow
+			}
+		}
+	}
+}
+

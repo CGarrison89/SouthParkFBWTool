@@ -1,0 +1,18 @@
+include "camel/game system data/fruit/ui/HUD/ManagerRequestType.fruit"
+
+class UIRequest
+{
+	float myDuration 0
+	int myPriority 0
+	UIManagerRequestType myUIRequestType
+}
+
+list UIRequestList
+{
+	UIRequest
+}
+
+class CUIManager
+{
+	UIRequestList myUIRequestList
+}

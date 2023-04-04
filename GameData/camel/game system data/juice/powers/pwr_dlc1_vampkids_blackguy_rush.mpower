@@ -1,0 +1,6 @@
+include ./enemy_pwr_archetype_rusher_rush.mpower
+
+CombatPower pwr_DLC1_VampKids_BlackGuy_rush < uid=86C9308259A7331300008B8803660637 > : enemy_pwr_archetype_rusher_rush
+{
+}
+

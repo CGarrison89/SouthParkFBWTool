@@ -1,0 +1,29 @@
+include ./mm17_christmascritters_beavery_power02.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower dr_mm17_christmascritters_beavery_power02 < uid=C87888A05A0623210001E21506192452 > : mm17_christmascritters_beavery_power02
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=C87888A05A1CA78600276B304624AAD3 >
+		{
+			myPriority 100
+			myTargetHealthLessThanPercentage 80.0
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "no charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=C87888A05A0623210001E216B5EE08DA > = enemy_dr_mm17_critters_priest_heal_Tuning
+}
+

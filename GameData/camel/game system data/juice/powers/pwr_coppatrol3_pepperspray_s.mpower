@@ -1,0 +1,23 @@
+include ./pwr_com_kitchenthrow.mpower
+
+CombatPower pwr_coppatrol3_pepperspray_s < uid=DB7C6D4256E3813500000336BD0BC38C > : pwr_com_kitchenthrow
+{
+	myUIName "contextComment = \"\", description = \"pwr_coppatrol3_pepperspray_s Name\", enabled = true, guid = #51C546C65774DC01000000D9797EA4E5, lineVersion = 0, maxLength = 16, text = \"Pepper Spray\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData AoE < uid=DB7C6D4256F44E8600001E005982FDBB >
+		{
+			myPriority 40
+			myAggroPriority 40
+			myMinimumKills 0
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData default < uid=DB7C6D4256F44E8600001DFF7A507293 >
+		{
+			myPriority 25
+			myAggroPriority 25
+		}
+	}
+	myTuningData < uid=DB7C6D4256E3813500000337211D63DE > = pwr_coppatrol3_pepperspray_s_MAcero_Tuning
+}
+

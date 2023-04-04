@@ -1,0 +1,34 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./enemypowers.bbartram.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_delay_script.mskillscriptjuice
+
+CombatPower pwr_com_mm14_blocker_power1_block < uid=B642A89A579137440000454D4B0C79D6 >
+{
+	myUIName "contextComment = \"Name of Blocker power 1, a standard block\", description = \"pwr_com_mm14_blocker_power1_block_name\", enabled = true, guid = #B642A89A5791378100004559DEE8A0F4, lineVersion = 0, maxLength = 14, text = \"Solid Stone\""
+	myUseSkillScript < uid=B642A89A579137440000454E094282EE > = Camel_Simple_Delay_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B642A89A579137440000454FB3A3AAD1 >
+		{
+			myPriority 50
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B642A89A57913744000045504D7AAC59 > = pwr_com_mm14_blocker_power1_block_BBartram_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myBlockingData
+	{
+		myDamageThreshold 30
+	}
+}
+

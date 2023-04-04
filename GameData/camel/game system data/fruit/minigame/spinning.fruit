@@ -1,0 +1,39 @@
+include "camel/game system data/fruit/MiniGame/Pattern.fruit"
+include "camel/game system data/fruit/MiniGame/TimeFart.fruit"
+
+class SpinningActionGroup
+{
+	int myLoopCounter 1
+	UIPatternType myLeftStickActionPattern
+	UIPatternType myRightStickActionPattern
+	float mySpeedThreshold 0.125 < tooltip="This is the stick rotation speed treshold you have to match to complete the minigame">
+}
+
+class SpinningAnimationSpeed
+{
+	float myMaxAnimationSpeed 4.0 < tooltip="Max animation speed is multiplied by the gage ratio to determine the animation speed">
+	float mySuccessAnimationSpeed 4.0 < tooltip="Speed of the character animation in the successful state">
+}
+
+class SpinningGage
+{
+	float myMaxGageValue 15.0 < tooltip="Gage value that needs to be reached to complete the minigame">
+	float myGageIncrement 0.4 < tooltip="Gage increment used when correctly executing the stick rotation and at the right speed">
+	float myGagePenaltyIncrement 0.025 < tooltip="Gage decrement used when correctly executing the stick rotation and but below the right speed">
+	float myGageBackToIdleIncrement 0.15 < tooltip="Gage decrement used when going back from player rotation to idle">
+}
+
+class SpinningMiniGame
+{
+	int mySkippedFrameNumber
+	int mySamplePointNumber
+	int myNeutralConsecutivePosMax
+	float myInactiveTimer
+	float myAccuracyPercentage
+	float myGamePadAssistSpeed
+	float myCostumeSwitchTimer
+	SpinningActionGroup mySpinningActionGroup
+	SpinningActionGroup mySpinningActionPCGroup
+	SpinningAnimationSpeed mySpinningAnimationSpeed	
+	SpinningGage mySpinningGage
+}

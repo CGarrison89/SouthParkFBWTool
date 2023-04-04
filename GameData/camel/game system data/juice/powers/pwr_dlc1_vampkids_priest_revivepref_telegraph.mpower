@@ -1,0 +1,82 @@
+include ./enemy_pwr_archetype_priest_shield.mpower
+include ./dlc1_enemypowers.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/camel_simple_swappower_slot2.mskillscriptjuice
+include camel/skillscript/camel_simple_telegraph_on.mskillscriptjuice
+include camel/skillscript/dlc1_vampkids_priest_revive_telegraph_skillscript.mskillscriptjuice
+
+CombatPower pwr_DLC1_VampKids_Priest_revivePref_telegraph < uid=B642A89A5A3452B5000FFF4081ACDA12 > : enemy_pwr_archetype_priest_shield
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/VampPriest_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_heal.dds"
+	myUIName "contextComment = \"power name\", description = \"pwr_DLC1_VampKids_Priest_revive_telegraph_name\", enabled = true, guid = #B642A89A5A3452B5000FFF3FA9FC0E99, lineVersion = 1, maxLength = 16, text = \"Reraise Dead\""
+	myUseSkillScript < uid=B642A89A5A3452B5000FFF4109176DBF > = DLC1_VampKids_Priest_Revive_Telegraph_SkillScript
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "1 target" < uid=B642A89A5A3452B5000FFF424F973B29 >
+		{
+			myPriority 2000
+			myMinimumAffectedTargets 1
+			myNumTelegraphPowersAllowed 0
+			myTargetHealthLessThanPercentage 1.0
+			myTargetHealthMoreThanPercentage -2.0
+			myAIDesirableType A
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "2 targets" < uid=B642A89A5A3452B5000FFF4306567C84 >
+		{
+			myPriority 2500
+			myMinimumAffectedTargets 2
+			myNumTelegraphPowersAllowed 0
+			myTargetHealthLessThanPercentage 1.0
+			myTargetHealthMoreThanPercentage -2.0
+			myAIDesirableType A
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "3 targets" < uid=B642A89A5A3452B5000FFF44E1CD4A16 >
+		{
+			myPriority 3000
+			myMinimumAffectedTargets 3
+			myNumTelegraphPowersAllowed 0
+			myTargetHealthLessThanPercentage 1.0
+			myTargetHealthMoreThanPercentage -2.0
+			myAIDesirableType A
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "4 targets" < uid=B642A89A5A3452B5000FFF455305B905 >
+		{
+			myPriority 3500
+			myMinimumAffectedTargets 4
+			myNumTelegraphPowersAllowed 0
+			myTargetHealthLessThanPercentage 1.0
+			myTargetHealthMoreThanPercentage -2.0
+			myAIDesirableType A
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=B642A89A5A3452B5000FFF46A5BD8E3F > = Camel_Simple_SwapPower_Slot2
+	myTuningData < uid=B642A89A5A3452B5000FFF4710BA7450 > = pwr_DLC1_VampKids_Priest_revive_telegraph_Tuning
+	myCameraPreset < uid=B642A89A5A3452B5000FFF489BAC11AB > = Preset_Generic_Ranged
+	myPowerDeathTargeting OnlyDead
+	myTelegraphData
+	{
+		myTelegraphedPowerName pwr_dlc1_vampkids_priest_revive_execute
+	}
+}
+

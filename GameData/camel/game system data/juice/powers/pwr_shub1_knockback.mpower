@@ -1,0 +1,22 @@
+include ./pwr_com_kitchenattack.mpower
+
+CombatPower pwr_shub1_knockback < uid=DB7C6D4256EA23170000026005E953E6 > : pwr_com_kitchenattack
+{
+	myUIName "contextComment = \"\", description = \"pwr_shub1_knockback Name\", enabled = true, guid = #51C546C65774DC470000017ECF5D65EC, lineVersion = 0, maxLength = 17, text = \"Tentacle Whip\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData melee_kill < uid=DB7C6D4256FB278D00001FD410B390E6 >
+		{
+			myPriority 30
+			myAggroPriority 30
+			myMinimumKills 1
+		}
+		PowerEvaluationData melee < uid=DB7C6D4256FB278D00001FD5D52E78F9 >
+		{
+			myPriority 19
+			myAggroPriority 19
+		}
+	}
+	myTuningData < uid=DB7C6D4256EA23170000026133EBC9FD > = pwr_shub1_knockback_MAcero_Tuning
+}
+

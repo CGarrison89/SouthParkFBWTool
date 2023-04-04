@@ -1,0 +1,48 @@
+include ./enemy_pwr_archetype_grenadier_aoe_lob_min.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_sixthgraderpissballoon.mprojectile"
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_methaddict_testtube.mprojectile"
+include camel/skillscript/camel_lobbed_power_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_methaddict_catlitterjug.mprojectile"
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_mm12_methlab_grenadier_aoe_lob_min < uid=86C9308257D19EA30006120061354154 > : enemy_pwr_archetype_grenadier_aoe_lob_min
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/generics/generic_lobbed.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/CC_range_2_3.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_grenadier_aoe_lob_min Name\", enabled = true, guid = #9D0E6196596D0E7000008B587D7518BC, lineVersion = 0, maxLength = 22, text = \"Kitty Litter Bomb\""
+	myUseSkillScript < uid=6D7AC9B157D36D58000B22BED5B91334 > = Camel_Lobbed_Power_PlayAnim_Script
+	myAnimationState power1
+	myProjectile < uid=6D7AC9B157D737A400003168DB904C24 > = projectile_methAddict_catLitterJug
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B157D737F50000316DF818B1B8 >
+		{
+			myPriority 20
+			myMinimumAffectedTargets 1
+			myMinimumDistanceToEnemies 1
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=6D7AC9B157D737F50000316EC5145CDD >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumDistanceToEnemies 1
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86C9308257D19EA3000612015CE1D96D > = pwr_mm12_methlab_grenadier_aoe_lob_min_Kevin_Tuning
+	myCameraPreset < uid=86C93082597FB37C000495FA6A07EC6F > = Preset_Generic_Ranged
+}
+

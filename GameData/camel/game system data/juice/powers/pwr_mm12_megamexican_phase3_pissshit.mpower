@@ -1,0 +1,60 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./buddypowers.joh.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_humankite.juice"
+include ./enemypowers.mvernon.juice
+include camel/skillscript/magamexican_lavapiss.mskillscriptjuice
+
+CombatPower pwr_mm12_megamexican_Phase3_PissShit < uid=6D7AC9B15777046800003DE66A8600A3 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/mexsupreme_phase3_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_square_debuff.dds"
+	myUIName "contextComment = \"Human Kite Power 1 Name\", description = \"pwr_mm12_megamexican_lavapiss Name\", enabled = true, guid = #6D7AC9B15777046800003DE48E40A110, lineVersion = 2, maxLength = 17, text = \"Piss and Shit\""
+	myUIDescription "contextComment = \"Human Kite Power 1 Description\", description = \"pwr_mm12_megamexican_lavapiss Description\", enabled = true, guid = #6D7AC9B15777046800003DE52E36EF6F, lineVersion = 2, maxLength = 42, text = \"When you gotta go, you gotta go.\""
+	myUseSkillScript < uid=6D7AC9B15777046800003DE78424150E > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B15777046800003DE80FE76CBB >
+		{
+			myPriority 250
+			myAggroPriority 0
+			myMinimumAffectedTargets 1
+			myTargetHealthMoreThanPercentage 0.0
+			myValidDirections
+			{
+				myLeft TRUE
+				myRight TRUE
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Max < uid=6D7AC9B15806C98E00060A1CA6AF3720 >
+		{
+			myPriority 350
+			myAggroPriority 0
+			myMinimumAffectedTargets 2
+			myTargetHealthMoreThanPercentage 0.0
+			myValidDirections
+			{
+				myLeft TRUE
+				myRight TRUE
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData enrage < uid=6D7AC9B1596A996D000B318D041928E9 >
+		{
+			myAggroPriority 1000
+		}
+	}
+	myTuningData < uid=6D7AC9B15777046800003DE99633B7BF > = pwr_com_mm12_megamexican_Phase3_PissAndShit_MVernon_Tuning
+	myCameraPreset < uid=6D7AC9B15777046800003DEACCEA3EC2 > = NULLREFERENCE
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

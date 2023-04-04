@@ -1,0 +1,9 @@
+include ./combatpowerincludes.juice
+include ./pwr_captaindiabetes_power2.mpower
+include ./dlc2_buddypowers.juice
+
+CombatPower pwr_dr_captaindiabetes_power2 < uid=C87888A05A1F2D4B001267B95A43A74E > : pwr_captaindiabetes_power2
+{
+	myTuningData < uid=C87888A05A1F2F9B000281AF014FEBA9 > = pwr_dr_captaindiabetes_power2_Tuning
+}
+

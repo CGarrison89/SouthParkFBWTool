@@ -1,0 +1,36 @@
+include ./pwr_dlc1_vampkids_warlock_lobbedrange.mpower
+include "camel/game system data/juice/ai/npc/sm64_vampkids_wizard02.mnpc"
+
+CombatPower pwr_DLC1_VampKids_Mike_Range < uid=86C9308259B0573100008B8C94E33DA7 > : sm64_vampkids_wizard_power2
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData enraged < uid=86C930825A67E447001506ACC64448C5 >
+		{
+			myPriority 1020
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData default < uid=86C930825A67E447001506AD98FFD4DD >
+		{
+			myPriority 10
+			myMinimumDistanceToEnemies 0
+		}
+		PowerEvaluationData kill < uid=86C930825A67E447001506AEBF32A4D4 >
+		{
+			myPriority 100
+			myMinimumKills 1
+			myPreferredRange -1
+			myMinimumDistanceToEnemies -1
+		}
+	}
+	myTuningData < uid=86C9308259B0574400008B916BA52683 > = pwr_DLC1_VampKids_Mike_LobbedRange_Tuning
+}
+

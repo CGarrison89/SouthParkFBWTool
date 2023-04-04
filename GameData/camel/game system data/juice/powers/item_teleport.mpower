@@ -1,0 +1,19 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_revive_script.mskillscriptjuice
+include camel/skillscript/camel_simple_healing_script.mskillscriptjuice
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+include camel/skillscript/camel_consumable_eat_script.mskillscriptjuice
+include ./dlc1_playerpowers.juice
+include camel/skillscript/camel_teleport_item_use.mskillscriptjuice
+
+CombatPower item_teleport < uid=C27CCFE35A037694000236B5BC39CF4B >
+{
+	myUIName "contextComment = \"\", description = \"\", enabled = false, guid = #C27CCFE35A037694000236B4947DA991, lineVersion = 0, maxLength = 1, text = \"|empty|\""
+	myUseSkillScript < uid=C27CCFE35A037694000236B627A9B4B2 > = camel_teleport_item_use
+	myNumberOfAttackEvents 1
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myConsumablePowerType HPAdd
+	myTargetConsumableHealthLevel 0.99
+	myTuningData < uid=C27CCFE35A037694000236B71E4C1347 > = item_teleport_Tuning
+}
+

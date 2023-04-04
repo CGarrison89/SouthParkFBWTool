@@ -1,0 +1,25 @@
+enum UIPatternType
+{
+	None
+	CW_FullRotation
+	CCW_FullRotation
+	VerticalSwipe
+	HorizontalSwipe
+	LeftHalfCircle
+	RightHalfCircle
+	UpHalfCircle
+	DownHalfCircle
+	DownHalfCircleRightRepeat
+	DownHalfCircleLeftRepeat
+	LeftTap
+	RightTap
+	UpTap
+	DownTap
+	DLtoURSwipe
+	DRtoULSwipe
+	StickUp
+	StickDown
+	StickRight
+	StickLeft
+	CCW_FullRotation_x2
+}

@@ -1,0 +1,28 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./enemypowers.bbartram.juice
+
+CombatPower pwr_com_mm14_towelie_power2_melee < uid=B642A89A5791360F000045259CCF151C >
+{
+	myUIName "contextComment = \"Name of Towelie power 2, a melee strike that knocks back and applies burning\", description = \"pwr_com_mm14_towelie_power2_melee_name\", enabled = true, guid = #B642A89A579136350000453102D489C5, lineVersion = 0, maxLength = 16, text = \"Burning Bash\""
+	myUseSkillScript < uid=B642A89A5791360F00004526C97CD8DA > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B642A89A5791360F00004527838062AE >
+		{
+			myPriority 25
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B642A89A5791360F000045289DF474DC > = pwr_com_mm14_blocker_power2_melee_BBartram_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

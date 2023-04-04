@@ -1,0 +1,46 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./dlc3_enemypowers.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_DLC3_Monsters_Bruiser_melee < uid=C27CCFE35A8DCADB00067073D118D188 > : enemy_pwr_archetype_bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/Monster_Power1.dds"
+	myUIName "contextComment = \"\", description = \"pwr_DLC3_Monsters_Bruiser_melee_name\", enabled = true, guid = #86C930825A99A96D00022EAD6362CDF9, lineVersion = 1, maxLength = 16, text = \"Monster Bash\""
+	myUIDescription "contextComment = \"\", description = \"pwr_DLC3_Monsters_Bruiser_melee_description\", enabled = true, guid = #86C930825A99BD2000022EECB0D56DF2, lineVersion = 0, maxLength = 39, text = \"DLC3 Bruiser Melee description\""
+	myUseSkillScript < uid=B9E930CA5AAAF2180000A4E14E487029 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 3
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C930825A99CB320002304AF1D2712D >
+		{
+			myPriority 20
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C930825A99CB320002304B73991AAE >
+		{
+			myPriority 2000
+			myAggroPriority 2000
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Kill < uid=86C930825A99CB320002304CA0996D0E >
+		{
+			myPriority 1000
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myMinimumKills 1
+		}
+	}
+	myTuningData < uid=C27CCFE35A8DCB350007127FC4DE57F7 > = pwr_DLC3_Monsters_Bruiser_Melee_Tuning
+}
+

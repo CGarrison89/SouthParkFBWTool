@@ -1,0 +1,35 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_christmascritters.juice"
+
+CombatPower mm17_christmascritters_bruiser_power1 < uid=3267E0D057D849220000BD034AACC916 > : enemy_pwr_archetype_bruiser_melee
+{
+	myUIName "contextComment = \"\", description = \"\", enabled = true, guid = #3267E0D057D849220000BD026B100E83, lineVersion = 1, maxLength = 21, text = \"Wall Of Hellfire\""
+	myUseSkillScript < uid=3267E0D057D849220000BD04213A06B9 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=86C9308258BF541700064340277A11BD >
+		{
+			myPriority 10
+			myMinimumAffectedTargets 1
+		}
+		PowerEvaluationData Enraged < uid=86C9308258BF541700064341A0C9A298 >
+		{
+			myPriority 10
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+		}
+	}
+	myTuningData < uid=3267E0D057D849220000BD0846AD7B87 > = enemy_pwr_mm17_christmascritters_bruiser_power1_amcclay_Tuning
+	myCameraPreset < uid=B9E930CA59937BB7000262A763AF2C7F > = fireballs
+	myValidDirections
+	{
+		myLeft TRUE
+		myRight TRUE
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

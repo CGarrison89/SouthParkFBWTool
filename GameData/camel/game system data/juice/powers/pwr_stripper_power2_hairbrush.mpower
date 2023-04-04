@@ -1,0 +1,9 @@
+include ./pwr_stripper_power2.mpower
+include "camel/game system data/juice/projectiles/projectile_stripperhairbrush.mprojectile"
+
+CombatPower pwr_stripper_power2_hairbrush < uid=86C9308258AE130700001BCF083E0E84 > : pwr_stripper_power2
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Stripper_Projectile4.dds"
+	myProjectile < uid=86C9308258AE130700001BD05824E629 > = projectile_stripperHairbrush
+}
+

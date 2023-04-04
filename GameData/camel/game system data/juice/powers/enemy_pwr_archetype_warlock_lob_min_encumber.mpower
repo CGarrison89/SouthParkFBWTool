@@ -1,0 +1,38 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower enemy_pwr_archetype_warlock_lob_min_encumber < uid=86D640765744DCCF000000D3C06455D6 >
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_warlock_lob_min_encumber Name\", enabled = true, guid = #51C546C65774D9440000009F78AA0ADA, lineVersion = 0, maxLength = 26, text = \"Warlock Lob Encumber\""
+	myUseSkillScript < uid=86D640765744DCCF000000D48A91397B > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D640765744DCCF000000D5A44A6263 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86D640765756163A000001FD54B1FCB1 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86D640765744DCCF000000D61D8889BE > = enemy_pwr_archetype_warlock_lob_min_encumber_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

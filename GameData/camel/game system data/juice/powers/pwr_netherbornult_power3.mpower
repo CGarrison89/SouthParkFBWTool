@@ -1,0 +1,40 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./dlc1_playerpowers.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_settargetvariable_and_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/casabonita/uber_camera_powers_presets_netherborn.juice"
+
+CombatPower pwr_netherbornult_power3 < uid=8E1BC4435A0A996C00008E190B0C0FA4 >
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/Netherborn_Power3_super.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide_ST.DDS"
+	myUIName "contextComment = \"pwr name. Control name should be pwr_netherbornULT_power3 Name\", description = \"pwr_netherborn_power3 Name\", enabled = true, guid = #8E1BC4435A0A996C00008E173678BC62, lineVersion = 1, maxLength = 18, text = \"Deathly Shroud\""
+	myUIDescription "contextComment = \"Long description in pause ui. Control name should be pwr_netherbornULT_power3 Description\", description = \"pwr_netherborn_power3 Description\", enabled = true, guid = #8E1BC4435A0A996C00008E1863F8BE41, lineVersion = 3, maxLength = 173, text = \"The Grim version of Dire Shroud gives you or an ally a Heal, Regen, and Protection, or deals extra damage plus Defense Down to a foe.\""
+	myUIShortDescription "contextComment = \"short description in combat ui.\", description = \"pwr_netherborn_power3ULT_short_Description\", enabled = true, guid = #F0F6DDB75A1F549C000FAB53D08CC7CD, lineVersion = 1, maxLength = 48, text = \"Buff self or a friend, or haunt a foe\""
+	myUseSkillScript < uid=8E1BC4435A0A996C00008E1AD4982996 > = Camel_Simple_SetTargetVariable_And_PlayAnim_Script
+	myAnimationState "netherborn power3"
+	myCanTargetProps TRUE
+	myIsADualEffectPower TRUE
+	myTuningData < uid=8E1BC4435A0A996C00008E1B27F004CB > = pwr_netherbornUlt_lob_ST_buff_Tuning
+	myCameraPreset < uid=8E1BC4435A74150000009B94EB7A70D9 > = Netherborn_Power03
+	myPowerGroup Normal
+	mySelfStatusEffects
+	{
+		StatusEffect "Regeneration 2" < uid=8E1BC4435A0A996C00008E1DEA46F262 > = Regeneration2
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusEndTime 1.25
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

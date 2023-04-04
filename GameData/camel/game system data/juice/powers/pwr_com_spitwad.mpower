@@ -1,0 +1,12 @@
+include ./placeholder_buddy_power1.mpower
+include "camel/game system data/juice/projectiles/projectile_green_ball.mprojectile"
+
+CombatPower pwr_com_spitwad < uid=DB7C6D42569699F6000000D0D9DE8551 > : placeholder_buddy_power1
+{
+	myIconImage ""
+	myAnimationState power3
+	myNumberOfAttackEvents 1
+	myProjectile < uid=DB7C6D425696D3F90000A3AB138DF4C5 > = projectile_green_ball
+	myTuningData < uid=DB7C6D42569699F6000000D1888081CA > = pwr_com_spitwad_Tuning
+}
+

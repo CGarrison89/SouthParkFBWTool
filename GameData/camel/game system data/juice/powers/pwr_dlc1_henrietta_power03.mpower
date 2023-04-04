@@ -1,0 +1,43 @@
+include "camel/game system data/juice/camera/casabonita/uber_camera_powers_presets_henrietta.juice"
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/pwr_henrietta_power03_script.mskillscriptjuice
+include ./dlc1_buddypowers.juice
+
+CombatPower pwr_dlc1_henrietta_power03 < uid=B9E930CA599E29A5000091CD80835E34 >
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/Henrietta_Power3.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/select_no_min_range3.dds"
+	myUIName "contextComment = \"power name\", description = \"pwr_dlc1_henrietta_power03 Name\", enabled = true, guid = #B9E930CA59EE5C2A0035CB46F42E348B, lineVersion = 1, maxLength = 21, text = \"Baleful Blessing\""
+	myUIDescription "contextComment = \"power desc in pause ui\", description = \"pwr_dlc1_henrietta_power03 Description\", enabled = true, guid = #B9E930CA59EE5C2A0035CB47685049B3, lineVersion = 1, maxLength = 134, text = \"Via the power of Satan, Henrietta heals an ally and grants them AOE Lifesteal at the end of their turn.\""
+	myUIShortDescription "contextComment = \"power desc combat ui\", description = \"pwr_dlc1_henrietta_power03 Short Description\", enabled = true, guid = #B9E930CA59EE5C2A0035CB48EE5E00BE, lineVersion = 1, maxLength = 40, text = \"Heal target and grant Lifesteal\""
+	myUseSkillScript < uid=B9E930CA599F1BA900018DC95AB25B83 > = pwr_henrietta_power03_script
+	myAnimationState power3
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "not damaged" < uid=86C930825A53A00D00009326C46F5E66 >
+		{
+			myPriority 100
+		}
+		PowerEvaluationData "critically damaged" < uid=86C930825A53A074000093287CA6564E >
+		{
+			myPriority 200
+			myNumTelegraphPowersAllowed 40
+			mySelfHealthLessThanPercentage 100.0
+		}
+	}
+	myTuningData < uid=B9E930CA599E2A08000091E7AD4F376B > = dlc1_pwr_henrietta_power03_Tuning
+	myCameraPreset < uid=B9E930CA59EE32A900150F8528B37C7D > = Henrietta_Power03
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusEndTime 1.5
+				myActionPlusPresetEnum Mash_Normal
+			}
+		}
+	}
+}
+

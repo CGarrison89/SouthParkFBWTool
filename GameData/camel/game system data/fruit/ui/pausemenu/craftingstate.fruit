@@ -1,0 +1,7 @@
+enum UICraftingState
+{
+    Inventory
+    Crafting
+    CraftingAnimation
+}
+

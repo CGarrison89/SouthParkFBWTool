@@ -1,0 +1,27 @@
+include ./enemy_pwr_archetype_priest_heal.mpower
+
+CombatPower sm19_shadyacres_priest_power1 < uid=3267E0D057E02E930005ECAC2E817ED6 > : enemy_pwr_archetype_priest_heal
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_priest_heal Name\", enabled = true, guid = #3267E0D057E02E930005ECABC25ED111, lineVersion = 1, maxLength = 6, text = \"Heal\""
+	myUseSkillScript < uid=3267E0D057E02E930005ECAD2D235F7F > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D057E02E930005ECAE35888BB9 >
+		{
+			myPriority 100
+			myTargetHealthLessThanPercentage 99.0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=3267E0D057E02E930005ECAF016A0240 > = enemy_sm19_shadyacres_priest_power1_amcclay_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

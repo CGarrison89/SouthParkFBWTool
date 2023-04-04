@@ -1,0 +1,26 @@
+
+class SubCategory < uid=auto >
+{
+	bool				myUnlockedByDefault	false
+    varmap 				myCategoryName < bhv = "localization" >
+    varmap 				myHelpText < bhv = "localization" >
+	file				myHelpImage "" < types=*.png >
+}
+
+list SubCategoryList
+{
+	SubCategory
+}
+
+class MainCategory
+{
+    varmap 				myCategoryName < bhv = "localization" >
+	SubCategoryList mySubCategories
+	bool				myIsControllerHelp	false
+}
+
+list MainCategoryList
+{
+	MainCategory
+}
+

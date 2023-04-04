@@ -1,0 +1,84 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_telegraph_on.mskillscriptjuice
+include camel/skillscript/sm68_pedo_priest_charge_warlock01_telegraph.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/lt_cops_wizard_telegraph.mskillscriptjuice
+include camel/skillscript/camel_simple_swappower_slot3.mskillscriptjuice
+include camel/skillscript/camel_simple_swappower_slot2.mskillscriptjuice
+
+CombatPower pwr_LT_cops_wizard_telegraph < uid=8585E53F592DDF81000A50DBD31973B1 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Cop_Power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/4_range.dds"
+	myUIName "contextComment = \"LT cop wizard telegraphed power name\", description = \"pwr_LT_cops_wizard_telegraph power name\", enabled = true, guid = #9D0E619659962E1400018E1833A1735B, lineVersion = 0, maxLength = 14, text = \"Hot Pursuit\""
+	myUIDescription "contextComment = \"\", description = \"\", enabled = false, guid = #9D0E61965994F90600033E8B1B235B54, lineVersion = 0, maxLength = 0, text = \"\""
+	myUseSkillScript < uid=8585E53F592DDF81000A50DC6E375280 > = lt_cops_wizard_telegraph
+	myAnimationState ""
+	myLockedByDefault FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "Range 4" < uid=8585E53F592DDF81000A50DDEDA1D907 >
+		{
+			myPriority 39
+			myMinimumAffectedTargets 1
+			myPreferredRange 4
+			myMinimumDistanceToEnemies 0
+			myNumTelegraphPowersAllowed 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "Range 3" < uid=8585E53F592DDF81000A50DEAF127F02 >
+		{
+			myPriority 36
+			myMinimumAffectedTargets 1
+			myPreferredRange 3
+			myMinimumDistanceToEnemies 0
+			myNumTelegraphPowersAllowed 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "Range 2" < uid=8585E53F592DDF81000A50DFB78E15AA >
+		{
+			myPriority 33
+			myMinimumAffectedTargets 1
+			myPreferredRange 2
+			myMinimumDistanceToEnemies 0
+			myNumTelegraphPowersAllowed 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "Range 1" < uid=8585E53F592DDF81000A50E063F9F289 >
+		{
+			myPriority 30
+			myMinimumAffectedTargets 1
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 0
+			myNumTelegraphPowersAllowed 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=86C93082595421650001EA36EA5D1501 > = Camel_Simple_SwapPower_Slot2
+	myTuningData < uid=8585E53F592DDF81000A50E180737610 > = pwr_LT_cops_wizard_telegraph_Kevin_Tuning
+	myCameraPreset < uid=8585E53F592DDF81000A50E2BCA5E373 > = Preset_Generic_Melee
+	myTelegraphData
+	{
+		myTelegraphedPowerName pwr_LT_cops_wizard_telegraph_execute
+		myTelegraphingAnimationName ""
+	}
+}
+

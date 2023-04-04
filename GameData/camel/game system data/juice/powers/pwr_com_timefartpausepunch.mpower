@@ -1,0 +1,19 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_com_timefartpausepunch < uid=F0F399BA58A4B74F00001878B14505D4 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/MC_TimeFartPunch.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"Name for the timefart pause combat power where the mc can run around and punch npcs\", description = \"pwr_com_timefartpausepunch_name\", enabled = true, guid = #F0F6DDB759692F0E0001CF2C7D031658, lineVersion = 0, maxLength = 26, text = \"TimeFart Pause Punch\""
+	myUIDescription "contextComment = \"Description for the timefart pause combat power where the mc can run around and punch npcs\", description = \"pwr_com_timefartpausepunch_description\", enabled = true, guid = #F0F6DDB759692F0E0001CF2DED643616, lineVersion = 0, maxLength = 64, text = \"Freeze enemies in time and punch them repeatedly.\""
+	myUseSkillScript < uid=F0F399BA58A4B77E0000187C6D52BAAE > = Camel_Simple_PlayAnim_Script
+	myAnimationState combat_time_fart_pause_punch
+	myTuningData < uid=F0F399BA58A4B96800001CDE18043E09 > = time_fart_pause_punch_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

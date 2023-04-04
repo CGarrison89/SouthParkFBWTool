@@ -1,0 +1,38 @@
+include "camel/game system data/fruit/ai/aiDesirableType.fruit"
+include "camel/game system data/fruit/combat/CombatMovementRestrictions.fruit"
+include "camel/game system data/fruit/SpecialEffect/specialeffect.fruit"
+
+class PowerEvaluationData  < uid=auto >
+{
+	int myPriority 0
+	int myAggroPriority 0					< tooltip="If set, a duplicate of this EvaulationData will be created, with Priority set to this number, and Require Aggro Target set to true" >
+	bool myRequireAggroTarget false			< tooltip="This EvaluationData will only pass if the current AggroTarget (Enraged) is inside the Damage Area - Do NOT use in combination with AggroPriority" >
+	bool myRequiresCover false
+	bool myRequiresNonTelegraphedDamageCells false < tooltip="Requires no Damage Area Cells to be Telegraphed by other actors" >
+	bool myPreferNonTelegraphedAttackSourceCell false < tooltip="If possible, Actor will attack from a cell which isn't actively telegraphed by anyone" >
+	bool myPreferLeastAlliesTargeted false < tooltip="If possible, Actor will attack from a cell which results in the least Allies targeted" >
+	int myNumLiveEnemiesRequired 0 			< tooltip="Minimum number of alive enemies in the damage area" >
+	int myMinimumKills 0 					< tooltip="Minimum number of actors that must be killed by this attack" >
+	int myMinimumAffectedTargets 0 			< tooltip="Minimum number of entities required in the Damage Area" >
+	int myPreferredRange -1 				< tooltip="Required distance to target - does not include lower or higher values" >
+	int myMinimumDistanceToEnemies 0 		< tooltip="Minimum distance to ALL enemies" >
+	int myMaximumDistanceToEnemies 10000	< tooltip="Maximum distance to ALL enemies" >
+	int myMaximumDistanceToAnAlly 10000		< tooltip="Maximum distance from ANY Ally" >
+	int myMaximumNumberOfPets 4
+	int myNumTelegraphPowersAllowed 100		< tooltip="Number of other telegraphs that can be activewhen this power fires" >
+	float myTargetHealthLessThanPercentage 101
+	float myTargetHealthMoreThanPercentage 0
+	float mySelfHealthLessThanPercentage 101
+	float mySelfHealthMoreThanPercentage 0
+	float myTargetShieldingLessThanPercentage 101
+	float myTargetShieldingMoreThanPercentage 0
+	AIDesirableType myAIDesirableType
+    StatusEffectCondition myStatusEffectConditionData
+	StatusEffectCondition mySelfStatusEffectConditionData
+	NPCCombatMovementDirections myValidDirections
+}
+
+list PowerEvaluationDataList
+{
+	PowerEvaluationData
+}

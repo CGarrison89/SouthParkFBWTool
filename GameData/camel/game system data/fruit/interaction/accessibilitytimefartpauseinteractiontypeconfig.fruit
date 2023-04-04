@@ -1,0 +1,25 @@
+include "camel/game system data/fruit/juiceObj.fruit"
+include "camel/game system data/fruit/helpers/helpers_types.fruit"
+
+include "camel/game system data/fruit/interaction/interactiontype.fruit"
+
+class AccessibilityFieldInteractionTypeConfig
+{
+	FieldInteractionType myFieldInteraction
+	float myInteractionTimeCost 0.5
+}
+
+enum AccessibilityAreaOfEffectInteractionType
+{
+    None
+	Punch
+	FireCracker
+	ShortRangeFart
+	LongRangeFart
+}
+
+class AccessibilityAreaOfEffectInteractionTypeConfig
+{
+	AccessibilityAreaOfEffectInteractionType myAOEInteraction
+	float myInteractionTimeCost 0.5
+}

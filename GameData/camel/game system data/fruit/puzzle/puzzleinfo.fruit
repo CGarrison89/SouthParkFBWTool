@@ -1,0 +1,7 @@
+include "camel/game system data/fruit/ui/UITips.fruit"
+
+class PuzzleInfo < uid=auto >
+{
+	string myName
+	SPCTipsList myPuzzleTipList
+}

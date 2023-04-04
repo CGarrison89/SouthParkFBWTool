@@ -1,0 +1,38 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower enemy_pwr_archetype_explosive_melee < uid=86D640765744DCC500000093C8242390 >
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_explosive_melee Name\", enabled = true, guid = #51C546C65774D93B0000008C821E7A89, lineVersion = 0, maxLength = 20, text = \"Explosive Melee\""
+	myUseSkillScript < uid=86D640765744DCC500000094283BF5AC > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D640765744DCC500000095193F29CC >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86D64076575614E5000001D3851D81A1 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86D640765744DCC500000096C9DC5FD8 > = enemy_pwr_archetype_explosive_melee_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

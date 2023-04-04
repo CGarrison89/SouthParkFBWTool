@@ -1,0 +1,10 @@
+include ./pwr_sm33_warlock_lob_min_charm.mpower
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_sm02_raisins_warlock_lob_min_charm < uid=86C930825780355A0000023FFF9D3FF0 > : pwr_sm33_warlock_lob_min_charm
+{
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_ST_min_range.dds"
+	myTuningData < uid=86C930825780355A00000240BCD9F3D0 > = pwr_sm02_raisins_warlock_lob_min_charm_Kevin_Tuning
+	myCameraPreset < uid=86C93082591B5DE2000071C2823B1817 > = Preset_Generic_Ranged
+}
+

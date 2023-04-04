@@ -1,0 +1,57 @@
+include ./enemy_pwr_st_ranged_shocked.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower mm16_cokedcops_wizard01_shocked < uid=3267E0D05749010D00000162E7AEAC38 > : enemy_pwr_st_ranged_shocked
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/beatcop_taser.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_Range_ST_LOS.dds"
+	myUIName "contextComment = \"\", description = \"mm16_cokedcops_wizard01_shocked Name\", enabled = true, guid = #51C546C65774D94C000000AFFDF709E3, lineVersion = 1, maxLength = 8, text = \"Taser\""
+	myUseSkillScript < uid=3267E0D05749010D0000016378C44BF7 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 7
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "Range 3" < uid=B642A89A595D5C130001D6B4F623FCC2 >
+		{
+			myPriority 40
+			myPreferredRange 3
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "Range 2" < uid=B642A89A595D5C130001D6B5299574BC >
+		{
+			myPriority 30
+			myPreferredRange 2
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=B642A89A595D5C130001D6B6912ACCC0 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=3267E0D05749010D00000165851D7068 > = enemy_pwr_st_ranged_shocked_amcclay_Tuning
+	myCameraPreset < uid=8585E53F595EAAEC0004AFFD12E57D08 > = Preset_Generic_Ranged
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

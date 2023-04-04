@@ -1,0 +1,26 @@
+include ./combatpowerincludes.juice
+include ./pwr_captaindiabetes_power3.mpower
+
+CombatPower pwr_civilwar3_captaindiabetes_power3 < uid=86C9308257CA0E0F000063A58FE202D6 > : pwr_captainDiabetes_power3
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308257DB0157001C6B01770CEEFD >
+		{
+			myPriority 10
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "3 targets" < uid=86C9308257DB0157001C6B02DDCAD344 >
+		{
+			myPriority 30
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "4 targets" < uid=86C9308257DB0157001C6B0335DDFB95 >
+		{
+			myPriority 40
+			myMinimumAffectedTargets 4
+		}
+	}
+	myTuningData < uid=86C9308257CA0E0F000063A61F510A5F > = pwr_civilwar3_captaindiabetes_power3_Tuning
+}
+

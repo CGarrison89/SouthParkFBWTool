@@ -1,0 +1,36 @@
+include "camel/game system data/fruit/juiceObj.fruit"
+include "camel/game system data/fruit/helpers/helpers_types.fruit"
+
+enum BreakableTwoRegionsConfigType
+{
+	Default
+	Debug_Only
+	DestroyType_3
+	DestroyType_5
+	DestroyType_3_NotStatefulActivateGlitchListener
+	DestroyType_3_firecrackers_only
+}
+
+class BreakableTwoRegionsConfig
+{
+	bool ShouldReaction_ReactionPunch True
+	bool ShouldReaction_FireCracker True
+    bool ShouldReaction_RangedFart False
+	bool ShouldReaction_FartShatter False
+	bool ShouldReaction_Explosion True
+	
+	bool IsEnableAtInit True
+	bool RemoveCollisionOnChangeState True
+	
+	bool Stateful_ShouldRewindWhenDeath False
+	bool Stateful_ReserveSaveOnChangeState True
+	bool Stateful_ResetAfterAWhile False
+	bool Stateful_AutoReserveSaveOnChangeState True
+	bool TimeFartAllowedWhenReverveSaveAndChange True
+	bool Stateful_ShouldActivateGlitchListener True
+	
+	bool SaveStateAtAnimationStart True
+	
+	bool DisableLeftAfterRightDone false
+	bool DisableRightAfterLeftDone false
+}

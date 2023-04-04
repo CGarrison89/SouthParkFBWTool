@@ -1,0 +1,51 @@
+class HardcodedLocalizedStrings
+{
+	varmap myLocalizedString < bhv="localization" >
+	file myIconImage < types=*.dds >
+}
+
+enum InteractionPromptType
+{
+    Use
+    Take
+	Open
+	Close
+	TurnOn
+	TurnOff
+	Loot
+	Talk
+	Look
+	Enter
+	Exit
+	Shit
+	Peek
+	Hold
+	Haywire
+	EnterCode
+	Sit
+	GrabStripe
+	Locked
+	Unlock
+	Return
+	TipOver
+	Lift
+	Fartkour
+	Sandblaster
+	Vendor
+	TalkLocked
+	GoToSleep
+	Knock
+	PostHeadshot
+	Discover
+    EatSadly
+	Eat
+	Fart
+	CollectMemberBerry
+	CollectMemberBerryComplete
+	ShitComplete
+	Pet
+	Jump
+	FartkourDown
+	Inspect
+	SprinkleDirt
+}

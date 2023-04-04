@@ -1,0 +1,95 @@
+include ./pwr_dlc3_monsters_bruiser_melee.mpower
+include camel/skillscript/camel_simple_swappower_slot1.mskillscriptjuice
+include camel/skillscript/camel_simple_telegraph_on.mskillscriptjuice
+include camel/skillscript/pwr_dlc3_monsters_mimsy_cc_telegraph_skillscript.mskillscriptjuice
+include camel/skillscript/dlc3_monsters_mimsy_powerswap.mskillscriptjuice
+
+CombatPower pwr_DLC3_Monsters_Mimsy_CC_telegraph < uid=86C930825A9DA27200022C6359EB314F > : pwr_DLC3_Monsters_Bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/Mimsy_Power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_square_debuff.dds"
+	myUIName "contextComment = \"\", description = \"pwr_DLC3_Monsters_Mimsy_CC_telegraph_name\", enabled = true, guid = #86C930825A9DA27200022C619267284D, lineVersion = 1, maxLength = 16, text = \"Mimsy Tele\""
+	myUIDescription "contextComment = \"\", description = \"pwr_DLC3_Monsters_Mimsy_CC_telegraph_description\", enabled = true, guid = #86C930825A9DA27200022C6298FFB6AA, lineVersion = 0, maxLength = 46, text = \"DLC3 Mimsy CC telegraph description\""
+	myUseSkillScript < uid=86C930825A9DBCD200034A0DCCB82EC3 > = pwr_DLC3_Monsters_Mimsy_CC_telegraph_SkillScript
+	myAnimationState ""
+	myNumberOfAttackEvents 1
+	myShouldRepositionBeforeExecution FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "1 target" < uid=86C930825A9DA27200022C6490852BF5 >
+		{
+			myPriority 100
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myPreferLeastAlliesTargeted TRUE
+			myMinimumAffectedTargets 1
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "2 targets" < uid=86C930825A9DB61B00022CDCD09B224F >
+		{
+			myPriority 200
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myPreferLeastAlliesTargeted TRUE
+			myMinimumAffectedTargets 2
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "3 targets" < uid=86C930825A9DB61B00022CDDA2530576 >
+		{
+			myPriority 300
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myPreferLeastAlliesTargeted TRUE
+			myMinimumAffectedTargets 3
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "4 targets" < uid=86C930825A9DB61B00022CDEF4B94CD7 >
+		{
+			myPriority 400
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myPreferLeastAlliesTargeted TRUE
+			myMinimumAffectedTargets 4
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C930825A9DA27200022C653B0B5CE8 >
+		{
+			myPriority 2000
+			myAggroPriority 2000
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Kill < uid=86C930825A9DA27200022C665E24F7C5 >
+		{
+			myPriority 0
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myPreferLeastAlliesTargeted TRUE
+			myMinimumKills 1
+			myMinimumAffectedTargets 1
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=86C930825A9DB45900022C8EE924014F > = DLC3_Monsters_Mimsy_PowerSwap
+	myTuningData < uid=86C930825A9DA27200022C675E45D407 > = pwr_DLC3_Monsters_Mimsy_CC_Tuning
+	myTelegraphData
+	{
+		myTelegraphedPowerName pwr_dlc3_monsters_mimsy_cc_execute
+	}
+}
+

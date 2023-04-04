@@ -1,0 +1,39 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower enemy_pwr_archetype_grenadier_aoe_lob_min < uid=86D640765744DCC8000000ABB170F071 >
+{
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_ST_min_range.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_grenadier_aoe_lob_min Name\", enabled = true, guid = #51C546C65774D93C0000008E35B77D59, lineVersion = 0, maxLength = 22, text = \"Grenadier Lob AoE\""
+	myUseSkillScript < uid=86D640765744DCC8000000AC42D50E93 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D640765744DCC8000000AD9F3B2390 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86D64076575614E5000001D4D354391C >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86D640765744DCC8000000AE7DD15D2D > = enemy_pwr_archetype_grenadier_aoe_lob_min_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

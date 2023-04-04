@@ -1,0 +1,253 @@
+include "camel/game system data/fruit/ai/primaryStats.fruit"
+include "camel/game system data/fruit/camera/uber_camera.fruit"
+include "camel/game system data/fruit/combat/CombatMovementRestrictions.fruit"
+include "camel/game system data/fruit/items/item.fruit"
+include "camel/game system data/fruit/powers/powers.fruit"
+include "camel/game system data/fruit/powers/powerEvaluationData.fruit"
+include "camel/game system data/fruit/powers/powerDamageArea.fruit"
+include "camel/game system data/fruit/projectiles/projectile.fruit"
+include "camel/game system data/fruit/statuseffect/statuseffect.fruit"
+include "camel/game system data/fruit/locationeffects/locationeffects.fruit"
+include "camel/game system data/fruit/combat/ActionPlusPreset.fruit"
+include "camel/game system data/fruit/powers/powerFactionTargeting.fruit"
+
+enum PowerTargetingType
+{
+	Actor
+	Location
+	Self
+}
+
+enum PowerCategory
+{
+	Attack
+	Buff
+	Location
+	Summon
+	Debuff
+	Pet
+	Pounce
+}
+enum ChainingType
+{
+	None
+	CardinalCross
+	Diagonal
+	Any
+}
+enum ConsumablePowerCategory
+{
+	None
+	HPAdd
+	Cleanse
+	Revive
+	Unground
+}
+
+enum CombatPowerDeathTargeting 
+{
+	None
+	OnlyDead
+	DeadAndAlive
+}
+
+list PowerCategoryList
+{
+	PowerCategory
+}
+
+enum CombatRushType
+{
+	None
+	Rush
+	Charge
+}
+
+enum CombatClassificationType
+{
+	Melee
+	Ranged
+	NonDamaging
+	Consumable
+	Summon
+	PlayerPet
+	AllyPet
+	None
+}
+
+enum PowerGroup
+{
+	Basic
+	Ultimate
+	Normal
+}
+
+enum PowerChargeType
+{
+	Melee
+	Range
+}
+
+enum CombatPowerDialogTagType
+{
+    Ranged
+    Melee
+    Punch
+    Physical
+    Rush
+    Laser
+    Fart
+    SuperFast
+    Bite
+    Buff
+}
+
+list CombatPowerDialogTagTypeList
+{
+    CombatPowerDialogTagType
+}
+
+class PowerChargeData
+{
+	bool myUsePowerCharge FALSE
+	float myPowerChargeLowRatio 0.5
+	float myPowerChargeHighRatio 0.8
+	float myPowerChargeDamageMultiplier 1
+	float myPowerChargeTotalTime 1.5
+	string myAccelerationCurve "{ defaultLeftSlope = 0, defaultRightSlope = 0, defaultValue = 0, interpolator = 0, isRefinedSampling = true, keys2 = { inTangents = { -0 0, 0 -0.490492, }, outTangents = { 0.333333 0, -0 0, }, properties = { 3, 1299, }, values = { 0 0, 1 1, }, }, numKeys = 2, }" < bhv=inputgraph >
+	PowerChargeType myPowerChargeType
+}
+
+class PowerMovementData
+{
+	bool myUseOverrideValues false
+	float myRunSpeed 0
+	float myAccelerationFactor 0
+	float myDecelerationFactor 0
+}
+
+class CombatPowerAnimationSet
+{
+  string myIntroState
+  string myLoopState
+  string myOutroState
+}
+
+class CombatBlockingData
+{
+  int myDamageThreshold
+  string myCounterPower
+  SkillScript* myOnBlockBreak
+
+}
+
+class CombatTelegraphData
+{
+	string myTelegraphedPowerName
+	string myTelegraphingAnimationName
+	string myTelegraphingToTargetedAnimationName to_targeted_idle
+}
+
+class CombatUILobbedAreaExtensionData
+{
+	int myUp
+	int myDown
+	int myRight
+	int myLeft
+}
+
+class CombatPowerLocationEffectData
+{
+	string myLocationEffectName < tooltip="Optional Location Effect used by this Power" >
+	bool myShouldExpirePrevious true < tooltip="Should previous Location Effects by this Power and Owner be expired?" >
+}
+
+class CombatPowerTuningData < uid=auto >
+{
+	PowerCategory myPowerCategory Attack
+	bool myIsPassive
+	int myActionPoints
+	int myRange 1
+	int myMinRange 1
+	int myCooldown 0
+	int myKnockbackPullForwardAmount 0
+	bool myIsReverseKnockback false
+	bool myLOSCheck true
+	bool myIsLobbed false
+	bool myIsDirectionSelectable false
+	bool myBlocksObscurationShuffle false
+	bool myUseActorCentreAsTargetingSource false
+	bool myTargetSingleActorOnly
+	CombatRushType myRushType None
+	PowerTargetingType myTargetingType Actor
+	PowerFactionTargeting myFactionTargeting EnemyOnly
+	PowerDamageArea myDamageArea
+	int myDamageAmount 0
+	int myShielding 0
+    int mySelfTeamDamage 0
+    int mySelfTeamShielding 0
+	int mySelfKnockbackAmount 0
+	StatusEffects myStatusEffects
+	LocationEffect* myLocationEffect
+	PowerChargeData myPowerChargeData
+	PrimaryStats myPrimaryStats
+	CombatClassificationType myClassification NonDamaging
+	PowerMovementData myPowerMovementData
+	bool myNoRageUpdate FALSE
+}
+
+list PreloadItems
+{
+	Item*
+}
+
+class CombatPower : Power
+{
+	int myNumberOfAttackEvents 1
+	bool myCanUseDuringRTE true
+	bool myShouldRepositionBeforeExecution
+	bool myShouldRepositionToCellCenterBeforeExecution false
+	bool myCanTargetProps true
+	bool myBlocksObscurationMovement false
+   	bool myRequiresValidTarget true
+  	bool myIsACleansePower
+	bool myIsADualEffectPower false
+	ConsumablePowerCategory myConsumablePowerType None
+	bool myShouldUseLaunchReactions
+	bool myUseRectangularLobbedArea < tooltip="Lobbed powers with this flag use a rectangular area to choose from, rather than circular - Does not work for AI" >
+	bool myCanStopAnywhere < tooltip="Allows the Power to be used on top of another Ally's cell" >
+	bool myUseMintBerryCrunchRelocation < tooltip="Performs calculation on DamageCell 0 to determine where to move a targeted entity" >
+	bool myIgnoreMintBerryInteraction < tooltip="Ignores interaction between Mint + Berry Status Effects for the duration of this Power" >
+	
+	Projectile* myProjectile
+	
+	PowerEvaluationDataList myPowerEvaluationData
+
+	vec2f myMeleeOffset	0.0;0.0
+	float myBonusPowerRatio 1.0
+	float myTargetConsumableHealthLevel 0.99
+	float myDualEffectPercent			0.0  < tooltip="Determines the percent of buff when using a dual effect power." >
+	float myLifeStealPercent			0.0  < tooltip="Determines what percent of buff when having the Lifesteal status effect." >
+	
+	SkillScript* mySecondarySkillScript
+	SkillScript* myOnKillSkillScript
+	SkillScript* myDialogueSkillScript
+    SkillScript* myOnHitSkillScript < tooltip="Skill script for when a power damages someone--Currently only used by Rush powers." >
+	SkillScript* myOnCombatActionCompleteSkillScript  < tooltip="Triggered after power completion. MUST be one frame long (No callbacks, no animations, no sequences)" >
+	CombatPowerTuningData* myTuningDataTmp
+	CombatPowerTuningData* myTuningData
+	UberCameraPreset* myCameraPreset
+	PowerGroup myPowerGroup Basic
+	ChainingType myChainingType None
+	StatusEffects mySelfStatusEffects
+	CombatPowerAnimationSet myAnimationSetData
+	NPCCombatMovementDirections myValidDirections
+	CombatBlockingData myBlockingData
+	CombatPowerDeathTargeting myPowerDeathTargeting
+	CombatTelegraphData myTelegraphData
+	CombatPowerDialogTagTypeList myCombatPowerDialogTagTypes 
+	ActionPlusData myActionPlusData
+	CombatUILobbedAreaExtensionData myUILobbedAreaExtension < tooltip="An amount the Lobbed Area should be extended in the UI -only- (used for non-regular Damage Areas for Lobbed Powers)" >
+	CombatPowerLocationEffectData myLocationEffectData
+	PreloadItems myPreloadingItems
+}

@@ -1,0 +1,104 @@
+include "camel/game system data/fruit/items/loot.fruit"
+include "camel/game system data/fruit/items/items.fruit"
+include "camel/game system data/fruit/ui/pausemenu/mapregion.fruit"
+include "camel/game system data/fruit/ui/pausemenu/screentype.fruit"
+include "camel/game system data/fruit/ui/pausemenu/charactersheet.fruit"
+include "camel/game system data/fruit/gameprogression/gameprogression.fruit"
+include "camel/game system data/fruit/devsettings.fruit"
+include "camel/game system data/fruit/dlc/dlc_types.fruit"
+
+
+enum TimeOfDay
+{
+	None
+	Day
+	Night
+}
+
+list Objectives
+{
+	Objective
+}
+
+class Objective < uid=auto >
+{
+	string myName
+	varmap myUIName < bhv="localization" > //localization stuff, I have no idea how it works
+	varmap myUIDescription < bhv="localization" > //localization stuff, I have no idea how it works
+	varmap myMissionSubobjLocation  < bhv="localization" >
+	file myMissionSubobjThumb 
+	MapRegion* myMissionSubobjMapRegion
+	TimeOfDay myTimeOfDay Day
+
+	bool myIsPlayerFacing
+	bool myIsDesignerFacing false
+	bool myIsOptional // setting this makes the entire block parallel
+	Objectives mySubObjectives
+	int myReqNumSubObj //required number of subobjectives needed to complete the objective	
+	bool myUICollapseSubObjectives false
+	string mySpawnPoint CSpawnPoint_PlyrInt_LivingRm_fromSPPlyrHse
+	bool myAutoResolveNextObjective true
+	bool myIsObjectiveCrawl false
+	bool mySuperheroicDeedsObjective false
+	uid myRealObjective < tooltip="For fake/dev objectives to redirect to actual objective" >
+	bool myIncudeInDebugMissionSelectScreen true
+	int mySortIndex -1
+	int myHideUntilObjectiveIndexComplete -1
+
+	int myTotalForCompletion -1
+}
+
+list strings
+{
+	string
+}
+
+list MissionRefList
+{
+	Mission*
+}
+
+class Mission < uid=auto >
+{
+	string myName
+	varmap myUIName < bhv="localization" > //localization stuff, I have no idea how it works
+	varmap myUIDescription < bhv="localization" > //localization stuff, I have no idea how it works
+	file myMissionThumb
+	float myMissionDifficulty 
+	MapRegion* myMissionStartingMapRegion
+
+	bool myIsStoryMission
+	bool myIsMainMission false
+	bool myIsBackstoryMission false
+	int myNotorietyRequirement
+	int myHeroRankRequirement -1
+	int myLevelRequirement -1
+	CharacterSheetTitleEntry* myCharacterSheetTitleRequirement
+	int myCharacterSheetTitleIndex -1
+
+	LootTable* myLootTable
+	int myNotorietyReward
+	CharacterSheetSpecialEntry* myHeroRankRewardEntry
+	
+	Objectives myObjectives
+	GameProgressionEnum myGameProgression
+	int myRecommendedPlayerLevel 1
+	strings myRecommendedItems < tooltip="Name(s) of a StartingInventorySetting in starting_inventory.juice" >
+	UIPauseMenuScreenTypes myUnlockScreenTypes
+	bool myIsFirstInstallPackage false
+	PackageType myPackageType main
+	bool myAutoResolveNextMission true
+	bool myAutoResolveObjectives true
+	bool myIsPlayerFacing true
+	bool myIsMissionCrawl false
+	ItemList myKeyItems
+	
+	MissionRefList myPostponedByMissions < tooltip="These missions cause this mission to be POSTPONED until a restore" >
+	MissionRefList myRestoredByMissions < tooltip="Mission will be RESTORED if these missions are available" >
+	
+	DevStatus myDevStatus None
+	float myMissionWeight 1.0
+	bool myIsDefaultMission false < tooltip="this is the mission for when there are no other missions" >
+	bool myIsRequiredMission false
+	bool myIsMissionScalingActive false
+}

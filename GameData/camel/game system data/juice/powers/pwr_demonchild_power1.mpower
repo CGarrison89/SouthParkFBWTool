@@ -1,0 +1,60 @@
+include ./combatpowerincludes.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_demonchild.juice"
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/pwr_demonchild_power01_script.mskillscriptjuice
+
+CombatPower pwr_demonchild_power1 < uid=B9E930CA56DA27FE000001CA13773B02 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/demonchild_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_Range_ST_LOS.DDS"
+	myUIName "contextComment = \"Demon Child Power 1 Name\", description = \"pwr_demonchild_power1 Name\", enabled = true, guid = #51C546C65774DC07000000E53A99D961, lineVersion = 3, maxLength = 25, text = \"Bewitched Beckoning\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_demonchild_power1 Description\", enabled = true, guid = #51C546C65774DC07000000E6362EFB5F, lineVersion = 1, maxLength = 133, text = \"Pull an enemy to your side and whisper sweet eldritch hexes into their ear. Inflicts damage and Charm.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_demonchild_power1 Short Description\", enabled = true, guid = #9D0E6196579CFF8C0000017421964048, lineVersion = 0, maxLength = 43, text = \"Pull a foe to your side and Charm\""
+	myUseSkillScript < uid=B9E930CA56DA27FE000001CBB89873F7 > = pwr_demonchild_power01_script
+	myAnimationState demonchild_power1
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Kill < uid=86C9308258E7D1380000416964345D5A >
+		{
+			myPriority 12500
+			myMinimumKills 1
+		}
+		PowerEvaluationData Blocking < uid=86C9308258E7D1380000416AE054CB65 >
+		{
+			myPriority 8000
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Blocking
+				{
+					mySpecialEffect Block
+				}
+			}
+		}
+		PowerEvaluationData Default < uid=86C9308258E7D1380000416BCD5D7111 >
+		{
+			myPriority 4300
+		}
+	}
+	myTuningData < uid=B9E930CA56DA27FE000001CCE250DAB9 > = pwr_demonchild_power1_Tuning
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 1.2083
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

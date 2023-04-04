@@ -1,0 +1,45 @@
+include ./placeholder_enemy_power1.mpower
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./bosspowers.bbartram.juice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/mm08_winerandy_drink_giveturns_script.mskillscriptjuice
+
+CombatPower pwr_com_drunkenshield < uid=6D7AC9B1574E52ED000032FFE45798AF > : placeholder_enemy_power1
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/RedWineRandy_Power4.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/self_heal.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_drunkenshield Name\", enabled = true, guid = #51C546C65774DBDD0000009A608BB483, lineVersion = 0, maxLength = 25, text = \"Red Wine Resilience\""
+	myUseSkillScript < uid=6D7AC9B1574E52ED000033002EED7B5E > = mm08_WineRandy_Drink_GiveTurns_Script
+	myAnimationState power4
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B1574E52ED00003301AB6B9A32 >
+		{
+			myPriority 1000
+			myAggroPriority 0
+			myTargetHealthLessThanPercentage 0.0
+			mySelfHealthLessThanPercentage 101.0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData VIP < uid=6D7AC9B157CF6D800000628050E231EA >
+		{
+			myPriority 1000
+			myTargetHealthLessThanPercentage 101.0
+			mySelfHealthLessThanPercentage 37.0
+			myAIDesirableType VIP
+		}
+		PowerEvaluationData enrage < uid=6D7AC9B159750CC3000218FE368F39FA >
+		{
+			myAggroPriority 1060
+		}
+	}
+	mySecondarySkillScript < uid=6D7AC9B1574E52ED000033026C44A811 > = NULLREFERENCE
+	myTuningData < uid=6D7AC9B1574E52ED00003303348ED7D6 > = pwr_com_drunkenshield_BBartram_Tuning
+	myCameraPreset < uid=86C930825913D0E3000075F1688606C8 > = Preset_Generic_Melee
+}
+

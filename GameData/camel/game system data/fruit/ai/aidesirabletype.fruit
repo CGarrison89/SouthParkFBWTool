@@ -1,0 +1,8 @@
+enum AIDesirableType
+{
+	None
+	VIP
+	A
+	B
+	C
+}

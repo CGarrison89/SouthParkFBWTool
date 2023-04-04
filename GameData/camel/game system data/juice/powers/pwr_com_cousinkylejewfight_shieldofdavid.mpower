@@ -1,0 +1,20 @@
+include ./placeholder_enemy_power1.mpower
+include ./enemypowers.mvernon.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower pwr_com_cousinkyleJewFight_shieldofdavid < uid=B642A89A5716C0300002162C402DDF68 > : placeholder_enemy_power1
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/althumankite_power2.dds"
+	myUIName "contextComment = \"\", description = \"\", enabled = true, guid = #B642A89A5716C0300002162B3C320367, lineVersion = 0, maxLength = 20, text = \"Shield of David\""
+	myUseSkillScript < uid=B642A89A5716C0300002162DDCB1BC3F > = Camel_Simple_Placeholder_Damage_Script
+	myAnimationState ""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B642A89A5716C0300002162EBEBFD728 >
+		{
+			myPriority 60
+		}
+	}
+	myTuningData < uid=B642A89A5716C0300002162F123AD2A3 > = pwr_com_cousinkyle_jewfight_shieldofdavid_MVernon_Tuning
+}
+

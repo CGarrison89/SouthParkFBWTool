@@ -1,0 +1,58 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower mm15_superaltkite_boss_power1 < uid=3267E0D058DC33180000204B933AEB1C >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Mutant_AltHumanKite_LaserEyes.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/mutant_kite_column.dds"
+	myUIName "contextComment = \"\", description = \"\", enabled = true, guid = #3267E0D058DC33180000204A7D74F05C, lineVersion = 1, maxLength = 21, text = \"Death From Above\""
+	myUseSkillScript < uid=3267E0D058DC33180000204C49AD42E0 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D058DC33180000204DAE55840E >
+		{
+			myPriority 100
+			myMinimumAffectedTargets 1
+			myPreferredRange 1
+			mySelfHealthLessThanPercentage 100.0
+			myValidDirections
+			{
+				myLeft TRUE
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D058DC33180000204E74797788 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myLeft TRUE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "2 Targets" < uid=3267E0D058DCA5A40024F74B902B15A4 >
+		{
+			myPriority 101
+			myMinimumAffectedTargets 2
+		}
+	}
+	myTuningData < uid=3267E0D058DC33180000204F305F1010 > = enemy_pwr_mm15_superaltkite_boss_power1_amcclay_Tuning
+	myValidDirections
+	{
+		myLeft TRUE
+		myUp FALSE
+		myDown FALSE
+	}
+	myTelegraphData
+	{
+		myTelegraphedPowerName ""
+		myTelegraphingToTargetedAnimationName ""
+	}
+}
+

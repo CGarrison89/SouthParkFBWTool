@@ -1,0 +1,22 @@
+include "camel/game system data/fruit/juiceObj.fruit"
+include "camel/game system data/fruit/helpers/helpers_types.fruit"
+
+enum MiniGamePauseSettingEnum
+{
+    None
+    Sandblaster_Pause
+    Fartkour_Pause
+    DiabeticRage_Pause
+    TimeFart_Pause
+    TimeFartMinigame_Pause
+    Haywire_Pause
+    LapDanceMinigame_Pause
+}
+
+class MiniGamePauseSetting : JuiceObj
+{
+    MiniGamePauseSettingEnum myEnum
+    int myPriority
+    OptionalBool myPauseActors
+    bool myPauseActorAnimations
+}

@@ -1,0 +1,38 @@
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include ./dlc3_enemypowers.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/dlc3_gooalien_power01.mskillscriptjuice
+
+CombatPower pwr_dlc3_monsters_alien_cc_pull < uid=3267E0D05AAAE89B003062D04B6845BE > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/Alien_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/2_range_cross.dds"
+	myUIName "contextComment = \"[PLACEHOLDER - DO NOT LOCALIZE]\", description = \"[PLACEHOLDER - DO NOT LOCALIZE]\", enabled = true, guid = #3267E0D05AAAE8C000306FD8BCBA5EB5, lineVersion = 0, maxLength = 27, text = \"[Alien Cardinal Pull]\""
+	myUseSkillScript < uid=3267E0D05AAAE89B003062D1EAB66851 > = DLC3_GooAlien_Power01
+	myAnimationState power1
+	myLockedByDefault FALSE
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "1 Target" < uid=3267E0D05AAB51D70004D8E08C94671B >
+		{
+			myPriority 30
+			myRequiresNonTelegraphedDamageCells FALSE
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myMinimumAffectedTargets 1
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=3267E0D05AAAE89B003062D4D742DFFA > = pwr_DLC3_Monsters_Alien_CC_Pull_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

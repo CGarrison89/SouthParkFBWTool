@@ -1,0 +1,53 @@
+include camel/skillscript/mm15_superaltkite_rush_damage_script.mskillscriptjuice
+include ./mm15_superaltkite_boss_power1.mpower
+
+CombatPower mm15_superaltkite_boss_power2 < uid=3267E0D058DC69540013097CA4F1DCC2 > : mm15_superaltkite_boss_power1
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Mutant_AltHumanKite_BloodyNose.dds"
+	myRangeIconImage camel/baked/assets/ui/power_ranges/generic_powerplaceholder_range.dds
+	myUIName "contextComment = \"\", description = \"\", enabled = true, guid = #3267E0D058DC6BE60013404B8D33ABFF, lineVersion = 1, maxLength = 13, text = \"Passover\""
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D058DC9766001BCA6D061CAA61 >
+		{
+			myPriority 90
+			myMinimumAffectedTargets -1
+			mySelfHealthLessThanPercentage 100.0
+			myValidDirections
+			{
+				myLeft TRUE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D058DC9766001BCA6E54A51513 >
+		{
+			myPriority 20
+			myAggroPriority 1025
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "2 Targets" < uid=3267E0D058DCA63E00255D791553568E >
+		{
+			myPriority 91
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "3 Targets" < uid=3267E0D058DD6EAA000F8C236C85DF22 >
+		{
+			myPriority 105
+			myMinimumAffectedTargets 3
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=3267E0D058DC695400130981461F300A > = enemy_pwr_mm15_superaltkite_boss_power2_amcclay_Tuning
+}
+

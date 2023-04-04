@@ -1,0 +1,6 @@
+
+enum StealthWatcherModeEnum
+{
+    None
+    Shovel
+}

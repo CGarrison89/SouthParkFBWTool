@@ -1,0 +1,52 @@
+include ./enemy_pwr_archetype_grenadier_aoe_lob_min.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_mm22_shaken_beer_can.mprojectile"
+include camel/skillscript/camel_lobbed_power_playanim_script.mskillscriptjuice
+include ./enemypowers.adrian.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include ./dlc3_enemypowers.juice
+
+CombatPower pwr_DLC3_Monsters_Warlock_slow < uid=C87888A05AA343F0000AA95C661ECA73 > : enemy_pwr_archetype_grenadier_aoe_lob_min
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/RedneckC_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/CC_range_2_3.dds"
+	myUIName "contextComment = \"literally a bomb that is a beer can\", description = \"enemy_pwr_archetype_grenadier_aoe_lob_min Name\", enabled = true, guid = #C87888A05AA343F0000AA95BC0BB1B99, lineVersion = 0, maxLength = 14, text = \"Beer Bomb\""
+	myUseSkillScript < uid=C87888A05AA343F0000AA95D99FB04AA > = Camel_Lobbed_Power_PlayAnim_Script
+	myAnimationState power1
+	myProjectile < uid=C87888A05AA343F0000AA95E907AF42C > = projectile_mm22_shaken_beer_can
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=C87888A05AA343F0000AA95F88055269 >
+		{
+			myPriority 50
+			myMinimumAffectedTargets 1
+			myStatusEffectConditionData
+			{
+			}
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not Confused"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Confused
+					myFollowingCondition OR
+				}
+				StatusEffectConditionalEntry "Nor Charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+					myFollowingCondition None
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=C87888A05AA343F0000AA96018D85C48 > = pwr_DLC3_Monsters_Warlock_Slow_Tuning
+	myCameraPreset < uid=C87888A05AA343F0000AA9615947D5AD > = Preset_Generic_Ranged
+}
+

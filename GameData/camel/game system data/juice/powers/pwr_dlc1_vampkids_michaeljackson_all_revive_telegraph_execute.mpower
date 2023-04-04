@@ -1,0 +1,43 @@
+include ./enemy_pwr_archetype_priest_heal.mpower
+include ./dlc1_enemypowers.juice
+include camel/skillscript/dlc1_vampkids_michaeljackson_revive_skillscript.mskillscriptjuice
+include "camel/game system data/juice/camera/casabonita/uber_camera_powers_presets_michaeljackson.juice"
+include "camel/game system data/juice/ai/npc/dlc1_enemiestuning.juice"
+include camel/skillscript/dlc1_vampkids_michaeljackson_dual_revive_telegraph_skillscript.mskillscriptjuice
+include camel/skillscript/camel_simple_swappower_slot3.mskillscriptjuice
+include camel/skillscript/dlc1_vampkids_michaeljackson_all_revive_telegraph_execute.mskillscriptjuice
+include camel/skillscript/dlc1_michaeljackson_all_revive_swappower.mskillscriptjuice
+
+CombatPower pwr_DLC1_VampKids_MichaelJackson_all_revive_telegraph_execute < uid=8585E53F5A8CAC7C002E279BDE1B756A > : enemy_pwr_archetype_priest_heal
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/MichaelJackson_Power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide_heal.dds"
+	myUIName "contextComment = \"\", description = \"pwr_DLC1_VampKids_MichaelJackson_revive_name\", enabled = true, guid = #8585E53F5A8CAC7C002E279A4CECC980, lineVersion = 0, maxLength = 29, text = \"[KP]Change Me In Oasis\""
+	myUseSkillScript < uid=8585E53F5A8CAC7C002E279CCCBC94E0 > = DLC1_VampKids_MichaelJackson_All_Revive_Telegraph_Execute
+	myLockedByDefault TRUE
+	myIsADualEffectPower TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=8585E53F5A8DDC60000898CFB1B2E26A >
+		{
+			myPriority 1000
+			myTargetHealthLessThanPercentage 100.0
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=8585E53F5A8CAC7C002E27A417E4DE5A > = DLC1_MichaelJackson_All_Revive_SwapPower
+	myTuningData < uid=8585E53F5A8CAC7C002E27A530BDA5A4 > = pwr_DLC1_VampKids_Karen_revive_execute_Tuning
+	myCameraPreset < uid=8585E53F5A8CAC7C002E27A6C4D0FC10 > = MichaelJackson_Power03
+	myPowerDeathTargeting None
+	myTelegraphData
+	{
+		myTelegraphedPowerName ""
+		myTelegraphingAnimationName locomotion
+	}
+}
+

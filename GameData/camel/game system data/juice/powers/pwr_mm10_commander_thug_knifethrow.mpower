@@ -1,0 +1,9 @@
+include ./pwr_com_backstorythug_knifethrow.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_mm10_commander_Thug_knifeThrow < uid=86C9308257B259CE0001120FBE130031 > : pwr_com_backstoryThug_knifeThrow
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Bruiser_KnifeThrow.dds"
+	myTuningData < uid=86C9308257B259CE0001121027114E2C > = pwr_mm10_commander_Thug_knifeThrow_Kevin_Tuning
+}
+

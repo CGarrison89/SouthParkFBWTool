@@ -1,0 +1,18 @@
+include ./placeholder_enemy_power1.mpower
+include ./enemypowers.bbartram.juice
+
+CombatPower pwr_com_cousinkyleJewFight_blessing < uid=B642A89A5716C04E000216336DC38AF0 > : placeholder_enemy_power1
+{
+	myUIName "contextComment = \"\", description = \"pwr_com_cousinkylejewfight_blessing Name\", enabled = true, guid = #51C546C65774DBD90000009451417295, lineVersion = 0, maxLength = 13, text = \"Blessing\""
+	myUseSkillScript < uid=B642A89A5716C04E000216342D8516F7 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B642A89A5716C04E00021635E9EE762E >
+		{
+			myPriority 80
+		}
+	}
+	myTuningData < uid=B642A89A5716C04E00021636C1CC6001 > = pwr_com_cousinkyleJewFight_Blessing_BBartram_Tuning
+}
+

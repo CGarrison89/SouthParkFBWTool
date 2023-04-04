@@ -1,0 +1,8 @@
+include ./pwr_lt_6thgraders_swarmer_wetwilly.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower pwr_dr_LT_6thgraders_swarmer_wetwilly < uid=C87888A05A0CA4C8000B66537E84949A > : pwr_LT_6thgraders_swarmer_wetwilly
+{
+	myTuningData < uid=C87888A05A0CA64B000D0388D2E0C354 > = pwr_dr_LT_6thgraders_swarmer_wetwilly_Tuning
+}
+

@@ -1,0 +1,30 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./enemypowers.mvernon.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_NicoleDad_power2 < uid=6D7AC9B15747A6430000375570C4F2D6 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/NicholeDad_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"shove melee attack\", description = \"nicholedad_power2name\", enabled = true, guid = #9D0E6196596D009600008B586E857442, lineVersion = 0, maxLength = 13, text = \"Shove It\""
+	myUseSkillScript < uid=6D7AC9B15747A6430000375601DFD233 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B15747A6430000375702C7980C >
+		{
+			myPriority 15
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myMeleeOffset -1.0;0.0
+	myTuningData < uid=6D7AC9B15747A64300003758AC8BE817 > = pwr_nicoleDad_power2_MVernon_Tuning
+	myCameraPreset < uid=86C93082591B5DE2000071C16ED0C3A1 > = Preset_Generic_Melee
+}
+

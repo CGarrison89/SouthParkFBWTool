@@ -1,0 +1,54 @@
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include "camel/game system data/juice/projectiles/chaos_disc.mprojectile"
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_mm12_siege_wizard_st_ranged < uid=86C9308257BF76550000560CB1842C54 > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/chaoskid_power1.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_wizard_st_ranged Name\", enabled = true, guid = #AC0D40B359710E830000861202401299, lineVersion = 0, maxLength = 17, text = \"Sniper Ranged\""
+	myUseSkillScript < uid=6D7AC9B1581410860004DE23E43C142C > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 2
+	myProjectile < uid=6D7AC9B15814059300042D33A43B854E > = chaos_disc
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308257BF76DA00005634ACEC94EA >
+		{
+			myPriority 20
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308257BF76DA0000563584033FA3 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "props low" < uid=86C9308257BF76DA00005636A00D2D80 >
+		{
+			myPriority 10
+			myAIDesirableType A
+		}
+		PowerEvaluationData "props medium" < uid=86C9308257BF76DA000056375120ADD5 >
+		{
+			myPriority 20
+			myAIDesirableType B
+		}
+		PowerEvaluationData "props high" < uid=86C9308257BF76DA0000563899A328DF >
+		{
+			myPriority 30
+			myAIDesirableType C
+		}
+	}
+}
+

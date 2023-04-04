@@ -1,0 +1,57 @@
+include "camel/game system data/fruit/powers/combatpowers.fruit"
+
+CombatPowerTuningData unused_MAcero_Tuning < uid=DB7C6D4256B3BCE5000000AF1E8DCCF8 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 3
+	myRange 0
+	myMinRange 0
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck FALSE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=DB7C6D4256B3BCE5000000B038F79488 >
+	{
+		myPiercingType All
+		myDamageAreaType CenteredRectangle
+		myLength 50
+		myWidth 50
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 0
+	myShielding -1
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=DB7C6D4256B3BCE5000000B128B24F3A > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues TRUE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+

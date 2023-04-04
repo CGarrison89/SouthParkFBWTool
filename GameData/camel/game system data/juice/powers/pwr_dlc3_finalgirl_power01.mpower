@@ -1,0 +1,52 @@
+include camel/skillscript/dlc3_finalgirl_power01.mskillscriptjuice
+include "camel/game system data/juice/camera/tardicaca/uber_camera_powers_presets_finalgirl.juice"
+include ./dlc3_playerpowers.juice
+include "camel/game system data/juice/items/finalgirl_scissors.mitem"
+
+CombatPower pwr_dlc3_finalgirl_power01 < uid=86D640765A53B14B000093280BA6B2D9 >
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/LastGirl_Power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_range.dds"
+	myUIName "contextComment = \"Final Girl's power 01 Name\", description = \"pwr_dlc3_finalgirl_power01 Name\", enabled = true, guid = #86D640765A53B14B000093265FA7897C, lineVersion = 2, maxLength = 16, text = \"Fatal Trim\"}"
+	myUIDescription "contextComment = \"Final Girl's power 01 long Description\", description = \"pwr_dlc3_finalgirl_power01 Long Description\", enabled = true, guid = #9D0E61965AA9C1CB0000A47FDB6B3CAA, lineVersion = 0, maxLength = 121, text = \"Call upon the power of garden shears to damage, knock back, and inflict Bleeding on an enemy.\"}"
+	myUIShortDescription "contextComment = \"Final Girl's power 01 short Description\", description = \"pwr_dlc3_finalgirl_power01 Short Description\", enabled = true, guid = #86D640765A53B14B00009327152BE0A1, lineVersion = 2, maxLength = 49, text = \"Damage, knock back, and apply Bleeding\"}"
+	myUseSkillScript < uid=86D640765A53B14B00009329084582B1 > = DLC3_FinalGirl_Power01
+	myAnimationState finalgirl_power1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA5ACFFF00000663A76BD3A410 >
+		{
+			myPriority 10
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86D640765A53B14B0000932A6BCA06AC > = dlc3_pwr_finalgirl_power01_Tuning
+	myCameraPreset < uid=8E1BC4435AC4930C001840074DE17496 > = FinalGirl_Power1
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusEndTime 0.0
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+	myPreloadingItems
+	{
+		Item Finalgirl_scissors < uid=93C108765B366063000252948A43A523 > = finalgirl_scissors
+	}
+}
+

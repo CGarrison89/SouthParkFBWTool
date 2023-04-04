@@ -1,0 +1,12 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/pwr_timefart_pause.mskillscriptjuice
+include "camel/game system data/juice/items/timefart_stop_keyitem.mitem"
+include camel/skillscript/pwr_timefart_daynight.mskillscriptjuice
+include "camel/game system data/juice/items/timefart_daynight_keyitem.mitem"
+
+CombatTimeFartPower pwr_com_timefartdaynight < uid=F0F399BA58CADBF500001F0436D82716 >
+{
+	myUseSkillScript < uid=F0F399BA58CADBF500001F057C2ADF9C > = pwr_timefart_daynight
+	myRequiredItem < uid=F0F399BA58CADBF500001F068234B8EF > = timefart_daynight_keyitem
+}
+

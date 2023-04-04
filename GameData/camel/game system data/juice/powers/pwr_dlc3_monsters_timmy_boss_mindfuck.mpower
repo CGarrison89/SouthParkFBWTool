@@ -1,0 +1,42 @@
+include ./dlc3_enemypowers.juice
+include ./enemy_pwr_archetype_wizard_pierce_ranged.mpower
+include camel/skillscript/dlc3_timmy_boss_execute.mskillscriptjuice
+include camel/skillscript/dlc3_timmy_boss_targeting_before_execute_skillscript.mskillscriptjuice
+include camel/skillscript/camel_simple_telegraph_targeting_script.mskillscriptjuice
+include camel/skillscript/dlc3_monsters_timmy_boss_swappower_afterexecute.mskillscriptjuice
+include camel/skillscript/dlc3_timmy_boss_execute_damage_preview.mskillscriptjuice
+include camel/skillscript/dlc3_timmy_boss_targeting_skillscript.mskillscriptjuice
+include "camel/game system data/juice/camera/tardicaca/uber_camera_powers_presets_timmy_boss.juice"
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_mm12_chaossupreme.juice"
+include "camel/game system data/juice/camera/uber_camera_powers_presets_jokester.juice"
+include camel/skillscript/dlc3_timmy_boss_mindfuck_skillscript.mskillscriptjuice
+include camel/skillscript/dlc3_timmy_boss_swappower_aftermindfuck.mskillscriptjuice
+include camel/skillscript/dlc3_timmy_boss_mindfuck_show_ui.mskillscriptjuice
+
+CombatPower pwr_dlc3_monsters_timmy_boss_mindfuck < uid=3267E0D05AE7BE4E003B49EA35217519 > : enemy_pwr_archetype_wizard_pierce_ranged
+{
+	myIconImage "camel/baked/assets/ui/dlc/laketardicaca/power selection/bigtimmy_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide.dds"
+	myUIName "contextComment = \"name for Timmy Boss mindfuck power\", description = \"pwr_dlc3_monsters_timmy_boss_mindfuck name\", enabled = true, guid = #3267E0D05AE7BE4E003B49E82D1AF792, lineVersion = 0, maxLength = 13, text = \"Mindfuck\""
+	myUIDescription "contextComment = \"Mindfuck\", description = \"mindfuck_controlname\", enabled = true, guid = #3267E0D05AE7BE4E003B49E96856C48F, lineVersion = 0, maxLength = 13, text = \"Mindfuck\""
+	myUseSkillScript < uid=3267E0D05AE7BE4E003B49EBD02FD3E2 > = DLC3_Timmy_Boss_Mindfuck_SkillScript
+	myTargetingSkillScript < uid=3267E0D05AFB335B000C2F2B2D813159 > = DLC3_Timmy_Boss_Mindfuck_Show_UI
+	myLockedByDefault TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D05AE7BE4E003B49EDF4DFC36F >
+		{
+			myPriority 10
+			myAIDesirableType None
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=3267E0D05AF10FFF001BE671DA79604E > = DLC3_Timmy_Boss_SwapPower_AfterMindfuck
+	myTuningData < uid=3267E0D05AE7BE4E003B49EF6476833C > = pwr_DLC3_Monsters_Timmy_Boss_Mindfuck_Tuning
+	myCameraPreset < uid=3267E0D05AE7BE4E003B49F0D6F72438 > = NULLREFERENCE
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

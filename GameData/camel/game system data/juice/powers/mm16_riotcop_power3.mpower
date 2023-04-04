@@ -1,0 +1,43 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower mm16_riotcop_power3 < uid=3267E0D057A281B40000008F37A53153 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/swatcop_power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/1_range_cross.dds"
+	myUIName "contextComment = \"\", description = \"\", enabled = true, guid = #3267E0D057A281B40000008EBBC8EDA3, lineVersion = 0, maxLength = 8, text = \"Shove\""
+	myUseSkillScript < uid=3267E0D057A281B40000009052F64DBC > = Camel_Simple_PlayAnim_Script
+	myAnimationState power3
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D057A281B40000009164DAA770 >
+		{
+			myPriority 40
+			myMinimumAffectedTargets 2
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D057A281B4000000929883FBBD >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=3267E0D057A281B40000009386B26E57 > = enemy_pwr_mm16_riotcop_power3_amcclay_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

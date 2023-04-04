@@ -1,0 +1,34 @@
+
+enum TownReactionTypeEnum
+{
+	NOTSET
+	
+	fart
+	fart_victim
+	fact_witness
+	
+	punched
+	firecrackered
+	toot_victim
+	burn_victim
+	shock_victim
+	chill_victim
+	charm_victim
+	grossout_victim
+	stun_victim
+	bleed_victim
+	blast_victim
+	blast_and_burn_victim
+	blast_and_gross_victim
+	blast_and_stun_victim
+	blast_and_shock_victim
+	
+	interact_with
+	
+	selfie
+	
+	paused
+	
+	dead 
+	kill_victim 
+}

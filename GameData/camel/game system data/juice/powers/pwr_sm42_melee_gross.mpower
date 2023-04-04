@@ -1,0 +1,52 @@
+include ./mm16_blackcells_wizard_melee_gross.mpower
+include ./enemypowers.adrian.juice
+
+CombatPower pwr_SM42_melee_gross < uid=86C93082585355AE000014674B8F233A > : MM16_blackcells_wizard_melee_gross
+{
+	myAnimationState power1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData hit3 < uid=8585E53F58925E250000BD01A4132D4A >
+		{
+			myPriority 25
+			myMinimumAffectedTargets 3
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData hit2 < uid=8585E53F58925E250000BD02F39D1BFA >
+		{
+			myPriority 24
+			myMinimumAffectedTargets 2
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=8585E53F58925E250000BD03C0542635 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData hit1 < uid=8585E53F5898C5E100024FC24EBBBD6E >
+		{
+			myPriority 23
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=8585E53F58925DB90000AE6378702FAE > = pwr_sm42_head_guard_grossout_Adrian_Tuning
+}
+

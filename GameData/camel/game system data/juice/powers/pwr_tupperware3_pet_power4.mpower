@@ -1,0 +1,13 @@
+include ./pwr_tupperware3_pet_power1.mpower
+
+CombatPower pwr_tupperware3_pet_power4 < uid=86C93082576DB1D500002E1EDEAF3E22 > : pwr_tupperware3_pet_power1
+{
+	myValidDirections
+	{
+		myLeft FALSE
+		myRight FALSE
+		myUp FALSE
+		myDown TRUE
+	}
+}
+

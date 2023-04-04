@@ -1,0 +1,276 @@
+
+enum StatisticGenericTypeEnum < useCategories=1 >
+{
+	NOTSET
+	
+	farted
+	farted_on
+	farted_on_duration
+	farted_on_vfx
+	farted_witness
+	punch
+	punched_on
+	punched_on_duration
+	punched_on_vfx
+	firecracker
+	firecrackered_on
+	firecrackered_on_duration
+	firecrackered_on_vfx
+	toot
+	tooted_on
+	
+	burn
+	burned_on
+	burned_on_duration
+	burned_on_vfx
+	
+	grossout
+	grossedout_on
+	grossedout_on_duration
+	grossedout_on_vfx
+	
+	stun
+	stunned_on
+	stunned_on_duration
+	stunned_on_vfx
+
+	bleed
+	bleeding_on
+	bleeding_on_duration
+	bleeding_on_vfx
+	
+	charm
+	charmed_on
+	charmed_on_duration
+	charmed_on_vfx
+	
+	chill
+	chilled_on
+	chilled_on_duration
+	chilled_on_vfx
+	
+	shock
+	shocked_on
+	shocked_on_duration
+	shocked_on_vfx
+	
+	softening_punched_normal
+	softening_punched_normal_duration
+	softening_punched_normal_vfx
+	softening_punched_pause
+	softening_punched_pause_duration
+	softening_punched_pause_vfx
+	
+	softening_mode // passive(0)  active(1)  inert(2)
+	
+	dead
+	killed
+	
+	attack
+	switch_toolshed
+	interact_with
+	
+	selfie_pose
+	selfie_followers
+	selfie_entered
+	
+	game_progress
+
+	damage
+	damaged_on
+	damaged_on_duration
+	damaged_on_vfx
+	
+	exploded_on
+	exploded_on_duration
+	exploded_on_vfx
+	exploded_on_and_burn
+	exploded_on_and_burn_duration
+	exploded_on_and_burn_vfx
+	exploded_on_and_gross
+	exploded_on_and_gross_duration
+	exploded_on_and_gross_vfx
+	exploded_on_and_stun
+	exploded_on_and_stun_duration
+	exploded_on_and_stun_vfx
+	
+	exploded_on_and_shock
+	exploded_on_and_shock_duration
+	exploded_on_and_shock_vfx
+	
+	< startCategory="Town Event" >
+	townevent_trigger
+	townevent_success
+	townevent_failed
+	townevent_canceled
+	
+	< 		startCategory="Town Event/Mugging" >
+	townevent_type_mugging
+	townevent_type_mugging_easy
+	townevent_type_mugging_hard
+	< 		endCategory="" >
+	
+	< 		startCategory="Town Event/Ambush" >
+	townevent_type_ambush
+	townevent_type_ambush_easy
+	townevent_type_ambush_hard
+	< 		endCategory="" >
+	< endCategory="" >
+	
+	< startCategory="Combat" >
+		combat_start
+		combat_end
+
+		combat_actor_turn_begin
+		combat_actor_turn_end
+		combat_actor_was_damaged
+		combat_actor_shield_changed
+		combat_actor_was_targeted
+		
+		combat_actor_power_used
+		combat_actor_statuseffect_added
+		combat_actor_was_downed
+		combat_actor_was_revived
+		combat_actor_targeted_actor
+		combat_actor_targeted_prop
+		
+		combat_actor_knockback_impact_actor
+		combat_actor_knockback_impact_prop
+		combat_actor_knockback_revived_actor
+		
+		combat_actor_moved
+	< endCategory="" >
+
+	< startCategory="Achievements" >	// These stats are all used to track achievement awards.
+		AchievementsWon
+		AlliesDownAtWin
+		AssembleDone
+		BlackDone
+		BuddyUltimatesUsed
+		CharmDone
+		CharmKillDone
+		ClassPowersEquipped
+		CostumesCollected
+		DamageSurvivedRatio
+		FartkourPuzzleDone
+		FastTravelCompleted
+		FollowerSelfies
+		FreemanWinDone
+		KillBlockedDone
+		KilledHeroCount
+		KnockbackDamageEnemies
+		LapDanceCount
+		LegendaryArtifactCrafted
+		LegendaryEquipCount
+		LegendarySetEquipCount
+		LootTowerCount
+		MM04Done
+		MM08Done
+		MM12Done
+		MM15Done
+		MM16Done
+		MM17Done
+		MacaroniPictureDone
+		MasterRanksCompleted
+		MonetaryValue
+		NPCFartCount
+		NumberOfCombatTimefartsUsed
+		NumberOfDadsDefiled
+		NumberOfFastTravelFound
+		NumberOfFollowers
+		NumberOfGayCatsFound
+		NumberOfMemberberriesFound
+		NumberOfSummonsUsed
+		RecipiesCraftedUnique
+		SummonsDone
+		SummonsFound
+		TimeFartRepeatKillDone
+		TimeFartSkipWinDone
+		TimefartsGained
+		UniqueToiletsUsed
+		YaoiCollected
+	< endCategory="" >
+
+	< startCategory="Hero Stats" >	// These stats are all used to track Hero Stats (XB1).
+		BattlesWon
+		HighestGearLevel
+		HeroicDeeds
+		MicroAggressionsCountered
+		PlayerLevel
+		RecipiesCrafted
+		ShitsTakenAnywhere
+	< endCategory="" >
+	
+	< startCategory="Use By Engine" >
+		CellActivated
+		CellDeactivated
+		ActiveSuperCellDeactivated
+		spawned
+		InteractionTypes
+		ObjectTypes
+		EyeTrackings
+		Navigations
+		Nodes
+		StatisticTypes
+	< endCategory="" >
+	
+	< startCategory="Uplay GameStats" >	// These are only used for UPlay GameStats.
+		BuddiesAcquired
+		CraftingLevel
+		FastTravelOpen
+		PlotCompletion
+		ArtifactsAcquired
+	< endCategory="" >
+
+
+	////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////
+	//
+	//	DLC 1
+	//
+	////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////
+	< startCategory="DLC1/Misc" >
+	< endCategory="" >
+
+
+	////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////
+	//
+	//	DLC 2
+	//
+	////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////
+	< startCategory="DLC2/Danger Rooms" >
+	< endCategory="" >
+	< startCategory="DLC2/Danger Rooms/Arena" >
+	DLC2_DangerRoom_Arena_Begin
+	DLC2_DangerRoom_Arena_End
+	DLC2_DangerRoom_Arena_Presentation_Begin
+	DLC2_DangerRoom_Arena_Presentation_End
+	DLC2_DangerRoom_Arena_Indexed_Unlocked
+	DLC2_DangerRoom_Arena_Indexed_Won
+	DLC2_DangerRoom_Arena_Indexed_Loss
+	< endCategory="" >
+	< startCategory="DLC2/Danger Rooms/Wave" >
+	DLC2_DangerRoom_Wave_Begin
+	DLC2_DangerRoom_Wave_End
+	DLC2_DangerRoom_Wave_Indexed_Unlocked
+	DLC2_DangerRoom_Wave_Indexed_Won
+	DLC2_DangerRoom_Wave_Indexed_Loss
+	< endCategory="" >
+	< startCategory="DLC2/Danger Rooms/Environment" >
+	DLC2_DangerRoom_Environment_Enable_Lava
+	DLC2_DangerRoom_Environment_Enable_Barrel
+	DLC2_DangerRoom_Environment_Misc1
+	DLC2_DangerRoom_Environment_Misc2
+	DLC2_DangerRoom_Environment_Misc3
+	< endCategory="" >
+}
+
+enum StatisticValueTypeEnum
+{
+	String
+	Percentage
+	Int
+}

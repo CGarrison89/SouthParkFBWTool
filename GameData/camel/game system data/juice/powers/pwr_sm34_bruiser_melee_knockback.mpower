@@ -1,0 +1,12 @@
+include ./pwr_com_kitchenattack.mpower
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_sm34_bruiser_melee_knockback < uid=86C930825840FD260000ADC625BC5041 > : pwr_com_kitchenattack
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/ChefA_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myAnimationState power1
+	myTuningData < uid=86C930825840FD260000ADC7A1744B31 > = pwr_sm34_bruiser_melee_knockback_Adrian_Tuning
+	myCameraPreset < uid=86C930825913D2600000764058A7F125 > = Preset_Generic_Melee_KB
+}
+

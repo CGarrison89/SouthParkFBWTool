@@ -1,0 +1,8 @@
+include ./temp_pwr_enemy_archetype_basic_summoner2.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_LT_cityninjas_summoner_st_ranged < uid=86C9308257684DC60000016556E6B715 > : temp_pwr_enemy_archetype_basic_summoner2
+{
+	myTuningData < uid=86C9308257684DC60000016614344128 > = pwr_LT_cityninjas_summoner_st_ranged_Kevin_Tuning
+}
+

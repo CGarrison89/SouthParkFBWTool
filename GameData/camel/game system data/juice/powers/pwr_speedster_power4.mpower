@@ -1,0 +1,40 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/pwr_speedster_ultimate_start.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_speedster.juice"
+include camel/skillscript/pwr_speedster_ultimate_start_menu.mskillscriptjuice
+
+CombatPower pwr_speedster_power4 < uid=B9E930CA56DA2EBF0000003975F64660 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/speedster_Ult_ThousandPunches.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.DDS"
+	myUIName "contextComment = \"power name\", description = \"pwr_speedster_power4 Name\", enabled = true, guid = #51C546C65774DC4C000001885C87DEFD, lineVersion = 1, maxLength = 22, text = \"Multiverse Strike\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_speedster_power4 Description\", enabled = true, guid = #51C546C65774DC4C00000189FC27D99E, lineVersion = 1, maxLength = 174, text = \"The hero throws punches from multiple parallel realities for major damage. A nightmare of transdimensional logistics, but so worth it.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_speedster_power4 Short Description\", enabled = true, guid = #9D0E6196579A63190000016FDF862842, lineVersion = 0, maxLength = 47, text = \"A transdimensional flurry of punches\""
+	myUseSkillScript < uid=B9E930CA56DA2EBF0000003A0C076592 > = pwr_speedster_ultimate_start
+	myAnimationState speedster_power4
+	myNumberOfAttackEvents 1
+	myShouldRepositionBeforeExecution TRUE
+	myTuningData < uid=B9E930CA56DA2EBF0000003BC837A32E > = pwr_speedster_power4_Tuning
+	myCameraPreset < uid=86D6407657522AE6000070737903B12F > = Speedster_Power04
+	myPowerGroup Ultimate
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus FALSE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 2.0
+				myActionPlusPresetEnum Slow
+			}
+		}
+	}
+}
+

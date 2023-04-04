@@ -1,0 +1,12 @@
+include camel/skillscript/buddypower_shoveformc.mskillscriptjuice
+include "camel/game system data/fruit/powers/powers.fruit"
+include camel/skillscript/buddypower_shoveformc_temphologram.mskillscriptjuice
+
+Power "[BuddyPower] Shove For MC TempHologram" < uid=51B836D2580765AA0001974102A77B2B >
+{
+	myUIName "contextComment = \"Appears in the unlock presentation for Diabetic Rage\", description = \"Diabetic_Rage_Unlock_Hologram\", enabled = true, guid = #F0F6DDB7591C8DC000021E7C274A634A, lineVersion = 0, maxLength = 17, text = \"Diabetic Rage\""
+	myUseSkillScript < uid=51B836D2580765AA000197422770B493 > = BuddyPower_ShoveForMC_TempHologram
+	myLockedByDefault TRUE
+	myIsBuddyPower TRUE
+}
+

@@ -1,0 +1,38 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower enemy_pwr_archetype_rogue_melee_shocked < uid=3267E0D05748F1D7000000299A2F6D67 >
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_rogue_melee_shocked Name\", enabled = true, guid = #51C546C65774D94000000096D4FB81DE, lineVersion = 0, maxLength = 14, text = \"Rogue Melee\""
+	myUseSkillScript < uid=3267E0D05748F1D70000002AA705CE67 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D05748F1D70000002BB0365AF4 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86D6407657561636000001F3AB4E1F22 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=3267E0D05748F1D70000002C0AF52E05 > = enemy_pwr_archetype_rogue_melee_shocked_amcclay_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

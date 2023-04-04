@@ -1,0 +1,57 @@
+include ./enemy_pwr_archetype_warlock_lob_min_charm.mpower
+include ./enemypowers.adrian.juice
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_sm33_warlock_lob_min_charm < uid=8585E53F57EC0E2000132E394903F2C6 > : enemy_pwr_archetype_warlock_lob_min_charm
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/raisingirlbruiser_kiss.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_ST_no_min_range.dds"
+	myUseSkillScript < uid=86C9308258A348BE0005D60415818F4A > = Camel_Simple_PlayAnim_Script
+	myAnimationState power5
+	myPowerEvaluationData
+	{
+		PowerEvaluationData VIP < uid=8585E53F57EC0E9F0013CC443A272D43 >
+		{
+			myPriority 30
+			myNumLiveEnemiesRequired 2
+			myPreferredRange -1
+			myAIDesirableType VIP
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry NotCharmed
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+					myFollowingCondition AND
+				}
+				StatusEffectConditionalEntry NotCharmImmuned
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect CharmedImmunity
+				}
+			}
+		}
+		PowerEvaluationData CanNotReachVIP < uid=8585E53F57EC0E9F0013CC461991C7B6 >
+		{
+			myPriority 25
+			myNumLiveEnemiesRequired 2
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry NotCharmed
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+					myFollowingCondition AND
+				}
+				StatusEffectConditionalEntry NotCharmImmuned
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect CharmedImmunity
+				}
+			}
+		}
+	}
+	myTuningData < uid=86C9308258ACE12500048C87E68935AC > = pwr_sm33_warlock_lob_charm_Kevin_Tuning
+}
+

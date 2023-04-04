@@ -1,0 +1,71 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./enemypowers.kevin.juice
+include camel/skillscript/pwr_morgan_freeman_charm.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_morgan_freeman_charmed_v2 < uid=8585E53F57D0A0A6001871069F7D77F7 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/MorganFreeman_Power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide_ST.dds"
+	myUIName "contextComment = \"Placeholder Enemy\", description = \"enemy_pwr_archetype_warlock_lob_min_charm Name\", enabled = true, guid = #8585E53F57D0A0A60018710567088F5B, lineVersion = 2, maxLength = 31, text = \"The Word of God Almighty\""
+	myUseSkillScript < uid=8585E53F57D0A0A6001871078B110171 > = pwr_morgan_freeman_charm
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=86C9308258D9A0C90011CF71E1619635 >
+		{
+			myPriority 1250
+			myNumLiveEnemiesRequired 2
+			mySelfHealthLessThanPercentage 40.0
+			myAIDesirableType VIP
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+					myFollowingCondition OR
+				}
+				StatusEffectConditionalEntry "Not immune to charm"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect CharmedImmunity
+					myFollowingCondition None
+				}
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308258D9A0C90011CF72867CF11E >
+		{
+			myPriority 1
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myNumLiveEnemiesRequired 0
+			mySelfHealthLessThanPercentage 101.0
+			myAIDesirableType None
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+					myFollowingCondition OR
+				}
+				StatusEffectConditionalEntry "Not immune to charm"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect CharmedImmunity
+					myFollowingCondition None
+				}
+			}
+		}
+	}
+	myMeleeOffset 0.0;0.0
+	myTuningData < uid=8585E53F57D0A0A60018710A7D7C0FCE > = pwr_morgan_freeman_charmed_Kevin_Tuning
+	myCameraPreset < uid=86C93082591B5DE1000071BFFA689B66 > = Preset_Generic_Ranged
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

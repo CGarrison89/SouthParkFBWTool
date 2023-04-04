@@ -1,0 +1,12 @@
+include camel/skillscript/explore_cursortargeting.mskillscriptjuice
+include camel/skillscript/explore_interact.mskillscriptjuice
+include camel/skillscript/buddypower_shove.mskillscriptjuice
+include "camel/game system data/fruit/powers/powers.fruit"
+
+Power "[BuddyPower] Shove" < uid=6D91A59C5519E9250000003BFF7A7AA1 >
+{
+	myUseSkillScript < uid=6D91A59C5519E9250000003CFAEC7C01 > = BuddyPower_Shove
+	myIsPassive FALSE
+	myUseActiveTargeting FALSE
+}
+

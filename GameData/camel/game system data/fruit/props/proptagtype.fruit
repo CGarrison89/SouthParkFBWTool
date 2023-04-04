@@ -1,0 +1,32 @@
+enum PropTagType
+{
+    GhostVisual
+    PushPullBox
+    PushPullLadder
+}
+
+
+enum EntityPropTagType
+{
+    Chaos
+    Kids
+    Raisins
+    Girls
+    Cops
+    SixthGraders
+    OldPeople
+    CityNinjas
+    Crab
+    Vamp
+    Bums
+    Mephisto
+    ShubbEgg
+    ChemBarrel
+    Explosive
+    Breakable
+}
+
+list EntityPropTagTypeList
+{
+    EntityPropTagType
+}

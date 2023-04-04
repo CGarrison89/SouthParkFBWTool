@@ -1,0 +1,86 @@
+include ./enemy_pwr_archetype_grenadier_aoe_lob_min.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_mm22_shaken_beer_can.mprojectile"
+include camel/skillscript/camel_lobbed_power_playanim_script.mskillscriptjuice
+
+CombatPower pwr_mm22_genderselection_grenadier_shakebeer < uid=86C93082578685F20000468DE2B1D7A6 > : enemy_pwr_archetype_grenadier_aoe_lob_min
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/RedneckC_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/CC_range_2_3.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_grenadier_aoe_lob_min Name\", enabled = true, guid = #9D0E61965983B09A000EB6AD3F2E34A8, lineVersion = 0, maxLength = 14, text = \"Beer Bomb\""
+	myUseSkillScript < uid=86C93082578685F20000468EC5EE2338 > = Camel_Lobbed_Power_PlayAnim_Script
+	myAnimationState power1
+	myProjectile < uid=8585E53F5845ECEB000620C9193B7EA7 > = projectile_mm22_shaken_beer_can
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C93082592F2FF40001747D3FF41724 >
+		{
+			myPriority 50
+			myMinimumAffectedTargets 2
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not a redneck"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect DazedImmunity
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C93082592F2FF40001747EE7FC5DD7 >
+		{
+			myPriority 50
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 2
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not a redneck"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect DazedImmunity
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData ConfusedCharmed < uid=86C93082593041A100007D6223F2550B >
+		{
+			myPriority 50
+			myAggroPriority 0
+			myRequireAggroTarget FALSE
+			myMinimumAffectedTargets 2
+			myStatusEffectConditionData
+			{
+			}
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Confused
+				{
+					mySpecialEffect Confused
+					myFollowingCondition OR
+				}
+				StatusEffectConditionalEntry Charmed
+				{
+					mySpecialEffect Charmed
+					myFollowingCondition None
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86C93082578685F20000468FDF928FEB > = pwr_mm22_genderselection_grenadier_shakebeer_Kevin_Tuning
+}
+

@@ -1,0 +1,47 @@
+include ./enemy_pwr_archetype_warlock_lob_min_chilled.mpower
+include ./enemypowers.adrian.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_sm27_therapy_instantcoldpack.mprojectile"
+
+CombatPower pwr_dr_sm27_withdrawal_warlock_st_ranged < uid=8585E53F5A04D318002A8EEF93901180 > : enemy_pwr_archetype_warlock_lob_min_chilled
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/WithDrawal_IcePack.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_ST_no_min_range.dds"
+	myUIName "contextComment = \"\", description = 'Attack from \"withdrawl\" boy in SM28 counseling combat', enabled = true, guid = #8585E53F5A04D318002A8EEE6472FF77, lineVersion = 1, maxLength = 17, text = \"Cold Shoulder\""
+	myUseSkillScript < uid=8585E53F5A04D318002A8EF0DD0AAD22 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myProjectile < uid=8585E53F5A04D318002A8EF10AF15B19 > = projectile_sm27_therapy_instantColdPack
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=8585E53F5A04D318002A8EF2F98B9477 >
+		{
+			myPriority 30
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry NoChill
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Chilled
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=8585E53F5A04D318002A8EF3EA8486D7 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=8585E53F5A04D318002A8EF4626F4518 > = pwr_sm27_withdrawal_warlock_st_ranged_Adrian_Tuning
+}
+

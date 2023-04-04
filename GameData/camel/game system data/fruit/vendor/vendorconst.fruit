@@ -1,0 +1,4 @@
+class VendorConst
+{
+	float	myVendorBuyingPriceRatio 0.0
+}

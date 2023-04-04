@@ -1,0 +1,27 @@
+include ./enemy_pwr_archetype_warlock_lob_min_gross.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/sm68_pedo_priest_ranged_warlock01_telegraph_damage_delt.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/lt_chaoskids_exploder_aoe_execute.mskillscriptjuice
+include camel/skillscript/camel_simple_swappower_slot2.mskillscriptjuice
+
+CombatPower LT_chaoskids_exploder_aoe_burn_execute < uid=8585E53F592356EB000DCDE344DEB40E > : enemy_pwr_archetype_warlock_lob_min_gross
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/ChaosKid_Power6.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_square_debuff.dds"
+	myUIName "contextComment = \"suicide attack\", description = \"enemy_pwr_archetype_warlock_lob_min_gross Name\", enabled = true, guid = #9D0E6196596D14F700008B74BB37EF6B, lineVersion = 0, maxLength = 16, text = \"Death Blow\""
+	myUseSkillScript < uid=8585E53F592356EB000DCDE49296C295 > = LT_chaoskids_exploder_aoe_execute
+	myAnimationState power6
+	myLockedByDefault TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=86C9308259249DE7000B0B45D740DD70 >
+		{
+			myPriority 1
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=86C93082595422C30001EAF8F7612DEF > = Camel_Simple_SwapPower_Slot2
+	myTuningData < uid=8585E53F592356EB000DCDE6A559B29F > = pwr_LT_chaoskids_exploder_aoe_burn_execute_Kevin_Tuning
+	myCameraPreset < uid=8585E53F592356EB000DCDE714961CFE > = Preset_Generic_Melee
+}
+

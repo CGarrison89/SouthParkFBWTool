@@ -1,0 +1,8 @@
+class SandBoxLocation < uid=auto >
+{
+	string myMap
+	string mySpawnPoint
+	uid myMission
+	uid myObjective
+	bool myIsMinigame
+}

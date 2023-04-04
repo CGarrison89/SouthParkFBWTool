@@ -1,0 +1,39 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/pwr_sixthgraderbartles_power2_script.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_sixthgraderbartles.juice"
+
+CombatPower pwr_sm01_bruiser_melee_tittytwister < uid=B9E930CA57B4ABDD000003A35882E360 > : enemy_pwr_archetype_bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/6thGrader_TittyTwister.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_bruiser_melee Name\", enabled = true, guid = #B9E930CA57B4CF62000095B13724EADA, lineVersion = 0, maxLength = 17, text = \"Titty Twister\""
+	myUseSkillScript < uid=B9E930CA57B4ABF4000003B0AE794D0B > = pwr_sixthGraderBartles_power2_script
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA57B4AC88000003CA2547A3F1 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=B9E930CA57B4AC88000003CBBDE2824D >
+		{
+			myPriority 400
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myMeleeOffset 0.5;0.0
+	myTuningData < uid=B9E930CA57B4ABDD000003A423335F28 > = pwr_sm01_bruiser_melee_tittytwister_Kevin_Tuning
+}
+

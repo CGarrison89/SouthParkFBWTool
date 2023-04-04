@@ -1,0 +1,31 @@
+include ./placeholder_enemy_power1.mpower
+include ./enemypowers.bbartram.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower pwr_com_backstoryThug_melee < uid=B642A89A571A550400003E6F02DB670E > : placeholder_enemy_power1
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/goon_Crowbar.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_backstorythug_melee Name\", enabled = true, guid = #51C546C65774DBCB0000007E88639E6E, lineVersion = 0, maxLength = 25, text = \"Breaking & Entering\""
+	myUseSkillScript < uid=B9E930CA5738D1D10000023E0DC0A489 > = Camel_Simple_PlayAnim_Script
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308257B651BF000363AB5066812E >
+		{
+			myPriority 10
+		}
+		PowerEvaluationData Enraged < uid=86C9308257B651BF000363ACB20B95D9 >
+		{
+			myPriority 1020
+			myRequireAggroTarget TRUE
+		}
+	}
+	myTuningData < uid=B642A89A571A580E00003EAB2679A344 > = pwr_com_backstoryThug_melee_BBartram_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

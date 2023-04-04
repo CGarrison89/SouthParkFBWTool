@@ -1,0 +1,13 @@
+class Input
+{
+}
+
+class Output
+{	
+	mat44 Position
+	mat44 RotateScale
+	vec3f LocalPosition
+	float SizeScale
+	bool EmissionStopped
+	bool Paused
+}

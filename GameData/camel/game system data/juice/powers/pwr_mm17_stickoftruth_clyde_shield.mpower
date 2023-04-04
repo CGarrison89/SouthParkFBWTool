@@ -1,0 +1,14 @@
+include ./enemy_pwr_archetype_bruiser_self_shield.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_mm17_stickoftruth_clyde_shield < uid=86C9308257BB76B8000001C65E067F85 > : enemy_pwr_archetype_bruiser_self_shield
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/clyde_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide_heal.dds"
+	myUIName "contextComment = \"\", description = \"Shield Stance\", enabled = true, guid = #3267E0D0597131B600264BDE81E0A1B6, lineVersion = 0, maxLength = 17, text = \"Shield Stance\""
+	myUseSkillScript < uid=8E224C3D58EC3CD30000919A522A4068 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myTuningData < uid=86C9308257BB76B8000001C7BEDE2100 > = pwr_mm17_stickoftruth_clyde_shield_Kevin_Tuning
+}
+

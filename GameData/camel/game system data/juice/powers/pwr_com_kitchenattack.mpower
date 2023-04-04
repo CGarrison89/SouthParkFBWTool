@@ -1,0 +1,40 @@
+include ./placeholder_enemy_power1.mpower
+include ./enemypowers.adrian.juice
+
+CombatPower pwr_com_kitchenattack < uid=DB7C6D4256B968B10000829B9EAF3FC9 > : placeholder_enemy_power1
+{
+	myIconImage "camel/baked/assets/ui/power selection/power - captain diabetes - diabetic rage.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_kitchenattack Name\", enabled = true, guid = #51C546C65774DBE3000000A5B3ED6D58, lineVersion = 0, maxLength = 16, text = \"Tenderizer\""
+	myUseSkillScript < uid=DB7C6D4256BB95130000B0DB51943F9A > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 1
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData melee_kill < uid=DB7C6D4256C3FF9F0000491EBE32C437 >
+		{
+			myPriority 29
+			myAggroPriority 1029
+			myRequireAggroTarget FALSE
+			myMinimumKills 1
+		}
+		PowerEvaluationData melee < uid=DB7C6D4256BD0301000018688777DD8B >
+		{
+			myPriority 19
+			myAggroPriority 1019
+			myRequireAggroTarget FALSE
+		}
+		PowerEvaluationData enraged < uid=8585E53F57E2B56F0006EA38537D96A0 >
+		{
+			myAggroPriority 1019
+			myRequireAggroTarget TRUE
+		}
+	}
+	myTuningData < uid=DB7C6D4256BA3C6F00000E956D2A2F95 > = pwr_sm34_bruiser_melee_knockback_Adrian_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

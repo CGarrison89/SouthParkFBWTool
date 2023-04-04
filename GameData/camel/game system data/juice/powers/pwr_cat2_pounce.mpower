@@ -1,0 +1,25 @@
+include ./pwr_com_kitchenattack.mpower
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+
+CombatPower pwr_cat2_pounce < uid=DB7C6D4256E37DD7000002DDD75E4745 > : pwr_com_kitchenattack
+{
+	myUIName "contextComment = \"\", description = \"pwr_cat2_pounce Name\", enabled = true, guid = #51C546C65774D964000000FC760574F5, lineVersion = 0, maxLength = 10, text = \"Pounce\""
+	myUseSkillScript < uid=DB7C6D4256FEE199000001049D11387B > = NULLREFERENCE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData melee_kill < uid=DB7C6D4256FB2E31000020492C093837 >
+		{
+			myPriority 45
+			myAggroPriority 45
+			myMinimumKills 1
+		}
+		PowerEvaluationData melee < uid=DB7C6D4256FB2E310000204A95958939 >
+		{
+			myPriority 30
+			myAggroPriority 30
+		}
+	}
+	mySecondarySkillScript < uid=DB7C6D4256FEE19900000105912F9D51 > = Simple_Rush_Damage_Script
+	myTuningData < uid=DB7C6D4256E37DD7000002DEF37FE338 > = pwr_cat2_pounce_MAcero_Tuning
+}
+

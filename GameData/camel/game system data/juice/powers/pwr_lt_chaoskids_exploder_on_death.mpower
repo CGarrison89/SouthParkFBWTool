@@ -1,0 +1,14 @@
+include ./enemy_pwr_suicide_explode.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_LT_chaoskids_exploder_on_death < uid=86C9308257684B39000000E02DE77D69 > : enemy_pwr_suicide_explode
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/ChaosKid_Power4.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_square_debuff.dds"
+	myUIName "contextComment = \"pwr name\", description = \"enemy_pwr_suicide_explode Name\", enabled = true, guid = #9D0E619659977D80000F07F7F0972C7F, lineVersion = 0, maxLength = 16, text = \"Death Blow\""
+	myUseSkillScript < uid=8585E53F582BD48B0000CED48FDDB0E9 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power4
+	myTuningData < uid=86C9308257684B39000000E1910A8C66 > = pwr_LT_chaoskids_exploder_on_death_Kevin_Tuning
+}
+

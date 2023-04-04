@@ -1,0 +1,68 @@
+include "camel/skillscript/skillscript.fruit"
+include "camel/game system data/fruit/statuseffect/statuseffect.fruit"
+
+
+enum HeroDNAType
+{
+	Aura
+	Trigger
+	Consumable
+	Difficulty
+}
+
+enum HeroDNASubjectEnum
+{
+	None
+	Me
+	Buddy
+	Ally
+	Enemy
+	AllExceptSelf
+}
+
+enum HeroDNATriggerEnum
+{
+	CombatStart
+	EveryXMyTurn
+	EveryXTurn
+	LowHealthOnce
+	LowHealth
+	KilledOnce
+	Killed
+	UseTimefart
+	UseItem
+	Damaged
+	StatusEffectApplied
+	EveryXMyTurnEnd
+}
+
+enum HeroDNAConsistentStatEffect
+{
+	None
+	MovementPoints
+}
+
+class HeroDNA < uid=auto >
+{
+    varmap 				myUIName < bhv = "localization" >
+    varmap 				myUIDescription  < bhv = "localization" >
+    varmap 				myUIFlavorText  < bhv = "localization" >
+	HeroDNAType			myHeroDNAType
+	int					myDifficulty 0
+	int					myUnlockLevel 1
+	HeroDNASubjectEnum	mySubject
+	HeroDNATriggerEnum	myTrigger
+	float				myTriggerParameter
+	SkillScript* 		mySkillScript
+	float				mySkillScriptParameter
+	StatusEffect*		mySkillScriptStatusEffect
+	HeroDNAConsistentStatEffect	myConsistentStatEffect None
+	int							myConsistentStatEffectValue 0
+	float 				myEnemyDamageDealAdjustment 0
+	float				myEnemyDamageReceiveAdjustment 0
+}
+
+list AutoEquipDefaultHeroDNAs
+{
+	HeroDNA*
+}

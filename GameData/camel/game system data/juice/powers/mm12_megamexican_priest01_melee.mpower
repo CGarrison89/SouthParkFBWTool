@@ -1,0 +1,35 @@
+include ./enemy_pwr_5hp_heal.mpower
+include ./enemypowers.mvernon.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower MM12_megamexican_priest01_Melee < uid=6D7AC9B157F2FED40001D5ED5A57807B > : enemy_pwr_5hp_heal
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/generics/generic_melee.dds"
+	myUIName "contextComment = \"\", description = \"Priest Melee\", enabled = true, guid = #6D7AC9B157F2FEFD0001E56BFABFCE01, lineVersion = 0, maxLength = 16, text = \"Priest Melee\""
+	myUseSkillScript < uid=B9E930CA5826465F000032591C000A60 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B157F2FED40001D5EE83B36234 >
+		{
+			myPriority 50
+			myAggroPriority 1000
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=6D7AC9B157F2FED40001D5EFA8AD7584 > = pwr_com_mm12_megamexican_priest_Melee_MVernon_Tuning
+	myValidDirections
+	{
+		myLeft TRUE
+		myRight TRUE
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

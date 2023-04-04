@@ -1,0 +1,43 @@
+include "camel/game system data/fruit/juiceObj.fruit"
+include "camel/game system data/fruit/helpers/helpers_types.fruit"
+
+enum FireBallConfigType
+{
+	AlwaysLit_OnlyFartReact
+	AlwaysLit_FartAndFirecrackerReact
+	LitByFireCracker_NoGlitch_Reset_Autosave
+	LitByFireCracker_NoGlitch_NoReset_Autosave
+	LitByFireCracker_Glitch_Reset_Autosave
+	LitByFireCracker_Glitch_NoReset_Autosave
+	LitByFirecrackerAndExplosion_NoGlitch_Noreset_Autosave
+	LitByScript_FartAndFirecrackerReact
+}
+
+class FireBallConfig
+{
+	bool alwaysLit True
+	bool TriggerFireBallBy_ShortRangeFart True
+	bool TriggerFireBallBy_LongRangeFart True
+	bool LitBy_FireCracker True
+	bool LitBy_Explosion False
+	bool LitBy_Interaction False
+	bool ReactTo_FireCracker False
+	bool ReactTo_Explosion False
+	
+	string IntactAnimationName "idle intact"
+	string BurningAnimationName "idle burning"
+	string FireBallAnimationName "fireball"
+	string ReactTo_FireCracker_AnimationName "firecracker reaction"
+	string ReactTo_Explosion_AnimationName "explosion reaction"
+	
+	bool UseInteractionRegionForShortRangeFart True  < tooltip="set to false will use the prop footprint">
+	
+	bool EnableAtInit True
+	
+	bool Stateful_ShouldRewindWhenDeath False
+	bool Stateful_ResetAfterAWhile True
+	bool Stateful_ReserveSaveOnComplete True
+	bool Stateful_AutoReserveSaveOnComplete True
+	bool TimeFartAllowedWhenReverveSaveAndComplete True
+	bool Stateful_ShouldActivateGlitchListener False
+}

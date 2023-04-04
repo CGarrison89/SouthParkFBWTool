@@ -1,0 +1,36 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./enemypowers.mvernon.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower pwr_strippero_power3 < uid=6D7AC9B1579152290000451C9B80F64B >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/stripper_melee.dds"
+	myUIName "contextComment = \"\", description = \"pwr_stripper_power3 Name\", enabled = true, guid = #6D7AC9B1579152290000451BDADC596B, lineVersion = 1, maxLength = 17, text = \"Exotic Attack\""
+	myUseSkillScript < uid=6D7AC9B1579152290000451DEA20E3B0 > = Camel_Simple_Placeholder_Damage_Script
+	myAnimationState ""
+	myShouldRepositionBeforeExecution FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B1579152290000451E2BD20334 >
+		{
+			myPriority 30
+			myValidDirections
+			{
+				myLeft FALSE
+				myRight TRUE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=6D7AC9B1579152290000451F13FD1024 > = pwr_stripper_pullForward_power2_MVernon_Tuning
+	myValidDirections
+	{
+		myLeft FALSE
+		myRight TRUE
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

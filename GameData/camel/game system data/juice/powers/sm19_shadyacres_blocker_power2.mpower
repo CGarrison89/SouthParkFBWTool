@@ -1,0 +1,41 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include ./enemypowers.bbartram.juice
+
+CombatPower sm19_shadyacres_blocker_power2 < uid=3267E0D057E0327A0005ECCC65A01845 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/OldFolk_Blocker_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/self.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_blocker_block Name\", enabled = true, guid = #3267E0D057E0327A0005ECCB870D5510, lineVersion = 1, maxLength = 8, text = \"Block\""
+	myUseSkillScript < uid=3267E0D057E0327A0005ECCD714965D6 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D057E0327A0005ECCE124B52FD >
+		{
+			myPriority 30
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=3267E0D057E0327A0005ECCFFF032071 > = pwr_com_sm19_blocker_block_BBartram_Tuning
+	myCameraPreset < uid=86C930825972A708000C6A066C2F98D5 > = Preset_Generic_Melee
+	myValidDirections
+	{
+		myLeft TRUE
+		myRight TRUE
+		myUp FALSE
+		myDown FALSE
+	}
+	myBlockingData
+	{
+		myDamageThreshold 20
+	}
+}
+

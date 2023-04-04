@@ -1,0 +1,17 @@
+include ./enemy_pwr_archetype_grenadier_st_lob_min.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_sm42_securityguard_flashbang.mprojectile"
+include ./enemypowers.adrian.juice
+include camel/skillscript/camel_lobbed_power_playanim_script.mskillscriptjuice
+
+CombatPower pwr_SM42_grenadier_st_lob_min < uid=86C930825853548D0000141A21733B6E > : enemy_pwr_archetype_grenadier_st_lob_min
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/securityguard_power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_ST_min_range.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_grenadier_st_lob_min Name\", enabled = true, guid = #EA0BC518599A8A2A000693B4D21FEB6B, lineVersion = 0, maxLength = 14, text = \"Flashbang\""
+	myUseSkillScript < uid=86C930825877C0810000154179B9564E > = Camel_Lobbed_Power_PlayAnim_Script
+	myAnimationState power3
+	myProjectile < uid=86C930825877C0B1000015497A61F04C > = projectile_sm42_securityguard_flashbang
+	myTuningData < uid=86C930825853548D0000141BC0C19443 > = pwr_sm42_grenadier_lob_confused_Adrian_Tuning
+}
+

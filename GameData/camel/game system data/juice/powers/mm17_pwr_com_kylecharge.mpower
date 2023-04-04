@@ -1,0 +1,43 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+include ./enemypowers.mvernon.juice
+include camel/skillscript/camel_simple_speed_trail.mskillscriptjuice
+
+CombatPower mm17_pwr_com_KyleCharge < uid=6D7AC9B1594AF8370020C53F33EE054E >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/MitchKite_Power4.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/rush_3.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_tankcharge Name\", enabled = true, guid = #6D7AC9B1594AF8370020C53E4EE33A26, lineVersion = 0, maxLength = 1, text = \"Tank Charge\""
+	myUseSkillScript < uid=86C93082595318A900058A4F0510C86D > = NULLREFERENCE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B1594AF8370020C5408C36FC8A >
+		{
+			myPriority 10
+			myMinimumAffectedTargets 1
+		}
+		PowerEvaluationData multipleTargets < uid=6D7AC9B159545BA7001E99AAA0866EEA >
+		{
+			myPriority 15
+			myAggroPriority 1000
+			myMinimumAffectedTargets 2
+			myPreferredRange 1
+		}
+	}
+	mySecondarySkillScript < uid=6D7AC9B1594AF8370020C5411D9AC603 > = Simple_Rush_Damage_Script
+	myDialogueSkillScript < uid=6D7AC9B1594AF8370020C5424AFFFD9C > = Camel_Simple_PlayDialogue_Script
+	myTuningData < uid=6D7AC9B1594AF8370020C543097845F8 > = pwr_mm17_humankite_mitch_power4_MVernon_Tuning
+	myAnimationSetData
+	{
+		myIntroState "power4 intro"
+		myLoopState "power4 loop"
+		myOutroState "power4 outro"
+	}
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

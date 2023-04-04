@@ -1,0 +1,30 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_callgirl.juice"
+include camel/skillscript/pwr_callgirl_power04_script.mskillscriptjuice
+
+CombatPower pwr_callgirl_power4 < uid=B9E930CA56D0A1C4000000DE9E43872D >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/callgirl_power4.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide.DDS"
+	myUIName "contextComment = \"Call Girl Power 4 Name\", description = \"pwr_callgirl_power4 Name\", enabled = true, guid = #51C546C65774D961000000F15B13529C, lineVersion = 3, maxLength = 21, text = \"de1eteYRacct.exe\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_callgirl_power4 Description\", enabled = true, guid = #51C546C65774D961000000F268177D30, lineVersion = 1, maxLength = 108, text = \"Call Girl nukes her enemies' social media accounts, inflicting damage and Confused.\"}"
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_callgirl_power4 Short Description\", enabled = true, guid = #9D0E6196579BAF03000044750D469893, lineVersion = 1, maxLength = 42, text = \"Cyberpocalypse Confuses all foes\""
+	myUseSkillScript < uid=B9E930CA56D0A1C4000000DFE815ECE8 > = pwr_callgirl_power04_script
+	myTuningData < uid=B9E930CA56D0A1C4000000E089CED04F > = pwr_callgirl_power4_Tuning
+	myCameraPreset < uid=B9E930CA5823B81400005FB32288890F > = CallGirl_Power04
+	myPowerGroup Ultimate
+	myActionPlusData
+	{
+		myUseActionPlus FALSE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusPresetEnum Mash_Long
+			}
+		}
+	}
+}
+

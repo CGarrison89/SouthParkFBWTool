@@ -1,0 +1,8 @@
+include ./enemy_pwr_archetype_rusher_rush.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_LT_raisins_rusher_rush < uid=86C9308257683AE8000003C0FE40B30C > : enemy_pwr_archetype_rusher_rush
+{
+	myTuningData < uid=86C9308257683AE8000003C168AFB583 > = pwr_LT_raisins_rusher_rush_Kevin_Tuning
+}
+

@@ -1,0 +1,73 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./enemypowers.kevin.juice
+include ./sm66_raisins_bruiser_melee.mpower
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_sm02_raisins_bruiser_melee < uid=86C9308257803283000001FC1DA4A7CF > : sm66_raisins_bruiser_melee
+{
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myPowerEvaluationData
+	{
+		PowerEvaluationData killshot < uid=B642A89A5988E9DB003323E5B41755B6 >
+		{
+			myPriority 30
+			myMinimumKills 1
+			myMinimumAffectedTargets 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData default < uid=B642A89A5988E9DB003323E6CAB4CF6A >
+		{
+			myPriority 20
+			myMinimumAffectedTargets 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "default VIP" < uid=B642A89A5988E9DB003323E7DD8EF71A >
+		{
+			myPriority 20
+			myMinimumAffectedTargets 1
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=B642A89A5988E9DB003323E8B195305A >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "Enraged VIP" < uid=B642A89A5988E9DB003323E9BF21793B >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myMeleeOffset -1.0;0.0
+	myTuningData < uid=86C9308257803283000001FDB9796215 > = pwr_sm02_raisins_bruiser_melee_Kevin_Tuning
+	myCameraPreset < uid=86C93082591B5CE50000717413AEB4DB > = Preset_Generic_Melee
+}
+

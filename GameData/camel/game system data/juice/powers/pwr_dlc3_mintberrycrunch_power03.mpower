@@ -1,0 +1,43 @@
+include ./dlc3_buddypowers.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/dlc3_mintberrycrunch_power03.mskillscriptjuice
+include "camel/game system data/juice/camera/tardicaca/uber_camera_powers_presets_mintberry.juice"
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+include camel/skillscript/camel_playdialog_mbc03.mskillscriptjuice
+
+CombatPower pwr_dlc3_mintberrycrunch_power03 < uid=86D640765A4E9F4C0001A692203E29E5 >
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/MintBerryCrunch_Power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_dualpowertarget_wide.dds"
+	myUIName "contextComment = \"MintBerry Crunch Power03 Name\", description = \"pwr_dlc3_mintberrycrunch_power03 Name\", enabled = true, guid = #86D640765A4EA2D80001A6DA68401B63, lineVersion = 2, maxLength = 16, text = \"Flavor Blast\""
+	myUIDescription "contextComment = \"MintBerry Crunch Power03 Long Description\", description = \"pwr_dlc3_mintberrycrunch_power03 Long Description\", enabled = true, guid = #9D0E61965AA9C4CB0000A49406058514, lineVersion = 0, maxLength = 127, text = \"Refreshing mint cleanses and Mints allies in the blast zone, while enemies are thoroughly Berried.\""
+	myUIShortDescription "contextComment = \"MintBerry Crunch Power03 Short Description\", description = \"pwr_dlc3_mintberrycrunch_power03 Short Description\", enabled = true, guid = #86D640765A4EA3640001A6F0441EA6FE, lineVersion = 3, maxLength = 43, text = \"Cleanse & Mint allies, Berry foes\""
+	myUseSkillScript < uid=86D640765A4E9F4C0001A69389B13EB4 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power3
+	myIsACleansePower FALSE
+	myIsADualEffectPower TRUE
+	myDialogueSkillScript < uid=326B24CD5B0DF2300000B763E5B768D7 > = Camel_PlayDialog_MBC03
+	myTuningData < uid=86D640765A4E9F4C0001A6947BB2AD3F > = dlc3_pwr_mintberrycrunch_mini_lob_Tuning
+	myCameraPreset < uid=B9E930CA5A9F367800009D9DB91D22C2 > = MintBerry_Power03
+	mySelfStatusEffects
+	{
+		StatusEffect Mint < uid=86D640765A4ED8CA001250DEA0CA8F3A > = Mint
+	}
+	myActionPlusData
+	{
+		myUseActionPlus FALSE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusEndTime 0.0
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+	myUILobbedAreaExtension
+	{
+		myRight 1
+	}
+}
+

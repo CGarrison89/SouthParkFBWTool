@@ -1,0 +1,8 @@
+include ./pwr_sm69_bruiser_melee.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower pwr_dr_sm69_bruiser_melee < uid=C87888A05A1606A60003ADB8BA11D96A > : pwr_sm69_bruiser_melee
+{
+	myTuningData < uid=C87888A05A16073D0003ADC3F4F7C45F > = pwr_dr_sm69_bruiser_melee_Tuning
+}
+

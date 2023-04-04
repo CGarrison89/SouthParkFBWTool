@@ -1,0 +1,40 @@
+include "camel/game system data/fruit/damage/damage.fruit"
+include "camel/game system data/fruit/specialeffect/specialeffect.fruit"
+include "camel/skillscript/skillscript.fruit"
+
+enum StatusEffectReapplyEnum
+{
+	Stack
+	Refresh
+	Extend
+	NoChange
+}
+
+enum BuffTypeEnum
+{
+	Neutral
+	Buff
+	Debuff
+}
+
+class StatusEffect < uid = auto >
+{
+	BuffTypeEnum myBuffType Neutral
+	float myBuffAmount 0 < tooltip = "amount as buff when myBuffType=Buff or debuff when BuffType=Debuff" >
+	float myDebuffAmount 0 < tooltip = "amount as debuff when myBuffType=Buff or buff when BuffType=Debuff" >
+	int myDuration 2
+	StatusEffectReapplyEnum myReapply
+	bool myCanRemove true
+	SpecialEffect mySpecialEffect
+	bool myExpiresOnPowerExecution false
+	bool myExpiresOnPowerExecutionFinished false
+	bool myExpiresOnDamaged false
+	bool myExpiresOnLocationEffectApplied false
+	bool myExpiresOnItemConsumption false
+	bool myExpiresOnEnvironmentInteraction false
+}
+
+list StatusEffects
+{
+	StatusEffect*
+}

@@ -1,0 +1,13 @@
+include ./mm16_shub_exploder_suicide.mpower
+include camel/skillscript/mm12_methlab_barrel_exploding_skillscript.mskillscriptjuice
+include ./enemypowers.kevin.juice
+include camel/skillscript/mm16_catpeetank_exploding_skillscript.mskillscriptjuice
+include camel/skillscript/mm15_electricpylon_exploding_skillscript.mskillscriptjuice
+include ./enemypowers.mvernon.juice
+
+CombatPower MM15_Pylon_Explosion < uid=6D7AC9B15935FB400001C9BDBCC1322C > : MM16_shub_exploder_suicide
+{
+	myUseSkillScript < uid=6D7AC9B15935FB400001C9BEFF7A0041 > = mm15_ElectricPylon_exploding_SkillScript
+	myAnimationState react
+}
+

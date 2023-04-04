@@ -1,0 +1,38 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower enemy_pwr_archetype_bruiser_melee_knockback < uid=86D640765744DCC10000007B58CC484B >
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_bruiser_melee_knockback Name\", enabled = true, guid = #51C546C65774D93B0000008A6BC2480D, lineVersion = 1, maxLength = 13, text = \"The Boot\""
+	myUseSkillScript < uid=86D640765744DCC10000007CFAD56A6B > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D640765744DCC10000007D272FA065 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86D64076575614E5000001D2B5D821D0 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86D640765744DCC10000007E8CAE1256 > = enemy_pwr_archetype_bruiser_melee_knockback_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

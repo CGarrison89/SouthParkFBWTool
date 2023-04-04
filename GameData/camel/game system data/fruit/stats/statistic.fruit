@@ -1,0 +1,27 @@
+include "camel/game system data/fruit/juiceObj.fruit"
+include "camel/game system data/fruit/stats/statistic_types.fruit"
+include "camel/game system data/fruit/mission/mission.fruit"
+
+class StatisticConstData : JuiceObj
+{
+	StatisticGenericTypeEnum myEvent
+	StatisticValueTypeEnum myValueType
+	int myPlatformId -1
+	varmap myHeroStatNameSource < bhv="localization" >
+}
+
+class GameProgressStatisticEntry : JuiceObj
+{
+	Mission* myMission
+	float myWeight 1
+}
+
+list GameProgressStatisticEntryList
+{
+	GameProgressStatisticEntry*
+}
+
+class GameProgressStatisticConstData : StatisticConstData
+{
+	GameProgressStatisticEntryList myEntries
+}

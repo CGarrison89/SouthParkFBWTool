@@ -1,0 +1,45 @@
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include camel/skillscript/pwr_mm12_siege_pitcher_throwball_skillscript.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_mm12_siege_baseball.mprojectile"
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+include ./enemypowers.adrian.juice
+include camel/skillscript/sm25_crab_king_heal_focus_telegraph.mskillscriptjuice
+include camel/skillscript/camel_simple_swappower_slot1.mskillscriptjuice
+
+CombatPower pwr_sm25_crab_king_heal_focus_telegraph < uid=86C930825926048400007CBDA7EA1A90 > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/KingCrab_power1.dds"
+	myUseSkillScript < uid=86C930825926048400007CBE6517568A > = sm25_crab_king_heal_focus_telegraph
+	myBlocksObscurationMovement TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C930825926050800007CD891E5B758 >
+		{
+			myPriority 20
+			myAggroPriority 1001
+			myRequireAggroTarget FALSE
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=86C9308259541F890001E987F1371317 > = Camel_Simple_SwapPower_Slot1
+	myTuningData < uid=86C930825926048400007CC10716254C > = pwr_sm25_crab_king_heal_focus_telegraph_Adrian_Tuning
+	myValidDirections
+	{
+		myRight FALSE
+		myUp FALSE
+		myDown FALSE
+	}
+	myTelegraphData
+	{
+		myTelegraphedPowerName pwr_sm25_crab_king_heal_focus_execute
+		myTelegraphingAnimationName "power1 loop"
+	}
+}
+

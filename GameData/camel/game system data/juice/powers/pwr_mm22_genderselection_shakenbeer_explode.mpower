@@ -1,0 +1,23 @@
+include ./enemy_pwr_suicide_explode.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_mm22_genderselection_shakenbeer_explode < uid=86C930825786869C0000469C6A32433A > : enemy_pwr_suicide_explode
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_suicide_explode Name\", enabled = true, guid = #9D0E61965983B0C6000EB6AF2162A4AB, lineVersion = 0, maxLength = 14, text = \"Beer Bomb\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C93082578A963800004274673E878F >
+		{
+			myPriority 20
+			myTargetHealthLessThanPercentage 101.0
+			mySelfHealthLessThanPercentage 101.0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86C930825786869C0000469D7BBF11DB > = pwr_mm22_genderselection_shakenbeer_explode_Kevin_Tuning
+}
+

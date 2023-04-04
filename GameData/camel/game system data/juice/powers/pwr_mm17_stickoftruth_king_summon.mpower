@@ -1,0 +1,10 @@
+include ./temp_pwr_enemy_archetype_basic_summoner1.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/pwr_mm17_stickoftruth_craig_summon_script.mskillscriptjuice
+
+CombatPower pwr_mm17_stickoftruth_king_summon < uid=86C9308257BB7A100000031D6D250BF4 > : temp_pwr_enemy_archetype_basic_summoner1
+{
+	myUseSkillScript < uid=86C9308257BB7A100000031EF16B094B > = Camel_Simple_Placeholder_Damage_Script
+	myTuningData < uid=86C9308257BB7A100000031FC2915B75 > = pwr_mm17_stickoftruth_king_summon_Kevin_Tuning
+}
+

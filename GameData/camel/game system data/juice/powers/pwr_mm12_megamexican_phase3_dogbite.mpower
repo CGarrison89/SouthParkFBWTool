@@ -1,0 +1,47 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./buddypowers.joh.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_humankite.juice"
+include ./enemypowers.mvernon.juice
+include camel/skillscript/magamexican_lavapiss.mskillscriptjuice
+
+CombatPower pwr_mm12_megamexican_Phase3_DogBite < uid=6D7AC9B1586D967A000AE5AB20FD35C4 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/chaosdog_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"Human Kite Power 1 Name\", description = \"pwr_mm12_megamexican_lavapiss Name\", enabled = true, guid = #6D7AC9B1586D967A000AE5A98B9F8044, lineVersion = 3, maxLength = 13, text = \"Dog Bite\""
+	myUIDescription "contextComment = \"Human Kite Power 1 Description\", description = \"pwr_mm12_megamexican_lavapiss Description\", enabled = true, guid = #6D7AC9B1586D967A000AE5AA41A660C8, lineVersion = 2, maxLength = 13, text = \"Sick 'Em\"}"
+	myUseSkillScript < uid=6D7AC9B1586D967A000AE5ACC0C723D2 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power3
+	myNumberOfAttackEvents 2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B1586D967A000AE5ADB72D062E >
+		{
+			myPriority 200
+			myAggroPriority 0
+			myMinimumAffectedTargets 1
+			myTargetHealthMoreThanPercentage 0.0
+			myValidDirections
+			{
+				myLeft TRUE
+				myRight TRUE
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData enrage < uid=6D7AC9B1596A99A1000B643D9A3CD81F >
+		{
+			myAggroPriority 1000
+		}
+	}
+	myTuningData < uid=6D7AC9B1586D967A000AE5AF0C65CE4D > = pwr_com_mm12_megamexican_Phase3_DogBite_MVernon_Tuning
+	myCameraPreset < uid=6D7AC9B1586D967A000AE5B0F545A5A0 > = NULLREFERENCE
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

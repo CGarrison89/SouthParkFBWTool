@@ -1,0 +1,138 @@
+include ./enemy_pwr_archetype_priest_shield.mpower
+include ./dlc1_enemypowers.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/camel_simple_swappower_slot2.mskillscriptjuice
+include camel/skillscript/camel_simple_telegraph_on.mskillscriptjuice
+include camel/skillscript/dlc1_vampkids_priest_revive_telegraph_skillscript.mskillscriptjuice
+
+CombatPower pwr_DLC1_VampKids_Priest_revive_telegraph < uid=86C9308259A624A600097206D68D0C17 > : enemy_pwr_archetype_priest_shield
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/VampPriest_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_heal.dds"
+	myUIName "contextComment = \"power name\", description = \"pwr_DLC1_VampKids_Priest_revive_telegraph_name\", enabled = true, guid = #86C9308259EE5FD3000090B3B6F629C1, lineVersion = 1, maxLength = 16, text = \"Reraise Dead\""
+	myUseSkillScript < uid=86C9308259A624D40009DB6BC0B87E7E > = DLC1_VampKids_Priest_Revive_Telegraph_SkillScript
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "1 target" < uid=86C9308259A62D420017A9467AA84591 >
+		{
+			myPriority 200
+			myMinimumAffectedTargets 1
+			myNumTelegraphPowersAllowed 1
+			myTargetHealthLessThanPercentage 1.0
+			myTargetHealthMoreThanPercentage -2.0
+			myAIDesirableType A
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+					myFollowingCondition AND
+				}
+				StatusEffectConditionalEntry "Nor confused"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Confused
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "2 targets" < uid=86C9308259A62DD50017A958E9C08652 >
+		{
+			myPriority 250
+			myMinimumAffectedTargets 2
+			myNumTelegraphPowersAllowed 1
+			myTargetHealthLessThanPercentage 1.0
+			myTargetHealthMoreThanPercentage -2.0
+			myAIDesirableType A
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+					myFollowingCondition AND
+				}
+				StatusEffectConditionalEntry "Nor confused"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Confused
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "3 targets" < uid=86C9308259A62DD50017A9598139A94F >
+		{
+			myPriority 300
+			myMinimumAffectedTargets 3
+			myNumTelegraphPowersAllowed 1
+			myTargetHealthLessThanPercentage 1.0
+			myTargetHealthMoreThanPercentage -2.0
+			myAIDesirableType A
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+					myFollowingCondition AND
+				}
+				StatusEffectConditionalEntry "Nor confused"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Confused
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "4 targets" < uid=86C9308259A62DD50017A95A52BAB11E >
+		{
+			myPriority 350
+			myMinimumAffectedTargets 4
+			myNumTelegraphPowersAllowed 1
+			myTargetHealthLessThanPercentage 1.0
+			myTargetHealthMoreThanPercentage -2.0
+			myAIDesirableType A
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+					myFollowingCondition AND
+				}
+				StatusEffectConditionalEntry "Nor confused"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Confused
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=86C9308259A62775000FFF2B1D7B5221 > = Camel_Simple_SwapPower_Slot2
+	myTuningData < uid=86C9308259A624D40009DB6CB4AF094D > = pwr_DLC1_VampKids_Priest_revive_telegraph_Tuning
+	myCameraPreset < uid=86C9308259A624D40009DB6DA8502FBA > = Preset_Generic_Ranged
+	myPowerDeathTargeting OnlyDead
+	myTelegraphData
+	{
+		myTelegraphedPowerName pwr_dlc1_vampkids_priest_revive_execute
+	}
+}
+

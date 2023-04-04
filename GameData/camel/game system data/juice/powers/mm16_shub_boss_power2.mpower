@@ -1,0 +1,40 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/pwr_shub_devour.mskillscriptjuice
+
+CombatPower mm16_shub_boss_power2 < uid=3267E0D057AA4816002F3BA921264CBE >
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_blocker_basic_melee Name\", enabled = true, guid = #3267E0D057AA4815002F3BA7F85A30B2, lineVersion = 0, maxLength = 14, text = \"Retaliate\""
+	myUIDescription "contextComment = \"\", description = \"\", enabled = false, guid = #3267E0D057AA4815002F3BA898CE24E2, lineVersion = 0, maxLength = 17, text = \"Blocker Melee\""
+	myUseSkillScript < uid=3267E0D057AA4816002F3BAA0C3F2935 > = pwr_shub_devour
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D057AA4816002F3BAB25C957A0 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D057AA4816002F3BACCCC98ECF >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=3267E0D057AA4816002F3BADDF996854 > = enemy_pwr_shub_boss_power2_amcclay_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

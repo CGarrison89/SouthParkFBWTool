@@ -1,0 +1,567 @@
+include "modules/core/input/gameactions.fruit"
+
+enum GameAction < useCategories=1 >
+{
+	None
+	
+	< startCategory="Other" >
+	Interact
+	Loot
+    UseNavigation
+    HeldNavigation
+    DetachNavigation
+	< endCategory="" >
+	
+	< startCategory="Movement" >
+	MoveForward
+	MoveBackward
+	MoveLeft
+	MoveRight
+	MoveUp
+	MoveDown
+	NotMoving
+	Sprint
+	Roll
+	Turn180
+	PushPull
+	< endCategory="" >
+
+	< startCategory="Camera" >
+	LookUp
+	LookDown
+	LookLeft
+	LookRight
+	MouseLook
+	CameraLook
+	ToggleFreeCameraWithTeleport
+	< endCategory="" >
+	
+	< startCategory="TRC" >
+	TRCAccept
+	TRCCancel
+	TRCDismiss
+	< endCategory="" >
+	
+	< startCategory="UI" >
+	UIMoveUp
+	UIWheelMoveUp
+	UIMoveDown
+	UIWheelMoveDown
+	UIMoveLeft
+	UIMoveRight
+	UIRStickUp
+	UIRStickDown
+	UIRStickLeft
+	UIRStickRight
+	UIAnalogRStickUp
+	UIAnalogRStickDown
+	UIAnalogRStickLeft
+	UIAnalogRStickRight
+	UIAccept
+	UICancel
+	UIDismiss
+	UIButtonX
+	UIButtonY
+	UIStart
+	UIBack
+	UIChangeTabLeft
+	UIChangeTabRight
+	UIDPadUp
+	UIDPadRight
+	UIDPadDown
+	UIDPadLeft
+	UIOnReleaseA
+	UIOnReleaseX
+	UIOnReleaseY
+	UIOnReleaseB
+	UIOnReleaseLB
+	UIOnReleaseRB
+	UIOnReleaseLS
+	UIOnReleaseRS
+	UIOnPressA
+	UIOnPressB
+	UIOnPressX
+	UIOnPressY
+	UIOnPressLB
+	UIOnPressRB
+	UIOnPressLS
+	UIOnPressRS
+	UIHoldStart
+	UIHoldButtonX
+	UIHoldDPadUp
+	UIHoldButtonY
+	UIHoldButtonLB
+	UIHoldButtonRB
+	UIHoldButtonB
+	UIHoldButtonLS
+	UIHoldButtonRS
+	UIHoldButtonLeft
+	UIHoldButtonRight
+	UIHoldButtonUp
+	UIHoldButtonDown
+	UIPreviousFilter
+	UINextFilter
+	UIHoldButtonA
+	UIAnalogLStickUp
+	UIAnalogLStickDown
+	UIAnalogLStickLeft
+	UIAnalogLStickRight
+    UIDelete
+    UIContinue
+	UIDeleteSavegameFile
+    UIMapZoomIn
+    UIMapZoomOut
+    UIMapPanToCenter
+	UIOpenSelectMenu
+    UIOptionDetails
+    UIOptionRemove
+	UISkipTooltip
+	UILootComplete
+	UIFart
+	UIMapPressA
+	UIMapPressY
+	UIMiniMap
+	UIMapLegend
+	UIValidateTutorialEntry
+	UIDismissTutorialEntry
+	UIUltimatePowerPreview
+	UIEnterGame
+	UIMainMenuDevMode
+	UIMainMenuSignIn
+	UIMainMenuDevLoadMode
+	UIMapTray
+	UIMapFindMission
+	UIMapPriorFastTravel
+	UIMapNextFastTravel
+	UIE3ToggleVIP
+	UISkipTooltipAlt
+	UIExitSelfieFilter
+	UIEndUbiCredits
+	< endCategory="" >
+	
+	< startCategory="UI No Input" >
+	UIForceExitSelfie
+	UIExitDecisionUI
+	UICombatExitCompleting
+	UISelfieSearchCompleted
+	UIMapScrollCompleted
+	UINewGameBootFlowCompleted
+	< endCategory="" >
+
+	< startCategory="CAMEL Combat" >
+	CombatSelectAndUsePower1
+	CombatSelectAndUsePower2
+	CombatSelectAndUsePower3
+	CombatSelectAndUsePower4
+	CombatQuickUseActivePower
+	CombatEndTurn
+	CombatDeselectPower
+	CombatTargetLeft
+	CombatTargetRight
+	CombatTargetUp
+	CombatTargetDown
+	CombatUseTimeFart
+	CombatKnockBackChainingLeft
+	CombatKnockBackChainingRight
+	CombatKnockBackChainingUp
+	CombatKnockBackChainingDown
+	CombatOpenConsumable
+	CombatExitConsumable
+	CombatSelectConsumable
+	CombatConsumableMenu_Up
+	CombatConsumableMenu_Left
+	CombatConsumableMenu_Right
+	CombatConsumableMenu_Down
+	CombatSelectAndUseConsumablePower
+	CombatSetTargetingHeadingLeft
+	CombatSetTargetingHeadingRight
+	CombatSetTargetingHeadingUp
+	CombatSetTargetingHeadingDown
+	CombatSpeedsterUltimateSeqStart
+	CombatBrutalistUltimateSeqStart
+	CombatBlasterUltimateSeqStart
+	CombatCyborgUltimateSeqStart
+	CombatPsychicUltimateSeqStart
+	CombatElementalistUltimateSeqStart
+	CombatAssassinUltimateSeqStart
+	CombatCommanderUltimateSeqStart
+	CombatGadgeteerUltimateSeqStart
+	CombatMysticUltimateSeqStart
+	CombatDemonChildUltimateSeqStart
+	CombatKungFuMasterUltimateSeqStart
+	CombatActiveRecoveryUse
+	CombatMouseClickTargeting
+	CombatMouseClickMovement
+	CombatActionPlus
+	CombatWonderTweekUltimateSeqStart
+	< endCategory="" >
+	
+	< startCategory="CAMEL Targeting" >
+	TargetingNext
+	TargetingPrevious
+	TargetingCancel
+	TargetingDetailsView
+	TargetingAnalyzeBrowseLeft
+	TargetingAnalyzeBrowseRight
+	TargetingAnalyzeStart
+	TargetingAnalyzeCancel
+	TargetingHoldAfterAction
+	TargetingReleaseAfterAction
+	TargetingLongRangeActionEnd
+	< endCategory="" >
+
+	< startCategory="CAMEL Explore" >
+	ExploreTimeFart
+	ExploreBuddyPower
+	ExploreBuddyPowerCancel
+	ExplorePushPull
+	ExplorePushPullStart
+	ExplorePushPullEnd
+    ExplorePushPullRelease
+	ExploreHaywire
+	ExploreInteract
+	ExploreInteractRelease
+	ExploreInteractCancel
+	EnableInspectionMode
+	DenyInspectionMode
+	ExploreLadderUp
+	ExploreLadderDown
+	ExploreStairsUp
+	ExploreStairsDown
+	ExploreFart
+	ExploreToot
+    ExploreBurning
+	ExploreBuddyPowerToolshed
+	ExploreBuddyPowerCaptainDiabetes
+	ExploreBuddyPowerHumanKite
+	ExploreBuddyPowerMysterion
+    ExploreShoveMinigameInteract
+	ExploreBuddyPowerInteract
+	ExploreElevatorFloor1
+	ExploreElevatorFloor2
+	ExploreElevatorFloor3
+	ExploreElevatorFloor4
+	ExploreElevatorFloor5
+	ExploreElevatorFloor6
+	ExploreElevatorFloorS1
+	ExploreElevatorFloorS2
+	ExploreElevatorFloorS3
+	ExploreInteractORFart
+    Explore2DAMM
+    ExploreFastTravel
+	ExploreVendorStart
+	ExploreVendorExit
+	ExploreFartkourMinigameAction
+    ExploreBuddyPowerHaywireFire
+    ExploreSandblasterWidenAss
+    ExploreSandblasterShrinkAss
+    ExploreIsActive
+    ExploreCanCellTransition
+	ExploreVendorOpen
+	ExplorePunchFireCracker
+    ExploreNotificationJump
+    ExploreNotificationDismiss
+	ExploreCounterCancel
+    ExplorePushPullCancel
+    ExploreInteractDuringMC_IGC
+    ExploreCancelDuringMC_IGC
+    ExploreNPCInteraction
+    ExploreIsDoingPointToPointJUMPForAMM
+	< endCategory="" >
+
+	< startCategory="CAMEL PauseMenu" >
+	EnterPauseMenu
+	EnterPauseMenuDisabledFeedback
+	EnterAlliesMenuFromCombatEntry
+	ExitPauseMenu
+	ExitPauseMenuFromMapQuest
+	PauseMenuPreviousScreen
+	EnterSystemPauseMenu
+	ExitSystemPauseMenu
+	BackstoryClassSelectReveal
+	BackstoryClassSelectRevert
+	PowersMenuUltimateSeqCancel
+	PowersMenuVictimDamaged
+	ExitMapMenuFastTravel
+	EquipmentMenuArtifactMinorSlotSelected
+	EquipmentMenuArtifactMajorSlotSelected
+	EquipmentMenuArtifactEssenceSlotSelected
+	PowersMenuPowerSlotSelected
+	TeamSelectionMenuBuddySlotSelected
+	MapMenuMissionTrayOpened
+	MapMenuMissionSetActive
+	MapMenuPanCameraToScriptedTarget
+	< endCategory="" >
+	
+	< startCategory="CAMEL Cinematic" >
+	EnterCinematicPauseMenu
+	ExitCinematicPauseMenu
+	SkipCutscene
+	ShowSkipCinematicInput
+	< endCategory="" >
+	
+	< startCategory="CAMEL GameOverMenu" >
+	ExitGameOverMenu
+	< endCategory="" >
+	
+	< startCategory="CAMEL MiniGame" >
+	TimeFartLeftStickLeft
+	TimeFartLeftStickRight
+	TimeFartLeftStickUp
+	TimeFartLeftStickDown
+	TimeFartRightStickLeft
+	TimeFartRightStickRight
+	TimeFartRightStickUp
+	TimeFartRightStickDown
+	TimeFartToggleAssist
+	TimeFartExit
+	TimeFartCancel
+	KeypadExitWithSuccess
+	KeypadExitWithFailure
+	GenderSelectionExit
+	MinigameXPressed
+	MinigameXReleased
+	MinigameYPressed
+	MinigameYReleased
+    MinigameAction
+    MinigameTriggersHeld
+	MinigameShoot
+    BankBettingSpin
+    BankBettingCloseOut
+    BankBettingUseBonus
+    BankBettingChooseNewBonus
+    BankBettingChooseOldBonus
+    BankBettingStartSpin
+    BankBettingStopSpin
+    BankBettingSpinResult
+    BankBettingBankrupt
+    BankBettingReset
+    BankBettingResetComplete
+    BankBettingBonusActivated
+    BankBettingAnimSpinComplete
+    BankBettingAnimWinFanfareComplete
+    LapDance1
+    LapDance2
+    LapDance3
+    LapDance4
+    LapDance5
+    LapDance6
+    LapDance7
+    LapDance8
+    LapDanceShowVictoryScreen
+    LapDanceHideVictoryScreen
+    LapDanceCloseUI
+    LapDanceDoZoom
+    LapDanceDoFanfare
+	MinigameMashB
+	MinigameMashRT
+	MinigameMashLT
+	MinigameFart
+	MinigameRBPressed
+	MinigameRBReleased
+	MinigameAssist
+	MinigameAssistPressed
+	MinigameActionReleased
+	< endCategory="" >
+
+	< startCategory="CAMEL Selfie" >
+	SelfieModeOpen
+	SelfieModeProhibited
+	SelfieModeCancel
+	SelfieModeShoot
+	SelfieModeCameraZoomIn
+	SelfieModeCameraZoomOut
+	SelfieModeCameraUp
+	SelfieModeCameraDown
+	SelfieModeCameraLeft
+	SelfieModeCameraRight
+	SelfieModeCycleMoodUp
+	SelfieModeCycleMoodDown
+	SelfiePoseRequest
+	< endCategory="" >
+	
+	< startCategory="CAMEL Sevegame" >
+	SavegameQuickSave
+	SavegameQuickLoad
+	< endCategory="" >
+	
+	< startCategory="CAMEL Debug" >
+	DebugTogglePlayerCollision
+	DebugToggleCharacterCreationScreen
+	< endCategory="" >
+
+	< startCategory="Debug" >
+	DebugToggleFreeCameraMode
+	DebugAPressed
+	DebugAHeld
+	DebugAReleased
+	DebugBPressed
+	DebugBHeld
+	DebugXPressed
+	DebugXHeld
+	DebugYPressed
+	DebugYHeld
+	DebugRTPressed
+	DebugLTPressed
+	DebugRBPressed
+	DebugRBHeld
+	DebugLBPressed
+	DebugLBHeld
+	DebugDPadRight
+	DebugDPadLeft
+	DebugDPadUp
+	DebugDPadDown
+	DebugStart
+	DebugBack
+	DebugL3
+	DebugL3Held
+	DebugR3
+	< endCategory="" >
+}
+
+enum GameActionState
+{
+	Aiming
+	Sliding
+	Interacting
+	Sprinting
+	CanLoot
+	CanUseCameraLookInUI
+	UsingNavigation
+	CanUseNavigation
+	IsDying
+	IsRunningPrevented
+	// CAMEL
+	Combat
+	Targeting
+	Explore
+    ExploreCanCellTransition
+	CanPushPull
+	CanInteract
+	CanSandblast
+	PushPull
+	Interact
+	MessageBoxUI
+	PauseMenu
+	PauseMenuBusy
+	PauseMenuHome
+	ExploreBuddyControl
+	SystemPauseMenu
+	GameOverMenu
+	IsCombatPlayerTurn
+	CanStopInCombatLocation
+	IsCombatPowerActive
+	IsLobbedCombatPowerActive
+	IsInteractionMinigameActive
+	InCinematic
+	InCinematicAndPauseMenu // Hack: InCinematic + PauseMenu because we don't get check HasGameState
+	CinematicPauseMenu
+	FreeCameraEnable
+	CanFartDuringAMM
+	IsInputMovementNotLocked
+	KnockBackChainingAvailable
+	CanStartFartkour
+	IsSelectingConsumable
+	Minigame
+	IsE3Demo
+	PrepareCombat
+	CanQFart
+	VendorMenuBusy
+	IsActiveCombatantExecutingPower
+	IsActionPlusActive
+	HasActionPoints
+	IsSequencePlaying
+	IsInAlternateMovementMode
+	IsInSelfieMode
+	CanUseConsumable
+	IsSequenceSkippable
+	VendorMenu
+	IsInspectionModeEnabled
+	IsPreventInspectionModeInAMM
+	IsDoingPointToPointJump
+	IsTimeFartPause
+	IsShowingModalTooltip
+	IsTimeFartMinigameAvailable
+	IsShowingTutorialEntry
+	IsRangedInteractionInProgress
+	IsCombatTimeFart
+	CanSelfieInteractForNPCInteraction
+	IsForcedSelfiePoseRequest
+	IsInputAssistOn
+    IsMinigameAssistOn
+    IsAccessibilityPrioritizedThanSelfie
+}
+
+class ConditionalAnalogInputAction : ConditionalRotatedInputAction
+{
+	string myAnalogCurve "" < bhv=inputgraph >
+	float myLockDeadZone 0.08
+}
+
+class ConditionalGameActionState : ConditionalGameActionBase
+{
+	GameActionState myGameActionState
+}
+
+class ConditionalGameAction : ConditionalGameActionBase
+{
+	GameAction myGameAction
+}
+
+list ConditionalGameActionStateList
+{
+	ConditionalGameActionState
+}
+
+class LockedInputConditionalActionGroup
+{
+	ConditionalActionGroupOperator myOperator
+	ConditionalGameActionStateList myConditionalGameActionStateList    
+}
+
+class LockedInputAction
+{
+	bool myDismissGameAction false
+	bool myLockOnlyAppliedWhenSuccessful false
+	GameAction myGameAction
+	LockedInputConditionalActionGroup myLockedInputConditionalActionGroup
+}
+
+list LockedInputActionList
+{
+	LockedInputAction
+}
+
+list InputActionList
+{
+	ConditionalInputActionBase
+	ConditionalGameActionBase
+	ConditionalActionGroup
+}
+
+class TriggerGameAction
+{
+	InputActionList myConditionalInputActions < tooltip="List of input conditions" >
+	LockedInputActionList myLockedInputActionList < tooltip="List of input that are blocked or dismissed when this input is triggered or processed" >
+	GameAction myGameAction < tooltip="The game action to enable if all conditions are met" >
+	bool myIsUIAction < tooltip="If true, this will only trigger when in UI Mode" >
+	bool myIsCinematicAction < tooltip="If true, this will only trigger when in Cinematic Mode" >
+	bool myIsExclusiveToggle < tooltip="If true, this will disable any other active GameAction that also has this set to true" >	
+	bool myIsTRCAction < tooltip="If true, this will only trigger when in TRC mode, if false will not trigger in TRC mode" >	
+	string myConsoleCommand < tooltip="If set, this console command will be run when the action is triggered" >
+}
+
+list InputActionLabelList
+{
+	varmap myLabel < bhv="localization" >
+}
+
+class InputActionLabel
+{
+	InputActionLabelList myLabels
+}
+
+list InputActionRefList
+{
+    InputAction*
+}

@@ -1,0 +1,57 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/powersmenu_simpleplayanim.mskillscriptjuice
+include camel/skillscript/pwr_king_power2.mskillscriptjuice
+
+CombatPower pwr_intro_power2 < uid=DB7C6D42571ABCF100002526C9D7D311 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/King_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"\", enabled = true, guid = #DB7C6D42571ABCF100002524249CB711, lineVersion = 3, maxLength = 17, text = \"Royal Fisting\""
+	myUIDescription "contextComment = \"\", description = \"\", enabled = true, guid = #DB7C6D42571ABCF100002525BDCB3CA7, lineVersion = 2, maxLength = 44, text = \"Grant a subject a thorough smiting\""
+	myUIShortDescription "contextComment = \"\", description = \"\", enabled = true, guid = #9D0E619657AB717600000210AA663AA8, lineVersion = 0, maxLength = 44, text = \"Grant a subject a thorough smiting\""
+	myUseSkillScript < uid=DB7C6D42571ABCF1000025274ED5C2A5 > = pwr_king_power2
+	myAnimationState king_power2
+	myShouldRepositionBeforeExecution FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=86C9308257C87A6B000758108A5C3223 >
+		{
+			myPriority 10
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308257C87A6B000758119A856AF1 >
+		{
+			myPriority 10
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Kill < uid=86C93082584B2B300000B0F7D5E82573 >
+		{
+			myPriority 25
+			myMinimumKills 1
+			myValidDirections
+			{
+				myUp FALSE
+			}
+		}
+	}
+	myTuningData < uid=DB7C6D42571ABCF1000025288F30D051 > = pwr_intro_power2_Tuning
+	myCameraPreset < uid=DB7C6D42572D298B0000B5CBAA11EDDE > = NULLREFERENCE
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

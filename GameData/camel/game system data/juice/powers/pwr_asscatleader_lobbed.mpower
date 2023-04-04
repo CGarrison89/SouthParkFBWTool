@@ -1,0 +1,66 @@
+include ./enemy_pwr_archetype_grenadier_aoe_lob_min.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+include camel/skillscript/camel_lobbed_power_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+include camel/skillscript/fireactivepowerprojectile_thugoffset.mskillscriptjuice
+include camel/skillscript/fireactivepowerprojectile.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_hairball.mprojectile"
+
+CombatPower pwr_AssCatLeader_Lobbed < uid=6D7AC9B1592795C20001C3F415489B9B > : enemy_pwr_archetype_grenadier_aoe_lob_min
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/AssedCat_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/CC_range_2_3.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_grenadier_aoe_lob_min Name\", enabled = true, guid = #6D7AC9B1592795C20001C3F3065FB92F, lineVersion = 1, maxLength = 13, text = \"Hairball\""
+	myUseSkillScript < uid=6D7AC9B1592795C20001C3F55FAA7672 > = Camel_Lobbed_Power_PlayAnim_Script
+	myAnimationState power3
+	myProjectile < uid=6D7AC9B1592795C20001C3F68DCB3E1E > = projectile_hairball
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "2 or more" < uid=6D7AC9B1592795C20001C3F776A67849 >
+		{
+			myPriority 30
+			myMinimumAffectedTargets 2
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 2
+		}
+		PowerEvaluationData default < uid=6D7AC9B1592795C20001C3F82763A145 >
+		{
+			myPriority 10
+			myMinimumAffectedTargets 1
+			myPreferredRange -1
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=6D7AC9B1592795C20001C3F92B765A3D >
+		{
+			myPriority 30
+			myAggroPriority 1030
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "2 or more any range" < uid=6D7AC9B1592795C20001C3FAFF99AA83 >
+		{
+			myPriority 25
+			myMinimumAffectedTargets 2
+			myPreferredRange -1
+		}
+	}
+	myTuningData < uid=6D7AC9B1592795C20001C3FBBAB8E109 > = enemy_pwr_mm15_5assed_grenadier_power1_amcclay_Tuning
+	myCameraPreset < uid=6D7AC9B1592795C20001C3FC80EB1692 > = Preset_Generic_Ranged
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

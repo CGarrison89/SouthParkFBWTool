@@ -1,0 +1,38 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/pwr_shub_devour.mskillscriptjuice
+include camel/skillscript/camel_simple_remove_actionqueue_afterturn_script.mskillscriptjuice
+include ./enemypowers.kevin.juice
+
+CombatPower mm16_shub_boss_power1 < uid=3267E0D057AA480D002F3B9F2B8E21AC >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Shub_Devour.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/half_room_min_range.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_blocker_basic_melee Name\", enabled = true, guid = #3267E0D057BFC5A800017CF5FC809C4A, lineVersion = 0, maxLength = 10, text = \"Devour\""
+	myUIDescription "contextComment = \"\", description = \"\", enabled = false, guid = #3267E0D057AA480D002F3B9E4078A6CC, lineVersion = 0, maxLength = 17, text = \"Blocker Melee\""
+	myUseSkillScript < uid=3267E0D057AA480D002F3BA0AC54A388 > = pwr_shub_devour
+	myRequiresValidTarget FALSE
+	myUseRectangularLobbedArea FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D057AA480D002F3BA12E09DFA4 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myLeft TRUE
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=3267E0D057AA480D002F3BA3F11B85FA > = pwr_mm16_shub_devour_Kevin_Tuning
+	myValidDirections
+	{
+		myLeft TRUE
+		myRight TRUE
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

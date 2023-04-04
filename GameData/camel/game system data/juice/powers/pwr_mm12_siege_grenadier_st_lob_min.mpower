@@ -1,0 +1,58 @@
+include ./enemy_pwr_archetype_grenadier_st_lob_min.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_ninja_star.mprojectile"
+include ./enemypowers.adrian.juice
+include camel/skillscript/camel_lobbed_power_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_lava_lego.mprojectile"
+
+CombatPower pwr_mm12_siege_grenadier_st_lob_min < uid=86C9308257BF77D800005653AD73C4BB > : enemy_pwr_archetype_grenadier_st_lob_min
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/chaoskid_power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_ST_min_range.dds"
+	myUIName "contextComment = \"power name\", description = \"enemy_pwr_archetype_grenadier_st_lob_min Name\", enabled = true, guid = #AC0D40B359710E9D00008614CADC189E, lineVersion = 1, maxLength = 17, text = \"Lava of Chaos\""
+	myUseSkillScript < uid=8585E53F581A947E000E699D35D7F7F1 > = Camel_Lobbed_Power_PlayAnim_Script
+	myAnimationState power3
+	myProjectile < uid=8585E53F581B87FF001F6B51A4A0B221 > = projectile_lava_lego
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308257BF77D8000056540B1FE634 >
+		{
+			myPriority 21
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308257BF77D80000565554C1C8F5 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "props low" < uid=86C9308257BF77D800005656C259BAF8 >
+		{
+			myPriority 10
+			myAIDesirableType A
+		}
+		PowerEvaluationData "props medium" < uid=86C9308257BF77D800005657F13CE814 >
+		{
+			myPriority 20
+			myAIDesirableType B
+		}
+		PowerEvaluationData "props high" < uid=86C9308257BF77D80000565805E69E41 >
+		{
+			myPriority 30
+			myAIDesirableType C
+		}
+	}
+	myTuningData < uid=8585E53F582284A000230CEB782C8F54 > = pwr_mm12_siege_grenadier_lob_burning_Adrian_Tuning
+}
+

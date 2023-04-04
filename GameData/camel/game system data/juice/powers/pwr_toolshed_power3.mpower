@@ -1,0 +1,56 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_toolshed_power02_mist.mprojectile"
+include "camel/game system data/juice/camera/uber_camera_powers_presets_toolshed.juice"
+
+CombatPower pwr_toolshed_power3 < uid=B9E930CA56D4B32E00000022CE711333 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/toolshed_power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/large_cone_heal.DDS"
+	myUIName "contextComment = \"Toolshed Power 3 Name\", description = \"pwr_toolshed_power3 Name\", enabled = true, guid = #51C546C65774DC59000001A73B5902E8, lineVersion = 2, maxLength = 20, text = \"Revitotron 9000\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_toolshed_power3 Description\", enabled = true, guid = #51C546C65774DC59000001A833FE17E2, lineVersion = 1, maxLength = 96, text = \"The patent-pending Revitotron 9000 cools and refreshes as it heals allies.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_toolshed_power3 Short Description\", enabled = true, guid = #9D0E6196579BA65F00004466DE7F5363, lineVersion = 1, maxLength = 30, text = \"Heal and refresh allies\""
+	myUseSkillScript < uid=B9E930CA56D4B32E00000023606E68D3 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "Not full health" < uid=86D640765750B5150000241D9007C59D >
+		{
+			myPriority 20
+			myMinimumAffectedTargets 1
+			myTargetHealthLessThanPercentage 99.0
+			myTargetHealthMoreThanPercentage 1.0
+		}
+		PowerEvaluationData "High priority" < uid=86C93082595FC7EA000BD3A1E850B2ED >
+		{
+			myPriority 100
+			myMinimumAffectedTargets 1
+			myNumTelegraphPowersAllowed 99
+			myTargetHealthLessThanPercentage 33.0
+			myTargetHealthMoreThanPercentage 1.0
+		}
+	}
+	myTuningData < uid=B9E930CA56D4B32E00000024F9428170 > = pwr_toolshed_power3_Tuning
+	myCameraPreset < uid=B9E930CA5827D1B500011347AF959DD9 > = Toolshed_Power03
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 1.625
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

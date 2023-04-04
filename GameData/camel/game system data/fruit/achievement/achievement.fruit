@@ -1,0 +1,147 @@
+//include "camel/game system data/fruit/gameplaystatistics/statistics.fruit" 
+include "camel/game system data/fruit/achievement/operators.fruit" 
+include "camel/game system data/fruit/achievement/achievementconditionsubject.fruit" 
+include "camel/skillscript/skillscript.fruit"
+include "camel/game system data/fruit/ai/actor.fruit"
+include "camel/game system data/fruit/items/item.fruit"
+include "camel/game system data/fruit/stats/statistic_dataenum_generic.fruit"
+include "camel/game system data/fruit/juiceObj.fruit"
+include "camel/game system data/fruit/helpers/uidmanagedobject.fruit"
+
+class UplayAction : JuiceObj
+{
+	string myUplayActionId							// This is the ID number (as a string) we use internally to ID the action, matches the ID number on the TGO website.
+	string myUplayId								// This is the string that UPlay knows this ID by, usually 'SP2ACTIONnn' but not always (prone to change on UPLAY's whim).
+	varmap myNameSource < bhv="localization" >
+	varmap myDescriptionSource < bhv="localization" >
+	bool myShowUplayActionUnlock FALSE
+	bool myIsBadgeUnlock FALSE
+}
+
+list UplayActions
+{
+	UplayAction
+}
+
+class AchievementCondition : JuiceObj < abstract = 1 > 
+{
+	StatisticGenericTypeEnum myStatistic
+}
+
+list AchievementConditions
+{
+	AchievementCondition
+}
+
+class AchievementConditionComparison : AchievementCondition  < abstract = 1 > 
+{
+	AchievementConditionSubject	mySubject
+}
+
+class AchievementConditionCounter : AchievementConditionComparison  < uid = auto > 
+{
+	float myGoal
+}
+
+class AchievementConditionCollection : AchievementConditionComparison  < uid = auto > 
+{
+	int myGoal
+}
+
+class AchievementConditionNumber : AchievementConditionComparison  < uid = auto > 
+{
+	AchievementConditionOperator	myOperator	Equal
+	float myThreshold
+}
+
+class AchievementConditionBoolean : AchievementConditionComparison  < uid = auto > 
+{
+}
+
+class AchievementConditionActor : AchievementConditionComparison  < uid = auto > 
+{
+	Actor*	myActor
+}
+
+class AchievementConditionUID : AchievementConditionComparison  < uid = auto > 
+{
+	uid 	myUID < bhv=asset assettype=mission tooltip="Enter the UID to match" >
+}
+
+class AchievementConditionMission : AchievementConditionComparison  < uid = auto > 
+{
+	AchievementConditionSubject	mySubject MissionUID < hidden = 1 >
+	uid 	myMission < bhv=asset assettype=mission tooltip="Enter the UID for the mission" >
+}
+
+class AchievementConditionItem : AchievementConditionComparison  < uid = auto > 
+{
+	uidManagedObject*	myItem
+}
+
+class AchievementConditionGroup : AchievementCondition  < abstract = 1 > 
+{
+	AchievementConditions	myAchievementConditions
+}
+
+class AchievementConditionAnd : AchievementConditionGroup
+{
+}
+
+class AchievementConditionOr : AchievementConditionGroup
+{
+}
+
+class AchievementConditionNand : AchievementConditionAnd
+{
+}
+
+class AchievementConditionStatTracking : AchievementConditionComparison
+{
+	AchievementUpdateType myUpdateType
+}
+
+class Achievement : JuiceObj < uid = auto > 
+{
+	AchievementConditionType myType CClient_AchievementConditionType_Achievement < hidden=1 >
+	varmap myNameSource < bhv="localization" >
+	varmap myDescriptionSource < bhv="localization" >
+	varmap myAwardedDescriptionSource < bhv="localization" >
+	int mySCETrophyId  < hidden=0 >
+	int myUplayAchievementId  < hidden=0 >
+	int myXBLAchievementId  < hidden=0 >
+	int myMobileAchievementId  < hidden=0 >
+	UplayActions myLinkedUplayActions  < hidden=0 >
+	AchievementConditions myAchievementCondition
+	SkillScript* mySkillScriptOnAchieved
+	bool myActive True < hidden=1 >
+}
+
+class CharacterSheetAchievement : Achievement < uid = auto > 
+{
+	AchievementConditionType myType CClient_AchievementConditionType_CharacterSheet < hidden=1 >
+	int mySCETrophyId  < hidden=1 >
+	int myUplayAchievementId  < hidden=1 >
+	int myXBLAchievementId  < hidden=1 >
+	int myMobileAchievementId  < hidden=1 >
+	UplayActions myLinkedUplayActions  < hidden=1 >
+	bool myActive True < hidden=0 >
+}
+
+class XPAchievement : Achievement < uid = auto >
+{
+	AchievementConditionType myType CClient_AchievementConditionType_XP < hidden=1 >
+	int mySCETrophyId  < hidden=1 >
+	int myUplayAchievementId  < hidden=1 >
+	int myXBLAchievementId  < hidden=1 >
+	int myMobileAchievementId  < hidden=1 >
+}
+
+class StatAchievement : Achievement < uid = auto >
+{
+	AchievementConditionType myType CClient_AchievementConditionType_Stat < hidden=1 >
+	int mySCETrophyId  < hidden=1 >
+	int myUplayAchievementId  < hidden=1 >
+	int myXBLAchievementId  < hidden=1 >
+	int myMobileAchievementId  < hidden=1 >
+}

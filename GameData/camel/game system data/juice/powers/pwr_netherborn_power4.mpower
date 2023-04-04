@@ -1,0 +1,24 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./dlc1_playerpowers.juice
+include camel/skillscript/pwr_netherborn_power4_script.mskillscriptjuice
+include camel/skillscript/pwr_netherborn_power04.mskillscriptjuice
+include "camel/game system data/juice/statuseffect/netherbornultimate.juice"
+
+CombatPower pwr_netherborn_power4 < uid=86C93082599E1A9A00008BA0F7839E71 >
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/Netherborn_Power4.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_square_debuff.DDS"
+	myUIName "contextComment = \"power name\", description = \"pwr_netherborn_power4 Name\", enabled = true, guid = #86C9308259EE657500008CCDB5136369, lineVersion = 1, maxLength = 22, text = \"Death Reincarnate\""
+	myUIDescription "contextComment = \"power desc in pause menu ui\", description = \"pwr_netherborn_power4 Description\", enabled = true, guid = #86C9308259EE657500008CCE72ABFB75, lineVersion = 3, maxLength = 133, text = \"The Netherborn makes a deal with Death, gaining ungodly powers for 3 turns and Chilling adjacent foes.\""
+	myUIShortDescription "contextComment = \"power desc in combat ui\", description = \"pwr_netherborn_power4 short Description\", enabled = true, guid = #9D0E61965A0B3E0D000094A6610F5F41, lineVersion = 1, maxLength = 40, text = \"Chill foes, gain ungodly powers\""
+	myUseSkillScript < uid=86C93082599E1B3B000091F29C1D75F1 > = pwr_netherborn_power04
+	myRequiresValidTarget FALSE
+	myTuningData < uid=86C93082599E1DB4000092281586DEBB > = pwr_netherborn_ult_3_turns_Tuning
+	myPowerGroup Ultimate
+	mySelfStatusEffects
+	{
+		StatusEffect "New StatusEffect (0)" < uid=8E1BC4435A090DB70002309E21C5EA3B > = NetherbornUltimate
+	}
+}
+

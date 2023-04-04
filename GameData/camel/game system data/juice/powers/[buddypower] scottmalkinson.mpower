@@ -1,0 +1,14 @@
+include camel/skillscript/explore_cursortargeting.mskillscriptjuice
+include camel/skillscript/explore_interact.mskillscriptjuice
+include camel/skillscript/buddypower_shove.mskillscriptjuice
+include camel/skillscript/buddypower_malkinson.mskillscriptjuice
+include "camel/game system data/fruit/powers/powers.fruit"
+
+Power "[BuddyPower] ScottMalkinson" < uid=6D91A59C551C72760000003AEF90C5B3 >
+{
+	myUIName "contextComment = \"Name that displays during Diabetic Rage unlock presentation\", description = \"[BuddyPower] ScottMalkinson_name\", enabled = true, guid = #F0F6DDB7591A1F3F0014AF0441F096B4, lineVersion = 0, maxLength = 17, text = \"Diabetic Rage\""
+	myUseSkillScript < uid=6D91A59C551C72760000003B9F8C8A52 > = BuddyPower_Malkinson
+	myIsPassive FALSE
+	myUseActiveTargeting FALSE
+}
+

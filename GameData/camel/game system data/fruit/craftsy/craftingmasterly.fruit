@@ -1,0 +1,5 @@
+class CraftingMasterly
+{
+	varmap myUITitle < bhv = "localization" >
+	int myPointsToNextLevel
+}

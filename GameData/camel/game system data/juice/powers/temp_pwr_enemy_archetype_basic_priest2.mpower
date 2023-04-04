@@ -1,0 +1,23 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower temp_pwr_enemy_archetype_basic_priest2 < uid=B9E930CA5740921C0000006C1D2EFEDD >
+{
+	myUIName "contextComment = \"\", description = \"temp_pwr_enemy_archetype_basic_priest2 Name\", enabled = true, guid = #51C546C65774DC72000001E118F1BD85, lineVersion = 0, maxLength = 20, text = \"Ranged ST 1 DMG\""
+	myUseSkillScript < uid=B9E930CA5740921C0000006D2651AF66 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA57409CE50000010EEAC9D3E7 >
+		{
+			myPriority 10
+		}
+	}
+	myDialogueSkillScript < uid=326B24CD57800780000006770066A323 > = NULLREFERENCE
+	myTuningData < uid=B9E930CA574099C6000000B26D4D71CA > = temp_pwr_enemy_archetype_basic_priest2_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

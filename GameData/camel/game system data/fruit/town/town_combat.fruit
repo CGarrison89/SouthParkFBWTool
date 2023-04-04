@@ -1,0 +1,91 @@
+include "camel/game system data/fruit/town/town_dataenum_types.fruit"
+include "camel/game system data/fruit/faction/faction.fruit"
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// Asset Relationship
+//
+
+list TownCombatRelationshipActorList
+{
+	file < bhv=asset assettype=actor tooltip="Reference the NPC asset" >
+}
+
+class TownCombatAssetRelationship
+{
+	bool myEnabled true < tooltip="Will not be used if Disabled" >
+	file myTown < bhv=asset assettype=actor tooltip="Reference the NPC living town asset" >
+	TownCombatRelationshipActorList myCombats < tooltip="Reference the NPC combat assets" >
+}
+
+list TownCombatAssetRelationshipList
+{
+	TownCombatAssetRelationship
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// Composition
+//
+
+list TownCombatCompositionActorList
+{
+	file < bhv=asset assettype=actor tooltip="Reference the NPC asset" >
+}
+
+class TownCombatComposition < uid=auto >
+{
+	bool myEnabled true < tooltip="Will not be used if Disabled" >
+	TownCombatCompositionActorList myNPC
+}
+
+list TownCombatCompositionList
+{
+	TownCombatComposition
+}
+
+class TownCombatProgressionConditions
+{
+	varmap myWorldState < bhv = "globalVarCondition" >
+}
+
+class TownCombatProgression
+{
+	TownCombatProgressionConditions myConditions
+	TownCombatCompositionList myDay
+	TownCombatCompositionList myNight
+}
+
+list TownCombatProgressionList
+{
+	TownCombatProgression
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// Faction
+//
+class TownCombatFaction < uid=auto >
+{
+	FactionEnum myFactionType None < tooltip="Faction" >
+	
+	TownCombatProgressionList myProgression
+}
+
+list TownCombatFactionList
+{
+	TownCombatFaction
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// Combat
+//
+class TownCombat
+{
+	TownCombatFactionList myFaction
+	TownCombatAssetRelationshipList myRelationship
+	 
+	 varmap mySofteningContextualVOPrimary < bhv = "numGlobalVar" >
+	 varmap mySofteningContextualVOSecondary < bhv = "numGlobalVar" >
+}

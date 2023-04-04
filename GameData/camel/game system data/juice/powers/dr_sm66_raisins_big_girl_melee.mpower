@@ -1,0 +1,8 @@
+include ./sm66_raisins_big_girl_melee.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower dr_sm66_raisins_big_girl_melee < uid=8585E53F5A0B44670053986B2EE4122F > : sm66_raisins_big_girl_melee
+{
+	myTuningData < uid=8585E53F5A0B44EE00539883D496E1DE > = pwr_dr_sm66_big_girl_melee_Tuning
+}
+

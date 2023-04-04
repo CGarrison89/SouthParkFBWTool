@@ -1,0 +1,13 @@
+include ./pwr_gadgeteer2_pet_power1.mpower
+
+CombatPower pwr_gadgeteer2_pet_power4 < uid=86C930825772A6F700003A8B39A4CDEE > : pwr_gadgeteer2_pet_power1
+{
+	myValidDirections
+	{
+		myLeft FALSE
+		myRight FALSE
+		myUp FALSE
+		myDown TRUE
+	}
+}
+

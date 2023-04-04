@@ -1,0 +1,52 @@
+include ./combatpowerincludes.juice
+include ./pwr_com_pull.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower pwr_mm19_sheila_pull < uid=86C93082578FD7390000477E654B581E > : pwr_com_pull
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/sheila_power3.dds"
+	myUseSkillScript < uid=86C930825798FA1C0002A3B2B36CF717 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power3
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "3 targets" < uid=86C93082579113090000727BC8499A0B >
+		{
+			myPriority 35
+			myMinimumAffectedTargets 3
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "2 targets" < uid=86C93082579113090000727CB07C92BA >
+		{
+			myPriority 30
+			myMinimumAffectedTargets 2
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308257A123C600004B3BD4DD40CF >
+		{
+			myPriority 30
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 2
+			myPreferredRange 4
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C93082578FD7390000477FE61FA2E5 > = pwr_mm19_sheila_pull_Kevin_Tuning
+}
+

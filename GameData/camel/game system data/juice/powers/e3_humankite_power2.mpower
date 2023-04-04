@@ -1,0 +1,21 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./buddypowers.joh.juice
+include ./buddypowers.demo.juice
+
+CombatPower e3_humankite_power2 < uid=B9E930CA573A713F0000001399878729 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/humankite_Rescue.dds"
+	myUIName "contextComment = \"\", description = \"e3_humankite_power2 Name\", enabled = true, guid = #51C546C65774D9340000007A4BE7F985, lineVersion = 0, maxLength = 10, text = \"Rescue\""
+	myUIDescription "contextComment = \"\", description = \"e3_humankite_power2 Description\", enabled = true, guid = #51C546C65774D9340000007BF555D1C5, lineVersion = 0, maxLength = 65, text = \"Pulls an ally towards Human Kite, applies Focused.\""
+	myUseSkillScript < uid=B9E930CA573A713F000000147AC02855 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myTuningData < uid=B9E930CA573A713F00000015E9B381BA > = demo_e3_humankite_power2_demo_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

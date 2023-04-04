@@ -1,0 +1,72 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/combat_robotarm.mskillscriptjuice
+
+CombatPower pwr_com_robotArm < uid=B9E930CA55D4E5060000004798D16901 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/GeneralDisarray_Power1.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/self.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_robotarm Name\", enabled = true, guid = #51C546C65774DBF5000000BF93A96090, lineVersion = 0, maxLength = 1, text = \"Robot Arm\""
+	myUseSkillScript < uid=B9E930CA55D4E74900000019F516234C > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myCanUseDuringRTE FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Distance2 < uid=6D7AC9B15822416B0000A1CAF56A5911 >
+		{
+			myPriority 52
+			myPreferredRange 0
+			myMinimumDistanceToEnemies 2
+		}
+		PowerEvaluationData Distance3 < uid=6D7AC9B15822416B0000A1CB99B8ABB3 >
+		{
+			myPriority 53
+			myPreferredRange 0
+			myMinimumDistanceToEnemies 3
+		}
+		PowerEvaluationData Distance4 < uid=6D7AC9B15822416B0000A1CCE850DC33 >
+		{
+			myPriority 54
+			myPreferredRange 0
+			myMinimumDistanceToEnemies 4
+		}
+		PowerEvaluationData Distance5 < uid=6D7AC9B15822416B0000A1CD53434358 >
+		{
+			myPriority 55
+			myPreferredRange 0
+			myMinimumDistanceToEnemies 5
+		}
+		PowerEvaluationData Distance6 < uid=6D7AC9B15822416B0000A1CEF4463AF0 >
+		{
+			myPriority 56
+			myPreferredRange 0
+			myMinimumDistanceToEnemies 6
+		}
+		PowerEvaluationData Distance7 < uid=6D7AC9B15822416B0000A1CFA8FFF2F8 >
+		{
+			myPriority 57
+			myPreferredRange 0
+			myMinimumDistanceToEnemies 7
+		}
+		PowerEvaluationData Distance8 < uid=6D7AC9B15822416B0000A1D0C6201290 >
+		{
+			myPriority 58
+			myPreferredRange 0
+			myMinimumDistanceToEnemies 8
+		}
+		PowerEvaluationData Distance9 < uid=6D7AC9B15822416B0000A1D18F30D08F >
+		{
+			myPriority 59
+			myPreferredRange 0
+			myMinimumDistanceToEnemies 9
+		}
+		PowerEvaluationData Distance10 < uid=6D7AC9B15822416B0000A1D24A64EA23 >
+		{
+			myPriority 60
+			myPreferredRange 0
+			myMinimumDistanceToEnemies 10
+		}
+	}
+	myTuningData < uid=B9E930CA55D4E50600000048FB0FA996 > = pwr_com_robotArm_Tuning
+}
+

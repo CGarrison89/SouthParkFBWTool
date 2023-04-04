@@ -1,0 +1,19 @@
+include ./pwr_com_cousinkyle_shieldofdavid.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_mm19_altKite_shieldofdavid < uid=86C93082578FD7920000479AD62C6885 > : pwr_com_cousinkyle_shieldOfDavid
+{
+	myLockedByDefault FALSE
+	myIsACleansePower TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C93082579111B700007277A372D216 >
+		{
+			myPriority 10000
+			mySelfHealthLessThanPercentage 3.0
+			myTargetShieldingLessThanPercentage 100.0
+		}
+	}
+	myTuningData < uid=86C93082578FD7920000479BE6124357 > = pwr_mm19_altKite_shieldofdavid_Kevin_Tuning
+}
+

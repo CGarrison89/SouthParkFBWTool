@@ -1,0 +1,22 @@
+include ./pwr_com_doublebackhand.mpower
+
+CombatPower pwr_aidered3_aoeknockback < uid=DB7C6D4256EA17A600000164BAC1DB5B > : pwr_com_doublebackhand
+{
+	myUIName "contextComment = \"\", description = \"pwr_aidered3_aoeknockback Name\", enabled = true, guid = #51C546C65774D95B000000D977012B3B, lineVersion = 0, maxLength = 16, text = \"Blown Away\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Surrounded < uid=DB7C6D4256FB17C200001E0FD14D6E5E >
+		{
+			myPriority 50
+			myAggroPriority 50
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData doublebackhand < uid=DB7C6D4256FB17C200001E1095F1C9E8 >
+		{
+			myPriority 10
+			myAggroPriority 10
+		}
+	}
+	myTuningData < uid=DB7C6D4256EA17A6000001652CD82723 > = pwr_aidered3_blownaway_MAcero_Tuning
+}
+

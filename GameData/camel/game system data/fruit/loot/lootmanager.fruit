@@ -1,0 +1,71 @@
+include "camel/game system data/fruit/items/items.fruit"
+
+enum LootCycleEnum
+{
+	None
+	Component
+	Money
+	SpecialItem
+}
+
+list LootCycles
+{
+	LootCycleEnum
+}
+
+class LootItemCycle
+{
+	LootCycles	myLootCycle
+}
+
+list LootDifficulty
+{
+	float
+}
+
+class LootDifficultyLookup
+{
+	LootDifficulty myLootDifficulty
+}
+
+list LootMoneyLookup
+{
+	int
+}
+
+class CashValue
+{
+	LootMoneyLookup	myCashValue
+}
+
+class LootSpecialItem < uid = auto >
+{
+	Item*	myItem
+	int		myDifficultyRequirement 0
+}
+
+list LootSpecialItemPool
+{
+	LootSpecialItem
+}
+
+list LootSpecialItems
+{
+	LootSpecialItemPool
+}
+
+class LootSpecialItemPools
+{
+	LootSpecialItemPool	mySpecialItemPool
+}
+
+
+class LootComponent < uid = auto >
+{
+	Item* myItemComponent
+}
+
+list LootComponents
+{
+	LootComponent
+}

@@ -1,0 +1,82 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/pwr_thecoon_power02_vfx_impact.mskillscriptjuice
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_thecoon.juice"
+
+CombatPower pwr_theCoon_power2 < uid=B9E930CA56B11E140000002125724836 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/thecoon_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/rush_3.dds"
+	myUIName "contextComment = \"Coon Power 2 Name\", description = \"pwr_thecoon_power2 Name\", enabled = true, guid = #51C546C65774DC560000019D4D133BE5, lineVersion = 2, maxLength = 16, text = \"Coon Lunge\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_thecoon_power2 Description\", enabled = true, guid = #51C546C65774DC560000019E96B17E79, lineVersion = 1, maxLength = 143, text = \"Rush AttackThe Coon charges, dealing damage and street justice to every foe stupid enough to stand in his way.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_thecoon_power2 Short Description\", enabled = true, guid = #9D0E6196579B9F920000444BB11BA29B, lineVersion = 0, maxLength = 44, text = \"Charge into the fray, claws flying\""
+	myUseSkillScript < uid=B9E930CA56B11E6A000000253F0314F2 > = Camel_Simple_PlayDialogue_Script
+	myAnimationState ""
+	myShouldRepositionBeforeExecution FALSE
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "1 target" < uid=86C9308257D1CCD700005D8FF91AC9CB >
+		{
+			myPriority 15
+		}
+		PowerEvaluationData "2 targets" < uid=86C9308257D1CCD700005D905CC8FA1C >
+		{
+			myPriority 35
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "3 targets" < uid=86C9308257D1CCD700005D911625E7DC >
+		{
+			myPriority 45
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "1 target - kill" < uid=86C930825A56A17D000195020015C5E2 >
+		{
+			myPriority 100
+			myMinimumKills 1
+			myMinimumAffectedTargets 1
+		}
+		PowerEvaluationData "2 targets - kill" < uid=86C930825A56A17D00019503F4A0C3DA >
+		{
+			myPriority 120
+			myMinimumKills 1
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "3 targets - kill" < uid=86C930825A56A17D0001950423CE4856 >
+		{
+			myPriority 130
+			myMinimumKills 1
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData Enraged < uid=86C93082596044060030CDBB75366028 >
+		{
+			myPriority 1500
+			myAggroPriority 1500
+			myRequireAggroTarget TRUE
+			myRequiresCover FALSE
+		}
+	}
+	mySecondarySkillScript < uid=3267E0D05740F00C00001685845F746F > = pwr_thecoon_power02_vfx_impact
+	myTuningData < uid=B9E930CA56B11FED000000169B9E1C55 > = pwr_theCoon_power2_Tuning
+	myCameraPreset < uid=B9E930CA585C5C66000065391B6E0651 > = TheCoon_Power02
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.25
+				myActionPlusEndTime 0.9167
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

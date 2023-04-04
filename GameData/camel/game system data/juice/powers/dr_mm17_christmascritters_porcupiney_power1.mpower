@@ -1,0 +1,8 @@
+include ./mm17_christmascritters_porcupiney_power1.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower dr_mm17_christmascritters_porcupiney_power1 < uid=C87888A05A0629C500065B7B3BE806D3 > : mm17_christmascritters_porcupiney_power1
+{
+	myTuningData < uid=C87888A05A0629F500065B806A547A10 > = enemy_pwr_dr_archetype_swarmer_melee_Tuning
+}
+

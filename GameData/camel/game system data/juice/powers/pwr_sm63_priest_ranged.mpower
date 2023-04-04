@@ -1,0 +1,8 @@
+include ./enemy_pwr_archetype_priest_st_ranged.mpower
+include ./enemypowers.adrian.juice
+
+CombatPower pwr_sm63_priest_ranged < uid=8585E53F57A278A400000092AC81C2CA > : enemy_pwr_archetype_priest_st_ranged
+{
+	myTuningData < uid=8585E53F57A278A4000000936EC29EBB > = pwr_sm63_priest_ranged_Adrian_Tuning
+}
+

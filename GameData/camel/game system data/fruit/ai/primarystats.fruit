@@ -1,0 +1,13 @@
+class PrimaryStats
+{
+	float myBrawn 0
+	float myDexterity 0
+	float mySpirit 0
+	float mySpeed 0
+	float myFortitude 0
+	float myPercentBrawn 0
+	float myPercentDexterity 0
+	float myPercentHealth 0
+	float myPercentSpunk 0
+
+}

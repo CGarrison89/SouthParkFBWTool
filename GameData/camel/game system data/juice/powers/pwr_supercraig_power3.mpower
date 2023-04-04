@@ -1,0 +1,67 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_supercraig.juice"
+
+CombatPower pwr_supercraig_power3 < uid=B9E930CA56D4B590000000BA3E9B1C5D >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/SuperCraig_Power3.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/charge4.dds"
+	myUIName "contextComment = \"power name\", description = \"pwr_supercraig_power3 Name\", enabled = true, guid = #51C546C65774DC5000000191A4FAFC10, lineVersion = 2, maxLength = 22, text = \"Omega Crash Extra\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_supercraig_power3 Description\", enabled = true, guid = #51C546C65774DC500000019290F46CF9, lineVersion = 0, maxLength = 177, text = \"Like a wayward lineman, Super Craig crashes into any dummies dumb enough to be in his way, inflicting Encumbered and knocking them back.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_supercraig_power3 Short Description\", enabled = true, guid = #9D0E6196579A8B7000000189F8A92C76, lineVersion = 0, maxLength = 58, text = \"Charge that inflicts Encumbered and knockback\""
+	myAnimationState power3
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308258A268E4001409D34E4E6C13 >
+		{
+			myPriority 10
+			myPreferredRange -1
+		}
+		PowerEvaluationData kill < uid=86C9308258A2693B001409D760E5B7B4 >
+		{
+			myPriority 90
+			myAggroPriority 0
+			myRequireAggroTarget FALSE
+			myMinimumKills 1
+			myMinimumAffectedTargets 0
+			myPreferredRange -1
+		}
+		PowerEvaluationData enraged < uid=86C9308258A26A10000017674AD24EA6 >
+		{
+			myPriority 1000
+			myAggroPriority 1000
+			myRequireAggroTarget TRUE
+			myPreferredRange 1
+		}
+	}
+	myDialogueSkillScript < uid=326B24CD57C75FD200001C439F027FD9 > = Camel_Simple_PlayDialogue_Script
+	myTuningData < uid=B9E930CA56D4B590000000BC349C2E1D > = pwr_supercraig_power3_Tuning
+	myCameraPreset < uid=B9E930CA57DC1F05000071599A8BCC21 > = SuperCraig_Power03
+	myPowerGroup Normal
+	myAnimationSetData
+	{
+		myIntroState power3_intro
+		myLoopState power3_loop
+		myOutroState power3_outro
+	}
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 1.54167
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

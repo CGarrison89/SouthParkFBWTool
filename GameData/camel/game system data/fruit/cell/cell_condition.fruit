@@ -1,0 +1,167 @@
+include "camel/game system data/fruit/mission/mission.fruit"
+include "camel/game system data/fruit/stats/statistic_types.fruit"
+include "camel/game system data/fruit/evaluator/evaluator_types.fruit"
+include "camel/game system data/fruit/powers/combatpowers.fruit"
+include "camel/game system data/fruit/dlc/dlc_types.fruit"
+include "camel/game system data/fruit/mood/mood_dataenum_mood.fruit"
+include "camel/game system data/fruit/town/town_dataenum_role.fruit"
+
+class Condition < uid=auto >
+{
+}
+
+list Conditions
+{
+	Condition
+}
+
+//				MISSION
+enum MissionState
+{
+	IsAvailable
+	IsStarted
+	IsComplete
+	IsNotAvailable
+	IsAvailableOrStarted
+}
+
+enum ObjectiveState
+{
+	IsActive
+	IsNextObjective
+	IsActiveOrNextObjective
+	IsObjectiveComplete
+}
+
+class MissionCondition : Condition
+{
+	Mission* myMission
+	MissionState myState
+	bool myNegateCondition false < tooltip = "Check if you want to check for this condition being FALSE" >
+	bool mySkipPreload false < tooltip="SHOULD BE FALSE. Only check this if you DO NOT want the layer to preload when the mission is next" >
+}
+
+class ObjectiveCondition : Condition
+{
+	Mission* myMission
+	int myObjective
+	ObjectiveState myState
+	bool myNegateCondition false < tooltip = "Check if you want to check for this condition being FALSE" >
+	varmap myObjectiveUID < bhv = "obj" >
+}
+
+//				PLAYER POWER
+class PowerCondition : Condition
+{
+	CombatPower* myCombatPower
+}
+
+//				OR
+class OrCondition : Condition
+{
+	Conditions myConditions
+}
+
+//				AND
+class AndCondition : Condition
+{
+	Conditions myConditions
+}
+
+//				BOOLEAN
+class BooleanCondition : Condition
+{
+	varmap myCondition < bhv = "globalVarCondition" >	
+}
+
+//				BOOLEANRANGE
+class BooleanRangeCondition : Condition
+{
+	varmap myCondition < bhv = "globalVarRangeCondition" >	
+}
+
+//				PROBABILITY
+class ProbabilityCondition : Condition
+{
+	bool myEvaluateOnLoad true < tooltip="Compute the random check at load time. If false, the cell will not be loaded and cannot be activated" >
+	bool myEvaluateOnActivate false < tooltip="Compute the random check at activation time. If false, the cell will not be activated but it might be loaded" >
+	int myChances 1 < tooltip="Initial Chance of being successful" >
+	int myOutOf 1 < tooltip="The value we are comparing the cummulative amount agains" >
+	int myStep 1 < tooltip="Step amount added everytime the execution occurs" >
+}
+
+//				GLOBALPROBABILITY
+class GlobalProbabilityCondition : Condition
+{
+	bool myEvaluateOnLoad true < tooltip="Compute the random check at load time. If false, the cell will not be loaded and cannot be activated" >
+	bool myEvaluateOnActivate false < tooltip="Compute the random check at activation time. If false, the cell will not be activated but it might be loaded" >
+	float myFrom 0 < tooltip="Global Random value is >= then myFrom" >
+	float myTo 1 < tooltip="Global Random value is <= then myTo" >
+}
+
+//				STATISTIC
+class StatisticCondition : Condition
+{
+	bool myEvaluateOnLoad true < tooltip="Compute the random check at load time. If false, the cell will not be loaded and cannot be activated" >
+	bool myEvaluateOnActivate false < tooltip="Compute the random check at activation time. If false, the cell will not be activated but it might be loaded" >
+	StatisticGenericTypeEnum myStatistic
+	CompareOperatorEnum myOperator NotSet
+	StatisticDictionaryType myDictionary Player < tooltip="Define where the stat should be picked from" >
+	bool myRecordElapsed true < hidden=true tooltip="Compare Record Elapsed time since last triggered" >
+	float myValue < tooltip="Compare the statistic elapse time since last event against the value" >
+}
+
+//				STATISTIC - HISTORY
+class StatisticHistoryCondition : Condition
+{
+	bool myEvaluateOnLoad true < tooltip="Compute the random check at load time. If false, the cell will not be loaded and cannot be activated" >
+	bool myEvaluateOnActivate false < tooltip="Compute the random check at activation time. If false, the cell will not be activated but it might be loaded" >
+	StatisticGenericTypeEnum myStatistic
+	StatisticGenericTypeEnum myStatisticReference
+	CompareOperatorEnum myOperator NotSet
+	StatisticDictionaryType myDictionary Player < tooltip="Define where the stat should be picked from" >
+	bool myEmptyStatisticStatus true < tooltip="Status to return if the [statistic] was never recorded" >
+	bool myEmptyReferenceStatus true < tooltip="Status to return if the [statistic reference] was never recorded" >
+	bool myCountSinceActive true < tooltip="Count history of reference since last stat was triggered" >
+	int myCountSinceValue 1 < tooltip="Number to compare against" >
+}
+
+//				DLC
+class DLCAvailabilityCondition : Condition
+{
+	EntitlementType myDLCType
+	EntitlementState myDLCEntitlementState Available < tooltip="Basically, you should set Available here for DLC development, additional cells." >
+}
+
+//			Day Night Condition
+class DayOrNightCondition : Condition
+{
+	bool myShouldLoadInDay true < tooltip="TRUE if the link should load during the day" >
+	bool myShouldLoadInNight true < tooltip="TRUE if the link should load during the night" >
+}
+
+//			StreamingInstall Condition
+class StreamingInstallCondition : Condition
+{
+	bool myIsFullyInstalled true < tooltip="TRUE if the game is fully loaded" >
+}
+
+class PlayerMoodCondition : Condition
+{
+	MoodTypeEnum myMood
+}
+
+class MapRegionCondition : Condition
+{
+	MapRegion* myMapRegion
+	bool myIsInterior
+}
+
+list TownRoleTypeEnumList
+{
+	TownRoleTypeEnum
+} 
+class SelfieTownRoleCondition : Condition
+{
+	TownRoleTypeEnumList myTownRoleTypes
+}

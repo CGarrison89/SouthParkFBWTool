@@ -1,0 +1,68 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./buddypowers.joh.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_humankite.juice"
+
+CombatPower pwr_humankite_power2 < uid=B9E930CA56BA936400002310EBF3C5F2 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/humankite_Rescue.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/4_range_heal.DDS"
+	myUIName "contextComment = \"Human Kite Power 2 Name\", description = \"pwr_humankite_power2 Name\", enabled = true, guid = #51C546C65774DC1D00000115537CE887, lineVersion = 2, maxLength = 14, text = \"Jetstream\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_humankite_power2 Description\", enabled = true, guid = #51C546C65774DC1D00000116E0092983, lineVersion = 3, maxLength = 129, text = \"Not all winds are foul. Human Kite summons a succoring Sirocco, Healing and pulling allies to him. \""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_humankite_power2 Short Description\", enabled = true, guid = #9D0E6196579AB0D6000001933E36BCFD, lineVersion = 1, maxLength = 40, text = \"Pull allies close and Heal them\""
+	myUseSkillScript < uid=B9E930CA56BA936400002311518EBDA5 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "1 target - default" < uid=86C9308257A51BE500019784FCAEE267 >
+		{
+			myPriority 30
+			myMinimumAffectedTargets 1
+			myPreferredRange 3
+			myTargetHealthLessThanPercentage 100.0
+		}
+		PowerEvaluationData "1 target - critically damaged" < uid=86C930825A15EBBE0026B177ACBE21D1 >
+		{
+			myPriority 36
+			myMinimumAffectedTargets 1
+			myPreferredRange 3
+			myTargetHealthLessThanPercentage 40.0
+		}
+		PowerEvaluationData "2 targets" < uid=86C930825A15EBBE0026B1783B5B3033 >
+		{
+			myPriority 70
+			myMinimumAffectedTargets 2
+			myPreferredRange 3
+			myTargetHealthLessThanPercentage 100.0
+		}
+		PowerEvaluationData "3 targets" < uid=86C930825A15EBBE0026B179141B7547 >
+		{
+			myPriority 80
+			myMinimumAffectedTargets 3
+			myPreferredRange 3
+			myTargetHealthLessThanPercentage 100.0
+		}
+	}
+	myTuningData < uid=B9E930CA56C52E2600000014CF919F01 > = pwr_humankite_power2_Tuning
+	myCameraPreset < uid=B9E930CA57D9ECD000028C93E1761F43 > = HumanKite_Power02
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 0.6667
+				myActionPlusPresetEnum Mash_Normal
+			}
+		}
+	}
+}
+

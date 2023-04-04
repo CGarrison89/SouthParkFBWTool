@@ -1,0 +1,52 @@
+include ./mm16_blackcells_rogue_aoe_knockback.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower dr_MM16_blackcells_rogue_aoe_knockback < uid=C87888A05A0CDBF5000160DF920B3491 > : MM16_blackcells_rogue_aoe_knockback
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData 3hit < uid=C87888A05A1DCC5D00329C7313C49A10 >
+		{
+			myPriority 30
+			myMinimumAffectedTargets 3
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData 2hit < uid=C87888A05A1DCC5D00329C744A3BE996 >
+		{
+			myPriority 29
+			myMinimumAffectedTargets 2
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData 1hit < uid=C87888A05A1DCC5D00329C751FA59A41 >
+		{
+			myPriority 20
+			myMinimumAffectedTargets 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=C87888A05A1DCC5D00329C76E066C2D6 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=C87888A05A0CE101000149DFECBCA160 > = enemy_pwr_dr_1x3_melee_knockback_Tuning
+}
+

@@ -1,0 +1,45 @@
+include "camel/game system data/fruit/items/categories.fruit"
+
+enum UIPauseMenuScreenType
+{
+	None
+	Inventory
+	Equipment
+	Crafting
+	TeamSelection
+	Map
+	Coonstagram
+	AppSwitch
+	Costume
+	Powers
+	DNA
+	CharacterCreation
+	ClassSelect
+	GenderSelect
+	RaceSelect
+	ReligionSelect
+	KryptoniteSelect
+	AlignmentSelect
+	ArchEnemySelect
+	SkinToneSelect
+	CharacterSheet
+	Settings
+	Selfie
+}
+
+list UIPauseMenuScreenTypes
+{
+	UIPauseMenuScreenType
+}
+
+list UIPauseMenuScreenTunables
+{
+	float
+}
+
+class UIPauseMenuScreenInfo
+{
+	UIPauseMenuScreenType myType
+	ItemCategories myCategories
+	UIPauseMenuScreenTunables myTunables
+}

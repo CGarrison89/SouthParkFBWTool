@@ -1,0 +1,9 @@
+include ./enemy_pwr_archetype_priest_heal.mpower
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+
+CombatPower pwr_LT_6thgraders_priest_heal < uid=86C9308257799B2700000161B6CD26A8 > : enemy_pwr_archetype_priest_heal
+{
+	myTuningData < uid=86C9308257799B27000001624BD247EC > = pwr_LT_6thgraders_priest_heal_Kevin_Tuning
+}
+

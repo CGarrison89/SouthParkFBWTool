@@ -1,0 +1,21 @@
+
+
+enum TicketType
+{
+	General
+	Animation
+}
+
+class Ticket < uid=auto >
+{
+
+	TicketType myTicketType
+	int	myNumTicketEntries 1 < tooltip="Number of simultaneous tickets allowed." >
+	int	myGrantingTicketCooldown 0 < tooltip="Delay time of after granting ticket before franting next one (ms)." >
+	int	myRelinquishTicketCooldown 0 < tooltip="Delay time after ticket is relinquished next one (ms)." >
+	int myForceTicketDeathTime 10000	< tooltip="Optional failsafe to kill ticket. Defaults to 10 seconds." >
+	bool myIsTimerTicket false
+	int myTicketLifetime 0 < tooltip="Only used for timer tickets. (ms)" >
+	int myPriorityQWaitTime 20000 < tooltip="determines how long someone stays in the priority Q blocking them from getting this ticket. (ms)" >
+
+}

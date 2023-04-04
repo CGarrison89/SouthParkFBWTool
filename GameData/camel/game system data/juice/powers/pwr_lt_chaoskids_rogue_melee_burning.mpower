@@ -1,0 +1,10 @@
+include ./enemy_pwr_archetype_rogue_melee_shocked.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_LT_chaoskids_rogue_melee_burning < uid=86C9308257683D1F0000043A8704D712 > : enemy_pwr_archetype_rogue_melee_shocked
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/chaoskid_power2.dds"
+	myShouldRepositionBeforeExecution TRUE
+	myTuningData < uid=86C9308257683D1F0000043B18DC8DE2 > = pwr_LT_chaoskids_rogue_melee_burning_Kevin_Tuning
+}
+

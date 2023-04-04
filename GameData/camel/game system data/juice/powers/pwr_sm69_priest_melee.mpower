@@ -1,0 +1,54 @@
+include ./pwr_sm22_priest_melee.mpower
+
+CombatPower pwr_sm69_priest_melee < uid=8585E53F57A541C2000006A392243DF5 > : pwr_sm22_priest_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Pimp_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"the pimp slap\", description = \"enemy_pwr_archetype_swarmer_melee Name\", enabled = true, guid = #9D0E6196596D031600008B72017F8AC9, lineVersion = 0, maxLength = 14, text = \"Pimp Slap\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "slap hoe" < uid=B642A89A5907A8E6000F409B5527C2C8 >
+		{
+			myPriority 120
+			myAIDesirableType None
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Charmed
+				{
+					mySpecialEffect Charmed
+				}
+			}
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData default < uid=B642A89A5907A8E6000F409C5774D947 >
+		{
+			myPriority 20
+			myStatusEffectConditionData
+			{
+			}
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=B642A89A5907A8E6000F409D28AD5140 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=8585E53F57A541C2000006A48A47C6A9 > = pwr_sm69_priest_melee_Adrian_Tuning
+	myCameraPreset < uid=86C9308259093023000F2B1880432826 > = NULLREFERENCE
+}
+

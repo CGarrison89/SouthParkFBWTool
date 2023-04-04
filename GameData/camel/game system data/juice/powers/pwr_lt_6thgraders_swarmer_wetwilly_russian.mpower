@@ -1,0 +1,37 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+
+CombatPower pwr_LT_6thgraders_swarmer_wetwilly_russian < uid=B9E930CA57B672F60000026511F3A515 > : enemy_pwr_archetype_swarmer_melee
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_swarmer_melee Name\", enabled = true, guid = #B9E930CA57B672F6000002649EE4902D, lineVersion = 0, maxLength = 22, text = \"Russian Wet Willy\""
+	myUseSkillScript < uid=B9E930CA57B672F6000002664E958477 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power4
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA57B73D2B000002B12F0C4BEC >
+		{
+			myPriority 30
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=B9E930CA57B73D2B000002B22A6EE333 >
+		{
+			myPriority 30
+			myAggroPriority 1030
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA57B672F600000267E5710BC9 > = pwr_LT_6thgraders_swarmer_melee_Kevin_Tuning
+}
+

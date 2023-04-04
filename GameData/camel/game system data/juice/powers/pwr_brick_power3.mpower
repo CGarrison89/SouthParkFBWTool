@@ -1,0 +1,118 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_brick.juice"
+include camel/skillscript/powersmenu_simpleplayanim.mskillscriptjuice
+
+CombatPower pwr_brick_power3 < uid=B9E930CA56B284A4000000258E25CB8C >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/brick_MuscleFlex.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/1_range_cross.DDS"
+	myUIName "contextComment = \"power name\", description = \"pwr_brick_power3 Name\", enabled = true, guid = #51C546C65774D95E000000E79202DD6C, lineVersion = 3, maxLength = 27, text = \"Controlled Demolition\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_brick_power3 Description\", enabled = true, guid = #51C546C65774D95E000000E82A50C997, lineVersion = 1, maxLength = 151, text = \"Clear the jobsite with an ass ground pound that Grosses Out and knocks all nearby enemies in the opposite direction.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_brick_power3 Short Description\", enabled = true, guid = #9D0E6196579A59C00000015FED58078A, lineVersion = 0, maxLength = 47, text = \"Knock back and Gross Out nearby foes\""
+	myUseSkillScript < uid=B9E930CA56B284A40000002618F84080 > = Camel_Simple_PlayAnim_Script
+	myAnimationState brick_power3
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myShouldUseLaunchReactions TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "3 targets with kill" < uid=86C9308258E7C3AC00004132639364E7 >
+		{
+			myPriority 15000
+			myMinimumKills 1
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets with kill" < uid=86C9308258E7C3AC00004133F0ACA058 >
+		{
+			myPriority 13800
+			myMinimumKills 1
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "1 target with kill" < uid=86C9308258E7C3AC00004134B98637CE >
+		{
+			myPriority 11600
+			myMinimumKills 1
+		}
+		PowerEvaluationData "3 targets blocking" < uid=86C9308258E7C3AC000041355224110F >
+		{
+			myPriority 10000
+			myMinimumAffectedTargets 3
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Blocking
+				{
+					mySpecialEffect Block
+				}
+			}
+		}
+		PowerEvaluationData "2 targets blocking" < uid=86C9308258E7C3AC00004136AA68F3F0 >
+		{
+			myPriority 8500
+			myMinimumAffectedTargets 2
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Blocking
+				{
+					mySpecialEffect Block
+				}
+			}
+		}
+		PowerEvaluationData "3 targets" < uid=86C9308258E7C47C00004139C53D837C >
+		{
+			myPriority 7000
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets" < uid=86C9308258E7C47C0000413A28271F58 >
+		{
+			myPriority 5800
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "Not grossed out" < uid=86C9308258E7C3AC000041373F532885 >
+		{
+			myPriority 1900
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not grossed out"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect GrossedOut
+					myFollowingCondition AND
+				}
+				StatusEffectConditionalEntry "Not immune to grossed out"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect GrossedOutImmunity
+				}
+			}
+		}
+		PowerEvaluationData "Grossed out" < uid=86C9308258E7C3AC00004138B7E350E6 >
+		{
+			myPriority 1800
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Grossed out"
+				{
+					mySpecialEffect GrossedOut
+				}
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA56B284A40000002785995200 > = pwr_brick_power3_Tuning
+	myCameraPreset < uid=B9E930CA5793D79800003ECA0759B033 > = Brick_Power03
+	myPowerGroup Normal
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusDistributionEnum AllUnusedPriorToHit
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData Game1
+			{
+				myActionPlusAdditionalTime 0.0
+				myActionPlusEndTime 1.0
+				myActionPlusPresetEnum Mash_Normal
+			}
+		}
+	}
+}
+

@@ -1,0 +1,192 @@
+include "camel/game system data/fruit/ai/characterrank.fruit"
+include "camel/game system data/fruit/ai/actor.fruit"
+include "camel/game system data/fruit/powers/powers.fruit"
+include "camel/game system data/fruit/props/propTagType.fruit"
+include "camel/game system data/fruit/stats/characterstats.fruit"
+include "camel/game system data/fruit/interaction/interactiontype.fruit"
+include "camel/game system data/fruit/ai/primaryStats.fruit"
+include "camel/game system data/fruit/combat/CombatMovementRestrictions.fruit"
+include "camel/skillscript/skillscript.fruit"
+
+list Powers
+{
+	Power*
+}
+
+enum CombatMovementStyle
+{
+	Offensive
+	OffensivePathed
+	OffensiveRanged
+	Defensive
+	Support
+	SeeksCover
+}
+
+enum AIIntelligencePreset
+{
+	Dumb
+	Smart
+}
+
+enum CombatArchetype
+{
+    None
+    Swarmer
+    Peashooter
+    Bruiser
+    Blocker
+    Wizard
+    Explosive
+    Priest
+    Grenadier
+    Rogue
+    Summoner
+    Warlock
+    Rusher
+    Boss
+    RivalBuddy
+}
+
+enum CombatDeathType
+{
+	DespawnOnDeath
+	DespawnOffCamera
+	DespawnOnCombatComplete
+}
+
+class NPCUIData
+{
+	file myBuddyWheelIcon "" < types=*.png >
+	file myTimelinePortrait "" < types=*.dds >
+	file myTimelineUltimatePortrait "" < types=*.png >
+	float myTeamSelectionScaleFactor 1.0
+	file myTimelineOversizePortrait "" < types=*.png tooltip="Larger icon for depicting oversize characters" >
+}
+
+class NPCInteractionData
+{
+	bool myCanInteract
+	bool myCanPushPull
+	bool myCanShove
+	bool myCanBlow
+}
+
+class NPCOffsetPerHeadingData
+{
+	string myAttachedBoneName "" < tooltip="UsableString [LowerBody, UpperBody, Torso, Head, HeadCenter]" >
+	vec2f myFront 0.0;0.0
+	vec2f myBack 0.0;0.0
+	vec2f myLeft 0.0;0.0
+	vec2f myRight 0.0;0.0
+}
+
+class NPCStealthData
+{
+	NPCOffsetPerHeadingData myViewOffset
+	NPCOffsetPerHeadingData myPerceptiveOffset
+}
+
+class NPCImmunityData
+{
+	bool myInvisible
+	bool myDazed
+	bool myShocked
+	bool myGrossedOut
+	bool myEnraged
+	bool myBurning
+	bool myBleeding
+	bool myDistracted
+	bool myCharmed
+	bool myCharmedInfinite
+	bool myConfused
+	bool myEnergized
+	bool myFocused
+	bool myChilled
+	bool myEncumbered
+   	bool myRush
+	bool myMarked
+	bool myKnockedBack
+   	bool myTeleport
+	bool myGrounded
+	bool myHemorrhage false
+	bool myBerry false
+}
+
+class NPCTuningData : ActorTuningData
+{
+	int myLevel 1
+	int myGrantXP 0
+	int myHealth
+	int myShields 0
+	int myMaxShields 0
+	int myActionPoints
+	int myMovementPoints
+	int myPostActionMovementPoints 11
+	int myInitiative 10000
+	float myCriticalStrikeChance 0.0
+	float myLevelRatio 1.0
+	CombatMovementStyle myCombatMovementStyle
+	AIIntelligencePreset myAIIntelligencePreset
+	CombatArchetype myCombatArchetype
+	CharacterRank myCharacterRank None
+	PrimaryStats myPrimaryStats
+	string myArchetype
+	string myClass
+}
+
+list FieldInteractionTypeList
+{
+	FieldInteractionType
+}
+
+class NPC : Actor
+{
+	string myEnvPowerName
+	Powers myPowers
+
+	Faction* myFaction
+
+	bool myIsPet < tooltip="characters which are summoned pets" >
+	bool myDieWithSummoner < tooltip="this Actor will die whenever the character who summoned it dies" >
+	bool myCanStopAnywhere < tooltip="character can stop in any cell, even if occupied" >
+    bool myCanDie true < tooltip="Defaults to true; false means NPC's health will not go below 1" >
+    bool myCanKnockbackCounter true
+	bool myCanStackingMove true < tooltip="Combatants that can move due to obscuration/etc" >
+	bool mySupportDamageLayers true
+	bool myShouldUseCombatBehaviourGraph true < tooltip="By default, all Player team NPCs switch to the player's behaviour graph" >
+	bool myUseCombatDelays true < tooltip="By default, all NPCs will use the pacing delays present in the behaviour graph" >
+	bool myShouldAvoidTelegraphCells < tooltip="Actors will not move into cells which are telegraphed except to execute a power" >
+	int myKitableMovementPriority 1000
+	int myAIDesirableMovementPriority -1
+	float myCounterAttackIntroTime 0.2 < tooltip="Length of time between the start of the KnockbackCounter anim, and the damage event" >
+	CombatDeathType myCombatDeathType DespawnOffCamera
+	NPCImmunityData myImmunityData
+	NPCCombatMovementDirections myCombatMovementDirections
+
+	int myTurnLifetime
+	bool myDieOnTurnLifetimeEnd true
+
+	NPCUIData myUIData
+	FieldInteractionTypeList myInteractionTypeList
+	
+    EntityPropTagTypeList myPropTagTypeList
+	NPCInteractionData myInteractionData
+	NPCStealthData myStealthData
+	
+	CombatStatsLookup* myCombatStats
+	NPCTuningData* myTuningData
+    
+    file myExploreBehavior < types=*.mbehavior >
+
+	SkillScript* mySkillScriptOnCombatStart < tooltip="Triggered when an actor is added to combat" >
+	SkillScript* mySkillScriptOnDeathFlee 
+	SkillScript* mySkillScriptOnTurnBegin < tooltip="Script run each time this Actor's Combat Turn begins" >
+	SkillScript* mySkillScriptOnTurnEnd < tooltip="Script run each time this Actor's Combat Turn ends" >
+	SkillScript* myCombatEyeTrackingSkillScript < tooltip="Combat Eye tracking SkillScript" >
+	file mySkillScriptCombatStartPresentation "camel/skillscript/on_combatstart_presentation_default.mskillscriptjuice" < bhv=asset assettype="Skill Script" tooltip="Triggered when an actor is part of the Combat Start/Softening presentation" >
+
+	bool myObscurationMovementInTelegraphing false
+	
+	string myNoPowerUsedAnimation < tooltip="Animation played on Turn End if no powers were used" >
+}

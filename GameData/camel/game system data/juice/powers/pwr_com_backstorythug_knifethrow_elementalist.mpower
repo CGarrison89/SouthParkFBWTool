@@ -1,0 +1,23 @@
+include ./pwr_com_backstorythug_knifethrow.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_com_backstorythug_knifethrow_elementalist < uid=86C93082577486BC0000ACC8A08ADB5A > : pwr_com_backstoryThug_knifeThrow
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Bruiser_KnifeThrow.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C93082577487990000ACE0EC3B9DA7 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myRight TRUE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C9308257748F220000007F37EA8EA9 > = pwr_com_backstoryThug_knifeThrow_elementalist_Kevin_Tuning
+}
+

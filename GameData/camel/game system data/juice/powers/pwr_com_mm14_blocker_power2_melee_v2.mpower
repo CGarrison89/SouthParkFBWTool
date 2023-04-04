@@ -1,0 +1,7 @@
+include ./pwr_com_mm14_blocker_power2_melee.mpower
+
+CombatPower pwr_com_mm14_blocker_power2_melee_v2 < uid=86C93082596E9190000203A01064ADE0 > : pwr_com_mm14_blocker_power2_melee
+{
+	myMeleeOffset -1.0;0.0
+}
+

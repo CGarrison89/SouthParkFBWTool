@@ -1,0 +1,29 @@
+enum TutorialType
+{
+	Power_1
+	Power_2
+	Power_3
+	Power_4
+	Consumables
+	Ult_Meter
+	RTE_Meter
+	Timefart
+	Timeline
+	InspectionMode_StatusEffects
+	CraigTweakUlt_Unlock
+	ActiveRecovery
+	Explore_TF_Glitch
+	Explore_TF_Pause
+	Explore_TF_DayNight
+	Explore_TF_Leap
+	Timefart_Sticks
+	Artifact_Slot
+	Timefart_Sticks_Glitch
+	Timefart_Sticks_Pause
+	Timefart_Sticks_DayNight
+	Timefart_Sticks_Leap
+	BuddyPower_Rage
+	BuddyPower_Fartkour
+	BuddyPower_Haywire
+	BuddyPower_SandBlaster
+}

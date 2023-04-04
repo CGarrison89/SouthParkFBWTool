@@ -1,0 +1,28 @@
+include ./enemypowers.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/chaos_disc.mprojectile"
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+
+CombatPower pwr_com_chaosDiscs < uid=B642A89A55C0EA2C000003EDD3742E03 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/power_enemy_discthrow.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_chaosdiscs Name\", enabled = true, guid = #51C546C65774DBD50000008E3E8619E2, lineVersion = 0, maxLength = 1, text = \"Chaos Disc\""
+	myUseSkillScript < uid=B642A89A55C0EA2C000003EEDB85A471 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 2
+	myProjectile < uid=B642A89A55C0EA2C000003EF36ED4972 > = chaos_disc
+	myPowerEvaluationData
+	{
+		PowerEvaluationData aggrotarget < uid=B642A89A55C0EA2C000003F0F30FDC9E >
+		{
+			myPriority 20
+			myRequireAggroTarget TRUE
+		}
+		PowerEvaluationData default < uid=B642A89A55C0EA2C000003F18179F0CA >
+		{
+			myPriority 10
+		}
+	}
+	myTuningData < uid=B642A89A55C0EA2C000003F277296AB8 > = pwr_com_chaosDisks_Tuning
+}
+

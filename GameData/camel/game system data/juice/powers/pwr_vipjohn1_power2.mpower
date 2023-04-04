@@ -1,0 +1,9 @@
+include ./pwr_vipjohn2_power2.mpower
+
+CombatPower pwr_vipJohn1_power2 < uid=86C93082591362A4000070ED8BD08C5F > : pwr_vipJohn2_power2
+{
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/left_right.dds"
+	myUIName "contextComment = \"\", description = \"VIP John2 Power 2 Name\", enabled = true, guid = #C0F4A7865916270E000070FF49494592, lineVersion = 1, maxLength = 18, text = \"Double Fisting\""
+	myTuningData < uid=86C93082591362A4000070EEEA96E0C9 > = pwr_mm08_vip_john_melee_aoe_leftright_Adrian_Tuning
+}
+

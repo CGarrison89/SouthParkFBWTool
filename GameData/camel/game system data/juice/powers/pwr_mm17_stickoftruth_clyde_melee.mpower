@@ -1,0 +1,15 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/pwr_mm17_stickoftruth_clyde_melee_script.mskillscriptjuice
+
+CombatPower pwr_mm17_stickoftruth_clyde_melee < uid=86C9308257BB7652000001AAE2CAD8CB > : enemy_pwr_archetype_bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/clyde_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"Greatsword Strike\", enabled = true, guid = #3267E0D0597131D000264BE08BA40F10, lineVersion = 0, maxLength = 22, text = \"Greatsword Strike\""
+	myUseSkillScript < uid=8E224C3D58EC3CD30000919962B0810D > = pwr_mm17_stickoftruth_clyde_melee_script
+	myAnimationState power1
+	myTuningData < uid=86C9308257BB7652000001ABDAF7B898 > = pwr_mm17_stickoftruth_clyde_melee_Kevin_Tuning
+}
+

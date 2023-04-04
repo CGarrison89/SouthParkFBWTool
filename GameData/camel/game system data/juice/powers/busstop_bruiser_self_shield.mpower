@@ -1,0 +1,8 @@
+include ./enemy_pwr_archetype_bruiser_self_shield.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower busstop_bruiser_self_shield < uid=86C9308257609868000001690D5077D5 > : enemy_pwr_archetype_bruiser_self_shield
+{
+	myTuningData < uid=86C93082576098680000016A1BCD8AF4 > = pwr_busstop_bruiser_self_shield_Kevin_Tuning
+}
+

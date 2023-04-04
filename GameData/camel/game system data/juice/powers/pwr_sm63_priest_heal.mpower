@@ -1,0 +1,8 @@
+include ./enemy_pwr_archetype_priest_heal.mpower
+include ./enemypowers.adrian.juice
+
+CombatPower pwr_sm63_priest_heal < uid=8585E53F57A278560000008AD23199AF > : enemy_pwr_archetype_priest_heal
+{
+	myTuningData < uid=8585E53F57A278560000008BDCAD250C > = pwr_sm63_priest_heal_Adrian_Tuning
+}
+

@@ -1,0 +1,25 @@
+include ./enemypowers.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_com_bite < uid=B9E930CA55E0939500000256D09AC6FF >
+{
+	myIconImage "camel/baked/assets/ui/power selection/power_enemy_chaosdog_bite.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_bite Name\", enabled = true, guid = #51C546C65774DBCE00000084C9AC3B0C, lineVersion = 0, maxLength = 1, text = \"Rabid Bite\""
+	myUseSkillScript < uid=B9E930CA55E09395000002579E801B77 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData aggrotarget < uid=B9E930CA55E0939500000258C5787E7D >
+		{
+			myPriority 20
+			myRequireAggroTarget TRUE
+		}
+		PowerEvaluationData default < uid=B9E930CA55E09395000002595E86448A >
+		{
+			myPriority 10
+		}
+	}
+	myTuningData < uid=B9E930CA55E093950000025A582DDC9B > = pwr_com_bite_Tuning
+}
+

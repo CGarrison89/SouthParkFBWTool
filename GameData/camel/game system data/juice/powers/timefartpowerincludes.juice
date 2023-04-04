@@ -1,0 +1,5 @@
+include ./pwr_com_timefartscrub.mpower
+include ./pwr_com_timefartrepeat.mpower
+include ./pwr_com_timefartassemble.mpower
+include ./pwr_com_timefartpause.mpower
+include ./pwr_com_timefartdaynight.mpower

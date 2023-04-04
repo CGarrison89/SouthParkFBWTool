@@ -1,0 +1,30 @@
+include ./pwr_humankite_power1.mpower
+include ./enemypowers.mvernon.juice
+
+CombatPower pwr_mm17_humankite_mitch_power1 < uid=6D7AC9B15949BCED0006829AB346FE78 > : pwr_humankite_power1
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/MitchKite_Power1.dds"
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B15949BCED0006829C4DBF0B66 >
+		{
+			myPriority 16
+			myMinimumAffectedTargets 1
+			myPreferredRange 2
+			myMinimumDistanceToEnemies 2
+		}
+		PowerEvaluationData Enraged < uid=6D7AC9B15949BCED0006829F07F89893 >
+		{
+			myPriority 0
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+		}
+	}
+	myTuningData < uid=6D7AC9B15949BCED000682A0B2A94731 > = pwr_mm17_humankite_mitch_power1_MVernon_Tuning
+	myActionPlusData
+	{
+		myUseActionPlus FALSE
+	}
+}
+

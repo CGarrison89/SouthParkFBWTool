@@ -1,0 +1,42 @@
+include ./dlc3_enemypowers.juice
+include ./enemy_pwr_archetype_wizard_pierce_ranged.mpower
+include camel/skillscript/dlc3_timmy_boss_telegraph.mskillscriptjuice
+include camel/skillscript/camel_simple_telegraph_on.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_jared.juice"
+include camel/skillscript/camel_simple_telegraph_targeting_script.mskillscriptjuice
+include camel/skillscript/pwr_jared_power03_pull_telegraph.mskillscriptjuice
+include camel/skillscript/dlc3_timmy_boss_targeting_skillscript.mskillscriptjuice
+include camel/skillscript/dlc3_timmy_boss_swappower_aftertelegraph.mskillscriptjuice
+include camel/skillscript/dlc3_bike_swappower_aftertelegraph.mskillscriptjuice
+include camel/skillscript/dlc3_bike_targeting_skillscript.mskillscriptjuice
+include camel/skillscript/dlc3_bike_telegraph.mskillscriptjuice
+
+CombatPower pwr_dlc3_monsters_bike_telegraph < uid=C87888A05AB961D500023A4EDC753147 > : enemy_pwr_archetype_wizard_pierce_ranged
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/GhostBiker_Power1.dds"
+	myUIName "contextComment = \"[ PLACEHOLDER - DO NOT LOCALIZE ]\", description = \"[ PLACEHOLDER - DO NOT LOCALIZE ]\", enabled = true, guid = #C87888A05AB961D500023A4CC8568A60, lineVersion = 0, maxLength = 32, text = \"DLC3 Timmy Boss Telegraph\""
+	myUIDescription "contextComment = \"[ PLACEHOLDER - DO NOT LOCALIZE ]\", description = \"[ PLACEHOLDER - DO NOT LOCALIZE ]\", enabled = false, guid = #C87888A05AB961D500023A4D15FD95F1, lineVersion = 0, maxLength = 43, text = \"[ PLACEHOLDER - DO NOT LOCALIZE ]\""
+	myUseSkillScript < uid=C87888A05AB961D500023A4FB2D97322 > = DLC3_Bike_Telegraph
+	myTargetingSkillScript < uid=C87888A05AB961D500023A50CEA0EA93 > = DLC3_Bike_Targeting_SkillScript
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=C87888A05AB961D500023A51370BBCAB >
+		{
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=C87888A05AB961D500023A5242814C04 > = DLC3_Bike_SwapPower_AfterTelegraph
+	myTuningData < uid=C87888A05AB961D500023A533BB86715 > = pwr_DLC3_Monsters_Bike_Telegraph_Tuning
+	myCameraPreset < uid=C87888A05AB961D500023A54F285E683 > = Jared_Power02
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myTelegraphData
+	{
+		myTelegraphedPowerName pwr_dlc3_monsters_bike_execute
+		myTelegraphingAnimationName ""
+		myTelegraphingToTargetedAnimationName ""
+	}
+}
+

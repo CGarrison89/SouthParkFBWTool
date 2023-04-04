@@ -1,0 +1,38 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower enemy_pwr_archetype_warlock_lob_min_bleed < uid=86D640765744DCCC000000C3C9549F3A >
+{
+	myUIName "contextComment = \"Placeholder Enemy\", description = \"enemy_pwr_archetype_warlock_lob_min_bleed Name\", enabled = true, guid = #51C546C65774D9420000009AC7B733CC, lineVersion = 1, maxLength = 22, text = \"Warlock Lob Bleed\""
+	myUseSkillScript < uid=86D640765744DCCC000000C4FDF31DAD > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D640765744DCCC000000C5F5CF827A >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86D6407657561638000001F80D285005 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86D640765744DCCC000000C6D09F162B > = enemy_pwr_archetype_warlock_lob_min_bleed_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

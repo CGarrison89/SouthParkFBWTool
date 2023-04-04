@@ -1,0 +1,58 @@
+enum ItemCategory
+{
+	None
+	Artifact
+	CostumeBody
+	CostumeHands
+	CostumeHead
+	BackstoryBody
+	BackstoryHands
+	BackstoryHead
+	StreetBody
+	StreetHands
+	StreetHead
+	StreetHair
+	StreetHairBangs
+	StreetHairFull
+	StreetHairHigh
+	StreetHairLow
+	StreetHairSkull
+	StreetHairTop
+	StreetFacialHair
+	StreetFacialHairUpper
+	StreetFacialHairLower
+	StreetEyewear
+	StreetMakeup
+	StreetMakeup2
+	Consumable
+	RecipeArtifact
+	RecipeCostume
+	RecipeComponent
+	RecipeConsumable
+	CollectableYaoi
+	CollectableCharacterSheet	
+	Component
+	Currency
+}
+
+list ItemCategories
+{
+	ItemCategory
+}
+
+enum PointBasedItemCategory
+{
+	None
+	Cash
+	experience
+	notoriety
+}
+
+enum ConsumableCategory
+{
+	None
+	Category_Attack
+	Category_Heal
+	Category_Buff
+	Category_Summon
+}

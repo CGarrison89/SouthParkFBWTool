@@ -1,0 +1,10 @@
+enum DangerRoomStageType < useCategories=1 >
+{
+	NOTSET
+
+	Stage1
+	Stage2
+	Stage3
+	Stage4
+	Stage5
+}

@@ -1,0 +1,275 @@
+include "camel/skillscript/skillscript.fruit"
+include "camel/game system data/fruit/combat/ActionPlusPreset.fruit"
+
+class ConstantKnockbackData
+{
+  bool myWaitForIntroCompleteBeforeMoving
+  bool myLeftRightOnlyAnimations true
+  float myReturnDelay 1.0
+}
+
+class ConstantKnockbackTempData
+{
+  int myTempStaticDamage 10
+  float myTempFriendlyCollisionMultiplier 1.0
+  int myTempAssistDamage 10
+}
+
+class KnockbackChainData
+{
+  int myChainDistance
+  float myWindowOfOpportunityMaxDuration
+  float myWindowOfOpportunityMinDuration
+  float myWindowOfOpportunityDeltaPerLink
+  float myWindowOfOpportunityMaxSpeedMultiplier 0.3
+  float myWindowOfOpportunityMinAnimationSpeed 0.15
+  float myWindowOfOpportunityStartDistancePercentage 0.333
+}
+
+class ConstantRageMeter
+{
+	float myOnPowerUsedGain 0.0
+	float myOnPowerVictimGain 0.0
+	float myMaxMeterAmount 0.0
+	bool myVictimGainSingleOnly false
+}
+
+list KnockbackChainMultiplierList
+{
+	float 1.0
+}
+
+class KnockbackChainMultipliers
+{
+	KnockbackChainMultiplierList myKnockbackChainMultipliers
+}
+
+class LevelBasedCombatLookupData
+{
+	int myKnockbackDamage
+	int myAssistedKnockbackDamage
+	float myPowerPotencyLevelModifier
+	float myPrimaryStatsLevelModifier
+	float myHPScaling
+}
+
+list LevelBasedCombatLookupDataList
+{
+	LevelBasedCombatLookupData
+}
+
+class LevelBasedCombatLookupDataTable
+{
+	LevelBasedCombatLookupDataList myCombatLookupData
+}
+
+
+class PrimaryStatsSpeedData
+{
+	int myPreActionMovementPoints
+	int myPostActionMovementPoints
+	float myTurnSpeed
+}
+
+list PrimaryStatsSpeedList
+{
+	PrimaryStatsSpeedData
+}
+
+class PrimaryStatsSpeed
+{
+	PrimaryStatsSpeedList myPrimaryStatsSpeedList
+}
+
+class ConstantStackingData
+{
+	bool myStaggeringEnabled true
+	bool myStaggeringMovementCentered true
+	bool myStaggerOnCombatStart true
+	bool myStaggerOnTurnEnd 
+}
+
+class ObscurationData
+{
+	bool myShuffleEnabled true
+	float myShuffleStartDelay 0.5
+	float myShuffleEndDelay 0.25
+	float myMaxXMovement 5.0
+}
+
+class ConstantLowHealthData
+{
+	float myLowHealthPercentage 0.3
+	SkillScript* myOnLowHealthSkillScript
+	SkillScript* myOnAboveLowHealthSkillScript
+}
+
+class DeathRevivalData
+{
+	int myDeadTurnsBeforeDespawn 2
+	int myDeadTurnsBeforeFleeing 5
+	float myDownedTurnDelay 3.0
+	string myDownedIdleAnimationName "fatal reaction"
+	string myFatalReactionAnimationName "fatal reaction"
+}
+
+class BlockingData
+{
+	bool myKnockbackBreaksBlock true
+	bool myBlockOnlyFacingDirection
+}
+
+class ProjectileData
+{
+	string myLobbedProjectileFlightTime  < bhv=inputgraph tooltip="Curve defining the flight time based on the grid cell distance" >
+	float myLobbedGravity -15.0 < tooltip="Amount of gravity to apply per second to all lobbed projectiles" >
+}
+
+class TimeFartPauseCombatData
+{
+	float myTurnDuration 15.0 < tooltip="How long does the Time Fart Pause turn last (in seconds)" >
+	float myMovementSpeedMultiplier 1.3 < tooltip="Movement Speed is multiplied by this amount during the Time Fart Pause turn" >
+	int myMPAmount 50 < tooltip="How many Movement Points does the Player get during the Time Fart Pause turn" >
+	bool myAllowRageGain < tooltip="If false, Ultimate/Rage Meter won't increase from the Time Fart Pause Punches" >
+	SkillScript* myOnTimeFartPauseStartSkillScript < tooltip="Skill Script which executes when the Time Fart Pause is executed in Combat" >
+}
+
+class LastHitEpicMomentData
+{
+	string myGameSpeedMultiplierCurve "" < bhv=inputgraph tooltip="Curve defining the Game Speed Multiplier during the Epic Moment" >
+	SkillScript* myOnLastHitEpicMomentSkillScript
+}
+
+
+class ConstantRealTimeEventData
+{
+	bool myShouldPauseBetweenTurns < tooltip="Should RTE's pause during the turn transition phases?" >
+	bool myShouldPauseOnEnemyTurns < tooltip="Should RTE's pause on AI turns?" >
+}
+
+class ConstantCombatTimingDelays
+{
+  float myAIPostPowerSelectionDelay < tooltip="After a power is selected, but before any movement has occurred" >
+  float myAIPostPowerMovementDelay < tooltip="After the power is selected, after the AI has moved into position to use it" >
+  float myAIPostPowerExecutionDelay < tooltip="After the power has finished executing" >
+  float myAIStartOfTurnDelay < tooltip="Start of turn, without status effects, but before turn skipping effects" >
+  float myAIStartOfTurnWithStatusEffectsDelay < tooltip="Start of turn, with status effects, but before turn skipping effects" >
+  float myAIEndOfTurnDelay < tooltip="At the end of turn, before End Turn is called by the AI" >
+  float myFirstTurnStartDelay < tooltip="Delay at the start of the first combat turn" >
+  float myPostDeathDelay < tooltip="Delay after all death animations have finished playing from an attack" >
+  float myChilledTurnDelay 1.0 < tooltip="Delay before a turn is skipped due to Actor being Chilled" >
+  float myRushShuffleDelay 0.2 < tooltip=" < tooltip="Delay before a turn is skipped due to Actor being Chilled" >" >
+}
+
+class ConstantCombatMintBerryLandData
+{
+  int myNorthOrder 2
+  int myNorthEastOrder 5
+  int myEastOrder 1
+  int mySouthEastOrder 7
+  int mySouthOrder 3
+  int mySouthWestOrder 6
+  int myWestOrder 0
+  int myNorthWestOrder 4
+}
+
+class ConstantCombatMintBerryData
+{
+  SkillScript* myOnPowerExecutionSkillScript < tooltip="Runs on Power Execution on targets with Mint when attacker has Berry" >
+  SkillScript* myOnCombatActionCompleteSkillScript < tooltip="Runs on Combat Action Complete on targets with Mint when attacker has Berry" >
+  
+  ConstantCombatMintBerryLandData myLandData
+}
+
+class ConstantCombatAccessibilityData
+{
+	float myRTEMultiplier 1.3 < tooltip="Multiplies all RTE times by this amount when the accessibility option is turned on" >
+}
+
+class ConstantCombatParticle
+{
+	file myParticleFile "" < bhv=asset assettype=particles >  
+}
+
+list ConstantCombatParticleList
+{
+	ConstantCombatParticle
+}
+
+class ConstantCombatData
+{
+  int myAggroDamageEventScore
+  int myAggroEnemyHealEventScore
+  int myAggroEnemyBuffEventScore
+  
+  color myGridDebugRenderColor 0xffffffff
+  color myEditorGridDebugRenderColor 0xffffffff
+  float myCombatGridCellHeightMetric
+  float myCombatGridCellWidthMetric
+  float myKnockbackImpactDamageHealthPercentage
+  float myKnockbackCounterDamagePercentage
+  float myLocationEffectTurnSpeed 1.0
+  float myMaxActionPointsMultiplier 2.0
+  float myCombatEntrySpeedMultiplier 1.0
+  float myPreAttackSpeedMultiplier 1.0
+  float myPostAttackSpeedMultiplier 1.0
+  float myDeathFleeSpeedMultiplier  1.5
+  float myObscurationShuffleSpeedMultiplier  1.6
+  bool myBankMovementPoints
+  bool myEnablePostActionMovement true
+  bool myUseCardinalPathingCost false
+  bool myMeleeAttackMovementEnabled false
+  bool myUseCorrectedGridAlgorithm false
+  bool myGrossOutPreventsHealing
+  
+  float myTimeBetweenIdleDialogEvents
+  float myCriticalStrikeDamagePercentage 
+  float myTurnTowardsTargetingOverrideDelay 0.75
+  int myTurnsToRevive 3
+  
+  float myStatusEffectReductionPercentageForGrunt 0.0
+  float myStatusEffectReductionPercentageForElite 0.0
+  float myStatusEffectReductionPercentageForBoss 0.0
+ 
+  string myPlayerCombatBehaviourGraph "camel/game system data/juice/ai/behavior/camel_behavior_test_player.mbehavior"
+  varmap myDefaultCombatObjective < bhv="localization" >
+  
+  bool myUseLobbedPowerDirectTargeting FALSE
+  
+  ConstantCombatTimingDelays myTimingDelayData
+  ConstantKnockbackData myKnockbackData
+  ConstantKnockbackTempData myKnockbackTempData
+  KnockbackChainData myKnockbackChainData
+  ConstantRageMeter myRageMeterData
+  ConstantStackingData myStackingData
+  ObscurationData myObscurationData
+  ConstantLowHealthData myLowHealthData
+  DeathRevivalData myDeathRevivalData
+  BlockingData myBlockingData
+  ProjectileData myProjectileData
+  TimeFartPauseCombatData myTimeFartPauseData
+  LastHitEpicMomentData myLastHitEpicMomentData
+  ConstantRealTimeEventData myRealTimeEventData
+  ActionPlusPresetList myActionPlusPresetList
+  ConstantCombatMintBerryData myMintBerryData
+  ConstantCombatAccessibilityData myAccessibilityData
+  SkillScript* myQTESuccessScript < tooltip = "Generic QTE success" >
+  SkillScript* myQTEActiveRecoverySuccessScript < tooltip = "Run when Active Recovery's QTE reports success" >
+  SkillScript* myOnPlayerTeamDeathSkillScript
+  SkillScript* myOnAnyActorDeathSkillScript
+  SkillScript* myOnStatusEffectUpdateEndSkillScript
+  SkillScript* myOnCombatStartSkillScript
+  SkillScript* myOnCombatEndSkillScript
+  SkillScript* myOnEndTurnSkillScript < tooltip = "Run on Active Combatant when the Turn End phase starts" >
+  SkillScript* myOnKnockbackIntroSkillScript
+  SkillScript* myOnKnockbackLoopSkillScript
+  SkillScript* myOnKnockbackImpactDamageSkillScript
+  SkillScript* myOnKnockbackOutroSkillScript
+  SkillScript* myOnKnockbackPostOutroSkillScript
+
+  float myQTEDuration < tooltip = "Default time given for the player to hit the button. You can set a custom (non-zero) value in the Run QTE Node to override this." >
+  float myQTEResultDuration 1 < tooltip = "Meant for UI. Do not tweak." >
+  varmap myCombatName < bhv = "numGlobalVar" >
+  
+  ConstantCombatParticleList myParticleList
+}

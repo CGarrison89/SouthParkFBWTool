@@ -1,0 +1,35 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_pet_damage_script_with_self_damage.mskillscriptjuice
+include camel/skillscript/pwr_tupperturret_power01_script.mskillscriptjuice
+
+CombatPower pwr_tupperware3_pet_power1 < uid=86D6407657447CDA000000C3F804ECC7 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/DartProjectile.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_range_left_right.dds"
+	myUIName "contextComment = \"\", description = \"pwr_tupperware3_pet_power1 Name\", enabled = true, guid = #51C546C65774DC5B000001AB32422F04, lineVersion = 0, maxLength = 17, text = \"Turret Attack\""
+	myUseSkillScript < uid=86D6407657447CDA000000C416D81CE0 > = pwr_tupperTurret_power01_script
+	myAnimationState ""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "New PowerEvaluationData (0)" < uid=86D6407657447CDA000000C5C60CD0E3 >
+		{
+			myPriority 10
+			myAggroPriority 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86D6407657447CDA000000C61C8B31BF > = pwr_tupperware3_pet_power1_Tuning
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myRight TRUE
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

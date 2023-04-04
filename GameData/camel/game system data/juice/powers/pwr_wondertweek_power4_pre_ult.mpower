@@ -1,0 +1,36 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/pwr_creek_power4_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/pwr_wondertweek_power5_script.mskillscriptjuice
+include camel/skillscript/pwr_wondertweek_power05_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_wondertweek.juice"
+
+CombatPower pwr_wondertweek_power4_pre_ult < uid=86D6407658AF24F200001954658F4CD8 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/WonderTweek_ULT_solo.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe.DDS"
+	myUIName "contextComment = \"pwr_wondertweek_power4 Pre-Ult Name\", description = \"pwr_wondertweek_power4 Pre-Ult Name\", enabled = true, guid = #86D6407658AF25470000195C187667EA, lineVersion = 3, maxLength = 29, text = \"Single-Origin Overdose\""
+	myUIDescription "contextComment = \"pwr_wondertweek_power4 Pre-Ult Description\", description = \"pwr_wondertweek_power4 Pre-Ult Description\", enabled = true, guid = #86D6407658AF25460000195B2B317C0C, lineVersion = 1, maxLength = 125, text = \"Tweek drowns his sorrows in a pot of single-origin coffee and unleashes his rage on nearby foes.\""
+	myUIShortDescription "contextComment = \"pwr_wondertweek_power4 Pre-Ult Short Description\", description = \"pwr_wondertweek_power4 Pre-Ult Short Description\", enabled = true, guid = #86D6407658AF25450000195AB4330E67, lineVersion = 1, maxLength = 29, text = \"Damages nearby enemies\""
+	myUseSkillScript < uid=86D6407658AF24F20000195501E530CE > = pwr_wondertweek_power05_script
+	myAnimationState power5
+	myNumberOfAttackEvents 4
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myTuningData < uid=86D6407658AF24F20000195600D6D775 > = pwr_wondertweek_power4_pre_ult_Tuning
+	myCameraPreset < uid=B9E930CA59669AED00250ECAE2674CA9 > = WonderTweek_Power05
+	myPowerGroup Ultimate
+	myActionPlusData
+	{
+		myUseActionPlus FALSE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 2.0
+				myActionPlusPresetEnum Slow
+			}
+		}
+	}
+}
+

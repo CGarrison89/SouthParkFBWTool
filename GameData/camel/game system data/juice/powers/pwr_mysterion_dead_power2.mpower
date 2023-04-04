@@ -1,0 +1,27 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_mysterion.juice"
+include camel/skillscript/pwr_deadmysterion_power02_script.mskillscriptjuice
+
+CombatPower pwr_mysterion_dead_power2 < uid=86D640765769CB8D0000010E4A4A85D7 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/MysterionDead_Power3.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/1_range_cross.dds"
+	myUIName "contextComment = \"Mysterion Dead Power 2 Name\", description = \"pwr_mysterion_dead_power2 Name\", enabled = true, guid = #51C546C65774DC3800000155A34A68AE, lineVersion = 1, maxLength = 22, text = \"Marked for Death \""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_mysterion_dead_power2 Description\", enabled = true, guid = #51C546C65774DC38000001569D7E2420, lineVersion = 1, maxLength = 108, text = \"Ghost Mysterion designates an enemy for imminent reaping and applies Defense Down. \""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_mysterion_dead_power2 Short Description\", enabled = true, guid = #9D0E6196579BD0AF000044B92B2C49E4, lineVersion = 1, maxLength = 39, text = \"Apply Defense Down to an enemy\""
+	myUseSkillScript < uid=86D640765769CB8D0000010F5F9C5E8E > = pwr_deadMysterion_power02_script
+	myAnimationState ""
+	myNumberOfAttackEvents 1
+	myShouldRepositionBeforeExecution FALSE
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myTuningData < uid=86D640765769CB8D0000011015AD4123 > = pwr_mysterion_dead_power2_Tuning
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

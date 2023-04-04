@@ -1,0 +1,29 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower enemy_pwr_archetype_explosive_on_death < uid=86D640765744DCC500000097200DDDD0 >
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_explosive_on_death Name\", enabled = true, guid = #51C546C65774D93C0000008D4C4CD6FD, lineVersion = 0, maxLength = 23, text = \"Explosive On Death\""
+	myUseSkillScript < uid=86D640765744DCC500000098D76CDAE8 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D640765744DCC50000009937FDF880 >
+		{
+			myPriority 0
+			myTargetHealthLessThanPercentage 1.0
+			mySelfHealthLessThanPercentage 1.0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86D640765744DCC50000009A1CF44338 > = enemy_pwr_archetype_explosive_on_death_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

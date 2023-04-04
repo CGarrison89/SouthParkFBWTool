@@ -1,0 +1,51 @@
+//This is a generated file. Do not hand edit this.
+
+enum StatisticEventType
+{
+	BOOSupplyGathered_value
+	BOOWingUpgrade_value
+	CarDoorClosed_value
+	CraftItem_value
+	DarkZoneExtractionCompleted_value
+	DeconstructItem_value
+	Discovery_value
+	DistrictSecurityMaxLevel_value
+	EnemyDefeated_value
+	EnemyPulsed_value
+	GameProgress_value
+	HealTeamMate_value
+	ItemAcquired_value
+	ItemUsed_value
+	LootFromCrate_value
+	LootItem_value
+	MediaUsage_value
+	MissionCompleted_value
+	MultiplayerRoundEnd_value
+	MultiplayerRoundStart_value
+	ObjectiveEnd_value
+	ObjectiveStart_value
+	PageAction_value
+	PageView_value
+	PlayerDefeated_value
+	PlayerEquipItem_value
+	PlayerJoinGroup_value
+	PlayerLevel_value
+	PlayerLevelUp_value
+	PlayerSessionEnd_value
+	PlayerSessionPause_value
+	PlayerSessionResume_value
+	PlayerSessionStart_value
+	PlayerSpawned_value
+	PurchaseAllSkillMods_value
+	PurchaseAllTalentsOfBOOWing_value
+	PurchaseItem_value
+	PuzzleSolved_value
+	ReviveTeamate_value
+	SectionEnd_value
+	SectionStart_value
+	SkillModEquipped_value
+	SkillRankUp_value
+	StatusEffectInflicted_value
+	UseSkill_value
+	ViewOffer_value
+}

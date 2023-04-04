@@ -1,0 +1,8 @@
+include ./pwr_mm17_stickoftruth_kyle_aoe_bleeding.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower dr_pwr_mm17_stickoftruth_kyle_aoe_bleeding < uid=8585E53F5A0C734D0002B0727122D6CF > : pwr_mm17_stickoftruth_kyle_aoe_bleeding
+{
+	myTuningData < uid=8585E53F5A0C73F10002B08CB89B669A > = pwr_dr_mm17_stickoftruth_kyle_aoe_bleeding_Tuning
+}
+

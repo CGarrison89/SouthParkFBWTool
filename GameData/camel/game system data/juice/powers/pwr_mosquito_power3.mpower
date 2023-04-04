@@ -1,0 +1,81 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_mosquito.juice"
+include camel/skillscript/camel_simple_rush_lifesteal_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+include camel/skillscript/pwr_mosquito_power03_vfx_impact.mskillscriptjuice
+
+CombatPower pwr_mosquito_power3 < uid=B9E930CA56D77BD10000002F512BD5B2 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/mosquito_power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/rush_3.dds"
+	myUIName "contextComment = \"Mosquito Power 3 Name\", description = \"pwr_mosquito_power3 Name\", enabled = true, guid = #51C546C65774DC350000014EE0C89298, lineVersion = 2, maxLength = 14, text = \"Zika Rush\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_mosquito_power3 Description\", enabled = true, guid = #51C546C65774DC350000014F16CB6695, lineVersion = 1, maxLength = 170, text = \"As a primary vector for a variety of human afflictions, Mosquito dashes forward, dealing damage and lifesteal to all foes in range.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_mosquito_power3 Short Description\", enabled = true, guid = #9D0E6196579B9439000001628EEBF2BE, lineVersion = 1, maxLength = 51, text = \"Fly-by murdering that applies lifesteal\""
+	myAnimationState power3
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "1 target" < uid=DB7C6D4257869E2C000169FB1866A99D >
+		{
+			myPriority 10
+		}
+		PowerEvaluationData "2 targets" < uid=86C9308257D1CE30000060F1A529A1B8 >
+		{
+			myPriority 30
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "3 targets" < uid=86C9308257D1CE30000060F25647F143 >
+		{
+			myPriority 40
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "1 target - kill" < uid=86C9308258A26C2F000017739C3C896F >
+		{
+			myPriority 100
+			myMinimumKills 1
+			myMinimumAffectedTargets 1
+		}
+		PowerEvaluationData "2 targets - kill" < uid=86C930825A569DB5000194FF213AAF7D >
+		{
+			myPriority 200
+			myMinimumKills 1
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "3 targets - kill" < uid=86C930825A569DB50001950013D88C34 >
+		{
+			myPriority 300
+			myMinimumKills 1
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData enraged < uid=86C930825A569DB500019501067A8426 >
+		{
+			myPriority 1000
+			myAggroPriority 1000
+			myRequireAggroTarget TRUE
+		}
+	}
+	mySecondarySkillScript < uid=B9E930CA57D1A37100000A7179476EA7 > = pwr_mosquito_power03_vfx_impact
+	myDialogueSkillScript < uid=326B24CD57E07E87000009E6E7CBBC3E > = Camel_Simple_PlayDialogue_Script
+	myTuningData < uid=B9E930CA56D77BD100000031B513520A > = pwr_mosquito_power3_Tuning
+	myCameraPreset < uid=B9E930CA57BF2A1E000001753ADA49A5 > = Mosquito_Power03
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.0
+				myActionPlusEndTime 0.333
+				myActionPlusPresetEnum Mash_Normal
+			}
+		}
+	}
+}
+

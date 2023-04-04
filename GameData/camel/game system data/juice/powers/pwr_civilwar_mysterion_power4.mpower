@@ -1,0 +1,34 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./enemypowers.demo.juice
+
+CombatPower pwr_civilwar_mysterion_power4 < uid=B9E930CA57314424000017F02D23511B >
+{
+	myUIName "contextComment = \"\", description = \"pwr_civilwar_mysterion_power4 Name\", enabled = true, guid = #51C546C65774D966000001013D0834B0, lineVersion = 0, maxLength = 17, text = \"OMG TKK!  YB!\""
+	myUseSkillScript < uid=B9E930CA57314424000017F1651FDA3F > = Camel_Simple_PlayAnim_Script
+	myAnimationState power4
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA57314424000017F24B038047 >
+		{
+			myPriority 0
+			myMinimumAffectedTargets 5
+			myValidDirections
+			{
+				myLeft FALSE
+				myRight FALSE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA57314424000017F3AB6AEBA9 > = demo_e3_mysterion_power4_demo_Tuning
+	myValidDirections
+	{
+		myLeft FALSE
+		myRight FALSE
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

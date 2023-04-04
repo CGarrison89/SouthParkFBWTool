@@ -1,0 +1,61 @@
+include ./pwr_com_drunkcharge.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+
+CombatPower pwr_mm19_sheila_charge < uid=86C93082578FD70F000047706A6CB4DB > : pwr_com_drunkcharge
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/sheila_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_range_ST_LOS_alt.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_generic_charge Name\", enabled = true, guid = #86C9308258AE425C0000193E79D3630F, lineVersion = 0, maxLength = 10, text = \"Charge\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData ranged < uid=86C93082579112350000727AFD9E05CC >
+		{
+			myPriority 15
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308257A123C600004B3A3E0229A5 >
+		{
+			myPriority 15
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData kill < uid=86C9308259797272001375FF7093BB39 >
+		{
+			myPriority 90
+			myMinimumKills 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myDialogueSkillScript < uid=326B24CD58C1D799000208B9458A148C > = Camel_Simple_PlayDialogue_Script
+	myTuningData < uid=86C93082578FD70F000047711A6B2713 > = pwr_mm19_sheila_charge_Kevin_Tuning
+	myAnimationSetData
+	{
+		myIntroState rushintro
+		myLoopState rushloop
+		myOutroState rushoutro
+	}
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

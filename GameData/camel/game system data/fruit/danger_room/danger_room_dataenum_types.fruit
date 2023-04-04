@@ -1,0 +1,3 @@
+include "camel/game system data/fruit/danger_room/danger_room_dataenum_arena.fruit"
+include "camel/game system data/fruit/danger_room/danger_room_dataenum_wave.fruit"
+include "camel/game system data/fruit/danger_room/danger_room_dataenum_stage.fruit"

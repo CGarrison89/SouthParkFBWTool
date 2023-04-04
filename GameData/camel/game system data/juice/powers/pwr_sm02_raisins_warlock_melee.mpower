@@ -1,0 +1,37 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include ./enemypowers.kevin.juice
+include ./sm66_raisins_warlock_melee.mpower
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_sm02_raisins_warlock_melee < uid=86C930825780349F0000023319FD8AF1 > : sm66_raisins_warlock_melee
+{
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=DB7C6D425781C61C0001027FF635D773 >
+		{
+			myPriority 15
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=DB7C6D425781C61C0001028065E1D8C6 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myMeleeOffset -1.0;0.0
+	myTuningData < uid=86C930825780349F00000234F361297A > = pwr_sm02_raisins_warlock_melee_Kevin_Tuning
+	myCameraPreset < uid=86C93082591B5CE4000071712BC2EE52 > = Preset_Generic_Melee
+}
+

@@ -1,0 +1,27 @@
+include "camel/game system data/fruit/juiceObj.fruit"
+include "camel/game system data/fruit/helpers/helpers_types.fruit"
+
+enum PropTransparencyLayerEnum
+{
+    Default
+	PropInFrontOfMC
+    MiniGamePause
+	Combat_Invisibility
+	Haywire_Hamster
+	LT_FadeIn
+	LT_FadeOut
+	LT_TeleportFadeIn
+	LT_TeleportFadeOut
+	GlitchFadeIn
+	GlitchFadeOut
+	ImmediateFadeOut
+	ImmediateFadeIn
+	Combat_Zero_Transparency
+}
+
+class PropTransparencyLayer : JuiceObj
+{
+    PropTransparencyLayerEnum myLayerEnum
+    float myTransparencyValue
+    float myFadeSpeed
+}

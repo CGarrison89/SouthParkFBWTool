@@ -1,0 +1,8 @@
+include ./pwr_mm33_city_ninja_peashooter_ranged.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower pwr_dr_mm33_city_ninja_peashooter_ranged < uid=C87888A05A0A15B10014BB0092BE7DA8 > : pwr_mm33_city_ninja_peashooter_ranged
+{
+	myTuningData < uid=C87888A05A0A219D00016D81C64D0B4D > = pwr_dr_mm33_city_ninja_peashooter_ranged_Tuning
+}
+

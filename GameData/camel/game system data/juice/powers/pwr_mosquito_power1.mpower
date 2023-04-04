@@ -1,0 +1,70 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_mosquito.juice"
+
+CombatPower pwr_mosquito_power1 < uid=B9E930CA56D77B91000000208DCFA849 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/mosquito_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.DDS"
+	myUIName "contextComment = \"Mosquito Power 1 Name\", description = \"pwr_mosquito_power1 Name\", enabled = true, guid = #51C546C65774DC340000014A83E37F40, lineVersion = 2, maxLength = 13, text = \"Bug Bite\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_mosquito_power1 Description\", enabled = true, guid = #51C546C65774DC340000014B1C5D5509, lineVersion = 1, maxLength = 131, text = \"In this signature move, Mosquito feeds on his foe's essence, dealing damage and inflicting lifesteal.\"}"
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_mosquito_power1 Short Description\", enabled = true, guid = #9D0E6196579B940D0000015CD89B5EDA, lineVersion = 1, maxLength = 46, text = \"Feed on a foe and inflict lifesteal\""
+	myUseSkillScript < uid=B9E930CA56D77B9100000021E2276214 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 3
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=DB7C6D4257869DF80001699F5A7A6EE7 >
+		{
+			myPriority 20
+		}
+		PowerEvaluationData Enraged < uid=86C9308257D1CE2F000060F055C8D6D7 >
+		{
+			myPriority 1020
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+		}
+		PowerEvaluationData kill < uid=86C9308258A26B850000176FA606A51B >
+		{
+			myPriority 100
+			myMinimumKills 1
+		}
+	}
+	myTuningData < uid=B9E930CA56D77B91000000229903587D > = pwr_mosquito_power1_Tuning
+	myCameraPreset < uid=B9E930CA57BF2A1E000001736B4E6238 > = Mosquito_Power01
+	myValidDirections
+	{
+		myLeft TRUE
+		myRight TRUE
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 1.3333
+				myActionPlusPresetEnum Normal
+			}
+			ActionPlusMiniGameData 2
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 1.8333
+				myActionPlusPresetEnum Normal
+			}
+			ActionPlusMiniGameData 3
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 2.5
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

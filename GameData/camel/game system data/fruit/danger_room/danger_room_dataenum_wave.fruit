@@ -1,0 +1,10 @@
+enum DangerRoomWaveType < useCategories=1 >
+{
+	NOTSET
+
+	Wave1
+	Wave2
+	Wave3
+	
+	Boss
+}

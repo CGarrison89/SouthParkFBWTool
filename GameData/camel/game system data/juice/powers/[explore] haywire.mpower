@@ -1,0 +1,13 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/buddypower_new_haywire.mskillscriptjuice
+
+Power "[explore] haywire" < uid=51C546C6569CA982000000A6D37B4587 >
+{
+	myUIName "contextComment = \"Name for Haywire during unlock presentation\", description = \"[explore] haywire_name\", enabled = true, guid = #F0F6DDB7596919FD00008A76C3356301, lineVersion = 0, maxLength = 11, text = \"Haywire\""
+	myUseSkillScript < uid=51C546C6569CA982000000A771F35A0C > = BuddyPower_New_Haywire
+	myIsPassive TRUE
+	myUseActiveTargeting TRUE
+	myLockedByDefault TRUE
+	myIsBuddyPower TRUE
+}
+

@@ -1,0 +1,650 @@
+include "camel/game system data/fruit/town/town_types.fruit"
+include "camel/game system data/fruit/town/town_tools.fruit"
+include "camel/game system data/fruit/faction/faction.fruit"
+include "camel/game system data/fruit/stats/statistic_types.fruit"
+include "camel/game system data/fruit/evaluator/condition.fruit"
+include "camel/game system data/fruit/ai/actor_tuning.fruit"
+include "camel/game system data/fruit/sound/dialogeventtypes.fruit"
+include "camel/game system data/fruit/timeofday.fruit"
+include "modules/core/audio/audio.fruit"
+
+class TownNullClass
+{
+}
+
+class HeadingConstraint
+{
+	bool myLeft true
+	bool myRight true
+	bool myFront true
+	bool myBack true
+}
+
+list TownInteractionTypeEnumList
+{
+	TownInteractionTypeEnum
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// MotionState
+//
+class TownMotionStateDefinition
+{
+	TownDirectorActionMotionState myMotionState
+	float myTimeoutMin 0
+	float myTimeoutMax 0
+	float myCooldownMin 0
+	float myCooldownMax 0
+}
+
+list TownMotionStateDefinitionList
+{
+	TownMotionStateDefinition
+}
+
+class TownAnimStateTiming
+{
+	bool myUseCooldown false  < tooltip="Use Cooldown Values instead of behavior default" >
+	float myCooldownMin 0
+	float myCooldownMax 0	
+	bool myUseDuration false  < tooltip="Use Duration Values instead of behavior default" >
+	float myDurationMin 0
+	float myDurationMax 0
+}
+
+list TownAnimContextTagList
+{
+	TownAnimContextTagEnum
+}
+
+class TownAnimStateContext
+{
+	TownAnimContextTagList myTags
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// Interaction
+//
+class TownInteractionAnim
+{
+	TownAnimStateTypeEnum myAnimStateType
+	bool myEnabled true < tooltip="Will be used if TRUE" >
+	bool myShowDebugDialog false < tooltip="Show the Debug dialog box" >
+	string myName
+	HeadingConstraint myHeadingConstraint
+	TownAnimStateTiming myTiming
+	TownAnimStateContext myContext
+}
+
+list TownInteractionAnimList
+{
+	TownInteractionAnim
+}
+
+class TownInteractionBase < abstract=1 >
+{
+}
+
+class TownInteraction : TownInteractionBase
+{
+	TownInteractionTypeEnum myInteractionType "NOTSET"
+	bool myEnabled true < tooltip="Will be used if TRUE" >
+	
+	// Time Of Day
+	bool myDay true < tooltip="[Day] Time Of Day Enabled" >
+	bool myNight true < tooltip="[Night] Time Of Day Enabled" >
+	
+	bool myStaticSelection true < tooltip="Can be used if actor is NOT moving" >
+	
+	bool myDynamicSelection true < tooltip="Can be used if actor is moving" >
+
+	bool myFrustrumSelection true < tooltip="Can be used if actor is in the camera frustrum" >
+
+	bool myUseSeatInterpolation false < hidden=1 tooltip="Determine if the seat interpolation should be use if available" >
+	
+	HeadingConstraint myHeadingConstraint < tooltip="Heading supported by the interaction" >
+	TownInteractionAnimList myAnimationMapping
+
+	TownSkillScriptTypeEnum mySelectedSkillScript NOTSET
+	TownSkillScriptTypeEnum myReleasedSkillScript NOTSET
+}
+
+list TownInteractionList
+{
+	TownInteraction
+	TownInteractionList
+}	
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// Interaction	-	Conversation
+//
+class TownInteractionConversation : TownInteraction
+{
+	TownInteractionTypeEnum myInteractionType "conversation" < hidden=1 >
+	float myCooldownOnFart
+	float myCooldownOnIdle
+	float myCooldownOnBump
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// Interaction	-	Object
+//
+class TownInteractionObject : TownInteraction
+{
+	
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// Reaction
+//
+class TownReactionAnim
+{
+	TownAnimStateTypeEnum myAnimStateType
+	bool myEnabled true < tooltip="Will be used if TRUE" >
+	bool myShowDebugDialog false < tooltip="Show the Debug dialog box" >
+	string myName
+	HeadingConstraint myHeadingConstraint
+	TownAnimStateTiming myTiming
+	TownAnimStateContext myContext
+}
+
+list TownReactionAnimList
+{
+	TownReactionAnim
+}
+
+class TownReactionInteractionAnim
+{
+	TownInteractionTypeEnum myInteractionType "NOTSET"
+	TownInteractionTypeEnumList mySharedInteractionType
+	bool myEnabled true < tooltip="Will be used if TRUE" >
+	TownReactionAnimList myAnimationMapping
+}
+
+list TownReactionInteractionList
+{
+	TownReactionInteractionAnim
+}
+
+class TownReactionBase < abstract=1 >
+{
+}
+
+class TownReaction : TownReactionBase
+{
+	TownReactionTypeEnum myReactionType "NOTSET"
+	bool myEnabled true < tooltip="Will be used if TRUE" >
+	
+	// Time Of Day
+	bool myDay true < tooltip="[Day] Time Of Day Enabled" >
+	bool myNight true < tooltip="[Night] Time Of Day Enabled" >
+
+	TownReactionAnimList myAnimationMapping < hidden=1 tooltip="Deprecated: Add to myInteractionMapping instead" >
+	TownReactionInteractionList myInteractionMapping
+}
+
+list TownReactionList
+{
+	TownReaction
+	TownReactionList
+}	
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// ACTOR Tuning
+//
+class TownActorTuningPreset
+{
+	bool myEnabled false < tooltip="Determine if the tuning can be used" >
+	TimeOfDayType myTimeOfDay None < tooltip="Time of day the tuning can be used" >
+	TownActorTuningSpeedType mySpeedType < tooltip="Classify the type of speed it the data correspond to" >
+	ActorTuningData myData < tooltip="Tuning Data to apply" >
+}
+
+list TownActorTuningPresetList
+{
+	TownActorTuningPreset
+}
+
+class TownActorTunings
+{
+	TownActorTuningPresetList myPresets < tooltip="Tuning preset. If multiple options are available 1 will be selected" >
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// ACTOR Navigation
+//
+class TownActorNavigationTimeOfDay
+{
+	bool myDynamicMotionAllowed true < tooltip="Determine if motion is allowed dynamically by himself" >
+}
+
+class TownActorNavigation
+{
+	TownActorNavigationTimeOfDay myDay
+	TownActorNavigationTimeOfDay myNight
+	
+	float myDestinationThreshold 1 < tooltip="Determine how close to the destination position" >
+	
+	float myForwardOffsetDistanceX 0
+	float myForwardOffsetDistanceY 0
+	float myBlockedOffsetDistanceX 0
+	float myBlockedOffsetDistanceY 0
+	
+	bool myDisableVelocityOnTurn false < tooltip="Allow Velocity to be killed when the actor play a turn animation" >
+	string myAnimationStateTurn90 "turn" < tooltip="Animation State Name used when a navigation 180 degree turn occur's" >
+	string myAnimationStateTurn180 "turn" < tooltip="Animation State Name used when a navigation 90 degree turn occur's" >
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// ACTOR Animation
+//
+class TownActorAnimationMode
+{
+	string myMode < tooltip="Mode to pick" >
+	string myValue < tooltip="Type of apply. Must be more then 1 for the system to work properly" >
+}
+
+list TownActorAnimationModeList
+{
+	TownActorAnimationMode
+}
+
+class TownActorAnimation
+{
+	TownActorAnimationModeList myOnSpawnedMode
+	string myOnSpawnState
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// BEHAVIOR
+//
+class TownBehavior
+{
+	TownBehaviorTypeEnum myBehaviorType "NOTSET"
+	TownInteractionList myInteractions
+	TownReactionList myReactions
+	TownMotionStateDefinitionList myMotionStates
+	TownActorNavigation myNavigation
+	TownActorAnimation myAnimation
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// ROLE
+//
+class TownRole
+{
+	TownRoleTypeEnum myRoleType
+	FactionEnum myFaction None < tooltip="Faction" >
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// ASSETS
+//
+class TownAsset < abstract=1 >
+{
+	string myClass < hidden=1 >
+	
+	float myPriority 1.0 < hidden=1 tooltip="Probability of selection" >
+	TownBehavior myBehavior < tooltip="Role of the resource. Need to be compatible with the assets" >
+	color myDebugColorTint 0x00000000
+}
+
+class TownAssetActor : TownAsset
+{
+	string myClass "TownAssetActor"
+	file myAsset < bhv=asset assettype=actor tooltip="Reference the NPC asset" >
+	TownActorGenderType myGender < tooltip="Gender of the actor" >
+	TownActorAgeType myAge < tooltip="Age Category of the actor" >
+	FactionEnum myFaction None < tooltip="Faction" >
+	TownActorRaceTypeList myRacistAgainsts < tooltip="Racist against skin color" >
+	
+	// Time Of Day
+	bool myDay true < tooltip="[Day] Time Of Day Enabled" >
+	bool myNight true < tooltip="[Night] Time Of Day Enabled" >
+
+	TownActorTunings myTunings
+}
+
+class TownAssetProp : TownAsset
+{
+	string myClass "TownAssetProp"
+	file myAsset < bhv=asset assettype=prop tooltip="Reference the Prop asset" >
+}
+
+list TownAssetList
+{
+	TownAsset
+}	
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// RESOURCE
+//
+class TownNPC 
+{
+	TownRole myRole < tooltip="Role of the resource" >
+	TownAssetList myAssets < tooltip="Potential assets who can be selected" >
+}
+
+list TownNPCList
+{
+	TownNPC
+	TownNPCList
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// OBJECT Definition
+//
+enum TownObjectSkillScriptPinData
+{
+	NotSet
+	Actor
+	TownPointObject
+	TownPointSpawn
+	Waypoint
+}
+						   	
+class TownObjectSkillScript 
+{
+	TownSkillScriptTypeEnum myType NOTSET
+	file mySkillScript < types=*.mskillscriptjuice >
+	TownObjectSkillScriptPinData myPin1
+	TownObjectSkillScriptPinData myPin2
+	TownObjectSkillScriptPinData myPin3
+	TownObjectSkillScriptPinData myPin4
+	TownObjectSkillScriptPinData myPin5
+}
+
+list TownObjectSkillScriptList
+{
+	TownObjectSkillScript
+}
+
+class TownObjectDefinition
+{
+	TownObjectTypeEnum myObjectType
+	float myDurationMin 0
+	float myDurationMax 0
+	float myCooldownDurationMin 0 < hidden=1 >
+	float myCooldownDurationMax 0 < hidden=1 >
+	
+	float myCooldownWorldMin 0
+	float myCooldownWorldMax 0
+	float myCooldownCellMin 0
+	float myCooldownCellMax 0
+	float myCooldownObjectMin 0
+	float myCooldownObjectMax 0
+	float myCooldownObjectTypeMin 0
+	float myCooldownObjectTypeMax 0
+	float myCooldownActorMin 0
+	float myCooldownActorMax 0
+	float myCooldownEvaluatorMin 0
+	float myCooldownEvaluatorMax 0
+	
+	TownObjectSkillScriptList mySkillScripts
+}
+
+list TownObjectDefinitionList
+{
+	TownObjectDefinition
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// Interaction Definition
+//
+class TownInteractionBaseDefinition < abstract=1 >
+{
+}
+
+class TownInteractionDefinition : TownInteractionBaseDefinition
+{
+	TownInteractionTypeEnum myInteractionType "NOTSET"
+
+	float myDurationMin 0
+	float myDurationMax 0
+	float myCooldownDurationMin 0
+	float myCooldownDurationMax 0
+
+	StatisticGenericTypeEnum myStatDurationBegin "NOTSET"
+	StatisticGenericTypeEnum myStatDurationEnd "NOTSET"
+}
+
+list TownInteractionDefinitionList
+{
+	TownInteractionDefinition
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// Interaction	-	Conversation
+//
+class TownInteractionConversationDefinition : TownInteractionDefinition
+{
+	TownInteractionTypeEnum myInteractionType "conversation" < hidden=1 >
+	float myCooldownOnFart 0
+	float myCooldownOnIdle 0
+	float myCooldownOnBump 0
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// Reaction Definition
+//
+class TownReactionBaseDefinition < abstract=1 >
+{
+}
+
+class TownReactionDefinition : TownReactionBaseDefinition
+{
+	TownReactionTypeEnum myReaction "NOTSET"
+	float myDurationMin 0
+	float myDurationMax 0
+	float myCooldownDurationMin 0
+	float myCooldownDurationMax 0
+	
+	ListDialogCondition myPrepare
+	ListDialogCondition myTrigger
+	ListDialogCondition mySuccess
+	ListDialogCondition myFailure
+}
+
+list TownReactionDefinitionList
+{
+	TownReactionDefinition
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// RESOURCES
+//
+class TownDirectorConfigTurnQuadrant
+{
+	float myArcBackAngle 90
+	float myArcRightAngle 90
+	float myArcFrontAngle 90
+	float myArcLeftAngle 90
+}
+
+class TownDirectorConfigTurns
+{
+	TownDirectorConfigTurnQuadrant myBack
+	TownDirectorConfigTurnQuadrant myRight
+	TownDirectorConfigTurnQuadrant myFront
+	TownDirectorConfigTurnQuadrant myLeft
+}
+
+class TownResourcesConfig
+{
+	TownDirectorConfigTurns myTurns
+}
+
+class TownResources
+{
+	TownResourcesConfig myConfig < tooltip="Settings" >
+	TownNPCList myNPC < tooltip="NPC classification" >
+	TownObjectDefinitionList myObjects < tooltip="Object(s) Definition" >
+	TownInteractionDefinitionList myInteractions < tooltip="Interaction(s) Definition" >
+	TownReactionDefinitionList myReactions < tooltip="Reaction(s) Definition" >
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// DIRECTOR
+//
+class TownDirectorConfigSpawning
+{
+	float mySpawnPriorityBase 100.0
+	float mySpawnPriorityModifierUsed 10.0
+	int mySpawnPriorityModifierModulo 5
+	int mySpawnPriorityInsideFrustrumProbability 3
+	int mySpawnPriorityOutsideFrustrumProbability 6
+}
+
+class TownDirectorConfig
+{
+	TownDirectorConfigSpawning mySpawning
+}
+
+class TownDirectorVOInstanceCooldown
+{
+	DialogEventType myDialogType
+	float myInitialMin 0.0 < tooltip="Min Initial Cooldown applied at spawn" >
+	float myInitialMax 0.0 < tooltip="Max Initial Cooldown applied at spawn" >
+	float myDurationMin 0.0 < tooltip="Min Cooldown applied when speaking" >
+	float myDurationMax 0.0 < tooltip="Max Cooldown applied when speaking" >
+}
+
+list TownDirectorVOInstanceCooldownList
+{
+	TownDirectorVOInstanceCooldown
+}
+
+class TownDirectorDefaultHumanInit
+{
+	float myActionsRatio 0.0
+	float myLocomotionRatio 0.0
+}
+
+class TownDirectorDefaultHumanSpawning
+{
+	float myActionsRatio 0.0
+	float myLocomotionRatio 0.0
+
+	float myDelayMin 0.0 < tooltip="Min delay before spawn wave" >
+	float myDelayMax 0.0 < tooltip="Max delay before spawn wave" >
+	int myPlayerClosestCount 0 < tooltip="Number of spawn point to focus around the player" >
+}
+
+class TownDirectorDefaultHuman
+{
+	int myPopulationMin 1 < tooltip="Minimum Biped Population" >
+	int myPopulationMax 100 < tooltip="Maximum Biped Population" >
+	
+	TownDirectorDefaultHumanInit myInit
+	TownDirectorDefaultHumanSpawning mySpawning
+		
+	TownMotionStateDefinitionList myMotionStates
+}
+
+class TownDirectorDefaultVehicleInit
+{
+	float myActionsRatio 0.0
+	float myLocomotionRatio 0.0
+}
+
+class TownDirectorDefaultVehicleSpawning
+{
+	float myActionsRatio 0.0
+	float myLocomotionRatio 0.0
+
+	float myDelayMin 0.0 < tooltip="Min delay before spawn wave" >
+	float myDelayMax 0.0 < tooltip="Max delay before spawn wave" >
+}
+
+class TownDirectorDefaultVehicle
+{
+	int myPopulationMin 1 < tooltip="Minimum Vehicle Population" >
+	int myPopulationMax 100 < tooltip="Maximum Vehicle Population" >
+	
+	TownDirectorDefaultVehicleInit myInit
+	TownDirectorDefaultVehicleSpawning mySpawning
+		
+	TownMotionStateDefinitionList myMotionStates
+}
+
+class TownDirectorDefaultInit
+{
+	float myActionsRatio 0.0
+	float myLocomotionRatio 0.0
+}
+
+class TownDirectorDefaultSpawning
+{
+	float myActionsRatio 0.0
+	float myLocomotionRatio 0.0
+	
+	float myBipedDelayMin 0.0
+	float myBipedDelayMax 0.0
+	float myVehicleDelayMin 0.0
+	float myVehicleDelayMax 0.0
+}
+
+class TownDirectorDefaultPersistence
+{
+	float myMemoryDurationSeconds 0.0 < tooltip="Duration the director memory will be kept. If older, it will be rebuilt" >
+}
+
+class TownDirectorDefaults
+{
+	bool myEnabled true < tooltip="Enable/Disable Living town" >
+	float myDistribution 0.0 
+	
+	TownDirectorDefaultHuman myHuman
+	TownDirectorDefaultVehicle myVehicle
+	TownDirectorDefaultPersistence myPersistence
+	TownDirectorVOInstanceCooldownList  myVOInstanceCooldowns
+}
+
+class TownDirector
+{
+	TownDirectorConfig myConfig 
+	TownDirectorDefaults myDefaults 
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// Cell
+//
+list TownCellVariableList
+{
+	varmap < bhv = "numGlobalVar" >
+}
+
+class TownCell
+{
+	TownCellVariableList myRestoreVariablesOnCellExit < tooltip="Global variable to restore when changing cell" >
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// WORLD
+//
+class TownWorld
+{
+	bool myDisable false < tooltip="Prevent the living town from running" >
+	AudioState myAudioStateCinematicIn < tooltip="Audio State used when cinematic is launched" >
+	AudioState myAudioStateCinematicOut < tooltip="Audio State used when cinematic is exited" >
+}

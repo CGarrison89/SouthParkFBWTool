@@ -1,0 +1,6 @@
+enum UITeamSelectionState
+{
+	None
+	TeamView
+	ReserveView
+}

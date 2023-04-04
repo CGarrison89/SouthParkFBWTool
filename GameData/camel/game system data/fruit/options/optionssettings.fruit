@@ -1,0 +1,37 @@
+include "camel/game system data/fruit/ui/settings/GraphicsLevel.fruit"
+
+class OptionsDefaultData
+{
+	bool myPadVibration TRUE
+	float myEffectVolume 100.0
+	float myVoiceVolume 100.0
+	float myMusicVolume 100.0
+	float myBrightness 0.5 < min=0.0 max=1.0 >
+	bool mySubtitleSw TRUE
+	bool mySubtitleSwForEnglish FALSE
+	int myVoiceLanguage 0
+	int mySubtitleLanguage 0
+	int myMenuLanguage 0
+	GraphicsLevel myGraphicsLevel Medium
+	bool myGamepadLocked FALSE
+	bool myTowelieHintsEnabled TRUE
+	int myBootCount 0
+	int mySubtitleLevel 0
+	bool myMinigameAssist FALSE
+	bool myCombatQTEAssist FALSE
+	bool mySubtitleAudio FALSE
+	bool myInputAssist FALSE
+}
+
+class OptionsSettings
+{
+	string myEffectRTPCName "RTPC_GLB_SFXVolume"
+	string myVoiceRTPCName "RTPC_GLB_VOVolume"
+	string myMusicRTPCName "RTPC_GLB_MusicVolume"
+	
+	OptionsDefaultData myDefault
+
+	float myBrightnessMin -0.5
+	float myBrightnessMax  0.5
+}
+

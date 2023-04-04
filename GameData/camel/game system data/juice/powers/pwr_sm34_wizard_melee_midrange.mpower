@@ -1,0 +1,8 @@
+include ./pwr_sm34_wizard_melee.mpower
+
+CombatPower pwr_sm34_wizard_melee_midrange < uid=86C9308258880F2200034A205149F7BB > : pwr_sm34_wizard_melee
+{
+	myAnimationState power2
+	myShouldRepositionBeforeExecution FALSE
+}
+

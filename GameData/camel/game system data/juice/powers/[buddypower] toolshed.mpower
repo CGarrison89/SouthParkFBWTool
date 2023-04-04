@@ -1,0 +1,17 @@
+include camel/skillscript/explore_cursortargeting.mskillscriptjuice
+include camel/skillscript/explore_interact.mskillscriptjuice
+include camel/skillscript/buddypower_shove.mskillscriptjuice
+include camel/skillscript/buddypower_malkinson.mskillscriptjuice
+include camel/skillscript/buddypower_toolshed.mskillscriptjuice
+include "camel/game system data/fruit/powers/powers.fruit"
+
+Power "[BuddyPower] Toolshed" < uid=6D91A59C552C660C000001B90860AC00 >
+{
+	myUIName "contextComment = \"Name for Haywire during unlock presentation\", description = \"[BuddyPower] Toolshed_name\", enabled = true, guid = #F0F6DDB759691A5D00008A9536B252ED, lineVersion = 0, maxLength = 14, text = \"Sandblaster\""
+	myUseSkillScript < uid=6D91A59C552C660C000001BAEA228376 > = BuddyPower_Toolshed
+	myIsPassive FALSE
+	myUseActiveTargeting FALSE
+	myLockedByDefault TRUE
+	myIsBuddyPower TRUE
+}
+

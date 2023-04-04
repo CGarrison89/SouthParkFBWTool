@@ -1,0 +1,8 @@
+enum UIEquipmentState
+{
+	Inventory
+	Equipment
+	EquipArtifactFromList
+	EquipArtifactFromSlots
+	RemoveArtifact
+}

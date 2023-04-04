@@ -1,0 +1,16 @@
+include camel/skillscript/explore_cursortargeting.mskillscriptjuice
+include camel/skillscript/explore_interact.mskillscriptjuice
+include camel/skillscript/scottmalkinson_shove.mskillscriptjuice
+include camel/skillscript/scottmalkinson_cancel.mskillscriptjuice
+include camel/skillscript/buddypower_controlbuddy_exit.mskillscriptjuice
+include camel/skillscript/buddypower_controlbuddy_captaindiabetes_exit.mskillscriptjuice
+include "camel/game system data/fruit/powers/powers.fruit"
+
+Power "[BuddyPower] ControlBuddy_CaptainDiabetes_Exit" < uid=6D91A59C5556622B00000010E0F807C9 >
+{
+	myUseSkillScript < uid=6D91A59C5556622B00000011410D4F66 > = BuddyPower_ControlBuddy_CaptainDiabetes_Exit
+	myTargetingSkillScript < uid=6D91A59C5556622B0000001234113223 > = NULLREFERENCE
+	myIsPassive FALSE
+	myUseActiveTargeting FALSE
+}
+

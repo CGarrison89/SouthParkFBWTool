@@ -1,0 +1,94 @@
+include ./dlc3_enemypowers.juice
+include ./enemy_pwr_archetype_wizard_pierce_ranged.mpower
+include camel/skillscript/dlc3_monsters_wizard_swappower_aftertelegraph.mskillscriptjuice
+include camel/skillscript/dlc3_monsters_wizard_piercing_telegraph_targeting_skillscript.mskillscriptjuice
+
+CombatPower pwr_DLC3_Monsters_Wizard_piercing_telegraph < uid=3267E0D05AA6D459000453B07E2F5FBB > : enemy_pwr_archetype_wizard_pierce_ranged
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/Monster_Ranged_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/4_range.dds"
+	myUIName "contextComment = \"\", description = \"pwr_DLC3_Monsters_Wizard_piercing_telegraph_name\", enabled = true, guid = #3267E0D05AA6D459000453AEE5771D6E, lineVersion = 1, maxLength = 16, text = \"Monster Tele\""
+	myUIDescription "contextComment = \"\", description = \"pwr_DLC3_Monsters_Wizard_piercing_telegraph_description\", enabled = true, guid = #3267E0D05AA6D459000453AFEB8796AA, lineVersion = 0, maxLength = 55, text = \"DLC3 Wizard Piercing Telegraph description\""
+	myUseSkillScript < uid=3267E0D05AA6D459000453B11C36597F > = DLC3_Monsters_Wizard_Piercing_Telegraph_Targeting_SkillScript
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Range1 < uid=3267E0D05AA6D459000453B241F7ABFA >
+		{
+			myPriority 10
+			myRequiresNonTelegraphedDamageCells FALSE
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myPreferLeastAlliesTargeted TRUE
+			myMinimumAffectedTargets 1
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Range2 < uid=3267E0D05AA6D459000453B3961257A8 >
+		{
+			myPriority 11
+			myRequiresNonTelegraphedDamageCells FALSE
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myPreferLeastAlliesTargeted TRUE
+			myMinimumAffectedTargets 2
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Range3 < uid=3267E0D05AA6D459000453B492C41056 >
+		{
+			myPriority 12
+			myRequiresCover FALSE
+			myRequiresNonTelegraphedDamageCells FALSE
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myPreferLeastAlliesTargeted TRUE
+			myMinimumAffectedTargets 3
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Range4 < uid=3267E0D05AA6D459000453B53C975ED0 >
+		{
+			myPriority 13
+			myRequiresNonTelegraphedDamageCells FALSE
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myPreferLeastAlliesTargeted TRUE
+			myMinimumAffectedTargets 4
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Range5 < uid=3267E0D05AA6D459000453B6C0C38AC3 >
+		{
+			myPriority 14
+			myRequiresNonTelegraphedDamageCells FALSE
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myPreferLeastAlliesTargeted TRUE
+			myMinimumAffectedTargets 5
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=3267E0D05AA6D459000453BC39204D76 > = DLC3_monsters_wizard_SwapPower_AfterTelegraph
+	myTuningData < uid=3267E0D05AA6D459000453BD125E6AE5 > = pwr_DLC3_Monsters_Wizard_Piercing_Telegraph_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myTelegraphData
+	{
+		myTelegraphedPowerName pwr_DLC3_Monsters_Wizard_piercing_execute
+		myTelegraphingAnimationName locomotion
+	}
+}
+

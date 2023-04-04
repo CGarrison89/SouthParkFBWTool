@@ -1,0 +1,27 @@
+include ./pwr_com_kitchenheal.mpower
+
+CombatPower pwr_com_kitchenshield < uid=DB7C6D4256BE59F200006AA172FCFF28 > : pwr_com_kitchenheal
+{
+	myIconImage "camel/baked/assets/ui/power selection/power - tupperware - tupperwall.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_kitchenshield Name\", enabled = true, guid = #51C546C65774DBE7000000AA6022371F, lineVersion = 0, maxLength = 16, text = \"Pasta Shield\""
+	myProjectile < uid=DB7C6D4257337CD50000978D36E9F58D > = chaos_disc
+	myPowerEvaluationData
+	{
+		PowerEvaluationData shield < uid=DB7C6D4256BE5C1500006ABD65936D11 >
+		{
+			myPriority 30
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=DB7C6D4256BE59F200006AA2317442D4 > = pwr_com_kitchenshield_MAcero_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

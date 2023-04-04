@@ -1,0 +1,34 @@
+include ./enemy_pwr_archetype_bruiser_melee_knockback.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower MM16_blackcells_bruiser_melee_knockback < uid=86D64076574CCFD10000013C79B65A6D > : enemy_pwr_archetype_bruiser_melee_knockback
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/swatcop_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"mm16_blackcells_bruiser_melee_knockback Name\", enabled = true, guid = #51C546C65774D94A000000ABA5612FCF, lineVersion = 0, maxLength = 6, text = \"Club\""
+	myUseSkillScript < uid=B9E930CA576CA08300000194C8AA56F0 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D0574F90F00002637E0A40B03D >
+		{
+			myPriority 30
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData killshot < uid=6D7AC9B1583CD5500004EAA2221CDAA5 >
+		{
+			myPriority 31
+			myMinimumKills 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+}
+

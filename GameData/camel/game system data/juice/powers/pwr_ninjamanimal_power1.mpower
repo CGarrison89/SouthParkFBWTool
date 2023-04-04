@@ -1,0 +1,78 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/pwr_assassin_power01_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_assassin.juice"
+
+CombatPower pwr_ninjamanimal_power1 < uid=B9E930CA56DA26ED00000176D4CCD662 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/ninja_manimal_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.DDS"
+	myUIName "contextComment = \"Assassin Power 1 Name\", description = \"pwr_ninjamanimal_power1 Name\", enabled = true, guid = #51C546C65774DC410000016D26223A3E, lineVersion = 2, maxLength = 17, text = \"Killer Kancho\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_ninjamanimal_power1 Description\", enabled = true, guid = #51C546C65774DC410000016EB92D9B5F, lineVersion = 0, maxLength = 173, text = \"Channeling a dangerously wacky Japanese prank show, the Assassin perfoms a one-handed kancho maneuver for embarrassment and Bleeding.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_ninjamanimal_power1 Short Description\", enabled = true, guid = #9D0E6196579BDEDE000044CE38ADC3BA, lineVersion = 0, maxLength = 53, text = \"Target a sensitive spot, inflict Bleeding\""
+	myUseSkillScript < uid=B9E930CA56DA26ED0000017766B03A56 > = pwr_assassin_power01_script
+	myAnimationState ninjamanimal_power1
+	myNumberOfAttackEvents 2
+	myShouldRepositionBeforeExecution TRUE
+	myShouldRepositionToCellCenterBeforeExecution FALSE
+	myShouldUseLaunchReactions TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Kill < uid=86C9308258E7BD71000041113A6F3F38 >
+		{
+			myPriority 13400
+			myMinimumKills 1
+		}
+		PowerEvaluationData "Not bleeding" < uid=86C9308258E7BD710000411251E6DF1B >
+		{
+			myPriority 5500
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not bleeding"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Bleeding
+				}
+			}
+		}
+		PowerEvaluationData Bleeding < uid=86C9308258E7BD96000041135CE60F96 >
+		{
+			myPriority 5400
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Bleeding
+				{
+					myPreCondition MustHave
+					mySpecialEffect Bleeding
+				}
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA56DA26ED000001780D58E863 > = pwr_ninjamanimal_power1_Tuning
+	myCameraPreset < uid=8E1BC4435947833E001204CD6678C14A > = Assassin_Power01
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.0
+				myActionPlusEndTime 1.166667
+				myActionPlusPresetEnum Normal
+			}
+			ActionPlusMiniGameData 2
+			{
+				myActionPlusEndTime 1.5
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

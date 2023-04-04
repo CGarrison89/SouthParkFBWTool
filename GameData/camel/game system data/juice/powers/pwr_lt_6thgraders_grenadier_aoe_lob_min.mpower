@@ -1,0 +1,15 @@
+include ./enemy_pwr_archetype_grenadier_aoe_lob_min.mpower
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/projectiles/projectile_sixthgraderpissballoon.mprojectile"
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+include camel/skillscript/camel_lobbed_power_playanim_script.mskillscriptjuice
+
+CombatPower pwr_LT_6thgraders_grenadier_aoe_lob_min < uid=86C9308257683BAA000003E48CD3552C > : enemy_pwr_archetype_grenadier_aoe_lob_min
+{
+	myUseSkillScript < uid=DB7C6D4257A8BA0D00008B50492AD0FE > = Camel_Lobbed_Power_PlayAnim_Script
+	myAnimationState power1
+	myProjectile < uid=DB7C6D4257A8B4C500003A125E5AAE07 > = projectile_sixthGraderPissBalloon
+	myTuningData < uid=86C9308257683BAA000003E5C83AC030 > = pwr_LT_6thgraders_grenadier_aoe_lob_min_Kevin_Tuning
+}
+

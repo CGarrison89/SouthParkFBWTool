@@ -1,0 +1,8 @@
+include ./pwr_sm34_wizard_ranged_spatula.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower pwr_dr_sm34_wizard_ranged_spatula < uid=C87888A05A0A6B56000A36D77A8CCA95 > : pwr_sm34_wizard_ranged_spatula
+{
+	myTuningData < uid=C87888A05A0A6C7100013AF8EE7A8314 > = pwr_dr_sm34_wizard_ranged_Tuning
+}
+

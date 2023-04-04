@@ -1,0 +1,10 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_SM34_Buca_Nichole_melee < uid=86C93082585303DB00069E4BB7E2D592 > : enemy_pwr_archetype_swarmer_melee
+{
+	myUseSkillScript < uid=86C93082585303DB00069E4C3DD1891A > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 3
+}
+

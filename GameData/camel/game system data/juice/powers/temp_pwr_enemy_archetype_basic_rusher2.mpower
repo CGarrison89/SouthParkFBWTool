@@ -1,0 +1,39 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower temp_pwr_enemy_archetype_basic_rusher2 < uid=B9E930CA574091600000004FFA39075F >
+{
+	myUIName "contextComment = \"\", description = \"temp_pwr_enemy_archetype_basic_rusher2 Name\", enabled = true, guid = #51C546C65774DC74000001E48BA0AE9F, lineVersion = 0, maxLength = 27, text = \"ST Melee Attack 2 DMG\""
+	myUseSkillScript < uid=B9E930CA5740916000000050B55EF1F0 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "kill blow" < uid=B9E930CA57409DBF000001179146CFD0 >
+		{
+			myPriority 30
+			myMinimumKills 1
+			myMinimumAffectedTargets 1
+			myTargetHealthLessThanPercentage 20.0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData default < uid=B9E930CA57409DBF0000011854039496 >
+		{
+			myPriority 10
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA574099E9000000CDD3040175 > = temp_pwr_enemy_archetype_basic_rusher2_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

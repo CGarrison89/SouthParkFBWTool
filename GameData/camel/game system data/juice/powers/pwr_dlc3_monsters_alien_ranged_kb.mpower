@@ -1,0 +1,40 @@
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_alien_raygun.mprojectile"
+include ./dlc3_enemypowers.juice
+
+CombatPower pwr_dlc3_monsters_alien_ranged_kb < uid=3267E0D05AA9B7B9001F267B1BEEC84E > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Alien_LaserGun.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/2_range_ST.dds"
+	myUseSkillScript < uid=3267E0D05AA9B7B9001F267C440E8497 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myProjectile < uid=3267E0D05AA9B7B9001F267DB71A9680 > = projectile_alien_raygun
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "1 Space" < uid=3267E0D05AA9D740002A26F90D633967 >
+		{
+			myPriority 10
+			myPreferredRange 1
+		}
+		PowerEvaluationData "2 Spaces" < uid=3267E0D05AA9D740002A26FA6C42AF46 >
+		{
+			myPriority 20
+			myPreferredRange 2
+		}
+		PowerEvaluationData "3 Spaces" < uid=3267E0D05AA9D740002A26FBA83BE82A >
+		{
+			myPriority 30
+			myPreferredRange 3
+		}
+		PowerEvaluationData "4 Spaces" < uid=3267E0D05AA9D901002D79411C7A5FE5 >
+		{
+			myPriority 40
+			myPreferredRange 4
+		}
+	}
+	myTuningData < uid=3267E0D05AA9B7B9001F267FF0B3FECC > = pwr_DLC3_Monsters_Alien_Ranged_KB_Tuning
+}
+

@@ -1,0 +1,24 @@
+include ./mm31_civilwar2_timmy_teleport.mpower
+include camel/skillscript/mm16_civilwar3_timothy_teleport.mskillscriptjuice
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_civilwar3_timmy_power4 < uid=86C9308257CA09ED0000636E8EF759C3 > : MM31_civilwar2_timmy_teleport
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/doctortimothy_power4.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/select_roomwide.dds"
+	myUseSkillScript < uid=86C9308257CA09ED0000636F64EB1510 > = MM16_civilwar3_timothy_teleport
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=86C93082597189A300147E3954649E06 >
+		{
+			myPriority 1000
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86C93082582D297700017C5B0D8D01E8 > = MM31_civilwar2_timmy_summon_teleport_MNguyen_Tuning
+}
+

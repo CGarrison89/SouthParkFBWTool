@@ -1,0 +1,27 @@
+include ./pwr_com_bouncerpunch.mpower
+
+CombatPower pwr_cat1_swipe < uid=DB7C6D4256E37CA1000002CA3F67A30A > : pwr_com_bouncerpunch
+{
+	myUIName "contextComment = \"\", description = \"pwr_cat1_swipe Name\", enabled = true, guid = #51C546C65774D963000000FBFC33B670, lineVersion = 0, maxLength = 8, text = \"Swipe\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Kill < uid=DB7C6D4256FB2E2B0000203E2F50CE31 >
+		{
+			myPriority 50
+			myAggroPriority 50
+		}
+		PowerEvaluationData AoE < uid=DB7C6D4256FB2E2B0000203FA9903AD8 >
+		{
+			myPriority 40
+			myAggroPriority 40
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData punch < uid=DB7C6D4256FB2E2B00002040C5547970 >
+		{
+			myPriority 20
+			myAggroPriority 20
+		}
+	}
+	myTuningData < uid=DB7C6D4256E37CA1000002CB9FA3D566 > = pwr_cat1_swipe_MAcero_Tuning
+}
+

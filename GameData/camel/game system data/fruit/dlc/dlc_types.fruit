@@ -1,0 +1,27 @@
+enum EntitlementType {
+	preorder
+	dlc1
+	dlc2
+	dlc3
+	season_pass
+}
+
+enum EntitlementState {
+	Unknown
+	Invalid
+	NotSupported
+	NeedToUpdate
+	NeedEntitlement
+	NeedToInstall
+	Available
+	NeedToDownload
+	Downloading
+}
+
+enum PackageType {
+	main
+	dlc1
+	dlc2
+	dlc3
+	UNDEFINED
+}

@@ -1,0 +1,15 @@
+include ./telegraph_sm68_masipedophiles_warlock_charge_gross.mpower
+include ./dlc2_enemypowers.juice
+include camel/skillscript/dr_sm68_pedo_priest_charge_warlock01_telegraph.mskillscriptjuice
+
+CombatPower dr_telegraph_sm68_masipedophiles_warlock_charge_gross < uid=C87888A05A063708001C0C9DCBB30F6B > : telegraph_sm68_masipedophiles_warlock_charge_gross
+{
+	myUseSkillScript < uid=86C930825A15B19E000213DA3861B8BF > = dr_sm68_pedo_priest_charge_warlock01_telegraph
+	myTuningData < uid=C87888A05A06373D001C0CA48D429607 > = pwr_dr_sm68_warlock_telegraph_charge_gross_Tuning
+	myTelegraphData
+	{
+		myTelegraphedPowerName dr_sm68_maxipedophiles_warlock_charge_gross
+		myTelegraphingAnimationName power3_idle
+	}
+}
+

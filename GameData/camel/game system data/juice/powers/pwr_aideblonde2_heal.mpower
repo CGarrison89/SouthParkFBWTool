@@ -1,0 +1,31 @@
+include ./pwr_com_kitchenheal.mpower
+
+CombatPower pwr_aideblonde2_heal < uid=DB7C6D4256EA19830000017EF76753EE > : pwr_com_kitchenheal
+{
+	myUIName "contextComment = \"\", description = \"pwr_aideblonde2_heal Name\", enabled = true, guid = #51C546C65774D959000000D5EFF8955A, lineVersion = 0, maxLength = 14, text = \"Eat Fresh\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData heal_selfcritical < uid=DB7C6D4256FAEEE300001AD1591DD8EE >
+		{
+			myPriority 50
+			myAggroPriority 50
+			mySelfHealthLessThanPercentage 35.0
+		}
+		PowerEvaluationData heal_self < uid=DB7C6D4256FAEEE300001AD20E88DAAC >
+		{
+			myPriority 40
+			myAggroPriority 40
+			myTargetHealthLessThanPercentage 101.0
+			mySelfHealthLessThanPercentage 65.0
+		}
+		PowerEvaluationData heal_ally < uid=DB7C6D4256FAEEE300001AD337EF123D >
+		{
+			myPriority 35
+			myAggroPriority 35
+			myTargetHealthLessThanPercentage 40.0
+			mySelfHealthLessThanPercentage 101.0
+		}
+	}
+	myTuningData < uid=DB7C6D4256EA19830000017FC1C8C393 > = pwr_aideblonde2_eatfresh_MAcero_Tuning
+}
+

@@ -1,0 +1,19 @@
+include "camel/game system data/fruit/cell/cell_condition.fruit"
+
+class MapBlocker < uid=auto >
+{
+	MapRegion* myRegion
+	vec2f myRegionOffset 0.0;0.0
+	file myIcon "camel/ui/temp assets/pause/appy/mapquest/icon_pathblocked.png" < types=*.png >
+	Conditions myShowConditions	
+}
+
+list MapBlockerList
+{
+	MapBlocker
+}
+
+class MapBlockerInfo
+{
+	MapBlockerList myBlockerList
+}

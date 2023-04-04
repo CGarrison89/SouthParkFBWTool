@@ -1,0 +1,8 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_LT_oldpeople_bruiser_melee < uid=86C9308257683A430000039A8F4D8D1A > : enemy_pwr_archetype_bruiser_melee
+{
+	myTuningData < uid=86C9308257683A430000039B83E86186 > = pwr_LT_oldpeople_bruiser_melee_Kevin_Tuning
+}
+

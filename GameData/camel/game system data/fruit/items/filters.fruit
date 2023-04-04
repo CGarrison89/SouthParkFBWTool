@@ -1,0 +1,42 @@
+include "camel/game system data/fruit/items/categories.fruit"
+
+enum ItemFilter
+{
+	None
+	All
+	Consumables
+	AllArtifacts
+	Costumes
+	Component
+	AllRecipes
+	RecipeArtifact
+	RecipeCostume
+	RecipeComponent
+	RecipeConsumable
+	CostumeBody
+	CostumeHands
+	CostumeHead
+	AllCostume
+	StreetBody
+	StreetEyewear
+	StreetFacialHair
+	StreetHair
+	StreetHands
+	StreetHead
+	StreetMakeup
+	StreetMakeup2
+	StreetBodyCollection
+	HeroCostume
+	StreetCostume
+	AllButRecipes
+	AllButRecipeAndCostume
+	AllCostumeNoStreetClothes
+	CollectableYaoi
+	CollectableCharacterSheet
+}
+
+class ItemFilterInfo
+{
+	file myIcon
+	ItemCategories myItemCategories
+}

@@ -1,0 +1,14 @@
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./playerpowers.juice
+
+CombatPower pwr_com_melee < uid=B642A89A55AFC54300000024AB57D0B0 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/power - butthole - melee.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_melee Name\", enabled = true, guid = #51C546C65774DBE9000000AE9CAB93D2, lineVersion = 0, maxLength = 1, text = \"Melee\""
+	myUseSkillScript < uid=B642A89A55AFC54300000025BCEDF7D8 > = Camel_Simple_PlayAnim_Script
+	myTargetingSkillScript < uid=B642A89A55AFC5430000002604B58B1E > = NULLREFERENCE
+	myAnimationState melee
+	myNumberOfAttackEvents 3
+	myTuningData < uid=B642A89A55AFDEDE000000518AD44BB1 > = pwr_com_melee_Tuning
+}
+

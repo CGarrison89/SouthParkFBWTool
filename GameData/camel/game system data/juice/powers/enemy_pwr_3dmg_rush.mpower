@@ -1,0 +1,47 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+
+CombatPower enemy_pwr_3dmg_rush < uid=86D64076574CC98100000026DA457159 >
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_3dmg_rush Name\", enabled = true, guid = #51C546C65774D938000000850EDA4C1B, lineVersion = 0, maxLength = 14, text = \"Rusher Rush\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D64076574CC98100000027F83F4534 >
+		{
+			myPriority 100
+			myPreferredRange 3
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86D64076575614E3000001CF78A90B89 >
+		{
+			myPriority 100
+			myAggroPriority 1100
+			myRequireAggroTarget TRUE
+			myPreferredRange 3
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	mySecondarySkillScript < uid=86D64076574CC98100000028BAFF8C8B > = Simple_Rush_Damage_Script
+	myTuningData < uid=86D64076574CC98100000029F4C88517 > = enemy_pwr_3dmg_rush_MNguyen_Tuning
+	myAnimationSetData
+	{
+		myIntroState rushintro
+		myLoopState rushloop
+		myOutroState rushoutro
+	}
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

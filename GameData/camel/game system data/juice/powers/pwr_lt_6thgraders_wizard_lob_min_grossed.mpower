@@ -1,0 +1,9 @@
+include ./enemy_pwr_archetype_warlock_lob_min_gross.mpower
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+
+CombatPower pwr_lt_6thgraders_wizard_lob_min_grossed < uid=86C93082577978190000017A02E05C77 > : enemy_pwr_archetype_warlock_lob_min_gross
+{
+	myTuningData < uid=86C93082577978190000017BBD77B968 > = pwr_LT_6thgraders_wizard_lob_min_grossed_Kevin_Tuning
+}
+

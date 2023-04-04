@@ -1,0 +1,11 @@
+enum EntryExitPhase
+{
+	IGCMinigameEntry
+	IGCMinigameIntro
+	IGCMinigameSuccessOutro
+	IGCMinigameSuccessExit
+	IGCMinigameFailureExit
+	MinigameIdleSuccess
+	MinigameSpecificIntro
+    MinigameStartCamera
+}

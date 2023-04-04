@@ -1,0 +1,11 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/buddypower_mysterion.mskillscriptjuice
+
+Power "[explore] mysterion" < uid=51BEBECC56D8F69B000000119D6A61A5 >
+{
+	myUseSkillScript < uid=51BEBECC56D8F69B00000012B2485C1D > = BuddyPower_Mysterion
+	myIsPassive TRUE
+	myUseActiveTargeting TRUE
+	myLockedByDefault TRUE
+}
+

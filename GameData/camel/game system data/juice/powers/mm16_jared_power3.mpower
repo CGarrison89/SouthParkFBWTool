@@ -1,0 +1,53 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_jared_sandwich.mprojectile"
+include "camel/game system data/juice/camera/uber_camera_powers_presets_elementalist.juice"
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_jared.juice"
+
+CombatPower mm16_jared_power3 < uid=3267E0D05750B8820001CC0235582626 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/jared_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.DDS"
+	myUIName "contextComment = \"\", description = \"mm16_jared_power3 Name\", enabled = true, guid = #51C546C65774D94F000000B6EE2B3A03, lineVersion = 0, maxLength = 18, text = \"You're Too Old\""
+	myUseSkillScript < uid=3267E0D05750B8820001CC039B85F392 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myNumberOfAttackEvents 5
+	myShouldRepositionBeforeExecution TRUE
+	myProjectile < uid=86C930825858579F0000E0E5A0D6376D > = projectile_jared_sandwich
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D05750B8820001CC04071E7312 >
+		{
+			myPriority 50
+			myPreferredRange 1
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData KillTarget < uid=8585E53F58796674001C34A7D4D8A6C5 >
+		{
+			myPriority 60
+			myMinimumKills 1
+			myPreferredRange 1
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myMeleeOffset -1.0;0.0
+	myTuningData < uid=3267E0D05750B8820001CC058BD537F4 > = enemy_pwr_mm16_jared_power1_amcclay_Tuning
+	myCameraPreset < uid=86C93082585B24A60000B5A5A1798FDB > = Jared_Power03
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

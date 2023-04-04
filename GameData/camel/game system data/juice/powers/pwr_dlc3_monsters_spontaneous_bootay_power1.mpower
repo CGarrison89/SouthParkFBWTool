@@ -1,0 +1,66 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./enemypowers.mvernon.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include ./dlc3_enemypowers.juice
+
+CombatPower pwr_dlc3_monsters_spontaneous_bootay_power1 < uid=C87888A05AF9ED290000B74206A61DE2 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/SpontaneousBootay_Smother.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_square_debuff.dds"
+	myUIName "contextComment = \"\", description = \"pwr_spantaneous_bootay_power1 Name\", enabled = true, guid = #C87888A05AF9ED290000B7415C77CFDF, lineVersion = 1, maxLength = 30, text = \"Spontaneous Destruction\""
+	myUseSkillScript < uid=C87888A05AF9ED290000B7434187EBE9 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myShouldRepositionBeforeExecution FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=C87888A05AF9ED290000B74462A31D4B >
+		{
+			myPriority 10
+			myMinimumAffectedTargets 2
+			myValidDirections
+			{
+				myLeft TRUE
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "3 targets (including self)" < uid=C87888A05AF9ED290000B74580482FF7 >
+		{
+			myPriority 20
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "4 targets (including self)" < uid=C87888A05AF9ED290000B746B6377B11 >
+		{
+			myPriority 30
+			myAggroPriority 4
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "5 targets (including self)" < uid=C87888A05AF9ED290000B747C891169D >
+		{
+			myPriority 40
+			myMinimumAffectedTargets 5
+		}
+		PowerEvaluationData UpDown < uid=C87888A05AF9ED290000B748B2A20381 >
+		{
+			myPriority 50
+			myAggroPriority 0
+			myMinimumAffectedTargets 2
+			myValidDirections
+			{
+				myLeft FALSE
+				myRight FALSE
+			}
+		}
+		PowerEvaluationData destructibleprops < uid=C87888A05AF9ED290000B7497354B5B5 >
+		{
+			myPriority 5
+			myMinimumAffectedTargets 2
+			myAIDesirableType A
+		}
+	}
+	myTuningData < uid=C87888A05AF9ED290000B74A7EB6A73D > = pwr_DLC3_monsters_spontaneous_bootay_power1_Tuning
+	myCameraPreset < uid=C87888A05AF9ED290000B74B3ED37388 > = Preset_Generic_Melee
+}
+

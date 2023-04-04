@@ -1,0 +1,29 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./enemypowers.adrian.juice
+
+CombatPower MM31_civilwar2_timmy_basic_ranged < uid=DB7C6D4257562186000074C3739F2E72 >
+{
+	myUIName "contextComment = \"\", description = \"mm31_civilwar2_timmy_basic_ranged Name\", enabled = true, guid = #51C546C65774D951000000BDE8D655A6, lineVersion = 0, maxLength = 34, text = \"[Telekinetic Throw Object]\""
+	myUseSkillScript < uid=DB7C6D4257562232000074DBF9FC8891 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=DB7C6D4257562186000074C43014F2AA >
+		{
+			myPriority 10
+			myRequireAggroTarget FALSE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=DB7C6D4257562232000074DC11C34AF9 > = pwr_mm31_timmy_basic_ranged_Adrian_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

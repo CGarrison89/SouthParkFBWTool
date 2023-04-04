@@ -1,0 +1,49 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include ./enemypowers.adrian.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_vipJohn2_power1 < uid=B9E930CA57A1338D000001BBCE96BDD3 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/vip_kick.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"VIP John2 Power 2 Name\", enabled = true, guid = #B9E930CA57A1338D000001BAE3BDEEAD, lineVersion = 0, maxLength = 16, text = \"Drunk Flurry\""
+	myUseSkillScript < uid=B9E930CA57A1338D000001BC9FAF9D83 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 4
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=B9E930CA57A13CAF000001E76AB15864 >
+		{
+			myPriority 10
+			myMinimumAffectedTargets 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D05938B73800089248C9C08158 >
+		{
+			myPriority 0
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myMeleeOffset -1.0;0.0
+	myTuningData < uid=B9E930CA57A1338D000001BF4B7088D7 > = pwr_mm08_vip_john_melee_knockback_Adrian_Tuning
+	myCameraPreset < uid=86C930825913D25C00007636EED6A739 > = Preset_Generic_Melee_KB
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

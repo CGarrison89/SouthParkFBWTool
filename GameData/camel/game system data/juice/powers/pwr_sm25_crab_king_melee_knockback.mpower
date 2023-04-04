@@ -1,0 +1,40 @@
+include ./pwr_com_turboclub.mpower
+include ./enemypowers.adrian.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_sm25_crab_king_melee_knockback < uid=8585E53F58F65F3A00149BA4C9ECF49C > : pwr_com_turboClub
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/kingcrab_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee_cone.dds"
+	myUIName "contextComment = \"power name\", description = \"pwr_com_turboclub Name\", enabled = true, guid = #8585E53F5936F9FF00088E46A9B4B621, lineVersion = 1, maxLength = 18, text = \"Employees Only\""
+	myUseSkillScript < uid=8585E53F58F65F3A00149BA516C4749A > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myNumberOfAttackEvents 1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=8585E53F58F65F3A00149BA6FE5EF600 >
+		{
+			myPriority 25
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=8585E53F58F65F3A00149BA77D72A96D >
+		{
+			myPriority 1020
+			myRequireAggroTarget TRUE
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=8585E53F58F65F3A00149BA8D394FA4B > = pwr_sm25_crab_king_melee_knockback_Adrian_Tuning
+	myCameraPreset < uid=8585E53F593064D100030A877BDF7093 > = Preset_Generic_Melee_KB
+}
+

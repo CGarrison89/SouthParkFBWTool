@@ -1,0 +1,7 @@
+include ./pwr_com_backstorybruiser_melee.mpower
+
+CombatPower pwr_com_backstoryBruiser_melee_plantmancer < uid=86C930825989FDEE0010B53B135B61F3 > : pwr_com_backstoryBruiser_melee
+{
+	myTuningData < uid=86C930825989FE7B0010B5439E7639D9 > = pwr_com_backstoryBruiser_melee_plantmancer_BBartram_Tuning
+}
+

@@ -1,0 +1,32 @@
+include ./pwr_com_kitchenheal.mpower
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_sm34_priest_heal < uid=86C930825840FC8E0000ADBDD857E9DE > : pwr_com_kitchenheal
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/ChefHead_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide_heal.dds"
+	myPowerEvaluationData
+	{
+		PowerEvaluationData heal_ally < uid=86C930825841D021000EDAF67E9D98B6 >
+		{
+			myPriority 500
+			myMinimumAffectedTargets 1
+			myMinimumDistanceToEnemies 0
+			myTargetHealthLessThanPercentage 90.0
+			mySelfHealthLessThanPercentage 101.0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86C930825840FC8E0000ADBE745EAF80 > = enemy_pwr_mm08_buca_headchef_heal_amcclay_Tuning
+	myCameraPreset < uid=86C930825913D2600000763ED2F79F19 > = Preset_Generic_Melee
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

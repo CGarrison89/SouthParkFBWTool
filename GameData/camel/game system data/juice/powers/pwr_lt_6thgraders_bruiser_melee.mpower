@@ -1,0 +1,19 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_LT_6thgraders_bruiser_melee < uid=86C9308257683A29000003924F0CB144 > : enemy_pwr_archetype_bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/6thGrader_TittyTwister.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_bruiser_melee Name\", enabled = true, guid = #B9E930CA57A119390000C8FA7F1B3F22, lineVersion = 0, maxLength = 18, text = \"Nipple Twister\""
+	myUseSkillScript < uid=B9E930CA57A1118A00002112BC62206C > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 2
+	myShouldRepositionBeforeExecution TRUE
+	myTuningData < uid=86C9308257683A290000039351978EA0 > = pwr_LT_6thgraders_bruiser_melee_Kevin_Tuning
+	myCameraPreset < uid=6D7AC9B157BE6938000001E60E5DE0AA > = Preset_Generic_Melee
+}
+

@@ -1,0 +1,7 @@
+enum UIMapIconType
+{
+	None
+	FastTravel
+	Mission
+	Vendor
+}

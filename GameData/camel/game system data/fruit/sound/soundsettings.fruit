@@ -1,0 +1,176 @@
+include "modules/core/audio/audio.fruit"
+
+list Engine_MapLoadList
+{
+	AudioEvent
+}
+
+list StaticAmbianceEvents
+{
+	AudioEvent
+}
+
+class SoundConstants
+{
+	AudioEvent PlayerDeath
+	AudioEvent PlayerSpawn
+	AudioEvent HitConfirm
+	AudioEvent OutOfAmmoWarning
+	AudioEvent EnemyIsNearPlayer
+	AudioEvent EnemyIsNotNearPlayer
+	AudioEvent PlayerEnterCombat
+	AudioEvent PlayerExitCombat
+	AudioEvent PlayerEnterCover
+	AudioEvent PlayerExitCover
+	AudioEvent PlayerToggleWeapon
+	AudioEvent AbortReload
+	AudioEvent PlayerAimWeapon
+	AudioEvent PlayerAimGrenade
+	AudioEvent PlayerSprintStart
+	AudioEvent PlayerSprintStop
+	AudioEvent PlayerSprintStopExhale
+	AudioEvent PlayerLowCoverWalkAround
+	AudioEvent PlayerRegularStagger
+	AudioEvent PlayerLargeStagger
+	AudioEvent UI_LobbyListSelect	
+	AudioEvent UI_LobbyClick
+	AudioEvent Play_lobby_music
+	AudioEvent GrenadeTickStart
+	AudioEvent GrenadeLanded
+	AudioEvent GrenadeTickStop
+	AudioEvent GrenadeTrackingStart
+	AudioEvent GrenadeTrackingStop
+	AudioEvent Param_GrenadeTrackingTime
+	AudioEvent LootPickedUp
+	AudioEvent LossOfHearingStart
+	AudioEvent LossOfHearingEnd
+	AudioEvent LevelUp
+	AudioEvent Cinematic_Start
+	AudioEvent Cinematic_End
+	AudioEvent ZiplineStart
+	AudioEvent ZiplineEnd
+	AudioEvent HeadshotHit
+	AudioEvent LadderSlideStart
+	AudioEvent LadderSlideEnd
+	AudioEvent PlayerFallDamage
+	AudioEvent CarDoorCloseStart
+	AudioEvent CarDoorCloseEnd
+	AudioEvent CarHoodCloseStart
+	AudioEvent CarHoodCloseEnd
+	AudioEvent CarTrunkCloseStart
+	AudioEvent CarTrunkCloseEnd
+	AudioEvent NearHit
+	AudioEvent RopeSlideStart
+	AudioEvent RopeSlideStop
+	
+	AudioEvent ExtractionStarted
+	AudioEvent ExtractionAborted
+	AudioEvent ExtractionSuccessful
+	AudioEvent ExtractionCountdown
+	AudioEvent ExtractionRogueWarning
+	AudioEvent ExtractionHostileDetected
+	
+	AudioEvent PlayerTurnRogueBySelf
+	AudioEvent PlayerTurnRogueByTeam
+	
+	AudioEvent TeamMemberDown
+
+	AudioEvent NPCGenericFootstep
+	
+	AudioEvent ContaminatedLootDestroyed
+	
+	AudioEvent UnableToUseMedkit
+	
+	AudioEvent SetIsOnBrooklyn
+	
+	StaticAmbianceEvents myStaticAmbianceEvents
+
+	// Switches
+	AudioSwitch Switch_CharacterTypeLocalPlayer
+	AudioSwitch Switch_CharacterTypeOtherPlayer
+	AudioSwitch Switch_CharacterTypeNonPlayer
+	AudioSwitch Switch_WeaponAimOn
+	AudioSwitch Switch_WeaponAimOff
+	AudioSwitch Switch_GenderMale
+	AudioSwitch Switch_GenderFemale
+	AudioSwitch Switch_WeaponOnBackOn
+	AudioSwitch Switch_WeaponOnBackOff
+	AudioSwitch Switch_RappelDirUp
+	AudioSwitch Switch_RappelDirDown
+	
+	// RTPCs
+	AudioRTPC RTPC_WeaponFireRate
+	AudioRTPC RTPC_GrenadeDuration
+	AudioRTPC RTPC_SprintDuration
+	AudioRTPC RTPC_CriticalHealthState
+	AudioRTPC RTPC_GlobalElevation
+	AudioRTPC RTPC_NearbyEnemyPresence
+	AudioRTPC RTPC_CombatIntensity
+	AudioRTPC RTPC_WeaponJamFactor
+	AudioRTPC RTPC_DistanceToListenerPos
+	AudioRTPC RTPC_LossOfHearingIntensity
+	AudioRTPC RTPC_WeaponAim
+	AudioRTPC RTPC_PlayerHitCountdown
+	AudioRTPC RTPC_SnowDepth
+	AudioRTPC RTPC_SnowWetness
+	AudioRTPC RTPC_ZiplineSpeed
+	AudioRTPC RTPC_CharacterType
+	AudioRTPC RTPC_PlayerFallDamageHeight
+	AudioRTPC RTPC_CarDoorCloseSpeed
+	AudioRTPC RTPC_RopeSlideVelocity
+	AudioRTPC RTPC_MovementSpeed
+	AudioRTPC RTPC_CarRadius
+	
+	// values
+	float myPlayerHitCountdownTime
+	float myPlayerHitCountdownValue
+	float myPlayerHitResetTime
+	float myPlayerHitResetRTPCTime
+}
+
+class GlobalSoundConstants
+{
+	AudioEvent MoveStep
+	AudioEvent MoveRunStep
+	AudioEvent MoveSneak
+}
+
+class GroupWallaSoundEvent
+{
+	AudioEvent Event
+	int SourceCountThreshold 1
+	float SourceCountTime 1.0
+}
+
+list GroupWallaDefinitions
+{
+	GroupWallaDefinition
+}
+
+class GroupWallaDefinition
+{
+	GroupWallaSoundEvent AgentEnterCombat
+	GroupWallaSoundEvent AgentExitCombat
+	GroupWallaSoundEvent AgentAttacking
+	GroupWallaSoundEvent AgentUnderAttack
+	
+	AudioRTPC GroupSize
+	AudioRTPC CombatIntensity
+}
+
+class SoundSettings
+{
+	int myMaxBulletHitEmitters 0.0
+	float myMaxBulletHitPlayRadius 0.0
+	float myEnemyAgentCollectionRadius 0.0
+	float myAgentDistanceToListenerPosRadius 0.0
+	float myMaxSprintDuration 0.0
+	float myFootstepsPlayRadius 30.0
+	float myCameraToPlayerListenerPositionOffset 0.0
+	float mySprintTimeBeforeTriggeringExhale 3.0 < tooltip="The amount of time spent sprinting continously required to trigger the PlayerSprintStopExhale sound event." >
+	float myTeamMemberDownWarningRadius 10.0
+		
+	GlobalSoundConstants myGlobalSoundConstants
+	SoundConstants mySoundConstants
+	GroupWallaDefinitions myGroupWallaDefinitions
+}

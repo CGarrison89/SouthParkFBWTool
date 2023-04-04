@@ -1,0 +1,30 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/chaos_disc.mprojectile"
+
+CombatPower temp_pwr_enemy_archetype_basic_wizard1 < uid=86D64076573BBFA60000007C8C082ED4 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/power_enemy_discthrow.dds"
+	myUIName "contextComment = \"\", description = \"temp_pwr_enemy_archetype_basic_wizard1 Name\", enabled = true, guid = #51C546C65774DC78000001EB0476EAC0, lineVersion = 0, maxLength = 16, text = \"Wizard Power\""
+	myUIDescription "contextComment = \"\", description = \"temp_pwr_enemy_archetype_basic_wizard1 Description\", enabled = true, guid = #51C546C65774DC78000001EC9989BE11, lineVersion = 0, maxLength = 22, text = \"Long Range Attack\""
+	myUseSkillScript < uid=86D64076573BBFA60000007DFB4AE18F > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 2
+	myProjectile < uid=86D64076573BBFA60000007E3E22D1DB > = chaos_disc
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D64076573BBFA60000007FAF51C72E >
+		{
+			myPriority 10
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86D64076573BBFA60000008062E2229E > = temp_pwr_enemy_archetype_basic_wizard1_MNguyen_Tuning
+	myCameraPreset < uid=86D64076573BBFA600000081CE08F1D4 > = NULLREFERENCE
+}
+

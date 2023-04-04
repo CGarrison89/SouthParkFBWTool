@@ -1,0 +1,12 @@
+include ./pwr_sm22_priest_heal.mpower
+
+CombatPower pwr_sm69_priest_heal < uid=8585E53F57A54204000006AEA40D93D8 > : pwr_sm22_priest_heal
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Pimp_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide_heal.dds"
+	myUseSkillScript < uid=86C9308258798202000015DB652DCAB7 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myIsACleansePower TRUE
+	myTuningData < uid=8585E53F57A54204000006AF77C28386 > = pwr_sm69_priest_heal_Adrian_Tuning
+}
+

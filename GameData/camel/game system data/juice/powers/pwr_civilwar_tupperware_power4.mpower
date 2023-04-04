@@ -1,0 +1,35 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./enemypowers.demo.juice
+
+CombatPower pwr_civilwar_tupperware_power4 < uid=B9E930CA5731406C000017C542248DF7 >
+{
+	myUIName "contextComment = \"\", description = \"pwr_civilwar_tupperware_power4 Name\", enabled = true, guid = #51C546C65774D96800000105B205452D, lineVersion = 0, maxLength = 11, text = \"Upgrade\""
+	myUseSkillScript < uid=B9E930CA5731406C000017C6E6F1F2BE > = Camel_Simple_PlayAnim_Script
+	myAnimationState power4
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA5731406C000017C77DADFE14 >
+		{
+			myPriority 0
+			myMinimumAffectedTargets 5
+			myValidDirections
+			{
+				myLeft FALSE
+				myRight FALSE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA5731406C000017C8C3390BE8 > = demo_e3_tupperware_power4_demo_Tuning
+	myPowerGroup Ultimate
+	myValidDirections
+	{
+		myLeft FALSE
+		myRight FALSE
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

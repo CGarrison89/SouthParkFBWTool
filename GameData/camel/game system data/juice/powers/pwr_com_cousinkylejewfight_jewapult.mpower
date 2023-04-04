@@ -1,0 +1,26 @@
+include ./placeholder_enemy_power1.mpower
+include ./enemypowers.mvernon.juice
+include camel/skillscript/camel_destructible_state_change_simple.mskillscriptjuice
+include camel/skillscript/pwr_sm14_cousinkyle_jewapult.mskillscriptjuice
+
+CombatPower pwr_com_cousinkyleJewFight_JewApult < uid=6D7AC9B1574CDB400000383DB194B27E > : placeholder_enemy_power1
+{
+	myUIName "contextComment = \"\", description = \"pwr_com_cousinkylejewfight_jewapult Name\", enabled = true, guid = #51C546C65774DBD90000009597F372D0, lineVersion = 0, maxLength = 13, text = \"JewApult\""
+	myUseSkillScript < uid=6D7AC9B1574CDB400000383E4D4914C9 > = pwr_sm14_cousinKyle_jewapult
+	myAnimationState ""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B1574CDB400000383FF0DA38EF >
+		{
+			myPriority 200
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=6D7AC9B1574CDB4000003840E1087506 > = pwr_com_cousinkyleJewFight_Jewapult_MVernon_Tuning
+}
+

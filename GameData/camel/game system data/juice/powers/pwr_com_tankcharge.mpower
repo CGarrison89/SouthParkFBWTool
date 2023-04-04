@@ -1,0 +1,20 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+
+CombatPower pwr_com_tankCharge < uid=B9E930CA55DF478B0000008E8D60B0C5 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/power_enemy_mechacan_charge.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_tankcharge Name\", enabled = true, guid = #51C546C65774DBFA000000CA77E8281D, lineVersion = 0, maxLength = 1, text = \"Tank Charge\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA55DF4E7A00008D2B053CF5C0 >
+		{
+			myPriority 15
+		}
+	}
+	mySecondarySkillScript < uid=B9E930CA55DF478B0000008FB56B6653 > = Simple_Rush_Damage_Script
+	myDialogueSkillScript < uid=326B24CD5835F30600006C764D0544AB > = NULLREFERENCE
+	myTuningData < uid=B9E930CA55DF478B000000909A4D4C2A > = pwr_com_tankCharge_Tuning
+}
+

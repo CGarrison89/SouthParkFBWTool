@@ -1,0 +1,13 @@
+enum ActorTrackedBone
+{
+	LowerBody
+	UpperBody
+	Torso
+	Head
+	HeadCenter
+	vfx1
+	vfx2
+	vfx3
+	vfx4
+	vfx5
+}

@@ -1,0 +1,10 @@
+//include "camel/game system data/fruit/cell/cell.fruit"
+
+class FastTravel < uid=auto >
+{
+	//CellLogic* myCellLogic
+	uid mySpawnPoint < bhv=entitypicker entitytype=CSpawnPoint >
+	bool myIsTotemLocation
+	varmap myUIName < bhv="localization" >
+	vec2f myRegionOffset 0.0;0.0
+}

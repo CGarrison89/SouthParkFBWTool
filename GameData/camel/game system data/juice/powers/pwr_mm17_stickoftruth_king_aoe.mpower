@@ -1,0 +1,63 @@
+include ./pwr_intro_power1.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_mm17_stickoftruth_king_aoe < uid=86C93082584B409B0026CB4800A1B050 > : pwr_intro_power1
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D059B7677C00033F433E846883 >
+		{
+			myPriority 5
+			myMinimumAffectedTargets 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData 2_targets < uid=3267E0D059B7677C00033F44C754348C >
+		{
+			myPriority 20
+			myMinimumAffectedTargets 2
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData 3_targets < uid=3267E0D059B7677C00033F45551884B4 >
+		{
+			myPriority 30
+			myMinimumAffectedTargets 3
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData 4_targets < uid=3267E0D059B7677C00033F46D9398B87 >
+		{
+			myPriority 40
+			myMinimumAffectedTargets 4
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D059B7677C00033F47C4E42053 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumKills 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C93082584B409B0026CB4976F4496A > = pwr_mm17_stickoftruth_king_aoe_Kevin_Tuning
+}
+

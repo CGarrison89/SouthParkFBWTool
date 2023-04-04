@@ -1,0 +1,43 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_lobbed_power_playanim_script.mskillscriptjuice
+
+CombatPower mm15_5assed_grenadier_power1 < uid=3267E0D057D06B4600002E1E3824767D >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/assedporcupine_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/CC_range_2_3.dds"
+	myUIName "contextComment = \"The Mutant Sixth Grader hurls a volley of porcupine needles at the opponent.\", description = \"enemy_pwr_archetype_grenadier_st_lob_min Name\", enabled = true, guid = #3267E0D057D06B4600002E1D6A6D19AE, lineVersion = 1, maxLength = 17, text = \"Needle Shower\""
+	myUseSkillScript < uid=3267E0D057D06B4600002E1FE0411271 > = Camel_Lobbed_Power_PlayAnim_Script
+	myAnimationState power1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D057D06B4600002E20C75A404D >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D057D06B4600002E21C5F89161 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=3267E0D057D06B4600002E22DE74803D > = enemy_pwr_mm15_5assed_grenadier_power1_amcclay_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

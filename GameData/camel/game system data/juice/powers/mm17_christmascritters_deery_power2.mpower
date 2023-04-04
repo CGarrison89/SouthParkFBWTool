@@ -1,0 +1,49 @@
+include ./enemy_pwr_archetype_wizard_pierce_ranged.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_christmascritters.juice"
+
+CombatPower mm17_christmascritters_deery_power2 < uid=86C9308258C349BE0000D926D09635AC > : enemy_pwr_archetype_wizard_pierce_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/deery_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/4_range.dds"
+	myPreviewIconImage ""
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_wizard_pierce_ranged Name\", enabled = true, guid = #86C9308258C349BE0000D92549FCF6D6, lineVersion = 1, maxLength = 14, text = \"Pentakill\""
+	myUseSkillScript < uid=86C9308258C349BE0000D927ABA7148D > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=3267E0D0594C89920022E64A88C2106C >
+		{
+			myPriority 10
+			myMinimumAffectedTargets 1
+		}
+		PowerEvaluationData "Gingerbread Man" < uid=3267E0D0594C8F64002BF89E32B544E0 >
+		{
+			myPriority 100
+			myMinimumAffectedTargets 1
+			myAIDesirableType C
+		}
+		PowerEvaluationData Enraged < uid=3267E0D059966F5A001014A1CDF4C565 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myLeft TRUE
+				myRight TRUE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C9308258C349BE0000D92C7B300C6E > = enemy_mm17_critters_ranged_amcclay_Tuning
+	myCameraPreset < uid=B9E930CA59937B6D0002629C077639BC > = pentagram_flame
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

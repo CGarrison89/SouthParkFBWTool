@@ -1,0 +1,19 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_LT_6thgraders_bruiser_melee_haymaker < uid=B9E930CA57B6372A00001BFFAA0BFA4E > : enemy_pwr_archetype_bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/6thGrader_Haymaker.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_bruiser_melee Name\", enabled = true, guid = #B9E930CA57B6372A00001BFE1DBF5018, lineVersion = 0, maxLength = 13, text = \"Haymaker\""
+	myUseSkillScript < uid=B9E930CA57B6372A00001C00DCFC477A > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myNumberOfAttackEvents 3
+	myShouldRepositionBeforeExecution TRUE
+	myTuningData < uid=B9E930CA57B6372A00001C013D7F6B1E > = pwr_LT_6thgraders_bruiser_melee_haymaker_Kevin_Tuning
+	myCameraPreset < uid=6D7AC9B157BE6939000001E7902EFF68 > = Preset_Generic_Melee
+}
+

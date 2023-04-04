@@ -1,0 +1,27 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower SM14_altkyle_st_ranged < uid=86D640765744F8A7000022CE3859646F >
+{
+	myUIName "contextComment = \"\", description = \"sm14_altkyle_st_ranged Name\", enabled = true, guid = #51C546C65774DC62000001BFA4800CE9, lineVersion = 0, maxLength = 14, text = \"Eye Laser\""
+	myUseSkillScript < uid=86D640765744F8A7000022CF41EDC80D > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D640765744F8A7000022D094998511 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86D640765744F8A7000022D1DD5A9192 > = SM14_altkyle_st_ranged_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

@@ -1,0 +1,33 @@
+include ./enemy_pwr_archetype_rogue_melee_shocked.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower MM16_cokedcops_rogue_melee_shocked < uid=3267E0D05748F48F000002717C0FDA02 > : enemy_pwr_archetype_rogue_melee_shocked
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/detective_stungun.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"mm16_cokedcops_rogue_melee_shocked Name\", enabled = true, guid = #51C546C65774D94B000000AE51444B53, lineVersion = 0, maxLength = 13, text = \"Stun Gun\""
+	myUseSkillScript < uid=3267E0D05748F48F00000272EC1F115D > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D05748F48F00000273E6EE1F75 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=3267E0D05748F48F00000274DEAAF6F8 > = enemy_pwr_archetype_rogue_melee_shocked_amcclay_Tuning
+	myCameraPreset < uid=8585E53F595EAB34000526481E362E19 > = Preset_Generic_Melee
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

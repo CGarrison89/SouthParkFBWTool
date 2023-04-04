@@ -1,0 +1,24 @@
+include "camel/game system data/fruit/items/items.fruit"
+
+class CharacterSummonSheet
+{
+	varmap myName < bhv="localization" >
+	varmap myDescription < bhv="localization" tooltip="Description in the Char Sheet App">
+	varmap myReligion < bhv="localization" >
+	file myIcon "" < types=*.png >
+	uid myUnlockItemUID < bhv="asset" assettype="Item" >
+	int myAge 0
+	int myMaxInGame 0
+	varmap myUnlockDescription < bhv="localization" tooltip="Description shown when the summon is unlocked">
+	file myUnlockIcon "" < types=*.png >
+}
+
+list CharacterSummonSheetList
+{
+	CharacterSummonSheet
+}
+
+class CharacterSummonSheetInfo
+{
+	CharacterSummonSheetList mySummonSheetList
+}

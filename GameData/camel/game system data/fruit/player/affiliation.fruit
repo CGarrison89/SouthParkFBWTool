@@ -1,0 +1,7 @@
+
+enum Affiliation
+{
+	Unaffiliated
+	CoonNFriends
+	FreedomPals
+}

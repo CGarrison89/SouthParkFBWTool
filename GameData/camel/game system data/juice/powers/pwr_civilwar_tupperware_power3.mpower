@@ -1,0 +1,36 @@
+include "camel/game system data/juice/camera/uber_camera_powers_presets_tupperware.juice"
+include ./enemypowers.demo.juice
+include camel/skillscript/pwr_tupperware_power02_script.mskillscriptjuice
+
+CombatPower pwr_civilwar_tupperware_power3 < uid=B9E930CA573136EF00001784972FB17F >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/tupperware_PositionModification.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_range_heal.dds"
+	myUIName "contextComment = \"\", description = \"pwr_civilwar_tupperware_power3 Name\", enabled = true, guid = #51C546C65774D96700000104CED445F3, lineVersion = 0, maxLength = 27, text = \"Position Modification\""
+	myUseSkillScript < uid=B9E930CA573136EF0000178528992F09 > = pwr_tupperware_power02_script
+	myAnimationState ""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA573136EF00001786DA6B14B6 >
+		{
+			myPriority 30
+			myMinimumAffectedTargets 1
+			myTargetHealthLessThanPercentage 80.0
+			myValidDirections
+			{
+				myLeft TRUE
+				myRight TRUE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA573136EF00001787E59D8ACB > = demo_e3_tupperware_power3_demo_Tuning
+	myCameraPreset < uid=B9E930CA5747326300000085576B0A93 > = Tupperware_Power03
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

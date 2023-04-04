@@ -1,0 +1,49 @@
+include ./placeholder_enemy_power1.mpower
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./bosspowers.bbartram.juice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include camel/skillscript/mm08_redwinerandy_rush_damage_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+
+CombatPower pwr_com_drunkcharge < uid=B642A89A56BE604900003775DFB2B760 > : placeholder_enemy_power1
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/RedWineRandy_WineDrunkCharge.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/rush.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_drunkcharge Name\", enabled = true, guid = #51C546C65774DBDC00000099A1E0A5D4, lineVersion = 0, maxLength = 16, text = \"Drunk Charge\""
+	myUseSkillScript < uid=B642A89A56BE604900003776680A23DF > = NULLREFERENCE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B642A89A56C3F41000005AAA4B702925 >
+		{
+			myPriority 60
+			myAggroPriority 1050
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData VIP < uid=B642A89A578E5CED0000C20C07601B65 >
+		{
+			myPriority 600
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	mySecondarySkillScript < uid=B642A89A56BE72A60000B98A4AFBE803 > = MM08_RedWineRandy_Rush_Damage_Script
+	myDialogueSkillScript < uid=326B24CD591F319800007C9127150683 > = Camel_Simple_PlayDialogue_Script
+	myTuningData < uid=B642A89A56BE6049000037773A13A469 > = pwr_com_drunkcharge_BBartram_Tuning
+	myCameraPreset < uid=86C930825913D26100007641BD1BDEEC > = Preset_Generic_Ranged
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

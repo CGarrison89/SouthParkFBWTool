@@ -1,0 +1,38 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower enemy_pwr_archetype_warlock_lob_min_mark < uid=86D640765744DCCF000000D7FFA0A53C >
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_warlock_lob_min_mark Name\", enabled = true, guid = #51C546C65774D945000000A1C4ECD18A, lineVersion = 0, maxLength = 23, text = \"Warlock Lob Marked\""
+	myUseSkillScript < uid=86D640765744DCCF000000D8FCF90152 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D640765744DCCF000000D90B573DD4 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86D64076575616DA0000021BDE5728EA >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86D640765744DCCF000000DA52CB8079 > = enemy_pwr_archetype_warlock_lob_min_mark_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

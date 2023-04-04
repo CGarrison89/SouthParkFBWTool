@@ -1,0 +1,153 @@
+
+enum ObjectInteractionType
+{
+	None
+	Interaction
+	PushHeavy
+	Chew
+	CutWires
+	Possess
+	PushSmall
+	Blow
+	Rewind
+	Kite
+	Destroy
+    Chest
+    Bespoke
+	FartkourFirstFart
+	FartkourJump
+	FartkourSuccess
+	FartkourFail
+	FastTravel
+	FartShatter
+	FartShatterLongRange
+	FartkourFailJump
+	Punch
+	FireCraker
+    DoorOpened
+    DoorClosed
+	Explosion
+	InTFPausePunch
+	InTFPauseFireCraker
+	InTFPauseFart
+	InTFPauseLongRangeFart
+	FartkourComplete
+}
+
+enum UIPromptInteractionType
+{
+	None
+	Hold
+	Tap
+	Press
+	Peek
+}
+
+class ObjectInteractionTypeInfo
+{
+	string myInteractionString
+	string myInteractionIcon
+}
+
+enum FieldInteractionType
+{
+	None
+	PushPull
+	Shove
+    ShoveForMC
+	Lava
+	Portal
+	Fart
+    Chest
+    BuddySpawn
+    BuddyDespawn
+    TimeFart
+    BasicInteract
+    HumanKite
+    Haywire
+	Mysterion
+    InspectionMode
+	Possession
+	Vendor
+    Bespoke
+    2DAMM
+   	FastTravel
+	PunchOrFireCracker
+    PuzzleDoor
+    Burning
+    NPC_Interaction
+    ExplosivePushPull_LitReaction
+    ExplosivePushPull_ExploadingReaction
+    MoveToPosition
+    NPCBlocker
+    PitchingMachine
+    AttackReaction_FromTownNPC
+    NormalPriority_FallingDown
+    HighPriority_FallingDown
+}
+
+enum ExploreReactionType
+{
+    Explosive
+    Burning
+}
+
+enum Explore_InteractionBehaviorType
+{
+    Default
+    Interrupt
+    Reaction
+    Reaction_WaitWhenSwitchingReaction
+}
+
+class FieldInteraction
+{
+	int myPriority 0 < max=1000 tooltip="Priority of interaction. [High]0 - max[Low]" >
+    bool myIsContinueInteraction false
+    bool myIsParallelInteractionWhileReaction false
+    Explore_InteractionBehaviorType myBehaviorType Default
+}
+
+// -------------------- PushPull ------------------
+enum PushPullObjectType
+{
+    Default
+	Default_RightLeft
+	Default_UpDown
+	BeerCooler
+	PushPullLadder
+	PushPullLadder_RightLeft
+	PushPullTrunk
+	PushPullKennysBBQGrill
+	PushPullFileCabinet
+	Speed0
+	PushPull_GeneratorBattery
+	DLC_CB_HangingCargo
+    DLC_CB_Barrel
+    DLC_CB_TrolleyOnRails
+}
+
+class PushPullObjectData
+{
+    uid GrabAudioId < bhv=AudioID type=event >
+    uid ReleaseAudioID < bhv=AudioID type=event >
+    uid MovementAudioID < bhv=AudioID type=event >
+    uid StopMovementAudioID < bhv=AudioID type=event >
+    bool EnableLeftMove true
+    bool EnableRightMove true
+    bool EnableUpMove true
+    bool EnableDownMove true
+}
+
+// -------------------- Explore Interaction Interrupt ------------------
+enum ExploreInteractionInterruptType
+{
+    Default
+    Reaction
+    System
+    Combat
+    CellTransition
+    TimefartUnpause
+    Interaction
+    None
+}

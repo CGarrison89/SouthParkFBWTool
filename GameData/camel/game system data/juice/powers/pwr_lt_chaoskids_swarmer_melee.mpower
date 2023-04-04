@@ -1,0 +1,16 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_LT_chaoskids_swarmer_melee < uid=86C93082576839A1000003785DE5F7A2 > : enemy_pwr_archetype_swarmer_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/chaoskid_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"chaos kid swarmer melee name\", description = \"enemy_pwr_archetype_swarmer_melee Name\", enabled = true, guid = #9D0E6196599755FC000EB54D50A5956E, lineVersion = 0, maxLength = 18, text = \"Combo of Chaos\""
+	myUseSkillScript < uid=8585E53F582BBFBA0006C23D18523522 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myNumberOfAttackEvents 3
+	myShouldRepositionBeforeExecution TRUE
+	myTuningData < uid=86C93082576839A100000379154E3E9E > = pwr_LT_chaoskids_swarmer_melee_Kevin_Tuning
+}
+

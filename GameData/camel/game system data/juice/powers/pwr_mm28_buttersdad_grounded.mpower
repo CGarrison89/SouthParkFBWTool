@@ -1,0 +1,25 @@
+include ./pwr_lt_raisins_warlock_st_ranged.mpower
+include ./enemy_pwr_archetype_warlock_lob_min_encumber.mpower
+include camel/skillscript/mm28_buttersdad_grounded_on_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_MM28_ButtersDad_Grounded < uid=86C930825928920E00007C850383D516 > : enemy_pwr_archetype_warlock_lob_min_encumber
+{
+	myUseSkillScript < uid=86C930825928AF72000AA3D9788EFE27 > = MM28_ButtersDad_Grounded_On_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C930825928AAA100032535213B18D8 >
+		{
+			myPriority 0
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86C93082592C5ADB0001BFA9F731515E > = pwr_mm28_buttersdad_grounded_Kevin_Tuning
+	myCameraPreset < uid=86C93082592C5B300001BFC2C376529D > = Preset_Generic_Ranged
+}
+

@@ -1,0 +1,16 @@
+enum TimeFart
+{
+	None
+	Rewind_Environment
+	Pause_Environment
+	Pause_Combat
+	Repeat_Combat
+	Skip_Combat
+	Assemble_Combat
+	Intro_Toilet
+	ChangeDayCycle_Environment
+	Glitch_Combat
+	ChangeDayCycle_Combat
+	TakeAShit_Environment
+	TimeTravel
+}

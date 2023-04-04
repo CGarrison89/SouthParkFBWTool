@@ -1,0 +1,10 @@
+include camel/skillscript/ondeath_explode.mskillscriptjuice
+include ./buddypowers.juice
+
+CombatPower OnDeath_Explode[Power] < uid=6D91A59C5480CA3F0000001560E08D4D >
+{
+	myUIName "contextComment = \"\", description = \"ondeath_explode[power] Name\", enabled = true, guid = #51C546C65774D956000000CEEED18D57, lineVersion = 0, maxLength = 1, text = \"Explode\""
+	myIsPassive TRUE
+	myTuningData < uid=B9E930CA55B28B920000000F9A5699E3 > = pwr_com_shitExplode_Tuning
+}
+

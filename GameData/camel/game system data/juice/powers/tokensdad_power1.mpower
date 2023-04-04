@@ -1,0 +1,43 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./enemypowers.adrian.juice
+
+CombatPower tokensDad_power1 < uid=6D7AC9B157C074AF00000359F1F78160 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/tokensdad_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"two left jabs and a right hook\", description = \"tokens dad power 1 name\", enabled = true, guid = #9D0E619659693E7D00008A67745801D1, lineVersion = 0, maxLength = 14, text = \"Combo Punch\""
+	myUIDescription "contextComment = \"\", description = \"\", enabled = false, guid = #9D0E619659693E7D00008A68FB2B6D5A, lineVersion = 0, maxLength = 1, text = \"|empty|\""
+	myUIShortDescription "contextComment = \"\", description = \"\", enabled = false, guid = #9D0E619659693E7D00008A69719B6538, lineVersion = 0, maxLength = 1, text = \"|empty|\""
+	myUseSkillScript < uid=6D7AC9B157C074AF0000035A0D3AE874 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 3
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B157C074AF0000035B6ECEC38A >
+		{
+			myPriority 10
+			myMinimumAffectedTargets 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=8585E53F596E8ACE000CEFC677858D5E >
+		{
+			myPriority 1010
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=6D7AC9B157C074AF0000035CC066E877 > = pwr_sm42_tokendad_melee_light_Adrian_Tuning
+}
+

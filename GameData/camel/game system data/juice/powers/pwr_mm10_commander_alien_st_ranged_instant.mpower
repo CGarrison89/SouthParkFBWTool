@@ -1,0 +1,27 @@
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/pwr_alien_backstory_instantkill.mskillscriptjuice
+
+CombatPower pwr_mm10_commander_alien_st_ranged_instant < uid=86C9308257B252280004F33C5D281C93 > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Alien_MindBlast.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/2_range_ST.dds"
+	myUseSkillScript < uid=86C930825845A2650001B955E25F22FE > = pwr_alien_backstory_instantkill
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308257B253170004F34DB94745C3 >
+		{
+			myPriority 50
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C9308257B252280004F33DB5C5715B > = pwr_mm10_commander_alien_st_ranged_instant_Kevin_Tuning
+}
+

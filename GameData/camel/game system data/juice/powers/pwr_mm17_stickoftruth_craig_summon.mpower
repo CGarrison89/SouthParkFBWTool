@@ -1,0 +1,23 @@
+include ./temp_pwr_enemy_archetype_basic_summoner1.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/pwr_mm17_stickoftruth_craig_summon_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_mm17_stickoftruth_craig_summon < uid=86C9308257BB7724000001D04DE9C1FA > : temp_pwr_enemy_archetype_basic_summoner1
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/craig_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/self_target.dds"
+	myUIName "contextComment = \"\", description = \"Shadow Clone\", enabled = true, guid = #3267E0D059713F02003BC9862E825EF2, lineVersion = 0, maxLength = 16, text = \"Shadow Clone\""
+	myUseSkillScript < uid=86C9308257BB7724000001D1CB4E1FC3 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=86C9308257D20E160003938D92C0CF35 >
+		{
+			myPriority 30
+			myMaximumNumberOfPets 1
+		}
+	}
+	myTuningData < uid=86C9308257BB7724000001D20DEC2826 > = pwr_mm17_stickoftruth_craig_summon_Kevin_Tuning
+}
+

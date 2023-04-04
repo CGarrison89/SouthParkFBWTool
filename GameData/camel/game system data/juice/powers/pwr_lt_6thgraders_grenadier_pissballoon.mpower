@@ -1,0 +1,63 @@
+include ./enemy_pwr_archetype_grenadier_aoe_lob_min.mpower
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/projectiles/projectile_sixthgraderpissballoon.mprojectile"
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+include camel/skillscript/camel_lobbed_power_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_LT_6thgraders_grenadier_pissballoon < uid=B9E930CA57B798DF0000AA05FD4572B0 > : enemy_pwr_archetype_grenadier_aoe_lob_min
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/6thGrader_PissBalloon.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_aoe_min_range.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_grenadier_aoe_lob_min Name\", enabled = true, guid = #B9E930CA57B79D9D000134BD74756BAA, lineVersion = 0, maxLength = 16, text = \"Piss Balloon\""
+	myUseSkillScript < uid=B9E930CA57B798DF0000AA0675D971F2 > = Camel_Lobbed_Power_PlayAnim_Script
+	myAnimationState power1
+	myProjectile < uid=B9E930CA57B798DF0000AA07ED1100C9 > = projectile_sixthGraderPissBalloon
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "2 or more" < uid=B9E930CA57B7BBC400095D3167D99CD5 >
+		{
+			myPriority 30
+			myMinimumAffectedTargets 2
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 2
+		}
+		PowerEvaluationData default < uid=B9E930CA57B7B38800075EA7E3C1D0D3 >
+		{
+			myPriority 10
+			myMinimumAffectedTargets 1
+			myPreferredRange -1
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=B9E930CA57B7B38800075EA8AF927863 >
+		{
+			myPriority 30
+			myAggroPriority 1030
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "2 or more any range" < uid=6D7AC9B157BDD9D70000079CF79A4446 >
+		{
+			myPriority 25
+			myMinimumAffectedTargets 2
+			myPreferredRange -1
+		}
+	}
+	myTuningData < uid=B9E930CA57B798DF0000AA08CE122983 > = pwr_LT_6thgraders_grenadier_aoe_pissballoon_Kevin_Tuning
+	myCameraPreset < uid=8585E53F59149D4D00143F4F63684FC2 > = Preset_Generic_Ranged
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

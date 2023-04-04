@@ -1,0 +1,9 @@
+include ./pwr_sm34_wizard_melee.mpower
+
+CombatPower pwr_sm34_wizard_melee_D < uid=86C930825912457C0001F58C6A2B9FF8 > : pwr_sm34_wizard_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/generics/generic_melee.dds"
+	myShouldRepositionBeforeExecution TRUE
+	myMeleeOffset -0.75;0.0
+}
+

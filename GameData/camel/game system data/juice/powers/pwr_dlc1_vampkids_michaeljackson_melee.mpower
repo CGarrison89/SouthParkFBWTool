@@ -1,0 +1,31 @@
+include ./enemy_pwr_archetype_rogue_melee.mpower
+include ./dlc1_enemypowers.juice
+
+CombatPower pwr_DLC1_VampKids_MichaelJackson_melee < uid=86C9308259B06A28000EE416DC9533E2 > : enemy_pwr_archetype_rogue_melee
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308259B0754000008BA45D665DEE >
+		{
+			myPriority 150
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308259B0754000008BA573611D12 >
+		{
+			myPriority 150
+			myAggroPriority 1150
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C9308259B06D23000EE46EAB2A3575 > = pwr_DLC1_VampKids_MichaelJackson_melee_Tuning
+}
+

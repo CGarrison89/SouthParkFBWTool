@@ -1,0 +1,18 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/power_speedster_energize.mskillscriptjuice
+include ./playerpowers.demo.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_speedster.juice"
+
+CombatPower e3_speedster_power2 < uid=B9E930CA57439057000000132C07B9A8 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/speedster_Overclock.dds"
+	myUIName "contextComment = \"\", description = \"e3_speedster_power2 Name\", enabled = true, guid = #51C546C65774D9AC0000006EB88830E0, lineVersion = 1, maxLength = 14, text = \"Overclocked\""
+	myUIDescription "contextComment = \"\", description = \"e3_speedster_power2 Description\", enabled = true, guid = #51C546C65774D9AC0000006F8B9E2DA6, lineVersion = 0, maxLength = 79, text = \"Teleports to an ally, applies Energized, then teleports back.\""
+	myUseSkillScript < uid=B9E930CA57439057000000143435D289 > = power_speedster_energize
+	myAnimationState ""
+	myTuningData < uid=B9E930CA5743905700000015C286AAD6 > = demo_e3_speedster_power2_demo_Tuning
+	myCameraPreset < uid=B9E930CA574770C1000114D3DD9F0337 > = Speedster_Power02
+	myPowerGroup Normal
+}
+

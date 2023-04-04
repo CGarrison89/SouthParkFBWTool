@@ -1,0 +1,57 @@
+include ./enemy_pwr_archetype_priest_heal.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_methaddict_masonjar.mprojectile"
+
+CombatPower pwr_dr_mm12_methlab_priest_heal < uid=8585E53F5A04ABC70002CF0BE9ED8D0A > : enemy_pwr_archetype_priest_heal
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/MethHead_Power4.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_ST_heal_no_min_range.dds"
+	myUIName "contextComment = \"urine luck\", description = \"pwr_mm12_methlab_priest_heal name\", enabled = true, guid = #8585E53F5A04ABC70002CF0AA454E036, lineVersion = 0, maxLength = 16, text = \"Urine Luck\""
+	myUseSkillScript < uid=8585E53F5A04ABC70002CF0C96C44450 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myProjectile < uid=8585E53F5A04ABC70002CF0DA88DA29F > = projectile_methAddict_masonJar
+	myPowerEvaluationData
+	{
+		PowerEvaluationData ally_default < uid=8585E53F5A04ABC70002CF0EABDBB2E8 >
+		{
+			myPriority 150
+			myMinimumDistanceToEnemies 0
+			myTargetHealthLessThanPercentage 99.0
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry NoCharm
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "ally_highly damaged" < uid=8585E53F5A04ABC70002CF0F2EDBFF44 >
+		{
+			myPriority 200
+			myMinimumDistanceToEnemies 0
+			myTargetHealthLessThanPercentage 50.0
+			myStatusEffectConditionData
+			{
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=8585E53F5A04ABC70002CF109A89D80B > = pwr_mm12_methlab_priest_heal_Kevin_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

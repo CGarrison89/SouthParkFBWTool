@@ -1,0 +1,86 @@
+include "camel/game system data/fruit/juiceObj.fruit"
+include "camel/game system data/fruit/helpers/helpers_types.fruit"
+include "camel/skillscript/skillscript.fruit"
+
+enum BreakableConfigType
+{
+	Default
+	Debug_Only
+	FartReaction_Type
+	MP43_TwoRegions
+	Explosion_Only
+	MP05_NotReserveSaveOnComplete
+	Firecracker_Only
+	Default_Rewindable_AutoReserveSave
+    Default_Rewindable_NotReserveSaveAndAutoGlitch
+    Default_Rewindable_NotAutoReserveSaveAndManualGlitch
+    MP63_ForceField_LogicEmptyCan
+	Punch_Only_AutoReserveSaveGlitch
+	Punch_Only_AutoReserveSaveNotGlitch
+	Pu_Fi_NoEnableAtInit_ReserveSave_Glitch_NoExplosion
+	Punch_Only_NotReserveSaveNotGlitch
+	RangedFart_Only_NotReserveSaveNotGlitch
+	Punch_Only_AutoReserveSaveNotGlitch_Bijou
+	SM01SP01_CraigBasement_UpVent
+	Explosion_Only_AutoReserveSaveGlitch
+	Explosion_Only_AutoReserveSaveNoGlitch
+	IP64_HippoManagementRoom_Picture
+	MP70MP16_PlayerLiving_Lock
+	Explosion_Only_AutoReserveSave_AutoGlitch
+	DP01_HostTicket_NotAutoReserveSave
+	DP16_NathanCabin_FireOnly_NotAutoReserveSave_ManualGlitch
+}
+
+class BreakableConfig
+{
+	bool ShouldReaction_ReactionPunch True
+	bool ShouldReaction_FireCracker True
+    bool ShouldReaction_RangedFart False
+	bool ShouldReaction_FartShatter False
+	bool ShouldReaction_Explosion True
+	
+	bool IsEnableAtInit True
+	bool RemoveCollisionOnDestroy True
+	
+	string DefaultDestroyAnimationName "destroy"  
+	
+	file DestroyVFX_ParticleFile "" < bhv=asset assettype=particles >    
+
+	bool Stateful_TimeFartAllowedByDefault False
+	bool Stateful_ReserveSaveOnComplete True
+	bool Stateful_ResetAfterAWhile False
+	bool Stateful_AutoReserveSaveOnComplete True
+	bool TimeFartAllowedWhenReverveSaveAndComplete True
+	bool Stateful_ShouldActivateGlitchListener False
+	
+	bool ProvideLootAtAnimStart True
+	bool ProvideLootAtAnimEvent False < tooltip="use onBreakable_TriggerLoot animation event">
+	
+	bool forbidFrontDirection False
+	bool forbidBackDirection False
+	bool forbidLeftDirection False
+	bool forbidRightDirection False
+	
+	bool completeAtStartDestroy True
+}
+
+class AreaOfEffectInteractionSettings
+{
+	float myFirstInteractionDelay < tooltip="scale of the region when there is no scale info at cursor position">
+	float myDelayBetweenInteraction
+	SkillScript* myPunchFireCrackerSkillScript
+	SkillScript* myFartSkillScript
+}
+
+// -------------------- LongRange FartShatter --------------------
+class LongRangeFartSettings : JuiceObj
+{
+	bool myUseCellAndWalkableHullScale False
+    float myReticleInteractionRegionSize 1
+	float myFartVFXScale 1
+	float myFirecrackerVFXScale 1
+	float myInteractRegionSizeX < tooltip="used if myUseCellAndWalkableHullScale at true">
+	float myInteractRegionSizeY < tooltip="used if myUseCellAndWalkableHullScale at true">
+    float myDefaultSizeScaleX < tooltip="used if myUseCellAndWalkableHullScale at true: scale of the region when there is no scale info at cursor position">
+	float myDefaultSizeScaleY < tooltip="used if myUseCellAndWalkableHullScale at true: scale of the region when there is no scale info at cursor position">
+}

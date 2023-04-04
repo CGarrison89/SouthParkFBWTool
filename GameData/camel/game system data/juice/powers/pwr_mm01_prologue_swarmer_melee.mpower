@@ -1,0 +1,16 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_mm01_prologue_swarmer_melee < uid=86C93082576DD35A0000010494F4B790 > : enemy_pwr_archetype_swarmer_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/KidSwarmer_Melee.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"stick swarmer melee\", description = \"enemy_pwr_archetype_swarmer_melee Name\", enabled = true, guid = #9D0E61965983A8FB000C8C53496DEDED, lineVersion = 0, maxLength = 16, text = \"Puny Blows\""
+	myUseSkillScript < uid=B9E930CA57992F5A000001786D984F7F > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 3
+	myShouldRepositionBeforeExecution TRUE
+	myTuningData < uid=86C93082576DD35A0000010572E9C661 > = pwr_mm01_prologue_swarmer_melee_Kevin_Tuning
+}
+

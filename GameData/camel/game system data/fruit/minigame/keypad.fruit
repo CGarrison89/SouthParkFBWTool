@@ -1,0 +1,52 @@
+include "modules/core/audio/audio.fruit"
+
+enum Keypad
+{
+	None
+	CartmanLivingRoom
+	RaisinsBehindBar
+	FilmoreLivingRoom
+	Heaven
+	TokenLivingRoom
+	JimboGunCase
+	PhotoDojoIDNumber
+	PeppermintHippo
+	UStorIt
+	PoliceStation
+	CartmanDay2
+	CartmanDay3
+	CartmanDay4
+	FreedomPalsDay2
+	FreedomPalsDay3
+	FreedomPalsDay4
+	PoliceStationSubLevel
+	DLC3NathanCabin
+}
+
+class KeypadData
+{
+	string myKey
+	bool myIsScreenOrientationRight true
+	varmap myButton1 < bhv = "localization" >
+	varmap myButton2 < bhv = "localization" >
+	varmap myButton3 < bhv = "localization" >
+	varmap myButton4 < bhv = "localization" >
+	varmap myButton5 < bhv = "localization" > 
+	varmap myButton6 < bhv = "localization" >
+	varmap myButton7 < bhv = "localization" >
+	varmap myButton8 < bhv = "localization" >
+	varmap myButton9 < bhv = "localization" >
+	varmap myButton0 < bhv = "localization" >
+	uid myAudioEvent1 < bhv=AudioID type=Event >
+	uid myAudioEvent2 < bhv=AudioID type=Event >
+	uid myAudioEvent3 < bhv=AudioID type=Event >
+	uid myAudioEvent4 < bhv=AudioID type=Event >
+	uid myAudioEvent5 < bhv=AudioID type=Event >
+	uid myAudioEvent6 < bhv=AudioID type=Event >
+	uid myAudioEvent7 < bhv=AudioID type=Event >
+	uid myAudioEvent8 < bhv=AudioID type=Event >
+	uid myAudioEvent9 < bhv=AudioID type=Event >
+	uid myAudioEvent0 < bhv=AudioID type=Event >
+
+
+}

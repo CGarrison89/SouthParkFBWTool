@@ -1,0 +1,107 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_speedster.juice"
+include camel/skillscript/powersmenu_simpleplayanim.mskillscriptjuice
+include camel/skillscript/powersmenu_simplerushscript.mskillscriptjuice
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+
+CombatPower pwr_speedster_power3 < uid=B9E930CA56B938D8000001460892DA6A >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/speedster_SpeedDash.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/rush_3.dds"
+	myUIName "contextComment = \"power name\", description = \"pwr_speedster_power3 Name\", enabled = true, guid = #51C546C65774DC4B00000186EC49878A, lineVersion = 3, maxLength = 20, text = \"Supersonic Dash\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_speedster_power3 Description\", enabled = true, guid = #51C546C65774DC4B00000187A3186C52, lineVersion = 0, maxLength = 161, text = \"The hero charges forward with super speed, pummeling all foes in the way and applying reverse knockback to the last target. \""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_speedster_power3 Short Description\", enabled = true, guid = #9D0E6196579A631F00000172C6C470D5, lineVersion = 0, maxLength = 46, text = \"Dash and knock back the last target\""
+	myUseSkillScript < uid=B9E930CA56B938D8000001478F611AE8 > = NULLREFERENCE
+	myShouldRepositionBeforeExecution FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "3 targets with kill" < uid=86C9308257FC3C16000F62CC34F9BF07 >
+		{
+			myPriority 15600
+			myMinimumKills 1
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets with kill" < uid=86C9308257FC3C16000F62CDEDACC0AA >
+		{
+			myPriority 14400
+			myMinimumKills 1
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "1 target with kill" < uid=86C9308258E7E1040000419C5404E93B >
+		{
+			myPriority 12200
+			myMinimumKills 1
+		}
+		PowerEvaluationData "3 targets blocking" < uid=86C9308258E7E1040000419DE62BAAF8 >
+		{
+			myPriority 10200
+			myMinimumAffectedTargets 3
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Blocking
+				{
+					mySpecialEffect Block
+				}
+			}
+		}
+		PowerEvaluationData "2 targets blocking" < uid=86C9308258E7E1040000419E24ABDF07 >
+		{
+			myPriority 8700
+			myMinimumKills 0
+			myMinimumAffectedTargets 2
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Blocking
+				{
+					mySpecialEffect Block
+				}
+			}
+		}
+		PowerEvaluationData "3 targets" < uid=86C9308258E7E1040000419F22AA64D9 >
+		{
+			myPriority 7600
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets" < uid=86C9308258E7E104000041A051941C86 >
+		{
+			myPriority 6400
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "1 target" < uid=86C9308258E7E104000041A1EA530026 >
+		{
+			myPriority 2800
+		}
+	}
+	mySecondarySkillScript < uid=B9E930CA56B938D800000148ACDD3D8F > = Simple_Rush_Damage_Script
+	myDialogueSkillScript < uid=326B24CD57ED635500000A66BBFF45DA > = Camel_Simple_PlayDialogue_Script
+	myTuningData < uid=B9E930CA56B938D800000149B7F7F557 > = pwr_speedster_power3_Tuning
+	myCameraPreset < uid=8E1BC4435924025B0025DF5F07910B73 > = Speedster_Power03
+	myPowerGroup Normal
+	myAnimationSetData
+	{
+		myIntroState speedster_power3intro
+		myLoopState speedster_power3loop
+		myOutroState speedster_power3outro
+	}
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 0.83333
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

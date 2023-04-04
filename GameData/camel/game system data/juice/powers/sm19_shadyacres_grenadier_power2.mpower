@@ -1,0 +1,7 @@
+include ./sm19_shadyacres_grenadier_power1.mpower
+
+CombatPower sm19_shadyacres_grenadier_power2 < uid=8E224C3D58F70B0300004FD5F41C642E > : sm19_shadyacres_grenadier_power1
+{
+	myAnimationState power1
+}
+

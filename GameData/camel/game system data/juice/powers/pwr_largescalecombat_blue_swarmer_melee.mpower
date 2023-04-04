@@ -1,0 +1,37 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower pwr_largescalecombat_blue_swarmer_melee < uid=86C93082579524FA00016E54100B1874 >
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_swarmer_melee Name\", enabled = true, guid = #86C93082579524FA00016E5366EA53F7, lineVersion = 0, maxLength = 17, text = \"Swarmer Melee\""
+	myUseSkillScript < uid=86C93082579524FA00016E5521E5EDB0 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C93082579524FA00016E56EFF37B04 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "prio party" < uid=86C930825795252B00016E5B9DB464E7 >
+		{
+			myPriority 100
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C93082579524FA00016E589332935C > = enemy_pwr_archetype_swarmer_melee_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

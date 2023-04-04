@@ -1,0 +1,21 @@
+include "camel/game system data/fruit/items/loot.fruit"
+
+class ExperienceLevel
+{
+	int myXP
+	varmap myUIName	< bhv = "localization" >
+	int myRecommendedMight 0
+	LootTable* myRewardsLootTable
+	ArtifactType myUnlockArtifactSlotType None
+	int myUnlockArtifactSlotCount 0
+}
+
+list ExperienceTable
+{
+	ExperienceLevel
+}
+
+class ExperienceData
+{
+	ExperienceTable myExperienceTable
+}

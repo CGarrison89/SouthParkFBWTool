@@ -1,0 +1,41 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/pwr_cultistcop_power03.mskillscriptjuice
+
+CombatPower MM16_shub_bruiser_melee_right < uid=3267E0D05901051F000628094A2EA231 > : enemy_pwr_archetype_bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/CultistCops_DaggerAttack.dds"
+	myUIName "contextComment = \"\", description = \"\", enabled = true, guid = #3267E0D05901051F00062808EA8ED376, lineVersion = 0, maxLength = 23, text = \"Extinguish The Sun\""
+	myUseSkillScript < uid=3267E0D05901051F0006280A72759E3E > = pwr_cultistcop_power03
+	myAnimationState power1
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default_right < uid=3267E0D05901051F0006280C91A6E0DF >
+		{
+			myPriority 75
+			myAIDesirableType None
+			myValidDirections
+			{
+				myLeft FALSE
+				myRight TRUE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D05901051F0006280DAEA6E7F0 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myLeft FALSE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=3267E0D05901051F0006280E70FC1874 > = enemy_pwr_mm16_shub_bruiser_melee_right_amcclay_Tuning
+}
+

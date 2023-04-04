@@ -1,0 +1,32 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower pwr_com_maxImpact < uid=B9E930CA55DF46D0000000856B10B85A >
+{
+	myIconImage "camel/baked/assets/ui/power selection/power_enemy_mechacan_maximpact.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/rush_3.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_maximpact Name\", enabled = true, guid = #51C546C65774DBE9000000ADED40DBAA, lineVersion = 0, maxLength = 1, text = \"Max Impact\""
+	myUseSkillScript < uid=B9E930CA55DF46D00000008605E3FD1A > = Camel_Simple_Placeholder_Damage_Script
+	myAnimationState ""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA55DF4E7E00008D2F5DF78468 >
+		{
+			myPriority 13
+		}
+		PowerEvaluationData Enraged < uid=86C9308257C484D2000059122AD12CD2 >
+		{
+			myPriority 13
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+		}
+		PowerEvaluationData Props < uid=86C9308257C4851C0000591AE93FD65A >
+		{
+			myPriority 12
+			myAIDesirableType C
+		}
+	}
+	myTuningData < uid=B9E930CA55DF46D00000008733B10310 > = pwr_com_maxImpact_Tuning
+}
+

@@ -1,0 +1,40 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/megamexican_lavapiss_surroundingcells.mskillscriptjuice
+include ./buddypowers.joh.juice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_mm12_chaossupreme.juice"
+include ./enemypowers.mvernon.juice
+include camel/skillscript/magamexican_lavapiss.mskillscriptjuice
+
+CombatPower pwr_mm12_megamexican_lavapiss < uid=6D7AC9B1576C4EA800002B5C8FAB752C >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/humankite_LaserEyes.dds"
+	myUIName "contextComment = \"Human Kite Power 1 Name\", description = \"pwr_mm12_megamexican_lavapiss Name\", enabled = true, guid = #51C546C65774DC300000013E544625F1, lineVersion = 2, maxLength = 8, text = \"Chaos\""
+	myUIDescription "contextComment = \"Human Kite Power 1 Description\", description = \"pwr_mm12_megamexican_lavapiss Description\", enabled = true, guid = #51C546C65774DC300000013F5A89B9F2, lineVersion = 1, maxLength = 48, text = \"Rake a target with Kite's laser eyes.\""
+	myUseSkillScript < uid=6D7AC9B1576C4EA800002B5D21C12F89 > = megaMexican_LavaPiss_surroundingcells
+	myAnimationState ""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B1576C4EA800002B5E173763B7 >
+		{
+			myPriority 50
+			myAggroPriority 2000
+			myMinimumAffectedTargets 1
+			myValidDirections
+			{
+				myLeft TRUE
+				myRight TRUE
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=6D7AC9B1576C4EA800002B5F9D627896 > = pwr_com_mm12_megamexican_lavapiss_SELF_MVernon_Tuning
+	myCameraPreset < uid=6D7AC9B1576C4EA800002B6049B47C03 > = Lava_Power
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

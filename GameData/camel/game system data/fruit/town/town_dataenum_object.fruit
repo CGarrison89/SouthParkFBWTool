@@ -1,0 +1,31 @@
+
+enum TownObjectTypeEnum
+{
+	NOTSET
+	default
+	actor
+	ash_tray
+	ATM	
+	bench
+	chair
+	crossing_signal
+	Curtain
+	dance_point
+	DJ_booth	
+	door
+	entrance
+	fountain
+	idle_point
+	lamp_post
+	look_for_cat
+	mailbox
+	parking_meter
+	potted_plant
+	sign
+	speaker
+	stripper_pole
+	stage
+	stool
+	tree
+	window 
+}

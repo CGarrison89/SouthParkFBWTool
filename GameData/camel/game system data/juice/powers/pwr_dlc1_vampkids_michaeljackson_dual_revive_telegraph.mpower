@@ -1,0 +1,162 @@
+include ./enemy_pwr_archetype_priest_heal.mpower
+include ./dlc1_enemypowers.juice
+include camel/skillscript/dlc1_vampkids_michaeljackson_revive_skillscript.mskillscriptjuice
+include "camel/game system data/juice/camera/casabonita/uber_camera_powers_presets_michaeljackson.juice"
+include "camel/game system data/juice/ai/npc/dlc1_enemiestuning.juice"
+include camel/skillscript/dlc1_vampkids_michaeljackson_dual_revive_telegraph_skillscript.mskillscriptjuice
+include camel/skillscript/camel_simple_swappower_slot3.mskillscriptjuice
+
+CombatPower pwr_DLC1_VampKids_MichaelJackson_dual_revive_telegraph < uid=8585E53F5A31A52A0002BFC476F70CF2 > : enemy_pwr_archetype_priest_heal
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/MichaelJackson_Power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_3x5.dds"
+	myUIName "contextComment = \"\", description = \"pwr_DLC1_VampKids_MichaelJackson_revive_name\", enabled = true, guid = #8585E53F5A31A52A0002BFC328359429, lineVersion = 0, maxLength = 13, text = \"Thriller\""
+	myUseSkillScript < uid=8585E53F5A31A52A0002BFC5F750E0CF > = DLC1_VampKids_MichaelJackson_Dual_Revive_Telegraph_SkillScript
+	myIsADualEffectPower TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "1 target" < uid=8585E53F5A32BD98000A0F9461CB950E >
+		{
+			myPriority 510
+			myMinimumAffectedTargets 1
+			myNumTelegraphPowersAllowed 1
+			myAIDesirableType None
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry DazedImmunity
+				{
+					mySpecialEffect DazedImmunity
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "2 targets" < uid=8585E53F5A32BD98000A0F9575901925 >
+		{
+			myPriority 520
+			myMinimumAffectedTargets 2
+			myNumTelegraphPowersAllowed 1
+			myAIDesirableType None
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry DazedImmunity
+				{
+					mySpecialEffect DazedImmunity
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "3 targets" < uid=8585E53F5A32BD98000A0F9620E0165D >
+		{
+			myPriority 530
+			myMinimumAffectedTargets 3
+			myNumTelegraphPowersAllowed 1
+			myAIDesirableType None
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry DazedImmunity
+				{
+					mySpecialEffect DazedImmunity
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "4 targets" < uid=8585E53F5A32BD98000A0F978FB2DB39 >
+		{
+			myPriority 540
+			myMinimumAffectedTargets 4
+			myNumTelegraphPowersAllowed 1
+			myAIDesirableType None
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry DazedImmunity
+				{
+					mySpecialEffect DazedImmunity
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "5 targets" < uid=8585E53F5A3307940041ADAD453B7C42 >
+		{
+			myPriority 550
+			myMinimumAffectedTargets 5
+			myNumTelegraphPowersAllowed 1
+			myAIDesirableType None
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry DazedImmunity
+				{
+					mySpecialEffect DazedImmunity
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "6 targets" < uid=8585E53F5A3307940041ADAE514022A3 >
+		{
+			myPriority 560
+			myMinimumAffectedTargets 6
+			myNumTelegraphPowersAllowed 1
+			myAIDesirableType None
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry DazedImmunity
+				{
+					mySpecialEffect DazedImmunity
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "7 targets" < uid=8585E53F5A3307940041ADAFB47F0D2C >
+		{
+			myPriority 570
+			myMinimumAffectedTargets 7
+			myNumTelegraphPowersAllowed 1
+			myAIDesirableType None
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry DazedImmunity
+				{
+					mySpecialEffect DazedImmunity
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=8585E53F5A31CFF10002C0157B27C08C > = Camel_Simple_SwapPower_Slot3
+	myTuningData < uid=8585E53F5A31A52A0002BFC7889A779B > = pwr_DLC1_VampKids_MichaelJackson_dual_revive_telegraph_Tuning
+	myCameraPreset < uid=8585E53F5A31A52A0002BFC846C46AE6 > = MichaelJackson_Power03
+	myPowerDeathTargeting DeadAndAlive
+	myTelegraphData
+	{
+		myTelegraphedPowerName pwr_DLC1_VampKids_MichaelJackson_dual_revive_execute
+		myTelegraphingAnimationName locomotion
+	}
+}
+

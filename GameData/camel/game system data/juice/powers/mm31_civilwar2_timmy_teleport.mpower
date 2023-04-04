@@ -1,0 +1,35 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/pwr_placeholder_spawn_pet_player.mskillscriptjuice
+include camel/skillscript/camel_gadgeteer2_spawn_pet.mskillscriptjuice
+include camel/skillscript/mm31_civil_war2_timothy_kid_spawn.mskillscriptjuice
+include camel/skillscript/mm31_civil_war2_timothy_teleport.mskillscriptjuice
+include ./enemypowers.adrian.juice
+
+CombatPower MM31_civilwar2_timmy_teleport < uid=86D640765759D9670000003E4DF08258 >
+{
+	myUIName "contextComment = \"\", description = \"mm31_civilwar2_timmy_teleport Name\", enabled = true, guid = #51C546C65774D952000000C059582A5D, lineVersion = 2, maxLength = 16, text = \"[Teleport]\""
+	myUIDescription "contextComment = \"\", description = \"mm31_civilwar2_timmy_teleport Description\", enabled = true, guid = #51C546C65774D952000000C103793FB5, lineVersion = 0, maxLength = 20, text = \"kid description\""
+	myUseSkillScript < uid=86D640765759D9670000003F1EB64B27 > = MM31_civil_war2_timothy_teleport
+	myAnimationState ""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=86D640765759D967000000401747D4A9 >
+		{
+			myPriority 100
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86D640765759D9670000004141C1EE34 > = pwr_mm31_timmy_teleport_Adrian_Tuning
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

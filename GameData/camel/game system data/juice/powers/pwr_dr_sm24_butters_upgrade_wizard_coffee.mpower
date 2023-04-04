@@ -1,0 +1,8 @@
+include ./pwr_sm24_butters_upgrade_wizard_coffee.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower pwr_dr_sm24_butters_upgrade_wizard_coffee < uid=C87888A05A0A6A05000789E00F721126 > : pwr_sm24_butters_upgrade_wizard_coffee
+{
+	myTuningData < uid=C87888A05A0A6C8E00014158116F414E > = pwr_dr_sm24_wizard_ranged_Tuning
+}
+

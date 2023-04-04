@@ -1,0 +1,13 @@
+include "camel/game system data/fruit/ai/npc.fruit"
+include "camel/game system data/fruit/Player/BuddyParty.fruit"
+include "camel/game system data/fruit/items/items.fruit"
+include "camel/game system data/fruit/powers/hologram.fruit"
+include "camel/game system data/fruit/heroDNA/heroDNA.fruit"
+
+class Player : NPC
+{
+	BuddyPartyList myBuddyPartyList
+	CostumeItemList myDefaultCostume
+	Holograms myHolograms
+	AutoEquipDefaultHeroDNAs myDefaultHeroDNAs
+}

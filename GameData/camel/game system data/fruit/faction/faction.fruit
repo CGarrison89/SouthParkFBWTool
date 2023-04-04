@@ -1,0 +1,88 @@
+enum FactionEnum < useCategories=1 >
+{
+    None
+	Player
+	Neutral
+	
+	< startCategory="Combat" >
+	3rdParty
+	Ally
+	Confused3rdParty
+	ConfusedAlly
+	ConfusedThug
+	MM17_NeutralCoon
+	MM19_Explosive
+	MM64B_Swarmer
+	MysterionGhost
+	PlayerFriendly_EnemyHostile
+	SantaVictim
+	ShubVictim
+	Thug
+	< endCategory="" >
+		
+	< startCategory="Story" >
+	3rdParty_hostile
+	4thParty
+	4thParty_hostile
+	AssCreatures
+	BroadwayGuys
+	Bums
+	ChaosMinions
+	CityNinja
+	Confused3rdParty_hostile
+	Confused4thParty
+	Confused4thParty_hostile
+	Cops
+	CrabPeople
+	Mephisto
+	Monsters
+	OldPeople
+	Pimps
+	RaisinsGirls
+	ShubSpawn
+	SixthGraders
+	VampKids
+	WineDrunkZombies
+	< endCategory="" >
+	
+	//BAD
+}
+
+class Faction  < uid=auto >
+{
+	FactionEnum myName
+}
+
+enum FactionRelationType
+{
+	Friendly
+	Hostile
+    	Ignore
+}
+
+class FactionRelation
+{
+	Faction* myFaction
+	FactionRelationType myRelation
+}
+
+list FactionRelationList
+{
+	FactionRelation
+}
+
+class FactionRelations
+{
+	Faction* myFaction
+	FactionRelationList myFactionRelations
+}
+
+list FactionRelationsList
+{
+	FactionRelations
+}
+
+class FactionRelationTable
+{
+	FactionRelationsList myFactionRelations
+}

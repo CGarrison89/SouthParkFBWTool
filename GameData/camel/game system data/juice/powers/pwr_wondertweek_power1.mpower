@@ -1,0 +1,76 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_wondertweek.juice"
+
+CombatPower pwr_wondertweek_power1 < uid=B9E930CA56D4B98C00000104A4FC23B8 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/wondertweek_LightningStrike.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/2_range_multilane.DDS"
+	myUIName "contextComment = \"Wonder Tweek Power 1 Name\", description = \"pwr_wondertweek_power1 Name\", enabled = true, guid = #51C546C65774DC5F000001B670F8BDE5, lineVersion = 3, maxLength = 22, text = \"Supreme Lightning\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_wondertweek_power1 Description\", enabled = true, guid = #51C546C65774DC5F000001B799E4D69C, lineVersion = 0, maxLength = 148, text = \"Buoyed by a powerful electrical field, Wonder Tweek calls down a bolt of lightning to smite and Shock his enemies.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_wondertweek_power1 Short Description\", enabled = true, guid = #9D0E6196579BCB140000449E27CFB9A6, lineVersion = 0, maxLength = 46, text = \"Blast and Shock foes with lightning\""
+	myUseSkillScript < uid=B9E930CA56D4B98C000001053C24BB8F > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "1 target" < uid=86C930825848B81B0021BA6C7BC3CB8C >
+		{
+			myPriority 20
+			myMinimumAffectedTargets 1
+		}
+		PowerEvaluationData "2 targets" < uid=86C930825848B81B0021BA6DD3BC121C >
+		{
+			myPriority 40
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "3 targets" < uid=86C930825848B81B0021BA6E3767F88F >
+		{
+			myPriority 60
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "1 target - kill" < uid=86C930825A56A43A00019507AD9FF491 >
+		{
+			myPriority 80
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets - kill" < uid=86C930825A56A43A00019508FC42958C >
+		{
+			myPriority 90
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "3 targets - kill" < uid=86C930825A56A43A0001950930D49BF2 >
+		{
+			myPriority 100
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData enraged < uid=86C930825848BA0D0021BA75E6541D7C >
+		{
+			myPriority 1020
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+		}
+	}
+	myTuningData < uid=B9E930CA56D4B98C00000106F1C0C292 > = pwr_wondertweek_power1_Tuning
+	myCameraPreset < uid=86D64076574F8A5300000014D95163E6 > = WonderTweek_Power01
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.0
+				myActionPlusEndTime 0.583333
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

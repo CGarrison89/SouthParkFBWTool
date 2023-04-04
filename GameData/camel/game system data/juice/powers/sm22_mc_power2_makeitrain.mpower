@@ -1,0 +1,29 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/powersmenu_simpleplayanim.mskillscriptjuice
+include camel/skillscript/pwr_king_power1_script.mskillscriptjuice
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/pwr_pimp_power2.mskillscriptjuice
+
+CombatPower sm22_mc_power2_makeitrain < uid=B642A89A59079A140006867E21733E14 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/power_placeholder_basic.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide_heal.dds"
+	myUIName "contextComment = \"SM22 only power - Make it Rain\", description = \"sm22_mc_power2_makeitrain\", enabled = true, guid = #B642A89A59079A140006867B7195F1AA, lineVersion = 3, maxLength = 16, text = \"Make it Rain\""
+	myUIDescription "contextComment = \"\", description = \"\", enabled = false, guid = #B642A89A59079A140006867C3C97E8B5, lineVersion = 2, maxLength = 0, text = \"|empty|\""
+	myUIShortDescription "contextComment = \"\", description = \"\", enabled = false, guid = #B642A89A59079A140006867D18CFB6DF, lineVersion = 0, maxLength = 0, text = \"|empty|\""
+	myUseSkillScript < uid=B642A89A59079A140006867FFFB58331 > = pwr_pimp_power2
+	myAnimationState ""
+	myShouldRepositionBeforeExecution FALSE
+	myPowerEvaluationData
+	{
+	}
+	myTuningData < uid=B642A89A59079A14000686807CE40E32 > = pwr_sm22_makeitrain_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

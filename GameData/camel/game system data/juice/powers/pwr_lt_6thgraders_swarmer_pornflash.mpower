@@ -1,0 +1,42 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_LT_6thgraders_swarmer_pornflash < uid=B9E930CA57B6723200000261DCEA6E5A > : enemy_pwr_archetype_swarmer_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/6thGrader_PornPhone.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee_heal.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_swarmer_melee Name\", enabled = true, guid = #B9E930CA57B6723200000260BD13F2E2, lineVersion = 0, maxLength = 16, text = \"Porn Flash\""
+	myUseSkillScript < uid=B9E930CA57B6723200000262066B2A46 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power3
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA57B73CF7000002AD3CBB0128 >
+		{
+			myPriority 35
+			myTargetHealthLessThanPercentage 90.0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=B9E930CA57B73CF7000002AE86306AF4 >
+		{
+			myPriority 10
+			myAggroPriority 1010
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA57B6723200000263BC42E1A5 > = pwr_LT_6thgraders_swarmer_pornflash_Kevin_Tuning
+	myCameraPreset < uid=6D7AC9B157BE69B50000025A8DDBC581 > = Preset_Generic_Melee
+}
+

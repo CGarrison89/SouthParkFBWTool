@@ -1,0 +1,17 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_revive_script.mskillscriptjuice
+include camel/skillscript/camel_simple_remove_statuseffect_script.mskillscriptjuice
+include camel/skillscript/camel_simple_healing_script.mskillscriptjuice
+include camel/skillscript/camel_simple_antidote_remove_statuseffect_script.mskillscriptjuice
+include camel/skillscript/camel_simple_antidote2_remove_statuseffect_script.mskillscriptjuice
+include camel/skillscript/camel_consumable_eat_script.mskillscriptjuice
+
+CombatPower item_antidote2 < uid=C27CCFE357FC065C00000B11A9086BF8 >
+{
+	myUIName "contextComment = \"\", description = \"\", enabled = false, guid = #C27CCFE357FC065C00000B109BD01501, lineVersion = 0, maxLength = 1, text = \"|empty|\""
+	myUseSkillScript < uid=C27CCFE357FC065C00000B12C923BA32 > = camel_consumable_eat_script
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myIsACleansePower TRUE
+	myTuningData < uid=C27CCFE357FC065C00000B131A7D8A0D > = item_antidote2_consumable_Tuning
+}
+

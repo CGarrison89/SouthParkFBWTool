@@ -1,0 +1,16 @@
+
+list DayStateFollowerGoals
+{
+	float
+}
+
+class CoonstagramConfig
+{
+	float myFollowerAngularFrequency 40
+	float myDNATimestep 0.03
+	DayStateFollowerGoals myDayStateFollowerGoals
+	float myLf 0.05
+	float myRf 0.2
+	float myMinimumFollowerCount 6
+	int myMaxNumberOfPosts 1000
+}

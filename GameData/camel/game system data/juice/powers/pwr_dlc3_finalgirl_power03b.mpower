@@ -1,0 +1,41 @@
+include "camel/game system data/juice/camera/tardicaca/uber_camera_powers_presets_finalgirl.juice"
+include camel/skillscript/dlc3_finalgirl_sticky_bomb_part2.mskillscriptjuice
+include ./dlc3_playerpowers.juice
+include "camel/game system data/juice/items/finalgirl_hammer.mitem"
+
+CombatPower pwr_dlc3_finalgirl_power03b < uid=86D640765A98718300009DBF58F25DB4 >
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/LastGirl_Power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/4_Range_ST_LOS.dds"
+	myUIName "contextComment = \"Final Girl's Power 03b Name\", description = \"pwr_dlc3_finalgirl_power03b Name\", enabled = true, guid = #86D640765A98718300009DBDB0F698A1, lineVersion = 1, maxLength = 13, text = \"Detonate\"}"
+	myUIDescription "contextComment = \"Final Girl's Power 03b Long Description\", description = \"pwr_dlc3_finalgirl_power03b Long Description\", enabled = true, guid = #9D0E61965AB014420000A4CA31CF4DAD, lineVersion = 0, maxLength = 136, text = \"Move the New Kid to determine the enemy's knockback direction, and then detonate for damage and Bleeding.\""
+	myUIShortDescription "contextComment = \"Final Girl's Power 03b Short Description\", description = \"pwr_dlc3_finalgirl_power03b Short Description\", enabled = true, guid = #86D640765A98718300009DBEB0D90CFF, lineVersion = 1, maxLength = 51, text = \"Pick knockback direction, activate bomb\"}"
+	myUseSkillScript < uid=86D640765A98718300009DC0DD6A2CA0 > = DLC3_FinalGirl_Sticky_Bomb_Part2
+	myTargetingSkillScript < uid=86D640765A98718300009DC1D95D943C > = NULLREFERENCE
+	myAnimationState power1
+	myTuningData < uid=86D640765A98718300009DC2A19BC51C > = dlc3_pwr_finalgirl_sticky_bomb_part2_Tuning
+	myCameraPreset < uid=86D640765A98718300009DC36B4E3366 > = FinalGirl_Power3B
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusEndTime 0.0
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+	myPreloadingItems
+	{
+		Item "Finalgirl Hammer" < uid=93C108765B342C040001A73B79BBFA9F > = finalgirl_hammer
+	}
+}
+

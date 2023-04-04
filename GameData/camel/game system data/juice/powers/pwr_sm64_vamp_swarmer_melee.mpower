@@ -1,0 +1,40 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include ./enemypowers.adrian.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_sm64_vamp_swarmer_melee < uid=8585E53F57CF25070003BE20937F5BF8 > : enemy_pwr_archetype_swarmer_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/VampKids_Swarmer_Power1.dds"
+	myUseSkillScript < uid=86C9308258520B260000640D2582A226 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=8585E53F57D862B700013378977C7FBF >
+		{
+			myPriority 20
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=8585E53F57D862B7000133794CACADAF >
+		{
+			myPriority 0
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData CanNotReach < uid=8585E53F57D8663900048ED9EB9043D1 >
+		{
+			myPriority 18
+		}
+	}
+	myTuningData < uid=8585E53F57CF25070003BE2191B9FD23 > = pwr_sm64_vamp_swarmer_melee_Adrian_Tuning
+}
+

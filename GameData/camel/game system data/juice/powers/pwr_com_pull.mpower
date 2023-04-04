@@ -1,0 +1,20 @@
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./buddypowers.juice
+
+CombatPower pwr_com_pull < uid=B642A89A55BA79B500000F605912B095 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/power_pull.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_pull Name\", enabled = true, guid = #51C546C65774DBF4000000BEF85090CA, lineVersion = 0, maxLength = 1, text = \"Pull\""
+	myUseSkillScript < uid=B642A89A55BA79B500000F618344A67C > = Camel_Simple_PlayAnim_Script
+	myTargetingSkillScript < uid=B642A89A55BA79B500000F62A103DB51 > = NULLREFERENCE
+	myAnimationState pull
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B642A89A55BA79B500000F63660CA96B >
+		{
+			myPriority 10
+		}
+	}
+	myTuningData < uid=B642A89A55BA79B500000F64AA562B27 > = pwr_com_pull_Tuning
+}
+

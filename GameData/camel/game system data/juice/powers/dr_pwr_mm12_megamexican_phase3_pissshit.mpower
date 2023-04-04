@@ -1,0 +1,42 @@
+include ./pwr_mm12_megamexican_phase3_pissshit.mpower
+
+CombatPower dr_pwr_mm12_megamexican_Phase3_PissShit < uid=86C930825A1380720031F18C733C0334 > : pwr_mm12_megamexican_Phase3_PissShit
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C930825A1380720031F18D73508F9C >
+		{
+			myPriority 250
+			myAggroPriority 0
+			myMinimumAffectedTargets 1
+			myTargetHealthMoreThanPercentage 0.0
+			myValidDirections
+			{
+				myLeft TRUE
+				myRight TRUE
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Max < uid=86C930825A1380720031F18E39DC8F35 >
+		{
+			myPriority 350
+			myAggroPriority 0
+			myMinimumAffectedTargets 2
+			myTargetHealthMoreThanPercentage 0.0
+			myValidDirections
+			{
+				myLeft TRUE
+				myRight TRUE
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData enrage < uid=86C930825A1380720031F18F851BA4EA >
+		{
+			myAggroPriority 1000
+			myMinimumAffectedTargets 1
+		}
+	}
+}
+

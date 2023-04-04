@@ -1,0 +1,15 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include ./enemypowers.adrian.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_sm25_rogue_melee_bleeding < uid=86C93082585199DF0000140EE9E59B01 > : enemy_pwr_archetype_swarmer_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/CrabSwarmer_power1.dds"
+	myUIName "contextComment = \"power name\", description = \"enemy_pwr_archetype_swarmer_melee Name\", enabled = true, guid = #9D0E619659978A710000929388B86368, lineVersion = 0, maxLength = 21, text = \"Vicious Snipping\""
+	myUseSkillScript < uid=86C9308258519AEC00001462A3B459DC > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 7
+	myShouldRepositionBeforeExecution TRUE
+	myTuningData < uid=86C93082585199DF0000140FA83E6745 > = pwr_sm25_swarmer_melee_bleeding_Adrian_Tuning
+}
+

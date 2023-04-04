@@ -1,0 +1,18 @@
+
+enum CompareOperatorEnum
+{
+	NotSet
+	Equals
+	Greater
+	GreaterOrEquals
+	Less
+	LessOrEqual
+}
+
+enum LogicalOperatorEnum
+{
+	NotSet
+	And
+	Or
+	Not
+}

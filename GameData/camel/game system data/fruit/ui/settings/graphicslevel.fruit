@@ -1,0 +1,7 @@
+enum GraphicsLevel
+{
+	Unknown
+	Low
+	Medium
+	High
+}

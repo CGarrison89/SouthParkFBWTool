@@ -1,0 +1,7 @@
+include ./pwr_sm69_priest_focus.mpower
+
+CombatPower pwr_sm64_karen_drink < uid=8585E53F57CF2BED00011A7554BFCE52 > : pwr_sm69_priest_focus
+{
+	myTuningData < uid=8585E53F57CF2BED00011A76EA74CBAD > = pwr_sm64_karen_drink_Adrian_Tuning
+}
+

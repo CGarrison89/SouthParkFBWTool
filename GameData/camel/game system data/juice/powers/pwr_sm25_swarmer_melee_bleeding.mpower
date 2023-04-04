@@ -1,0 +1,40 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include ./enemypowers.adrian.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_sm25_swarmer_melee_bleeding < uid=8585E53F57AA515200006688E2D7E7CA > : enemy_pwr_archetype_swarmer_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/CrabSwarmer_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"power name\", description = \"enemy_pwr_archetype_swarmer_melee Name\", enabled = true, guid = #9D0E6196599789F20000928F88C47ACB, lineVersion = 0, maxLength = 21, text = \"Vicious Snipping\""
+	myUseSkillScript < uid=86C9308258519AEC00001463AC4359E6 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 7
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=8585E53F5962779600025BAA90B95129 >
+		{
+			myPriority 19
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=8585E53F5962779600025BAB3803C128 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myMeleeOffset -1.0;0.0
+	myTuningData < uid=8585E53F57AA515200006689ED406EFA > = pwr_sm25_swarmer_melee_bleeding_Adrian_Tuning
+}
+

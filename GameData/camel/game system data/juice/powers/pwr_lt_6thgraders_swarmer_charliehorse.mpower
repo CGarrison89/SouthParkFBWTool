@@ -1,0 +1,39 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+include ./pwr_sm01_bruiser_melee_charliehorse.mpower
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_LT_6thgraders_swarmer_charliehorse < uid=B9E930CA57B6719D0000025D63405B09 > : pwr_sm01_bruiser_melee_charliehorse
+{
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUseSkillScript < uid=B9E930CA57B6719D0000025E233F2C85 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA57B73CCE000002AB5766C39D >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=B9E930CA57B73CCE000002AC1307EB44 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA57B6719D0000025F3DD0E876 > = pwr_LT_6thgraders_swarmer_charliehorse_Kevin_Tuning
+	myCameraPreset < uid=6D7AC9B157BE6821000001609D95906D > = Preset_Generic_Melee
+}
+

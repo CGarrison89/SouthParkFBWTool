@@ -1,0 +1,18 @@
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./buddypowers.juice
+include "camel/game system data/juice/projectiles/projectile_bomb.mprojectile"
+include "camel/game system data/juice/projectiles/projectile_cheesypoofs.mprojectile"
+
+CombatPower pwr_com_bufffocused < uid=DB7C6D42569EB31900006FF3A72440F8 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/power - toolshed - healing ray.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_bufffocused Name\", enabled = true, guid = #51C546C65774DBD10000008998C087AA, lineVersion = 0, maxLength = 1, text = \"Healing Ray\""
+	myUseSkillScript < uid=DB7C6D42569EB31900006FF4A31C8C80 > = Camel_Simple_PlayAnim_Script
+	myTargetingSkillScript < uid=DB7C6D42569EB31900006FF597582C18 > = NULLREFERENCE
+	myAnimationState power1
+	myPowerEvaluationData
+	{
+	}
+	myTuningData < uid=DB7C6D42569EB31900006FF6A96135A6 > = pwr_com_projfocused_Tuning
+}
+

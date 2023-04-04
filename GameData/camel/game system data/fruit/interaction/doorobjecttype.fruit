@@ -1,0 +1,34 @@
+include "camel/game system data/fruit/helpers/helpers_types.fruit"
+include "camel/game system data/fruit/localization/HardcodedLocalizedStrings.fruit"
+
+enum DoorObjectType
+{
+    Default
+    MC_NPC_Only
+    NPC_Only
+	Once_Interact
+    EnableInteractionEvenWhen_TF_Pause
+    EnableInteractionEvenWhen_TF_Pause_OnceInteract
+    MCInteract_RightDirection
+    MCInteract_LeftDirection
+    MCInteract_FrontDirection
+    MCInteract_BackDirection
+    GarageDoor
+    DisabledDuringAMM
+    MCInteract_RightDirection_DisabledDuringAMM
+    MCInteract_LeftDirection_DisabledDuringAMM
+    MCInteract_FrontDirection_DisabledDuringAMM
+    MCInteract_BackDirection_DisabledDuringAMM
+}
+
+class DoorObjectData
+{
+    bool CanNpcInteract false
+    bool OnceInteract false
+    bool CanMCInteract true
+    bool ShouldEnableInteractionEvenWhen_TF_Pause false
+    CardinalDirection OverrideMC_InteractDirection None
+    bool IsGarageDoor false
+    InteractionPromptType ActionTextWhenLocked "Locked"
+    bool CanBeUsedDuringAMM true
+}

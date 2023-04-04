@@ -1,0 +1,31 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/pwr_thecoon_power4_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_thecoon.juice"
+include ./enemypowers.mvernon.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_mm17_theCoon_mitch_power4 < uid=6D7AC9B159558F4D001177BFF8D908F8 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/MitchCoon_Power4.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide.DDS"
+	myUIName "contextComment = \"Coon Power 3 Name\", description = \"pwr_thecoon_power4 Name\", enabled = true, guid = #6D7AC9B159558F4D001177BC663541C6, lineVersion = 1, maxLength = 18, text = \"Mitch Ultimate\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_thecoon_power4 Description\", enabled = true, guid = #6D7AC9B159558F4D001177BD71151491, lineVersion = 1, maxLength = 18, text = \"Mitch Ultimate\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_thecoon_power4 Short Description\", enabled = true, guid = #6D7AC9B159558F4D001177BE2854512E, lineVersion = 0, maxLength = 56, text = \"Viciously claw all foes and make them Bleed\""
+	myUseSkillScript < uid=6D7AC9B159558F4D001177C0342E5D54 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power4
+	myLockedByDefault TRUE
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B15955910C0001C0D3274279D3 >
+		{
+			myPriority 500
+			myAggroPriority 0
+		}
+	}
+	myTuningData < uid=6D7AC9B159558F4D001177C1ED4676DC > = pwr_mm17_theCoon_mitch_power4_MVernon_Tuning
+	myCameraPreset < uid=6D7AC9B159558F4D001177C26711977B > = TheCoon_Power04
+	myPowerGroup Basic
+}
+

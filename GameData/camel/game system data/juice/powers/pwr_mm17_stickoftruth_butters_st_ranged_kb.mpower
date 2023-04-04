@@ -1,0 +1,41 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_buttershammer.mprojectile"
+
+CombatPower pwr_mm17_stickoftruth_butters_st_ranged_kb < uid=86C9308257BB7689000001BC1A81CF66 > : enemy_pwr_archetype_bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/butters_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/2_range_st.dds"
+	myUIName "contextComment = \"\", description = \"Hammer of Justice\", enabled = true, guid = #8E1BC44358EC62FF00024717DF2CD265, lineVersion = 0, maxLength = 22, text = \"Hammer of Justice\""
+	myUseSkillScript < uid=8E1BC44358EC32850000472E12D62B08 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myProjectile < uid=8E1BC44358EC32850000472F45980166 > = projectile_buttersHammer
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308257D993EC00036D7802053F71 >
+		{
+			myPriority 30
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308257D993EC00036D79816EC7C6 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumDistanceToEnemies 2
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C9308257BB7689000001BDC85B63E8 > = pwr_mm17_stickoftruth_butters_st_ranged_kb_Kevin_Tuning
+}
+

@@ -1,0 +1,18 @@
+include "camel/game system data/juice/camera/casabonita/uber_camera_powers_presets_henrietta.juice"
+include camel/skillscript/pwr_henrietta_power04_script.mskillscriptjuice
+include ./dlc1_buddypowers.juice
+
+CombatPower pwr_dlc1_henrietta_power04 < uid=B9E930CA599E29AD000091D4364A5F61 >
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/Henrietta_Power4.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide_lifesteal.DDS"
+	myUIName "contextComment = \"power name\", description = \"pwr_dlc1_henrietta_power04 Name\", enabled = true, guid = #B9E930CA59EE5D47003AD2F70B63182D, lineVersion = 1, maxLength = 16, text = \"Black Mass\""
+	myUIDescription "contextComment = \"power desc in pause ui\", description = \"pwr_dlc1_henrietta_power04 Description\", enabled = true, guid = #B9E930CA59EE5D47003AD2F88C924A44, lineVersion = 1, maxLength = 146, text = \"Henrietta calls upon the hosts of Hell to damage her foes and heal her...well, not friends, but allies at least.\""
+	myUIShortDescription "contextComment = \"power desc combat ui\", description = \"pwr_dlc1_henrietta_power04 Short Description\", enabled = true, guid = #B9E930CA59EE5D47003AD2F9DF2F5DF1, lineVersion = 1, maxLength = 44, text = \"Damage all enemies and heal allies\""
+	myUseSkillScript < uid=B9E930CA599F1BAA00018DCABA022B49 > = pwr_henrietta_power04_script
+	myCanTargetProps FALSE
+	myTuningData < uid=B9E930CA599E2A06000091E4D3F8F975 > = dlc1_pwr_henrietta_power04_Tuning
+	myCameraPreset < uid=B9E930CA59EE32B3001536C7CA9F420A > = Henrietta_Power04
+	myPowerGroup Ultimate
+}
+

@@ -1,0 +1,67 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_jared.juice"
+include ./dlc2_enemypowers.juice
+
+CombatPower dr_mm16_jared_aide_power2 < uid=8585E53F5A0A42A80002AD4AA91DFA6E > : enemy_pwr_archetype_bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/jaredaids_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"mm16_jared_aide_power2 Name\", enabled = true, guid = #8585E53F5A0A42A80002AD49601B76AD, lineVersion = 0, maxLength = 8, text = \"Punch\""
+	myUseSkillScript < uid=8585E53F5A0A42A80002AD4BCF9ADD5F > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=8585E53F5A0A42A80002AD4CE26459CB >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=8585E53F5A0A42A80002AD4D5971F534 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData default_VIP < uid=8585E53F5A0A42A80002AD4E1FF9BAFE >
+		{
+			myPriority 20
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged_VIP < uid=8585E53F5A0A42A80002AD4F0690EC7B >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=8585E53F5A0A55050002BA10DF532135 > = pwr_dr_mm16_jared_aide_power2_Tuning
+	myCameraPreset < uid=8585E53F5A0A42A80002AD50C6FA4763 > = Preset_Generic_Melee
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

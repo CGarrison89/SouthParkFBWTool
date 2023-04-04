@@ -1,0 +1,26 @@
+include ./placeholder_enemy_power1.mpower
+include ./bosspowers.bbartram.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower pwr_com_cousinkyle_eyeLaser_Right < uid=6D7AC9B15743CCFE000030045CA41AB5 > : placeholder_enemy_power1
+{
+	myUIName "contextComment = \"\", description = \"pwr_com_cousinkyle_eyelaser_right Name\", enabled = true, guid = #51C546C65774DBD700000092EF03BAD0, lineVersion = 0, maxLength = 14, text = \"Eye Laser\""
+	myUseSkillScript < uid=6D7AC9B15743CCFE0000300562A07F21 > = Camel_Simple_Placeholder_Damage_Script
+	myAnimationState ""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B15743CCFE00003006FCAE1475 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myLeft FALSE
+				myRight TRUE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=6D7AC9B15743CCFE00003007AA7C67B8 > = pwr_com_ayinhara_Right_BBartram_Tuning
+}
+

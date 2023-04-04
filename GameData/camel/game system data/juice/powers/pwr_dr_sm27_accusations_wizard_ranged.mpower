@@ -1,0 +1,8 @@
+include ./pwr_sm27_accusations_wizard_ranged.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower pwr_dr_sm27_accusations_wizard_ranged < uid=C87888A05A0A6ACF00091358DBEECA03 > : pwr_sm27_accusations_wizard_ranged
+{
+	myTuningData < uid=C87888A05A0A6C7D00013D7F8C59ADAA > = pwr_dr_sm27_accusations_wizard_ranged_Tuning
+}
+

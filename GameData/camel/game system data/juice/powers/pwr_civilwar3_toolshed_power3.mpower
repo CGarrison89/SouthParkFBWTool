@@ -1,0 +1,29 @@
+include ./mm31_civilwar2_toolshed_power3.mpower
+
+CombatPower pwr_civilwar3_toolshed_power3 < uid=86C9308257CA02F0000060943783A50A > : pwr_toolshed_power3
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "New PowerEvaluationData (0)" < uid=86C9308257DB187000330A8BEAF0381D >
+		{
+			myPriority 100
+			myMinimumAffectedTargets 2
+			myTargetHealthLessThanPercentage 80.0
+		}
+		PowerEvaluationData "New PowerEvaluationData (1)" < uid=86C9308257DB187000330A8C5CA00200 >
+		{
+			myPriority 95
+			myMinimumAffectedTargets 1
+			myTargetHealthLessThanPercentage 80.0
+		}
+		PowerEvaluationData Enraged < uid=86C9308257DB187000330A8D3FFE659B >
+		{
+			myPriority 95
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+			myTargetHealthLessThanPercentage 80.0
+		}
+	}
+}
+

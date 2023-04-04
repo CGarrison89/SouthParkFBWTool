@@ -1,0 +1,42 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include camel/skillscript/camel_simple_placeholder_pounce_damage_script.mskillscriptjuice
+include camel/skillscript/pwr_mm15_ape_power2_script.mskillscriptjuice
+
+CombatPower mm15_ape_bruiser_power2 < uid=3267E0D057D0CDE20001887DC8DFDFF2 > : enemy_pwr_archetype_bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/assedgorilla_power2.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_bruiser_melee Name\", enabled = true, guid = #3267E0D057D0CDE20001887C0F38F427, lineVersion = 0, maxLength = 23, text = \"5 Assed Ape Pounce\""
+	myUseSkillScript < uid=3267E0D057D0CDE20001887E9BF227EB > = pwr_mm15_ape_power2_script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D057D0CDE20001887FDFDD27AD >
+		{
+			myPriority 10
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D057D0CDE200018880178C69BD >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myDialogueSkillScript < uid=3267E0D057D0CDE200018881219A04F1 > = NULLREFERENCE
+	myTuningData < uid=3267E0D057D0CDE2000188822B5DB256 > = enemy_pwr_mm15_ape_bruiser_pounce_amcclay_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

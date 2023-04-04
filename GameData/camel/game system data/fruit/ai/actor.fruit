@@ -1,0 +1,38 @@
+include "camel/game system data/fruit/faction/faction.fruit"
+include "camel/game system data/fruit/items/items.fruit"
+include "camel/game system data/fruit/items/CostumeType.fruit"
+include "camel/game system data/fruit/ai/actor_tuning.fruit"
+include "camel/game system data/fruit/capturesettings.fruit"
+
+list OasisIdList
+{
+	int
+}
+
+class Actor < uid=auto >
+{
+	varmap myUIName < bhv = "localization" >
+	varmap myUIDescription < bhv = "localization" >
+	varmap myUIClassName < bhv = "localization" >
+	varmap myUIUnlockDescription < bhv = "localization" >
+	varmap myUIAlias < bhv = "localization" >
+	file myGraphObjectFile "" < types=*.mgraphobject >
+	file myBehavior < types=*.mbehavior >
+	SkillScript* myOnDeathSkillScript
+	int myOasisId
+	OasisIdList myAlternateOasisIds
+	color mySubtitleColor 0xffffffff
+	bool myIsGhost false
+	CostumeType myDefaultCostumeType Hero
+	bool myShouldReactToInspection true
+	bool myShouldReactToHaywire false
+	bool myCan90DegreeTurn true
+	bool myCanUseConsumable true
+	bool myIsMinion false
+	bool myEnableLipsyncSmileOverride true
+	bool myCheckBaseHullCollision false
+	ActorIconList myDynamicIcons
+	int myMouthMinIndex 0
+	int myMouthMaxIndex 24
+	int myMouthDefaultIndex 21
+}

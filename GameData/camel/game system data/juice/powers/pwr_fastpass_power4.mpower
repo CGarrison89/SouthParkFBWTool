@@ -1,0 +1,38 @@
+include ./combatpowerincludes.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_fastpass.juice"
+include camel/skillscript/pwr_fastpass_power04_script.mskillscriptjuice
+
+CombatPower pwr_fastpass_power4 < uid=86D640765748793B000001C5761561CF >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/fastpass_power4.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/infinite_range_pierce.DDS"
+	myUIName "contextComment = \"Fast Pass Power 4 NAme\", description = \"pwr_fastpass_power4 Name\", enabled = true, guid = #51C546C65774DC11000000FE2B3C14AE, lineVersion = 2, maxLength = 14, text = \"Burning Lap\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_fastpass_power4 Description\", enabled = true, guid = #51C546C65774DC11000000FFD9D28F78, lineVersion = 0, maxLength = 179, text = \"In this display of raw Speedster horsepower, FastPass circumnavigates the globe, running over enemies in his way and leaving them Burning.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_fastpass_power4 Short Description\", enabled = true, guid = #9D0E6196579BA38E0000445D168F4DEA, lineVersion = 0, maxLength = 60, text = \"Trample and apply Burning to all foes in a row\""
+	myUseSkillScript < uid=86D640765748793B000001C6CFBAF913 > = pwr_fastpass_power04_script
+	myAnimationState ""
+	myNumberOfAttackEvents 3
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myTuningData < uid=86D640765748793B000001C707ED2F6E > = pwr_fastpass_power4_Tuning
+	myCameraPreset < uid=B9E930CA57B37FA40004500455CCA60A > = Fastpass_Power04
+	myPowerGroup Ultimate
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus FALSE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 2.25
+				myActionPlusPresetEnum Slow
+			}
+		}
+	}
+}
+

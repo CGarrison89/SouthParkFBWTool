@@ -1,0 +1,11 @@
+include ./pwr_mm19_explosive_suicide.mpower
+include camel/skillscript/pwr_mm25_shakenbeer_suicide_script.mskillscriptjuice
+
+CombatPower pwr_mm25_shakenbeer_suicide < uid=86C9308258A49E850000360842D92D8B > : pwr_mm19_explosive_suicide
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/RedneckC_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/1_range_cross.dds"
+	myUseSkillScript < uid=86C9308258A49EA1000036123B66C6BD > = pwr_mm25_shakenbeer_suicide_script
+	myTuningData < uid=86C9308258A4E7600010E760847600E2 > = pwr_mm25_shakenbeer_suicide_Kevin_Tuning
+}
+

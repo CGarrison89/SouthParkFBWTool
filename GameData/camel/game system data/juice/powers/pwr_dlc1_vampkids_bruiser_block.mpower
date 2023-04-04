@@ -1,0 +1,46 @@
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include ./enemypowers.bbartram.juice
+include ./enemy_pwr_archetype_blocker_block.mpower
+include "camel/game system data/juice/statuseffect/block.juice"
+include ./dlc1_enemypowers.juice
+
+CombatPower pwr_DLC1_VampKids_Bruiser_block < uid=86C9308259A5EEB700072F3583110BB9 > : enemy_pwr_archetype_blocker_block
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/VampBruiser_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/self_heal.dds"
+	myUIName "contextComment = \"power name\", description = \"pwr_DLC1_VampKids_Bruiser_block_name\", enabled = true, guid = #86C9308259EE5DD70000905F46EAD617, lineVersion = 1, maxLength = 14, text = \"Bat Block\""
+	myUseSkillScript < uid=86C9308259A5EEB700072F3642BD7D00 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308259A5EEB700072F37D36D000B >
+		{
+			myPriority 30
+			myPreferredRange -1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C9308259A5EEB700072F38744E3BF0 > = pwr_DLC1_VampKids_Bruiser_block_Tuning
+	mySelfStatusEffects
+	{
+		StatusEffect Block < uid=86C9308259A5F33F00072FA34D087B87 > = Block
+	}
+	myValidDirections
+	{
+		myLeft TRUE
+		myRight TRUE
+		myUp FALSE
+		myDown FALSE
+	}
+	myBlockingData
+	{
+		myDamageThreshold 20
+	}
+}
+

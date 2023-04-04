@@ -1,0 +1,27 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_mysterion.juice"
+include camel/skillscript/pwr_mysterion_power01_script.mskillscriptjuice
+
+CombatPower pwr_mysterion_dead_power1 < uid=86D640765769CB400000010061A4A611 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/MysterionDead_Power1.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"Mysterion Dead Power 1 Name\", description = \"pwr_mysterion_dead_power1 Name\", enabled = true, guid = #51C546C65774DC37000001538C6DD3D5, lineVersion = 1, maxLength = 17, text = \"Phantom Chill\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_mysterion_dead_power1 Description\", enabled = true, guid = #51C546C65774DC3700000154F9F1B66B, lineVersion = 0, maxLength = 183, text = \"Ghost Mysterion haunts an enemy, inflicting Chilled and reminding them that they really need to set up that will they've been thinking about.\"}"
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_mysterion_dead_power1 Short Description\", enabled = true, guid = #9D0E6196579BD0A0000044B676C4617E, lineVersion = 0, maxLength = 51, text = \"Haunt a foe, Chilling them with a touch\""
+	myUseSkillScript < uid=86D640765769CB400000010100AFCCCF > = pwr_mysterion_power01_script
+	myAnimationState power1
+	myNumberOfAttackEvents 1
+	myShouldRepositionBeforeExecution FALSE
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myTuningData < uid=86D640765769CB4000000102B9F38293 > = pwr_mysterion_dead_power1_Tuning
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

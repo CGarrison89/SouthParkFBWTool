@@ -1,0 +1,13 @@
+include ./enemy_pwr_archetype_rogue_melee.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_ninja_star.mprojectile"
+
+CombatPower MM12_lavacombat_rogue_melee < uid=86D64076574CCCA700000127E4DF7243 > : enemy_pwr_archetype_rogue_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/generics/generic_melee.dds"
+	myUseSkillScript < uid=6D7AC9B15813ED9F00000C49DA8948B4 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power5
+	myNumberOfAttackEvents 3
+	myProjectile < uid=8585E53F581AAE9200206F20E9F233FB > = projectile_ninja_star
+}
+

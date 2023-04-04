@@ -1,0 +1,44 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/sm64_vampkid_lifedrain_power1.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower sm64_vampkids_power1 < uid=3267E0D0579FC4A6000645DDC7B04C2E >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/VampKids_Bite.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_bruiser_melee Name\", enabled = true, guid = #3267E0D0579FC4A6000645DC7A56B662, lineVersion = 0, maxLength = 17, text = \"Feed, Per Se.\""
+	myUseSkillScript < uid=3267E0D0579FC4A6000645DE63CADC74 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D0579FC4A6000645DF08CCDD5F >
+		{
+			myPriority 30
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D0579FC4A6000645E0C7E69F82 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myDialogueSkillScript < uid=3267E0D0579FC4A6000645E182726A6C > = NULLREFERENCE
+	myTuningData < uid=3267E0D0579FC4A6000645E2B76E2F2A > = enemy_pwr_sm64_vampkid_power1_amcclay_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

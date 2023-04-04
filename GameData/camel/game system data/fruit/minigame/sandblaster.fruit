@@ -1,0 +1,203 @@
+enum SandblasterGuideSampleEnum
+{
+    LavaGL_type1
+    LavaGL_type2
+    LavaGL_type3
+    LavaGL_type4
+    TutorialGL_type1
+    TutorialGL_type2
+    GL_type1
+    GL_type2
+    GL_type3
+    GL_type4
+    GL_type5
+    GL_type6
+    GL_type7
+    MiniGame8_SpeedChange_6s
+    MiniGame9_SpeedChange_5.2s
+    MiniGame10_SpeedChange_8s
+    MiniGame11_out_fast_4s
+    MiniGame12_out_normal_4s
+	MiniGame13_out_normal_6s
+	MiniGame14_out_normal_8s
+	MiniGame15_out_slow_7.5s
+	MiniGame16_IN_fast_4s
+	MiniGame17_IN_normal_4.5s
+	MiniGame18_IN_normal_7.5s
+	MiniGame19_IN_slow_7.5s
+	MiniGame20_ALL_fast_3s
+	MiniGame21_ALL_normal_4.5s
+	MiniGame22_ALL_normal_6s
+	MiniGame23_ALL_slow_6s
+	MiniGame24_DeflationTimer_slow_10
+	MiniGame25_out_normal_4s_new
+	MiniGame8_SpeedChange_6s_NEW
+    MiniGame9_SpeedChange_5.2s_NEW
+    MiniGame10_SpeedChange_8s_NEW
+    MiniGame11_out_fast_4s_NEW
+	MiniGame13_out_normal_6s_NEW
+	MiniGame14_out_normal_8s_NEW
+	MiniGame15_out_slow_7.5s_NEW
+	MiniGame16_IN_fast_4s_NEW
+	MiniGame17_IN_normal_4.5s_NEW
+	MiniGame18_IN_normal_7.5s_NEW
+	MiniGame19_IN_slow_7.5s_NEW
+	MiniGame20_ALL_fast_3s_NEW
+	MiniGame21_ALL_normal_4.5s_NEW
+	MiniGame22_ALL_normal_6s_NEW
+	MiniGame23_ALL_slow_6s_NEW
+	MiniGame24_DeflationTimer_slow_10_NEW
+
+    GL_AirBlasterTest
+    GL_AirBlasterTest_00_2s
+    GL_AirBlasterTest_01_2s
+    GL_AirBlasterTest_02_2s
+    GL_AirBlasterTest_03_2s
+    GL_AirBlasterTest_04_2s
+    GL_AirBlasterTest_05_2s
+    GL_AirBlasterTest_06_2s
+    GL_AirBlasterTest_07_2s
+    GL_AirBlasterTest_08_2s
+    GL_AirBlasterTest_09_2s
+    GL_AirBlasterTest_10_2s
+
+}
+
+enum SandblasterCurvePatternEnum
+{
+    Sine
+    Square
+    Sample01
+    Sample02
+    Sample03
+    Graph1
+    Graph2
+    Graph3
+    Graph4
+    Graph5
+    Graph6
+    Graph7
+    Graph8
+    Graph9
+    Graph10
+    Graph11
+    Graph12
+	Graph13
+	Graph14
+	Graph15
+	Graph16
+	Graph17
+	Graph18
+	Graph19
+	Graph20
+	Graph21
+	Graph22
+	Graph23
+	Graph24
+	Graph25
+	Graph26
+	Graph27
+	Graph28
+	Graph29
+	Graph30
+
+
+}
+
+enum SandblasterParticleSettingsEnum
+{
+    lava_puddleA
+    Lava_prp_lavaPuddle_uStoreItForceField_B
+
+}
+
+enum SandblasterTypeEnum
+{
+    LavaPile
+    Pipe
+    Tutorial
+    Goo
+}
+
+class SandblasterParticleSettings
+{
+    int myImpulseCount 50
+    float mySize 0.3
+    float mySpawnZMin -0.3
+	float mySpawnZMax 0.1
+	float myZVelocityMin 0.5
+	float myZVelocityMax 1
+    float myXVelocity 2.5
+    float myHeightPower 2.5
+    float myGlow 0.2
+}
+
+class SandblasterCurvePattern
+{
+	SandblasterCurvePatternEnum myCurvePattern
+	string myCurve "{ defaultLeftSlope = 0, defaultRightSlope = 0, defaultValue = 0, interpolator = 0, isRefinedSampling = true, keys2 = { inTangents = { -0 0, -0.666667 0, }, outTangents = { 0.666667 0, 0 0, }, properties = { 3, 1027, }, values = { 0 0.5, 2 0.5, }, }, numKeys = 2, }" < bhv=inputgraph >
+}
+
+list SandblasterCurvePatternList
+{
+    SandblasterCurvePattern
+}
+
+class SandblasterCurveSetting
+{
+	SandblasterCurvePatternEnum myCurvePattern
+	float myPercentage
+}
+
+list SandblasterCurveSettingList
+{
+    SandblasterCurveSetting
+}
+
+class SandblasterAnimationSetting
+{
+	string myAnimation
+	float myPercentage
+    float myDeflationTimer
+}
+
+list SandblasterAnimationSettingList
+{
+    SandblasterAnimationSetting
+}
+
+class SandblasterGuideSample
+{
+    SandblasterGuideSampleEnum myId
+    float myDuration
+    bool myUseDeflationTimer
+    SandblasterCurveSettingList myCurveSettingList
+    SandblasterAnimationSettingList myAnimationSettingList
+}
+
+list SandblasterGuideSampleList
+{
+    SandblasterGuideSample
+}
+
+class AirblasterGuide
+{
+    float myGoalStrength
+    float myGoalMatchTime
+}
+
+list AirblasterGuideList
+{
+    AirblasterGuide
+}
+
+class AirblasterGuideSample
+{
+    SandblasterGuideSampleEnum myId
+    AirblasterGuideList myAirBlasterGuideList
+}
+
+list AirblasterGuideSampleList
+{
+    AirblasterGuideSample
+}

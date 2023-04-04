@@ -1,0 +1,88 @@
+include "camel/game system data/fruit/juiceObj.fruit"
+
+enum PowerBuddyEntryExitAnimationSettingTypeEnum < useCategories=1 >
+{
+	< startCategory="DiabeticRage" >
+	DiabeticRage
+	DiabeticRage_TipOver
+	DiabeticRage_Lift
+	DiabeticRage_TackleTutorial
+	
+	< startCategory="Fartkour" >
+	Fartkour
+	Fartkour_FlyDown
+	Fartkour_AutoFail
+
+	< startCategory="Haywire" >
+	Haywire
+
+	< startCategory="Sandblaster" >
+	Sandblaster_ToUp
+	Sandblaster_ToDown
+	Sandblaster_ToReverse
+}
+
+enum PowerBuddyEntryExitCameraSettingTypeEnum < useCategories=1 >
+{
+	< startCategory="DiabeticRage" >
+	DiabeticRage_Default
+	DiabeticRage_MP40
+	DiabeticRage_Softening_Left
+	DiabeticRage_Softening_Right
+	DiabeticRage_Tutorial
+	
+	< startCategory="Fartkour" >
+	Fartkour
+	Fartkour_Alt
+
+	< startCategory="Haywire" >
+	Haywire_Interpolation
+	Haywire_Jump
+
+	< startCategory="Sandblaster" >
+	Sandblaster
+}
+
+class EntryExitAnimationSet
+{
+	string myLeft ""
+	string myRight ""
+}
+
+class PowerBuddyEntryExitAnimationSetting : JuiceObj
+{
+	EntryExitAnimationSet myBuddyEntry_Buddy_FantasyAnimSet
+	EntryExitAnimationSet myBuddyEntry_MC_FantasyAnimSet
+	EntryExitAnimationSet myBuddyEntry_Buddy_FromLocomotionAnimSet
+	EntryExitAnimationSet myBuddyEntry_MC_FromLocomotionAnimSet
+	EntryExitAnimationSet myBuddyEntry_Buddy_InteractionAnimSet
+	EntryExitAnimationSet myBuddyEntry_MC_InteractionAnimSet
+	EntryExitAnimationSet myBuddyEntry_Buddy_InteractionAfterFantasyAnimSet
+	EntryExitAnimationSet myBuddyEntry_MC_InteractionAfterFantasyAnimSet
+
+	EntryExitAnimationSet myBuddyExit_Buddy_FantasyAnimSet
+	EntryExitAnimationSet myBuddyExit_MC_FantasyAnimSet
+	EntryExitAnimationSet myBuddyExit_Buddy_OutroAnimSet
+	EntryExitAnimationSet myBuddyExit_MC_OutroAnimSet
+	EntryExitAnimationSet myBuddyExit_Buddy_ToLocomotionAnimSet
+	EntryExitAnimationSet myBuddyExit_MC_ToLocomotionAnimSet
+	
+	EntryExitAnimationSet myBuddyExit_Buddy_OutroBeforeGoToNextAnimSet
+	EntryExitAnimationSet myBuddyExit_MC_OutroBeforeGoToNextAnimSet
+}
+
+class PowerBuddyEntryExitCameraSetting : JuiceObj
+{
+    string myEntry_Fantasy_CallBuddy ""
+	string myEntry_Fantasy_EnterBuddy ""
+	
+    string myEntry_Pathing ""
+    string myEntry_MinigameIntro ""
+    string myEntry_MinigameStart ""
+    
+    string myMinigame_StartIdleTime ""
+    
+    string myExit_Fantasy_ExitBuddy ""
+    string myExit_MinigameFailure ""
+}
+

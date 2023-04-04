@@ -1,0 +1,30 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_pet_damage_script_with_suicide.mskillscriptjuice
+
+CombatPower enemy_pwr_suicide_explode < uid=86D64076574CC9A8000000335DD25EAE >
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_suicide_explode Name\", enabled = true, guid = #51C546C65774D949000000A917B695FD, lineVersion = 0, maxLength = 23, text = \"Explosive On Death\""
+	myUseSkillScript < uid=86D64076574CC9A800000034D1692536 > = Camel_Simple_Placeholder_Pet_Damage_Script_With_Suicide
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D64076574CC9A800000035EDF8AEF8 >
+		{
+			myPriority 0
+			myTargetHealthLessThanPercentage 1.0
+			mySelfHealthLessThanPercentage 1.0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86D64076574CC9A8000000363237828B > = enemy_pwr_suicide_explode_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

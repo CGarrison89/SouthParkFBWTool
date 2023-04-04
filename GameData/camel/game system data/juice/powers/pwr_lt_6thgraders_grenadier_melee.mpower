@@ -1,0 +1,9 @@
+include ./enemy_pwr_archetype_grenadier_melee.mpower
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+
+CombatPower pwr_LT_6thgraders_grenadier_melee < uid=86C9308257683BD2000003EE58F26A22 > : enemy_pwr_archetype_grenadier_melee
+{
+	myTuningData < uid=86C9308257683BD2000003EF9235D6BA > = pwr_LT_6thgraders_grenadier_melee_Kevin_Tuning
+}
+

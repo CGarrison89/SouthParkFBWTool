@@ -1,0 +1,5 @@
+class CellAudioData
+{
+	varmap myCell < bhv = "cell" >
+	float myAudioListenerCellScale 1.0f
+}

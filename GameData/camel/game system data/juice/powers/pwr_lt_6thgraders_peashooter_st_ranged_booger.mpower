@@ -1,0 +1,42 @@
+include ./enemy_pwr_archetype_peashooter_st_ranged.mpower
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/projectiles/projectile_sixthgrader_peashooter_booger.mprojectile"
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_LT_6thgraders_peashooter_st_ranged_booger < uid=B9E930CA57AE3FC30001EF30C920ED6C > : enemy_pwr_archetype_peashooter_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/6thgrader_buggarflick.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_Range_ST_LOS.dds"
+	myUIName "contextComment = \"sixth grader peashooter booger power name\", description = \"enemy_pwr_archetype_peashooter_st_ranged Name\", enabled = true, guid = #9D0E619659975DFE000EB5591FFC30E0, lineVersion = 0, maxLength = 16, text = \"Booger Fling\""
+	myUseSkillScript < uid=B9E930CA57AE48220001EF8015CC62DD > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myProjectile < uid=B9E930CA57AE480D0001EF76B939BC1D > = projectile_sixthgrader_peashooter_booger
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=DB7C6D4257B3B15D00038E33EBC40839 >
+		{
+			myPriority 25
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=DB7C6D4257B3B15D00038E3400F838EB >
+		{
+			myPriority 25
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA57AE3FC30001EF315DDFCA98 > = pwr_LT_6thgraders_peashooter_st_ranged_Kevin_Tuning
+	myCameraPreset < uid=6D7AC9B157BE686E0000017619F5FF3F > = Preset_Generic_Ranged
+}
+

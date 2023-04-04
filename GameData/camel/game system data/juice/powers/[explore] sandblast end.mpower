@@ -1,0 +1,10 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/explore_sandblast_end.mskillscriptjuice
+
+Power "[explore] sandblast end" < uid=51B4F2D556176B6D0000007FB8358C4D >
+{
+	myUseSkillScript < uid=51B4F2D556176BEB0000008AAE301A23 > = explore_sandblast_end
+	myIsPassive TRUE
+	myUseActiveTargeting TRUE
+}
+

@@ -1,0 +1,24 @@
+enum TooltipPlacementEnum
+{
+	Default
+    TopLeft
+    TopCenter
+    TopRight
+    CenterLeft
+    CenterCenter
+    CenterRight
+    BottomLeft
+    BottomCenter
+    BottomRight
+	UpperThirdLeft
+	UpperThirdCenter
+	UpperThirdRight
+	LowerThirdLeft
+	LowerThirdCenter
+	LowerThirdRight
+	Custom_ArtifactSlot
+	Custom_ArtifactMight
+	Custom_UltMeter
+	Debug
+	Combat_Above_TFWidget
+}

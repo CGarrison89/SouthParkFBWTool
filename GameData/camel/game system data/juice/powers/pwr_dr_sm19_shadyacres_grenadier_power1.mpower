@@ -1,0 +1,47 @@
+include ./enemy_pwr_archetype_grenadier_st_lob_min.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_lobbed_power_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include "camel/game system data/juice/ai/npc/dlc2_enemiestuning.juice"
+include ./dlc2_enemypowers.juice
+
+CombatPower pwr_dr_sm19_shadyacres_grenadier_power1 < uid=8585E53F5A0505EC0002A3FBEEADD408 > : enemy_pwr_archetype_grenadier_st_lob_min
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/OldFolk_Grenadier_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/ST_range_2_3.dds"
+	myUIName "contextComment = \"old lady bomber power\", description = \"enemy_pwr_archetype_grenadier_st_lob_min Name\", enabled = true, guid = #8585E53F5A0505EC0002A3FA3C79CF23, lineVersion = 2, maxLength = 17, text = \"Colostomy Bag\""
+	myUseSkillScript < uid=8585E53F5A0505EC0002A3FC439D1B65 > = Camel_Lobbed_Power_PlayAnim_Script
+	myAnimationState power2
+	myProjectile < uid=8585E53F5A0505EC0002A3FD5516B628 > = NULLREFERENCE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=8585E53F5A0505EC0002A3FEA7E46B7E >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=8585E53F5A0505EC0002A3FF2769E61E >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=8585E53F5A0505EC0002A4008C8497A5 > = enemy_sm19_shadyacres_grenadier_power1_amcclay_Tuning
+	myCameraPreset < uid=8585E53F5A0505EC0002A4016CC3D7EB > = Preset_Generic_Ranged
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

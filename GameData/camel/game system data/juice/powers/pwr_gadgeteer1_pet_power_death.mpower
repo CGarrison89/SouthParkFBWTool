@@ -1,0 +1,27 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_pet_damage_script_with_self_damage.mskillscriptjuice
+include camel/skillscript/camel_placeholder_damage_and_telegraph.mskillscriptjuice
+include camel/skillscript/pwr_gadgeteer_pet_death.mskillscriptjuice
+
+CombatPower pwr_gadgeteer1_pet_power_death < uid=86D64076583374330002D6096AA09B9D >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/ChaosKid_Power4.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/1_range_cross.dds"
+	myUIName "contextComment = \"pwr_gadgeteer1_pet_power_suicide Name\", description = \"pwr_gadgeteer1_pet_power_suicide Name\", enabled = true, guid = #86D64076583374330002D6082EB095C7, lineVersion = 0, maxLength = 14, text = \"[Explode]\""
+	myUseSkillScript < uid=86D64076583374330002D60A8B3D403B > = pwr_gadgeteer_pet_death
+	myAnimationState ""
+	myRequiresValidTarget TRUE
+	myPowerEvaluationData
+	{
+	}
+	myTuningData < uid=86D64076583374330002D60CC688EB79 > = pwr_gadgeteer1_pet_power_death_Tuning
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myRight TRUE
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

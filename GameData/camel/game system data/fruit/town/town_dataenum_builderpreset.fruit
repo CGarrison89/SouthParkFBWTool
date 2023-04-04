@@ -1,0 +1,36 @@
+
+enum TownBuilderPresetTypeEnum
+{
+	NOTSET
+	
+	MAIN_Car
+	MAIN_Civilian_Adult
+	MAIN_Civilian_Adult_NonCombatant
+	MAIN_Civilian_Adult_NonCombatant_NoAnims
+	MAIN_Civilian_Adult_Combat
+	MAIN_Civilian_Child
+	MAIN_Civilian_Child_NonCombatant
+	MAIN_Civilian_Child_NonCombatant_NoAnims
+	MAIN_Softening_Adult
+	MAIN_Softening_Child
+	DLC1_Car
+	DLC1_Civilian_Adult
+	DLC1_Civilian_Adult_NonCombatant
+	DLC1_Civilian_Adult_NonCombatant_NoAnims
+	DLC1_Civilian_Adult_Combat
+	DLC1_Civilian_Child
+	DLC1_Civilian_Child_NonCombatant
+	DLC1_Civilian_Child_NonCombatant_NoAnims
+	DLC1_Softening_Adult
+	DLC1_Softening_Child
+	DLC3_Car
+	DLC3_Civilian_Adult
+	DLC3_Civilian_Adult_NonCombatant
+	DLC3_Civilian_Adult_NonCombatant_NoAnims
+	DLC3_Civilian_Adult_Combat
+	DLC3_Civilian_Child
+	DLC3_Civilian_Child_NonCombatant
+	DLC3_Civilian_Child_NonCombatant_NoAnims
+	DLC3_Softening_Adult
+	DLC3_Softening_Child
+}

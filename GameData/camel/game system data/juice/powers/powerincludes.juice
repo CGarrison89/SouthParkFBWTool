@@ -1,0 +1,11 @@
+include "./[buddypower] controlbuddy_exit.mpower"
+include "./[buddypower] coon rope.mpower"
+include "./[buddypower] scottmalkinson.mpower"
+include "./[buddypower] shove.mpower"
+include "./[buddypower] toolshed.mpower"
+include "./[explore] pushpull end.mpower"
+include "./[explore] pushpull start.mpower"
+include "./[explore] time fart.mpower"
+include ./ondeath_explode[power].mpower
+include "./[explore] fartkour.mpower"
+

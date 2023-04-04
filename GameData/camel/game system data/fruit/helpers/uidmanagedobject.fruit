@@ -1,0 +1,3 @@
+class uidManagedObject < uid=auto >
+{
+}

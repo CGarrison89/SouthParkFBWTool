@@ -1,0 +1,15 @@
+include ./pwr_lt_6thgraders_grenadier_telegraph_execute.mpower
+include camel/skillscript/pwr_mm12_methlab_grenadier_telegraph_execute_v2.mskillscriptjuice
+include camel/skillscript/camel_simple_swappower_slot2.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_methaddict.juice"
+
+CombatPower pwr_mm12_methlab_grenadier_telegraph_execute < uid=86C9308259445112000083BB43CB0E0E > : pwr_LT_6thgraders_grenadier_telegraph_execute
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/MethHead_Power7.dds"
+	myUIName "contextComment = \"laser pointer cat attack\", description = \"enemy_pwr_archetype_grenadier_aoe_lob_min Name\", enabled = true, guid = #9D0E6196596D119900008B683C151B78, lineVersion = 0, maxLength = 21, text = \"Feral Cat Attack\""
+	myUseSkillScript < uid=86C93082594452F90000841BFBC6D317 > = pwr_mm12_methlab_grenadier_telegraph_execute_v2
+	myProjectile < uid=86C930825944650600008370B957F423 > = NULLREFERENCE
+	myOnCombatActionCompleteSkillScript < uid=86C9308259541FE80001E9B7B7C4EA88 > = Camel_Simple_SwapPower_Slot2
+	myCameraPreset < uid=86C930825966FB3E0009A0F1E2C371DC > = NULLREFERENCE
+}
+

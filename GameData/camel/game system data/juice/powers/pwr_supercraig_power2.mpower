@@ -1,0 +1,48 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_supercraig.juice"
+include "camel/game system data/juice/statuseffect/block.juice"
+
+CombatPower pwr_supercraig_power2 < uid=B9E930CA56D4B571000000AE4D6C527F >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/supercraig_Taunt.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_Range_ST_LOS.DDS"
+	myUIName "contextComment = \"power name\", description = \"pwr_supercraig_power2 Name\", enabled = true, guid = #51C546C65774DC4F0000018F28140697, lineVersion = 2, maxLength = 25, text = \"Shining Hate Finger\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_supercraig_power2 Description\", enabled = true, guid = #51C546C65774DC4F00000190A3241814, lineVersion = 0, maxLength = 162, text = \"It's a \\"fuck you\\" on multiple levels as Super Craig proudly extends the finger, gains Block, and inflicts Enrage on an enemy.\"}"
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_supercraig_power2 Short Description\", enabled = true, guid = #9D0E6196579A8B5B00000186AE3F987D, lineVersion = 0, maxLength = 39, text = \"Gain Block and inflict Enraged\""
+	myUseSkillScript < uid=B9E930CA56D4B571000000AF886677E6 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myCanTargetProps FALSE
+	myRequiresValidTarget TRUE
+	myDialogueSkillScript < uid=326B24CD578040710000064563491E79 > = NULLREFERENCE
+	myTuningData < uid=B9E930CA56D4B571000000B045D021FC > = pwr_supercraig_power2_Tuning
+	myCameraPreset < uid=B9E930CA57DC1ED400007158ADCD5534 > = SuperCraig_Power02
+	myPowerGroup Normal
+	mySelfStatusEffects
+	{
+		StatusEffect Block < uid=B9E930CA57928395000019F2394E3FC0 > = Block
+	}
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myBlockingData
+	{
+		myDamageThreshold 301
+	}
+	myActionPlusData
+	{
+		myUseActionPlus FALSE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 1.3333
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

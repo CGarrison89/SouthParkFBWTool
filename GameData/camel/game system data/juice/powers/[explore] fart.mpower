@@ -1,0 +1,11 @@
+include camel/skillscript/explore_interact.mskillscriptjuice
+include camel/skillscript/explore_cursortargeting.mskillscriptjuice
+include camel/skillscript/explore_timefart.mskillscriptjuice
+include "camel/game system data/fruit/powers/powers.fruit"
+include camel/skillscript/explore_fart.mskillscriptjuice
+
+Power "[Explore] Fart" < uid=7496947955DE2131000003C8117DB019 >
+{
+	myUseSkillScript < uid=7496947955DE213A000003CC5F23D603 > = Explore_Fart
+}
+

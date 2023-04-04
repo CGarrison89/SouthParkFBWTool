@@ -1,0 +1,32 @@
+include ./sm64_vampkids_priest_power2.mpower
+include ./enemypowers.adrian.juice
+include camel/skillscript/sm25_crab_king_heal.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_sm25_crab_king_heal_focus < uid=8585E53F57DC895E0000B5D84F9360B5 > : sm64_vampkids_priest_power2
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/KingCrab_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide_heal.dds"
+	myUIName "contextComment = \"power name\", description = \"enemy_pwr_archetype_priest_heal Name\", enabled = true, guid = #9D0E619659978C180000929762D959BF, lineVersion = 0, maxLength = 22, text = \"Employee Discount\""
+	myUseSkillScript < uid=8585E53F57E2F2170006A379FF9BD28C > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=8585E53F57DC895E0000B5D9AC7900CD >
+		{
+			myPriority 20
+			myAggroPriority 1001
+			myRequireAggroTarget FALSE
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=8585E53F57DC895E0000B5DAB85122D2 > = pwr_sm25_crab_king_heal_focus_Adrian_Tuning
+	myCameraPreset < uid=8585E53F593064A700030A77AA9E9F41 > = Preset_Generic_Melee
+}
+

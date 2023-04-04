@@ -1,0 +1,32 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower mm15_superaltkite_boss_power4 < uid=3267E0D058DC678F0012C4CB8A916339 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Mutant_AltHumanKite_BloodyNose.dds"
+	myUIName "contextComment = \"\", description = \"\", enabled = true, guid = #3267E0D058DC678F0012C4CAF9EB72AE, lineVersion = 0, maxLength = 14, text = \"Nosebleed\""
+	myUseSkillScript < uid=3267E0D058DC678F0012C4CCC94BCF47 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power_nosebleed
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D058DC678F0012C4CD601223CF >
+		{
+			myPriority 105
+			myMinimumAffectedTargets 1
+			mySelfHealthLessThanPercentage 101.0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=3267E0D058DC678F0012C4CFC34768AA > = enemy_pwr_mm15_superaltkite_boss_power3_amcclay_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

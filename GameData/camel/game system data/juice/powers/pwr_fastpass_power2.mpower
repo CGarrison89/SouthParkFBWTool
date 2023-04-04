@@ -1,0 +1,50 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/pwr_fastpass_power2_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_fastpass.juice"
+
+CombatPower pwr_fastpass_power2 < uid=86D64076574875570000011BD83DC43A >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/fastpass_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_ST_min_range.DDS"
+	myUIName "contextComment = \"Fast Pass Power 2 Name\", description = \"pwr_fastpass_power2 Name\", enabled = true, guid = #51C546C65774DC10000000FA3E3DBF64, lineVersion = 4, maxLength = 14, text = \"Hit and Run\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_fastpass_power2 Description\", enabled = true, guid = #51C546C65774DC10000000FB9ACD1A33, lineVersion = 2, maxLength = 150, text = \"FastPass is just the right amount of both fast and furious as he speeds to an enemy and delivers a mighty clocking.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_fastpass_power2 Short Description\", enabled = true, guid = #9D0E6196579BA37800004457C3FB0F32, lineVersion = 0, maxLength = 25, text = \"Strike a nearby foe\""
+	myUseSkillScript < uid=86D64076574875570000011CE65BC5A3 > = pwr_fastpass_power2_script
+	myAnimationState ""
+	myNumberOfAttackEvents 1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=86C9308257D1CD8500005F498DB1C625 >
+		{
+			myPriority 15
+		}
+		PowerEvaluationData Kill < uid=86C930825A5693EB000194ED549CD3D3 >
+		{
+			myPriority 100
+			myMinimumKills 1
+		}
+		PowerEvaluationData Enraged < uid=86C9308257D1CD8500005F4A55F4BCBA >
+		{
+			myPriority 1020
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+		}
+	}
+	myTuningData < uid=86D64076574875570000011D161B48DD > = pwr_fastpass_power2_Tuning
+	myCameraPreset < uid=B9E930CA57B37F5D00045002E599296F > = Fastpass_Power02
+	myPowerGroup Normal
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 1.083333
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

@@ -1,0 +1,37 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/callgirl_power3_onblockbreak_marked.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_callgirl.juice"
+include "camel/game system data/juice/statuseffect/block.juice"
+
+CombatPower pwr_callgirl_power3 < uid=B9E930CA56D0A1B5000000D2448685E4 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/callgirl_power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_Range_ST_LOS.dds"
+	myUIName "contextComment = \"Call Girl Power 3 Name\", description = \"pwr_callgirl_power3 Name\", enabled = true, guid = #51C546C65774D960000000EFE3A47035, lineVersion = 2, maxLength = 16, text = \"bl0ckd.bat\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_callgirl_power3 Description\", enabled = true, guid = #51C546C65774D960000000F0539C5F8B, lineVersion = 2, maxLength = 192, text = \"Call Girl posts unflattering pics of an enemy on social media, Enraging a foe, gaining Block, and inflicting Defense Down when the Block is removed.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_callgirl_power3 Short Description\", enabled = true, guid = #9D0E6196579BAEF90000447291FF7305, lineVersion = 1, maxLength = 35, text = \"Gain Block and Enrage a foe\""
+	myUseSkillScript < uid=B9E930CA56D0A1B5000000D364377DE3 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power3
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myRequiresValidTarget TRUE
+	myTuningData < uid=B9E930CA56D0A1B5000000D4BCBF8F45 > = pwr_callgirl_power3_Tuning
+	myCameraPreset < uid=B9E930CA5823B81400005FB268163B57 > = CallGirl_Power03
+	myPowerGroup Normal
+	mySelfStatusEffects
+	{
+		StatusEffect Block < uid=B9E930CA582524C500000DC470BB806F > = Block
+	}
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myBlockingData
+	{
+		myDamageThreshold 301
+		myOnBlockBreak < uid=86D640765773248D0000015FC34D3BCF > = CallGirl_Power3_OnBlockBreak_Marked
+	}
+}
+

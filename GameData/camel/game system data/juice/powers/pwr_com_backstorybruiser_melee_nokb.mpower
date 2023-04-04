@@ -1,0 +1,10 @@
+include ./pwr_com_backstorybruiser_melee.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_com_backstoryBruiser_melee_nokb < uid=86C9308257B7550A0000026DD3EF65D9 > : pwr_com_backstoryBruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/bruiser_Melee.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myTuningData < uid=86C9308257B755560000027548B1F8C1 > = pwr_mm10_commander_bruiser_melee_nokb_Kevin_Tuning
+}
+

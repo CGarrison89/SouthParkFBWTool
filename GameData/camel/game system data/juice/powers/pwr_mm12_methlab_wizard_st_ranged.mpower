@@ -1,0 +1,15 @@
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_methaddict_testtube.mprojectile"
+
+CombatPower pwr_mm12_methlab_wizard_st_ranged < uid=86C9308257D19E21000611EC9F916003 > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/generics/generic_ranged.dds"
+	myUIName "contextComment = \"pwr name\", description = \"Pwr_mm12_methlab_wizard_st_ranged name\", enabled = true, guid = #9D0E6196599736AA000EB53C5DFB3FAD, lineVersion = 0, maxLength = 18, text = \"Test-Tube Toss\""
+	myUseSkillScript < uid=86C9308258229C8D000088AFCD317AC7 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myProjectile < uid=86C9308258229C8D000088B00D25D2D3 > = projectile_methAddict_testTube
+	myTuningData < uid=86C9308257D19E21000611EDFF7B3C47 > = pwr_mm12_methlab_wizard_st_ranged_Kevin_Tuning
+}
+

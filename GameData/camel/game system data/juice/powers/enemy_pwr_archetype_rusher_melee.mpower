@@ -1,0 +1,38 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower enemy_pwr_archetype_rusher_melee < uid=86D640765744DCD0000000DF4A528375 >
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_rusher_melee Name\", enabled = true, guid = #51C546C65774D941000000970E038C88, lineVersion = 0, maxLength = 16, text = \"Rusher Melee\""
+	myUseSkillScript < uid=86D640765744DCD0000000E02FC420EB > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D6407657561637000001F41DE06F14 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86D6407657561637000001F5F7E995C6 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86D640765744DCD0000000E21517A5B0 > = enemy_pwr_archetype_rusher_melee_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

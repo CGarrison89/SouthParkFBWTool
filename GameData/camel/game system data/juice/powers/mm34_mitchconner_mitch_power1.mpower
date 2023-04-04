@@ -1,0 +1,33 @@
+include ./enemy_pwr_3dmg_rush.mpower
+
+CombatPower mm34_mitchconner_mitch_power1 < uid=3267E0D0580D314E002703D19EBE0A29 > : enemy_pwr_3dmg_rush
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D0580D314E002703D2613FE920 >
+		{
+			myPriority 10
+			myRequireAggroTarget FALSE
+			myPreferredRange 3
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D0580D314E002703D3886B80D0 >
+		{
+			myPriority 100
+			myAggroPriority 1100
+			myRequireAggroTarget TRUE
+			myPreferredRange 3
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=3267E0D0580D314E002703D4C807E240 > = enemy_pwr_mm34_mitchconner_mitch_power1_amcclay_Tuning
+}
+

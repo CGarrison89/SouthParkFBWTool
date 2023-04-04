@@ -1,0 +1,38 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./dlc3_enemypowers.juice
+
+CombatPower pwr_DLC3_Monsters_Rusher_melee < uid=86C930825A99A54600022E72E51DC733 > : enemy_pwr_archetype_bruiser_melee
+{
+	myUIName "contextComment = \"\", description = \"pwr_DLC3_Monsters_Rusher_melee_name\", enabled = true, guid = #86C930825A99A9F200022EC7CB2F0ABD, lineVersion = 1, maxLength = 17, text = \"Monster Smash\""
+	myUIDescription "contextComment = \"\", description = \"pwr_DLC3_Monsters_Rusher_melee_description\", enabled = true, guid = #86C930825A99BD2400022EEF9792A2D9, lineVersion = 0, maxLength = 38, text = \"DLC3 Rusher Melee description\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C930825A99CB52000230507BADABA0 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C930825A99CB52000230517B3C08EA >
+		{
+			myPriority 2000
+			myAggroPriority 2000
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Kill < uid=86C930825A99CB5200023052D3E449BA >
+		{
+			myPriority 1000
+			myMinimumKills 1
+		}
+	}
+	myTuningData < uid=86C930825A99A54600022E736F66E090 > = pwr_DLC3_Monsters_Rusher_Melee_Tuning
+}
+

@@ -1,0 +1,27 @@
+include ./pwr_lt_cityninjas_summoner_summon.mpower
+
+CombatPower pwr_dr_LT_cityninjas_summoner_summon < uid=C87888A05A0B699B004EE07D34A827FD > : pwr_LT_cityninjas_summoner_summon
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=C87888A05A0B699B004EE07EEF8BFB6E >
+		{
+			myPriority 30
+			myMaximumNumberOfPets 2
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Charmed
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+				}
+			}
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+}
+

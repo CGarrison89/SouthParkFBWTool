@@ -1,0 +1,68 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./enemypowers.adrian.juice
+
+CombatPower sm66_raisins_bruiser_melee < uid=8585E53F582E246E000141E5EF374CBC >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/raisingirlbruiser_knockback.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_bruiser_melee Name\", enabled = true, guid = #8585E53F582E246E000141E49A75B2D8, lineVersion = 0, maxLength = 17, text = \"Bruiser Melee\""
+	myUseSkillScript < uid=8585E53F582E246E000141E60749F8B0 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power3
+	myNumberOfAttackEvents 1
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=8585E53F582E246E000141E71A34A6E9 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "default VIP" < uid=86C9308258A37A44000C522E6CFF0360 >
+		{
+			myPriority 20
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=8585E53F582E246E000141E82DE03405 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "Enraged VIP" < uid=86C9308258A37A44000C522F14ECFA82 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myDialogueSkillScript < uid=8585E53F582E246E000141E978E7CFA9 > = NULLREFERENCE
+	myTuningData < uid=8585E53F582E246E000141EA3023347D > = pwr_sm66_bruiser_melee_knockback_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

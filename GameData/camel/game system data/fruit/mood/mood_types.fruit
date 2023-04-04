@@ -1,0 +1,35 @@
+include "camel/game system data/fruit/mood/mood_dataenum_types.fruit"
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// ENUM
+//
+
+enum MoodFacialEyes
+{
+	// Index 0 here corresponds to 1 in the Maya vishub, because we don't include the vishub 0 value in our exports
+	// (These eye names are official South Park nomenclature, at least the first six which is the standard set)
+	NotSet
+	Standard
+	Blink
+	Worried
+	Kissing
+	XEyes
+	HalfBlink
+	Angry
+	WinkLeft
+	WinkRight
+	NotUsed0
+	NotUsed1
+}
+
+enum MoodFacialEyebrows
+{
+	NotSet
+	None
+	Worried_01
+	Angry_01
+	Confused_01
+	Confused_02
+	Annoyed_01
+}

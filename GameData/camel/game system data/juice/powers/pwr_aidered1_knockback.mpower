@@ -1,0 +1,36 @@
+include ./pwr_com_kitchenattack.mpower
+
+CombatPower pwr_aidered1_knockback < uid=DB7C6D4256EA10A8000001265869900A > : pwr_com_kitchenattack
+{
+	myUIName "contextComment = \"\", description = \"pwr_aidered1_knockback Name\", enabled = true, guid = #51C546C65774D95A000000D737C82BE0, lineVersion = 0, maxLength = 13, text = \"Footlong\""
+	myAnimationState power3
+	myNumberOfAttackEvents 1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData melee_kill < uid=DB7C6D4256FB186400001E43E10A4CBE >
+		{
+			myPriority 30
+			myAggroPriority 30
+			myMinimumKills 1
+			myValidDirections
+			{
+				myRight FALSE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData melee < uid=DB7C6D4256FB186400001E44E3388072 >
+		{
+			myPriority 25
+			myAggroPriority 25
+			myValidDirections
+			{
+				myRight FALSE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=DB7C6D4256EA10A80000012775E3ED81 > = pwr_aidered1_footlong_MAcero_Tuning
+}
+

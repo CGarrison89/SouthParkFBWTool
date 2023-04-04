@@ -1,0 +1,48 @@
+include "camel/game system data/fruit/ai/npc.fruit"
+include "camel/game system data/fruit/dlc/dlc_types.fruit"
+include "camel/game system data/fruit/ui/pausemenu/charactersheet.fruit"
+
+enum BuddyPartyMember
+{
+	HumanKite
+	SuperCraig
+	Mosquito
+	CallGirl
+	CaptainDiabetes
+	DoctorTimothy
+	FastPass
+	MintBerryCrunch
+	MODOKTimmy
+	Mysterion
+	ProfessorChaos
+	TheCoon
+	Toolshed
+	Tupperware
+	WonderTweek
+	Henrietta
+}
+
+enum BuddyPartyStatus
+{
+	InReserve
+	InReserveForced
+	InPartyForced
+	InPartySelected
+	NotInLeague
+	Locked
+}
+
+class BuddyParty
+{
+	BuddyPartyMember myMember
+	BuddyPartyStatus myStatus
+	NPC* myNPC
+	string myEnvironmentalPowerSlot
+	CharacterSheetSpecialEntry* myHeroRankRewardOnUnlockEntry
+	PackageType myPackageAvailability
+}
+
+list BuddyPartyList
+{
+	BuddyParty
+}

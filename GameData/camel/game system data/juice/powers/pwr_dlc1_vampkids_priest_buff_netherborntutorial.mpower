@@ -1,0 +1,41 @@
+include ./pwr_dlc1_vampkids_priest_buff.mpower
+
+CombatPower pwr_DLC1_VampKids_Priest_buff_NetherbornTutorial < uid=86C930825A09E4B800021DB09647E246 > : pwr_DLC1_VampKids_Priest_buff
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "swarmers - not shielded" < uid=86C930825A09E4F100021DC24A64586E >
+		{
+			myPriority 100
+			myTargetHealthLessThanPercentage 101.0
+			myTargetHealthMoreThanPercentage 0.0
+			mySelfHealthMoreThanPercentage 0.0
+			myTargetShieldingLessThanPercentage 1.0
+			myTargetShieldingMoreThanPercentage -1.0
+			myAIDesirableType A
+			myStatusEffectConditionData
+			{
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData else < uid=86C930825A09E4F100021DC4F9BDBEA9 >
+		{
+			myPriority 0
+			myTargetHealthLessThanPercentage 101.0
+			myTargetHealthMoreThanPercentage 0.0
+			mySelfHealthMoreThanPercentage 0.0
+			myTargetShieldingLessThanPercentage 99.0
+			myTargetShieldingMoreThanPercentage -1.0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+}
+

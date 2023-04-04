@@ -1,0 +1,185 @@
+include "camel/game system data/fruit/helpers/helpers_types.fruit"
+
+enum UberCameraState < tooltip="CombatPreMovement - Active until the new combatant turn begins.\nCombatMovement - The active character can move on the grid.\nCombatTargeting - The active character is selecting a target.\nCombatPowerUsage - Active as soon as the power is used and there is no action plus otherwise at the end of the action plus.\nCombatPowerCharge - Active when the action plus is running.\nCombatPowerResult - Active once the power hits at least one target.\nCombatPowerKnockbackChaining - Active as soon as a knock back chain begins.\nCombatInspection - The inspection mode is active.\nCombatCustomTarget - A custom target has been added.\nCombatInterrupt - The combat has been interrupted." >
+{
+	Any
+	Root
+	GroupExploration
+	GroupCombat
+	GroupSequence
+	ExplorationNormal
+	ExplorationCustomTarget
+	ExplorationUserState
+	CombatPreMovement
+	CombatMovement
+	CombatTargeting
+	CombatPowerUsage
+	CombatPowerCharge
+	CombatPowerResult
+	CombatPowerKnockbackChaining
+	CombatHeroDNA
+	CombatStatusEffect
+	CombatInspection
+	CombatCustomTarget
+	CombatUserState
+	CombatInterrupt
+	Sequence
+}
+
+enum UberCameraElement
+{
+	CustomTarget
+	ActiveCharacter
+	ElementsOfInterest
+	CombatMovementRange
+	CombatTargetRange
+	CombatPowerResultsPreview
+	CombatTargets
+	CombatProjectiles
+	CombatInspection
+	CombatKnockbackImpactProp
+	CombatKnockbackImpactCells
+	CombatKnockbackDestinationCells
+	CombatRelocationCells
+	CombatLobbedCursor
+	SequenceCamera
+}
+
+enum UberCameraShakeOscillator
+{
+	Constant
+	Linear
+	Square
+	Cosinus
+	Sinus
+}
+
+list UberCameraElementList
+{
+	UberCameraElement
+}
+
+class UberCameraTransitioner < uid=auto >
+{
+	float myMinTime		0.2
+	float myMaxTime		1.0
+	float myMinRangeXZ	0.1
+	float myMaxRangeXZ	20.0
+	float myMinRangeY	5.0
+	float myMaxRangeY	130.0
+	string myCurve "{ defaultLeftSlope = 0, defaultRightSlope = 0, defaultValue = 0, interpolator = 0, keys = { inTangents = { -0 -0, -0.602639 -0.038683, }, outTangents = { 0.307335 0.942354, 0 0, }, properties = { -749, -749, }, values = { 0 0, 1 1, }, }, numKeys = 2, }" < bhv=inputgraph >
+
+	float mySpeed					26.0
+	float myDepthScale				10.0
+	float myAccelerationDuration	0.5
+	float myDecelerationDuration	0.5
+	string myAccelerationCurve "{ defaultLeftSlope = 0, defaultRightSlope = 0, defaultValue = 0, interpolator = 0, keys = { inTangents = { -0 -0, -0.602639 -0.038683, }, outTangents = { 0.307335 0.942354, 0 0, }, properties = { -749, -749, }, values = { 0 0, 1 1, }, }, numKeys = 2, }" < bhv=inputgraph >
+	string myDecelerationCurve "{ defaultLeftSlope = 0, defaultRightSlope = 0, defaultValue = 0, interpolator = 0, keys = { inTangents = { -0 0, -0.577954 0.094294, }, outTangents = { 0.277752 -0.668145, 0 -0, }, properties = { 275, 1299, }, values = { 0 1, 1 0, }, }, numKeys = 2, }" < bhv=inputgraph >
+}
+
+class UberCameraPresetInfoBase
+{
+}
+
+class UberCameraTransition
+{
+	UberCameraState myPreviousState Any
+	UberCameraPresetInfoBase* myPreviousPresetInfo
+	UberCameraTransitioner* myTransitioner
+	bool myCut false
+}
+
+list UberCameraTransitionList
+{
+	UberCameraTransition
+}
+
+class UberCameraTransitions < uid=auto >
+{
+	UberCameraTransitionList myTransitions
+}
+
+class UberCameraStateElement
+{
+	UberCameraState myState
+	UberCameraElementList myElements
+}
+
+list UberCameraStateElementList
+{
+	UberCameraStateElement
+}
+
+class UberCameraStateElements < uid=auto >
+{
+	UberCameraStateElementList myStateElements
+}
+
+class UberCameraPresetInfo : UberCameraPresetInfoBase < uid=auto >
+{
+	string	myName ""
+	vec2f	myMinViewSize 4.0;4.0
+	vec2f	myMaxViewSize 4.0;4.0
+	vec2f	myFramePosition 0.0;0.0
+	vec2f	myFrameSize 1.0;1.0
+	OptionalBool		myForceCenter Undefined
+	OptionalBool		mySnap Undefined
+	OptionalBool		myViewBoundEnabled Undefined
+	OptionalBool		myFrameBoundEnabled Undefined
+	OptionalBool		myPositionBoundEnabled Undefined
+	OptionalBool		myOffsetEnabled Undefined
+	OptionalBool		myOffsetRecursive Undefined
+	OptionalBool		myOffsetInfluenceEnabled Undefined
+	OptionalBool		myPropVolumeEnabled Undefined
+	OptionalBool		myCameraRegionEnabled Undefined
+	OptionalBool		myLockVerticalMovement Undefined
+	OptionalBool		myLockHorizontalMovement Undefined
+	OptionalBool		myAutoScaleViewSize	Undefined
+	OptionalBool		myAutoClampViewSize	Undefined
+	float				myTargetRangeBackPercent -1.f
+	OptionalBool		myTargetRangeBlendNeighborColumns Undefined
+	OptionalBool		myTargetRangeBlendNeighborRows Undefined
+	UberCameraTransitionList	myTransitions
+	UberCameraElementList 		myElements
+	UberCameraTransitioner* 	myTransitioner
+}
+
+class UberCameraPresetStateInfo
+{
+	UberCameraState 		myState
+	UberCameraPresetInfo* 	myInfo
+}
+
+list UberCameraPresetStateInfoList
+{
+	UberCameraPresetStateInfo
+}
+
+class UberCameraPreset < uid=auto >
+{
+	string	myName ""
+	bool	myIsDefault false
+	UberCameraPresetStateInfoList myInfoList
+	vec2f	myCombatOutOfScreenVisibilityThreshold 0.2;0.2
+	vec2f	myCombatOutOfScreenMergeDistance 0.06;0.06
+}
+
+class UberCameraShakeBlock
+{
+	vec3f	myDirection 1.0;0.0;0.0
+	string	myEnvelope "{ defaultLeftSlope = 0, defaultRightSlope = 0, defaultValue = 0, interpolator = 0, isRefinedSampling = true, keys2 = { inTangents = { -0 -0, -0.333333 -0, }, outTangents = { 0.333333 0, 0 0, }, properties = { 203, 2251, }, values = { 0 1, 1 1, }, }, numKeys = 2, }" < bhv=inputgraph >
+	float	myFrequency 1.0
+	UberCameraShakeOscillator myOscillator Constant
+}
+
+list UberCameraShakeBlockList
+{
+	UberCameraShakeBlock
+}
+
+class UberCameraShake < uid=auto >
+{
+	string	myName ""
+	bool	myIsCylic false
+	UberCameraShakeBlockList myBlocks
+}

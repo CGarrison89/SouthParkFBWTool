@@ -1,0 +1,102 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/pwr_blaster2_self_knockback.mskillscriptjuice
+include camel/skillscript/powersmenu_simpleplayanim.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_blaster.juice"
+
+CombatPower pwr_blaster_power2 < uid=B9E930CA56B285D40000004DB84A075D >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/Blaster_power2.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/multilane.DDS"
+	myUIName "contextComment = \"power name\", description = \"pwr_blaster_power2 Name\", enabled = true, guid = #51C546C65774D95C000000DDD381C50B, lineVersion = 3, maxLength = 16, text = \"Gamma Wave\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_blaster_power2 Description\", enabled = true, guid = #51C546C65774D95C000000DE66379F9C, lineVersion = 1, maxLength = 126, text = \"The Blaster unleashes a gamma ray shockwave that damages and knocks back a nearby column of foes.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_blaster_power2 Short Description\", enabled = true, guid = #9D0E6196579A5E810000016830D561D2, lineVersion = 0, maxLength = 35, text = \"Knock back a column of foes\""
+	myUseSkillScript < uid=B9E930CA56B285D40000004EED80646D > = Camel_Simple_PlayAnim_Script
+	myAnimationState blaster_power2
+	myShouldRepositionBeforeExecution FALSE
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "3 targets with kill" < uid=86C9308258E7C06F0000411E10877BDA >
+		{
+			myPriority 15700
+			myMinimumKills 1
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets with kill" < uid=86C9308258E7C06F0000411F70A7FBE7 >
+		{
+			myPriority 14500
+			myMinimumKills 1
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "1 target with kill" < uid=86C9308258E7C06F00004120716EBD88 >
+		{
+			myPriority 12300
+			myMinimumKills 1
+			myMinimumAffectedTargets 1
+		}
+		PowerEvaluationData "3 targets blocking" < uid=86C9308258E7C06F0000412124A71696 >
+		{
+			myPriority 10300
+			myMinimumAffectedTargets 3
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Blocking
+				{
+					mySpecialEffect Block
+				}
+			}
+		}
+		PowerEvaluationData "2 targets blocking" < uid=86C9308258E7C06F000041220FD5E073 >
+		{
+			myPriority 8800
+			myMinimumAffectedTargets 2
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Blocking
+				{
+					mySpecialEffect Block
+				}
+			}
+		}
+		PowerEvaluationData "3 targets" < uid=86C9308258E7C06F0000412340E25AAD >
+		{
+			myPriority 7700
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets" < uid=86C9308258E7C06F0000412444642DC4 >
+		{
+			myPriority 6500
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "1 target" < uid=86C9308258E7C06F00004125586B9078 >
+		{
+			myPriority 2900
+			myMinimumAffectedTargets 1
+		}
+	}
+	myTuningData < uid=B9E930CA56B285D40000004F823EEDE3 > = pwr_blaster_power2_Tuning
+	myCameraPreset < uid=B9E930CA5796C0AB000001E3D894A564 > = Blaster_Power02
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 1.6666
+				myActionPlusPresetEnum Mash_Normal
+			}
+		}
+	}
+}
+

@@ -1,0 +1,57 @@
+include "camel/game system data/fruit/powers/combatpowers.fruit"
+
+CombatPowerTuningData pwr_com_melee_BBartram_Tuning < uid=B642A89A56BBE9A100000E67F81224E5 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 2
+	myRange 0
+	myMinRange 0
+	myCooldown 0
+	myKnockbackPullForwardAmount 0
+	myIsReverseKnockback FALSE
+	myLOSCheck TRUE
+	myIsLobbed FALSE
+	myBlocksObscurationShuffle FALSE
+	myUseActorCentreAsTargetingSource FALSE
+	myTargetSingleActorOnly TRUE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myDamageArea < uid=B642A89A56BBE9A100000E6869B34FC5 >
+	{
+		myPiercingType CharactersOnly
+		myDamageAreaType MeleeCircle
+		myLength 15
+		myWidth 15
+		myStartWidth 1
+		myStartLength 0
+	}
+	myDamageAmount 60
+	myShielding 0
+	mySelfTeamDamage 0
+	mySelfTeamShielding 0
+	mySelfKnockbackAmount 0
+	myLocationEffect < uid=B642A89A56BBE9A100000E69AC5E0D92 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+	myPrimaryStats
+	{
+		myBrawn -1.#QNAN
+		myDexterity -1.#QNAN
+		mySpirit -1.#QNAN
+		mySpeed -1.#QNAN
+		myFortitude -1.#QNAN
+	}
+	myClassification None
+	myPowerMovementData
+	{
+		myUseOverrideValues FALSE
+		myRunSpeed -1.#QNAN
+		myAccelerationFactor -1.#QNAN
+		myDecelerationFactor -1.#QNAN
+	}
+}
+

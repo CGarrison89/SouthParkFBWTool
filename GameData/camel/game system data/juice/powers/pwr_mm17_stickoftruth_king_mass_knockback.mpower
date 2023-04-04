@@ -1,0 +1,57 @@
+include ./pwr_commander_power3.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_mm17_stickoftruth_king_mass_knockback < uid=86C9308257DC55B100004CC9A87AC8AA > : pwr_commander_power3
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/King_Power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/mass.dds"
+	myUIName "contextComment = \"MM17 Enemy MC King power 3 Name\", description = \"MM17 Enemy MC King power 3 Name\", enabled = true, guid = #EA0BC5185993A51900008BDC0D152284, lineVersion = 3, maxLength = 17, text = \"Royal Fisting\""
+	myUIShortDescription "contextComment = \"no descrption needed\", description = \"no descrption needed\", enabled = true, guid = #EA0BC5185993A5F000008BDE8D8472DF, lineVersion = 1, maxLength = 0, text = \"\""
+	myUseSkillScript < uid=86C93082584A193A0002CAC7458D27E5 > = Camel_Simple_PlayAnim_Script
+	myAnimationState king_power4
+	myShouldRepositionToCellCenterBeforeExecution FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=3267E0D059A242A204F631C0B4FC64D9 >
+		{
+			myPriority 4
+			myMinimumAffectedTargets 1
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myLeft TRUE
+				myRight TRUE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData 2_Targets < uid=3267E0D059A24EE8050912F03E7D45F8 >
+		{
+			myPriority 19
+			myMinimumAffectedTargets 2
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData 3_Targets < uid=3267E0D059A24EE8050912F1EC56059A >
+		{
+			myPriority 29
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData 4_Targets < uid=3267E0D059A24EE8050912F2D3D2E819 >
+		{
+			myPriority 39
+			myMinimumAffectedTargets 4
+		}
+	}
+	myTuningData < uid=86C9308257DC55B100004CCB67B10B29 > = pwr_mm17_stickoftruth_king_mass_knockback_amcclay_Tuning
+	myActionPlusData
+	{
+		myUseActionPlus FALSE
+	}
+}
+

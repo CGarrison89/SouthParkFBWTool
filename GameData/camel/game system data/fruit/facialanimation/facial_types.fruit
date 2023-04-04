@@ -1,0 +1,47 @@
+include "camel/game system data/fruit/mood/mood_types.fruit"
+
+//				  THIS IS AN EYE
+// Indices correspond to frame #s in eyes_all anim
+//						7
+//			       -----o-----
+//			      /           \
+//			   8 o      2      o 6
+//			    /       o       \
+//			 9 o   3 o     o 1   o 5
+//		        \       o       /
+//			  10 o      4      o 12
+//			      \           /
+//			       -----o-----
+//					    11
+// (Index/frame 0 used for 1, 3 default front look)
+
+enum FacialEyePupilPosition
+{
+	NotSet
+	Standard
+	CenterRight
+	CenterUp
+	CenterLeft
+	CenterDown
+	Right
+	RightUp
+	Up
+	LeftUp
+	Left
+	LeftDown
+	Down
+	RightDown
+}
+
+enum FacialEyeTrackingPOIType
+{
+	NotSet
+	Normal
+}
+
+enum HeadbobMode
+{
+	Disabled
+	DebugTest
+	Random
+}

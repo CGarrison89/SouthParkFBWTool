@@ -1,0 +1,5 @@
+class ConstantPowerData
+{
+	float myTimeFartRewindPlaybackDuration
+	float myTimeFartPauseDuration
+}

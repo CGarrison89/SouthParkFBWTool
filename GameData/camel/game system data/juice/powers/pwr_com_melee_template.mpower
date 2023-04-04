@@ -1,0 +1,23 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_com_melee_template < uid=B9E930CA5626CA4100000084BD6495AF >
+{
+	myUseSkillScript < uid=B9E930CA5626CA410000008510C09283 > = Camel_Simple_PlayAnim_Script
+	myAnimationState melee
+	myCanUseDuringRTE FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA5626CA410000008623C332AD >
+		{
+			myPriority 10
+		}
+		PowerEvaluationData enraged < uid=B9E930CA5626CA41000000875259CF5E >
+		{
+			myPriority 20
+			myRequireAggroTarget TRUE
+		}
+	}
+	myTuningData < uid=B9E930CA5626CA5E0000008B799A31E4 > = pwr_com_melee_template_Tuning
+}
+

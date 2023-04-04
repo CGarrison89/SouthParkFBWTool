@@ -1,0 +1,40 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./dlc1_playerpowers.juice
+include camel/skillscript/pwr_netherborn_chain_attack_script.mskillscriptjuice
+include camel/skillscript/pwr_netherbornult_chain_attack_script.mskillscriptjuice
+include "camel/game system data/juice/camera/casabonita/uber_camera_powers_presets_netherborn.juice"
+
+CombatPower pwr_netherbornult_power2 < uid=8E1BC4435A0A995A00008E14B41C393D >
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/Netherborn_Power2_super.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/half_room_wide.dds"
+	myUIName "contextComment = \"pwr name. Control name should be pwr_netherbornULT_power2 Name\", description = \"pwr_netherborn_power2 Name\", enabled = true, guid = #8E1BC4435A0A995A00008E119618A0CD, lineVersion = 2, maxLength = 17, text = \"Deathly Grasp\""
+	myUIDescription "contextComment = \"long desc pause menu. Control name should be pwr_netherbornULT_power2 Description\", description = \"pwr_netherborn_power2 Description\", enabled = true, guid = #8E1BC4435A0A995A00008E1263E1E6C8, lineVersion = 3, maxLength = 125, text = \"The Grim version of Ghastly Grasp deals extra damage and targets a huge part of the battlefield.\""
+	myUIShortDescription "contextComment = \"short desc combat ui. Control name should be pwr_netherbornULT_power2 short Description\", description = \"pwr_netherborn_power2 short Description\", enabled = true, guid = #8E1BC4435A0A995A00008E13481EA636, lineVersion = 1, maxLength = 39, text = \"Damage enemies in a large area\""
+	myUseSkillScript < uid=8E1BC4435A0A995A00008E15E751F9BB > = pwr_netherbornult_chain_attack_script
+	myTuningData < uid=8E1BC4435A0A995A00008E168BEA943F > = pwr_netherbornUlt_lob_aoe_Tuning
+	myCameraPreset < uid=8E1BC4435A7412D200009B939882EC7C > = Netherborn_Power02
+	myPowerGroup Normal
+	myChainingType None
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusDistributionEnum OneForOne
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData "New ActionPlusMiniGameData (1)"
+			{
+				myActionPlusEndTime 0.5
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

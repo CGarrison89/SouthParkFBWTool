@@ -1,0 +1,23 @@
+include ./enemy_pwr_archetype_bruiser_melee_knockback.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower mm16_riotcop_power1 < uid=3267E0D057AA79ED0001204AE7549362 > : enemy_pwr_archetype_bruiser_melee_knockback
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/swatcop_power1.dds"
+	myUIName "contextComment = \"\", description = \"mm16_blackcells_bruiser_melee_knockback Name\", enabled = true, guid = #3267E0D057AA79ED000120497C15B8DC, lineVersion = 0, maxLength = 6, text = \"Club\""
+	myUseSkillScript < uid=3267E0D057AA79ED0001204B6BA17253 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D057AA79ED0001204C5F7DEEDE >
+		{
+			myPriority 30
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+}
+

@@ -1,0 +1,49 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower mm15_ape_bruiser_power1 < uid=3267E0D057D0CDD300018873788E2685 > : enemy_pwr_archetype_bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/assedgorilla_power1.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_bruiser_melee Name\", enabled = true, guid = #3267E0D057D0CDD300018872938E3D1D, lineVersion = 0, maxLength = 25, text = \"5 Assed Ape Power 1\""
+	myUseSkillScript < uid=3267E0D057D0CDD30001887497BB13E6 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myShouldUseLaunchReactions TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D057D0CDD300018875ABF56C8E >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D057D0CDD3000188764971CA38 >
+		{
+			myPriority 30
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData WillKill < uid=3267E0D057D34DD4002ACD074CB57812 >
+		{
+			myPriority 25
+			myMinimumKills 1
+		}
+	}
+	myDialogueSkillScript < uid=3267E0D057D0CDD30001887740C2779D > = NULLREFERENCE
+	myTuningData < uid=3267E0D057D0CDD3000188780FA97840 > = enemy_pwr_mm15_ape_bruiser_power1_amcclay_Tuning
+	myCameraPreset < uid=86C93082592F858B0016C0B94F4D1DA7 > = Preset_Generic_Melee_KB
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

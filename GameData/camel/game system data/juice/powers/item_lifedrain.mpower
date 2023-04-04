@@ -1,0 +1,20 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_revive_script.mskillscriptjuice
+include camel/skillscript/camel_simple_healing_script.mskillscriptjuice
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+include camel/skillscript/camel_consumable_eat_script.mskillscriptjuice
+include ./dlc1_playerpowers.juice
+include camel/skillscript/dlc1_camel_consumable_item_use_script.mskillscriptjuice
+
+CombatPower item_lifedrain < uid=C27CCFE359CC28110001572D267DE2E2 >
+{
+	myUIName "contextComment = \"\", description = \"\", enabled = false, guid = #C27CCFE359CC28110001572C4B7E7862, lineVersion = 0, maxLength = 1, text = \"|empty|\""
+	myUseSkillScript < uid=C27CCFE359CC28110001572E731BE53F > = dlc1_camel_consumable_item_use_script
+	myNumberOfAttackEvents 1
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myIsACleansePower FALSE
+	myConsumablePowerType None
+	myTargetConsumableHealthLevel 1.0
+	myTuningData < uid=C27CCFE359CC28110001572F04FFE52D > = item_lifedrain_Tuning
+}
+

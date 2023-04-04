@@ -1,0 +1,14 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/pwr_timefart_pause.mskillscriptjuice
+include "camel/game system data/juice/items/timefart_stop_keyitem.mitem"
+include "camel/game system data/juice/items/timefart_pause_keyitem.mitem"
+
+CombatTimeFartPower pwr_com_timefartpause < uid=86C9308256A1A42E0000009F7AF0018A >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/MC_TimeFartPunch.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.DDS"
+	myUseSkillScript < uid=86C9308256A1A7AD000000A724D42C57 > = pwr_timefart_pause
+	myCooldown 4
+	myRequiredItem < uid=86D6407657F3E43D000078CDE4E02092 > = NULLREFERENCE
+}
+

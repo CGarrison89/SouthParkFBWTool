@@ -1,0 +1,83 @@
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include ./enemypowers.adrian.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_sm34_wizard_ranged < uid=8585E53F57E2C7AE002936DACF38C7F1 > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_Range_ST_LOS.dds"
+	myUseSkillScript < uid=86C930825840F9A50000AC991B7ED510 > = Camel_Simple_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData range3 < uid=86C930825841CB0B000B3974DC236362 >
+		{
+			myPriority 100
+			myPreferredRange 3
+			myMinimumDistanceToEnemies 2
+		}
+		PowerEvaluationData range2 < uid=86C930825841C97F000A68D85774D4B6 >
+		{
+			myPriority 75
+			myAggroPriority 0
+			myRequireAggroTarget FALSE
+			myPreferredRange 2
+			myMinimumDistanceToEnemies 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData range3_enraged < uid=86C930825841B9AE0000A744400BC88F >
+		{
+			myPriority 100
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myPreferredRange 3
+			myMinimumDistanceToEnemies 2
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData range2_enraged < uid=86C930825841C97F000A68D93088D41C >
+		{
+			myPriority 75
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myPreferredRange 2
+			myMinimumDistanceToEnemies 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData range3_kill < uid=86C930825841CB0B000B39751503478C >
+		{
+			myPriority 200
+			myMinimumKills 1
+			myPreferredRange 3
+			myMinimumDistanceToEnemies 2
+		}
+		PowerEvaluationData range2_kill < uid=86C930825841CB0B000B3976A0CD2C0E >
+		{
+			myPriority 150
+			myAggroPriority 0
+			myRequireAggroTarget FALSE
+			myMinimumKills 1
+			myPreferredRange 2
+			myMinimumDistanceToEnemies 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=8585E53F57E2C7AE002936DE020E36B3 > = pwr_sm34_wizard_ranged_Adrian_Tuning
+	myCameraPreset < uid=86C930825913D25F0000763B6424560D > = Preset_Generic_Ranged
+}
+

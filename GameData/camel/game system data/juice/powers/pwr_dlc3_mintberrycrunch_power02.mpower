@@ -1,0 +1,53 @@
+include ./dlc3_buddypowers.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/tardicaca/uber_camera_powers_presets_mintberry.juice"
+
+CombatPower pwr_dlc3_mintberrycrunch_power02 < uid=86D640765A4E9F310001A6884DF970BB >
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/MintBerryCrunch_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/multilane.dds"
+	myUIName "contextComment = \"Mint Berry Crunch's power02 Name\", description = \"pwr_dlc3_mintberrycrunch_power02 Name\", enabled = true, guid = #86D640765A4EA2D80001A6DD46FD7331, lineVersion = 2, maxLength = 14, text = \"Berry Burst\"}"
+	myUIDescription "contextComment = \"Mint Berry Crunch's power02 Long Description\", description = \"pwr_dlc3_mintberrycrunch_power02 Long Description\", enabled = true, guid = #9D0E61965AA9C43C0000A4910BDEBAFD, lineVersion = 0, maxLength = 114, text = \"A burst of tasty berry damages, knocks back, and of course, Berries a column of enemies.\"}"
+	myUIShortDescription "contextComment = \"Mint Berry Crunch's power02 Short Description\", description = \"pwr_dlc3_mintberrycrunch_power02 Short Description\", enabled = true, guid = #86D640765A4EA3640001A6F20BCEB6A1, lineVersion = 3, maxLength = 43, text = \"Deal damage, Berry, and knockback\"}"
+	myUseSkillScript < uid=86D640765A4E9F310001A6893F50A97B > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myCanTargetProps TRUE
+	myIsACleansePower FALSE
+	myUseRectangularLobbedArea FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA5ACF93720000A7614337FA68 >
+		{
+			myPriority 10
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86D640765A4E9F310001A68AB2E81A26 > = dlc3_pwr_mintberrycrunch_berry_with_knockback_Tuning
+	myCameraPreset < uid=B9E930CA5A9F365900009D9A4A7AC82D > = MintBerry_Power02
+	myPowerGroup Normal
+	mySelfStatusEffects
+	{
+	}
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData "New ActionPlusMiniGameData (0)"
+			{
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

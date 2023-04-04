@@ -1,0 +1,10 @@
+enum DeadlyTouchTypeEnum
+{
+	None
+    Lava
+    Electricity
+    Goo
+    Steam
+    FireOnly
+    Acid
+}

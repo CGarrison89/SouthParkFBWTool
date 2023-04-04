@@ -1,0 +1,27 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_mysterion.juice"
+include camel/skillscript/pwr_deadmysterion_power03_script.mskillscriptjuice
+
+CombatPower pwr_mysterion_dead_power3 < uid=86D640765769CB98000001181B94CA2D >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/MysterionDead_Power2.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"Mysterion Dead Power 3 Name\", description = \"pwr_mysterion_dead_power3 Name\", enabled = true, guid = #51C546C65774DC38000001577F6FBF21, lineVersion = 1, maxLength = 11, text = \"Spooked\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_mysterion_dead_power3 Description\", enabled = true, guid = #51C546C65774DC38000001580B591C49, lineVersion = 0, maxLength = 118, text = \"Inflict Confused on an enemy with this classic move ghosts have been using since antiquity.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_mysterion_dead_power3 Short Description\", enabled = true, guid = #9D0E6196579BD0BE000044BCB56A0A34, lineVersion = 0, maxLength = 32, text = \"Terrify and Confuse a foe\""
+	myUseSkillScript < uid=86D640765769CB98000001193DD465F6 > = pwr_deadMysterion_power03_script
+	myAnimationState ""
+	myNumberOfAttackEvents 1
+	myShouldRepositionBeforeExecution FALSE
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myTuningData < uid=86D640765769CB980000011AE0D2031A > = pwr_mysterion_dead_power3_Tuning
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

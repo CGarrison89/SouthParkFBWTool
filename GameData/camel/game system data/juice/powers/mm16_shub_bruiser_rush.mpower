@@ -1,0 +1,51 @@
+include ./enemy_pwr_3dmg_rush.mpower
+
+CombatPower MM16_shub_bruiser_rush < uid=86D64076574CD7AB0000017121D589DB > : enemy_pwr_3dmg_rush
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/CultistCops_ChargingDagger.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/ST_range_2_3_aligned.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_3dmg_rush Name\", enabled = true, guid = #3267E0D05836576C0000B7AB4AAC1F14, lineVersion = 0, maxLength = 23, text = \"Draw Down The Moon\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D057B2755C00267724ABCF0B6B >
+		{
+			myPriority 100
+			myRequireAggroTarget FALSE
+			myPreferredRange -1
+			myValidDirections
+			{
+				myRight FALSE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D057B2755C00267725BC716A6C >
+		{
+			myPriority 100
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myPreferredRange -1
+			myValidDirections
+			{
+				myRight FALSE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	mySecondarySkillScript < uid=3267E0D0583644830001C0B908184408 > = NULLREFERENCE
+	myTuningData < uid=3267E0D057B2755C0026772656DFE294 > = enemy_pwr_mm16_shub_bruiser_rush_amcclay_Tuning
+	myAnimationSetData
+	{
+		myIntroState rushattackintro
+		myLoopState rushattackloop
+		myOutroState rushattackoutro
+	}
+	myValidDirections
+	{
+		myRight FALSE
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

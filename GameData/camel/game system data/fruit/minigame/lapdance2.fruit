@@ -1,0 +1,33 @@
+include "camel\game system data\fruit\juiceObj.fruit"
+
+
+enum MinigameGestureType
+{
+	None
+	CWCircle
+	CCWCircle
+	DownHalfCircle
+	Horizontal
+	LeftHalfCircle
+	RightHalfCircle
+	UpHalfCircle
+	Vertical
+	CWQC_DownLeft
+	CCWQC_DownRight
+	CWHC_UpRightDown
+	CCWHC_UpLeftDown
+	HoldUp
+	HoldDown
+	HoldLeft
+	HoldRight
+	CrankCircle
+}
+
+class LapDanceGesture : JuiceObj < uid = auto > 
+{
+	string myGesture
+	string myGesturePC
+	string myDebugName
+	MinigameGestureType myGestureType
+}
+

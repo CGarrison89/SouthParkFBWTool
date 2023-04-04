@@ -1,0 +1,27 @@
+include ./enemy_pwr_5hp_heal.mpower
+include ./enemypowers.mvernon.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower MM12_megamexican_priest01_5hp_heal < uid=86D64076574CCD890000012C119D1A60 > : enemy_pwr_5hp_heal
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/generics/generic_ranged_heal.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_st_heal_no_min_range.dds"
+	myUseSkillScript < uid=B9E930CA582646170000324DE2ABFC64 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power3
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B157755B620001A1B3563868CB >
+		{
+			myPriority 150
+			myTargetHealthLessThanPercentage 101.0
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=6D7AC9B157DC93BA000EFD09866C1A1E > = pwr_com_mm12_megamexican_priest_heal_MVernon_Tuning
+}
+

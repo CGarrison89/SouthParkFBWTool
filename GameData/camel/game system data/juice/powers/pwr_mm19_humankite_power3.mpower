@@ -1,0 +1,32 @@
+include ./pwr_humankite_power3.mpower
+
+CombatPower pwr_mm19_humankite_power3 < uid=86C9308257DC239600005A21496CF10B > : pwr_humankite_power3
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308257DC239600005A22F1A3C768 >
+		{
+			myPriority 20
+			myTargetHealthLessThanPercentage 70.0
+			mySelfHealthLessThanPercentage 101.0
+			myTargetShieldingLessThanPercentage 80.0
+			myAIDesirableType VIP
+		}
+		PowerEvaluationData damaged < uid=86C9308257DC239600005A23C6952433 >
+		{
+			myPriority 150
+			myTargetHealthLessThanPercentage 50.0
+			mySelfHealthLessThanPercentage 101.0
+			myTargetShieldingLessThanPercentage 80.0
+			myAIDesirableType VIP
+		}
+		PowerEvaluationData "critically damaged" < uid=86C9308257DC239600005A24E98CEC3B >
+		{
+			myPriority 200
+			myTargetHealthLessThanPercentage 20.0
+			myTargetShieldingLessThanPercentage 80.0
+			myAIDesirableType VIP
+		}
+	}
+}
+

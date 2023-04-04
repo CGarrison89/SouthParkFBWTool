@@ -1,0 +1,58 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include ./enemypowers.mvernon.juice
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+include camel/skillscript/camel_mm12_chaossupreme_phase3_rush.mskillscriptjuice
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+include camel/skillscript/camel_mm12_chaossupreme_phase3_rush_v2.mskillscriptjuice
+
+CombatPower pwr_com_mm12_megamexican_Phase3_Rush < uid=6D7AC9B15777038A00003DD587080C59 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/mexsupreme_phase3_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/infinite_range_pierce.dds"
+	myUIName "contextComment = \"\", description = \"temp_pwr_beerdrinkrandy_rush Name\", enabled = true, guid = #6D7AC9B15777038A00003DD3E97212B8, lineVersion = 0, maxLength = 13, text = \"Dog Rush\""
+	myUIDescription "contextComment = \"\", description = \"temp_pwr_beerdrinkrandy_rush Description\", enabled = true, guid = #6D7AC9B15777038A00003DD45C4CCDA4, lineVersion = 0, maxLength = 42, text = \"Chaos Dogs Charge towards a kid.\""
+	myAnimationState ""
+	myShouldUseLaunchReactions FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B15777038A00003DD622814804 >
+		{
+			myPriority 300
+			myAggroPriority 0
+			myMinimumAffectedTargets 2
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Minimum < uid=6D7AC9B15806C87D00054881F5B2E438 >
+		{
+			myPriority 150
+			myAggroPriority 0
+			myMinimumAffectedTargets 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData enrage < uid=6D7AC9B1596A991A000AE6390F6B66D5 >
+		{
+			myAggroPriority 2000
+		}
+	}
+	mySecondarySkillScript < uid=6D7AC9B15827C17600000DC6ADAAED57 > = Camel_MM12_ChaosSupreme_Phase3_Rush_v2
+	myDialogueSkillScript < uid=326B24CD5847710800034A9E43F0170F > = Camel_Simple_PlayDialogue_Script
+	myTuningData < uid=6D7AC9B15777038A00003DD86104BE14 > = pwr_com_mm12_megamexican_Phase3_Rush_MVernon_Tuning
+	myCameraPreset < uid=6D7AC9B15777038A00003DD9A6A91CA9 > = NULLREFERENCE
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

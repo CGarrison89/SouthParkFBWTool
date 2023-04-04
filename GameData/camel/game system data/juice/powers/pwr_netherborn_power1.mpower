@@ -1,0 +1,99 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_settargetvariable_and_playanim_script.mskillscriptjuice
+include ./dlc1_playerpowers.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/casabonita/uber_camera_powers_presets_netherborn.juice"
+
+CombatPower pwr_netherborn_power1 < uid=86C93082599E19F900008B9AC73F495C >
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/Netherborn_Power1.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/wedge.dds"
+	myUIName "contextComment = \"\", description = \"pwr_netherborn_power1 Name\", enabled = true, guid = #86C9308259EE656A00008CB8228CF6A9, lineVersion = 2, maxLength = 16, text = \"Soul Slash\""
+	myUIDescription "contextComment = \"long description pause screen\", description = \"pwr_netherborn_power1 Description\", enabled = true, guid = #86C9308259EE656A00008CB937EF9DAA, lineVersion = 1, maxLength = 121, text = \"The Netherborn cuts a path through all enemies in scythe range, dealing damage and knockback.\""
+	myUIShortDescription "contextComment = \"short desc combat ui\", description = \"Damages and knocks back enemies\", enabled = true, guid = #9D0E61965A0A3F9D000094A251965B2A, lineVersion = 0, maxLength = 51, text = \"pwr_netherborn_power1 short Description\""
+	myUseSkillScript < uid=86C93082599E1B39000091EFDBC550A5 > = Camel_Simple_SetTargetVariable_And_PlayAnim_Script
+	myAnimationState "netherborn power1"
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "3 targets with kill" < uid=86C930825A1322BF00008FD21BDE93D9 >
+		{
+			myPriority 15650
+			myMinimumKills 1
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets with kill" < uid=86C930825A1322BF00008FD3976B1A7D >
+		{
+			myPriority 14450
+			myMinimumKills 1
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "1 target with kill" < uid=86C930825A1322BF00008FD4DA907AD9 >
+		{
+			myPriority 12250
+			myMinimumKills 1
+			myMinimumAffectedTargets 1
+		}
+		PowerEvaluationData "3 targets blocking" < uid=86C930825A1322BF00008FD5BF0E5134 >
+		{
+			myPriority 10250
+			myMinimumAffectedTargets 3
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Blocking
+				{
+					mySpecialEffect Block
+				}
+			}
+		}
+		PowerEvaluationData "2 targets blocking" < uid=86C930825A1322BF00008FD650A15D57 >
+		{
+			myPriority 8750
+			myMinimumKills 0
+			myMinimumAffectedTargets 2
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Blocking
+				{
+					mySpecialEffect Block
+				}
+			}
+		}
+		PowerEvaluationData "3 targets" < uid=86C930825A1322BF00008FD79FD61DCC >
+		{
+			myPriority 7650
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets" < uid=86C930825A1322BF00008FD8C6C9FA5D >
+		{
+			myPriority 6450
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "1 target" < uid=86C930825A1322BF00008FD90B839441 >
+		{
+			myPriority 2800
+			myMinimumAffectedTargets 1
+		}
+	}
+	myTuningData < uid=86C93082599E1DB80000922F5C9197FF > = pwr_netherborn_melee_aoe_Tuning
+	myCameraPreset < uid=B9E930CA5A4D9EDC0028222A9EF74D4D > = Netherborn_Power01
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusEndTime 0.833333
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

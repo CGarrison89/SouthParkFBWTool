@@ -1,0 +1,31 @@
+include ./pwr_sm25_swarmer_melee_bleeding.mpower
+
+CombatPower pwr_sm25_crab_king_melee < uid=86C93082588282E600001721E99E83AD > : pwr_sm25_swarmer_melee_bleeding
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/KingCrab_power2.dds"
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C93082588283080000172AC7CB4797 >
+		{
+			myPriority 10
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C93082588283080000172BC3CBFEFF >
+		{
+			myPriority 10
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+}
+

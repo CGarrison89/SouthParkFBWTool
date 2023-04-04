@@ -1,0 +1,28 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower temp_pwr_charmed_archetype_basic_warlock1 < uid=DB7C6D425740C38F0000521FA538FE69 >
+{
+	myUIName "contextComment = \"\", description = \"temp_pwr_charmed_archetype_basic_warlock1 Name\", enabled = true, guid = #51C546C65774DC6B000001D454729400, lineVersion = 0, maxLength = 29, text = \"ST Lobbed Debuff 1 DMG\""
+	myUseSkillScript < uid=DB7C6D425740C38F00005220759F31E4 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=DB7C6D425740C38F000052218D8ED1F1 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myDialogueSkillScript < uid=326B24CD578007530000066CE55E4077 > = NULLREFERENCE
+	myTuningData < uid=DB7C6D425740C38F000052226738ACA4 > = temp_pwr_charmed_archetype_basic_warlock1_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

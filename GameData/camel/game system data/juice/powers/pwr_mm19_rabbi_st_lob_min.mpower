@@ -1,0 +1,19 @@
+include ./pwr_sm14_kylehasidicjews_grenadier_st_lob_min.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_lobbed_power_playanim_script.mskillscriptjuice
+
+CombatPower pwr_mm19_rabbi_st_lob_min < uid=86C9308258A749DE000436E895319EAB > : pwr_sm14_kylehasidicjews_grenadier_st_lob_min
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Rabbi_Power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/ST_range_2_3.dds"
+	myUseSkillScript < uid=86C9308258A749DE000436E9C9172E3F > = Camel_Lobbed_Power_PlayAnim_Script
+	myAnimationState power2
+	myProjectile < uid=86C9308258B6418300001C272E7EE0A8 > = projectile_mm19_dreidel
+	myTuningData < uid=86C9308258A749DE000436EA5068159A > = pwr_mm19_rabbi_st_lob_min_Kevin_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

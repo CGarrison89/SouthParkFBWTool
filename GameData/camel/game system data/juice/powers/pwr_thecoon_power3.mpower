@@ -1,0 +1,52 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/pwr_thecoon_power3_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_thecoon.juice"
+
+CombatPower pwr_theCoon_power3 < uid=B9E930CA56B1315300002850B46B6114 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/thecoon_power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/swap_melee.dds"
+	myUIName "contextComment = \"Coon Power 3 Name\", description = \"pwr_thecoon_power3 Name\", enabled = true, guid = #51C546C65774DC560000019FC2BA3A23, lineVersion = 2, maxLength = 14, text = \"Coon Pounce\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_thecoon_power3 Description\", enabled = true, guid = #51C546C65774DC56000001A022BB1083, lineVersion = 2, maxLength = 160, text = \"The Coon glides through the air like a furry bird of prey, landing next to a slackjawed foe to deliver a horrific slashing.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_thecoon_power3 Short Description\", enabled = true, guid = #9D0E6196579B9F9D0000444EC4BFC93E, lineVersion = 0, maxLength = 52, text = \"Jump and then attack both left and right\""
+	myUseSkillScript < uid=326B24CD5721424400000098163ACFFF > = pwr_theCoon_power3_script
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myUseRectangularLobbedArea TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C93082595FD6890004C24E205166B5 >
+		{
+			myPriority 20
+			myMinimumAffectedTargets 1
+		}
+		PowerEvaluationData enraged < uid=86C93082595FD6890004C24FD3FFC992 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+		}
+	}
+	myTuningData < uid=B9E930CA56B1315300002851546BCC4C > = pwr_theCoon_power3_Tuning
+	myCameraPreset < uid=DB7C6D42573280BB00002A0541828B0B > = TheCoon_Power03
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 1.708333
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

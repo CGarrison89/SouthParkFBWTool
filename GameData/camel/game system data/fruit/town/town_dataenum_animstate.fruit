@@ -1,0 +1,28 @@
+
+enum TownAnimStateTypeEnum < useCategories=1 >
+{
+	NOTSET
+
+	idle
+	locomotion
+	action
+	
+	< startCategory="One Shot" >
+	flair
+	pose
+	open_door
+	close_door
+	punch
+	< endCategory="" >
+	
+	< startCategory="Object" >
+	phone
+	ipad
+	< endCategory="" >
+	
+	< startCategory="Reaction" >
+	fart_reaction
+	interact
+	timefart_exit
+	< endCategory="" >
+}

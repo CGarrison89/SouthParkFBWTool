@@ -1,0 +1,83 @@
+include "camel/game system data/fruit/mission/mission.fruit"
+
+class NPCSettings
+{
+	file myAIDialogDataXML
+	//file myNPCTicketTypes
+}
+
+enum AnimationModeIdleMode
+{
+	Base
+	Normal
+	Heroic
+	Phone
+	Worried
+}
+
+enum BuddyAIStateEnum
+{
+	Idle
+	Follow
+	Lead
+}
+
+enum BuddyAISubstateEnum
+{
+	Idle
+	Follow
+	Lead
+}
+
+class BuddyMovementTuning
+{
+	float myMovementBeginTime
+	float myMovementEndTime
+	string myAnimationName
+}
+
+class MissionObjectivePair : JuiceObj
+{
+	Mission* myMission
+	string myObjectiveName
+}
+
+list MissionObjectiveList
+{
+	MissionObjectivePair
+}
+
+list LocstringList
+{
+	varmap < bhv="localization" >
+}
+
+class NPCSummonTuning : JuiceObj
+{
+	MissionObjectiveList myObjectivesWhereBuddyIsUnavailable
+	LocstringList mySuccessTexts
+	LocstringList myFailureTexts
+	string myIconPath "camel/ui/temp assets/items/tex_itemicon_placeholder.png"
+}
+
+class ExploreBuddyAITuning
+{
+	float myWalkSpeed
+	float myRunSpeed
+	float myRunFasterMultiplier
+	float myMaxDistanceFromPath 2.0
+	float myInnerRadiusScreenPercentage
+	float myOuterRadiusScreenPercentage
+	float myFollowRadiusRunSpeedThresholdScreenPercentage 0.0
+	float myLeadRadiusRunSpeedThresholdScreenPercentage 1.0
+	float myFollowRunFasterSpeedThresholdScreenPercentage 0.0
+	float myLeadRunFasterSpeedThresholdScreenPercentage 1.0
+	float myFollowRadiusPercentage 0.25
+	float myFollowInnerRadiusPercentage 0.1
+	float myLeadRadiusPercentage 1
+	float myIdleTimeUntilTurnToMC 0
+	float myMovementTimeWhenHit 0
+	float myIdleTimeWhenHit 0
+	float myFollowOuterRadiusPercentageWhenHit 0
+	bool myShouldLookAtMC false
+}

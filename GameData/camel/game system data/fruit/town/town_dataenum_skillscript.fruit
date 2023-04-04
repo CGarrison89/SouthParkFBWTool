@@ -1,0 +1,10 @@
+
+enum TownSkillScriptTypeEnum
+{
+	NOTSET
+	Enter
+	Exit
+	Mount
+	Dismount
+	Interact
+}

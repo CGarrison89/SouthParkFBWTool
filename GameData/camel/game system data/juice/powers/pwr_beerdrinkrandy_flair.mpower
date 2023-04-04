@@ -1,0 +1,29 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_presets.juice"
+
+CombatPower pwr_beerdrinkrandy_flair < uid=B9E930CA57C0BF44000003B449772AFE >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/randy_drunkentantrum.dds"
+	myUIName "contextComment = \"\", description = \"temp_pwr_beerdrinkrandy_flair Name\", enabled = true, guid = #B9E930CA57C0BF44000003B2EBA0059C, lineVersion = 0, maxLength = 11, text = \"Tantrum\""
+	myUIDescription "contextComment = \"\", description = \"pwr_beerdrinkrandy_flair Description\", enabled = true, guid = #B9E930CA57C0BF44000003B39B1556F2, lineVersion = 0, maxLength = 35, text = \"Bursts in a fit of tantrum.\""
+	myUseSkillScript < uid=B9E930CA57C0BF44000003B5DDAD4D1A > = Camel_Simple_PlayAnim_Script
+	myAnimationState power3
+	myShouldRepositionBeforeExecution FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA57C0BF44000003B636CA3FD6 >
+		{
+			myPriority 60
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA57C0BF44000003B707595D3B > = temp_pwr_beerdrunkrandy_flair_Tuning
+	myCameraPreset < uid=B9E930CA57C0BF44000003B8F789A7F4 > = NULLREFERENCE
+}
+

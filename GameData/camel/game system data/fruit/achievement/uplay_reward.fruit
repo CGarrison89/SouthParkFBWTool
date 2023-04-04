@@ -1,0 +1,10 @@
+include "camel/game system data/fruit/juiceObj.fruit"
+
+class UplayReward : JuiceObj
+{
+	string myTGOName
+	varmap myNameSource        < bhv="localization" >
+	varmap myDescriptionSource < bhv="localization" >
+	varmap myInstructionSource < bhv="localization" >
+	varmap myConditionSource   < bhv="localization" >
+}

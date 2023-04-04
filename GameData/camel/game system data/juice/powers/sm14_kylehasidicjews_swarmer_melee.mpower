@@ -1,0 +1,45 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower sm14_kylehasidicjews_swarmer_melee < uid=86C93082585ADBE800006E521F8F81C7 > : enemy_pwr_archetype_swarmer_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/rabbi_power1.dds"
+	myUseSkillScript < uid=86C93082585ADBE800006E537D53CE0F > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 4
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=8585E53F5880FBAA000725547DF5DCFE >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData VIP < uid=8585E53F5880FBAA000725554AFBD6F5 >
+		{
+			myPriority 30
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=8585E53F5880FBAA0007255621085DD1 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+}
+

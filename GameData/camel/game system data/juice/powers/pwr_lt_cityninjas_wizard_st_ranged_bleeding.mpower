@@ -1,0 +1,8 @@
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_LT_cityninjas_wizard_st_ranged_bleeding < uid=86C9308257684C7C00000120FF6DCD17 > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myTuningData < uid=86C9308257684C7C00000121ED09BD3A > = pwr_LT_cityninjas_wizard_st_ranged_bleeding_Kevin_Tuning
+}
+

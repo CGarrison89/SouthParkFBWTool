@@ -1,0 +1,41 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower enemy_pwr_1x3_melee_knockback < uid=3267E0D05748F64300000276C8F68FCF >
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_1x3_melee_knockback Name\", enabled = true, guid = #51C546C65774D93800000084D284269B, lineVersion = 1, maxLength = 5, text = \"1x3\""
+	myUseSkillScript < uid=3267E0D05748F643000002775E753413 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D05748F64300000278D7E11413 >
+		{
+			myPriority 20
+			myMinimumAffectedTargets 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86D64076575614E3000001CE69C72D13 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=3267E0D05748F64300000279B4326EDA > = enemy_pwr_1x3_melee_knockback_amcclay_Tuning
+	myValidDirections
+	{
+		myLeft TRUE
+		myRight TRUE
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

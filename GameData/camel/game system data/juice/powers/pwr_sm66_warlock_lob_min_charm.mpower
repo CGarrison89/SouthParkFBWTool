@@ -1,0 +1,37 @@
+include ./enemy_pwr_archetype_warlock_lob_min_charm.mpower
+include ./enemypowers.adrian.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_sm66_warlock_lob_min_charm < uid=8585E53F57E1848A00156F11021E8695 > : enemy_pwr_archetype_warlock_lob_min_charm
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/raisingirlbruiser_kiss.dds"
+	myUseSkillScript < uid=8585E53F582DF0AE00070CC9FED6437B > = Camel_Simple_PlayAnim_Script
+	myAnimationState power5
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=8585E53F58348E5C0006E1A1F096ED5E >
+		{
+			myPriority 25
+			myNumLiveEnemiesRequired 2
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=8585E53F58348E5C0006E1A20B74287A >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myNumLiveEnemiesRequired 2
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=8585E53F57E1848A00156F128A0E790C > = pwr_sm66_warlock_lob_min_charm_Adrian_Tuning
+}
+

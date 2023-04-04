@@ -1,0 +1,23 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./buddypowers.joh.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./buddypowers.demo.juice
+include camel/skillscript/pwr_humankite_power4_script.mskillscriptjuice
+
+CombatPower e3_humankite_power4 < uid=B9E930CA573A71660000001DEE5CDDAA >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/humankite_Ult_DeathFromAbove.dds"
+	myUIName "contextComment = \"\", description = \"e3_humankite_power4 Name\", enabled = true, guid = #51C546C65774D9350000007E3EF034E6, lineVersion = 0, maxLength = 21, text = \"Death from Above\""
+	myUIDescription "contextComment = \"\", description = \"e3_humankite_power4 Description\", enabled = true, guid = #51C546C65774D9350000007F65701104, lineVersion = 0, maxLength = 77, text = \"Damages and applies burning to enemies caught in the blast.\""
+	myUseSkillScript < uid=B9E930CA573A71660000001E011D654E > = pwr_humanKite_power4_script
+	myAnimationState power4
+	myTuningData < uid=B9E930CA573A71660000001FAC1D6CDB > = demo_e3_humankite_power4_demo_Tuning
+	myPowerGroup Ultimate
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

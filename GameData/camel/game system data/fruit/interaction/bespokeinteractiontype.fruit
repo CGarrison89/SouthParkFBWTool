@@ -1,0 +1,14 @@
+enum BespokeInteractionType
+{
+    Default
+    MC_Only
+    Ghost_Only
+    NPC_Only
+}
+
+class BespokeInteractionData
+{
+    bool CanMCInteract true
+    bool CanNpcInteract true
+    bool CanGhostInteract true
+}

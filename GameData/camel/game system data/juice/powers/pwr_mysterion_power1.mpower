@@ -1,0 +1,79 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_mysterion.juice"
+
+CombatPower pwr_mysterion_power1 < uid=B9E930CA56D4B3B300000038013D980A >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/mysterion_MysteryPact.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.DDS"
+	myUIName "contextComment = \"Mysterion Power 1 Name\", description = \"pwr_mysterion_power1 Name\", enabled = true, guid = #51C546C65774DC3A0000015C5679A03D, lineVersion = 1, maxLength = 16, text = \"Demonic Fury\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_mysterion_power1 Description\", enabled = true, guid = #51C546C65774DC3A0000015D9D40F2CC, lineVersion = 0, maxLength = 164, text = \"An Okinawan handyman taught Mysterion this potent melee combo in exchange for weeks of tedious car washing and fence painting.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_mysterion_power1 Short Description\", enabled = true, guid = #9D0E6196579BCD16000044AA9F7E4B30, lineVersion = 0, maxLength = 42, text = \"Execute a punishing melee attack\""
+	myUseSkillScript < uid=B9E930CA56D4B3B30000003998809AE8 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 4
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Enrage < uid=86C9308258A26C82000017740A6DDC79 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData default < uid=86C9308258A26C82000017751D591615 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA56D4B3B30000003AFDF295C4 > = pwr_mysterion_power1_Tuning
+	myCameraPreset < uid=86D64076574F9D5100018776B593280C > = Mysterion_Power01
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.0
+				myActionPlusEndTime 0.25
+				myActionPlusPresetEnum Normal
+			}
+			ActionPlusMiniGameData 2
+			{
+				myActionPlusAdditionalTime 0.0
+				myActionPlusEndTime 0.75
+				myActionPlusPresetEnum Fast
+			}
+			ActionPlusMiniGameData 3
+			{
+				myActionPlusAdditionalTime 0.0
+				myActionPlusEndTime 1.4167
+				myActionPlusPresetEnum Fast
+			}
+			ActionPlusMiniGameData 4
+			{
+				myActionPlusAdditionalTime 0.0
+				myActionPlusEndTime 2.8333
+				myActionPlusPresetEnum Fast
+			}
+		}
+	}
+}
+

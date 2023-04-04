@@ -1,0 +1,23 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./buddypowers.joh.juice
+include ./buddypowers.demo.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_humankite.juice"
+
+CombatPower e3_humankite_power3 < uid=B9E930CA573A715D00000018CF3DC1D8 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/humankite_Cover.dds"
+	myUIName "contextComment = \"\", description = \"e3_humankite_power3 Name\", enabled = true, guid = #51C546C65774D9350000007C534823BD, lineVersion = 0, maxLength = 8, text = \"Cover\""
+	myUIDescription "contextComment = \"\", description = \"e3_humankite_power3 Description\", enabled = true, guid = #51C546C65774D9350000007D4AAFC7E7, lineVersion = 0, maxLength = 23, text = \"Applies shielding.\""
+	myUseSkillScript < uid=B9E930CA573A715D00000019BAF637D4 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power3
+	myTuningData < uid=B9E930CA573A715D0000001A56F72B24 > = demo_e3_humankite_power3_demo_Tuning
+	myCameraPreset < uid=B9E930CA574B9F0E0000AB23B7AB9367 > = HumanKite_Power03
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

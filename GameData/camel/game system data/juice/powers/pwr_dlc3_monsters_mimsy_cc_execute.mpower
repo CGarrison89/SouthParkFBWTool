@@ -1,0 +1,29 @@
+include ./pwr_dlc3_monsters_mimsy_cc_telegraph.mpower
+include camel/skillscript/pwr_dlc3_monsters_mimsy_cc_execute_skillscript.mskillscriptjuice
+include camel/skillscript/dlc3_monsters_mimsy_powerswap_execute.mskillscriptjuice
+
+CombatPower pwr_DLC3_Monsters_Mimsy_CC_execute < uid=86C930825A9DA29B00022C6D813EB260 > : pwr_DLC3_Monsters_Mimsy_CC_telegraph
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/Mimsy_Power1.dds"
+	myUIName "contextComment = \"\", description = \"pwr_DLC3_Monsters_Mimsy_CC_execute_name\", enabled = true, guid = #86C930825A9DA29B00022C6B8FDD2964, lineVersion = 1, maxLength = 14, text = \"Mimsy Exe\""
+	myUIDescription "contextComment = \"\", description = \"pwr_DLC3_Monsters_Mimsy_CC_execute_description\", enabled = true, guid = #86C930825A9DA29B00022C6C5C1D6568, lineVersion = 0, maxLength = 43, text = \"DLC3 Mimsy CC execute description\""
+	myUseSkillScript < uid=86C930825A9DBDB700034A277C9B0FF6 > = pwr_DLC3_Monsters_Mimsy_CC_execute_SkillScript
+	myAnimationState power1
+	myLockedByDefault TRUE
+	myNumberOfAttackEvents 2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C930825A9DA29B00022C70EE429ED0 >
+		{
+			myPriority 20
+			myMinimumKills 0
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=8585E53F5AA6B0E9000BBA6CF06A5DF2 > = DLC3_Monsters_Mimsy_PowerSwap_Execute
+	myTuningData < uid=8585E53F5AA1F6960002C46E283AA8D7 > = pwr_DLC3_Monsters_Mimsy_CC_Execute_Tuning
+	myTelegraphData
+	{
+		myTelegraphedPowerName ""
+	}
+}
+

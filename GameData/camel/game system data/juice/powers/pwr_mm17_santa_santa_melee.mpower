@@ -1,0 +1,82 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_mm17_santa_santa_melee < uid=86C9308257BC77B60000029BA7038C8A > : enemy_pwr_archetype_bruiser_melee
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308257BC7AB10000030231669F88 >
+		{
+			myPriority 50
+			myMinimumAffectedTargets 1
+			myAIDesirableType B
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "sleigh attackers" < uid=86C9308257E9861100044316FF2E51B7 >
+		{
+			myPriority 200
+			myMinimumAffectedTargets 1
+			myAIDesirableType A
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData marked_a < uid=86C9308257EAF9B6000D7A5D9709A1F4 >
+		{
+			myPriority 250
+			myMinimumAffectedTargets 1
+			myAIDesirableType A
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Marked
+				{
+					mySpecialEffect Marked
+				}
+			}
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData marked_b < uid=86C9308257EAFCE0000F460132697BD6 >
+		{
+			myPriority 100
+			myMinimumAffectedTargets 1
+			myAIDesirableType B
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Marked
+				{
+					mySpecialEffect Marked
+				}
+			}
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308257BC7AB10000030351B35FFB >
+		{
+			myPriority 500
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C9308257BC77B60000029C4D3F03B0 > = pwr_mm17_santa_santa_melee_Kevin_Tuning
+}
+

@@ -1,0 +1,46 @@
+include ./dlc3_enemypowers.juice
+include ./enemy_pwr_archetype_wizard_pierce_ranged.mpower
+include camel/skillscript/dlc3_timmy_boss_telegraph.mskillscriptjuice
+include camel/skillscript/camel_simple_telegraph_on.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_jared.juice"
+include camel/skillscript/camel_simple_telegraph_targeting_script.mskillscriptjuice
+include camel/skillscript/pwr_jared_power03_pull_telegraph.mskillscriptjuice
+include camel/skillscript/dlc3_timmy_boss_targeting_skillscript.mskillscriptjuice
+include camel/skillscript/dlc3_timmy_boss_swappower_aftertelegraph.mskillscriptjuice
+include "camel/game system data/juice/camera/tardicaca/uber_camera_powers_presets_timmy_boss.juice"
+include camel/skillscript/dlc3_timmy_boss_phase2_telegraph.mskillscriptjuice
+include camel/skillscript/dlc3_timmy_boss_phase2_targeting_skillscript.mskillscriptjuice
+include camel/skillscript/dlc3_timmy_boss_phase2_swappower_aftertelegraph.mskillscriptjuice
+
+CombatPower pwr_dlc3_monsters_timmy_boss_phase2_telegraph < uid=3267E0D05AF34878001059466165A3A4 > : enemy_pwr_archetype_wizard_pierce_ranged
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/BigTimmy_Power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide.dds"
+	myUIName "contextComment = \"\", description = \"nocturnal_eruption_telegraph_controlname\", enabled = true, guid = #3267E0D05AF3487800105944E22980A1, lineVersion = 1, maxLength = 23, text = \"Nocturnal Eruption\""
+	myUIDescription "contextComment = \"Nocturnal Eruption\", description = \"nocturnal_eruption_telegraph_controlname\", enabled = true, guid = #3267E0D05AF34878001059456E0ACBC4, lineVersion = 0, maxLength = 23, text = \"Nocturnal Eruption\""
+	myUseSkillScript < uid=3267E0D05AF34878001059471E53A13D > = DLC3_Timmy_Boss_Phase2_Telegraph
+	myTargetingSkillScript < uid=3267E0D05AF3487800105948B0D106DE > = DLC3_Timmy_Boss_Phase2_Targeting_SkillScript
+	myLockedByDefault FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D05AF348780010594988BDAFEB >
+		{
+			myPriority 50
+			myNumTelegraphPowersAllowed 0
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=3267E0D05AF348780010594AC48945DB > = DLC3_Timmy_Boss_Phase2_SwapPower_AfterTelegraph
+	myTuningData < uid=3267E0D05AF348780010594B47504E3E > = pwr_DLC3_Monsters_Timmy_Boss_Telegraph_Tuning
+	myCameraPreset < uid=3267E0D05AF348780010594C7F8F57FC > = NULLREFERENCE
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myTelegraphData
+	{
+		myTelegraphingAnimationName ""
+		myTelegraphingToTargetedAnimationName ""
+	}
+}
+

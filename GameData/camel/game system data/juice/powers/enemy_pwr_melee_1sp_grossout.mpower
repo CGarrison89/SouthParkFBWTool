@@ -1,0 +1,38 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower enemy_pwr_melee_1sp_grossout < uid=3267E0D0574902D80000016BEF25B266 >
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_melee_1sp_grossout Name\", enabled = true, guid = #51C546C65774D948000000A66E8F7DBE, lineVersion = 0, maxLength = 16, text = \"Pepper Spray\""
+	myUseSkillScript < uid=3267E0D0574902D80000016CABB47A71 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D0574902D80000016D049C8CCA >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86D64076575616DC0000021F5E5EC04C >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=3267E0D0574902D80000016ED100115C > = enemy_pwr_melee_1sp_grossout_amcclay_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

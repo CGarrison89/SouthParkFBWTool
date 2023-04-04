@@ -1,0 +1,22 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./enemypowers.adrian.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_mm01_mc_melee_knockback < uid=8585E53F59417EFC000D5B952A4F5947 > : enemy_pwr_archetype_bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/King_Power5.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"prologue king melee power name\", description = \"enemy_pwr_archetype_bruiser_melee Name\", enabled = true, guid = #9D0E619659976AC4000F07E19590F765, lineVersion = 0, maxLength = 8, text = \"Punch\""
+	myUseSkillScript < uid=8585E53F59417EFC000D5B965D18600F > = Camel_Simple_PlayAnim_Script
+	myAnimationState king_power5
+	myNumberOfAttackEvents 3
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+	}
+	myTuningData < uid=8585E53F59417EFC000D5B97796B8844 > = pwr_mm01_mc_melee_knockback_Adrian_Tuning
+	myCameraPreset < uid=8585E53F594871AD001D57A396003E56 > = Preset_Generic_Melee_KB
+}
+

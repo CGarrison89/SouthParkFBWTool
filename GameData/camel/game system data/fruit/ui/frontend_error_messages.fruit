@@ -1,0 +1,54 @@
+class ErrorCodeMessages
+{
+    varmap myGenericMessage < bhv="localization" >
+    varmap myOrbisMessage < bhv="localization" >
+    varmap myDurangoMessage < bhv="localization" >
+    varmap myWinMessage < bhv="localization" >
+}
+
+// Must match ErrorCode enum inside MAIN\code\camel\CClient\CClient_NF_ErrorMessages.h
+class FrontendErrorMessages
+{
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_SouthParkServiceUnreachable
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_UbisoftServiceUnreachable
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_FirstPartyServiceUnreachable
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_NoNetConnection
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_YouHaveBeenDisconnected
+
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_AccountBanned
+
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_FrontEndLockedCharacter
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_FrontEndLockedCharacterConfirm
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_FrontEndLockedCharacterBlocked
+
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_GroupIsInManhattanFrontEnd
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_GroupIsInBrooklynFrontEnd
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_GroupFullFrontEnd
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_GroupNoLongerAvailable
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_GroupDZPhaseErrorFrontEnd
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_GroupDZOutsideIn
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_GroupDZInsideOut
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_GroupDZBrakets
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_GroupNoPremiumFrontEnd
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_GroupPremiumLoss
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_GroupPrivacyMismatch
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_NotAllowedToGroup
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_JoinedPlayerIsNotAllowedToGroup
+
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_PremiumRestrictedFeature
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_PremiumRestrictedGroup
+
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_UplayDidNotSignUp
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_UbiservicesCurrentlyUnavailable
+	ErrorCodeMessages CClient_NF_ErrorLocalizationCode_UbiservicesUnavailableGameplayAffected
+    
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_UplayPcSDKFailed
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_UplayPcUserSignedOut
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_UplayPcIsInOfflineMode
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_UplayPcIsNotInstalled
+    
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_SignedOutOfFirstPartyNetwork
+    
+    ErrorCodeMessages CClient_NF_ErrorLocalizationCode_PCUnderMinSpec
+	ErrorCodeMessages CClient_NF_ErrorLocalizationCode_PermissionsFail
+}

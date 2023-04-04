@@ -1,0 +1,25 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_green_ball.mprojectile"
+
+CombatPower pwr_com_ballThrow < uid=B9E930CA55BFCFAA000000A87008688B >
+{
+	myUseSkillScript < uid=B9E930CA55BFCFAA000000A9EA2E40E5 > = Camel_Simple_PlayAnim_Script
+	myAnimationState base_attack
+	myNumberOfAttackEvents 2
+	myProjectile < uid=B9E930CA55E10C78000022384844A145 > = projectile_green_ball
+	myPowerEvaluationData
+	{
+		PowerEvaluationData AggroTarget < uid=B642A89A55C3FCE90000489E0B0D4219 >
+		{
+			myPriority 50
+			myRequireAggroTarget TRUE
+		}
+		PowerEvaluationData Default < uid=B642A89A55C3FCF10000489F80041D35 >
+		{
+			myPriority 10
+		}
+	}
+	myTuningData < uid=B642A89A55C11E5100000950CA705F4E > = pwr_com_ballThrow_Tuning
+}
+

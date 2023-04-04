@@ -1,0 +1,366 @@
+// Dialog Event
+
+enum DialogEventType
+{
+
+	ForceLineByOasisId
+	ForceLineByAudioEventId
+	FollowUp
+	SequenceEnded
+	
+//Combat Events
+
+	None
+	CombatStart
+	TurnStart
+	Idle
+	Text
+	Attack
+	AttackPre
+	Taunt
+	UltimateOutro
+	Victory
+	Fail
+	Hit
+	HitReact
+	Summon
+	Summoned
+	SummonReact
+	Heal
+	ReviveOthers
+	BeingRevived
+	RTETimerDone
+	RTEDamageDone
+	Anticipation
+	Buffed
+	AllyHit
+	EnemyHit
+	AllyDie
+	EnemyDie
+	KO
+	KOReact
+	Timefart
+	TimefartPause
+	TimefartGlitch
+	TimefartAssemble_Clone
+	TimefartDayNight
+	UltimateMeterFilled
+	StatusReact
+	ChillDo
+	ConfuseDo
+	CharmedDo
+	EnrageDo
+	MarkedDo
+	FocusedDo
+	InvisibleDo
+	EncumberedDo
+	ShockDo
+	BurnDo
+	BleedDo
+	LifeDrainDo
+	GrossDo
+	GrossDoReact
+	RTE
+	ScriptedMoment01
+	ScriptedMoment02
+	ScriptedMoment03
+	ScriptedMoment04
+	ScriptedMoment05
+	ScriptedMoment06
+	ScriptedMoment07
+	ScriptedMoment08
+	ScriptedMoment09
+	ScriptedMoment10
+	ScriptedLoop01
+	ScriptedMoment-KingPraise
+	TurnSkip
+	CombatLeave
+	ImmunityTriggered
+	CarGagStart_Ally
+	CarGagStart_Enemy
+	CarGagEnd_Ally
+	CarGagEnd_Enemy
+	CarGagDriver_Male
+	CarGagDriver_Female
+	CarGagDriver
+	WaveSpawn
+	WaveSpawnReact
+	HemmorrhageDo
+	PossessedDo
+	PossessedDoReact
+	DepossessedDo
+	DepossessedDoReact
+	OnFinalGirl2React
+	
+//Scott buddy events
+
+	ScottSummon
+	ScottTackled
+	ScottFarts
+	ScottGround
+	ScottStandup
+	ScottRage
+	ScottLift
+	ScottHold
+	ScottRelease
+	ScottPost
+	ScottUnsummon
+
+//Kyle buddy events
+
+	KyleSummon
+	KyleJumps
+	KyleFail
+	KyleSuccess
+	KyleIdle
+	KyleUnsummon
+	KyleAnnoyingIdle
+
+//Stan buddy events
+
+	StanSummon
+	StanInsert
+	StanSuccess
+	StanUnsummon
+
+//Butters buddy events
+
+	ButtersSummon
+	ButtersGrab
+	ButtersInsert
+	ButtersSuccess
+	ButtersFail
+	ButtersTimeout
+	ButtersUnsummon	
+
+//Jimmy buddy events
+
+	JimmyEnter
+	JimmyExit
+	
+//test events
+	
+	AttackNV
+	HitNV
+
+//Mission Events
+
+	ArgueDad
+	ArgueMom
+	
+//Living Town Events
+
+	LT_Idle
+	LT_Fart
+	LT_Bump
+	LT_Flee
+	LT_FartShatter
+	LTCombatWarn
+	LTCombatAvoid
+	LTCombatStart
+	LTCombatStart_onPIP
+	LTSpokenTo
+	LTNotice
+	LTLook
+	LTLoot
+	LTPunch
+	LTLilToot
+	LTSelfieEntice
+	LTSelfieIdle
+	LTSelfieThanks
+	LTSelfieFollowerInteract
+	LTSelfieReject
+	LTSelfieRepeat
+	LTTimefartRewindReact
+	LTTimefartPauseReact
+	LTTimefartDayNightReact
+	LTTimefartGlitchReact
+	LTTimefartCombatPauseReact
+	LTFartkourReact
+	LTRageFartReact
+	LTRageLiftReact
+	LTHaywireExplosionReact
+	LTSandblasterReact
+	LTOffTrack
+	LTBackOnTrack
+	LTShit
+	LTBreakObject
+	
+//MiniGame Events
+//Lap Dance
+	lapDance_kneeLove
+	lapDance_kneeLike
+	lapDance_kneeHint
+	lapDance_kneeBored
+	lapDance_specialLove
+	lapDance_specialBored
+
+//Gay Fish
+
+	gayFish_start
+	gayFish_closeCall
+	gayFish_speedUp
+	gayFish_columnSizeDown
+	gayFish_firstHit
+	gayFish_secondHit
+	gayFish_deathHits
+	gayFish_deathTooHigh
+	gayFish_deathTooLow
+	gayFish_demonArrives
+	gayFish_fireballDeath
+	gayFish_finish
+	gayFish_praise
+	
+//Banking
+
+	banking_idle
+	banking_creditDefaultSwap
+	banking_techStocks
+	banking_realEstate
+	banking_bigOil
+	banking_indexFund
+	banking_blueChipStocks
+	banking_soyBeanFutures
+	banking_gold
+	banking_highValueSpin
+	banking_bankrupt
+	banking_spinPrompt
+	banking_closeOut
+	banking_bonusUseMarketManipulation
+	banking_bonusUseInsiderTrading
+	banking_bonusUseBankruptcyAvoid
+	banking_bonusUseSilverSpoon
+	banking_bonusUseShortSell
+	banking_bonusUseAgileInvesting
+	banking_bonusUseGold4Cash
+	banking_hitBreakEven
+	banking_economicLevelUp
+	banking_economicLevelDown
+	banking_quit
+	banking_DuringSpin
+
+//Condom
+
+	condom_Start
+	condom_idle
+	condom_RollDown
+	condom_Break
+	condom_Success
+
+//Police
+
+	police_startGame
+	police_FirstHit
+	police_HitCriminal
+	police_headshot
+	police_dickshot
+	police_gutshot
+	police_miss
+	police_WeaponsDown
+	police_shotInnocent //not hooked up
+	police_passNotPerfect
+	police_FailShotInnocents
+	police_FailIndiscriminateKiller
+	police_FailColorBlind
+	police_FailMurderer
+	police_FailSloppy
+	police_passPerfect
+	
+//Cousin Kyle Entrance
+
+	cousinKyle_enters
+	cousinKyle_entersFollowup
+	cousinKyle_Falldown
+	cousinKyle_laserEyes
+	cousinKyle_shield
+	cousinKyle_exit
+
+//Vendor types
+
+	vendor_openUI
+	vendor_buyThanks
+	vendor_closeUI
+	vendor_Idle
+	vendor_openUINewItems
+
+//Memberberry
+
+	memberberry_StartConversation
+	memberberry_RepeatInteraction
+	
+//Summons
+
+	Classi_Outro
+	Classi_HitReact
+	
+	Gerald_Outro
+	Gerald_HitReact
+	
+	Moses_PreSummon
+	Moses_HitReact
+	
+	Jimbo_HitReact
+	
+//Gay Cats
+	GayCat_Idle
+	GayCat_HissAndGrowl
+	GayCat_HitReact
+	GayCat_Fart
+	GayCat_Victory
+	
+//Wendy Ultimate Specifics
+	WendyUlt_Open
+	WendyUlt_callouts
+	WendyUlt_Ending
+	
+//AllySelect Screen
+
+	AllySelect_Craig
+	AllySelect_Kyle
+	AllySelect_Clyde
+	AllySelect_Jimmy
+	AllySelect_Scott
+	AllySelect_Butters
+	AllySelect_Stan
+	AllySelect_Wendy
+	AllySelect_Token
+	AllySelect_Tweek
+	AllySelect_Kenny
+	AllySelect_Cartman
+	AllySelect_Henrietta
+	AllySelect_Timmy
+	AllySelect_Bradley
+
+//Danger Deck
+
+	DangerDeck_UltraChallengeUnlocked
+	DangerDeck_AllUltrachallengesComplete
+	DangerDeck_ChallengeSelect
+	DangerDeck_ChallengeUnlocked
+	DangerDeck_GrantLoot
+	DangerDeck_UltraChallengeComplete
+	DangerDeck_ChallengeComplete
+	DangerDeck_MenuOpen
+	DangerDeck_CombatSelected
+	DangerDeck_LoadingVOFlavor
+	DangerDeck_AdditionalWaveSpawn
+	DangerDeck_AlphaSelected
+	DangerDeck_BetaSelected
+	DangerDeck_GammaSelected
+	DangerDeck_UltraSelected
+	DangerDeck_ObstacleSpawns
+	
+// Casa Bonita
+
+	CasaBonita_CoonEntice
+	CasaBonita_JailCameraInteract
+	CasaBonita_JailCameraExit
+	CasaBonita_JailCameraIncomplete
+	CasaBonita_JailCameraSucess
+	
+// Shooting MiniGame
+	shooting_GameStart
+	shooting_HitObject
+	shooting_GameEnd
+	
+}

@@ -1,0 +1,187 @@
+include "camel/game system data/fruit/damage/damage.fruit"
+include "camel/skillscript/skillscript.fruit"
+include "camel/game system data/fruit/powers/powerDamageArea.fruit"
+
+enum StatusEffectApplicationEnum
+{
+	TurnStart
+	TurnEnd
+	Persistent
+	Damaged
+	PowerExecution
+	PowerExecutionFinished
+}
+
+// Don't change this list without an Engineer! It needs to sync with code!
+// NOTE - This needs to be kept in sync with CClient_SpecialEffectEnum in CClient_SpecialEffectEnum.h
+enum SpecialEffectEnum
+{
+	None
+	Invisible
+	Dazed
+	Shocked
+	GrossedOut
+	Enraged
+	Burning
+	Bleeding
+	Distracted
+	Charmed
+	CharmedInfinite
+	Confused
+	Energized
+	Focused
+	Chilled
+	Encumbered
+	Marked
+	Mint
+	Berry
+	Crunch
+	GadgeteerBomb
+	ProfessorChaosBomb
+	KungFuUltimate
+	Block
+	MutantAltKiteWeakened
+	Grounded
+	KnockedBack
+    Rush
+	TupperMechTransform
+	InvisibleImmunity
+	DazedImmunity
+	ShockedImmunity
+	GrossedOutImmunity
+	EnragedImmunity
+	BurningImmunity
+	BleedingImmunity
+	DistractedImmunity
+	CharmedImmunity
+	ConfusedImmunity
+	EnergizedImmunity
+	FocusedImmunity
+	ChilledImmunity
+	EncumberedImmunity
+	MarkedImmunity
+	MintImmunity
+	BerryImmunity
+	CrunchImmunity
+	GroundedImmunity
+	KnockedBackImmunity
+	RushImmunity
+	TeleportImmunity
+	AP
+	MP
+	TurnSpeed
+	HP
+	Shielding
+	Damage
+	DirectDamage
+	ElementalDamage
+	FireDamage
+	ShockDamage
+	GrossDamage
+	FrostDamage
+	BloodDamage
+	Resistance
+	Countering
+	Overclocked
+	Regeneration
+	Regeneration2
+	Regeneration3
+	PetDuration1
+	PetDuration3
+	LifestealOnAttack
+	LifestealAoeOnTurnEnds
+	NetherbornUltimate
+	StatusEffect_Test1
+	StatusEffect_Test2
+	StatusEffect_Test3
+	RegenerationScaled
+	PostInvisibility
+	Possessed
+	RageMeterLock
+	Rooted
+	EmergencyAidKit
+	SpiritWard
+	Hemorrhage
+	FinalGirlUltimate
+	FinalGirlUltimateTarget
+	HemorrhageImmunity
+	Invulnerability
+}
+
+enum PreStatusEffectConditionEnum
+{
+    MustHave
+    MustNotHave
+}
+
+enum PostStatusEffectConditionEnum
+{
+    None
+    AND
+    OR
+}
+
+// NOTE - This needs to be kept in sync with CClient_SpecialEffectFactionRestriction enum in CClient_StatusEffectDamage.h 
+enum SpecialEffectFactionRestriction
+{
+	None
+	BaseFactionIsNotPlayer
+}
+
+class StatusEffectConditionalEntry
+{
+    PreStatusEffectConditionEnum myPreCondition MustHave
+    SpecialEffectEnum mySpecialEffect None
+    PostStatusEffectConditionEnum myFollowingCondition None
+}
+
+list StatusEffectCondition
+{
+    StatusEffectConditionalEntry 
+}
+
+class StatusEffectUIData
+{
+	file myStatusEffectIcon "" < types=*.png >
+	varmap myUIName < bhv = "localization" >
+	varmap myUIDescription < bhv = "localization" tooltip="Short description to help user understand the icon">
+}
+
+class SkillScriptDamageFlags
+{
+	bool myOnApplication	< tooltip="Does the On Application Skill Script apply damage?">
+	bool myOnExpire			< tooltip="Does the On Expire Skill Script apply damage?">
+	bool myOnTick			< tooltip="Does the On Tick (Status) Skill Script apply damage?">
+	bool myOnRemove 		< tooltip="Does the On Remove Skill Script apply damage?">
+}
+
+class StatusEffectDamage < uid = auto >
+{
+	SpecialEffectEnum myEffect
+	SkillScript* mySkillScript
+	SkillScript* myOnApplicationSkillScript
+	SkillScript* myOnExpireSkillScript
+	SkillScript* myOnRemoveSkillScript
+	file myOnSofteningSkillScript < bhv=asset assettype="Skill Script" tooltip="Execute SkillScript ON Actor Softening" >
+	SkillScriptDamageFlags myDamagingSkillScriptsFlag
+	DamageTable myDamageTable
+	StatusEffectUIData myUIData
+	
+	PowerDamageArea myDamageArea
+	int myDamageAmount 0	
+	bool myIsHidden false
+	SpecialEffectFactionRestriction myFactionRestriction None
+}
+
+class SpecialEffectEntry
+{
+	StatusEffectDamage* myStatusEffectDamage
+	StatusEffectApplicationEnum myApplication
+	float myAmount
+	SpecialEffectFactionRestriction myFactionRestriction None
+}
+
+list SpecialEffect
+{
+	SpecialEffectEntry
+}

@@ -1,0 +1,6 @@
+include ./mm16_cokedcops_wizard01_grossout.mpower
+
+CombatPower MM16_blackcells_wizard_melee_gross < uid=86D64076574CCF84000001393E43E0A1 > : mm16_cokedcops_wizard01_grossout
+{
+}
+

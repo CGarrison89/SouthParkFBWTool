@@ -1,0 +1,32 @@
+include ./sm64_vampkids_priest_power2.mpower
+include ./enemypowers.adrian.juice
+include camel/skillscript/sm25_crab_king_heal.mskillscriptjuice
+include camel/skillscript/sm25_crab_king_heal_focus_execute.mskillscriptjuice
+include camel/skillscript/camel_simple_swappower_slot1.mskillscriptjuice
+
+CombatPower pwr_sm25_crab_king_heal_focus_execute < uid=86C9308259264E06000D0B13D3F2614B > : sm64_vampkids_priest_power2
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/KingCrab_power1.dds"
+	myUseSkillScript < uid=86C9308259264E06000D0B14FB4BCBF2 > = sm25_crab_king_heal_focus_execute
+	myAnimationState "power1 outro"
+	myLockedByDefault TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308259264E06000D0B15DBFBF3B4 >
+		{
+			myPriority 20
+			myAggroPriority 1001
+			myRequireAggroTarget FALSE
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=86C9308259541F860001E97B0C5CABCA > = Camel_Simple_SwapPower_Slot1
+	myTuningData < uid=86C9308259264E06000D0B16D363AFB3 > = pwr_sm25_crab_king_heal_focus_execute_Adrian_Tuning
+}
+

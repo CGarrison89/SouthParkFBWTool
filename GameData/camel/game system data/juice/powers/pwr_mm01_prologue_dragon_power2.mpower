@@ -1,0 +1,35 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./enemypowers.mvernon.juice
+
+CombatPower pwr_mm01_prologue_dragon_power2 < uid=6D7AC9B158AE3AA200001952A54A6E9C > : enemy_pwr_archetype_bruiser_melee
+{
+	myUseSkillScript < uid=6D7AC9B158AE3AA2000019531C00B18D > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B158AE3AA200001954EBA3B4DC >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=6D7AC9B158AE3AA200001955F90B7B2E >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=6D7AC9B158AE3AA2000019560FC3D41D > = pwr_mm01_prologue_dragon_power3_MVernon_Tuning
+}
+

@@ -1,0 +1,17 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_mm01_prologue_bruiser_melee < uid=86C93082576DD3E60000010CBF070EC1 > : enemy_pwr_archetype_bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/KidBruiser_Melee.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"prologue bruiser axe attack\", description = \"enemy_pwr_archetype_bruiser_melee Name\", enabled = true, guid = #9D0E61965983AEE3000EB6A9D43D0EE4, lineVersion = 0, maxLength = 14, text = \"Great Axe\""
+	myUseSkillScript < uid=86C93082580FF099000613944FC2BB31 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myShouldRepositionBeforeExecution TRUE
+	myShouldRepositionToCellCenterBeforeExecution FALSE
+	myMeleeOffset -2.0;0.0
+	myTuningData < uid=86C93082576DD3E60000010DE76B6C1F > = pwr_mm01_prologue_bruiser_melee_Kevin_Tuning
+}
+

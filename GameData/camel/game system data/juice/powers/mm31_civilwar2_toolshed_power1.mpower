@@ -1,0 +1,36 @@
+include ./pwr_toolshed_power1.mpower
+include ./enemypowers.adrian.juice
+
+CombatPower MM31_civilwar2_toolshed_power1 < uid=86D64076575A19130000BC88DD27FD7C > : pwr_toolshed_power1
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "1 target" < uid=86D64076575A1A370000BCAA4D3D9204 >
+		{
+			myPriority 80
+			myMinimumAffectedTargets 1
+			myPreferredRange -1
+		}
+		PowerEvaluationData "2 targets" < uid=8585E53F57C499670000470D959EBC5E >
+		{
+			myPriority 90
+			myMinimumAffectedTargets 2
+			myPreferredRange 1
+		}
+		PowerEvaluationData "2 targets pref range" < uid=8585E53F57C4C46A00032C4D8BE146CB >
+		{
+			myPriority 95
+			myMinimumAffectedTargets 2
+			myPreferredRange 2
+		}
+		PowerEvaluationData enraged < uid=B642A89A598B76AF0002FDF6A2383805 >
+		{
+			myPriority 1080
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+			myPreferredRange -1
+		}
+	}
+	myTuningData < uid=8585E53F580F93BB00133814196E1382 > = pwr_mm31_toolshed_power1_Adrian_Tuning
+}
+

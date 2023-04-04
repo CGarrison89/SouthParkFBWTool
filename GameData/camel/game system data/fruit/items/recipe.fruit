@@ -1,0 +1,81 @@
+include "camel/game system data/fruit/items/item.fruit"
+
+enum ComponentTypeCategory
+{
+	None
+	KeyItem
+	BaseCrafting
+	Food
+	Meds
+	Tech
+	Scrap
+	Biohazard
+}
+
+class ItemComponentType < uid=auto >
+{
+    varmap myUIName < bhv = "localization" >
+	varmap myUIDescription < bhv = "localization" >
+	varmap myLocation < bhv = "localization" >
+	file myIcon < types=*.dds;*.png >
+	ComponentTypeCategory myCategory None
+	int myCategoryTier 0
+	int mySellPrice 0
+	bool myShowAsSeparateItems false
+	int	myMaxStackable 50000
+}
+
+class Ingredient
+{
+    uid myItem < bhv="asset" assettype="Item" >
+    ItemComponentType* myItemComponent
+    int myCount
+}
+
+list Ingredients
+{
+    Ingredient
+}
+
+class RecipeItem : Item
+{
+	int	myMaxStackable 1
+    ItemCategory myCategory RecipeArtifact < hidden = 1 >
+}
+
+class RecipeUpgrade
+{
+	float myChance 0.0
+	uid myItem < bhv="asset" assettype="Item" >
+}
+
+list RecipeUpgrades
+{
+	RecipeUpgrade
+}
+
+class Recipe_TuningData
+{
+	int myMasterlyLevel 0
+	int myQuantity 1
+	uid myItem < bhv="asset" assettype="Item" >
+}
+
+list Recipe_TuningDataList
+{
+	Recipe_TuningData
+}
+
+class RecipeItemTuningData : ItemTuningData
+{
+    Ingredients myIngredients
+	int myMasterlyLevel 0
+	int myMasterlyPoint 0
+    uid myResult < bhv="asset" assettype="Item" >
+	RecipeUpgrades myRecipeUpgrades
+    int myQuantity 1
+	
+	Recipe_TuningDataList myRecipeTuningDataList
+	
+	bool myOneTimeUse
+}

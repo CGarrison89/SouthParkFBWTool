@@ -1,0 +1,34 @@
+include ./sm64_vampkids_priest_power2.mpower
+include ./enemypowers.adrian.juice
+include camel/skillscript/sm25_crab_king_heal.mskillscriptjuice
+include camel/skillscript/sm25_crab_king_heal_focus_execute.mskillscriptjuice
+include camel/skillscript/camel_simple_swappower_slot1.mskillscriptjuice
+
+CombatPower pwr_lt_crab_priest_heal_focus_execute < uid=8585E53F5963A8AF0003ADFB9BE2A19F > : sm64_vampkids_priest_power2
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/CrabPriest_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_square_heal.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_priest_heal Name\", enabled = true, guid = #EA0BC518599A7B3400008CC698996F6F, lineVersion = 0, maxLength = 22, text = \"Claw Regeneration\""
+	myUseSkillScript < uid=8585E53F5963A8AF0003ADFCE5B11273 > = sm25_crab_king_heal_focus_execute
+	myAnimationState ""
+	myLockedByDefault TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=8585E53F5963A8AF0003ADFD3D92B8CF >
+		{
+			myPriority 1
+			myAggroPriority 0
+			myRequireAggroTarget FALSE
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=8585E53F5963A8AF0003ADFE5F7766E1 > = Camel_Simple_SwapPower_Slot1
+	myTuningData < uid=8585E53F5963A8AF0003ADFFD117DAC9 > = pwr_sm25_crab_king_heal_focus_execute_Adrian_Tuning
+}
+

@@ -1,0 +1,182 @@
+include "camel/game system data/fruit/input/gameinput.fruit"
+include "camel/game system data/fruit/MiniGame/TimefartDataEnum.fruit"
+include "camel/game system data/fruit/MiniGame/Pattern.fruit"
+include "camel/game system data/fruit/powers/powers.fruit"
+include "camel/skillscript/skillscript.fruit"
+include "camel/game system data/fruit/mission/mission.fruit"
+
+enum TimeFartState
+{
+	TimeFartState_Available
+	TimeFartState_Unavailable
+	TimeFartState_Locked
+}
+
+enum TimeFartType
+{
+	TimeFartType_None
+	TimeFartType_Environment
+	TimeFartType_Combat
+	TimeFartType_TakeAShit
+	TimeFartType_ChangeDayCycle
+	TimeFartType_TimeTravel
+}
+
+class StickActionPatternProperties
+{
+	bool myPlayBackward
+	UIPatternType myStickActionPatternEnum
+}
+
+class StickActionProperties
+{
+	SynchronizationType mySynchronizationType
+	StickActionPatternProperties myLeftStickActionProperties
+	StickActionPatternProperties myRightStickActionProperties
+}
+
+list StickAvailableStateList
+{
+	varmap < bhv = "localization" >
+}
+
+class TimeFartStorageGageProperties
+{
+	float myStickInwardSpeed
+	float myStickNeutralSpeed
+	float myStickOutwardSpeed
+}
+
+class AnimationStateGroup
+{
+	string myAnimIntro < tooltip="Animation play at the beginning of the minigame, has to play once" >
+	string myAnimReadyLoop < tooltip="Animation loop running when no input" >
+	string myAnimBackToReady < tooltip="Animation play for returnning to the ready loop from anywhere except intro" >
+	string myAnimReadyGiveUp < tooltip="Animation that plays when you release the sticks" >
+	
+	string myAnimTryingIntro < tooltip="Animation intro running when sticks are triggered" >
+	string myAnimTryingLoop < tooltip="Animation loop running when sticks are triggered" >
+	string myAnimTryingSuccess < tooltip="Animation is triggered when a pattern is completed" >
+	
+	string myAnimStartTimefart < tooltip="Interaction is successful, now you can see the gate" >
+	string myAnimUpdateTimefart < tooltip="Gage is full and depleting" >
+	string myAnimUpdateTimefartSlow < tooltip="Minigame success Loop Slow animation" >
+	string myAnimUpdateTimefartFast < tooltip="Minigame success Loop Fast animation" >
+	
+	string myAnimSuccess < tooltip="Minigame success animation, has to play once" >
+	
+	string myAnimOutro < tooltip="Animation plays at the end of the minigame, has to play once" >
+}
+
+class TimeFartMiniGameSettings  < uid=auto >
+{
+	float myHoldTime 0.75
+	bool myUseVibration false
+	int myMaxVibrationValue 30000
+	float myVibrationDurationAfterSuccess 0.0
+	int myAfterSuccessVibrationValue 30000
+	bool myUseGageSpeedProperty true < tooltip="UseDurationOnly">
+	float myStopLoopAnimationTime 1.6
+	TimeFartStorageGageProperties myTimeFartStorageGageProperties
+	int myAnimationStateGroupIndex 0
+}
+
+class StickActionGroup
+{ 
+	TimeFart myTimeFart
+	Power* myTimeFartPower
+	SkillScript* mySkillScript
+	TimeFartState myTimeFartState
+	TimeFartType myTimeFartType
+	int myLoopCounter 1
+	file myStickActionGroupIcon "" < types=*.png >
+	file myTimeFartIcon "" < types=*.png >
+	varmap myStickActionName < bhv = "localization" >
+	varmap myStickActionDescription < bhv = "localization" >
+	StickActionProperties myStickActionProperties
+	StickAvailableStateList myAvailabilityList	
+	bool myIsCharacterSheetFacing false
+	varmap myCharacterSheetDescription < bhv = "localization" >
+	TimeFartMiniGameSettings mySettings
+	TimeFartMiniGameSettings myTutorialSettings
+}
+
+list StickActionGroupList
+{
+	StickActionGroup
+}
+
+list AnimationStateGroupList
+{
+	AnimationStateGroup
+}
+
+class TimeFartMiniGame
+{
+	int mySkippedFrameNumber
+	int mySamplePointNumber
+	int myNeutralConsecutivePosMax
+	float myInactiveTimer
+	float myAccuracyPercentage
+	float myGamePadAssistSpeed
+	TimeFartStorageGageProperties myTimeFartStorageGageProperties
+	StickActionGroupList myStickActionGroupList
+	AnimationStateGroupList myAnimationStateGroupList
+	Mission* myTutorialMission
+	SkillScript* mySkillScript
+}
+
+class TimeFartGlitchConstantSettings
+{
+	float myStartGlitchTime 0.05
+	float myStartGlitchTimeTutorial 0.1
+	float myScriptGlitchDuration 0.75
+	
+	float myStartTeleportDelay 0.45
+	float myEntityTeleportOnNewPositionTime 0.15
+	
+	float myParticuleVFXDuration 0.15
+	float myScaleVFXDuration 0.15
+	
+	float myReverseAnimationStartDelay 0.1
+	
+	float myFullScreenGlitchDuration 0.5
+	float myTutorialFullScreenGlitchDuration 4.0
+	
+	bool myUseMinigamePauseEndDelayInsteadOfAnimationEnd false  < tooltip="unpause the game considering the following settings instead of waiting for the end of MC's recover animation">
+	float myMinigamePauseEndDelay 0 < tooltip="after end of script glitch">
+	
+	float myDistortMixLevel 0.4
+	
+	float myNoiseEffectStrength 0.25
+	float myNoiseEffectStrengthForInspectionMode 0.75
+	float myStaticFadeDuration 0.5
+	float myInspectionStaticFadeDuration 0.5
+	
+	float myPuzzleSignsAppearanceDelay 15.0
+}
+
+class TimeFartPauseConstantSettings
+{
+	float mySepiaToneLevel 0.75
+	float myDistortMixLevel 0.0
+	float myStartEffectTime 0.284 < tooltip="Should be the timing when god ray and sepia start" >
+	bool myUseMinigamePauseEndDelayInsteadOfAnimationEnd false  < tooltip="unpause the game considering the following settings instead of waiting for the end of MC's recover animation">
+	float myMinigamePauseEndDelay 0 < tooltip="after end of Timer">
+    float myPlayerChangeDepthOnOpeningDelay 0.5
+    float myPlayerChangeDepthOnClosingDelay 0.5
+	float mySlowDownRatioInInspectionMode 1.0 < tooltip="value inferior to 0.25 is ignored by code to avoid to have to many VFX spawned">
+}
+
+class TimeFartDayNightConstantSettings
+{
+	float myDistortMixLevel 0.0
+	float myStartEffectTime 0.0
+	float myMinigamePauseEndDelay 0.0 < tooltip="after OnExit is triggered">
+}
+
+class TimeFartCombatConstantSettings
+{
+	string myFastForwardSlowAnimName
+	float myMinigamePauseEndDelay 0.0
+}

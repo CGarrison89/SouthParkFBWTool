@@ -1,0 +1,103 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/pwr_tupperware_positionmodification_placeholder.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_tupperware.juice"
+include camel/skillscript/pwr_tupperware_power02_script.mskillscriptjuice
+
+CombatPower pwr_tupperware_power2 < uid=B9E930CA56D4B7C1000000E369D302B6 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/Tupperware_power2.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/swap_3_range.dds"
+	myUIName "contextComment = \"Tupperware Power 2 Name\", description = \"pwr_tupperware_power2 Name\", enabled = true, guid = #51C546C65774DC5D000001B0A7A246F9, lineVersion = 2, maxLength = 13, text = \"Hot Swap\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_tupperware_power2 Description\", enabled = true, guid = #51C546C65774DC5D000001B192DF6E99, lineVersion = 0, maxLength = 94, text = \"Tupperware swaps places with a nearby ally or foe, and gains Protection.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_tupperware_power2 Short Description\", enabled = true, guid = #9D0E6196579BC8C50000449524EF6BD1, lineVersion = 0, maxLength = 51, text = \"Swap spots with anyone, gain Protection\""
+	myUseSkillScript < uid=B9E930CA56D4B7C1000000E484D93896 > = pwr_tupperware_power02_script
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "not damaged" < uid=86C9308258A2682E001409CB5519A50D >
+		{
+			myPriority 0
+			myMinimumAffectedTargets 1
+			myTargetHealthLessThanPercentage 101.0
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "No shield"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Shielding
+				}
+			}
+			myValidDirections
+			{
+				myLeft FALSE
+				myRight FALSE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData damaged < uid=86C9308258A2682E001409CC60D45994 >
+		{
+			myPriority 15
+			myMinimumAffectedTargets 1
+			myTargetHealthLessThanPercentage 100.0
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "No shield"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Shielding
+				}
+			}
+			myValidDirections
+			{
+				myLeft FALSE
+				myRight FALSE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData "critically damaged" < uid=86C9308258A2682E001409CD45267044 >
+		{
+			myPriority 25
+			myMinimumAffectedTargets 1
+			myTargetHealthLessThanPercentage 40.0
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "No shield"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Shielding
+				}
+			}
+			myValidDirections
+			{
+				myLeft FALSE
+				myRight FALSE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA56D4B7C1000000E5A7523D7D > = pwr_tupperware_power2_Tuning
+	myCameraPreset < uid=B9E930CA5971507C00632E93714D18F1 > = Tupperware_Power02
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 0.41667
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

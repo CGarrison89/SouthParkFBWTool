@@ -1,0 +1,44 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include ./enemypowers.demo.juice
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+include camel/skillscript/pwr_mysterion_suicide_pact.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_mysterion.juice"
+
+CombatPower pwr_civilwar_mysterion_power3 < uid=B9E930CA573143F8000017E5811C3818 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/mysterion_SuicidePact.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"pwr_civilwar_mysterion_power3 Name\", enabled = true, guid = #51C546C65774D966000001004E7A2E93, lineVersion = 0, maxLength = 16, text = \"Suicide Pact\""
+	myAnimationState ""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA573143F8000017E7877B658A >
+		{
+			myPriority 10
+			myAggroPriority 60
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	mySecondarySkillScript < uid=B9E930CA57D9B30900000B188E7E25A0 > = Simple_Rush_Damage_Script
+	myDialogueSkillScript < uid=326B24CD598DF7BA00041F1AE979A1D2 > = Camel_Simple_PlayDialogue_Script
+	myTuningData < uid=B9E930CA573143F8000017E8FFF634CA > = demo_e3_mysterion_power3_demo_Tuning
+	myCameraPreset < uid=B9E930CA57476C980000E981883D13C9 > = Mysterion_Power03
+	myAnimationSetData
+	{
+		myIntroState power3_intro
+		myLoopState power3_loop
+		myOutroState power3_outro
+	}
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

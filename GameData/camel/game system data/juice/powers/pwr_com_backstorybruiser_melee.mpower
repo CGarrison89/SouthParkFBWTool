@@ -1,0 +1,45 @@
+include ./placeholder_enemy_power1.mpower
+include ./enemypowers.bbartram.juice
+
+CombatPower pwr_com_backstoryBruiser_melee < uid=B642A89A571A554B00003E7EA7DD1317 > : placeholder_enemy_power1
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/bruiser_Melee.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_backstorybruiser_melee Name\", enabled = true, guid = #51C546C65774D96B0000010C7D3BF208, lineVersion = 0, maxLength = 16, text = \"Bruiser Bash\""
+	myNumberOfAttackEvents 4
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA5735020E000002963AA850F5 >
+		{
+			myPriority 10
+			myValidDirections
+			{
+				myLeft TRUE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308257B655DE0004B8B6F02B72A3 >
+		{
+			myPriority 10
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myLeft TRUE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myMeleeOffset -1.0;0.0
+	myTuningData < uid=B642A89A571A583600003EB47B3CC07B > = pwr_com_backstoryBruiser_melee_BBartram_Tuning
+	myValidDirections
+	{
+		myLeft TRUE
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

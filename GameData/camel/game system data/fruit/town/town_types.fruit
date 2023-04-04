@@ -1,0 +1,79 @@
+include "camel/game system data/fruit/town/town_dataenum_types.fruit"
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// ENUM
+//
+enum TownOperator
+{
+	Equal
+	NotEqual
+	GreaterThan
+	GreaterThanOrEqual
+	LessThan
+	LessThanOrEqual
+}
+
+enum TownActorGenderType
+{
+	NotSet
+	Male
+	Female
+}
+
+enum TownActorAgeType
+{
+	NotSet
+	Child
+	Adult
+}
+
+enum TownActorCategoryType
+{
+	NotSet
+	Human
+	Vehicle
+}
+
+enum TownDirectorActionMotionState
+{
+	NONE
+	Idle
+	Move
+	Action
+	Spawn
+	Unspawn
+	External
+}
+
+enum TownSkillScriptPurpose
+{
+	NotSet
+	Enter
+	Exit
+	Mount
+	Dismount
+	Interact
+}
+
+enum TownActorTuningSpeedType
+{
+	NotSet
+	Base
+	Slower
+	Faster
+}
+
+enum TownActorRaceType
+{
+	White
+	Asian 
+	Hispanic 
+	JerseyShore
+	Black
+}
+
+list TownActorRaceTypeList
+{
+	TownActorRaceType
+}

@@ -1,0 +1,108 @@
+enum CombatCameraState
+{
+	Any
+    PreMovement
+	Movement
+	Targeting
+	PowerUsage
+	PowerResult
+	Inspection
+	CustomTarget
+	Interrupt
+}
+
+enum CombatCameraElement
+{
+	ActiveCharacter
+	MovementRange
+	TargetRange
+	PowerResultsPreview
+	Targets
+	Projectiles
+	Inspection
+	CustomTarget
+}
+
+list CombatCameraElementList
+{
+	CombatCameraElement
+}
+
+class CombatCameraTransitioner < uid=auto >
+{
+	float myMinTime		0.2
+	float myMaxTime		1.0
+	float myMinRangeXZ	0.1
+	float myMaxRangeXZ	20.0
+	float myMinRangeY	5.0
+	float myMaxRangeY	130.0
+	string myCurve "{ defaultLeftSlope = 0, defaultRightSlope = 0, defaultValue = 0, interpolator = 0, keys = { inTangents = { -0 -0, -0.602639 -0.038683, }, outTangents = { 0.307335 0.942354, 0 0, }, properties = { -749, -749, }, values = { 0 0, 1 1, }, }, numKeys = 2, }" < bhv=inputgraph >	
+}
+
+class CombatCameraTransition
+{
+	CombatCameraState myPreviousState Any
+	bool myCut false
+}
+
+list CombatCameraTransitionList
+{
+	CombatCameraTransition
+}
+
+class CombatCameraTransitions < uid=auto >
+{
+	CombatCameraTransitionList myTransitions
+}
+
+class CombatCameraStateElement
+{
+	CombatCameraState myState
+	CombatCameraElementList myElements
+}
+
+list CombatCameraStateElementList
+{
+	CombatCameraStateElement
+}
+
+class CombatCameraStateElements < uid=auto >
+{
+	CombatCameraStateElementList myStateElements
+}
+
+class CombatCameraPresetInfo < uid=auto >
+{
+	string	myName ""
+	vec2f	myMinViewSize 4.0;4.0
+	vec2f	myMaxViewSize 8.0;8.0
+	vec2f	myFramePosition 0.1;0.2
+	vec2f	myFrameSize 0.8;0.7
+	bool	myForceCenter true
+	CombatCameraTransitionList	myTransitions
+	CombatCameraElementList 	myElements
+	CombatCameraTransitioner* 	myTransitioner
+}
+
+class CombatCameraPresetStateInfo
+{
+	CombatCameraState 		myState
+	CombatCameraPresetInfo* myInfo
+}
+
+list CombatCameraPresetStateInfoList
+{
+	CombatCameraPresetStateInfo
+}
+
+class CombatCameraPreset < uid=auto >
+{
+	string	myName ""
+	bool	myIsDefault false
+	CombatCameraPresetStateInfoList myInfoList
+	vec2f	myOutOfScreenVisibilityThreshold 0.2;0.2
+	vec2f	myOutOfScreenMergeDistance 0.06;0.06
+	
+	//CombatCameraTransitions* myTransitions
+	//CombatCameraStateElements* myStateElements
+}

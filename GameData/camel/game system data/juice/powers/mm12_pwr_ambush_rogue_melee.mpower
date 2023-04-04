@@ -1,0 +1,40 @@
+include ./enemy_pwr_archetype_rogue_melee.mpower
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower mm12_pwr_ambush_rogue_melee < uid=6D7AC9B15812981D0001072AEB43968C > : enemy_pwr_archetype_rogue_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/chaosdog_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"chaos dog power name\", description = \"enemy_pwr_archetype_rogue_melee Name\", enabled = true, guid = #9D0E6196599759C0000EB551085AAD69, lineVersion = 0, maxLength = 14, text = \"Chaos Chomp\""
+	myUseSkillScript < uid=6D7AC9B1581298830001073925246187 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B15812981D0001072BC0BF7CF1 >
+		{
+			myPriority 25
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=6D7AC9B15812981D0001072C9775B9E1 >
+		{
+			myPriority 25
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=6D7AC9B15812981D0001072DF63EBC14 > = enemy_pwr_archetype_rogue_melee_MNguyen_Tuning
+	myCameraPreset < uid=6D7AC9B15812981D0001072E013EA3A9 > = NULLREFERENCE
+}
+

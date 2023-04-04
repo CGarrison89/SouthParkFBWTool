@@ -1,0 +1,11 @@
+include ./pwr_dlc1_vampkids_gorilla_crush_execute.mpower
+include camel/skillscript/dlc1_vampkids_generalmanager_persistent_skillscript.mskillscriptjuice
+
+CombatPower pwr_DLC1_VampKids_GeneralManager_persistent < uid=86C9308259BB09F90004BA08D95F99DD > : pwr_DLC1_VampKids_Gorilla_crush_execute
+{
+	myUseSkillScript < uid=86C9308259BB0AB40004BA17F7CE98A4 > = DLC1_VampKids_GeneralManager_Persistent_SkillScript
+	myLockedByDefault FALSE
+	myOnCombatActionCompleteSkillScript < uid=86C9308259BB0AB40004BA1835F153F4 > = NULLREFERENCE
+	myTuningData < uid=86C9308259BB0AB40004BA1952EA6A53 > = pwr_DLC1_VampKids_GeneralManager_persistent_Tuning
+}
+

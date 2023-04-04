@@ -1,0 +1,35 @@
+include ./placeholder_enemy_power1.mpower
+include ./enemypowers.bbartram.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_thuga_knife.mprojectile"
+
+CombatPower pwr_com_backstoryThug_knifeThrow < uid=B642A89A5772F097000096DE8842EADB > : placeholder_enemy_power1
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Bruiser_KnifeThrow.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_Range_ST_LOS.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_backstorythug_knifethrow Name\", enabled = true, guid = #51C546C65774D96C0000010E7D4C3734, lineVersion = 0, maxLength = 14, text = \"Knife Throw\""
+	myUseSkillScript < uid=B642A89A5772F097000096DFD2AE3F26 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myShouldRepositionBeforeExecution FALSE
+	myProjectile < uid=86C930825835D5B100026E35BBEA1FA1 > = projectile_ThugA_knife
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B642A89A5772F097000096E022EF7368 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myRight TRUE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B642A89A5772F097000096E1F7EDDD1F > = pwr_com_backstoryThug_knifeThrow_BBartram_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

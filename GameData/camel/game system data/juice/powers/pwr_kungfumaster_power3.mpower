@@ -1,0 +1,119 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/powersmenu_simplerushscript.mskillscriptjuice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include camel/skillscript/camel_apply_reverse_knockback_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_kungfumaster.juice"
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+
+CombatPower pwr_kungfumaster_power3 < uid=B9E930CA56DA2787000001BEED318393 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/kungfu_power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/charge4.dds"
+	myUIName "contextComment = \"Kung Fu Power 3 Name\", description = \"pwr_kungfumaster_power3 Name\", enabled = true, guid = #51C546C65774DC24000001281C1B1457, lineVersion = 1, maxLength = 21, text = \"Wine-Drunk Crane\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_kungfumaster_power3 Description\", enabled = true, guid = #51C546C65774DC2400000129E0658229, lineVersion = 0, maxLength = 165, text = \"In this surprise ass kicking, the hero delivers a brutal butt strike with reverse knockback, inflicting Marked and Encumbered. \""
+	myUIShortDescription "contextComment = \"\", description = \"pwr_kungfumaster_power3 Short Description\", enabled = true, guid = #9D0E6196579CFB940000016E6450C770, lineVersion = 1, maxLength = 55, text = \"Kick for knockback, Marked, and Encumbered\""
+	myAnimationState kungfumaster_power3
+	myNumberOfAttackEvents 1
+	myShouldRepositionBeforeExecution FALSE
+	myShouldRepositionToCellCenterBeforeExecution FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "3 targets with kill" < uid=86C9308258E7CBDC0000416038467D46 >
+		{
+			myPriority 15800
+			myMinimumKills 1
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets with kill" < uid=86C9308258E7CBDC00004161AEDCB09B >
+		{
+			myPriority 14600
+			myMinimumKills 1
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "1 target with kill" < uid=86C9308258E7CBDC00004162D6795FC3 >
+		{
+			myPriority 11300
+			myMinimumKills 1
+		}
+		PowerEvaluationData "3 targets blocking" < uid=86C9308258E7CBDC000041634AFD5786 >
+		{
+			myPriority 10400
+			myMinimumAffectedTargets 3
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Blocking
+				{
+					mySpecialEffect Block
+				}
+			}
+		}
+		PowerEvaluationData "2 targets blocking" < uid=86C9308258E7CBDC00004164415ABFD2 >
+		{
+			myPriority 8900
+			myMinimumAffectedTargets 2
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Blocking
+				{
+					mySpecialEffect Block
+				}
+			}
+		}
+		PowerEvaluationData "3 targets" < uid=86C9308258E7CBDC000041650A49870A >
+		{
+			myPriority 7800
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets" < uid=86C9308258E7CBDC0000416616D246C7 >
+		{
+			myPriority 6600
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "Not encumbered" < uid=86C9308258E7CBDC00004167B63362FC >
+		{
+			myPriority 3100
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not encumbered"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Encumbered
+				}
+			}
+		}
+		PowerEvaluationData Default < uid=86C9308258E7CBDC000041682203FFC7 >
+		{
+			myPriority 3000
+		}
+	}
+	mySecondarySkillScript < uid=B9E930CA5710207000000285866EF07E > = Simple_Rush_Damage_Script
+	myDialogueSkillScript < uid=326B24CD59925E5D0000923859D5CF05 > = Camel_Simple_PlayDialogue_Script
+	myTuningData < uid=B9E930CA56DA2787000001C0838BF125 > = pwr_kungfumaster_power3_Tuning
+	myCameraPreset < uid=B9E930CA5970FB55000AF14013E16881 > = KungFuMaster_Power03
+	myPowerGroup Normal
+	myAnimationSetData
+	{
+		myIntroState kungfumaster_power3intro
+		myLoopState kungfumaster_power3loop
+		myOutroState kungfumaster_power3outro
+	}
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.0
+				myActionPlusEndTime 0.9
+				myActionPlusPresetEnum Slow
+			}
+		}
+	}
+}
+

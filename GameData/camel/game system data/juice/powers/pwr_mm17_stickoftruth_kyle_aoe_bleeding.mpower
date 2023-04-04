@@ -1,0 +1,41 @@
+include ./enemy_pwr_archetype_wizard_pierce_ranged.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_lobbed_power_playanim_script.mskillscriptjuice
+
+CombatPower pwr_mm17_stickoftruth_kyle_aoe_bleeding < uid=86C9308257BB758B0000018A92AE8455 > : enemy_pwr_archetype_wizard_pierce_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/kyle_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide.dds"
+	myUIName "contextComment = \"\", description = \"Windstorm\", enabled = true, guid = #3267E0D059714428003D9AC506B1542B, lineVersion = 0, maxLength = 18, text = \"Rain of Arrows\""
+	myUseSkillScript < uid=8E1BC44358E61FB0001E7C1036C9AAF0 > = Camel_Lobbed_Power_PlayAnim_Script
+	myAnimationState power2
+	myNumberOfAttackEvents 2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308257D21EC1000FE2ED969E8EFF >
+		{
+			myPriority 20
+			myMinimumAffectedTargets 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308257D21EC1000FE2EEFE88949D >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C9308257BB758B0000018B5223B0AA > = pwr_mm17_stickoftruth_kyle_aoe_bleeding_Kevin_Tuning
+}
+

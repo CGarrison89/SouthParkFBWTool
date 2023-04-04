@@ -1,0 +1,40 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./dlc3_enemypowers.juice
+
+CombatPower pwr_DLC3_Monsters_Wizard_melee < uid=3267E0D05AA1D100004A71439782B56B > : enemy_pwr_archetype_bruiser_melee
+{
+	myUIName "contextComment = \"\", description = \"pwr_DLC3_Monsters_Bruiser_melee_name\", enabled = true, guid = #3267E0D05AA1D100004A71415BEC3899, lineVersion = 0, maxLength = 23, text = \"DLC3 Bruiser Melee\""
+	myUIDescription "contextComment = \"\", description = \"pwr_DLC3_Monsters_Bruiser_melee_description\", enabled = true, guid = #3267E0D05AA1D100004A7142ECC12076, lineVersion = 0, maxLength = 39, text = \"DLC3 Bruiser Melee description\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D05AA1D100004A7144246BEABE >
+		{
+			myPriority 20
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D05AA1D100004A71451E79365A >
+		{
+			myPriority 2000
+			myAggroPriority 2000
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Kill < uid=3267E0D05AA1D100004A7146FB5E6773 >
+		{
+			myPriority 1000
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myMinimumKills 1
+		}
+	}
+	myTuningData < uid=3267E0D05AA1D100004A714779F5BC9E > = pwr_DLC3_Monsters_Wizard_Melee_Tuning
+}
+

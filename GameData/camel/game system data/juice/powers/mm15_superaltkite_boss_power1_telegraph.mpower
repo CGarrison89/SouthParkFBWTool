@@ -1,0 +1,63 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/mm15_superaltkite_boss_power1_telegraph_script.mskillscriptjuice
+
+CombatPower mm15_superaltkite_boss_power1_telegraph < uid=989A6F935806E778000229C3EDA8F65A >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Mutant_AltHumanKite_LaserEyes.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_bruiser_melee Name\", enabled = true, guid = #989A6F935806E778000229C2F8FC5EFE, lineVersion = 0, maxLength = 36, text = \"Death From Above - Telegraph\""
+	myUseSkillScript < uid=989A6F935806E778000229C43C209F5E > = mm15_superaltkite_boss_power1_telegraph_script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=989A6F935806E778000229C56F275766 >
+		{
+			myPriority 100
+			myMinimumAffectedTargets 1
+			myPreferredRange -1
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=989A6F935806E778000229C67536FFD2 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData 2targets < uid=989A6F935806E778000229C7DF86CD08 >
+		{
+			myPriority 22
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData 3targets < uid=989A6F935806E778000229C8E76463C9 >
+		{
+			myPriority 23
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData 4targets < uid=989A6F935806E778000229C9B2AD8424 >
+		{
+			myPriority 24
+			myMinimumAffectedTargets 4
+		}
+	}
+	myDialogueSkillScript < uid=989A6F935806E778000229CA70A735CC > = NULLREFERENCE
+	myTuningData < uid=989A6F935806E778000229CB99A0585D > = enemy_pwr_mm15_superaltkite_boss_power1_telegraph_amcclay_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+
+CombatTelegraphData TelegraphData
+{
+	myTelegraphedPowerName mm15_superaltkite_boss_power1
+}
+

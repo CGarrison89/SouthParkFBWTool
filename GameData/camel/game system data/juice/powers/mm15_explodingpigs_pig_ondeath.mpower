@@ -1,0 +1,13 @@
+include ./enemy_pwr_suicide_explode.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/mm16_explodingpigs_explosion_skillscript.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower mm15_explodingpigs_pig_ondeath < uid=3267E0D057F997400000342F3DE99428 > : enemy_pwr_suicide_explode
+{
+	myUIName "contextComment = \"\", description = \"\", enabled = true, guid = #3267E0D057F997400000342EEF106CE8, lineVersion = 0, maxLength = 17, text = \"Pig Explosion\""
+	myUseSkillScript < uid=3267E0D057F9974000003430D26215BE > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myTuningData < uid=3267E0D057F9974000003431D1B41AD9 > = enemy_pwr_mm15_explodingpigs_death_explosion_amcclay_Tuning
+}
+

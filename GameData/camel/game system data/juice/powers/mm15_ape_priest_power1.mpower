@@ -1,0 +1,44 @@
+include ./enemy_pwr_archetype_priest_heal.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_mm15_syringe.mprojectile"
+include "camel/game system data/juice/projectiles/projectile_mm15_syringe2.mprojectile"
+include ./playerpowers.mvernon.juice
+include ./enemypowers.mvernon.juice
+
+CombatPower mm15_ape_priest_power1 < uid=3267E0D057D0CE9900018896693E5B52 > : enemy_pwr_archetype_priest_heal
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Assed_6thGrader_Power1.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_priest_heal Name\", enabled = true, guid = #3267E0D057D0CE99000188951D8B18DF, lineVersion = 1, maxLength = 0, text = \"\""
+	myUseSkillScript < uid=3267E0D057D0CE990001889798726708 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myShouldRepositionBeforeExecution FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D057D0CE99000188985E7BB952 >
+		{
+			myPriority 90
+			myTargetHealthLessThanPercentage 75.0
+			mySelfHealthLessThanPercentage 75.0
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData HealTarget < uid=6D7AC9B158DAF32B000A6F34CEAA950E >
+		{
+			myPriority 95
+			myTargetHealthLessThanPercentage 100.0
+			mySelfHealthLessThanPercentage 101.0
+			myAIDesirableType A
+		}
+	}
+	myTuningData < uid=3267E0D057D0CE99000188991B731FA2 > = enemy_pwr_mm15_ape_priest_power1_amcclay_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

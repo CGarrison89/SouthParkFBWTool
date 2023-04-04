@@ -1,0 +1,7 @@
+include ./enemy_pwr_1x3_melee_knockback.mpower
+
+CombatPower MM16_cokedcops_rogue01_knockback < uid=3267E0D05748F7B10000027E3F1C896B > : enemy_pwr_1x3_melee_knockback
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_1x3_melee_knockback Name\", enabled = true, guid = #3267E0D057A1435300000B4982D6E8F5, lineVersion = 1, maxLength = 14, text = \"Flash Badge\""
+}
+

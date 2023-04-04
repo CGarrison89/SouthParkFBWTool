@@ -1,0 +1,8 @@
+include ./pwr_sm27_expectation_swarmer_melee.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower pwr_dr_sm27_expectation_swarmer_melee < uid=C87888A05A161026000E0C0331B79F96 > : pwr_sm27_expectation_swarmer_melee
+{
+	myTuningData < uid=C87888A05A16109B000F3D1D8DC4C193 > = pwr_dr_sm27_expectation_swarmer_melee_Tuning
+}
+

@@ -1,0 +1,22 @@
+include ./pwr_cop_rubbershot.mpower
+
+CombatPower pwr_aideblonde1_knockback < uid=DB7C6D4256EA18E1000001711BDD93C6 > : pwr_cop_rubbershot
+{
+	myUIName "contextComment = \"\", description = \"pwr_aideblonde1_knockback Name\", enabled = true, guid = #51C546C65774D958000000D4E9105973, lineVersion = 0, maxLength = 16, text = \"6 Inch Sub\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Kill < uid=DB7C6D4256FAEEDB00001ACB301F171C >
+		{
+			myPriority 45
+			myAggroPriority 75
+			myMinimumKills 1
+		}
+		PowerEvaluationData knockback < uid=DB7C6D4256FAEEDB00001ACCAB1F9BAA >
+		{
+			myPriority 25
+			myAggroPriority 41
+		}
+	}
+	myTuningData < uid=DB7C6D4256EA18E1000001728B19F285 > = pwr_aideblonde1_6inch_MAcero_Tuning
+}
+

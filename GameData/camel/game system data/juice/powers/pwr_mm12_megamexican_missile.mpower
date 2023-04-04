@@ -1,0 +1,47 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./buddypowers.joh.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_humankite.juice"
+include ./enemypowers.mvernon.juice
+include camel/skillscript/camel_simple_random_splash_damage_telegraph_script_v3.mskillscriptjuice
+
+CombatPower pwr_mm12_megamexican_missile < uid=6D7AC9B1576D668900000E61DDDC7F78 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/mexsupreme_phase2_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/chaos_missile.dds"
+	myUIName "contextComment = \"Human Kite Power 1 Name\", description = \"pwr_mm12_megamexican_missile Name\", enabled = true, guid = #51C546C65774DC3000000140FA239DC6, lineVersion = 1, maxLength = 18, text = \"Missile Launch\""
+	myUIDescription "contextComment = \"Human Kite Power 1 Description\", description = \"pwr_mm12_megamexican_missile Description\", enabled = true, guid = #51C546C65774DC300000014105CA9199, lineVersion = 1, maxLength = 48, text = \"Rake a target with Kite's laser eyes.\""
+	myUseSkillScript < uid=6D7AC9B1576D668900000E629521EC9E > = Camel_Simple_Random_Splash_Damage_Telegraph_Script_v3
+	myAnimationState ""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B1576D668900000E637AF79F98 >
+		{
+			myPriority 100
+			myAggroPriority 0
+			myValidDirections
+			{
+				myLeft FALSE
+				myRight FALSE
+				myUp FALSE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=6D7AC9B1576D668900000E648A23F4BD > = pwr_com_mm12_megamexican_missile_launch_MVernon_Tuning
+	myCameraPreset < uid=6D7AC9B1576D668900000E65B43A7D3E > = NULLREFERENCE
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myLeft FALSE
+		myRight FALSE
+		myUp FALSE
+		myDown TRUE
+	}
+	myTelegraphData
+	{
+		myTelegraphedPowerName ""
+	}
+}
+

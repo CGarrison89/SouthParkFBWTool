@@ -1,0 +1,46 @@
+include ./enemy_pwr_archetype_grenadier_aoe_lob_min.mpower
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/projectiles/projectile_sixthgraderpissballoon.mprojectile"
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+include camel/skillscript/camel_lobbed_power_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/lt_6thgraders_grenadier_telegraph_execute.mskillscriptjuice
+include camel/skillscript/camel_simple_swappower_slot3.mskillscriptjuice
+include camel/skillscript/camel_simple_swappower_slot1.mskillscriptjuice
+include camel/skillscript/camel_simple_telegraph_targeting_script_v2.mskillscriptjuice
+
+CombatPower pwr_LT_6thgraders_grenadier_telegraph_execute < uid=8585E53F5928AB0C000242C678E2693E > : enemy_pwr_archetype_grenadier_aoe_lob_min
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/6thGrader_PissBalloon.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_aoe_min_range.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_grenadier_aoe_lob_min Name\", enabled = true, guid = #8585E53F5928AB0C000242C587D3DDE1, lineVersion = 0, maxLength = 16, text = \"Piss Balloon\""
+	myUseSkillScript < uid=8585E53F5928AB0C000242C7E2A26D75 > = lt_6thgraders_grenadier_telegraph_execute
+	myTargetingSkillScript < uid=86C930825AA2D44C000D1F542FFD187F > = Camel_Simple_Telegraph_Targeting_Script_v2
+	myAnimationState "power1 outro"
+	myLockedByDefault TRUE
+	myProjectile < uid=8585E53F5928AB0C000242C802CEE4D7 > = projectile_sixthGraderPissBalloon
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=8585E53F5928AB0C000242CA702B3C60 >
+		{
+			myPriority 1
+			myMinimumAffectedTargets 0
+			myPreferredRange -1
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=86C930825954641C000086ED2B0DA034 > = Camel_Simple_SwapPower_Slot1
+	myTuningData < uid=8585E53F5928AB0C000242CDB74BDF8A > = pwr_LT_6thgraders_grenadier_telegraph_execute_Kevin_Tuning
+	myCameraPreset < uid=8585E53F5928AB0C000242CE9EAA3D3F > = Preset_Generic_Ranged
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

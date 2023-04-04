@@ -1,0 +1,42 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_delay_script.mskillscriptjuice
+include camel/skillscript/sm68_pedo_priest_ranged_warlock01_telegraph.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/lt_chaoskids_exploders_aoe_burn_telegraph.mskillscriptjuice
+include camel/skillscript/camel_simple_swappower_slot2.mskillscriptjuice
+
+CombatPower telegraph_LT_chaoskids_exploder_aoe_burn < uid=8585E53F592356A4000DA1B23B613598 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/ChaosKid_Power6.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_square_debuff.dds"
+	myUIName "contextComment = \"suicide attack name\", description = \"chaoskids_exploder_aoe_burnNAME\", enabled = true, guid = #9D0E6196596D14A900008B6CBB509E3F, lineVersion = 0, maxLength = 16, text = \"Death Blow\""
+	myUseSkillScript < uid=8585E53F592356A4000DA1B3677ADF06 > = LT_chaoskids_exploders_aoe_burn_telegraph
+	myAnimationState ""
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=8585E53F592356A4000DA1B48F66E335 >
+		{
+			myPriority 30
+			myMinimumAffectedTargets 1
+			myNumTelegraphPowersAllowed 1
+			mySelfHealthLessThanPercentage 50.0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=86C9308259542A14000914E068DE1939 > = Camel_Simple_SwapPower_Slot2
+	myTuningData < uid=8585E53F592356A4000DA1B5D1C106A5 > = pwr_LT_chaoskids_exploder_aoe_burn_Kevin_Tuning
+	myCameraPreset < uid=8585E53F592356A4000DA1B6E33E24F0 > = Preset_Generic_Melee
+	myTelegraphData
+	{
+		myTelegraphedPowerName LT_chaoskids_exploder_aoe_burn_execute
+		myTelegraphingAnimationName locomotion
+	}
+}
+

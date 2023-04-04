@@ -1,0 +1,41 @@
+include ./enemy_pwr_archetype_rogue_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_ninja_star.mprojectile"
+
+CombatPower pwr_LT_chaoskids_rogue_melee < uid=86C9308257683C620000041886A522A4 > : enemy_pwr_archetype_rogue_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/chaoskid_power5.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"chaos kid rogue shuriken throw power\", description = \"enemy_pwr_archetype_rogue_melee Name\", enabled = true, guid = #9D0E619659975662000EB54F6FF3C268, lineVersion = 0, maxLength = 22, text = \"Shuriken of Chaos\""
+	myUseSkillScript < uid=8585E53F582BC044000792D950DE1EBC > = Camel_Simple_PlayAnim_Script
+	myAnimationState power5
+	myNumberOfAttackEvents 3
+	myShouldRepositionBeforeExecution FALSE
+	myProjectile < uid=8585E53F582BC09C00082FD8215BCC98 > = projectile_ninja_star
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C930825775C8E3000001858B48285E >
+		{
+			myPriority 25
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C930825775C8E3000001864F3095CB >
+		{
+			myPriority 25
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C9308257683C62000004190489EC30 > = pwr_LT_chaoskids_rogue_melee_Kevin_Tuning
+}
+

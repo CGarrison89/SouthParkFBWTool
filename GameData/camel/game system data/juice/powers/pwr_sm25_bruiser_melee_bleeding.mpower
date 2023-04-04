@@ -1,0 +1,16 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./enemypowers.adrian.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_sm25_bruiser_melee_bleeding < uid=8585E53F57AA51AB000066930BFF65EB > : enemy_pwr_archetype_bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/CrabSwarmer_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"power name\", description = \"enemy_pwr_archetype_bruiser_melee Name\", enabled = true, guid = #9D0E619659978A3200009291C0DECF22, lineVersion = 0, maxLength = 14, text = \"Double Claw\""
+	myUseSkillScript < uid=86C9308258519AEB00001461947A82A8 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myNumberOfAttackEvents 1
+	myShouldRepositionBeforeExecution TRUE
+	myTuningData < uid=8585E53F57AA51AB0000669461B52A1C > = pwr_sm25_bruiser_melee_bleeding_Adrian_Tuning
+}
+

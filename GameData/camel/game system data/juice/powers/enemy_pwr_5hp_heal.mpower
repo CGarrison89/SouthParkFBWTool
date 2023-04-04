@@ -1,0 +1,28 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower enemy_pwr_5hp_heal < uid=86D64076574CC94500000018E92ACF8A >
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_5hp_heal Name\", enabled = true, guid = #51C546C65774D939000000862F4DD25B, lineVersion = 0, maxLength = 14, text = \"Mega Heal\""
+	myUseSkillScript < uid=86D64076574CC94500000019F3BDF0A2 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D64076574CC9450000001ABE01E690 >
+		{
+			myPriority 100
+			myTargetHealthLessThanPercentage 80.0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86D64076574CC9450000001B44A253EA > = enemy_pwr_5hp_heal_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

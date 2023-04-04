@@ -1,0 +1,93 @@
+include ./pwr_tupperware_power2.mpower
+
+CombatPower MM31_civilwar2_tupperware_power2 < uid=86D64076575A1DD90000B1A4B7418BEB > : pwr_tupperware_power2
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308258BDFCA1000666937B3A21FD >
+		{
+			myPriority 10
+			myMinimumAffectedTargets 1
+			myTargetHealthLessThanPercentage 101.0
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "No shield"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Shielding
+				}
+			}
+			myValidDirections
+			{
+				myLeft FALSE
+				myRight FALSE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData 80_less < uid=86C9308258BDFCA1000666944119B9C5 >
+		{
+			myPriority 15
+			myMinimumAffectedTargets 1
+			myTargetHealthLessThanPercentage 80.0
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "No shield"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Shielding
+				}
+			}
+			myValidDirections
+			{
+				myLeft FALSE
+				myRight FALSE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData 60_less < uid=86C9308258BDFCA100066695FAA64B24 >
+		{
+			myPriority 25
+			myMinimumAffectedTargets 1
+			myTargetHealthLessThanPercentage 60.0
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "No shield"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Shielding
+				}
+			}
+			myValidDirections
+			{
+				myLeft FALSE
+				myRight FALSE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData 40_less < uid=86C9308258BDFCA1000666963224A472 >
+		{
+			myPriority 30
+			myMinimumAffectedTargets 1
+			myTargetHealthLessThanPercentage 40.0
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "No shield"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Shielding
+				}
+			}
+			myValidDirections
+			{
+				myLeft FALSE
+				myRight FALSE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+}
+

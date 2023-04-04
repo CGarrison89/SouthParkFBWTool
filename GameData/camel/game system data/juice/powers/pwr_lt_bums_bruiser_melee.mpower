@@ -1,0 +1,19 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./enemypowers.adrian.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_lt_bums_bruiser_melee < uid=8585E53F595415F3000246678C0AD7C5 > : enemy_pwr_archetype_bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/BumBruiser_Power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_bruiser_melee Name\", enabled = true, guid = #EA0BC518599A857D0004F40311D7DB7A, lineVersion = 0, maxLength = 14, text = \"Bottle Bash\""
+	myUseSkillScript < uid=8585E53F595415F3000246681EF6ABA5 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myNumberOfAttackEvents 1
+	myShouldRepositionBeforeExecution TRUE
+	myTuningData < uid=8585E53F595415F3000246691214DFE2 > = pwr_LT_bums_bruiser_melee_Kevin_Tuning
+	myCameraPreset < uid=8585E53F5954162900024671B1359DD4 > = Preset_Generic_Melee
+}
+

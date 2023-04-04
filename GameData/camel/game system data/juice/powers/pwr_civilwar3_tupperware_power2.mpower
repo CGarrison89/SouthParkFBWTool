@@ -1,0 +1,8 @@
+include ./pwr_civilwar_tupperware_power2.mpower
+include ./mm31_civilwar2_tupperware_power2.mpower
+
+CombatPower pwr_civilwar3_tupperware_power2 < uid=86C9308257CA009000005BBE379BF1C5 > : MM31_civilwar2_tupperware_power2
+{
+	myTuningData < uid=86C930825848B23D0021BA2F02DBF28A > = pwr_civilwar3_tupperware_power3_Tuning
+}
+

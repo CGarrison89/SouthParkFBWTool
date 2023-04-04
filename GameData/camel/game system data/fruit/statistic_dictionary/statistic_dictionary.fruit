@@ -1,0 +1,129 @@
+include "camel/game system data/fruit/stats/statistic_types.fruit"
+
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// HISTORY
+//
+class StatisticHistoryAlgorithm
+{
+	bool myCollapsed false
+}
+
+class StatisticHistory
+{
+	int myMaxCount 0 < tooltip="Determine how much history we will keep \n[None=0] [Infinite=-1]" >
+	
+	StatisticHistoryAlgorithm myAlgorithm
+}
+
+class StatisticHistoryPSO : StatisticHistory
+{
+	bool myUsePSO false < tooltip="Determine if the history should be stored in profile" >
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// STORAGE
+//
+class StatisticStorage
+{
+	bool myUsePSO false < tooltip="Determine if the statistic should be stored in profile" >
+	StatisticHistoryPSO myHistory
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+///// DEFAULTS BASE CATEGORY
+//
+
+class StatisticStorageDefaultNative
+{
+	StatisticHistory myHistory
+}
+
+class StatisticStorageDefaultIndexed
+{
+	StatisticHistory myHistory
+}
+
+class StatisticStorageDefaultRelationship
+{
+	StatisticHistory myHistory
+}
+
+class StatisticStorageDefaults
+{
+	StatisticStorageDefaultNative myNative
+	StatisticStorageDefaultIndexed myIndexed
+	StatisticStorageDefaultRelationship myRelationship
+}
+
+
+class StatisticIndex
+{
+	StatisticGenericTypeEnum myEvent
+	StatisticStorage myStorage
+}
+
+list StatisticIndexList
+{
+	 StatisticIndex
+}
+
+class StatisticNative
+{
+	StatisticGenericTypeEnum myEvent
+	StatisticStorage myStorage
+}
+
+list StatisticNativeList
+{
+	 StatisticNative
+}
+
+class StatisticNativeIndex : StatisticNative
+{
+
+}
+
+class StatisticRelationship
+{
+	StatisticGenericTypeEnum myEvent
+	StatisticStorage myStorage
+}
+
+list StatisticRelationshipList
+{
+	 StatisticRelationship
+}
+
+class StatisticRelationshipIndex : StatisticRelationship
+{
+
+}
+
+class StatisticDictionary
+{
+	StatisticNativeList myNative
+	StatisticRelationshipList myRelationship
+}
+
+class StatisticDictionaries
+{
+	StatisticDictionary myWorld
+	StatisticDictionary myPlayer
+	StatisticDictionary myActor
+	StatisticDictionary myCell
+}
+
+list StatisticDictionariesList 
+{
+	StatisticDictionaries
+	StatisticDictionariesList
+}
+
+class StatisticConfig
+{
+	StatisticStorageDefaults myStorageDefaults
+}

@@ -1,0 +1,21 @@
+include ./combatpowerincludes.juice
+include ./pwr_captaindiabetes_power1.mpower
+
+CombatPower pwr_civilwar3_captaindiabetes_power1 < uid=86C9308257CA0DB2000063A169BA521C > : pwr_captaindiabetes_power1
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308257DB0157001C6B07461E7E43 >
+		{
+			myPriority 20
+		}
+		PowerEvaluationData Enraged < uid=86C9308257DB0157001C6B08EED91ADF >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+		}
+	}
+	myTuningData < uid=86C9308257CA0DB2000063A21A31424F > = pwr_civilwar3_captaindiabetes_power1_Tuning
+}
+

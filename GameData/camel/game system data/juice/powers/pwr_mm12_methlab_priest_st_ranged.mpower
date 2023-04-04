@@ -1,0 +1,32 @@
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_mm12_methlab_priest_st_ranged < uid=86C9308257D19E30000611F2F5D74395 > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/generics/generic_ranged.dds"
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308257D1A41B0006124D7A90A99B >
+		{
+			myPriority 50
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308257D1A41B0006124E446034E5 >
+		{
+			myPriority 175
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C9308257D19E30000611F345CDB9E8 > = pwr_mm12_methlab_priest_st_ranged_Kevin_Tuning
+}
+

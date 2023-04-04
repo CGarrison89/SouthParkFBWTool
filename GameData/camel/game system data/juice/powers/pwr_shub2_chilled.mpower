@@ -1,0 +1,22 @@
+include ./pwr_com_kitchenthrow.mpower
+
+CombatPower pwr_shub2_chilled < uid=DB7C6D4256EA236B0000026D802ABE76 > : pwr_com_kitchenthrow
+{
+	myUIName "contextComment = \"\", description = \"pwr_shub2_chilled Name\", enabled = true, guid = #51C546C65774DC480000017FF855ADB6, lineVersion = 0, maxLength = 23, text = \"Consuming Darkness\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData chilled_kill < uid=DB7C6D4256FB27B700001FE2B693DFB2 >
+		{
+			myPriority 29
+			myAggroPriority 29
+			myMinimumKills 1
+		}
+		PowerEvaluationData chilled < uid=DB7C6D4256FB27B700001FE3E5DCA6F6 >
+		{
+			myPriority 20
+			myAggroPriority 20
+		}
+	}
+	myTuningData < uid=DB7C6D4256EA236B0000026E83A4AFF8 > = pwr_shub2_chilled_MAcero_Tuning
+}
+

@@ -1,0 +1,9 @@
+include ./enemy_pwr_archetype_bruiser_self_shield.mpower
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+
+CombatPower pwr_LT_6thgraders_bruiser_self_shield < uid=86C9308257683AAC000003ACB7885C16 > : enemy_pwr_archetype_bruiser_self_shield
+{
+	myTuningData < uid=86C9308257683AAC000003AD29A8655E > = pwr_LT_6thgraders_bruiser_self_shield_Kevin_Tuning
+}
+

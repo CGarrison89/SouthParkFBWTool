@@ -1,0 +1,16 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_mm17_stickoftruth_bruiser_melee_knockback < uid=6D7AC9B158F92FB000019B566A4098C8 > : enemy_pwr_archetype_bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/KidBruiser_Melee.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"Savage Strike\", enabled = true, guid = #3267E0D0597147E80042C4BDCF6D50A3, lineVersion = 0, maxLength = 17, text = \"Savage Strike\""
+	myUseSkillScript < uid=6D7AC9B158F92FB000019B575B15A770 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myShouldRepositionBeforeExecution TRUE
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myTuningData < uid=6D7AC9B158F92FB000019B589C44BA49 > = pwr_mm17_stickoftruth_bruiser_melee_kb_Kevin_Tuning
+}
+

@@ -1,0 +1,26 @@
+include ./combatpowerincludes.juice
+include ./pwr_com_chaosbarrage.mpower
+
+CombatPower pwr_drone1_multihit < uid=DB7C6D4256EA1D1F000001CF2EF7FDA8 > : pwr_com_chaosBarrage
+{
+	myUIName "contextComment = \"\", description = \"pwr_drone1_multihit Name\", enabled = true, guid = #51C546C65774DC0A000000EDA90C496E, lineVersion = 0, maxLength = 13, text = \"Code 444\""
+	myAnimationState power2
+	myNumberOfAttackEvents 2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData kill < uid=DB7C6D4256FB1F8900001F17CC79588B >
+		{
+			myPriority 40
+			myAggroPriority 40
+			myRequireAggroTarget FALSE
+			myMinimumKills 1
+		}
+		PowerEvaluationData multihit < uid=DB7C6D4256FB1F8900001F18B5C1CC42 >
+		{
+			myPriority 30
+			myAggroPriority 30
+		}
+	}
+	myTuningData < uid=DB7C6D4256EA1D1F000001D027618ECF > = pwr_drone1_shooting_MAcero_Tuning
+}
+

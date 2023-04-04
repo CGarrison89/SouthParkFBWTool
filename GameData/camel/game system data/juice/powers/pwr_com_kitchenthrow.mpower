@@ -1,0 +1,50 @@
+include ./pwr_com_spitwad.mpower
+include ./pwr_com_chaosdiscs.mpower
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./enemypowers.adrian.juice
+
+CombatPower pwr_com_kitchenthrow < uid=DB7C6D4256B96D76000082ABFB8586A8 > : pwr_com_spitwad
+{
+	myIconImage "camel/baked/assets/ui/power selection/power_enemy_discthrow.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_kitchenthrow Name\", enabled = true, guid = #51C546C65774DBE7000000ABCCFC8750, lineVersion = 0, maxLength = 13, text = \"Fork You\""
+	myUseSkillScript < uid=B9E930CA577046A2000031FE568EA8F7 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myNumberOfAttackEvents 1
+	myProjectile < uid=DB7C6D4256BD20E700001878DFF14BB1 > = chaos_disc
+	myPowerEvaluationData
+	{
+		PowerEvaluationData kill < uid=8585E53F57E2CEAF00051F77DCF6DAE5 >
+		{
+			myPriority 30
+			myAggroPriority 1030
+			myRequireAggroTarget FALSE
+			myMinimumKills 1
+		}
+		PowerEvaluationData range3 < uid=8585E53F57E2CEAF00051F78F25A7760 >
+		{
+			myPriority 25
+			myAggroPriority 0
+			myRequireAggroTarget FALSE
+			myPreferredRange 3
+		}
+		PowerEvaluationData enraged < uid=8585E53F57E2CEAF00051F79AED43C5A >
+		{
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+		}
+		PowerEvaluationData range2 < uid=8585E53F57E2CEAF00051F7AF948DF61 >
+		{
+			myPriority 24
+			myAggroPriority 1020
+			myRequireAggroTarget FALSE
+			myPreferredRange 2
+		}
+	}
+	myTuningData < uid=DB7C6D4256BA3DE400000E9F8E79242E > = pwr_sm34_wizard_ranged_Adrian_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

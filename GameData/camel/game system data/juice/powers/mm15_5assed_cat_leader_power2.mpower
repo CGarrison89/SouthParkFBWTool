@@ -1,0 +1,31 @@
+include ./enemy_pwr_archetype_priest_heal.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_damage_single_target_script.mskillscriptjuice
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_supercraig.juice"
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower mm15_5assed_cat_leader_power2 < uid=3267E0D059249E78019EC8F99FC3F8E4 > : enemy_pwr_archetype_priest_heal
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/AssedCat_Power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide_heal.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_priest_heal Name\", enabled = true, guid = #EA0BC518599A879A0005ACB33C105D3F, lineVersion = 0, maxLength = 16, text = \"Tom Cat Roar\""
+	myUseSkillScript < uid=3267E0D059249E78019EC8FA5ECCB28A > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D059249E78019EC8FB799C2B96 >
+		{
+			myPriority 100
+			myTargetHealthLessThanPercentage 101.0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=3267E0D059249E78019EC8FCD0A2CC51 > = enemy_mm15_cat_leader_heal_amcclay_Tuning
+	myCameraPreset < uid=3267E0D059249E78019EC8FD50260A79 > = Preset_Generic_Melee
+}
+

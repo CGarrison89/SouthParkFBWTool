@@ -1,0 +1,9 @@
+include ./enemy_pwr_nodmg_1x3_melee_knockback.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower MM16_blackcells_bruiser_aoe_knockback < uid=86D64076574CD07C00000147443FE663 >
+{
+	myUseSkillScript < uid=B9E930CA576C9FFC00000186FFACA5AA > = Camel_Simple_PlayAnim_Script
+	myTuningData < uid=3267E0D057A27AF60000009D2998C84F > = enemy_pwr_mm16_riotcop_power3_amcclay_Tuning
+}
+

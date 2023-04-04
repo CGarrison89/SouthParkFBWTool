@@ -1,0 +1,31 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./enemypowers.demo.juice
+
+CombatPower pwr_civilwar_mysterion_power2 < uid=B9E930CA573142A7000017DA6C97E858 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/mysterion_BloodContract.dds"
+	myUIName "contextComment = \"\", description = \"pwr_civilwar_mysterion_power2 Name\", enabled = true, guid = #51C546C65774D965000000FF138552CA, lineVersion = 0, maxLength = 18, text = \"Blood Contract\""
+	myUseSkillScript < uid=B9E930CA573142A7000017DB1F0BECF8 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA573142A7000017DC28087641 >
+		{
+			myPriority 0
+			myMinimumAffectedTargets 5
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA573142A7000017DD2AE1F552 > = demo_e3_mysterion_power2_demo_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

@@ -1,0 +1,46 @@
+include ./dlc3_enemypowers.juice
+include ./enemy_pwr_archetype_wizard_pierce_ranged.mpower
+include camel/skillscript/dlc3_timmy_boss_execute.mskillscriptjuice
+include camel/skillscript/dlc3_timmy_boss_targeting_before_execute_skillscript.mskillscriptjuice
+include camel/skillscript/camel_simple_telegraph_targeting_script.mskillscriptjuice
+include camel/skillscript/dlc3_monsters_timmy_boss_swappower_afterexecute.mskillscriptjuice
+include camel/skillscript/dlc3_timmy_boss_execute_damage_preview.mskillscriptjuice
+include camel/skillscript/dlc3_timmy_boss_targeting_skillscript.mskillscriptjuice
+include "camel/game system data/juice/camera/tardicaca/uber_camera_powers_presets_timmy_boss.juice"
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_mm12_chaossupreme.juice"
+include "camel/game system data/juice/camera/uber_camera_powers_presets_jokester.juice"
+include camel/skillscript/dlc3_timmy_boss_phase2_execute.mskillscriptjuice
+include camel/skillscript/dlc3_timmy_boss_phase2_targeting_before_execute_skillscript.mskillscriptjuice
+include camel/skillscript/dlc3_timmy_boss_phase2_swappower_afterexecute.mskillscriptjuice
+
+CombatPower pwr_dlc3_monsters_timmy_boss_phase2_execute < uid=3267E0D05AF3481B0010312E5AF4903B > : enemy_pwr_archetype_wizard_pierce_ranged
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/BigTimmy_Power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide.dds"
+	myUIName "contextComment = \"\", description = \"nocturnal_eruption_execute_controlname\", enabled = true, guid = #3267E0D05AF3481B0010312C8C225DD9, lineVersion = 1, maxLength = 23, text = \"Nocturnal Eruption\""
+	myUIDescription "contextComment = \"Nocturnal Eruption\", description = \"nocturnal_eruption_execute_controlname\", enabled = true, guid = #3267E0D05AF3481B0010312DB043C11B, lineVersion = 0, maxLength = 23, text = \"Nocturnal Eruption\""
+	myUseSkillScript < uid=3267E0D05AF3481B0010312F0B551A53 > = DLC3_Timmy_Boss_Phase2_Execute
+	myTargetingSkillScript < uid=3267E0D05AF3481B0010313095074275 > = DLC3_Timmy_Boss_Phase2_Targeting_Before_Execute_SkillScript
+	myLockedByDefault TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D05AF3481B001031313BE202D7 >
+		{
+			myPriority 100
+			myAIDesirableType None
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=3267E0D05AF3481B00103132C56938D8 > = DLC3_Timmy_Boss_Phase2_SwapPower_AfterExecute
+	myTuningData < uid=3267E0D05AF3481B00103133664D25A4 > = pwr_DLC3_Monsters_Timmy_Boss_Execute_Tuning
+	myCameraPreset < uid=3267E0D05AF3481B00103134C9F6D7F2 > = NULLREFERENCE
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+	myTelegraphData
+	{
+		myTelegraphingToTargetedAnimationName ""
+	}
+}
+

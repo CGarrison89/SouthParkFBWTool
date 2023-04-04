@@ -1,0 +1,17 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower placeholder_buddy_power1 < uid=B9E930CA569573610000004F14176834 >
+{
+	myUseSkillScript < uid=B9E930CA569573610000005083A4995D > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA56957361000000516EEE28DD >
+		{
+			myPriority 10
+		}
+	}
+	myTuningData < uid=B9E930CA5695736100000052F1264420 > = placeholder_buddy_power1_Tuning
+}
+

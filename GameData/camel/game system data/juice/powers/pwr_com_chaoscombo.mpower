@@ -1,0 +1,25 @@
+include ./enemypowers.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_com_chaosCombo < uid=B9E930CA5601E4120000119407F85E5B >
+{
+	myIconImage "camel/baked/assets/ui/power selection/power_enemy_chaosdestruction.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_chaoscombo Name\", enabled = true, guid = #51C546C65774DBD40000008DB58E7779, lineVersion = 0, maxLength = 1, text = \"Chaos Destruction\""
+	myUseSkillScript < uid=B9E930CA5601E41200001195526039B2 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myNumberOfAttackEvents 2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData aggrotarget < uid=B9E930CA5601E41200001196CB3D47FD >
+		{
+			myPriority 30
+			myRequireAggroTarget TRUE
+		}
+		PowerEvaluationData default < uid=B9E930CA5601E4120000119700113234 >
+		{
+			myPriority 12
+		}
+	}
+	myTuningData < uid=B9E930CA5601E41200001198C5DEBEEB > = pwr_com_chaosCombo_Tuning
+}
+

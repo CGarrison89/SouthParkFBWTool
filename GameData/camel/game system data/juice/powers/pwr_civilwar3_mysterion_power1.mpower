@@ -1,0 +1,30 @@
+include ./pwr_civilwar_mysterion_power1.mpower
+include ./mm31_civilwar2_mysterion_power1.mpower
+
+CombatPower pwr_civilwar3_mysterion_power1 < uid=86C9308257C9FF45000064F34554FDAC > : MM31_civilwar2_mysterion_power1
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Enrage < uid=86C9308257DB17100031CFB90D2BBB91 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData default < uid=86C9308257DB17100031CFBA412E9AAE >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+}
+

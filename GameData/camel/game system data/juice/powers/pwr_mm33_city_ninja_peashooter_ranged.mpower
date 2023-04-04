@@ -1,0 +1,69 @@
+include ./enemy_pwr_archetype_peashooter_st_ranged.mpower
+include ./enemypowers.adrian.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_mm33_city_ninja_peashooter_ranged < uid=8585E53F57F448E50000BB6076DC54FD > : enemy_pwr_archetype_peashooter_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/ninja_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_range.dds"
+	myUIName "contextComment = \"ninja throwing star power name\", description = \"enemy_pwr_archetype_peashooter_st_ranged Name\", enabled = true, guid = #9D0E619659977080000F07E5D5F21466, lineVersion = 0, maxLength = 13, text = \"Shuriken\""
+	myUseSkillScript < uid=86C93082587EA1F5000288AB7AA2FFF0 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myNumberOfAttackEvents 2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Range3 < uid=8585E53F591495930004E636445CCD6D >
+		{
+			myPriority 24
+			myPreferredRange 3
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=8585E53F591495930004E63700B761A0 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData killPriority < uid=8585E53F591495930004E63871F1E929 >
+		{
+			myPriority 25
+			myMinimumKills 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Range2 < uid=8585E53F5936D946000316793D0C64AD >
+		{
+			myPriority 23
+			myPreferredRange 2
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Range1 < uid=8585E53F5936D9460003167A5E669575 >
+		{
+			myPriority 23
+			myPreferredRange 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=8585E53F57F448E50000BB61733B43F7 > = pwr_mm33_city_ninja_peashooter_ranged_Adrian_Tuning
+}
+

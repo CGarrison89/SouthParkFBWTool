@@ -1,0 +1,95 @@
+// Danger Deck
+enum DLC_DD_UnlockingRewardType
+{
+	Dlc2_dr_stage1_completion
+	Dlc2_dr_stage2_completion
+	Dlc2_dr_stage3_completion
+	Dlc2_dr_stage4_completion
+	Dlc2_dr_stage5_completion
+	Dlc2_dr_stage1_completion_ultra
+	Dlc2_dr_stage2_completion_ultra
+	Dlc2_dr_stage3_completion_ultra
+	Dlc2_dr_stage4_completion_ultra
+	Dlc2_dr_stage5_completion_ultra
+}
+
+// Casa Bonita
+enum DLC_CB_UnlockingRewardType
+{
+	Class_Netherborn
+	Character_Henrietta
+	Dlc1_accountLoot_dlc1_crawl_artifact_epic1
+	Dlc1_accountLoot_dlc1_crawl_artifact_epic2
+	Dlc1_accountLoot_dlc1_mj_loot
+	Dlc1_accountLoot_Dlc1_arcade_artifact_epic1
+	Dlc1_accountLoot_Dlc1_arcade_artifact_epic2
+	Dlc1_accountLoot_Dlc1_arcade_artifact_epic3
+	Dlc1_accountLoot_dlc1_crawl_artifact_epic3
+	Dlc1_accountLoot_lifedrain_Recipe
+	Dlc1_accountLoot_teleporter_Recipe
+	Dlc1_accountLoot_eqp_mexicanfacialhair_facialhair
+	Dlc1_accountLoot_eqp_heromariachi_head
+	Dlc1_accountLoot_eqp_heromariachi_body
+	Dlc1_accountLoot_eqp_facialpiercings_facialhair
+	Dlc1_accountLoot_eqp_netherborn_fea_set
+	Dlc1_accountLoot_eqp_netherborn_feb_set
+	Dlc1_accountLoot_eqp_netherborn_feb_makeup
+	Dlc1_accountLoot_eqp_boy_style39_hair
+	Dlc1_accountLoot_eqp_boy_style41_hair
+	Dlc1_accountLoot_eqp_cliffsideClimb_hair
+	Dlc1_accountLoot_eqp_pinup_set
+	Dlc1_accountLoot_eqp_icecreamtattoo_makeup
+	Dlc1_accountLoot_eqp_style07_eyewear
+	Dlc1_accountLoot_eqp_smokeyeyes_makeup
+	Dlc1_accountLoot_eqp_style15_catears_head_head
+	Dlc1_accountLoot_eqp_mullet_hair_hair
+	Dlc1_accountLoot_eqp_vampire_bangs_hair_hair
+}
+
+// Lake Tardicaca
+enum DLC_LT_UnlockingRewardType
+{
+	Class_Survivor
+	Character_MintBerryCrunch
+	
+	Dlc3_accountLoot_alien_dna
+	Dlc3_accountLoot_mimsy_dna
+	Dlc3_accountLoot_sharkwhistle
+	Dlc3_accountLoot_dlc3_item1_Recipe
+	Dlc3_accountLoot_dlc3_item2_Recipe
+	Dlc3_accountLoot_dlc3_item3_Recipe
+	Dlc3_accountLoot_dlc3_crawl_artifact_epic1
+	Dlc3_accountLoot_dlc3_crawl_artifact_epic2
+	Dlc3_accountLoot_dlc3_crawl_artifact_epic3
+	Dlc3_accountLoot_dlc3_crawl_artifact_epic4
+	Dlc3_accountLoot_pumpkin_set
+	Dlc3_accountLoot_godzilla_set
+	Dlc3_accountLoot_merman_set
+	Dlc3_accountLoot_70srollerskater_set
+	Dlc3_accountLoot_lifeguard_set
+	Dlc3_accountLoot_swimattire_set
+	Dlc3_accountLoot_werewolf_set
+	Dlc3_accountLoot_scout_set
+	Dlc3_accountLoot_ranger_set
+	Dlc3_accountLoot_lumberjack_set
+	Dlc3_accountLoot_hood_set
+	Dlc3_accountLoot_frankenstein_set
+	Dlc3_accountLoot_camper_head
+	Dlc3_accountLoot_camper_body
+	Dlc3_accountLoot_scarecrow_head
+	Dlc3_accountLoot_finalgirl_set
+	Dlc3_accountLoot_tardicaca_rambo_hat
+	Dlc3_accountLoot_eqp_generic_style26_hair
+	Dlc3_accountLoot_eqp_generic_style27_hair
+	Dlc3_accountLoot_eqp_boy_style43_hair
+	Dlc3_accountLoot_eqp_boy_style44_hair
+	
+
+	DLC3_sash_powerbonus_spiritSelfies
+	DLC3_sash_powerbonus_indianHeritage
+	DLC3_sash_powerbonus_fishing
+	DLC3_sash_powerbonus_baking
+	DLC3_sash_powerbonus_sleuth
+	DLC3_sash_powerbonus_ada
+	
+}

@@ -1,0 +1,39 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_alien_raygun.mprojectile"
+include ./dlc3_enemypowers.juice
+
+CombatPower pwr_dlc3_monsters_alien_melee < uid=3267E0D05AB4193A002413FA1D1DCC23 >
+{
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_bruiser_melee Name\", enabled = true, guid = #3267E0D05AB4193A002413F9E6C5A1BA, lineVersion = 0, maxLength = 17, text = \"Bruiser Melee\""
+	myUseSkillScript < uid=3267E0D05AB4193A002413FB8C6FD36E > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myLockedByDefault TRUE
+	myProjectile < uid=3267E0D05AB41B5600268BA444E61D4C > = projectile_alien_raygun
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D05AB4193A002413FC8F9C23A4 >
+		{
+			myPriority 10
+			myMinimumAffectedTargets 1
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 0
+			myMaximumDistanceToEnemies 10000
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myDialogueSkillScript < uid=3267E0D05AB4193A002413FEB7102BF8 > = NULLREFERENCE
+	myTuningData < uid=3267E0D05AB4193A002413FF45166AD7 > = pwr_DLC3_Monsters_Bruiser_Melee_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

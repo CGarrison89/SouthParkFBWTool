@@ -1,0 +1,15 @@
+include "camel/game system data/fruit/ai/actor.fruit"
+
+class ENVNPCTuningData : ActorTuningData
+{
+	float myPunchDuration1 0.6
+	float myPunchDuration2 0.4
+	float myPunchDuration3 0.2
+	float myPunchDuration4 0.0
+}
+
+class EnvNPC : Actor
+{
+	ENVNPCTuningData* myTuningData
+	Faction* myFaction
+}

@@ -1,0 +1,27 @@
+include ./pwr_com_kitchenattack.mpower
+include "camel/game system data/juice/camera/uber_camera_powers_presets.juice"
+include "camel/game system data/juice/camera/uber_camera_powers_presets_phbouncer.juice"
+
+CombatPower pwr_com_bouncerpunch < uid=DB7C6D4256BA442400000F0B0434476F > : pwr_com_kitchenattack
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/bouncer_Punch.DDS"
+	myUIName "contextComment = \"\", description = \"pwr_com_bouncerpunch Name\", enabled = true, guid = #51C546C65774DBCF00000085B79354BE, lineVersion = 1, maxLength = 14, text = \"Rush Attack\""
+	myUseSkillScript < uid=B9E930CA56C6B400000000D0B31568F6 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData punch < uid=DB7C6D4256BAC50F00008758F2B358BD >
+		{
+			myPriority 40
+			myAggroPriority 40
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=DB7C6D4256BA442400000F0C181F694C > = pwr_com_bouncerpunch_MAcero_Tuning
+	myCameraPreset < uid=B642A89A57462FFC000882F7575E6934 > = PHBouncer_Power01
+}
+

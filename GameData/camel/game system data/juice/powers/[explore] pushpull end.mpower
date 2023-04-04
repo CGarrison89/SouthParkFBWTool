@@ -1,0 +1,10 @@
+include camel/skillscript/explore_pushpullend.mskillscriptjuice
+include "camel/game system data/fruit/powers/powers.fruit"
+
+Power "[Explore] PushPull End" < uid=6D91A59C549486A60000006A1D24F76D >
+{
+	myUseSkillScript < uid=6D91A59C549486A60000006BF3912A11 > = Explore_PushPullEnd
+	myIsPassive TRUE
+	myUseActiveTargeting TRUE
+}
+

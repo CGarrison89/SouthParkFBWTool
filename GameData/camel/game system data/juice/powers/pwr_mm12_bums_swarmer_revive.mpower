@@ -1,0 +1,27 @@
+include ./enemy_pwr_archetype_priest_heal.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_revive_script.mskillscriptjuice
+include camel/skillscript/camel_simple_revive_script_dead_only.mskillscriptjuice
+
+CombatPower pwr_mm12_bums_swarmer_revive < uid=86C93082579BBE5700027FCC71008B9E > : enemy_pwr_archetype_priest_heal
+{
+	myUseSkillScript < uid=86C93082579BC04300027FD4F8E16BAB > = Camel_Simple_Revive_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C93082579BC08900027FDB5DC1F348 >
+		{
+			myPriority 100
+			myMinimumKills 0
+			myMinimumAffectedTargets 1
+			myTargetHealthLessThanPercentage 101.0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86C93082579BBE5700027FCD8D6F3B2D > = pwr_mm12_bums_swarmer_revive_Kevin_Tuning
+	myPowerDeathTargeting OnlyDead
+}
+

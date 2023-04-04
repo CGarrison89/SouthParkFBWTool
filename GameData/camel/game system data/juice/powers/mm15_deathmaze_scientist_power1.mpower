@@ -1,0 +1,24 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower mm15_deathmaze_scientist_power1 < uid=3267E0D057C879F6001AF880F27F277B >
+{
+	myIconImage "camel/baked/assets/ui/power selection/power_enemy_punt.dds"
+	myUIName "contextComment = \"\", description = \"\", enabled = true, guid = #3267E0D057C879F6001AF87F226CCF80, lineVersion = 0, maxLength = 18, text = \"Scientist Kick\""
+	myUseSkillScript < uid=3267E0D057C879F6001AF881E0131116 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData AggroTarget < uid=3267E0D057C879F6001AF88266A0550D >
+		{
+			myPriority 40
+			myRequireAggroTarget TRUE
+		}
+		PowerEvaluationData default < uid=3267E0D057C879F6001AF88322F48696 >
+		{
+			myPriority 11
+		}
+	}
+	myTuningData < uid=3267E0D057C879F6001AF88429BB394C > = enemy_pwr_mm15_deathmaze_scientist_power1_amcclay_Tuning
+}
+

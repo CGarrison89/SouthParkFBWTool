@@ -1,0 +1,32 @@
+include "camel/game system data/fruit/powers/combatpowers.fruit"
+include "camel/game system data/juice/statuseffect/statuseffects.juice"
+
+CombatPowerTuningData unused_MAcero__Tuning < uid=DB7C6D4256BA36F1000000ADB1086513 >
+{
+	myPowerCategory Attack
+	myIsPassive FALSE
+	myActionPoints 3
+	myRange 0
+	myCooldown 1
+	myKnockbackPullForwardAmount 0
+	myLOSCheck FALSE
+	myIsLobbed FALSE
+	myRushType None
+	myTargetingType Actor
+	myFactionTargeting EnemyOnly
+	myPiercingType All
+	myDamageArea < uid=DB7C6D4256BA36F1000000AE667AEFF9 >
+	{
+		myDamageAreaType CenteredRectangle
+		myLength 50
+		myWidth 50
+		myStartWidth 1
+	}
+	myDamageAmount 0
+	myLocationEffect < uid=DB7C6D4256BA36F1000000AF7A5880C7 > = NULLREFERENCE
+	myPowerChargeData
+	{
+		myUsePowerCharge FALSE
+	}
+}
+

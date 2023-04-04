@@ -1,0 +1,13 @@
+include "camel/game system data/fruit/statuseffect/statuseffect.fruit"
+include "camel/game system data/fruit/powers/powerFactionTargeting.fruit"
+
+class LocationEffect < uid=auto >
+{
+	file myGraphObjectFile "" < types=*.mgraphobject >
+	
+	bool myTriggerOnTurnBegin < tooltip="If true, LocationEffect will retrigger on Turn Begin of the Actor in its Cell">
+	int myDuration < tooltip="How many turns does the LocationEffect last before expiring?">
+	PowerFactionTargeting myFactionTargeting EnemyAndAlly 
+	SkillScript* mySkillScript < tooltip="Skill Script triggered on the victim when they step on the LocationEffect">
+	StatusEffects myStatusEffects
+}

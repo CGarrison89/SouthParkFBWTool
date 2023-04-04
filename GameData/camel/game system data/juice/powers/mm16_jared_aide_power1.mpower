@@ -1,0 +1,70 @@
+include ./enemy_pwr_3dmg_rush.mpower
+include ./enemy_pwr_archetype_rusher_rush.mpower
+include ./mm16_jared_aide_power2.mpower
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+
+CombatPower mm16_jared_aide_power1 < uid=3267E0D05750E85300001A84BF74ABBE > : enemy_pwr_archetype_rusher_rush
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/jaredaids_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/rush_3.dds"
+	myUIName "contextComment = \"\", description = \"mm16_jared_aide_power1 Name\", enabled = true, guid = #51C546C65774D94C000000B0BA5E5BDA, lineVersion = 1, maxLength = 16, text = \"Step Aside\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C93082583F9417000151568EDCE26F >
+		{
+			myPriority 100
+			myMinimumAffectedTargets 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C93082583F94170001515791CEAD76 >
+		{
+			myPriority 100
+			myAggroPriority 1100
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData default_VIP < uid=86C93082583F941700015158DE48C76F >
+		{
+			myPriority 100
+			myMinimumAffectedTargets 1
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged_VIP < uid=86C93082583F94170001515922FFF18F >
+		{
+			myPriority 100
+			myAggroPriority 1100
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	mySecondarySkillScript < uid=86C93082587E5889000015A08A810FBF > = Simple_Rush_Damage_Script
+	myDialogueSkillScript < uid=326B24CD58A739640003D8BC2CD10E7D > = Camel_Simple_PlayDialogue_Script
+	myTuningData < uid=3267E0D057A2B52000020BBCB31D3614 > = enemy_pwr_mm16_jared_aide_power1_amcclay_Tuning
+	myCameraPreset < uid=86C93082596683FF0002D256B12F4AE2 > = Preset_Generic_Ranged
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

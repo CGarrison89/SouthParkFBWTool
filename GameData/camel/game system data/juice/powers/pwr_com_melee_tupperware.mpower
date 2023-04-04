@@ -1,0 +1,13 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_com_melee_tupperware < uid=B9E930CA55A93E1E0000002900488D14 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/power_tupperware_roboticSpin.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_melee_tupperware Name\", enabled = true, guid = #51C546C65774DBEA000000AFB4454110, lineVersion = 0, maxLength = 1, text = \"Robotic Spin\""
+	myUseSkillScript < uid=B9E930CA55A93E1E0000002AF14A146D > = Camel_Simple_PlayAnim_Script
+	myAnimationState melee
+	myNumberOfAttackEvents 1
+	myTuningData < uid=B9E930CA55B0458B000000780E220AA6 > = pwr_com_melee_tupperware_Tuning
+}
+

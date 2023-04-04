@@ -1,0 +1,27 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower temp_pwr_enemy_archetype_basic_peashooter1 < uid=B9E930CA574090B30000001282BCD1E2 >
+{
+	myUIName "contextComment = \"\", description = \"temp_pwr_enemy_archetype_basic_peashooter1 Name\", enabled = true, guid = #51C546C65774DC71000001DFCA324A3E, lineVersion = 0, maxLength = 35, text = \"Ranged Single Target Attack\""
+	myUseSkillScript < uid=B9E930CA574090B3000000132B84FFC3 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA57409AA7000000F3E00B2DD7 >
+		{
+			myPriority 10
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA574098E9000000961D00B62C > = temp_pwr_enemy_archetype_basic_peashooter1_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

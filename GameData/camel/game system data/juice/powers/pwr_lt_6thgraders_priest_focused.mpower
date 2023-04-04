@@ -1,0 +1,11 @@
+include ./combatpowerincludes.juice
+include ./pwr_com_bufffocused.mpower
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+
+CombatPower pwr_LT_6thgraders_priest_focused < uid=86C930825779A51B000001FFCCB62CAD > : pwr_com_bufffocused
+{
+	myTuningData < uid=86C930825779A51B00000200EA689563 > = pwr_LT_6thgraders_priest_st_ranged_focused_Kevin_Tuning
+	myCameraPreset < uid=6D7AC9B157BE68BC0000018C037D6696 > = RussianPriest_Power02
+}
+

@@ -1,0 +1,9 @@
+include ./pwr_civilwar3_timmy_power3.mpower
+
+CombatPower pwr_civilwar3_timmy_power3_fake < uid=86C9308257D8669300007727477F667D > : pwr_civilwar3_timmy_power3
+{
+	myPowerEvaluationData
+	{
+	}
+}
+

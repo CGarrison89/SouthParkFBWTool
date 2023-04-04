@@ -1,0 +1,26 @@
+include ./pwr_com_bouncerpunt.mpower
+
+CombatPower pwr_com_doublebackhand < uid=DB7C6D4256BA46D600000F2FD605BD19 > : pwr_com_bouncerpunt
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/bouncer_backhand.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_doublebackhand Name\", enabled = true, guid = #51C546C65774DBDB00000097F70636E8, lineVersion = 0, maxLength = 16, text = \"Get Off Me\""
+	myUseSkillScript < uid=B9E930CA56C6B400000000D2CD7BD11F > = Camel_Simple_PlayAnim_Script
+	myAnimationState power3
+	myNumberOfAttackEvents 2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Surrounded < uid=DB7C6D4256C3B40F0000689A97F60B9A >
+		{
+			myPriority 50
+			myAggroPriority 50
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData doublebackhand < uid=DB7C6D4256BAC4D2000087054D34E65B >
+		{
+			myPriority 5
+			myAggroPriority 5
+		}
+	}
+	myTuningData < uid=DB7C6D4256BA46D600000F307AE11F30 > = pwr_com_doublebackhand_MAcero_Tuning
+}
+

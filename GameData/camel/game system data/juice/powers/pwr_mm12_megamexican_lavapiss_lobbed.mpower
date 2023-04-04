@@ -1,0 +1,56 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/megamexican_lavapiss_surroundingcells.mskillscriptjuice
+include ./buddypowers.joh.juice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_mm12_chaossupreme.juice"
+include ./enemypowers.mvernon.juice
+include camel/skillscript/magamexican_lavapiss.mskillscriptjuice
+include camel/skillscript/megamexican_lavapiss_lobbed.mskillscriptjuice
+include camel/skillscript/camel_lobbed_power_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_mm12_chaossupreme_lavapissball.mprojectile"
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_enemy_defaults.juice"
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_jared.juice"
+
+CombatPower pwr_mm12_megamexican_lavapiss_Lobbed < uid=6D7AC9B157E9BD500005FD5610F391C6 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/mexsupreme_phase1_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/chaos_lavapiss.dds"
+	myUIName "contextComment = \"Human Kite Power 1 Name\", description = \"pwr_mm12_megamexican_lavapiss Name\", enabled = true, guid = #6D7AC9B157E9BD500005FD54E8BB796D, lineVersion = 2, maxLength = 14, text = \"Lava Piss\""
+	myUIDescription "contextComment = \"Human Kite Power 1 Description\", description = \"pwr_mm12_megamexican_lavapiss Description\", enabled = true, guid = #6D7AC9B157E9BD500005FD552998387D, lineVersion = 1, maxLength = 48, text = \"Rake a target with Kite's laser eyes.\""
+	myUseSkillScript < uid=6D7AC9B157E9BD500005FD577C574AFA > = Camel_Lobbed_Power_PlayAnim_Script
+	myAnimationState power2
+	myProjectile < uid=6D7AC9B15827A599000045237610FA42 > = projectile_mm12_chaossupreme_lavapissball
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B157E9BD500005FD584F14240C >
+		{
+			myPriority 50
+			myAggroPriority 2000
+			myMinimumAffectedTargets 1
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "New StatusEffectConditionalEntry (0)"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Burning
+				}
+			}
+			myValidDirections
+			{
+				myLeft TRUE
+				myRight TRUE
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=6D7AC9B157E9BD500005FD59A7A7A643 > = pwr_com_mm12_megamexican_lavapiss_LOBBED_MVernon_Tuning
+	myCameraPreset < uid=B9E930CA582E1A9200000DC6C86D5564 > = Jared_Power02
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

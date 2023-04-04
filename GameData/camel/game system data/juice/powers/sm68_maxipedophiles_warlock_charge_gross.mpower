@@ -1,0 +1,36 @@
+include ./enemy_pwr_archetype_warlock_lob_min_gross.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/sm68_pedo_priest_charge_warlock02_telegraph_damage_delt.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/camel_simple_swappower_slot1.mskillscriptjuice
+include camel/skillscript/camel_simple_telegraph_targeting_script_v2.mskillscriptjuice
+
+CombatPower sm68_maxipedophiles_warlock_charge_gross < uid=86C930825760A031000001C99F37BC31 > : enemy_pwr_archetype_warlock_lob_min_gross
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/PedophilePriest_Whip.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/4_range.dds"
+	myUIName "contextComment = \"power name\", description = \"enemy_pwr_archetype_warlock_lob_min_gross Name\", enabled = true, guid = #9D0E6196596D4B4D00008B825C98F135, lineVersion = 0, maxLength = 25, text = \"Mutual Flagellation\""
+	myUseSkillScript < uid=B642A89A58CC5E5D0011BAEF1F4340D5 > = sm68_pedo_priest_charge_warlock02_telegraph_damage_delt
+	myTargetingSkillScript < uid=86C930825AA2D68F000E2071F9EAAE5B > = Camel_Simple_Telegraph_Targeting_Script_v2
+	myLockedByDefault TRUE
+	myNumberOfAttackEvents 2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=B642A89A58CC5C990010A3BB0C0DD9D8 >
+		{
+			myPriority 40
+			myMinimumAffectedTargets 0
+			myPreferredRange -1
+			myMinimumDistanceToEnemies 0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=86C9308259541D4F000086BC2863ED48 > = Camel_Simple_SwapPower_Slot1
+	myTuningData < uid=86C930825760A031000001CA8BA689D8 > = pwr_sm68_warlock_telegraph_charge_gross_execute_Kevin_Tuning
+	myCameraPreset < uid=86C93082591B5DE3000071C6F9DEE416 > = Preset_Generic_Melee
+}
+

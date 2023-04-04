@@ -1,0 +1,68 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_callgirl.juice"
+
+CombatPower pwr_callgirl_power1 < uid=B9E930CA56D0A197000000C0EEAE99C0 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/callgirl_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.DDS"
+	myUIName "contextComment = \"Call Girl Power 1 Name\", description = \"pwr_callgirl_power1 Name\", enabled = true, guid = #51C546C65774D95F000000EB85A34E23, lineVersion = 2, maxLength = 17, text = \"self_0wnd.jpg\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_callgirl_power1 Description\", enabled = true, guid = #51C546C65774D95F000000EC29133371, lineVersion = 1, maxLength = 187, text = \"Accidentally on purpose, Call Girl whacks a foe with her selfie sticks, applying Encumbered. The resulting pic is an instant hit on Coonstagram.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_callgirl_power1 Short Description\", enabled = true, guid = #9D0E6196579BAEDD0000446CD0259291, lineVersion = 0, maxLength = 42, text = \"Whack a foe and apply Encumbered\""
+	myUseSkillScript < uid=B9E930CA56D0A197000000C11601F7B7 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 3
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308258A26B1E0000176C3F8EE1FA >
+		{
+			myPriority 20
+		}
+		PowerEvaluationData Enraged < uid=86C9308258A26B1E0000176D80AA9282 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+		}
+		PowerEvaluationData kill < uid=86C9308258A26B1E0000176EDCBD2599 >
+		{
+			myPriority 120
+			myMinimumKills 1
+		}
+	}
+	myTuningData < uid=B9E930CA56D0A197000000C268264BB6 > = pwr_callgirl_power1_Tuning
+	myCameraPreset < uid=B9E930CA5823B81400005FB0C8C054FD > = CallGirl_Power01
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 0.5833
+				myActionPlusPresetEnum Normal
+			}
+			ActionPlusMiniGameData 2
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 1.1667
+				myActionPlusPresetEnum Normal
+			}
+			ActionPlusMiniGameData 3
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 2.8333
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

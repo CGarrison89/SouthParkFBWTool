@@ -1,0 +1,33 @@
+include ./enemy_pwr_archetype_priest_shield.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_SM34_Buca_Nichole_buff < uid=86C930825853055300069E83231BB979 > : enemy_pwr_archetype_priest_shield
+{
+	myUseSkillScript < uid=86C930825853055300069E84D2660D09 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C930825853055300069E85D3163929 >
+		{
+			myPriority 0
+			myAggroPriority 0
+			myTargetHealthLessThanPercentage 101.0
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "No shield"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Focused
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86C930825853055300069E8615877931 > = pwr_LT_6thgraders_priest_st_ranged_focused_Kevin_Tuning
+}
+

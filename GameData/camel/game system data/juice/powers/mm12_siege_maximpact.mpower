@@ -1,0 +1,42 @@
+include ./pwr_com_maximpact.mpower
+include ./enemypowers.adrian.juice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+
+CombatPower mm12_siege_maxImpact < uid=86C93082581BB2590002A8E8741576BC > : pwr_com_maxImpact
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/chaosmextank_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/charge4.dds"
+	myUseSkillScript < uid=8585E53F5820D5A60000DC308A14D450 > = NULLREFERENCE
+	myAnimationState ""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C93082581BB2590002A8E9B100EF49 >
+		{
+			myPriority 30
+			myMinimumDistanceToEnemies 2
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C93082581BB2590002A8EAE9BD1CCA >
+		{
+			myPriority 1015
+			myAggroPriority 0
+			myRequireAggroTarget TRUE
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	mySecondarySkillScript < uid=8585E53F5820D5A60000DC31318D7A31 > = Simple_Rush_Damage_Script
+	myDialogueSkillScript < uid=326B24CD58362F4900000E2157A4F8BA > = Camel_Simple_PlayDialogue_Script
+	myTuningData < uid=8585E53F581E56620006C40949652802 > = pwr_mm12_siege_mexican_tank_charge_amcclay_Tuning
+}
+

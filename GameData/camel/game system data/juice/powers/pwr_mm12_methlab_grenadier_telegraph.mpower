@@ -1,0 +1,50 @@
+include ./pwr_mm12_methlab_grenadier_aoe_lob_min.mpower
+include camel/skillscript/pwr_mm12_methlab_grenadier_telegraph_v2.mskillscriptjuice
+include camel/skillscript/camel_simple_swappower_slot2.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_methaddict.juice"
+include camel/skillscript/camel_simple_swappower_slot1.mskillscriptjuice
+
+CombatPower pwr_mm12_methlab_grenadier_telegraph < uid=86C9308259444850000083751B01BBEA > : pwr_mm12_methlab_grenadier_aoe_lob_min
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/MethHead_Power7.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_aoe_min_range.dds"
+	myUIName "contextComment = \"laser point cat attack\", description = \"enemy_pwr_archetype_grenadier_aoe_lob_min Name\", enabled = true, guid = #9D0E6196596D119600008B66F50BFA05, lineVersion = 0, maxLength = 21, text = \"Feral Cat Attack\""
+	myUseSkillScript < uid=86C9308259444F49000083A029E806A9 > = pwr_mm12_methlab_grenadier_telegraph_v2
+	myAnimationState ""
+	myProjectile < uid=86C9308259444CDE00008387946D928D > = NULLREFERENCE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=8585E53F5978E5D0000540794B1B027C >
+		{
+			myPriority 20
+			myMinimumAffectedTargets 2
+			myMinimumDistanceToEnemies 1
+			myNumTelegraphPowersAllowed 1
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=8585E53F5978E5D00005407AD4013F1F >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumDistanceToEnemies 1
+			myNumTelegraphPowersAllowed 1
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=86C9308259541FE80001E9B633CB8A92 > = Camel_Simple_SwapPower_Slot2
+	myCameraPreset < uid=86C930825966FA9000073EC7843AACF7 > = Preset_Generic_Ranged
+	myTelegraphData
+	{
+		myTelegraphedPowerName pwr_mm12_methlab_grenadier_telegraph_execute
+	}
+}
+

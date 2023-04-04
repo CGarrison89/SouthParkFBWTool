@@ -1,0 +1,29 @@
+include ./pwr_morgan_freeman_melee.mpower
+
+CombatPower pwr_morgan_freeman_melee_enraged < uid=8585E53F57D0A814001F518E8B1A62E6 > : pwr_morgan_freeman_melee
+{
+	myLockedByDefault TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Enraged < uid=8585E53F57D0A814001F518F6EDA36FA >
+		{
+			myAggroPriority 1500
+			myRequireAggroTarget TRUE
+		}
+		PowerEvaluationData "Enraged vs charmed" < uid=86C9308258D2F240000F55E5E64759EC >
+		{
+			myPriority 25
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myRequiresCover FALSE
+			myAIDesirableType VIP
+		}
+	}
+	myTuningData < uid=8585E53F57D0A814001F5190B38B56E0 > = pwr_morgan_freeman_melee_enraged_Kevin_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

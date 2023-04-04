@@ -1,0 +1,12 @@
+include ./temp_pwr_enemy_archetype_basic_bruiser1.mpower
+include ./enemypowers.adrian.juice
+
+CombatPower pwr_sm27_resentments_bruiser_melee < uid=8585E53F57F28C6B0004BA5396496D0C > : temp_pwr_enemy_archetype_basic_bruiser1
+{
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = 'Attack from \"Resentments\" boy in SM28 counseling combat', enabled = true, guid = #EA0BC518599A813300032E6BAC8A1F5A, lineVersion = 0, maxLength = 14, text = \"Grievance\""
+	myUseSkillScript < uid=86C930825876797E000015E9DC42BE44 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power3
+	myTuningData < uid=8585E53F57F28C6B0004BA54C9EFF918 > = pwr_sm27_resentments_bruiser_melee_Adrian_Tuning
+}
+

@@ -1,0 +1,9 @@
+include ./pwr_vipjohn2_power1.mpower
+
+CombatPower pwr_vipJohn1_power1 < uid=86C93082591114E5001D1AA11E0013F2 > : pwr_vipJohn2_power1
+{
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myShouldRepositionBeforeExecution TRUE
+	myMeleeOffset 0.0;0.0
+}
+

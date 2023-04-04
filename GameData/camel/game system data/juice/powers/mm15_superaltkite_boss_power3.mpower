@@ -1,0 +1,61 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include camel/skillscript/mm08_redwinerandy_rush_damage_script.mskillscriptjuice
+include ./enemypowers.mvernon.juice
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+
+CombatPower mm15_superaltkite_boss_power3 < uid=3267E0D057F5D82C0018BF759A78EEF5 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Mutant_AltHumanKite_Rush.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/mutant_kite_rush.dds"
+	myUIName "contextComment = \"\", description = \"\", enabled = true, guid = #3267E0D057F5D82C0018BF745D2C3944, lineVersion = 1, maxLength = 13, text = \"Passover\""
+	myAnimationState ""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "2 Targets" < uid=3267E0D057F5D82C0018BF7718351653 >
+		{
+			myPriority 105
+			myMinimumAffectedTargets 2
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D057F5D82C0018BF7824EFEA08 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myLeft TRUE
+				myRight TRUE
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Default < uid=3267E0D059389FFF000D9D9890DFC533 >
+		{
+			myPriority 100
+		}
+	}
+	mySecondarySkillScript < uid=3267E0D058DEE206000E1C0331E7E9BD > = Simple_Rush_Damage_Script
+	myDialogueSkillScript < uid=326B24CD5909237D000387C4321A3290 > = Camel_Simple_PlayDialogue_Script
+	myTuningData < uid=3267E0D057F5D82C0018BF7979BDA726 > = enemy_pwr_mm15_superaltkite_boss_power2_amcclay_Tuning
+	myAnimationSetData
+	{
+		myIntroState rushintro
+		myLoopState rushloop
+		myOutroState rushoutro
+	}
+	myValidDirections
+	{
+		myLeft TRUE
+		myRight TRUE
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

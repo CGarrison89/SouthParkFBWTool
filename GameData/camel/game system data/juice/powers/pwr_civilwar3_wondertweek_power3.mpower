@@ -1,0 +1,7 @@
+include ./pwr_civilwar_wondertweek_power3.mpower
+include ./pwr_wondertweek_power3.mpower
+
+CombatPower pwr_civilwar3_wondertweek_power3 < uid=86C9308257CA02AA00005F698A731910 > : pwr_wondertweek_power3
+{
+}
+

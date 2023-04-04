@@ -1,0 +1,8 @@
+include ./pwr_civilwar3_timmy_power4.mpower
+include camel/skillscript/mm16_civilwar3_timothy_teleport2.mskillscriptjuice
+
+CombatPower pwr_civilwar3_timmy_power5 < uid=86C9308257D0A7DA00005DEF63D9F1B3 > : pwr_civilwar3_timmy_power4
+{
+	myUseSkillScript < uid=86C9308257D0A87600005F3D72553BE8 > = MM16_civilwar3_timothy_teleport2
+}
+

@@ -1,0 +1,13 @@
+include ./mm16_shub_exploder_suicide.mpower
+include camel/skillscript/mm12_methlab_barrel_exploding_skillscript.mskillscriptjuice
+include ./enemypowers.kevin.juice
+include camel/skillscript/mm16_catpeetank_exploding_skillscript.mskillscriptjuice
+include ./enemypowers.mvernon.juice
+
+CombatPower MM16_PeeTank_Explosion < uid=6D7AC9B15933420000117BFC7690D5B8 > : MM16_shub_exploder_suicide
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/catpeetank_power1.dds"
+	myUseSkillScript < uid=6D7AC9B15933420000117BFD04F24877 > = mm16_catPeeTank_exploding_SkillScript
+	myTuningData < uid=6D7AC9B15933420000117BFEA9913F87 > = pwr_mm15_catpee_barrel_exploding_MVernon_Tuning
+}
+

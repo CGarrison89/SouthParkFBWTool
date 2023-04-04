@@ -1,0 +1,19 @@
+
+enum TownAnimContextTagEnum < useCategories=1 >
+{
+	NOTSET
+
+	idling
+	texting
+	sleeping
+	eating
+	busy
+	
+	navigating
+	can_idle_talk
+
+	< startCategory="Behavior Modifier" >
+	disable_look
+	disable_mood
+	< endCategory="" >
+}

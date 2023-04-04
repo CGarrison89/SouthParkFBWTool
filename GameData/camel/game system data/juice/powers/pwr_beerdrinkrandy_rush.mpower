@@ -1,0 +1,48 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include camel/skillscript/pwr_beerdrunkrandy_rushwithtaunt_script.mskillscriptjuice
+include camel/skillscript/pwr_beerdrunkrandy_playanimwithtaunt_script.mskillscriptjuice
+include camel/skillscript/pwr_beerdrunkrandy_playtauntonly_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+
+CombatPower pwr_beerdrinkrandy_rush < uid=B9E930CA57C0BEC8000003A0770E21DB >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/randy_drunkrush.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/rush.dds"
+	myUIName "contextComment = \"\", description = \"temp_pwr_beerdrinkrandy_rush Name\", enabled = true, guid = #B9E930CA57C0BEC80000039E2E591337, lineVersion = 1, maxLength = 14, text = \"Beer Rush\""
+	myUIDescription "contextComment = \"\", description = \"pwr_beerdrinkrandy_rush Description\", enabled = true, guid = #B9E930CA57C0BEC80000039FDA41D007, lineVersion = 0, maxLength = 58, text = \"Randy desperately rushes through his enemies.\""
+	myAnimationState ""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=B9E930CA57C0BEC8000003A1688F69F2 >
+		{
+			myPriority 20
+			myNumLiveEnemiesRequired 0
+			myMinimumAffectedTargets 0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D05913DBB10003B165345462DB >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+		}
+	}
+	mySecondarySkillScript < uid=B9E930CA57C0BEC8000003A28EA90F7F > = Simple_Rush_Damage_Script
+	myDialogueSkillScript < uid=326B24CD5916021300093136299B1113 > = Camel_Simple_PlayDialogue_Script
+	myTuningData < uid=B9E930CA57C0BEC8000003A35ABC3745 > = enemy_pwr_mm08_beerdrunkrandy_rush_amcclay_Tuning
+	myCameraPreset < uid=B9E930CA57C0BEC8000003A45CBAC530 > = Preset_Generic_Ranged
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

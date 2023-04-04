@@ -1,0 +1,46 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./enemypowers.mvernon.juice
+
+CombatPower mm12_ambush_pwr_bruiser_melee < uid=6D7AC9B15817A46A0003D8842716CCC8 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/chaosmexthug_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"melee power name\", description = \"enemy_pwr_archetype_bruiser_melee Name\", enabled = true, guid = #6D7AC9B15817A46A0003D883E089FA2F, lineVersion = 1, maxLength = 17, text = \"Foot of Chaos\""
+	myUseSkillScript < uid=6D7AC9B15817A46A0003D8859720BDCD > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 1
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B15817A46A0003D886C39D4AE5 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=6D7AC9B15817A46A0003D8876C6A883B >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myDialogueSkillScript < uid=6D7AC9B15817A46A0003D888FD8B79F2 > = NULLREFERENCE
+	myTuningData < uid=6D7AC9B15817A46A0003D8896FD77D5B > = pwr_mm12_archetype_bruiser_melee_MVernon_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

@@ -1,0 +1,47 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./enemypowers.kevin.juice
+include camel/skillscript/camel_simple_delay_script.mskillscriptjuice
+include camel/skillscript/sm68_pedo_priest_ranged_warlock01_telegraph.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/camel_simple_swappower_slot1.mskillscriptjuice
+
+CombatPower telegraph_sm68_maxipedophiles_warlock_aoe_gross < uid=8585E53F57B360120019E214DC151412 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/PedophilePriest_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_square_debuff.dds"
+	myUIName "contextComment = \"Power Name\", description = \"telegraph_sm68_maxipedophiles_warlock_aoe_gross_name\", enabled = true, guid = #F0F6DDB7596A9BAB00008A7892952185, lineVersion = 1, maxLength = 18, text = \"Hug Thy Father\""
+	myUseSkillScript < uid=8585E53F57B360120019E2150821E00D > = sm68_pedo_priest_ranged_warlock01_telegraph
+	myAnimationState ""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=8585E53F57B3AB250000BE6E884431F2 >
+		{
+			myPriority 30
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=B642A89A596D56BE0002835431C112E3 >
+		{
+			myPriority 1030
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=86C9308259541D4F000086BE6A68DBF6 > = Camel_Simple_SwapPower_Slot1
+	myTuningData < uid=8585E53F57B370FC0000080FCD0A04CB > = pwr_sm68_warlock_telegraph_aoe_gross_Kevin_Tuning
+	myCameraPreset < uid=86C93082591B5DE2000071C5A37FABCE > = Preset_Generic_Melee
+	myTelegraphData
+	{
+		myTelegraphedPowerName sm68_maxipedophiles_warlock_aoe_gross
+		myTelegraphingAnimationName power1_idle
+	}
+}
+

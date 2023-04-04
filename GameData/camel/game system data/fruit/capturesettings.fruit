@@ -1,0 +1,31 @@
+include "camel/game system data/fruit/juiceObj.fruit"
+
+list AnimStateList
+{
+	string
+}
+
+class CaptureSettings : JuiceObj < abstract = 1 >
+{
+	int myHeight 256
+	int myWidth 256
+	string myAnimState
+	vec3f myLookAtPos 0.0;0.0;1.4
+	vec3f myCameraPos 0.0;17.0;0.0
+	color myClearColor
+	float myColorCorrectionValueMultiplier 1.0
+}
+
+class ActorIcon : CaptureSettings
+{
+}
+
+list ActorIconList
+{
+	ActorIcon*
+}
+
+class TShirtImage : CaptureSettings
+{
+	string myUbiServicesEntityName
+}

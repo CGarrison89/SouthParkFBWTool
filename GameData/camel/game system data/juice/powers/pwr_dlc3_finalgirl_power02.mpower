@@ -1,0 +1,40 @@
+include "camel/game system data/juice/camera/tardicaca/uber_camera_powers_presets_finalgirl.juice"
+include ./dlc3_playerpowers.juice
+include camel/skillscript/dlc3_finalgirl_damage_trap_multi_cell.mskillscriptjuice
+
+CombatPower pwr_dlc3_finalgirl_power02 < uid=86D640765A53B158000093304C26CA6F >
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/LastGirl_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_3lane_wide.dds"
+	myUIName "contextComment = \"Final Girl's power02 Name\", description = \"pwr_dlc3_finalgirl_power02 Name\", enabled = true, guid = #86D640765A53B1580000932E001044F5, lineVersion = 2, maxLength = 14, text = \"Saw Bleed\"}"
+	myUIDescription "contextComment = \"Final Girl's power02 Long Description\", description = \"pwr_dlc3_finalgirl_power02 Long Description\", enabled = true, guid = #9D0E61965AA9C2640000A482402461B2, lineVersion = 0, maxLength = 166, text = \"Lay down a saw blade trap that persists for three turns, damaging and inflicting Bleed on all enemies who pass through the area.\"}"
+	myUIShortDescription "contextComment = \"Final Girl's power02 Short Description\", description = \"pwr_dlc3_finalgirl_power02 Short Description\", enabled = true, guid = #86D640765A53B1580000932F5785AB46, lineVersion = 2, maxLength = 49, text = \"Trap that damages and applies Bleeding\"}"
+	myUseSkillScript < uid=86D640765A53B15800009331D1BD375C > = DLC3_FinalGirl_Damage_Trap_multi_cell
+	myAnimationState ""
+	myRequiresValidTarget FALSE
+	myTuningData < uid=86D640765A53B158000093325308F672 > = dlc3_pwr_finalgirl_damage_trap_Tuning
+	myCameraPreset < uid=86D640765A53B1580000933329ADB8CE > = FinalGirl_Power2
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus FALSE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusEndTime 1.25
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+	myLocationEffectData
+	{
+		myLocationEffectName dlc3_finalgirl_trap
+	}
+}
+

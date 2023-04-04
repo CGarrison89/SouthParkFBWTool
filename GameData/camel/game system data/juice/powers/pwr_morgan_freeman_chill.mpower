@@ -1,0 +1,34 @@
+include ./enemy_pwr_archetype_warlock_lob_min_chilled.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_morgan_freeman_chill < uid=8585E53F57D35078000ABDCCC96AF841 > : enemy_pwr_archetype_warlock_lob_min_chilled
+{
+	myUIName "contextComment = \"Placeholder Enemy\", description = \"enemy_pwr_archetype_warlock_lob_min_chilled Name\", enabled = true, guid = #86C9308258D9936A0005CDB08A9B2831, lineVersion = 1, maxLength = 14, text = \"Stay Cool\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=86C9308258D993160005B09D11161F85 >
+		{
+			myPriority 1250
+			myNumLiveEnemiesRequired 2
+			mySelfHealthLessThanPercentage 40.0
+			myAIDesirableType VIP
+			myStatusEffectConditionData
+			{
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308258D9990600094765B06A73ED >
+		{
+			myPriority 1
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myNumLiveEnemiesRequired 0
+			mySelfHealthLessThanPercentage 101.0
+			myAIDesirableType None
+			myStatusEffectConditionData
+			{
+			}
+		}
+	}
+	myTuningData < uid=8585E53F57D35078000ABDCE017A2D83 > = pwr_morgan_freeman_chill_Kevin_Tuning
+}
+

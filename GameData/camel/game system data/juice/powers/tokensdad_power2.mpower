@@ -1,0 +1,40 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./enemypowers.adrian.juice
+
+CombatPower tokensDad_power2 < uid=8585E53F589258B400054459D7677E66 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/tokensdad_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"uppercut\", description = \"tokens dad power 2 name\", enabled = true, guid = #9D0E619659693FE600008A72D9A5FAE5, lineVersion = 0, maxLength = 13, text = \"Uppercut\""
+	myUseSkillScript < uid=8585E53F589258B40005445A3EA6B1CE > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=8585E53F589258B40005445B58D02FBE >
+		{
+			myPriority 20
+			myMinimumAffectedTargets 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=8585E53F596E8AE5000CF885B9583879 >
+		{
+			myPriority 1020
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=8585E53F589258B40005445CB7C5AC4E > = pwr_sm42_tokendad_melee_Adrian_Tuning
+}
+

@@ -1,0 +1,32 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include camel/skillscript/mm16_explodingpigs_couple_mate_skillscript.mskillscriptjuice
+
+CombatPower mm15_explodingpigs_couple_power1 < uid=3267E0D057FEBA760023F59F40BC4C92 >
+{
+	myUIName "contextComment = \"\", description = \"\", enabled = true, guid = #3267E0D057FEBA760023F59E923B41C3, lineVersion = 0, maxLength = 6, text = \"Mate\""
+	myUseSkillScript < uid=3267E0D057FEBA760023F5A0AC1AC623 > = mm16_explodingpigs_couple_mate_SkillScript
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D057FEBA760023F5A17ED220F4 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData destructible < uid=3267E0D057FEBA760023F5A236AF43B4 >
+		{
+		}
+	}
+	myTuningData < uid=3267E0D057FEBA760023F5A394D5412F > = enemy_pwr_mm15_explodingpigs_couple_power1_amcclay_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

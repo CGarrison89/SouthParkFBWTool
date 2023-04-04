@@ -1,0 +1,11 @@
+include ./mm16_shub_exploder_suicide.mpower
+include camel/skillscript/mm12_methlab_barrel_exploding_skillscript.mskillscriptjuice
+include ./enemypowers.kevin.juice
+
+CombatPower MM12_MethLab_Barrel_Explosion < uid=86C93082592CA9A0000550AC1050B93F > : MM16_shub_exploder_suicide
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/MethLabBarrel_Explode.DDS"
+	myUseSkillScript < uid=86C93082592CA9B5000550B6EC563A26 > = MM12_MethLab_Barrel_Exploding_SkillScript
+	myTuningData < uid=86C93082592CAD1000055134B42D3053 > = pwr_mm12_methlab_barrel_exploding_Kevin_Tuning
+}
+

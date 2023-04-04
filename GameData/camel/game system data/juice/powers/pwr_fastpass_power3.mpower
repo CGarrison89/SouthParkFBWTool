@@ -1,0 +1,50 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/pwr_fastpass_healswap.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_fastpass.juice"
+
+CombatPower pwr_fastpass_power3 < uid=86D6407657487860000001B5EEBD06DC >
+{
+	myIconImage "camel/baked/assets/ui/power selection/buddy/fastpass_power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/swap_2_range_heal.dds"
+	myUIName "contextComment = \"Fast Pass Power 3 Name\", description = \"pwr_fastpass_power3 Name\", enabled = true, guid = #51C546C65774DC10000000FC8FE4C605, lineVersion = 2, maxLength = 14, text = \"Transporter\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_fastpass_power3 Description\", enabled = true, guid = #51C546C65774DC10000000FDF8295250, lineVersion = 0, maxLength = 130, text = \"Granting the gift of super speed to an ally, FastPass swaps position with a teammate and heals them.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_fastpass_power3 Short Description\", enabled = true, guid = #9D0E6196579BA3830000445A7A19BB33, lineVersion = 0, maxLength = 48, text = \"Swap spots with an ally and heal them\""
+	myUseSkillScript < uid=86D6407657487860000001B6046202A1 > = pwr_fastpass_healswap
+	myPowerEvaluationData
+	{
+		PowerEvaluationData damaged < uid=86C9308257D1CD4400005E1CB493CC6C >
+		{
+			myPriority 10
+			myMinimumAffectedTargets 1
+			myTargetHealthLessThanPercentage 100.0
+		}
+		PowerEvaluationData "critically damaged" < uid=86C930825A56979D000194EED83EDF49 >
+		{
+			myPriority 50
+			myMinimumAffectedTargets 1
+			myTargetHealthLessThanPercentage 40.0
+		}
+	}
+	myTuningData < uid=86D6407657487860000001B70888946D > = pwr_fastpass_power3_Tuning
+	myCameraPreset < uid=B9E930CA57B37F7B00045003FD14B347 > = Fastpass_Power03
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 1.416667
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

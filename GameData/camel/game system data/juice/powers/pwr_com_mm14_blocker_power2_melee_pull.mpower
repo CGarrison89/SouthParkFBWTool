@@ -1,0 +1,29 @@
+include ./enemypowers.bbartram.juice
+include "camel/game system data/juice/ai/npc/mm16_jared_warlock.mnpc"
+
+CombatPower pwr_com_mm14_blocker_power2_melee_pull < uid=8585E53F588FC1FE0000B3F83C07CE66 >
+{
+	myUIName "contextComment = \"Name of Blocker power 2, a melee strike\", description = \"pwr_com_mm14_blocker_power2_melee_name\", enabled = true, guid = #8585E53F588FC1FE0000B3F74375AF40, lineVersion = 0, maxLength = 14, text = \"Stoner Swat\""
+	myUseSkillScript < uid=8585E53F588FC1FE0000B3F90FC7A14C > = Camel_Simple_PlayAnim_Script
+	myAnimationState power2
+	myShouldRepositionBeforeExecution FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=8585E53F588FC1FE0000B3FA1FC79C8F >
+		{
+			myPriority 25
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=8585E53F588FC1FE0000B3FBF1263F98 > = pwr_com_mm14_blocker_power2_melee_pull_BBartram_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

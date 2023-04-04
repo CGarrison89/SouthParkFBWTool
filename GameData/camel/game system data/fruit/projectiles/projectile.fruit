@@ -1,0 +1,53 @@
+include "camel/skillscript/skillscript.fruit"
+
+enum ProjectileArcType
+{
+	Direct
+	Lobbed
+}
+
+class DirectionalParticle
+{
+	vec3f myOffset
+	file myParticleEffectFile "" < types=*.mparticles >
+}
+
+class ProjectileParticle
+{
+	DirectionalParticle myFront
+	DirectionalParticle myBack
+	DirectionalParticle myLeft
+	DirectionalParticle myRight
+}
+
+class RotationValues
+{
+   	float myInitialPitch 0.0
+   	float myPitchRotationRPM 0.0
+    	bool myIsObjectFlipped false
+}
+
+class Projectile < uid=auto >
+{
+	file myGraphObjectFile "" < types=*.mgraphobject >
+	float mySpeed 1.0
+	float myLobbedFlightTimeMultiplier 1.0 < tooltip="Multiplier applied to lobbed projectile flight time after its calculated" >
+	ProjectileArcType myArcType
+	SkillScript* myOnFireSkillScript
+	SkillScript* myOnImpactSkillScript
+	file myParticleEffectFile "" < types=*.mparticles >
+	string myLobbedProjectileFlightTime "" < bhv=inputgraph tooltip="Curve defining the flight time based on the grid cell distance" >
+	string myProjectileSpeedCurve "" < bhv=inputgraph tooltip="Speed multiplier (y-axis) of the projectile based on percent distance (x-axis) to the target" >
+
+	vec3f myOffsetFront
+	vec3f myOffsetBack
+	vec3f myOffsetLeft
+	vec3f myOffsetRight
+
+    	RotationValues myLeftRotationValues
+    	RotationValues myRightRotationValues
+    
+	ProjectileParticle myLaunchEffect
+	ProjectileParticle myTrailEffect
+	ProjectileParticle myImpactEffect
+}

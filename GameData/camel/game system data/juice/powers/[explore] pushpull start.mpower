@@ -1,0 +1,13 @@
+include camel/skillscript/explore_interact.mskillscriptjuice
+include camel/skillscript/explore_cursortargeting.mskillscriptjuice
+include camel/skillscript/explore_timefart.mskillscriptjuice
+include camel/skillscript/explore_pushpullstart.mskillscriptjuice
+include "camel/game system data/fruit/powers/powers.fruit"
+
+Power "[Explore] PushPull Start" < uid=6D91A59C54938CCF0000000B52D64505 >
+{
+	myUseSkillScript < uid=6D91A59C54938CCF0000000C131E4F99 > = Explore_PushPullStart
+	myIsPassive TRUE
+	myUseActiveTargeting TRUE
+}
+

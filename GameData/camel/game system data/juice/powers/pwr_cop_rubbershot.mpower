@@ -1,0 +1,17 @@
+include ./pwr_com_kitchenthrow.mpower
+
+CombatPower pwr_cop_rubbershot < uid=DB7C6D4256E3807A000003297D0336CC > : pwr_com_kitchenthrow
+{
+	myUIName "contextComment = \"\", description = \"pwr_cop_rubbershot Name\", enabled = true, guid = #51C546C65774DC00000000D707D1165A, lineVersion = 1, maxLength = 21, text = \"Resisting Arrest\""
+	myNumberOfAttackEvents 1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=DB7C6D4256F45CCC00001E351877046E >
+		{
+			myPriority 30
+			myAggroPriority 30
+		}
+	}
+	myTuningData < uid=DB7C6D4256E3807A0000032A37786B81 > = pwr_cop_rubbershot_MAcero_Tuning
+}
+

@@ -1,0 +1,27 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower enemy_pwr_archetype_bruiser_self_shield < uid=86D640765744DCC20000007FB61A9D98 >
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_bruiser_self_shield Name\", enabled = true, guid = #51C546C65774D93B0000008BA14546AE, lineVersion = 0, maxLength = 18, text = \"Bruiser Shield\""
+	myUseSkillScript < uid=86D640765744DCC200000080E7CD3F02 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D640765744DCC200000081BDBB8716 >
+		{
+			myPriority 30
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86D640765744DCC200000082417B0E55 > = enemy_pwr_archetype_bruiser_self_shield_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

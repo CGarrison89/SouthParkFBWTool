@@ -1,0 +1,561 @@
+include "modules/core/audio/audio.fruit"
+include "camel/game system data/fruit/sound/dialogeventtypes.fruit"
+include "camel/game system data/fruit/evaluator/condition.fruit"
+include "camel/game system data/fruit/ai/npc.fruit"
+include "camel/game system data/fruit/powers/combatPowers.fruit"
+include "camel/game system data/fruit/mood/mood_types.fruit"
+include "camel/game system data/fruit/stats/statistic_dataenum_generic.fruit"
+include "camel/game system data/fruit/Player/PlayerGender.fruit"
+include "camel/game system data/fruit/Player/PlayerClass.fruit"
+include "camel/game system data/fruit/skintone/skintone.fruit"
+include "camel/game system data/fruit/Props/PropTagType.fruit"
+include "camel/game system data/fruit/mission/mission.fruit"
+include "camel/game system data/fruit/Player/BuddyParty.fruit"
+
+enum DialogSpeakerType
+{
+	Default
+	Agent
+	Target
+	ThirdParty
+}
+
+class DialogLengthRange
+{
+	float myMinimumTime
+	float myMaximumTime
+}
+
+// Number
+
+enum NumberDialogVariableName
+{
+	AgentHP
+	AgentAP
+	AgentMP
+	TargetHP
+	TargetAP
+	TargetMP
+	HPChange
+	PowerRange
+	NumberOfTargets
+	CurrentRageMeterValue
+	PlayerTeamHPPercentage
+	HeroRank
+	HeroRankPoints
+}
+
+class NumberDialogVariable : NumberDialogArgument
+{
+	NumberDialogVariableName myVariableName
+}
+
+list DialogEventTypes
+{
+	DialogEventType
+}
+
+class DialogEventTypeDialogCondition : DialogCondition
+{
+	DialogEventType myType
+}
+
+// Actor
+
+class ActorDialogArgument < abstract = 1 >
+{
+}
+
+class ActorDialogPrimitive : ActorDialogArgument
+{
+	uid myValue < bhv=asset assettype="actor" >
+}
+
+enum ActorDialogVariableName
+{
+	Target
+	Agent
+}
+
+class ActorDialogVariable : ActorDialogArgument
+{
+	ActorDialogVariableName myVariableName
+}
+
+enum BinaryActorDialogOperator
+{
+	Equal
+	NotEqual
+}
+
+class BinaryActorDialogCondition : DialogCondition
+{
+	ActorDialogArgument myLHS
+	BinaryActorDialogOperator myOperator
+	ActorDialogArgument myRHS
+}
+
+class OasisIdDialogCondition : DialogCondition
+{
+	ActorDialogArgument* myActor
+	NumberDialogArgument* myRHS
+}
+
+enum FollowerDialogOperator
+{
+	IsFollower
+	IsPotentialFollower
+}
+
+class FollowerDialogCondition : DialogCondition
+{
+	FollowerDialogOperator myOperator
+	ActorDialogArgument myActor
+}
+
+class ActorBuddyStateEnumDialogArgument : EnumDialogArgument
+{
+	ActorDialogArgument myActor
+}
+
+class BuddyStateEnumDialogArgument : EnumDialogArgument
+{
+	BuddyPartyStatus myValue
+}
+
+// Power
+
+class PowerCategoryDialogCondition : DialogCondition
+{
+	PowerCategory myPowerCategory
+}
+
+class PowerDialogArgument < abstract = 1 >
+{
+}
+
+class PowerDialogPrimitive : PowerDialogArgument
+{
+	Power* myValue
+}
+
+enum PowerDialogVariableName
+{
+	UsedPower
+}
+
+class PowerDialogVariable : PowerDialogArgument
+{
+	PowerDialogVariableName myVariableName
+}
+
+class BinaryPowerDialogCondition : DialogCondition
+{
+	PowerDialogArgument myLHS
+	PowerDialogPrimitive myRHS
+}
+
+// Player Power Classes
+
+class PlayerPowerClassDialogArgument < abstract = 1 >
+{
+}
+
+class PlayerPowerClassDialogPrimitive : PlayerPowerClassDialogArgument
+{
+	PlayerClassEnum myValue
+}
+
+enum PlayerPowerClassDialogVariableName
+{
+	Power1
+	Power2
+	Power3
+	Power4
+}
+
+class PlayerPowerClassDialogVariable : PlayerPowerClassDialogArgument
+{
+	PlayerPowerClassDialogVariableName myVariableName
+}
+
+class BinaryPlayerPowerClassDialogCondition : DialogCondition
+{
+	PlayerPowerClassDialogVariable myLHS
+	PlayerPowerClassDialogPrimitive myRHS
+}
+
+
+// Statistic
+
+class ActorInstanceDialogArgument < abstract = 1 >
+{
+}
+
+class ActorInstanceDialogPrimitive : ActorInstanceDialogArgument
+{
+	ActorDialogArgument* myValue
+	DialogSpeakerType mySpeakerType Default
+}
+
+class OasisIdActorInstanceDialogPrimitive : ActorInstanceDialogArgument
+{
+	int myOasisId
+	DialogSpeakerType mySpeakerType Default
+}
+
+enum ActorInstanceDialogVariableName
+{
+	Target
+	Agent
+}
+
+class ActorInstanceDialogVariable : ActorInstanceDialogArgument
+{
+	ActorInstanceDialogVariableName myVariableName
+}
+
+enum ActorInstanceNumberDialogVariableName
+{
+	HP
+}
+
+class NumberActorInstanceDialogVariable : NumberDialogArgument
+{
+	ActorInstanceNumberDialogVariableName myVariableName
+	ActorInstanceDialogArgument myActor
+}
+
+class IsCombatParticipantDialogCondition : DialogCondition
+{
+	ActorInstanceDialogArgument myActor
+}
+
+class IsActorOnScreenDialogCondition : DialogCondition
+{
+	ActorInstanceDialogArgument myActor
+}
+
+class DialogStatisticBase
+{
+}
+
+class DialogStatistic : DialogStatisticBase
+{
+	ActorInstanceDialogArgument myActor
+	ActorInstanceDialogArgument myAffectedActor
+	StatisticGenericTypeEnum myStatisticId
+	string myIndexId
+	DialogStatisticBase* mySinceStatistic
+	DialogStatisticBase* myBeforeStatistic
+}
+
+enum UnaryNumberStatisticOperator
+{
+	CountOperator
+	Value
+}
+
+class NumberDialogStatisticArgument : NumberDialogArgument
+{
+	UnaryNumberStatisticOperator myOperator
+	DialogStatistic myStatistic
+}
+
+// Mission
+
+enum MissionDialogOperator
+{
+	IsAvailable
+	IsCompleted
+	IsStarted
+	IsAvailableOrStarted
+}
+
+class MissionDialogCondition : DialogCondition
+{
+	Mission* myMission
+	MissionDialogOperator myOperator
+}
+
+enum ObjectiveDialogOperator
+{
+	IsCompleted
+	IsActive
+}
+
+class ObjectiveDialogCondition : DialogCondition
+{
+	Mission* myMission
+	string myObjectiveName
+	ObjectiveDialogOperator myOperator
+}
+
+// Cell
+
+class IsCellActiveDialogCondition : DialogCondition
+{
+	string myCellPath
+}
+
+// Faction
+
+enum BinaryFactionDialogOperator
+{
+	Friendly
+	Hostile
+	Equal
+	NotEqual
+}
+
+class BinaryFactionDialogConditionBase : DialogCondition < abstract = 1 >
+{
+	ActorInstanceDialogArgument myLHS
+	BinaryFactionDialogOperator myOperator
+}
+
+class BinaryActorFactionDialogCondition : BinaryFactionDialogConditionBase
+{
+	ActorInstanceDialogArgument myRHS
+}
+
+class BinaryFactionDialogCondition : BinaryFactionDialogConditionBase
+{
+	FactionEnum myRHS
+}
+
+class DialogActorGroup < abstract = 1 >
+{
+}
+
+class FactionCombatantDialogActorGroup : DialogActorGroup
+{
+	FactionEnum myFaction
+}
+
+class AllCombatantsDialogActorGroup : DialogActorGroup
+{
+}
+
+class NumberOfActorsDialogArgument : NumberDialogArgument
+{
+	DialogActorGroup myActorGroup
+}
+
+// Status Effect
+
+class ActorStatusEffectDialogCondition : DialogCondition
+{
+	SpecialEffectEnum myEffect
+	ActorInstanceDialogArgument myActor
+}
+
+// Skin Tone
+
+class ActorSkinToneDialogCondition : DialogCondition
+{
+	SkinToneType mySkinTone
+	ActorInstanceDialogArgument myActor
+}
+
+// Prop Tag
+
+class ActorEntityPropTagDialogCondition : DialogCondition
+{
+	EntityPropTagType myValue
+	ActorInstanceDialogArgument myActor
+}
+
+class AgentEntityPropTagDialogCondition : DialogCondition
+{
+	EntityPropTagType myValue
+}
+
+class AgentHasGraphObjectDialogCondition : DialogCondition
+{
+	file myGraphObjectFile "" < types=*.mgraphobject >
+}
+
+// Character Sheet
+
+enum UnaryNumberCharacterSheetTitleOperator
+{
+	TitleIndex
+	Value
+	GoalValue
+}
+
+class NumberDialogCharacterSheetTitleArgument : NumberDialogArgument
+{
+	CharacterSheetTitleEntry* myEntry
+	UnaryNumberCharacterSheetTitleOperator myOperator
+}
+
+class CharacterSheetEnumEntryDialogCondition : DialogCondition
+{
+	CharacterSheetEnumEntry* myEntry
+	string myValueName
+}
+
+// Time
+
+enum WeekDay
+{
+	Monday
+	Tuesday
+	Wednesday
+	Thursday
+	Friday
+	Saturday
+	Sunday
+}
+
+class IsDayOfTheWeekDialogCondition : DialogCondition
+{
+	WeekDay myWeekDay
+}
+
+// Follow Up Event
+
+class FollowUpEventDialogCondition : DialogCondition
+{
+	string myIdentifier
+}
+
+// Dialog
+
+class DialogConditionTuning
+{
+	DialogCondition* myCondition
+	float myFizzleRate
+}
+
+list DialogConditionTuningList
+{
+	DialogConditionTuning
+}
+
+class DialogEventTypeTuning
+{
+	DialogEventTypes myTypes
+	DialogEventTypes myTypesThatResetThis
+	float myCooldown
+	float myLineOverrideCooldown -1
+	int myLineOverridePriority -1
+	bool myShouldUseCombatCooldown false
+	bool myShouldIgnoreCooldown false
+	bool myCanInterruptSameTypeLines true
+}
+
+list DialogEventTypeTuningList
+{
+	DialogEventTypeTuning
+}
+
+class FollowUpEvent < abstract = 1 >
+{
+	float myDelay
+}
+
+class EventTypeFollowUpEvent : FollowUpEvent
+{
+	DialogEventType myType
+}
+
+class IdentifierFollowUpEvent : FollowUpEvent
+{
+	string myIdentifier
+}
+
+class AudioEventFollowUpEvent : FollowUpEvent
+{
+	AudioEvent myAudioEvent
+}
+
+list FollowUpEvents
+{
+	FollowUpEvent
+}
+
+enum NumberManipulationOperator
+{
+	Assign
+	Add
+	Subtract
+}
+
+class DialogCallback
+{
+	NumberManipulationOperator myOperator
+	varmap myLHS < bhv = "numGlobalVar" >
+	float myRHS
+}
+
+list DialogCallbacks
+{
+	DialogCallback
+}
+
+class DialogLine
+{
+	AudioEvent myAudioEvent
+	float myCooldown
+	DialogSpeakerType mySpeakerType Default
+	int myPriority
+	bool myIsNonverbal false
+	FollowUpEvents myFollowUpEvents
+	DialogCallbacks myCallbacks
+	MoodTypeEnum myMoodType NOTSET
+	bool myCanSpeakerPlayWhenDead false
+}
+
+list DialogLines
+{
+	DialogLine
+}
+
+class DialogScene
+{
+	DialogConditions myOasisConditions
+	DialogConditions myConditions
+	DialogConditions myStaticConditions
+	SkillScript* myConditionSkillScript
+	float myCooldown
+	DialogLines myLines
+}
+
+list DialogScenes
+{
+	DialogScene
+}
+
+class DialogSection
+{
+	DialogScenes myScenes
+}
+
+list DialogSections
+{
+	DialogSection
+}
+
+list GenericGenders
+{
+	GenericGenderEnum
+}
+
+class GenderAlternateIdPair
+{
+	GenericGenders myGenders
+	int myAlternateId
+}
+
+list GenderAlternateIdMap
+{
+	GenderAlternateIdPair
+}
+
+class PlayerGenderDialogCondition : DialogCondition
+{
+	int myGenderAlternateId
+}

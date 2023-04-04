@@ -1,0 +1,33 @@
+enum PowerPiercingType
+{
+	None
+	CharactersOnly
+	All
+}
+
+enum PowerDamageAreaType
+{
+	Rectangle
+	AtomicRectangle
+	CardinalCross
+	OrdinalCross
+	HalfOrdinalCross
+	Cone
+	RectangleCone
+	CenteredRectangle
+	CenteredCircle
+	CenteredCardinalCross
+	MeleeCircle
+	AllCombatants
+	ProjectedCellCoverage
+}
+
+class PowerDamageArea  < uid=auto >
+{
+	PowerPiercingType myPiercingType None
+	PowerDamageAreaType myDamageAreaType Rectangle
+	int myLength 1
+	int myWidth 1
+	int myStartWidth 1
+	int myStartLength 0
+}

@@ -1,0 +1,39 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/pwr_sixthgraderbartles_power1_script.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_sixthgraderbartles.juice"
+
+CombatPower pwr_sm01_bruiser_melee_wet_willie < uid=8585E53F57B493CE00004A98EED3A5D3 > : enemy_pwr_archetype_bruiser_melee
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/6thgrader_wetwillie.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_bruiser_melee Name\", enabled = true, guid = #B9E930CA57B4CF4E000095AC0266AEAF, lineVersion = 0, maxLength = 14, text = \"Wet Willy\""
+	myUseSkillScript < uid=B9E930CA57B4C2450002D270FA50F13A > = pwr_sixthGraderBartles_power1_script
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA57B4C660000044D0ED311D7E >
+		{
+			myPriority 30
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=B9E930CA57B4C660000044D1C380E82D >
+		{
+			myPriority 600
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myMeleeOffset 0.5;0.0
+	myTuningData < uid=8585E53F57B493CE00004A9904A1C53C > = pwr_sm01_bruiser_melee_wet_willie_Kevin_Tuning
+}
+

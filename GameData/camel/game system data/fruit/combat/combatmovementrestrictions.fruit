@@ -1,0 +1,8 @@
+
+class NPCCombatMovementDirections
+{
+  bool myLeft true
+  bool myRight true
+  bool myUp true
+  bool myDown true
+}

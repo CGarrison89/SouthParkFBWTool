@@ -1,0 +1,38 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower enemy_pwr_nodmg_1x3_melee_knockback < uid=86D64076574CD1C6000001594DEFC210 >
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_nodmg_1x3_melee_knockback Name\", enabled = true, guid = #51C546C65774D948000000A7A240A8FF, lineVersion = 0, maxLength = 14, text = \"Flash Badge\""
+	myUseSkillScript < uid=86D64076574CD1C60000015A5DD2E179 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D64076574CD1C60000015BC13D90FC >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86D64076575616DC00000220C7871D35 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86D64076574CD1C60000015C830C8E80 > = enemy_pwr_nodmg_1x3_melee_knockback_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

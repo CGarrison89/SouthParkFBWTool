@@ -1,0 +1,7 @@
+include ./pwr_sm22_priest_melee.mpower
+
+CombatPower pwr_sm22_priest_slap < uid=8585E53F57A511600005021FE1DC2000 > : pwr_sm22_priest_melee
+{
+	myTuningData < uid=8585E53F57A511600005022093C9677A > = pwr_sm22_priest_slap_Adrian_Tuning
+}
+

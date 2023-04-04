@@ -1,0 +1,20 @@
+include ./pwr_supercraig_power1.mpower
+
+CombatPower pwr_civilwar3_supercraig_power1 < uid=86C9308257CA0C5D000063990D25F408 > : pwr_supercraig_power1
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308257DB0470001C6B3AB85ED6EB >
+		{
+			myPriority 20
+		}
+		PowerEvaluationData Enraged < uid=86C9308257DB0470001C6B3B0D074BC5 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+		}
+	}
+	myTuningData < uid=86C9308257CA0C5D0000639ACABD4E46 > = pwr_civilwar3_supercraig_power1_Tuning
+}
+

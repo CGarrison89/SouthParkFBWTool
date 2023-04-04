@@ -1,0 +1,8 @@
+include ./enemy_pwr_archetype_bruiser_self_shield.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_LT_oldpeople_bruiser_self_shield < uid=86C9308257683ABE000003B405E7AD9D > : enemy_pwr_archetype_bruiser_self_shield
+{
+	myTuningData < uid=86C9308257683ABE000003B519900CB4 > = pwr_LT_oldpeople_bruiser_self_shield_Kevin_Tuning
+}
+

@@ -1,0 +1,37 @@
+include ./pwr_dlc1_vampkids_priest_revive_telegraph.mpower
+include camel/skillscript/camel_simple_swappower_slot1.mskillscriptjuice
+include camel/skillscript/dlc1_vampkids_gorilla_crush_telegraph_skillscript.mskillscriptjuice
+include camel/skillscript/dlc1_vampkids_clamatofoutain_heal_telegraph_skillscript.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_jokester.juice"
+
+CombatPower pwr_DLC1_VampKids_ClamatoFountain_heal_telegraph < uid=86C9308259E93B620003031194BDEA2A > : pwr_DLC1_VampKids_Priest_revive_telegraph
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/ClamatoFountain_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/roomwide_heal.dds"
+	myUIName "contextComment = \"\", description = \"pwr_DLC1_VampKids_ClamatoFountain_heal_telegraph_name\", enabled = true, guid = #86C9308259EE5E190000906B7B49FC8F, lineVersion = 0, maxLength = 22, text = \"Clamato telegraph\""
+	myUseSkillScript < uid=86C9308259E93B6200030312C57C78BC > = DLC1_VampKids_ClamatoFoutain_Heal_Telegraph_SkillScript
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308259E93B6200030313BA484358 >
+		{
+			myPriority 100
+			myMinimumAffectedTargets 0
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myOnCombatActionCompleteSkillScript < uid=86C9308259E93B620003031465B7938F > = NULLREFERENCE
+	myTuningData < uid=86C9308259E93B62000303151E20C9A9 > = pwr_DLC1_VampKids_ClamatoFountain_telegraph_Tuning
+	myCameraPreset < uid=86C930825A691AAE0009621F399FD69A > = Jokester_Power01
+	myPowerDeathTargeting None
+	myTelegraphData
+	{
+		myTelegraphedPowerName pwr_DLC1_VampKids_ClamatoFountain_heal_telegraph
+		myTelegraphingToTargetedAnimationName ""
+	}
+}
+

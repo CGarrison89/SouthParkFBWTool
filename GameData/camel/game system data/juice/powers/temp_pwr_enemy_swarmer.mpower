@@ -1,0 +1,29 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower temp_pwr_enemy_swarmer < uid=B9E930CA571FBB6D00000030DFFB174D >
+{
+	myIconImage "camel/baked/assets/ui/power selection/power_enemy_chaosdestruction.dds"
+	myUIName "contextComment = \"\", description = \"temp_pwr_enemy_swarmer Name\", enabled = true, guid = #51C546C65774DC7A000001F13A0A8E1C, lineVersion = 0, maxLength = 17, text = \"Swarmer Power\""
+	myUIDescription "contextComment = \"\", description = \"temp_pwr_enemy_swarmer Description\", enabled = true, guid = #51C546C65774DC7A000001F24BF3A2AE, lineVersion = 0, maxLength = 36, text = \"Moderate Damage Melee Attack\""
+	myUseSkillScript < uid=B9E930CA571FBB6D0000003165E1351B > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 2
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA571FBB6D00000032EF4DC3AE >
+		{
+			myPriority 10
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myDialogueSkillScript < uid=326B24CD5780071C0000066242481D01 > = NULLREFERENCE
+	myTuningData < uid=B9E930CA571FBC33000000401C8E91C4 > = temp_pwr_enemy_swarmer_Tuning
+}
+

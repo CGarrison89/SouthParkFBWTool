@@ -1,0 +1,8 @@
+include ./mm17_christmascritters_deery_power2.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower dr_mm17_christmascritters_deery_power2 < uid=C87888A05A0CDEAD0001E6E45297B1E0 > : mm17_christmascritters_deery_power2
+{
+	myTuningData < uid=C87888A05A0CE16000015CEA653613A3 > = dr_enemy_mm17_critters_ranged_Tuning
+}
+

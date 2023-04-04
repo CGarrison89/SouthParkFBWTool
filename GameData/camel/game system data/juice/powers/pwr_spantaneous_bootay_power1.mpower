@@ -1,0 +1,65 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include ./enemypowers.mvernon.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_spantaneous_bootay_power1 < uid=B9E930CA56BAB3E90000003A58716395 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/SpontaneousBootay_Smother.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_square_debuff.dds"
+	myUIName "contextComment = \"\", description = \"pwr_spantaneous_bootay_power1 Name\", enabled = true, guid = #51C546C65774DC4900000181E7207671, lineVersion = 1, maxLength = 30, text = \"Spontaneous Destruction\""
+	myUseSkillScript < uid=B9E930CA56BAB3E90000003B75D7EC1B > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myShouldRepositionBeforeExecution FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA56BD680D000018E025FD347B >
+		{
+			myPriority 10
+			myMinimumAffectedTargets 2
+			myValidDirections
+			{
+				myLeft TRUE
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "3 targets (including self)" < uid=6D7AC9B15910F5BB0004310DDBA705FC >
+		{
+			myPriority 20
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "4 targets (including self)" < uid=6D7AC9B15910FE8A0003C65B512ED8AD >
+		{
+			myPriority 30
+			myAggroPriority 4
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "5 targets (including self)" < uid=6D7AC9B15910FE8A0003C65CF8DB3DF0 >
+		{
+			myPriority 40
+			myMinimumAffectedTargets 5
+		}
+		PowerEvaluationData UpDown < uid=6D7AC9B15912720F0001A1F4A87C6CB7 >
+		{
+			myPriority 50
+			myAggroPriority 0
+			myMinimumAffectedTargets 2
+			myValidDirections
+			{
+				myLeft FALSE
+				myRight FALSE
+			}
+		}
+		PowerEvaluationData destructibleprops < uid=6D7AC9B1591118F50013EA25A7D2F5B2 >
+		{
+			myPriority 5
+			myMinimumAffectedTargets 2
+			myAIDesirableType A
+		}
+	}
+	myTuningData < uid=B9E930CA56BAB4E400000146AE03FA28 > = mm08_bootay_power01_MVernon_Tuning
+	myCameraPreset < uid=86C930825914AABA00007672867D419F > = Preset_Generic_Melee
+}
+

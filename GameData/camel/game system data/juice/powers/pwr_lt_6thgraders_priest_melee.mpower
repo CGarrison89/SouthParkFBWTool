@@ -1,0 +1,10 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include ./enemypowers.kevin.juice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_6thgraders.juice"
+
+CombatPower pwr_LT_6thgraders_priest_melee < uid=86C930825779A4A7000001F9F17EFFF1 > : enemy_pwr_archetype_swarmer_melee
+{
+	myTuningData < uid=86C930825779A4A7000001FA0E8BD598 > = pwr_LT_6thgraders_priest_melee_Kevin_Tuning
+	myCameraPreset < uid=6D7AC9B157BE68BB0000018B4B4A4FE2 > = RussianPriest_Power01
+}
+

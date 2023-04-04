@@ -1,0 +1,17 @@
+class CombatUIInfo
+{
+	int myCombatID -1
+	file myIntroImagePath "" < types=*.png >
+	file myOutroImagePath "" < types=*.png >
+	varmap myCompleteObjective < bhv = "localization" >
+}
+
+list CombatUIInfoList
+{
+	CombatUIInfo
+}
+
+class ConstantCombatUIData
+{  
+  CombatUIInfoList myCombatInfoList
+}

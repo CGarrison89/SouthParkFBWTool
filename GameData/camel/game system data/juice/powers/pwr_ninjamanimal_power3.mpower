@@ -1,0 +1,41 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_pounce_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/pwr_assassin_power3_script.mskillscriptjuice
+include camel/skillscript/pwr_assassin_power3_script_menu.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_swap_positions.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_assassin.juice"
+
+CombatPower pwr_ninjamanimal_power3 < uid=B9E930CA56DA27120000018EF5253B8C >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/ninja_manimal_power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/swap_melee.dds"
+	myUIName "contextComment = \"Assassin Power 3 Name\", description = \"pwr_ninjamanimal_power3 Name\", enabled = true, guid = #51C546C65774DC42000001713CD12076, lineVersion = 1, maxLength = 18, text = \"Half-Ass Creed\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_ninjamanimal_power3 Description\", enabled = true, guid = #51C546C65774DC4200000172E9F3B3D0, lineVersion = 1, maxLength = 183, text = \"The Assassin melts into the shadows, appears next to a foe and strikes to either side, then becomes Invisible because you didn't see nothin'.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_ninjamanimal_power3 Short Description\", enabled = true, guid = #9D0E6196579BDF03000044D4ACC70BF1, lineVersion = 0, maxLength = 53, text = \"Blink to a foe, strike, gain Invisibility\""
+	myUseSkillScript < uid=B9E930CA56DA27120000018FA415A080 > = pwr_assassin_power3_script
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myUseRectangularLobbedArea TRUE
+	myTuningData < uid=B9E930CA56DA271200000190B539AB21 > = pwr_ninjamanimal_power3_Tuning
+	myCameraPreset < uid=8E1BC443594A401C001110265FB5D168 > = Assassin_Power03
+	myPowerGroup Normal
+	mySelfStatusEffects
+	{
+		StatusEffect Invisible < uid=86D64076577D3C290000007DBBC1FDF8 > = Invisible
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.5
+				myActionPlusEndTime 1.25
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

@@ -1,0 +1,15 @@
+include ./item_healpotion_tier0.mpower
+include camel/skillscript/pwr_mm28_mc_comfort_v2.mskillscriptjuice
+
+CombatPower mm28_MC_comfort < uid=86C9308259383A430001B23FBAF42127 > : item_healpotion_tier0
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/MC_Comfort.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/1_range_cross_heal.dds"
+	myUIName "contextComment = \"\", description = \"mm28_mc_unground_power_name\", enabled = true, guid = #86C930825938B5970004F6BFA1F9B58F, lineVersion = 0, maxLength = 13, text = \"Unground\""
+	myUseSkillScript < uid=86C9308259383C0E0001B29CC714BAF9 > = pwr_mm28_MC_Comfort_v2
+	myShouldRepositionToCellCenterBeforeExecution FALSE
+	myIsACleansePower TRUE
+	myConsumablePowerType Unground
+	myTuningData < uid=86C9308259383A7F0001B24F3E50DD2B > = pwr_mm28_comfort_Tuning
+}
+

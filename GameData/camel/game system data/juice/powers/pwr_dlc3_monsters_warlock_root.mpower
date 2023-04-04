@@ -1,0 +1,47 @@
+include ./enemy_pwr_archetype_grenadier_st_lob_min.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_sm42_securityguard_flashbang.mprojectile"
+include ./enemypowers.adrian.juice
+include camel/skillscript/camel_lobbed_power_playanim_script.mskillscriptjuice
+include ./dlc3_enemypowers.juice
+
+CombatPower pwr_DLC3_Monsters_Warlock_root < uid=86C930825A99A7F200022E837E55CA49 > : enemy_pwr_archetype_grenadier_st_lob_min
+{
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_ST_min_range.dds"
+	myUIName "contextComment = \"\", description = \"pwr_DLC3_Monsters_Warlock_root_name\", enabled = true, guid = #86C930825A99A7F200022E825E5C7C0D, lineVersion = 1, maxLength = 16, text = \"Monster Root\""
+	myUIDescription "contextComment = \"\", description = \"pwr_DLC3_Monsters_Warlock_root_description\", enabled = true, guid = #86C930825A99BD2C00022EF8A5C0F74F, lineVersion = 0, maxLength = 38, text = \"DLC3 Warlock Root description\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C930825A99D5570000A478A9136224 >
+		{
+			myPriority 200
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry NotAlreadyRooted
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Encumbered
+					myFollowingCondition None
+				}
+			}
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C930825A99D5570000A479F43D64F9 >
+		{
+			myPriority 2000
+			myAggroPriority 2000
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86C930825A99A7F200022E88E385363F > = pwr_DLC3_Monsters_Warlock_Root_Tuning
+}
+

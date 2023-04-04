@@ -1,0 +1,47 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower sm19_shadyacres_blocker_power1 < uid=3267E0D057E032DA0005ECD8E8CDBEEB >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/OldFolk_Blocker_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_blocker_basic_melee Name\", enabled = true, guid = #3267E0D057E032DA0005ECD69A046DE4, lineVersion = 1, maxLength = 8, text = \"Melee\""
+	myUIDescription "contextComment = \"\", description = \"\", enabled = false, guid = #3267E0D057E032DA0005ECD7A059CCA7, lineVersion = 0, maxLength = 17, text = \"Blocker Melee\""
+	myUseSkillScript < uid=3267E0D057E032DA0005ECD90E2B0B2B > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D057E032DA0005ECDAB7F92C47 >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D057E032DA0005ECDBD9ABF2EB >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myMeleeOffset -3.0;0.0
+	myTuningData < uid=3267E0D057E032DA0005ECDC5C1435D3 > = enemy_pwr_archetype_blocker_basic_melee_MNguyen_Tuning
+	myCameraPreset < uid=86C930825972A707000C6A0511E0A26A > = Preset_Generic_Melee
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

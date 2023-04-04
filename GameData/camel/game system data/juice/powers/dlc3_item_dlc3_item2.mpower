@@ -1,0 +1,23 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_revive_script.mskillscriptjuice
+include camel/skillscript/camel_simple_healing_script.mskillscriptjuice
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+include camel/skillscript/camel_consumable_eat_script.mskillscriptjuice
+include ./dlc1_playerpowers.juice
+include camel/skillscript/dlc1_camel_consumable_item_use_script.mskillscriptjuice
+include ./dlc3_playerpowers.juice
+include camel/skillscript/simple_knockback_damage_script.mskillscriptjuice
+include camel/skillscript/dlc3_camel_consumable_item_use_script.mskillscriptjuice
+
+CombatPower dlc3_item_dlc3_item2 < uid=C27CCFE35A728DE1000ADE5B3E71F342 >
+{
+	myUIName "contextComment = \"\", description = \"\", enabled = false, guid = #C27CCFE35A728DE1000ADE5AF98738F4, lineVersion = 0, maxLength = 1, text = \"|empty|\""
+	myUseSkillScript < uid=C27CCFE35A728DE1000ADE5CAE953A23 > = dlc3_camel_consumable_item_use_script
+	myNumberOfAttackEvents 1
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myConsumablePowerType None
+	myTargetConsumableHealthLevel 0.99
+	myTuningData < uid=C27CCFE35A728DE1000ADE5DEB6D77BB > = dlc3_item2_Tuning
+	myPowerDeathTargeting OnlyDead
+}
+

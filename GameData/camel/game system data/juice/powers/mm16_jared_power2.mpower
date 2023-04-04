@@ -1,0 +1,45 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include ./enemypowers.kevin.juice
+include camel/skillscript/pwr_jared_power03_pull.mskillscriptjuice
+include camel/skillscript/camel_simple_swappower_slot1.mskillscriptjuice
+include camel/skillscript/mm28_buttersdad_grounded_swappower_afterexecute.mskillscriptjuice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_jared.juice"
+include camel/skillscript/mm16_jared_swappower_afterexecute.mskillscriptjuice
+
+CombatPower mm16_jared_power2 < uid=3267E0D05750A8DF00003D4A945A31BA >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/jared_candyenticement.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/ST_range_1_5_aligned.dds"
+	myUIName "contextComment = \"\", description = \"mm16_jared_power2 Name\", enabled = true, guid = #51C546C65774D94F000000B569B9E9A0, lineVersion = 0, maxLength = 21, text = \"Candy Enticement\""
+	myUseSkillScript < uid=3267E0D05750A8DF00003D4BD94BE1AF > = pwr_jared_power03_pull
+	myAnimationState ""
+	myLockedByDefault TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D05750A8DF00003D4CBFCBC8A5 >
+		{
+			myPriority 100
+			myPreferredRange -1
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	mySecondarySkillScript < uid=86C930825874087A0000B66E8F67F725 > = NULLREFERENCE
+	myOnKillSkillScript < uid=86C930825874082B000079898418C481 > = NULLREFERENCE
+	myOnCombatActionCompleteSkillScript < uid=B642A89A59768BBB0012469799DFD36D > = MM16_Jared_SwapPower_AfterExecute
+	myTuningData < uid=3267E0D05750A8DF00003D4DA520462A > = enemy_pwr_mm16_jared_power2_execute_amcclay_Tuning
+	myCameraPreset < uid=86C930825876E7260000138A5AA23AC0 > = NULLREFERENCE
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

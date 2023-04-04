@@ -1,0 +1,32 @@
+include ./pwr_modoktimmy_power2.mpower
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_civilwar3_timmy_power2 < uid=86C9308257CA036B000062F9D515E60E > : pwr_modoktimmy_power2
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Default < uid=86C9308257D3032400052752BE66BF42 >
+		{
+			myPriority 40
+			myNumLiveEnemiesRequired 2
+			myMinimumAffectedTargets 1
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+					myFollowingCondition AND
+				}
+				StatusEffectConditionalEntry "Not confused"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Confused
+				}
+			}
+		}
+	}
+	myTuningData < uid=86C9308257CA08ED00006361A3FCA68A > = pwr_modoktimmy_power2_Tuning
+	myCameraPreset < uid=86C93082596FE91B000335E2DE8344E6 > = Preset_Generic_Ranged
+}
+

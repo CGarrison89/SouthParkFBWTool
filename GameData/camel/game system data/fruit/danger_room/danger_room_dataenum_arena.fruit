@@ -1,0 +1,50 @@
+enum DangerRoomArenaType < useCategories=1 >
+{
+	NOTSET
+
+	< startCategory="Room #1" >
+	Room1_A
+	Room1_B
+	Room1_C
+	Room1_A_ULTRA
+	Room1_B_ULTRA
+	Room1_C_ULTRA
+	< endCategory="" >
+
+	< startCategory="Room #2" >
+	Room2_A
+	Room2_B
+	Room2_C
+	Room2_A_ULTRA
+	Room2_B_ULTRA
+	Room2_C_ULTRA
+	< endCategory="" >
+
+	< startCategory="Room #3" >
+	Room3_A
+	Room3_B
+	Room3_C
+	Room3_A_ULTRA
+	Room3_B_ULTRA
+	Room3_C_ULTRA
+	< endCategory="" >
+
+	< startCategory="Room #4" >
+	Room4_A
+	Room4_B
+	Room4_C
+	Room4_A_ULTRA
+	Room4_B_ULTRA
+	Room4_C_ULTRA
+	< endCategory="" >
+
+	< startCategory="Room #5" >
+	Room5_A
+	Room5_B
+	Room5_C
+	Room5_A_ULTRA
+	Room5_B_ULTRA
+	Room5_C_ULTRA
+	< endCategory="" >
+}
+

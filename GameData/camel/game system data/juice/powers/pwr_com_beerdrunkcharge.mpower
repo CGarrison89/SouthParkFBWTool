@@ -1,0 +1,31 @@
+include ./placeholder_enemy_power1.mpower
+include ./bosspowers.bbartram.juice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_com_beerdrunkcharge < uid=B642A89A56C3A44C0000246FB4D4B7C8 > : placeholder_enemy_power1
+{
+	myIconImage "camel/baked/assets/ui/power selection/power_enemy_placeholder.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_beerdrunkcharge Name\", enabled = true, guid = #51C546C65774DBCD000000835FA7966D, lineVersion = 0, maxLength = 18, text = \"Drunken Charge\""
+	myUseSkillScript < uid=B642A89A56C3A44C00002470F9C39B4D > = NULLREFERENCE
+	myAnimationState ""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B642A89A56C62101000015E379A3B0A6 >
+		{
+			myPriority 30
+		}
+	}
+	mySecondarySkillScript < uid=B642A89A56C629FF00003DD5908A1827 > = Simple_Rush_Damage_Script
+	myDialogueSkillScript < uid=326B24CD59125CBE0000EE9F8573022E > = Camel_Simple_PlayDialogue_Script
+	myTuningData < uid=B642A89A56C3A44C0000247199B3CBE9 > = pwr_com_beerdrunkcharge_BBartram_Tuning
+	myCameraPreset < uid=6D7AC9B1573166030001845D7DA919F2 > = Preset_Generic_Ranged
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

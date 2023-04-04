@@ -1,0 +1,10 @@
+include ./mm12_methlab_barrel_explosion.mpower
+include camel/skillscript/chr_explosive_propanetank_explosion_skillscript.mskillscriptjuice
+
+CombatPower dlc3_burial_grounds_explosives_explosion < uid=8585E53F5AD8D2F5001991916EF9F029 > : MM12_MethLab_Barrel_Explosion
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/MethLabBarrel_Explode.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/1_range_cross.dds"
+	myUseSkillScript < uid=8585E53F5AD8D2F500199192EB0751C8 > = Chr_Explosive_PropaneTank_Explosion_SkillScript
+}
+

@@ -1,0 +1,18 @@
+include "camel/game system data/fruit/powers/combatPowers.fruit"
+
+
+class PowersSelectSlot < uid=auto >
+{
+	string mySlotName
+	vec2f myPosition
+	PowerCategoryList myCategoryList
+}
+list PowersSelectSlotList
+{
+	PowersSelectSlot
+}
+class PowersSelectSlotSetting
+{
+	PowersSelectSlotList myPowersSelectSlotList
+}
+

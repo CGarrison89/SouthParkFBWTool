@@ -1,0 +1,73 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+include camel/skillscript/mm15_honeybadger_rush_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playdialogue_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower mm15_5assed_rogue_power1 < uid=3267E0D057D0705A0003367065391837 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Assed_Badger_Power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_range.dds"
+	myUIName "contextComment = \"The Multi-Assed Sixth Grader rushes through opponents with reckless abandon\", description = \"enemy_pwr_archetype_rusher_rush Name\", enabled = true, guid = #3267E0D057D0705A0003366FBA0DDADE, lineVersion = 1, maxLength = 17, text = \"Vicious Lunge\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D057D0705A00033671EF3F9FD3 >
+		{
+			myPriority 100
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D057D0705A0003367233249B90 >
+		{
+			myPriority 100
+			myAggroPriority 1100
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData KillTarget < uid=3267E0D057D0A685002C9699C8131D62 >
+		{
+			myPriority 130
+			myMinimumKills 1
+			myTargetHealthLessThanPercentage 101.0
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData HitMultipleTargets < uid=3267E0D057D0A87F002DBE6620FE8574 >
+		{
+			myPriority 120
+			myMinimumAffectedTargets 2
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	mySecondarySkillScript < uid=3267E0D057D0705A00033673E72B6C00 > = MM15_HoneyBadger_Rush_Damage_Script
+	myDialogueSkillScript < uid=326B24CD5907C53A0008958DE97C4BCB > = Camel_Simple_PlayDialogue_Script
+	myTuningData < uid=3267E0D057D0705A000336744A7E2872 > = enemy_pwr_mm15_5assed_rogue_power1_amcclay_Tuning
+	myCameraPreset < uid=86C93082592F899E0016C14598E90EA0 > = Preset_Generic_Ranged
+	myAnimationSetData
+	{
+		myIntroState rushintro
+		myLoopState rushloop
+		myOutroState rushoutro
+	}
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

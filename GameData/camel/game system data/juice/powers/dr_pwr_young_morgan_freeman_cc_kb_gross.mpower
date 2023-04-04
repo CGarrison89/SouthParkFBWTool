@@ -1,0 +1,96 @@
+include ./pwr_young_morgan_freeman_cc_kb_gross.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower dr_pwr_young_morgan_freeman_cc_kb_gross < uid=8585E53F5A0D0789002474DD2D484D78 > : pwr_young_morgan_freeman_CC_KB_Gross
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "3 targets with kill" < uid=86C930825A139C21002926050C640BF6 >
+		{
+			myPriority 15000
+			myMinimumKills 1
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets with kill" < uid=86C930825A139C2100292606A9F8B5B5 >
+		{
+			myPriority 13800
+			myMinimumKills 1
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "1 target with kill" < uid=86C930825A139C2100292607F86A4C89 >
+		{
+			myPriority 11600
+			myMinimumKills 1
+		}
+		PowerEvaluationData "3 targets blocking" < uid=86C930825A139C2100292608F98BE45A >
+		{
+			myPriority 10000
+			myMinimumAffectedTargets 3
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Blocking
+				{
+					mySpecialEffect Block
+				}
+			}
+		}
+		PowerEvaluationData "2 targets blocking" < uid=86C930825A139C2100292609D59C7B26 >
+		{
+			myPriority 8500
+			myMinimumAffectedTargets 2
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Blocking
+				{
+					mySpecialEffect Block
+				}
+			}
+		}
+		PowerEvaluationData "3 targets" < uid=86C930825A139C210029260AB9A5293D >
+		{
+			myPriority 7000
+			myMinimumAffectedTargets 3
+		}
+		PowerEvaluationData "2 targets" < uid=86C930825A139C210029260B13013484 >
+		{
+			myPriority 5800
+			myMinimumAffectedTargets 2
+		}
+		PowerEvaluationData "Not grossed out" < uid=86C930825A139C210029260CB50EAB8A >
+		{
+			myPriority 1900
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not grossed out"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect GrossedOut
+					myFollowingCondition AND
+				}
+				StatusEffectConditionalEntry "Not immune to grossed out"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect GrossedOutImmunity
+				}
+			}
+		}
+		PowerEvaluationData "Grossed out" < uid=86C930825A139C210029260D837DB346 >
+		{
+			myPriority 1800
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Grossed out"
+				{
+					mySpecialEffect GrossedOut
+				}
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C930825A139C210029260E13018ED5 >
+		{
+			myPriority 16000
+			myRequireAggroTarget TRUE
+		}
+	}
+	myTuningData < uid=8585E53F5A0D082D00247505822382B5 > = pwr_dr_brick_power3_Tuning
+}
+

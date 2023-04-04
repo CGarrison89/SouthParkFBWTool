@@ -1,0 +1,58 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./dlc3_enemypowers.juice
+
+CombatPower pwr_dlc3_monsters_raisins_melee_kb < uid=3267E0D05AC6C84B000CB3FE395567A5 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/raisingirl_melee.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"should be raisins only\", description = \"enemy_pwr_archetype_swarmer_melee Name\", enabled = true, guid = #3267E0D05AC6C84B000CB3FDF3B955C9, lineVersion = 1, maxLength = 20, text = \"French Manicure\""
+	myUseSkillScript < uid=3267E0D05AC6C84B000CB3FFBD5F630D > = Camel_Simple_PlayAnim_Script
+	myAnimationState power4
+	myNumberOfAttackEvents 7
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D05AC6C84B000CB400C0506F49 >
+		{
+			myPriority 20
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D05AC6C84B000CB401F97E7D97 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData kill < uid=3267E0D05AC6C84B000CB4026B844552 >
+		{
+			myPriority 21
+			myAggroPriority 0
+			myRequireAggroTarget FALSE
+			myMinimumKills 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=3267E0D05AC6C84B000CB4032D850424 > = pwr_DLC3_Monsters_Kryptonite_Melee_KB_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

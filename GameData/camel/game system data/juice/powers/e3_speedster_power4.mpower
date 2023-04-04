@@ -1,0 +1,21 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./playerpowers.demo.juice
+include camel/skillscript/pwr_speedster_ultimate_start.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_speedster.juice"
+
+CombatPower e3_speedster_power4 < uid=B9E930CA5743909F0000001F9D620F02 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/speedster_Ult_ThousandPunches.dds"
+	myUIName "contextComment = \"\", description = \"e3_speedster_power4 Name\", enabled = true, guid = #51C546C65774D9AD000000720744F67D, lineVersion = 0, maxLength = 22, text = \"Multiverse Strike\""
+	myUIDescription "contextComment = \"\", description = \"e3_speedster_power4 Description\", enabled = true, guid = #51C546C65774D9AD000000737DCD182E, lineVersion = 0, maxLength = 43, text = \"Damages and knocks back an enemy.\""
+	myUseSkillScript < uid=B9E930CA5743909F00000020FA0FB008 > = pwr_speedster_ultimate_start
+	myAnimationState speedster_power4
+	myNumberOfAttackEvents 1
+	myShouldRepositionBeforeExecution TRUE
+	myTuningData < uid=B9E930CA5743909F00000021A503A7FC > = demo_e3_speedster_power4_demo_Tuning
+	myCameraPreset < uid=B9E930CA574770C1000114D49170C100 > = Speedster_Power04
+	myPowerGroup Normal
+}
+

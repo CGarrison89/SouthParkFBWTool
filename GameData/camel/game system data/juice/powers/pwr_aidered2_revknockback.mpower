@@ -1,0 +1,24 @@
+include ./pwr_com_kitchenattack.mpower
+
+CombatPower pwr_aidered2_revknockback < uid=DB7C6D4256EA17410000015746D04211 > : pwr_com_kitchenattack
+{
+	myIconImage "camel/baked/assets/ui/power selection/power_tupperware_provoke.dds"
+	myUIName "contextComment = \"\", description = \"pwr_aidered2_revknockback Name\", enabled = true, guid = #51C546C65774D95A000000D85C7837AB, lineVersion = 1, maxLength = 18, text = \"Heavy Dressing\""
+	myAnimationState power1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData melee_kill < uid=DB7C6D4256FB185D00001E31942EBA98 >
+		{
+			myPriority 26
+			myAggroPriority 26
+			myMinimumKills 1
+		}
+		PowerEvaluationData melee < uid=DB7C6D4256FB185D00001E32DC4A5340 >
+		{
+			myPriority 20
+			myAggroPriority 20
+		}
+	}
+	myTuningData < uid=DB7C6D4256EA174100000158C146A8E1 > = pwr_aidered2_pullout_MAcero_Tuning
+}
+

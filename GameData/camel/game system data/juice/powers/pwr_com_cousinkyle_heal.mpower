@@ -1,0 +1,32 @@
+include ./placeholder_enemy_power1.mpower
+include ./bosspowers.bbartram.juice
+include ./enemypowers.mvernon.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/cousinkyle_vo_andheal.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_com_cousinkyle_Heal < uid=6D7AC9B157870005000043018677529D > : placeholder_enemy_power1
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/generics/generic_selfonly_heal.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/self_heal.dds"
+	myUIName "contextComment = \"alt kites heal power name\", description = \"pwr_com_cousinkyle_eyelaser_right Name\", enabled = true, guid = #6D7AC9B15787000500004300948F79BA, lineVersion = 1, maxLength = 16, text = \"Didn't Count\"}"
+	myUseSkillScript < uid=6D7AC9B15787000500004302EFA244BF > = CousinKyle_VO_AndHeal
+	myAnimationState heal_flair
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B157870005000043039656EF8C >
+		{
+			myPriority 30
+			myValidDirections
+			{
+				myLeft TRUE
+				myRight TRUE
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=6D7AC9B1578700050000430479FB1655 > = pwr_com_MM18_cousinKyle_Heal_MVernon_Tuning
+	myCameraPreset < uid=86C93082591B5DE0000071BC4BE093E4 > = Preset_Generic_Melee
+}
+

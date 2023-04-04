@@ -1,0 +1,15 @@
+
+enum PosterTypeEnum
+{
+	Other
+	Self
+	System
+}
+
+class CoonstagramUser < uid=auto >
+{
+    varmap 			myUIName < bhv="localization" tooltip="Localized character name shown in the UI" >
+	file 			myUIProfileIcon "" < types=*.png >
+	file 			myUIThumbnailIcon < bhv=asset assettype=texture tooltip="Reference the follower icon texture asset" >
+	PosterTypeEnum	myPosterType	Other
+}

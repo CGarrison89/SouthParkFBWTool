@@ -1,0 +1,38 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower enemy_pwr_archetype_grenadier_melee < uid=86D640765744DCC9000000AF4B14D99E >
+{
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_grenadier_melee Name\", enabled = true, guid = #51C546C65774D93D0000008FBE4C3D77, lineVersion = 0, maxLength = 20, text = \"Grenadier Melee\""
+	myUseSkillScript < uid=86D640765744DCC9000000B0A15FE7F9 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D640765744DCC9000000B1E73E77E1 >
+		{
+			myPriority 5
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86D64076575614E6000001D50F918D13 >
+		{
+			myPriority 5
+			myAggroPriority 1005
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=86D640765744DCC9000000B210F1661E > = enemy_pwr_archetype_grenadier_melee_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

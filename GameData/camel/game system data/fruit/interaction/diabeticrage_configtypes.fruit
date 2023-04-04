@@ -1,0 +1,91 @@
+
+// -------------------- Diabetic Power ------------------
+enum DiabeticPowerLiftType
+{
+    None
+    Default
+    Straight_Default
+    Ramp_LeftSide_Default
+    Ramp_RightSide_Default
+}
+
+class DiabeticPowerLiftData
+{
+    string myIntroOutroAnimationName
+    string myHoldAndTiredAnimation
+}
+
+enum DiabeticPowerTipOverType
+{
+    None
+    Default
+    Tutorial
+}
+
+class DiabeticPowerTipOverData
+{
+    int myDummyData 0
+}
+
+enum DiabeticPowerLiftAnimationType
+{
+    None
+    Straight_Default
+    Ramp_LeftSide_Default
+    Ramp_RightSide_Default
+}
+
+class DiabeticPowerLiftAnimationData
+{
+    string myIntroOutroAnimationName
+    string myHoldAndTiredAnimation
+}
+
+enum DiabeticPowerLiftConfigType
+{
+    Default
+    UnUsedCollision
+    MCPos_PriorityCheck_Left
+    MCPos_PriorityCheck_Right
+    MCPos_PriorityCheck_Left_UnUsedCollision
+    MCPos_PriorityCheck_Right_UnUsedCollision
+    M12_NedStorageUnit
+}
+
+class DiabeticPowerLiftConfigData
+{
+    bool myUnUsedCollision False
+    bool ShouldMCPosPriotityCheck False
+    bool ShouldMCPosPriorityCheck_Left False
+}
+
+enum DiabeticPowerTipOverAnimationType
+{
+    None
+    Flip
+    Punch
+    FlipBolt
+}
+
+class DiabeticPowerTipOverAnimationData
+{
+    string myTipOverAnimationName
+}
+
+enum DiabeticPowerTipOverConfigType
+{
+    Default
+    Tutorial
+    EnableCollisionAfterEnd
+    DisableFartCloud
+    DisableFartCloud_EnableCollisionAfterEnd
+}
+
+class DiabeticPowerTipOverConfigData
+{
+    bool myDisableCollisionAfterEnd TRUE
+    bool myUseFartCloud TRUE
+    bool myDisableMinigameCancel False
+    bool myExtensionMode False
+}
+

@@ -1,0 +1,36 @@
+include ./dlc3_buddypowers.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/dlc3_mintberrycrunch_power01_land.mskillscriptjuice
+include camel/skillscript/dlc3_mintberrycrunch_land.mskillscriptjuice
+include "camel/game system data/juice/camera/tardicaca/uber_camera_powers_presets_mintberry.juice"
+
+CombatPower pwr_dlc3_mintberrycrunch_power01b < uid=86D640765A99A45A00009DBB72B058EB >
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/MintBerryCrunch_Power1B.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/select_roomwide_CC_landing.dds"
+	myUIName "contextComment = \"MintBerry Crunch Power01b Name\", description = \"pwr_dlc3_mintberrycrunch_power01b Name\", enabled = true, guid = #86D640765A99A45A00009DB9BA19A264, lineVersion = 1, maxLength = 16, text = \"Berry Land\""
+	myUIDescription "contextComment = \"MintBerry Crunch Power01b Long Description\", description = \"pwr_dlc3_mintberrycrunch_power01b Long Description\", enabled = true, guid = #9D0E61965AA9C3E10000A48ECDFE493D, lineVersion = 0, maxLength = 82, text = \"Mintberry Crunch lands, damaging and Berrying adjacent enemies.\""
+	myUIShortDescription "contextComment = \"MintBerry Crunch Power01b Short Description\", description = \"pwr_dlc3_mintberrycrunch_power01b Short Description\", enabled = true, guid = #86D640765A99A45A00009DBA2B76EE2A, lineVersion = 2, maxLength = 47, text = \"Land anywhere, damage and Berry foes\""
+	myUseSkillScript < uid=86D640765A99A45A00009DBCA68A11B5 > = DLC3_MintBerryCrunch_Power01_Land
+	myAnimationState power3
+	myRequiresValidTarget FALSE
+	myUseMintBerryCrunchRelocation TRUE
+	myTuningData < uid=86D640765A99A45A00009DBDD1F78D82 > = dlc3_pwr_mintberrycrunch_land_Tuning
+	myCameraPreset < uid=B9E930CA5A9F2F1900009D97E6B3ABFC > = MintBerry_Power01B
+	mySelfStatusEffects
+	{
+	}
+	myActionPlusData
+	{
+		myUseActionPlus FALSE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusEndTime 0.0
+				myActionPlusPresetEnum Mash_Normal
+			}
+		}
+	}
+}
+

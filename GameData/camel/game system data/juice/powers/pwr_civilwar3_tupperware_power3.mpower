@@ -1,0 +1,10 @@
+include ./pwr_civilwar_tupperware_power3.mpower
+include ./mm31_civilwar2_tupperware_power3.mpower
+
+CombatPower pwr_civilwar3_tupperware_power3 < uid=86C9308257CA00A600005BC29FE03B2B > : MM31_civilwar2_tupperware_power3
+{
+	myPowerEvaluationData
+	{
+	}
+}
+

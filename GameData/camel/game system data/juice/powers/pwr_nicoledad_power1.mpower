@@ -1,0 +1,35 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./enemypowers.mvernon.juice
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_NicoleDad_power1 < uid=6D7AC9B15743992B00002DF0FD582C3B >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/NicholeDad_Power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"knife attack\", description = \"nicholedad_power1name\", enabled = true, guid = #9D0E6196596D009300008B55B7405B70, lineVersion = 0, maxLength = 18, text = \"Butter Knifing\""
+	myUseSkillScript < uid=6D7AC9B15743992B00002DF1D8E1841E > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B15743992B00002DF2C6920A5F >
+		{
+			myPriority 10
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=6D7AC9B15743992B00002DF35CE43722 > = pwr_nicoleDad_power1_MVernon_Tuning
+	myCameraPreset < uid=86C93082591B5DE1000071C0B558487C > = Preset_Generic_Melee
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

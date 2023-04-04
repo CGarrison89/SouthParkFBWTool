@@ -1,0 +1,8 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/buddypower_timefart.mskillscriptjuice
+
+Power "[BuddyPower] TimeFart" < uid=F4B637F855F9665300000087C558DBBD >
+{
+	myUseSkillScript < uid=F4B637F855F9665300000088A3AB59E8 > = BuddyPower_TimeFart
+}
+

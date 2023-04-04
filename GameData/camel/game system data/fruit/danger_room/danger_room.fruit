@@ -1,0 +1,197 @@
+include "camel/game system data/fruit/helpers/helpers_types.fruit"
+include "camel/game system data/fruit/danger_room/danger_room_dataenum_types.fruit"
+include "camel/game system data/fruit/achievement/achievementconditionsubject.fruit"
+include "camel/game system data/fruit/achievement/achievement.fruit"
+include "camel/game system data/fruit/dlc/DlcUnlockingRewardTypes.fruit"
+include "camel/game system data/fruit/ui/pausemenu/charactersheet.fruit"
+
+
+///////////////////////////////////////////////////////////////////////////
+//
+/////  Room Types
+//
+
+class DangerRoomLocationSpawn
+{
+	vec2f myGridCoordinate < tooltip="Define what position to use" >
+	CardinalDirection myHeading
+}
+
+class DangerRoomLocationCombat
+{
+	vec2f myGridCoordinate < tooltip="Define what position to use" >
+	CardinalDirection myHeading
+}
+
+class DangerRoomActorLocations
+{
+	DangerRoomLocationSpawn mySpawn
+	DangerRoomLocationCombat myCombat
+}
+
+list SkillScriptList
+{
+	file < bhv=asset assettype="Skill Script" tooltip="Skill Script executed on referee entity" >
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+/////  Wave
+//
+list DangerRoomWaveTypeList
+{
+	DangerRoomWaveType
+}
+
+class DangerRoomWaveConfig
+{
+	bool myEnable true < tooltip="Enable or Disable the Wave" >
+	int myDifficultyHP 10 < tooltip="Difficulty HP Scaler. should not be 0" >
+	int myDifficultyDamage 10 < tooltip="Difficulty Damage Scaler" >
+	bool myDifficultyDynamic true < tooltip="Scale the difficulty of actors based on the player artifact might" >
+	SkillScriptList mySkillScripts < tooltip="Will be apply on all actors at presentation time for the purpose of modifying actors" >
+}
+
+class DangerRoomEnemy
+{
+	file myAsset < bhv=asset assettype=actor tooltip="Reference the NPC asset" >
+	DangerRoomActorLocations myLocations < tooltip="Locations spawning & presentation of actor" >
+}
+
+list DangerRoomEnemyList
+{
+	DangerRoomEnemy
+}
+
+class DangerRoomCompositionEnemies
+{
+	DangerRoomEnemyList myFormation < tooltip="Enemy" >
+}
+
+class DangerRoomCompositionAllies
+{
+	DangerRoomActorLocations myMC
+	DangerRoomActorLocations myBuddy1
+	DangerRoomActorLocations myBuddy2
+	DangerRoomActorLocations myBuddy3
+}
+
+class DangerRoomWave
+{
+	DangerRoomWaveType myId < tooltip="Wave Id" >
+	DangerRoomWaveConfig myConfig < tooltip="Wave configuration" >
+	DangerRoomCompositionAllies myAllyComposition < tooltip="Allies Modifier and Constraint" >
+	DangerRoomCompositionEnemies myEnemyComposition < tooltip="Enemies Modifier and Constraint" >
+}
+
+list DangerRoomWaveList
+{
+	DangerRoomWave
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+/////  Arena
+//
+list DangerRoomArenaTypeList
+{
+	DangerRoomArenaType
+}
+
+class DangerRoomArenaUI
+{
+	varmap myTitle < bhv="localization" tooltip="UI Title" >
+	int myChallengeSortValue 100 < tooltip="The order the data will be sorted for UI display. Smaller is Higher Priority. Can be negative" >
+	int myDifficultySortValue 100 < tooltip="The order the data will be sorted for UI display. Smaller is Higher Priority. Can be negative" >
+	file myRoomIcon "" < types=*.png,*.dds tooltip="Icon for the room slot in the UI" >
+}
+
+class DangerRoomArenaConfig
+{
+	bool myEnable true < tooltip="Enable or Disable the Room" >
+	DangerRoomArenaTypeList myLockedByArena < tooltip="Arena who must have been completed for this room to be available" >
+	SkillScriptList mySkillScripts < tooltip="Purpose of configuring the  globally" >
+	string myLootTable < tooltip="Define the loot table obtain on win" >
+	int myCombatCode 0 < tooltip="Combat Contextual Identifier use by multiple mechanism" >
+	varmap myCombatModifier < bhv="localization" tooltip="Challenge text that will be shown in the UI" >
+	varmap myCombatDescription < bhv="localization" tooltip="Description text for the combat" >
+	AchievementConditionSubject myRewardAchievementProgress < tooltip="Progress statistic to update when won for first time" >
+	bool myIsUltra false < tooltip="Is Ultra?" >
+}
+
+class DangerRoomArenaLauncher
+{
+	file myCellLogic < bhv=asset assettype="cell logic" tooltip="Cell Logic to load" >
+	uid mySpawnPointUID < bhv=entitypicker entitytype="CSpawnPoint" tooltip="The UID of the Spawn Point." >
+}
+
+class DangerRoomArena
+{
+	DangerRoomArenaType myId < tooltip="Identifier of the room for lookup" >
+	DangerRoomArenaConfig myConfig < tooltip="Settings to configure the room" >
+	DangerRoomWaveList myWaves < tooltip="sequential list of rounds" >
+	DangerRoomArenaLauncher myLauncher < tooltip="Execution options to use the room" >
+	DangerRoomArenaUI myUI  < tooltip="UI settings" >
+}
+
+list DangerRoomArenaList
+{
+	DangerRoomArena
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+/////  Danger Room
+//
+class DangerRoomsConfigDebug
+{
+	DangerRoomArenaType myArena < tooltip="Define the room to always use" >
+	DangerRoomWaveTypeList myWaveSequence  < tooltip="Define the order the wave will be executed in" >
+	bool myRepeatSequence false < tooltip="Repeat the sequence once completed" >
+}
+
+class DangerRoomsConfig
+{
+	DangerRoomsConfigDebug myDebug
+}
+
+class DangerRooms
+{
+	DangerRoomsConfig myConfig < tooltip="Configure The Danger Room" >
+	DangerRoomArenaList myArena < tooltip="Define All Room available" >
+}
+
+class DangerStageConfig
+{
+	DangerRoomArenaType myLeftRoom
+	DangerRoomArenaType myCenterRoom
+	DangerRoomArenaType myRightRoom
+	file myRewardIcon "" < types=*.png,*.dds tooltip="Icon depicting reward for winning first 3 rooms" >
+	Achievement* myRewardAchievement < tooltip="Achievement of the reward" >
+	string myLootTable < tooltip="Define the loot table obtain on win" >
+	DLC_DD_UnlockingRewardType mySavedRewardType
+}
+
+class DangerStage
+{
+	DangerRoomStageType myId < tooltip="Identifier of the stage for lookup" >
+	varmap myStageName < bhv="localization" tooltip="Name of the stage" >
+	file myStageIcon "" < types=*.png,*.dds tooltip="Icon drawn in the background of the hex in the UI" >
+	DangerStageConfig myStage
+	DangerStageConfig myUltraStage
+}
+
+list DangerStageList
+{
+	DangerStage
+}
+class DangerStages
+{
+	DangerStageList myStages
+}
+
+class TimmyKryptoniteEnemyStage
+{
+	CharacterSheetEnumValue*	myCharacterSheetEnumValue
+	DangerRoomEnemyList myEnemyList
+}

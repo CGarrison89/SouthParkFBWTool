@@ -1,0 +1,65 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets.juice"
+include camel/skillscript/pwr_beerdrunkrandy_playanimwithtaunt_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower pwr_beerdrinkrandy_melee_updown < uid=3267E0D0588A4B0B001F47BA25157B98 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Randy_BitchSlap.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/1_range_cross.dds"
+	myUIName "contextComment = \"\", description = \"temp_pwr_beerdrinkrandy_melee Name\", enabled = true, guid = #3267E0D0588A4B0B001F47B8E5A44AFF, lineVersion = 2, maxLength = 16, text = \"Party Foul\""
+	myUIDescription "contextComment = \"\", description = \"pwr_beerdrinkrandy_melee Description\", enabled = true, guid = #3267E0D0588A4B0B001F47B994D1FF77, lineVersion = 1, maxLength = 52, text = \"Randy damages and knocks his enemy back.\""
+	myUseSkillScript < uid=3267E0D0588A4B0B001F47BBC45B4853 > = pwr_beerdrunkrandy_playanimwithtaunt_script
+	myAnimationState power1
+	myNumberOfAttackEvents 2
+	myShouldRepositionBeforeExecution FALSE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "2 Targets U/D" < uid=3267E0D0588A4B0B001F47BC036F1195 >
+		{
+			myPriority 50
+			myNumLiveEnemiesRequired 0
+			myMinimumKills 0
+			myMinimumAffectedTargets 2
+			myMaximumDistanceToEnemies 10000
+			myAIDesirableType None
+			myValidDirections
+			{
+				myLeft FALSE
+				myRight FALSE
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "1 Targets U/D" < uid=3267E0D05913CF3800063CB6CA64DE92 >
+		{
+			myPriority 45
+			myMinimumAffectedTargets 1
+			myValidDirections
+			{
+				myLeft FALSE
+				myRight FALSE
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D05913DB610003B1569FF98A51 >
+		{
+			myPriority 45
+			myAggroPriority 1045
+			myRequireAggroTarget TRUE
+		}
+	}
+	myTuningData < uid=3267E0D0588A4B0B001F47BD185E7CC8 > = enemy_pwr_mm08_beerdrunkrandy_melee_updown_amcclay_Tuning
+	myCameraPreset < uid=86C930825914A8DA00007660A75A6FFF > = Preset_Generic_Melee
+	myValidDirections
+	{
+		myLeft TRUE
+		myRight TRUE
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

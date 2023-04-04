@@ -1,0 +1,36 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/simple_rush_damage_script.mskillscriptjuice
+
+CombatPower pwr_beerdrinkrandy_rush_location < uid=3267E0D058890A770004BA2F6B786ECA >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/randy_drunkrush.dds"
+	myUIName "contextComment = \"\", description = \"temp_pwr_beerdrinkrandy_rush Name\", enabled = true, guid = #3267E0D058890A770004BA2D958131BB, lineVersion = 0, maxLength = 16, text = \"Drunk Rush\""
+	myUIDescription "contextComment = \"\", description = \"pwr_beerdrinkrandy_rush Description\", enabled = true, guid = #3267E0D058890A770004BA2E2E466B2B, lineVersion = 0, maxLength = 58, text = \"Randy desperately rushes through his enemies.\""
+	myAnimationState power1
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D058890A770004BA30520DD4DB >
+		{
+			myPriority 50
+			myNumLiveEnemiesRequired 0
+			myMinimumAffectedTargets 1
+			myAIDesirableType A
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	mySecondarySkillScript < uid=3267E0D058890A770004BA31CE9D3BC8 > = Simple_Rush_Damage_Script
+	myTuningData < uid=3267E0D058890A770004BA32D39F0E03 > = enemy_pwr_mm08_beerdrunkrandy_rush_location_amcclay_Tuning
+	myCameraPreset < uid=3267E0D058890A770004BA337B392484 > = NULLREFERENCE
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

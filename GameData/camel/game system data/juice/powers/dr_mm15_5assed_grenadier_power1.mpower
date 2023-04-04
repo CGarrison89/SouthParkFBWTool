@@ -1,0 +1,8 @@
+include ./mm15_5assed_grenadier_power1.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower dr_mm15_5assed_grenadier_power1 < uid=8585E53F5A0B69D0007396578CCB0967 > : mm15_5assed_grenadier_power1
+{
+	myTuningData < uid=8585E53F5A0B6A750073966E7DCEBBBB > = pwr_dr_mm15_5assed_grenadier_power1_Tuning
+}
+

@@ -1,0 +1,11 @@
+include ./combatpowerincludes.juice
+include "camel/game system data/juice/items/timefart_skip_keyitem.mitem"
+include camel/skillscript/pwr_timefart_glitch.mskillscriptjuice
+
+CombatTimeFartPower pwr_com_timefartglitch < uid=F0F399BA589D13AF000016EF05A78DFC >
+{
+	myUseSkillScript < uid=F0F399BA589D144E0000188ED98309E4 > = pwr_timefart_glitch
+	myCooldown 3
+	myRequiredItem < uid=F0F399BA589D13AF000016F0259FE68F > = timefart_skip_keyitem
+}
+

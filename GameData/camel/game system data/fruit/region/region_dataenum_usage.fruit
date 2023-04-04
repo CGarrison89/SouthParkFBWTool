@@ -1,0 +1,43 @@
+
+enum RegionUsageEnum
+{
+	// Static entry. DO NOT ERASE
+	CollisionFootprint
+	Targetable
+	Containment
+	Interaction1
+	UI
+	Interaction2
+	Interaction3
+	Interaction4
+	CombatCamera
+	InteractionFront
+	InteractionBack
+	InteractionRight
+	InteractionLeft
+	InteractionArea
+	
+	NotSet
+    PushPullOnlyBlocker
+
+	// EDIT from here ONLY
+	FartInteractionFront
+	FartInteractionBack
+	FartInteractionRight
+	FartInteractionLeft
+	FartInteractionArea
+	FartVictimArea
+	FartWitnessArea
+	FartExploreVictimReceptor
+	ProximityNearReceptor
+	ProximityFarReceptor
+	PunchInteractionFront
+	PunchInteractionBack
+	PunchInteractionRight
+	PunchInteractionLeft
+    PushPullCollisionFootprint
+    PushPullCollisionFootprintOrigin
+	BuddyPowersGlimmerEffect
+	PunchExploreVictimReceptor
+	InteractionExploreReceptor
+}

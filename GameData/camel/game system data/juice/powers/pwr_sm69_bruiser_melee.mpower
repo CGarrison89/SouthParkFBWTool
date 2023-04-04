@@ -1,0 +1,7 @@
+include ./pwr_sm22_bruiser_melee.mpower
+
+CombatPower pwr_sm69_bruiser_melee < uid=8585E53F57ACCAFB0000080308C5353C > : pwr_sm22_bruiser_melee
+{
+	myTuningData < uid=8585E53F57ACCAFB00000804E996805A > = pwr_sm69_bruiser_melee_Adrian_Tuning
+}
+

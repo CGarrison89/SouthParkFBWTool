@@ -1,0 +1,64 @@
+include ./enemy_pwr_archetype_peashooter_st_ranged.mpower
+include ./enemypowers.adrian.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/projectiles/projectile_ninja_star_mm33_power05.mprojectile"
+
+CombatPower pwr_mm34_ninja_kim_ranged_bleeding < uid=8585E53F595E71190003E5EFC54079AA > : enemy_pwr_archetype_peashooter_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/ninja_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/3_range.dds"
+	myUseSkillScript < uid=8585E53F595E71190003E5F0AC6BAB13 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power5
+	myProjectile < uid=8585E53F595E71190003E5F185C626E6 > = projectile_ninja_star_mm33_power05
+	myPowerEvaluationData
+	{
+		PowerEvaluationData Range3 < uid=8585E53F595E71190003E5F2E80E0742 >
+		{
+			myPriority 25
+			myPreferredRange 3
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=8585E53F595E71190003E5F32E45BEC0 >
+		{
+			myPriority 20
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData killPrioirty < uid=8585E53F595E71190003E5F4DF87BB28 >
+		{
+			myPriority 26
+			myMinimumKills 1
+		}
+		PowerEvaluationData Range2 < uid=8585E53F595E71190003E5F56BC24728 >
+		{
+			myPriority 24
+			myPreferredRange 2
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Range1 < uid=8585E53F595E71190003E5F6F36E6905 >
+		{
+			myPriority 23
+			myPreferredRange 1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=8585E53F595E71190003E5F7F0DE7A16 > = pwr_mm34_ninja_kim_ranged_bleeding_Adrian_Tuning
+}
+

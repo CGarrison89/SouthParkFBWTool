@@ -1,0 +1,22 @@
+include ./pwr_mysterion_power3.mpower
+
+CombatPower MM31_civilwar2_mysterion_power3 < uid=86D64076575A277D0001B1AE80620FE8 > : pwr_mysterion_power3
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D64076575A28510001B1D9B812668D >
+		{
+			myPriority 60
+			myMinimumAffectedTargets 1
+			myTargetHealthLessThanPercentage 50.0
+			mySelfHealthLessThanPercentage 101.0
+		}
+		PowerEvaluationData enraged < uid=86D64076575B074C00017D85EB8AC168 >
+		{
+			myPriority 60
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+		}
+	}
+}
+

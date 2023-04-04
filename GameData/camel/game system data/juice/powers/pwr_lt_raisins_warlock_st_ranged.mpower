@@ -1,0 +1,9 @@
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_LT_raisins_warlock_st_ranged < uid=86C93082576839360000036033052A39 > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/raisingirl_melee.dds"
+	myTuningData < uid=86C9308257683936000003610C98C51F > = pwr_LT_raisins_warlock_st_ranged_Kevin_Tuning
+}
+

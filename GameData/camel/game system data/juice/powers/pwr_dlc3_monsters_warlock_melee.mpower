@@ -1,0 +1,38 @@
+include ./enemy_pwr_archetype_bruiser_melee.mpower
+include ./dlc3_enemypowers.juice
+
+CombatPower pwr_DLC3_Monsters_Warlock_melee < uid=86C930825A99A56B00022E7AB2AFF150 > : enemy_pwr_archetype_bruiser_melee
+{
+	myUIName "contextComment = \"\", description = \"pwr_DLC3_Monsters_Warlock_melee_name\", enabled = true, guid = #86C930825A99AA4100022ECF9BADEE51, lineVersion = 1, maxLength = 16, text = \"Monster Lash\""
+	myUIDescription "contextComment = \"\", description = \"pwr_DLC3_Monsters_Warlock_melee_description\", enabled = true, guid = #86C930825A99BD2A00022EF51962AD8E, lineVersion = 0, maxLength = 39, text = \"DLC3 Warlock Melee description\""
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C930825A99D5580000A47B63B06EFD >
+		{
+			myPriority 20
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C930825A99D5580000A47C518022ED >
+		{
+			myPriority 2000
+			myAggroPriority 2000
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Kill < uid=86C930825A99D5580000A47D4E859E88 >
+		{
+			myPriority 1000
+			myMinimumKills 1
+		}
+	}
+	myTuningData < uid=86C930825A99A56B00022E7BC1AAAF09 > = pwr_DLC3_Monsters_Warlock_Melee_Tuning
+}
+

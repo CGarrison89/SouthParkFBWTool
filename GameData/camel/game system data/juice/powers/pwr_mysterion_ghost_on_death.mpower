@@ -1,0 +1,32 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_pet_damage_script_with_suicide.mskillscriptjuice
+include camel/skillscript/camel_spawn_ghost_mysterion.mskillscriptjuice
+include camel/skillscript/despawn_self.mskillscriptjuice
+
+CombatPower pwr_mysterion_ghost_on_death < uid=86D64076576AC82E0001179317F40620 >
+{
+	myUIName "contextComment = \"\", description = \"pwr_mysterion_ghost_on_death Name\", enabled = true, guid = #51C546C65774DC3A0000015B95015D80, lineVersion = 0, maxLength = 23, text = \"Ghost Resurrection\""
+	myUseSkillScript < uid=86D64076576AC82E0001179407617952 > = Despawn_self
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86D64076576AC82E00011795FE11F4AA >
+		{
+			myPriority 0
+			myTargetHealthLessThanPercentage 1.0
+			mySelfHealthLessThanPercentage 1.0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86D64076576AC82E00011796A90E3965 > = enemy_pwr_archetype_explosive_on_death_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

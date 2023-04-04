@@ -1,0 +1,62 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_thecoon.juice"
+
+CombatPower pwr_mm17_thecoon_mitch_power1 < uid=6D7AC9B1596FE04E0034664AC481DA10 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/mitchcoon_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.DDS"
+	myUIName "contextComment = \"Coon Power 1 Name\", description = \"pwr_thecoon_power1 Name\", enabled = true, guid = #6D7AC9B1596FE04E00346647E94CE9A6, lineVersion = 2, maxLength = 16, text = \"Coon Claws\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_thecoon_power1 Description\", enabled = true, guid = #6D7AC9B1596FE04E003466484D6E1A98, lineVersion = 1, maxLength = 148, text = \"Fighting crime one slash at a time, the Coon lashes out, striking an enemy with his claws and inflicting Bleeding.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_thecoon_power1 Short Description\", enabled = true, guid = #6D7AC9B1596FE04E00346649EB6695F3, lineVersion = 0, maxLength = 56, text = \"A terrible scratching that applies Bleeding\""
+	myUseSkillScript < uid=6D7AC9B1596FE04E0034664B4A0E1AFF > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 1
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B1596FE04E0034664C778973FC >
+		{
+			myPriority 25
+		}
+		PowerEvaluationData Enraged < uid=6D7AC9B1596FE04E0034664DA89FB9F3 >
+		{
+			myPriority 25
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+		}
+	}
+	myTuningData < uid=6D7AC9B1596FE04E0034664E6204A7AA > = enemy_pwr_archetype_swarmer_melee_MNguyen_Tuning
+	myCameraPreset < uid=6D7AC9B1596FE04E0034664F58E790F7 > = TheCoon_Power01
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.25
+				myActionPlusEndTime 0.208333
+				myActionPlusPresetEnum Normal
+			}
+			ActionPlusMiniGameData 2
+			{
+				myActionPlusAdditionalTime 0.25
+				myActionPlusEndTime 0.375
+				myActionPlusPresetEnum Normal
+			}
+			ActionPlusMiniGameData 3
+			{
+				myActionPlusAdditionalTime 0.25
+				myActionPlusEndTime 0.666667
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

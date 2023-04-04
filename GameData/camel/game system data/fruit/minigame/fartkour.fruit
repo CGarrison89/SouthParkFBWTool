@@ -1,0 +1,45 @@
+include "camel/game system data/fruit/buddy/PowerBuddyEntryExitSettings.fruit"
+
+class Settings
+{
+	float myKiteDefaultJumpTime
+	float myKiteRingFadeInTime
+	float myKiteRingShrinkTime
+	float myKiteRingActiveNegativeOffset
+	float myKiteRingActivePositiveOffset
+	float myKiteRingMinSize
+	float myKiteRingFadeOutTime
+	string myKiteRingShrinkSpeedCurve "{ defaultLeftSlope = 0, defaultRightSlope = 0, defaultValue = 0, interpolator = 0, isRefinedSampling = true, keys2 = { inTangents = { -0 0, -0.45 -0.05 , }, outTangents = { 0.25 0.42, 0 0, }, properties = { 3, 1027, }, values = { 0 0, 1 1, }, }, numKeys = 2, }" < bhv=inputgraph >
+	float myHumanKiteFailTimerBeforeLeave
+	float myHumanKiteSuccessTimerBeforeLeave
+	vec2f myButtonDisplayOffset
+	vec3f myHumanKiteAttachOffset
+	vec3f myHumanKiteDetachOffset
+	float mySpecialFirstJumpFlowAnimationTime
+}
+
+class CasaBonitaSettings
+{
+	float myChangeDefaultToDisableTargetCameraTime
+}
+
+class FartkourAnimations
+{
+	string myIntroAnimation
+	string myMiddleAnimation
+	string myOutroAnimation
+	float myOutroAnimationDuration 0.45
+	string myLandIntroAnimation
+	string myHKBeforeLandPauseAnimation
+	string myLandAnimation
+	string myLandExitAnimation
+	PowerBuddyEntryExitAnimationSettingTypeEnum myCustomBuddyExitSetting Fartkour
+	bool myIsOppositeLandSide
+	bool mySkipLandingVO
+	string myFailOnPointAnimation
+}
+
+list CustomAnimationsList
+{
+	FartkourAnimations
+}

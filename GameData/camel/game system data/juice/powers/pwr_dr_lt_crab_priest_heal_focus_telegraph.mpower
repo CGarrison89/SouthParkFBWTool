@@ -1,0 +1,12 @@
+include ./pwr_lt_crab_priest_heal_focus_telegraph.mpower
+include ./dr_pwr_lt_crab_priest_heal_focus_execute.mpower
+
+CombatPower pwr_dr_lt_crab_priest_heal_focus_telegraph < uid=C87888A05A0CB2070002E03AD671119C > : pwr_lt_crab_priest_heal_focus_telegraph
+{
+	myTelegraphData
+	{
+		myTelegraphedPowerName dr_pwr_lt_crab_priest_heal_focus_execute
+		myTelegraphingAnimationName ""
+	}
+}
+

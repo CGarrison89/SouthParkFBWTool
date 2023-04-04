@@ -1,0 +1,8 @@
+enum UIMessageBoxType
+{
+	None
+	TRC
+	Error
+	Warning
+	Looting
+}

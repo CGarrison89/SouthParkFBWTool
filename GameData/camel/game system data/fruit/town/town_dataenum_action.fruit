@@ -1,0 +1,14 @@
+
+enum TownActorActionTypeEnum
+{
+	NOTSET
+	idle
+	move
+	
+	clap
+	knock
+	sit
+	
+	lean
+	sitting
+}

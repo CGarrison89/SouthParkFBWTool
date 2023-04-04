@@ -1,0 +1,35 @@
+include camel/skillscript/dlc3_finalgirl_sticky_bomb_part1.mskillscriptjuice
+include "camel/game system data/juice/camera/tardicaca/uber_camera_powers_presets_finalgirl.juice"
+include ./dlc3_playerpowers.juice
+
+CombatPower pwr_dlc3_finalgirl_power03a < uid=86D640765A98715700009DB9B036B474 >
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/LastGirl_Power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/lobbed_ST_no_min_range.dds"
+	myUIName "contextComment = \"Final Girl's Power 03a Name\", description = \"pwr_dlc3_finalgirl_power03a Name\", enabled = true, guid = #86D640765A98715700009DB71FBB133A, lineVersion = 1, maxLength = 14, text = \"Hammer Bomb\"}"
+	myUIDescription "contextComment = \"Final Girl's Power 03a Long Description\", description = \"pwr_dlc3_finalgirl_power03a Long Description\", enabled = true, guid = #9D0E61965AA9C2AB0000A485BF50E64E, lineVersion = 0, maxLength = 176, text = \"Target a foe with the Hammer Bomb, move the New Kid to determine the enemy's knockback direction, and detonate for damage and Bleeding.\""
+	myUIShortDescription "contextComment = \"Final Girl's Power 03a Short Description\", description = \"pwr_dlc3_finalgirl_power03a Short Description\", enabled = true, guid = #86D640765A98715700009DB8DA95CC41, lineVersion = 1, maxLength = 31, text = \"Target foe for exploding\"}"
+	myUseSkillScript < uid=86D640765A98715700009DBA0600C5ED > = DLC3_FinalGirl_Sticky_Bomb_Part1
+	myAnimationState power1
+	myTuningData < uid=86D640765A98715700009DBBC1E524D4 > = dlc3_pwr_finalgirl_sticky_bomb_part1_Tuning
+	myCameraPreset < uid=86D640765A98715700009DBCB5660F6D > = FinalGirl_Power3A
+	myPowerGroup Normal
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+	myActionPlusData
+	{
+		myUseActionPlus FALSE
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusEndTime 0.0
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+

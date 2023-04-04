@@ -1,0 +1,27 @@
+include ./pwr_com_turboclub.mpower
+include ./enemypowers.adrian.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/camel_simple_damage_script.mskillscriptjuice
+
+CombatPower pwr_mm01_mc_fart < uid=8585E53F59417F64000D5BAFEB04BC72 > : pwr_com_turboClub
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/King_Power6.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/multilane.dds"
+	myUIName "contextComment = \"\", description = \"pwr_com_turboclub Name\", enabled = true, guid = #8585E53F59417F64000D5BAE7D9C5667, lineVersion = 0, maxLength = 14, text = \"Knock Back \""
+	myUseSkillScript < uid=8585E53F59417F64000D5BB017EEDBDD > = Camel_Simple_PlayAnim_Script
+	myAnimationState king_power6
+	myNumberOfAttackEvents 1
+	myShouldRepositionBeforeExecution FALSE
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+	}
+	myTuningData < uid=8585E53F59417F64000D5BB3264D457C > = pwr_mm01_mc_fart_knockback_Adrian_Tuning
+	myCameraPreset < uid=8585E53F59417F64000D5BB4471C425B > = Preset_Generic_Melee_KB
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

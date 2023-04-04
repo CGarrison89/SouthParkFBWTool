@@ -1,0 +1,111 @@
+enum	MenuTypes
+{
+	Title
+	Pause
+	Game
+}
+
+enum	SubMenuTypes
+{
+	Title
+	Option
+	Pause
+	Game
+}
+
+enum	MenuActions
+{
+	Continue
+	"New Game"
+	"Load Game"
+	"Syetrm Options"
+	Store
+	UbisoftClub
+	Credits
+
+	"Back To Game"
+	"Go To Main Menu"
+	Save
+	Load
+	Options
+	Help
+	UPlay
+	Timefart
+
+	"Controller Vibration"
+	"Audio Language"
+	Subtitles
+	"Subtitle Lamguage"
+	"Screen Edge Adjustor"
+	"Manu Language"
+	"Graphics Level"
+	
+	SUITup
+	Allies
+	Powers
+	Artifacts
+	Craftsy
+	Settings
+	MapQuest
+	DropStuff
+	"Character Sheet"
+	COONstagram
+}
+
+enum	CrawlEndReason
+{
+	"Combat Start"
+	"Exit Game"
+}
+
+enum	CombatEndReason
+{
+	victory
+	defeat_death
+	defeat_condition_failed
+	exit
+}
+
+enum	ExplorationEndReason
+{
+	"Combat Start"
+	"Exit Game"
+}
+
+enum	BackstoryEndReason
+{
+	Success
+	Death
+	Fail
+	Restart
+	Quit
+}
+
+enum	CutsceneEndReason
+{
+	completed
+	skipped
+	exit
+}
+
+enum ContextType
+{
+	None
+	Exploration
+	Crawl
+	Combat
+}
+
+enum	ContextEndReason
+{
+	None
+	completed
+	skipped
+	exit
+}
+
+enum	PuzzleStatus
+{
+	solved
+	unsolved
+}

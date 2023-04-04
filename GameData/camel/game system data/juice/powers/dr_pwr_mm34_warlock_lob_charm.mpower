@@ -1,0 +1,65 @@
+include ./pwr_mm34_warlock_lob_charm.mpower
+
+CombatPower dr_pwr_mm34_warlock_lob_charm < uid=8585E53F5A1DA6240012BC5FDC5060A3 > : pwr_mm34_warlock_lob_charm
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData VIP < uid=8585E53F5A1DA6240012BC60CA24F7D1 >
+		{
+			myPriority 30
+			myNumLiveEnemiesRequired 2
+			myPreferredRange -1
+			myAIDesirableType VIP
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry NotCharmed
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+					myFollowingCondition AND
+				}
+				StatusEffectConditionalEntry NotCharmImmuned
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect CharmedImmunity
+				}
+			}
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Confused
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Confused
+				}
+			}
+		}
+		PowerEvaluationData CanNotReachVIP < uid=8585E53F5A1DA6240012BC617DD856A6 >
+		{
+			myPriority 25
+			myNumLiveEnemiesRequired 2
+			myStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry NotCharmed
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+					myFollowingCondition AND
+				}
+				StatusEffectConditionalEntry NotCharmImmuned
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect CharmedImmunity
+				}
+			}
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry Confused
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Confused
+				}
+			}
+		}
+	}
+}
+

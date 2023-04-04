@@ -1,0 +1,44 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower mm16_jared_power1 < uid=3267E0D05750A084000018181961635C >
+{
+	myRangeIconImage "camel/baked/assets/ui/power selection/enemy/Jared_ShoulderRub.DDS"
+	myUIName "contextComment = \"\", description = \"mm16_jared_power1 Name\", enabled = true, guid = #51C546C65774D94E000000B4F3BA9943, lineVersion = 0, maxLength = 16, text = \"Shoulder Rub\""
+	myUseSkillScript < uid=3267E0D05750A084000018196B3A5B62 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D05750A0840000181ADBC6F446 >
+		{
+			myPriority 30
+			myAggroPriority 1080
+			myPreferredRange -1
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C93082583F93B30001514FB120E693 >
+		{
+			myPriority 30
+			myAggroPriority 1080
+			myRequireAggroTarget TRUE
+			myPreferredRange -1
+			myAIDesirableType VIP
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=3267E0D05750A0840000181B03ED7282 > = enemy_pwr_mm16_jared_power1_amcclay_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

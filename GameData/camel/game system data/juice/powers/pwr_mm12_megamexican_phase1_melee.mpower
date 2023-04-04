@@ -1,0 +1,42 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/megamexican_lavapiss_surroundingcells.mskillscriptjuice
+include ./buddypowers.joh.juice
+include "camel/game system data/juice/camera/enemy powers/uber_camera_powers_presets_mm12_chaossupreme.juice"
+include ./enemypowers.mvernon.juice
+include camel/skillscript/magamexican_lavapiss.mskillscriptjuice
+include camel/skillscript/camel_simple_chaos_anim_and_move.mskillscriptjuice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower pwr_mm12_megamexican_Phase1_Melee < uid=6D7AC9B157E9906200000A33F759279D >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/mexsupreme_phase1_power3.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/chaos_aoe_melee.dds"
+	myUIName "contextComment = \"Human Kite Power 1 Name\", description = \"pwr_mm12_megamexican_lavapiss Name\", enabled = true, guid = #6D7AC9B157E9906200000A31D356B624, lineVersion = 2, maxLength = 14, text = \"Chaos Stomp\""
+	myUIDescription "contextComment = \"Human Kite Power 1 Description\", description = \"pwr_mm12_megamexican_lavapiss Description\", enabled = true, guid = #6D7AC9B157E9906200000A32263205B7, lineVersion = 1, maxLength = 48, text = \"Rake a target with Kite's laser eyes.\""
+	myUseSkillScript < uid=6D7AC9B157E9906200000A34CBF74D60 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power3
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=6D7AC9B157E9906200000A35AD7625AC >
+		{
+			myPriority 800
+			myAggroPriority 8000
+			myMinimumAffectedTargets 2
+			myValidDirections
+			{
+				myLeft TRUE
+				myRight TRUE
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=6D7AC9B157E9906200000A361BDF9208 > = pwr_com_mm12_megamexican_Phase1Melee_MVernon_Tuning
+	myValidDirections
+	{
+		myUp TRUE
+		myDown TRUE
+	}
+}
+

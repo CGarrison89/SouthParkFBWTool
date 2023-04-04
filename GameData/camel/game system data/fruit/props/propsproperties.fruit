@@ -1,0 +1,127 @@
+include "camel/game system data/fruit/interaction/interactiontype.fruit"
+include "camel/game system data/fruit/powers/powers.fruit"
+include "camel/game system data/fruit/ai/npc.fruit"
+
+enum PropConfigType
+{
+	None
+	Television
+	VideoGameConsole
+	Door
+	GarageDoor
+	Gate
+	Keypad
+	Button
+	Computer
+	Toilet
+	Cabinet
+	Drawer
+	Closet
+	Fridge
+	Loot
+	ToyChest
+	Stripe
+	ExposedWires
+	TrashCan
+	Bed
+	Couch
+	Trash
+	Combat_Destructible
+	FartkourTest
+    Airblaster
+	RangedAttackMagnify
+	Magnify
+	SandblasterGeneric
+	Box
+	TipoverGeneric
+	LiftGeneric
+	FartkourTemplate
+	LiftNoHighlight
+	BreakableNoHighlight
+	MissionCriticalProp_Generic
+	TFPauseHazardProp_Generic
+	InspectionReticle_Generic
+}
+
+enum InteractionType
+{
+	None
+	MagnifyingGlass
+	Rage
+	Fartkour
+	Haywire
+	SandBlaster
+
+}
+
+enum EnvironmentalBuddyPowerType
+{
+	None
+	Fartkour
+	Haywire
+	SandBlaster
+	Shove
+	Lift
+	TipOver
+}
+
+
+class PropInteractionTuning
+{
+}
+
+list PropInteractionTuningList
+{
+	PropInteractionTuning
+}
+
+class PropProperties < uid=auto >
+{
+	string myName
+	varmap myUIName < bhv="localization" >
+	bool myIsInspectionModeTargetable true
+	bool myIsHaywireModeTargetable false
+	bool myInspectionModeHighlight true
+	bool myHaywireHighlight false
+	bool myIsInspectionModeTargetableInCombat false
+	bool myDisplayUIBrackets false
+	bool myIsInspectionModePauseHazard false
+	InteractionType myInteractionType
+	PropConfigType myConfigType
+	PropInteractionTuningList myInteractionTuningList
+}
+
+list PropPropertiesList
+{
+	PropProperties
+}
+
+class InteractionTypeProperties
+{
+	file myIcon < types=*.dds >
+	bool myUseBuddyPower
+	Power* myPower
+	InteractionType myInteractionType
+	file myHologramVfxIcon "camel/baked/assets/vfx/ui/textures/haywire_icon.dds" < types=*.dds >
+    file myHologramOutOfScreenIcon "" < types=*.dds >
+	varmap myHologramName < bhv="localization" >
+}
+
+list InteractionTypePropertiesList
+{
+	InteractionTypeProperties
+}
+
+class PropsProperties
+{
+	PropPropertiesList myPropPropertiesList
+	InteractionTypePropertiesList myInteractionTypePropertiesList
+}
+
+enum WaypointUsage
+{
+	BuddyJumpPoint
+	BuddyEntrancePoint
+	BuddyExitPoint
+	FartkourTargetPoint
+}

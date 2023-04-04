@@ -1,0 +1,8 @@
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include ./enemypowers.kevin.juice
+
+CombatPower pwr_lt_oldpeople_wizard_st_ranged_chilled < uid=86C930825779787C0000018683BD272E > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myTuningData < uid=86C930825779787C0000018752B0A88A > = pwr_LT_oldpeople_wizard_st_ranged_chilled_Kevin_Tuning
+}
+

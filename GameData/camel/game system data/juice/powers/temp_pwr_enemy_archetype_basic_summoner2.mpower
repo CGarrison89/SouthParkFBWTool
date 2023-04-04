@@ -1,0 +1,27 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+
+CombatPower temp_pwr_enemy_archetype_basic_summoner2 < uid=B9E930CA5740917B00000058497A9E03 >
+{
+	myUIName "contextComment = \"\", description = \"temp_pwr_enemy_archetype_basic_summoner2 Name\", enabled = true, guid = #51C546C65774DC75000001E6AF04BA00, lineVersion = 0, maxLength = 20, text = \"Ranged ST 2 DMG\""
+	myUseSkillScript < uid=B9E930CA5740917B00000059C8F0E478 > = Camel_Simple_Placeholder_Damage_Script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=B9E930CA57409ED40000011E9C6EBC65 >
+		{
+			myPriority 10
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=B9E930CA57409A38000000DBC5A89564 > = temp_pwr_enemy_archetype_basic_summoner2_MNguyen_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

@@ -1,0 +1,54 @@
+include ./enemy_pwr_archetype_bruiser_melee_knockback.mpower
+include ./enemypowers.adrian.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+
+CombatPower pwr_sm22_bruiser_melee < uid=8585E53F57A51221000531C6FBF4220C > : enemy_pwr_archetype_bruiser_melee_knockback
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/Ho_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"\", description = \"enemy_pwr_archetype_bruiser_melee_knockback Name\", enabled = true, guid = #EA0BC518599A85FF000528B86EEA6EC4, lineVersion = 1, maxLength = 16, text = \"Regulatin'\"}"
+	myUseSkillScript < uid=86C9308258AE19C400001B2BA763C976 > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 5
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData charmed < uid=B642A89A590A53800012066FE7E63847 >
+		{
+			myPriority 50
+			myAIDesirableType VIP
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry charmed
+				{
+					mySpecialEffect Charmed
+				}
+			}
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData default < uid=B642A89A590A538000120670E37DE6C5 >
+		{
+			myPriority 20
+			myAIDesirableType None
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry charmed
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+				}
+			}
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+	}
+	myTuningData < uid=8585E53F57A51221000531C768838D71 > = pwr_sm22_bruiser_melee_Adrian_Tuning
+}
+

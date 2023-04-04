@@ -1,0 +1,51 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_placeholder_damage_script.mskillscriptjuice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+
+CombatPower mm15_5assed_rogue_power2 < uid=3267E0D057D090700019F16FAC9E02B5 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/enemy/assed_badger_power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"The Multi-Assed Sixth Grader slices up the opponent.\", description = \"enemy_pwr_archetype_rogue_melee Name\", enabled = true, guid = #3267E0D057D090700019F16EF77683C7, lineVersion = 1, maxLength = 6, text = \"Maul\""
+	myUseSkillScript < uid=3267E0D057D090700019F1702C85405F > = Camel_Simple_PlayAnim_Script
+	myAnimationState power1
+	myNumberOfAttackEvents 5
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=3267E0D057D090700019F17139173FA3 >
+		{
+			myPriority 10000
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=3267E0D057D090700019F1727A3CEBFD >
+		{
+			myPriority 1
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Destructible < uid=3267E0D057D090900019F174206AFE9F >
+		{
+			myPriority 2
+			myAIDesirableType A
+		}
+	}
+	myTuningData < uid=3267E0D057D090700019F17326EBC5A5 > = enemy_pwr_mm15_5assed_rogue_power2_amcclay_Tuning
+	myCameraPreset < uid=86C93082592F89E80016C153E67CED7F > = Preset_Generic_Melee
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

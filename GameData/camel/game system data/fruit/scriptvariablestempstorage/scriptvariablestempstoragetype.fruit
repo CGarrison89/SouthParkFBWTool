@@ -1,0 +1,23 @@
+enum ScriptVariablesTempStorageIdentifierType
+{
+    None
+    Shove
+    ShoveNotification
+    ShoveMCNotification
+    ShoveMCInfo
+    BespokeInteraction
+    GenericInteraction
+    BasicInteraction
+    NPCInteraction
+    NPCInfo
+	BuddySpawnNotification
+	BuddySpawnCompleteNotification
+    LootItemInputsEvent
+    LootItemOutputsEvent
+    PuzzleDoor_InputsEvent
+    PuzzleDoor_OutputsEvent
+	Fartkour
+    SandblasterAnimationDir
+	Explosion
+    GarageDoorStatus
+}

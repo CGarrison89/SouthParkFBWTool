@@ -1,0 +1,75 @@
+include "camel/skillscript/skillscript.fruit"
+
+class SavegameOperationProgressMessage
+{
+	varmap mySystemSaving < bhv = "localization" >
+	varmap myGameSaving < bhv = "localization" >
+	varmap myDeleting < bhv = "localization" >
+	varmap myLoading < bhv = "localization" >
+	varmap myCheckingFiles < bhv = "localization" >
+}
+
+class SavegameErrorMessage
+{
+	varmap myCorrupted < bhv = "localization" >
+	varmap myNoSpace < bhv = "localization" >
+	varmap myNewMajorVersion < bhv = "localization" >
+	varmap myNotMatchDLC < bhv = "localization" >
+	varmap myNotMatchDLC_PreOrder < bhv = "localization" >
+	varmap myNotMatchDLC_SeasonPass < bhv = "localization" >
+	varmap myNotMatchDLC_DLC1 < bhv = "localization" >
+	varmap myNotMatchDLC_DLC2 < bhv = "localization" >
+	varmap myNotMatchDLC_DLC3 < bhv = "localization" >
+	varmap myNotMatchDLC_Twitch < bhv = "localization" >
+
+	varmap myDurango_OutOfLocalStorage < bhv = "localization" >
+	varmap myDurango_QuotaExceeded < bhv = "localization" >
+
+	varmap myFatal < bhv = "localization" >
+	
+	varmap myNotMatchMinorVersionForDebug < bhv = "localization" >
+	varmap myNotMatchSLVIDForDebug < bhv = "localization" >
+	varmap myDurango_CannotSync < bhv = "localization" >
+	
+}
+
+class SavegameOperationName
+{
+	varmap mySave < bhv = "localization" >
+	varmap myLoad < bhv = "localization" >
+	varmap myCheckFile < bhv = "localization" >
+	varmap myDelete < bhv = "localization" >
+	varmap myRestore < bhv = "localization" >
+}
+
+class SavegameSettings
+{
+	int myMinorVersion 0x0001
+	file myUI "camel/ui/graphs/savegame_embedded_spawner.muigraph" < types=*.muigraph >
+	file myEmbeddedUI "camel/ui/graphs/savegame_embedded_spawner.muigraph" < types=*.muigraph >
+	file myAutoSavingNotificationUI "camel/ui/graphs/savegame_autosaving_notification.muigraph" < types=*.muigraph >
+	file myDialogUI "camel/ui/graphs/savegame_dialog.muigraph" < types=*.muigraph >
+	float myMinAutoSavingNotificationTime 1
+	int myMaxSlotCount 10
+	int myAutoSaveID 0xFF
+	int myQuickSaveID 0xFE
+	int myEmergencySaveID 0xFD
+	int myDevLoadSaveID 0xFC
+	
+	varmap myTitleShortName < bhv = "localization" >
+	varmap mySystemSaveName < bhv = "localization" >
+	varmap myAutoSaveName < bhv = "localization" >
+	varmap myQuickSaveName < bhv = "localization" >
+	varmap myEmergencySaveName < bhv = "localization" >
+	varmap myManualSaveName < bhv = "localization" >
+	
+	SavegameOperationProgressMessage myOperationProgressMessage
+	SavegameErrorMessage myErrorMessage
+	SavegameErrorMessage myErrorMessage_Orbis
+	SavegameOperationName myOperationName
+	
+	string myGlobalVariableSavedFolderSuffix  "_SaveData"
+	string myGlobalVariableSavedFolderSuffix_PhoneMenu "_SaveDataForPhoneMenu"
+	SkillScript* myQuickSaveSkillScript
+}
+

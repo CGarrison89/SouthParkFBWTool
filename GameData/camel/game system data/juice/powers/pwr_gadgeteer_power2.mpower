@@ -1,0 +1,28 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_gadgeteer2_spawn_pet_menu.mskillscriptjuice
+include camel/skillscript/camel_gadgeteer2_spawn_pet.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_gadgeteer.juice"
+
+CombatPower pwr_gadgeteer_power2 < uid=B9E930CA56DA268A00000146B48ED88A >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/gadgeteer_power2.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/1_range_summon.dds"
+	myPreviewIconImage camel/baked/assets/ui/combat/targeting/icon_Turret_Gadgeteer.DDS
+	myUIName "contextComment = \"Gadgeteer Power 2 Name\", description = \"pwr_gadgeteer_power2 Name\", enabled = true, guid = #51C546C65774DC190000010B41F51DF0, lineVersion = 2, maxLength = 14, text = \"Naff Turret\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_gadgeteer_power2 Description\", enabled = true, guid = #51C546C65774DC190000010CE58C17BD, lineVersion = 1, maxLength = 156, text = \"When you absolutely, positively need to unload a hail of TenderSoft projectiles on your enemies, it's Naff Turret time. \"}"
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_gadgeteer_power2 Short Description\", enabled = true, guid = #9D0E6196579BF63D000044E9FA99E3FF, lineVersion = 0, maxLength = 49, text = \"Drop a turret to provide covering fire\""
+	myUseSkillScript < uid=B9E930CA56DA268A000001472336F30C > = Camel_Gadgeteer2_spawn_pet
+	myAnimationState gadgeteer_power2
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "New PowerEvaluationData (0)" < uid=86D640765743B38200009D5E81E56FF0 >
+		{
+			myPriority 10
+		}
+	}
+	myTuningData < uid=B9E930CA56DA268A00000148C424F462 > = pwr_gadgeteer_power2_Tuning
+	myCameraPreset < uid=B9E930CA59700B890052BF694CD0FC22 > = Gadgeteer_Power02
+	myPowerGroup Normal
+}
+

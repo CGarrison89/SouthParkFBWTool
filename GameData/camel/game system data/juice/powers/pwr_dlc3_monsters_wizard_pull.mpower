@@ -1,0 +1,84 @@
+include ./dlc3_enemypowers.juice
+include ./enemy_pwr_archetype_wizard_st_ranged.mpower
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/dlc3_monster_warlock_pull.mskillscriptjuice
+
+CombatPower pwr_DLC3_Monsters_Wizard_pull < uid=86C930825A99A52100022E6A7E3D6E32 > : enemy_pwr_archetype_wizard_st_ranged
+{
+	myIconImage "camel/baked/assets/ui/DLC/LakeTardicaca/power selection/Monster_Ranged_Power2.dds"
+	myUIName "contextComment = \"\", description = \"pwr_DLC3_Monsters_Wizard_pull_name\", enabled = true, guid = #86C930825A99A52100022E69732C0F45, lineVersion = 1, maxLength = 16, text = \"Monster Pull\""
+	myUIDescription "contextComment = \"\", description = \"pwr_DLC3_Monsters_Wizard_pull_description\", enabled = true, guid = #86C930825A99BD3100022EFE44CF5E6D, lineVersion = 0, maxLength = 36, text = \"DLC3 Wizard Pull description\""
+	myUseSkillScript < uid=B9E930CA5AAC32520000A4F387502113 > = DLC3_Monster_Warlock_Pull
+	myAnimationState power4
+	myPowerEvaluationData
+	{
+		PowerEvaluationData range_4 < uid=86C930825A99CBFA0002305C901E7D6F >
+		{
+			myPriority 50
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myPreferredRange 4
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData range_3 < uid=C87888A05B0F112A00302581F3049769 >
+		{
+			myPriority 40
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myPreferredRange 3
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData range_2 < uid=C87888A05B0F112A003025821E79AE8B >
+		{
+			myPriority 30
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myPreferredRange 2
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData range_1 < uid=C87888A05B0F112A0030258304216B78 >
+		{
+			myPriority 20
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myPreferredRange -1
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C930825A99CBFA0002305DA13A7D01 >
+		{
+			myPriority 2000
+			myAggroPriority 2000
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Kill < uid=86C930825A99CBFA0002305E15437BD4 >
+		{
+			myPriority 1000
+			myPreferNonTelegraphedAttackSourceCell TRUE
+			myMinimumKills 1
+		}
+	}
+	myTuningData < uid=86C930825A99A52100022E6D84D6E5A6 > = pwr_DLC3_Monsters_Wizard_Pull_Tuning
+	myValidDirections
+	{
+		myUp FALSE
+		myDown FALSE
+	}
+}
+

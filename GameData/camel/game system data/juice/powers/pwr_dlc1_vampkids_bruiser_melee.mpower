@@ -1,0 +1,53 @@
+include ./enemy_pwr_archetype_swarmer_melee.mpower
+include ./enemypowers.adrian.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include ./dlc1_enemypowers.juice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_generic.juice"
+include camel/skillscript/pwr_dlc1_vampkid_bruiser_melee.mskillscriptjuice
+
+CombatPower pwr_DLC1_VampKids_Bruiser_melee < uid=86C9308259A5EE8100072F25ABB8AA58 > : enemy_pwr_archetype_swarmer_melee
+{
+	myIconImage "camel/baked/assets/ui/DLC/CasaBonita/power selection/VampBruiser_Power1.dds"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/melee.dds"
+	myUIName "contextComment = \"power name\", description = \"pwr_DLC1_VampKids_Bruiser_melee_name\", enabled = true, guid = #86C9308259EE5DF800009065EC81A4AB, lineVersion = 1, maxLength = 6, text = \"Feed\""
+	myUseSkillScript < uid=86C9308259A5EE8100072F26BC44F083 > = pwr_DLC1_VampKid_Bruiser_Melee
+	myAnimationState power1
+	myShouldRepositionBeforeExecution TRUE
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C9308259A5EE8100072F276008DFF7 >
+		{
+			myPriority 40
+			myAIDesirableType None
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Enraged < uid=86C9308259A5EE8100072F286EF84F6D >
+		{
+			myPriority 60
+			myAggroPriority 1020
+			myRequireAggroTarget TRUE
+			myValidDirections
+			{
+				myUp FALSE
+				myDown FALSE
+			}
+		}
+		PowerEvaluationData Kill < uid=86C9308259A5EE8100072F29007CC280 >
+		{
+			myPriority 50
+			myMinimumKills 1
+		}
+		PowerEvaluationData "destroy prop in arcade combat" < uid=86C930825A037B2E0014D533DF523C7E >
+		{
+			myPriority 35
+			myMinimumKills 0
+			myAIDesirableType A
+		}
+	}
+	myTuningData < uid=86C9308259A5EE8100072F2A9B27EAE4 > = pwr_DLC1_VampKids_Bruiser_melee_Tuning
+}
+

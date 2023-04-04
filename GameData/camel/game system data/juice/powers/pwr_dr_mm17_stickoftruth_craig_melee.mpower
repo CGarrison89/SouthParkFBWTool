@@ -1,0 +1,8 @@
+include ./pwr_mm17_stickoftruth_craig_melee.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower pwr_dr_mm17_stickoftruth_craig_melee < uid=C87888A05A0B71380001640590F4B614 > : pwr_mm17_stickoftruth_craig_melee
+{
+	myTuningData < uid=C87888A05A0B71F300018ADB70134472 > = pwr_dr_mm17_stickoftruth_craig_melee_Tuning
+}
+

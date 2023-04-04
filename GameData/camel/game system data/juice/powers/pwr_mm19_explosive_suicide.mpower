@@ -1,0 +1,24 @@
+include ./enemy_pwr_suicide_explode.mpower
+include ./enemypowers.kevin.juice
+include camel/skillscript/pwr_mm19_explosivemine_suicide_script.mskillscriptjuice
+
+CombatPower pwr_mm19_explosive_suicide < uid=86C93082589BB5300000AFE0F860128A > : enemy_pwr_suicide_explode
+{
+	myUseSkillScript < uid=86C93082589BC0440010712AA903A5FC > = pwr_mm19_explosivemine_suicide_script
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C93082589BB5DC0001809A59705AD9 >
+		{
+			myPriority 10
+			myTargetHealthLessThanPercentage 101.0
+			mySelfHealthLessThanPercentage 101.0
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86C93082589BBDE9000FE796A64030CB > = pwr_mm19_explosivemine_suicide_Kevin_Tuning
+}
+

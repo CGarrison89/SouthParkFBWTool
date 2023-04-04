@@ -1,0 +1,96 @@
+include ./pwr_sm49_redneck_grenadier_confusion.mpower
+include ./dlc2_enemypowers.juice
+
+CombatPower dr_pwr_sm49_redneck_grenadier_confusion < uid=86C930825A160804002839A10C0610D8 > : pwr_sm49_redneck_grenadier_confusion
+{
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/CC_range_2_3.dds"
+	myPowerEvaluationData
+	{
+		PowerEvaluationData "2 targets" < uid=86C930825A160B8200302D552DAD8026 >
+		{
+			myPriority 50
+			myMinimumAffectedTargets 2
+			myStatusEffectConditionData
+			{
+			}
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not Confused"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Confused
+					myFollowingCondition OR
+				}
+				StatusEffectConditionalEntry "Nor Charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+					myFollowingCondition None
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "3 targets" < uid=86C930825A160B8200302D5698AA8DC3 >
+		{
+			myPriority 60
+			myMinimumAffectedTargets 3
+			myStatusEffectConditionData
+			{
+			}
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not Confused"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Confused
+					myFollowingCondition OR
+				}
+				StatusEffectConditionalEntry "Nor Charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+					myFollowingCondition None
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+		PowerEvaluationData "4 targets" < uid=86C930825A160B8200302D57131E1F4C >
+		{
+			myPriority 70
+			myMinimumAffectedTargets 4
+			myStatusEffectConditionData
+			{
+			}
+			mySelfStatusEffectConditionData
+			{
+				StatusEffectConditionalEntry "Not Confused"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Confused
+					myFollowingCondition OR
+				}
+				StatusEffectConditionalEntry "Nor Charmed"
+				{
+					myPreCondition MustNotHave
+					mySpecialEffect Charmed
+					myFollowingCondition None
+				}
+			}
+			myValidDirections
+			{
+				myUp TRUE
+				myDown TRUE
+			}
+		}
+	}
+	myTuningData < uid=86C930825A161E370000900B91F9F1D8 > = dr_pwr_sm49_redneck_grenadier_confusion_Tuning
+}
+

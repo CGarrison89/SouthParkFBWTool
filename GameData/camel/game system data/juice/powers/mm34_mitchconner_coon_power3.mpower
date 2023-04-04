@@ -1,0 +1,39 @@
+include ./pwr_thecoon_power3.mpower
+include camel/skillscript/pwr_mm34_mitchconner_addrandomstatuseffect_script.mskillscriptjuice
+include ./enemypowers.kevin.juice
+
+CombatPower mm34_mitchconner_coon_power3 < uid=86C93082597B614E0002269FCDFA73CC > : pwr_theCoon_power3
+{
+	myPowerEvaluationData
+	{
+		PowerEvaluationData default < uid=86C93082597D1D69000D4E78DF634B92 >
+		{
+			myPriority 20
+			myMinimumAffectedTargets 1
+			mySelfStatusEffectConditionData
+			{
+			}
+		}
+		PowerEvaluationData default_VIP < uid=86C93082597D1D69000D4E79160A0715 >
+		{
+			myPriority 1020
+			myMinimumAffectedTargets 1
+			myAIDesirableType VIP
+			mySelfStatusEffectConditionData
+			{
+			}
+		}
+		PowerEvaluationData enraged < uid=86C93082597D1D69000D4E7A3FE9A1D3 >
+		{
+			myPriority 20
+			myAggroPriority 2010
+			myRequireAggroTarget TRUE
+			myMinimumAffectedTargets 1
+			mySelfStatusEffectConditionData
+			{
+			}
+		}
+	}
+	myTuningData < uid=86C93082597D008F000A2C56C80AAB75 > = pwr_mm34_mitchconner_power3_Kevin_Tuning
+}
+

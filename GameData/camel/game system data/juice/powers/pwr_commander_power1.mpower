@@ -1,0 +1,40 @@
+include ./combatpowerincludes.juice
+include camel/skillscript/camel_simple_playanim_script.mskillscriptjuice
+include camel/skillscript/camel_simple_remove_statuseffect_script.mskillscriptjuice
+include camel/skillscript/powersmenu_simpleremovestatuseffectscript.mskillscriptjuice
+include camel/skillscript/camel_placeholder_heal_cleanse_focus.mskillscriptjuice
+include "camel/game system data/juice/camera/uber_camera_powers_presets_plantmancer.juice"
+
+CombatPower pwr_commander_power1 < uid=B9E930CA56DA256D000000ECB3516822 >
+{
+	myIconImage "camel/baked/assets/ui/power selection/butthole/Plantmancer_Power1.DDS"
+	myRangeIconImage "camel/baked/assets/ui/power selection/range_icons/aoe_buff.DDS"
+	myUIName "contextComment = \"Commander Power 1 Name\", description = \"pwr_commander_power1 Name\", enabled = true, guid = #51C546C65774DBFD000000CF7D822285, lineVersion = 2, maxLength = 25, text = \"Friendly Fertilizer\""
+	myUIDescription "contextComment = \"long desc pause menu\", description = \"pwr_commander_power1 Description\", enabled = true, guid = #51C546C65774DBFD000000D00FCAFDC7, lineVersion = 1, maxLength = 113, text = \"A flower petal shower cleanses, exfoliates, and applies Attack Up to all nearby allies.\""
+	myUIShortDescription "contextComment = \"short desc combat UI\", description = \"pwr_commander_power1 Short Description\", enabled = true, guid = #9D0E6196579BF202000044DAB68E0DF9, lineVersion = 1, maxLength = 53, text = \"Cleanse, grant Attack Up to nearby allies\""
+	myUseSkillScript < uid=B9E930CA56DA256D000000ED1634BD92 > = Camel_Simple_PlayAnim_Script
+	myAnimationState plantmancer_power1
+	myShouldRepositionToCellCenterBeforeExecution TRUE
+	myIsACleansePower TRUE
+	myPowerEvaluationData
+	{
+	}
+	myTuningData < uid=B9E930CA56DA256D000000EE7F9CCFBD > = pwr_commander_power1_Tuning
+	myCameraPreset < uid=B9E930CA5970267D00013FFF29F91E48 > = Plantmancer_Power01
+	myPowerGroup Normal
+	myActionPlusData
+	{
+		myUseActionPlus TRUE
+		myActionPlusDistributionEnum AllUnusedPriorToHit
+		myActionPlusMiniGameDataList
+		{
+			ActionPlusMiniGameData 1
+			{
+				myActionPlusAdditionalTime 0.25
+				myActionPlusEndTime 2.0
+				myActionPlusPresetEnum Normal
+			}
+		}
+	}
+}
+
